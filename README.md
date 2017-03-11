@@ -5,12 +5,6 @@ Chile localization for Odoo
 
 
 [//]: # (addons)
-Unported addons
----------------
-|addon | version | summary|
-|------|---------|--------|
-
-
 [//]: # (end addons)
 
 ----
