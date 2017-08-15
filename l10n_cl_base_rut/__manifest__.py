@@ -15,4 +15,3 @@ according chilean customs.\n\n''',
     'auto-install': False,
     'active': False
 }
-
