@@ -2,7 +2,7 @@
 {
     'author': u'Blanco Martín & Asociados, Odoo Community Association (OCA)',
     'category': 'Localization/Chile',
-    'depends': ['base_vat'],
+    'depends': ['base'],
     'description': u'''\n\nIncorporate a field with the RUT (VAT) formatted \
 according chilean customs.\n\n''',
     'installable': True,
