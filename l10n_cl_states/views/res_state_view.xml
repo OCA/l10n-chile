@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+      <record id="view_country_state_form_inherit" model="ir.ui.view">
+          <field name="name">res.country.state.form.inherit</field>
+          <field name="model">res.country.state</field>
+          <field name="type">form</field>
+          <field name='inherit_id' ref='base.view_country_state_form'/>
+          <field name="arch" type="xml">
+              <field name="code" position="after">
+                  <field name="region_id"/>
+              </field>
+          </field>
+      </record>
+      <record id="view_region_state_tree" model="ir.ui.view">
+          <field name="name">res.country.state.city.tree</field>
+          <field name="model">res.country.state.region</field>
+          <field name="arch" type="xml">
+              <tree string="City">
+                  <field name="code"/>
+                  <field name="name"/>
+              </tree>
+          </field>
+      </record>
+</odoo>

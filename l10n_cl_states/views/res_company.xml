@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="view_company_activity_inherit_form">
+		<field name="name">res.company.activities.form.inherit</field>
+		<field name="inherit_id" ref="base.view_company_form" />
+		<field name="model">res.company</field>
+		<field name="arch" type="xml">
+			<field name="street2" position="after">
+				<field name="city_id" placeholder="Comuna" style="width: 100%"
+					options='{"no_open": True, "no_quick_create": True}' />
+			</field>
+		</field>
+	</record>
+</odoo>
