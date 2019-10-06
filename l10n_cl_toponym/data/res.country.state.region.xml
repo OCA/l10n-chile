@@ -1,0 +1,78 @@
+<odoo>
+
+    <record model="res.country.state.region" id="CL01">
+        <field name="name">Tarapacá</field>
+        <field name="code">CL01000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL02">
+        <field name="name">Antofagasta</field>
+        <field name="code">CL02000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL03">
+        <field name="name">Atacama</field>
+        <field name="code">CL03000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL04">
+        <field name="name">Coquimbo</field>
+        <field name="code">CL04000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL05">
+        <field name="name">Valparaíso</field>
+        <field name="code">CL05000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL06">
+        <field name="name">del Libertador Gral. Bernardo O'higgins</field>
+        <field name="code">CL06000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL07">
+        <field name="name">del Maule</field>
+        <field name="code">CL07000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL08">
+        <field name="name">del BíoBio</field>
+        <field name="code">CL08000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL09">
+        <field name="name">de la Araucania</field>
+        <field name="code">CL09000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL10">
+        <field name="name">de los Lagos</field>
+        <field name="code">CL10000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL11">
+        <field name="name">Aysén del Gral. Carlos Ibáñez del Campo</field>
+        <field name="code">CL11000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL12">
+        <field name="name">Magallanes</field>
+        <field name="code">CL12000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL13">
+        <field name="name">Metropolitana</field>
+        <field name="code">CL13000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL14">
+        <field name="name">Los Ríos</field>
+        <field name="code">CL14000</field>
+    </record>
+
+    <record model="res.country.state.region" id="CL15">
+        <field name="name">Arica y Parinacota</field>
+        <field name="code">CL15000</field>
+    </record>
+
+</odoo>
