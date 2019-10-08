@@ -1,0 +1,134 @@
+<odoo>
+
+    <template id="boleta_no_found_layout">
+        <div class="row text-center mb8">
+            <div class="alert-danger">
+                <h1>Boleta no encontrada!</h1>
+            </div>
+            <a class="btn btn-primary btn-lg fa fa-search" href="/boleta">Intentar
+                nuevamente
+            </a>
+        </div>
+    </template>
+
+    <template id="boleta_found_layout">
+        <div class="row text-center mb8">
+            <div class="alert-success">
+                <h1>Boleta encontrada!</h1>
+            </div>
+            <a class="btn btn-primary btn-lg fa fa-search" href="/boleta">Buscar
+                nuevamente
+            </a>
+            <t t-set="report_url"
+                t-value="'/download/boleta?model=%s&amp;model_id=%s' % (docs[0]._name, docs[0].id)" />
+            <a class="btn btn-primary btn-lg fa fa-download" t-att-href="report_url">Descargar
+                PDF
+            </a>
+        </div>
+    </template>
+
+    <template id="boleta_input_layout" name="Consulta Boleta Electrónica">
+        <form action="/boleta" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <div class="text-center">
+                    <h3>
+                        <u>
+                            <b>
+                                <font class="text-black">Boleta a consultar</font>
+                            </b>
+                        </u>
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div style="margin: auto; width: 360px;">
+                    <div class="col-xs-12">
+                        <div class="col-xs-5">
+                            <strong class="pull-left">Tipo:</strong>
+                        </div>
+                        <div class="col-xs-7">
+                            <input type="radio" name="sii_codigo" value="39" checked="True" />
+                            <span>Boleta Afecta</span>
+                            <br />
+                            <input type="radio" name="sii_codigo" value="41" />
+                            <span>Boleta Exenta</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-5">
+                            <strong class="pull-left">Boleta Nº:</strong>
+                            <span class="fa fa-book"></span>
+                        </div>
+                        <div class="col-xs-7">
+                            <input class="form-control pull-right" style="display: inline-block; width: 100%;"
+                                type="text" name="boleta" required="" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-5">
+                            <strong class="pull-left">Fecha:</strong>
+                            <span class="fa fa-calendar"></span>
+                        </div>
+                        <div class="col-xs-7">
+                            <input class="form-control pull-right" style="display: inline-block; width: 100%;"
+                                type="date" name="date_invoice" required="" placeholder="yyyy-mm-dd" />
+                        </div>
+                    </div>
+                    <div class="mt16 text-center col-xs-12" name="boleta_filter">
+                        <button class="btn btn-primary btn-lg fa fa-search">Consultar Boleta</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </template>
+
+    <template id="boleta_layout" name="Consulta Boleta Electrónica">
+        <t t-call="portal.frontend_layout">
+            <div class="container mt16">
+                <div class="oe_structure">
+                </div>
+            </div>
+            <div id="wrap">
+                <div class="oe_structure" />
+                <div class="container">
+                    <!-- formulario de ingreso de datos -->
+                    <t t-if="not print_error and not docs">
+                        <t t-call="l10n_cl_electronic_invoicing.boleta_input_layout" />
+                    </t>
+                    <!-- formulario de no encontrado -->
+                    <t t-if="print_error">
+                        <t t-call="l10n_cl_electronic_invoicing.boleta_no_found_layout" />
+                    </t>
+                    <!-- formulario de documento encontrado y opcion para descargarlo -->
+                    <t t-if="not print_error and docs">
+                        <t t-call="l10n_cl_electronic_invoicing.boleta_found_layout" />
+                        <div class="row" style="background-color:gray;padding: 20px;">
+                            <t t-call="l10n_cl_electronic_invoicing.boleta_report_layout" />
+                        </div>
+                    </t>
+                </div>
+                <div class="oe_structure" />
+            </div>
+        </t>
+    </template>
+
+    <template id="boleta_report_layout" name="Consulta Boleta Electrónica">
+        <t t-set="boleta_style" t-value="'margin: auto;width: 100%;background-color: white;padding: 20px;font-size: 10px;'" />
+        <div
+            t-att-style="boleta_style">
+            <t t-foreach="docs" t-as="o">
+                <t t-if="o._name == 'account.invoice'">
+                    <t t-call="l10n_cl_electronic_invoicing.report_invoice_document_with_payments" />
+                </t>
+            </t>
+        </div>
+    </template>
+
+    <template id="boleta_inv_report_body_layout" name="Reporte Boleta Electrónica(invoice)">
+        <div class="page">
+            <span>Reporte no disponible por el momento</span>
+        </div>
+    </template>
+
+</odoo>

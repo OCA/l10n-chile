@@ -1,0 +1,7 @@
+<odoo noupdate="1">
+
+    <record id="base.main_partner" model="res.partner">
+        <field name='responsability_id' ref='res_IVARI'/>
+    </record>
+
+</odoo>

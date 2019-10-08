@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="libro_honorarios_tree" model="ir.ui.view">
+            <field name="name">l10n_cl.libro_honorarios.tree</field>
+            <field name="model">account.move.book.honorarios</field>
+            <field name="arch" type="xml">
+              <tree>
+                <field name="name" />
+                <field name="tipo_libro" />
+                <field name="periodo_tributario" />
+                <field name="company_id" />
+                <field name="state" />
+              </tree>
+            </field>
+        </record>
+
+        <record id="view_electroinic_libro_honorarios_form" model="ir.ui.view">
+            <field name="name">l10n_cl.libro_honorarios.form</field>
+            <field name="model">account.move.book.honorarios</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+                  <button type="object" name="validar_libro" states="draft" string="Validate" class="oe_highlight" groups="base.group_user"/>
+                  <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                  <field name="name" />
+                  <field name="company_id" />
+                  <field name="tipo_libro" />
+                  <field name="periodo_tributario" />
+                </group>
+                <group>
+                  <field name="impuestos" options="{'no_open': True}">
+                    <tree>
+                      <field name="tax_id" />
+                      <field name="debit" />
+                      <field name="credit" />
+                      <field name="amount" />
+                      <field name="currency_id" invisible="True"/>
+                      <field name="book_id" invisible="True" />
+                    </tree>
+                  </field>
+                </group>
+                <notebook>
+                  <page string="Movimientos">
+                    <field name="move_ids" editable="bottom" widget="many2many_list">
+                      <field name="document_number"/>
+                      <field name="date"/>
+                        <field name="line_ids" widget="one2many_list">
+                                <tree editable="bottom" string="Journal Items">
+                                    <field name="debit" sum="Total Debit"/>
+                                    <field name="credit" sum="Total Credit"/>
+                                </tree>
+                            </field>
+                    </field>
+                  </page>
+                </notebook>
+              </form>
+            </field>
+        </record>
+
+
+    <record id="action_move_libro_honorarios" model="ir.actions.act_window">
+      <field name="name">Libro Honorarios</field>
+      <field name="res_model">account.move.book.honorarios</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="libro_honorarios_tree"/>
+      <!--<field name="search_view_id" ref="view_account_move_filter"/>
+      <field name="context"></field>-->
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click to create a journal entry.
+        </p><p>
+          A journal entry consists of several journal items, each of
+          which is either a debit or a credit transaction.
+        </p><p>
+          Odoo automatically creates one journal entry per accounting
+          document: invoice, refund, vendor payment, bank statements,
+          etc. So, you should record journal entries manually only/mainly
+          for miscellaneous operations.
+        </p>
+      </field>
+    </record>
+
+    <menuitem
+            icon="STOCK_JUSTIFY_FILL"
+            action="action_move_libro_honorarios"
+            id="menu_action_move_libro_honorarios_form"
+            parent="account.menu_finance_reports"
+            groups="account.group_account_manager"
+            sequence="4"/>
+</odoo>

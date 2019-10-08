@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="gdr_view_form" model="ir.ui.view">
+    <field name="name">gdr.form</field>
+    <field name="model">account.invoice.gdr</field>
+    <field name="arch" type="xml">
+      <form string="Global Descuentos Recargos">
+        <sheet>
+          <group>
+              <field name="type"/>
+              <field name="valor"/>
+              <field name="gdr_type"/>
+              <field name="gdr_dtail"/>
+              <field name="amount_untaxed_global_dr"/>
+              <field name="invoice_id" invisible="1"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>

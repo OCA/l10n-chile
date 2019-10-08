@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="electronic_consumo_folios_tree" model="ir.ui.view">
+            <field name="name">l10n_cl.libro_compra_venta.tree</field>
+            <field name="model">account.move.consumo_folios</field>
+            <field name="arch" type="xml">
+              <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                <field name="name" />
+                <field name="fecha_inicio" />
+                <field name="fecha_final" />
+                <field name="date" />
+                <field name="total_boletas" />
+                <field name="total_neto" />
+                <field name="total_iva" />
+                <field name="total_exento" />
+                <field name="total" />
+                <field name="currency_id" invisible="True" />
+                <field name="company_id" />
+                <field name="state" />
+              </tree>
+            </field>
+        </record>
+
+        <record id="view_cf_filter" model="ir.ui.view">
+          <field name="name">account.move.consumo_folios.list.select</field>
+          <field name="model">account.move.consumo_folios</field>
+          <field name="arch" type="xml">
+              <search string="Buscar Consumo de Folios">
+                  <field name="name"/>
+                  <field name="fecha_inicio"/>
+                  <filter name="filter_by_process" string="Procesado" domain="[('state','=','Proceso')]"/>
+                  <filter name="filter_by_rejected" string="Rechazado" domain="[('state','=', 'Rechazado')]"/>
+                  <filter name="filter_by_cancel" string="Anulado" domain="[('state','=','Anulado')]"/>
+                  <filter name="filter_by_done" string="Posted" domain="[('state','=','done')]"/>
+                  <group expand="0" string="Group By">
+                      <filter name="group_by_fecha" string="Consumos Mensuales Válidos" domain="[('state', '=', 'Proceso')]" context="{'group_by':'fecha_inicio'}"/>
+                  </group>
+              </search>
+
+          </field>
+      </record>
+
+        <record id="view_electroinic_consumo_folios_form" model="ir.ui.view">
+            <field name="name">l10n_cl.consumo_folios.form</field>
+            <field name="model">account.move.consumo_folios</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+                  <button name="validar_consumo_folios" type="object" states="draft" string="Validate" class="oe_highlight" groups="base.group_user"/>
+                  <button string="Download XML" type="object"  name="get_xml_file"  attrs="{'invisible':[('state', 'in', ['draft','NoEnviado'])]}"/>
+                  <button string="Send XML" type="object" class="oe_highlight" name="do_dte_send_consumo_folios" attrs="{'invisible': [ ('state', 'not in', ['NoEnviado'])]}"/>
+                  <button string="Ask for DTE" type="object" class="oe_highlight" name="ask_for_dte_status" attrs="{'invisible': [('state', 'in', ['draft','NoEnviado'])]}"/>
+                  <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                  <field name="name" />
+                  <field name="fecha_inicio" />
+                  <field name="fecha_final" />
+                  <field name="sec_envio" />
+                  <field name="date" />
+                  <field name="company_id" />
+                  <field name="currency_id" invisible="1" force_save="1" />
+                  <field name="total_boletas" />
+                  <field name="total_iva" />
+                  <field name="total_exento" />
+                  <field name="total" />
+                </group>
+                <group>
+                  <field name="impuestos" options="{'no_open': True, 'no_create': True}">
+                          <tree >
+                            <field name="monto_neto" />
+                            <field name="monto_iva" />
+                            <field name="monto_exento" />
+                            <field name="monto_total" />
+                          </tree>
+                    </field>
+                  <field name="detalles" >
+                        <tree>
+                          <field name="cf_id" invisible="True" />
+                          <field name="tipo_operacion" />
+                          <field name="folio_inicio" />
+                          <field name="folio_final" />
+                          <field name="cantidad" />
+                          <field name="tpo_doc" />
+                        </tree>
+                  </field>
+                </group>
+                <notebook>
+                  <page string="Movimientos">
+                    <field name="move_ids" editable="bottom" widget="many2many_list">
+                      <field name="document_number"/>
+                      <field name="date"/>
+                        <field name="line_ids" widget="one2many_list">
+                                <tree editable="bottom" string="Journal Items">
+                                    <field name="debit" sum="Total Debit"/>
+                                    <field name="credit" sum="Total Credit"/>
+                                </tree>
+                            </field>
+                    </field>
+                  </page>
+                  <page string="Anulaciones Manuales de Folio">
+                    <group>
+                      <field name="anulaciones" editable="bottom" widget="one2many">
+                        <tree editable="top/bottom">
+                          <field name="tpo_doc"/>
+                          <field name="rango_inicio" />
+                          <field name="rango_final" />
+                        </tree>
+                      </field>
+                    </group>
+                  </page>
+                  <page string="Envio SII">
+                    <group>
+                      <field name='sii_message' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_send_ident' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_xml_response' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_xml_request' readonly="1"/>
+                    </group>
+                  </page>
+                </notebook>
+              </form>
+            </field>
+        </record>
+
+    <record id="action_move_consumo_folios" model="ir.actions.act_window">
+      <field name="name">Consumo de Folios</field>
+      <field name="res_model">account.move.consumo_folios</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="electronic_consumo_folios_tree"/>
+      <!--<field name="search_view_id" ref="view_account_move_filter"/>
+      <field name="context"></field>-->
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click to create a journal entry.
+        </p><p>
+          A journal entry consists of several journal items, each of
+          which is either a debit or a credit transaction.
+        </p><p>
+          Odoo automatically creates one journal entry per accounting
+          document: invoice, refund, vendor payment, bank statements,
+          etc. So, you should record journal entries manually only/mainly
+          for miscellaneous operations.
+        </p>
+      </field>
+    </record>
+
+    <menuitem
+            icon="STOCK_JUSTIFY_FILL"
+            action="action_move_consumo_folios"
+            id="menu_action_move_consumo_folios_form"
+            parent="account.menu_finance_reports"
+            groups="account.group_account_manager"
+            sequence="3"/>
+    </data>
+</odoo>

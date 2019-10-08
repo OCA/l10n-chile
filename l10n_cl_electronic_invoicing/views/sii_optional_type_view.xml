@@ -1,0 +1,37 @@
+<odoo>
+
+    <record id="view_sii_optional_type_form" model="ir.ui.view">
+        <field name="name">sii.optional.type.form</field>
+        <field name="model">sii.optional.type</field>
+        <field name="arch" type="xml">
+            <form string="SII Optional type">
+                <group>
+                    <field name="name"/>
+                    <field name='sii_code'/>
+                    <field name='active'/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sii_optional_type_tree" model="ir.ui.view">
+        <field name="name">sii.optional.type.tree</field>
+        <field name="model">sii.optional.type</field>
+        <field name="arch" type="xml">
+            <tree string="SII Optional type">
+                <field name="name"/>
+                <field name="sii_code"/>
+                <field name='active'/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_sii_optional_type">
+        <field name="name">SII Optional type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sii.optional.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

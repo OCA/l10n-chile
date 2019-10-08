@@ -1,0 +1,8 @@
+<odoo>
+
+    <record model='ir.sequence' id='response_sequence'>
+        <field name='name'>Respuestas intercambio entre contribuyentes</field>
+        <field name='padding'>6</field>
+    </record>
+
+</odoo>
