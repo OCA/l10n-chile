@@ -10,1860 +10,1863 @@ msgstr ""
 "PO-Revision-Date: 2019-09-22 09:28-0300\n"
 "Last-Translator: Nelson Ramírez <info@konos.cl>\n"
 "Language-Team: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es\n"
 "X-Generator: Poedit 2.2.3\n"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11201
 msgid "Aisén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05602
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05602
 msgid "Algarrobo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13502
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13502
 msgid "Alhué"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08314
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08314
 msgid "Alto Biobío"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01107
 msgid "Alto Hospicio"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03302
 msgid "Alto del Carmen"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10202
 msgid "Ancud"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04103
 msgid "Andacollo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09201
 msgid "Angol"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02101
 msgid "Antofagasta"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08302
 msgid "Antuco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12202
 msgid "Antártica"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08202
 msgid "Arauco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL15101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL15101
 msgid "Arica"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13402
 msgid "Buin"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08402
 msgid "Bulnes"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05402
 msgid "Cabildo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12201
 msgid "Cabo de Hornos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08303
 msgid "Cabrero"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02201
 msgid "Calama"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10102
 msgid "Calbuco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03102
 msgid "Caldera"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05502
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05502
 msgid "Calera"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13403
 msgid "Calera de Tango"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05302
 msgid "Calle Larga"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL15102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL15102
 msgid "Camarones"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01402
 msgid "Camiña"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04202
 msgid "Canela"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09102
 msgid "Carahue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05603
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05603
 msgid "Cartagena"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05102
 msgid "Casablanca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10201
 msgid "Castro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05702
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05702
 msgid "Catemu"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07201
 msgid "Cauquenes"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08203
 msgid "Cañete"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13102
 msgid "Cerrillos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13103
 msgid "Cerro Navia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10401
 msgid "Chaitén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07202
 msgid "Chanco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03201
 msgid "Chañaral"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08103
 msgid "Chiguayante"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__child_ids
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__child_ids
 msgid "Child Regions"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11401
 msgid "Chile Chico"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08401
 msgid "Chillán"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08406
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08406
 msgid "Chillán Viejo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06303
 msgid "Chimbarongo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09121
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09121
 msgid "Cholchol"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10203
 msgid "Chonchi"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06302
 msgid "Chépica"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11202
 msgid "Cisnes"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model,name:l10n_cl_states.model_res_city
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_company__city_id
-#: model_terms:ir.ui.view,arch_db:l10n_cl_states.view_region_state_tree
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_city
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__city_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_region_state_tree
 msgid "City"
 msgstr "Ciudad"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_city__code
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_city__code
 msgid "City Code"
 msgstr "Código de la Ciudad"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08403
 msgid "Cobquecura"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10103
 msgid "Cochamó"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11301
 msgid "Cochrane"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06102
 msgid "Codegua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08404
 msgid "Coelemu"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11101
 msgid "Coihaique"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08405
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08405
 msgid "Coihueco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06103
 msgid "Coinco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07402
 msgid "Colbún"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01403
 msgid "Colchane"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13301
 msgid "Colina"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09202
 msgid "Collipulli"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06104
 msgid "Coltauco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04302
 msgid "Combarbalá"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model,name:l10n_cl_states.model_res_company
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_company
 msgid "Companies"
 msgstr "Compañías"
 
-#. module: l10n_cl_states
-#: model_terms:ir.ui.view,arch_db:l10n_cl_states.view_company_activity_inherit_form
-#: model_terms:ir.ui.view,arch_db:l10n_cl_states.view_partner_activity_inherit_form
-#: model_terms:ir.ui.view,arch_db:l10n_cl_states.view_partner_address_form_states_city_inherit
+#. module: l10n_cl_toponym
+#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_company_activity_inherit_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_partner_activity_inherit_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_partner_address_form_states_city_inherit
 msgid "Comuna"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08101
 msgid "Concepción"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13104
 msgid "Conchalí"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05103
 msgid "Concón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07102
 msgid "Constitución"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model,name:l10n_cl_states.model_res_partner
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08204
 msgid "Contulmo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03101
 msgid "Copiapó"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04102
 msgid "Coquimbo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08102
 msgid "Coronel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14102
 msgid "Corral"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model,name:l10n_cl_states.model_res_country_state
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_country_state
 msgid "Country state"
 msgstr "Provincia"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__create_uid
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__create_date
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__create_date
 msgid "Created on"
 msgstr "Creado en"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09103
 msgid "Cunco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09203
 msgid "Curacautín"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13503
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13503
 msgid "Curacaví"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10204
 msgid "Curaco de Vélez"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08205
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08205
 msgid "Curanilahue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09104
 msgid "Curarrehue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07103
 msgid "Curepto"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07301
 msgid "Curicó"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10205
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10205
 msgid "Dalcahue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03202
 msgid "Diego de Almagro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__display_name
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06105
 msgid "Doñihue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13105
 msgid "El Bosque"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08407
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08407
 msgid "El Carmen"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13602
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13602
 msgid "El Monte"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05604
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05604
 msgid "El Quisco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05605
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05605
 msgid "El Tabo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07104
 msgid "Empedrado"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09204
 msgid "Ercilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13106
 msgid "Estación Central"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08104
 msgid "Florida"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09105
 msgid "Freire"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03303
 msgid "Freirina"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10104
 msgid "Fresia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10105
 msgid "Frutillar"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10402
 msgid "Futaleufú"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14202
 msgid "Futrono"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09106
 msgid "Galvarino"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL15202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL15202
 msgid "General Lagos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09107
 msgid "Gorbea"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06106
 msgid "Graneros"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11203
 msgid "Guaitecas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05503
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05503
 msgid "Hijuelas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10403
 msgid "Hualaihue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07302
 msgid "Hualañé"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08112
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08112
 msgid "Hualpén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08105
 msgid "Hualqui"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01404
 msgid "Huara"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03304
 msgid "Huasco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13107
 msgid "Huechuraba"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__id
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__id
 msgid "ID"
 msgstr "ID (identificación)"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04201
 msgid "Illapel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13108
 msgid "Independencia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01101
 msgid "Iquique"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13603
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13603
 msgid "Isla de Maipo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05201
 msgid "Isla de Pascua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05104
 msgid "Juan Fernández"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13109
 msgid "La Cisterna"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05504
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05504
 msgid "La Cruz"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06202
 msgid "La Estrella"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13110
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13110
 msgid "La Florida"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13111
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13111
 msgid "La Granja"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04104
 msgid "La Higuera"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05401
 msgid "La Ligua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13112
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13112
 msgid "La Pintana"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13113
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13113
 msgid "La Reina"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04101
 msgid "La Serena"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14201
 msgid "La Unión"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14203
 msgid "Lago Ranco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11102
 msgid "Lago Verde"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12102
 msgid "Laguna Blanca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08304
 msgid "Laja"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13302
 msgid "Lampa"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14103
 msgid "Lanco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06107
 msgid "Las Cabras"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13114
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13114
 msgid "Las Condes"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region____last_update
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__write_uid
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__write_date
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09108
 msgid "Lautaro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08201
 msgid "Lebu"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07303
 msgid "Licantén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05505
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05505
 msgid "Limache"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07401
 msgid "Linares"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06203
 msgid "Litueche"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10107
 msgid "Llanquihue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05703
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05703
 msgid "Llay Llay"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13115
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13115
 msgid "Lo Barnechea"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13116
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13116
 msgid "Lo Espejo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13117
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13117
 msgid "Lo Prado"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06304
 msgid "Lolol"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09109
 msgid "Loncoche"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07403
 msgid "Longaví"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09205
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09205
 msgid "Lonquimay"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08206
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08206
 msgid "Los Alamos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05301
 msgid "Los Andes"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08301
 msgid "Los Angeles"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14104
 msgid "Los Lagos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10106
 msgid "Los Muermos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09206
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09206
 msgid "Los Sauces"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04203
 msgid "Los Vilos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08106
 msgid "Lota"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09207
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09207
 msgid "Lumaco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06108
 msgid "Machalí"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13118
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13118
 msgid "Macul"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13119
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13119
 msgid "Maipú"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06109
 msgid "Malloa"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06204
 msgid "Marchihue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14106
 msgid "Mariquina"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02302
 msgid "María Elena"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13504
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13504
 msgid "María Pinto"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07105
 msgid "Maule"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10108
 msgid "Maullín"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02102
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02102
 msgid "Mejillones"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09110
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09110
 msgid "Melipeuco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13501
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13501
 msgid "Melipilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07304
 msgid "Molina"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04303
 msgid "Monte Patria"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06110
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06110
 msgid "Mostazal"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08305
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08305
 msgid "Mulchén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14105
 msgid "Máfil"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08306
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08306
 msgid "Nacimiento"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06305
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06305
 msgid "Nancagua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12401
 msgid "Natales"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06205
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06205
 msgid "Navidad"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08307
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08307
 msgid "Negrete"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08408
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08408
 msgid "Ninhue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05506
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05506
 msgid "Nogales"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09111
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09111
 msgid "Nueva Imperial"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11302
 msgid "Ohiggins"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06111
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06111
 msgid "Olivar"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02202
 msgid "Ollague"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05507
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05507
 msgid "Olmué"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10301
 msgid "Osorno"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04301
 msgid "Ovalle"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13604
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13604
 msgid "Padre Hurtado"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09112
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09112
 msgid "Padre Las Casas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04105
 msgid "Paihuano"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14107
 msgid "Paillaco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13404
 msgid "Paine"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10404
 msgid "Palena"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06306
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06306
 msgid "Palmilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14108
 msgid "Panguipulli"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05704
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05704
 msgid "Panquehue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05403
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05403
 msgid "Papudo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06206
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06206
 msgid "Paredones"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07404
 msgid "Parral"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13121
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13121
 msgid "Pedro Aguirre Cerda"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07106
 msgid "Pelarco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07203
 msgid "Pelluhue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08410
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08410
 msgid "Pemuco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07107
 msgid "Pencahue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08107
 msgid "Penco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06307
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06307
 msgid "Peralillo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09113
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09113
 msgid "Perquenco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05404
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05404
 msgid "Petorca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06112
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06112
 msgid "Peumo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13605
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13605
 msgid "Peñaflor"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13122
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13122
 msgid "Peñalolén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01405
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01405
 msgid "Pica"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06113
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06113
 msgid "Pichidegua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06201
 msgid "Pichilemu"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08411
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08411
 msgid "Pinto"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13202
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13202
 msgid "Pirque"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09114
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09114
 msgid "Pitrufquén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06308
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06308
 msgid "Placilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08412
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08412
 msgid "Portezuelo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12301
 msgid "Porvenir"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL01401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL01401
 msgid "Pozo Almonte"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12302
 msgid "Primavera"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13123
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13123
 msgid "Providencia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05105
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05105
 msgid "Puchuncaví"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09115
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09115
 msgid "Pucón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13124
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13124
 msgid "Pudahuel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13201
 msgid "Puente Alto"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10101
 msgid "Puerto Montt"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10302
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10302
 msgid "Puerto Octay"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10109
 msgid "Puerto Varas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06309
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06309
 msgid "Pumanque"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04304
 msgid "Punitaqui"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12101
 msgid "Punta Arenas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10206
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10206
 msgid "Puqueldón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10303
 msgid "Purranque"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09208
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09208
 msgid "Purén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05705
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05705
 msgid "Putaendo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL15201
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL15201
 msgid "Putre"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10304
 msgid "Puyehue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10207
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10207
 msgid "Queilén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10208
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10208
 msgid "Quellón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10209
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10209
 msgid "Quemchi"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08308
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08308
 msgid "Quilaco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13125
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13125
 msgid "Quilicura"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08309
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08309
 msgid "Quilleco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05501
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05501
 msgid "Quillota"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08413
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08413
 msgid "Quillón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05106
 msgid "Quilpué"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10210
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10210
 msgid "Quinchao"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13126
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13126
 msgid "Quinta Normal"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06114
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06114
 msgid "Quinta de Tilcoco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05107
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05107
 msgid "Quintero"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08414
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08414
 msgid "Quirihue"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06101
 msgid "Rancagua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08415
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08415
 msgid "Ranquil"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07305
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07305
 msgid "Rauco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13127
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13127
 msgid "Recoleta"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state__region_id
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state__region_id
 msgid "Region"
 msgstr "Región"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__code
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__code
 msgid "Region Code"
 msgstr "Código de la Región"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_country_state_region__name
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__name
 msgid "Region Name"
 msgstr "Nombre de la Región"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09209
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09209
 msgid "Renaico"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13128
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13128
 msgid "Renca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06115
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06115
 msgid "Rengo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06116
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06116
 msgid "Requinoa"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07405
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07405
 msgid "Retiro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05303
 msgid "Rinconada"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07306
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07306
 msgid "Romeral"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14204
 msgid "Río Bueno"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07108
 msgid "Río Claro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04305
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04305
 msgid "Río Hurtado"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11402
 msgid "Río Ibáñez"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10305
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10305
 msgid "Río Negro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12103
 msgid "Río Verde"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09116
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09116
 msgid "Saavedra"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07307
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07307
 msgid "Sagrada Familia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04204
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04204
 msgid "Salamanca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05601
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05601
 msgid "San Antonio"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13401
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13401
 msgid "San Bernardo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08416
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08416
 msgid "San Carlos"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07109
 msgid "San Clemente"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05304
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05304
 msgid "San Esteban"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08417
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08417
 msgid "San Fabián"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05701
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05701
 msgid "San Felipe"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06301
 msgid "San Fernando"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12104
 msgid "San Gregorio"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08418
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08418
 msgid "San Ignacio"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07406
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07406
 msgid "San Javier"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13129
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13129
 msgid "San Joaquín"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13203
 msgid "San José de Maipo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10306
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10306
 msgid "San Juan de la Costa"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13130
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13130
 msgid "San Miguel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08419
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08419
 msgid "San Nicolás"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL10307
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL10307
 msgid "San Pablo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13505
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13505
 msgid "San Pedro"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08108
 msgid "San Pedro De La Paz"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02203
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02203
 msgid "San Pedro de Atacama"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07110
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07110
 msgid "San Rafael"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13131
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13131
 msgid "San Ramón"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08310
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08310
 msgid "San Rosendo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06117
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06117
 msgid "San Vicente"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08311
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08311
 msgid "Santa Bárbara"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL06310
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL06310
 msgid "Santa Cruz"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08109
 msgid "Santa Juana"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05706
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05706
 msgid "Santa María"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13101
 msgid "Santiago"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05606
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05606
 msgid "Santo Domingo"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02103
 msgid "Sierra Gorda"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.groups,name:l10n_cl_states.state_manager
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_partner__state_id
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_users__state_id
+msgid "State"
+msgstr ""
+
+#. module: l10n_cl_toponym
+#: model:res.groups,name:l10n_cl_toponym.state_manager
 msgid "State - City / Manager"
 msgstr "Estado - Ciudad / Gestión"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13601
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13601
 msgid "Talagante"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07101
 msgid "Talca"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08110
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08110
 msgid "Talcahuano"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02104
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02104
 msgid "Taltal"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09101
 msgid "Temuco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07308
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07308
 msgid "Teno"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09117
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09117
 msgid "Teodoro Schmidt"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,help:l10n_cl_states.field_res_city__code
-msgid "The city code.\n"
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,help:l10n_cl_toponym.field_res_city__code
+#, fuzzy
+msgid "The city code."
 msgstr "El código de la ciudad.\n"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,help:l10n_cl_states.field_res_country_state_region__code
-msgid "The region code.\n"
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,help:l10n_cl_toponym.field_res_country_state_region__code
+#, fuzzy
+msgid "The region code."
 msgstr "El código de región.\n"
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,help:l10n_cl_states.field_res_country_state_region__name
-msgid "The state code.\n"
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,help:l10n_cl_toponym.field_res_country_state_region__name
+#, fuzzy
+msgid "The state code."
 msgstr "El código del estado.\n"
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03103
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03103
 msgid "Tierra Amarilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13303
 msgid "Til til"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12303
 msgid "Timaukel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08207
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08207
 msgid "Tirua"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL02301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL02301
 msgid "Tocopilla"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09118
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09118
 msgid "Toltén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08111
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08111
 msgid "Tomé"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL12402
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL12402
 msgid "Torres del Paine"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL11303
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL11303
 msgid "Tortel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09210
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09210
 msgid "Traiguén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08420
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08420
 msgid "Trehuaco"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08312
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08312
 msgid "Tucapel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_company__state_id
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_partner__state_id
-#: model:ir.model.fields,field_description:l10n_cl_states.field_res_users__state_id
-msgid "Ubication"
-msgstr ""
-
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL14101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL14101
 msgid "Valdivia"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL03301
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL03301
 msgid "Vallenar"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05101
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05101
 msgid "Valparaíso"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07309
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07309
 msgid "Vichuquén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09211
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09211
 msgid "Victoria"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL04106
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL04106
 msgid "Vicuña"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09119
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09119
 msgid "Vilcún"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07407
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07407
 msgid "Villa Alegre"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05108
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05108
 msgid "Villa Alemana"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL09120
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL09120
 msgid "Villarrica"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13132
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13132
 msgid "Vitacura"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05109
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05109
 msgid "Viña del Mar"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL07408
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL07408
 msgid "Yerbas Buenas"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08313
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08313
 msgid "Yumbel"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08421
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08421
 msgid "Yungay"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL05405
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL05405
 msgid "Zapallar"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:ir.model,name:l10n_cl_states.model_res_country_state_region
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_country_state_region
 msgid "res.country.state.region"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL08409
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL08409
 msgid "Ñiquén"
 msgstr ""
 
-#. module: l10n_cl_states
-#: model:res.city,name:l10n_cl_states.CL13120
+#. module: l10n_cl_toponym
+#: model:res.city,name:l10n_cl_toponym.CL13120
 msgid "Ñuñoa"
 msgstr ""

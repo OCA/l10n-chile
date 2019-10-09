@@ -1,21 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_cl_states
+#	* l10n_cl_toponym
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e-20190116\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-22 12:29+0000\n"
-"PO-Revision-Date: 2019-09-22 09:30-0300\n"
-"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.2.3\n"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL11201
@@ -272,12 +268,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__city_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_region_state_tree
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_city__code
 msgid "City Code"
-msgstr "Código de la Ciudad"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL08403
@@ -352,7 +348,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_company_activity_inherit_form
@@ -384,7 +380,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL08204
@@ -414,17 +410,17 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_country_state
 msgid "Country state"
-msgstr "Provincia"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL09103
@@ -479,7 +475,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL06105
@@ -759,17 +755,17 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL09108
@@ -1409,12 +1405,12 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__code
 msgid "Region Code"
-msgstr "Código de la Región"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__name
 msgid "Region Name"
-msgstr "Nombre de la Región"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL09209
@@ -1661,7 +1657,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.groups,name:l10n_cl_toponym.state_manager
 msgid "State - City / Manager"
-msgstr "Estado - Ciudad / Gestión"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL13601
@@ -1700,21 +1696,18 @@ msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,help:l10n_cl_toponym.field_res_city__code
-#, fuzzy
 msgid "The city code."
-msgstr "El código de la ciudad.\n"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,help:l10n_cl_toponym.field_res_country_state_region__code
-#, fuzzy
 msgid "The region code."
-msgstr "El código de región.\n"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,help:l10n_cl_toponym.field_res_country_state_region__name
-#, fuzzy
 msgid "The state code."
-msgstr "El código del estado.\n"
+msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL03103
@@ -1870,3 +1863,4 @@ msgstr ""
 #: model:res.city,name:l10n_cl_toponym.CL13120
 msgid "Ñuñoa"
 msgstr ""
+
