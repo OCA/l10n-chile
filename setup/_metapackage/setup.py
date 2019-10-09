@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-l10n-chile Odoo addons",
     version=version,
     install_requires=[
+        'odoo12-addon-l10n_cl_chart_of_account',
         'odoo12-addon-l10n_cl_toponym',
     ],
     classifiers=[
