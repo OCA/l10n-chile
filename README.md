@@ -7,6 +7,13 @@ Chile localization for Odoo
 
 [//]: # (addons)
 
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[l10n_cl_chart_of_account](l10n_cl_chart_of_account/) | 12.0.1.0.0 | Chile Localization Chart Account SII
+[l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.0.0 | Cities, States and Regions from Chile
+
 [//]: # (end addons)
 
 ----
