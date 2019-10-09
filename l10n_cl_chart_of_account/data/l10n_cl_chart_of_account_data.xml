@@ -1,9 +1,9 @@
 <odoo>
 
     <menuitem id="account_reports_cl_statements_menu"
-			  name="Chilean Statements"
+              name="Chilean Statements"
               parent="account.menu_finance_reports"
-			  sequence="3"
+              sequence="3"
               groups="account.group_account_user"/>
 
     <!-- Account Types -->
@@ -44,7 +44,6 @@
         <field name="code">110301</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -53,7 +52,6 @@
         <field name="code">110302</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -62,7 +60,6 @@
         <field name="code">110303</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -71,7 +68,6 @@
         <field name="code">110304</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -80,7 +76,6 @@
         <field name="code">110305</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -90,7 +85,6 @@
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets"
                name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -100,7 +94,6 @@
         <field name="reconcile" eval="False"/>
         <field ref="account.data_account_type_current_assets"
                name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -118,7 +111,6 @@
         <field name="code">110502</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -127,7 +119,6 @@
         <field name="code">110503</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -136,7 +127,6 @@
         <field name="code">110504</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -145,7 +135,6 @@
         <field name="code">110505</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -154,7 +143,6 @@
         <field name="code">110506</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
@@ -163,7 +151,6 @@
         <field name="code">110507</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_receivable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
