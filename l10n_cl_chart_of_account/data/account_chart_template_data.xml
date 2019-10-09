@@ -1,0 +1,7 @@
+<odoo noupdate="1">
+
+    <function model="account.chart.template" name="try_loading_for_current_company">
+        <value eval="[ref('cl_chart_template_sii')]" />
+    </function>
+
+</odoo>

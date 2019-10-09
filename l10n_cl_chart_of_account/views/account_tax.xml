@@ -1,0 +1,133 @@
+<odoo>
+
+    <record id="view_tax_sii_code_form" model="ir.ui.view">
+        <field name="name">account.tax.sii.code.form</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sii_code"/>
+                <field name="sii_type"/>
+                <field name="retention"
+                       attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}"/>
+                <field name="no_rec"/>
+                <field name="fixed_asset"/>
+                <field name="sii_detailed"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_tax_sii_code_tree" model="ir.ui.view">
+        <field name="name">account.tax.sii.code.tree</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sii_code"/>
+                <field name="sii_type"/>
+                <field name="retention"/>
+                <field name="no_rec"/>
+                <field name="fixed_asset"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_tax_template_form" model="ir.ui.view">
+        <field name="name">account.tax.template.sii.form</field>
+        <field name="model">account.tax.template</field>
+        <field name="inherit_id" ref="account.view_account_tax_template_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sii_code"/>
+                <field name="sii_type"/>
+                <field name="retention"
+                       attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}"/>
+                <field name="no_rec"/>
+                <field name="fixed_asset"/>
+                <field name="sii_detailed"/>
+            </field>
+
+        </field>
+    </record>
+
+    <record id="view_account_tax_template_tree" model="ir.ui.view">
+        <field name="name">account.tax.template.sii.tree</field>
+        <field name="model">account.tax.template</field>
+        <field name="inherit_id" ref="account.view_account_tax_template_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sii_code"/>
+                <field name="sii_type"/>
+                <field name="retention"/>
+                <field name="no_rec"/>
+                <field name="fixed_asset"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_tax_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tax.sii.tree</field>
+        <field name="model">account.invoice.tax</field>
+        <field name="inherit_id" ref="account.view_invoice_tax_tree"/>
+        <field name="arch" type="xml">
+            <field name="base" position="after">
+                <field name="amount_retention"/>
+                <field name='retention_account_id'/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_tax_form" model="ir.ui.view">
+        <field name="name">account.invoice.tax.sii.tree</field>
+        <field name="model">account.invoice.tax</field>
+        <field name="inherit_id" ref="account.view_invoice_tax_form"/>
+        <field name="arch" type="xml">
+            <field name="base" position="after">
+                <field name="amount_retention"/>
+                <field name='retention_account_id'/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="name">account.invoice.sii.form</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='account_id']"
+                   position="after">
+                <field name="retention_account_id"/>
+            </xpath>
+            <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='amount']"
+                   position="after">
+                <field name="amount_retention"/>
+            </xpath>
+            <field name="amount_tax" position="after">
+                <field name="amount_retention"
+                       attrs="{'invisible':[('amount_retention', '=', 0)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_supplier_invoice_form" model="ir.ui.view">
+        <field name="name">l10n_cl.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_id']"
+                   position="after">
+                <field name="retention_account_id"/>
+            </xpath>
+            <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']"
+                   position="after">
+                <field name="amount_retention"/>
+            </xpath>
+            <field name="amount_tax" position="after">
+                <field name="amount_retention"
+                       attrs="{'invisible':[('amount_retention', '=', 0)]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,10 +1,13 @@
 [![Build Status](https://travis-ci.org/OCA/l10n-chile.svg?branch=12.0)](https://travis-ci.org/OCA/l10n-chile)
 [![Coverage Status](https://coveralls.io/repos/OCA/l10n-chile/badge.png?branch=12.0)](https://coveralls.io/r/OCA/l10n-chile?branch=12.0)
 
+# Localization for Chile
+
 Chile localization for Odoo
 
+[//]: # (addons)
 
-
+[//]: # (end addons)
 
 ----
 
