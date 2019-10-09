@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_chart_of_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_chart_of_account
+#: selection:account.tax,sii_type:0
+#: selection:account.tax.template,sii_type:0
+msgid "Anticipated"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__no_rec
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__no_rec
+msgid "Can be Retrieved"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.ui.menu,name:l10n_cl_chart_of_account.account_reports_cl_statements_menu
+msgid "Chilean Statements"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:account.account.type,name:l10n_cl_chart_of_account.account_account_type_NCLASIFICADO
+msgid "Cuentas No Clasificadas"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__sii_detailed
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__sii_detailed
+msgid "Details of VAT"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__fixed_asset
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__fixed_asset
+msgid "Fixed Asset"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model,name:l10n_cl_chart_of_account.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model,name:l10n_cl_chart_of_account.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: selection:account.tax,sii_type:0
+#: selection:account.tax.template,sii_type:0
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_invoice__amount_retention
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_invoice_tax__amount_retention
+msgid "Retention"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_invoice_tax__retention_account_id
+msgid "Retention Account"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__retention
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__retention
+msgid "Retention Value"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__sii_code
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__sii_code
+msgid "SII Code"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model,name:l10n_cl_chart_of_account.model_account_tax
+msgid "Tax"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax__sii_type
+#: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_tax_template__sii_type
+msgid "Tax Type for SII"
+msgstr ""
+
+#. module: l10n_cl_chart_of_account
+#: model:ir.model,name:l10n_cl_chart_of_account.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr ""
+
