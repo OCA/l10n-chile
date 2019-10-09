@@ -241,7 +241,7 @@
         <field name="tag_ids" eval="[(6,0,[ref('tag_cl_05'), ref('tag_cl_18')])]"/>
     </record>
 
-    <record id="iva_activo_fijo" model="account.tax.template">
+    <record id="iva_fixed_asset" model="account.tax.template">
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
         <field name="name">Activo Fijo</field>
         <field name="description">19%</field>
@@ -249,7 +249,7 @@
         <field name="sii_code">14</field>
         <field name="amount_type">percent</field>
         <field name="type_tax_use">purchase</field>
-        <field name="activo_fijo" eval="True"/>
+        <field name="fixed_asset" eval="True"/>
         <field name="sequence" eval="6"/>
         <field name="refund_account_id" ref="110704"/>
         <field name="account_id" ref="110704"/>

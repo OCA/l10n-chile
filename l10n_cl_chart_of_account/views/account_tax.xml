@@ -8,10 +8,10 @@
             <field name="name" position="before">
                 <field name="sii_code"/>
                 <field name="sii_type"/>
-                <field name="retencion"
+                <field name="retention"
                        attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}"/>
                 <field name="no_rec"/>
-                <field name="activo_fijo"/>
+                <field name="fixed_asset"/>
                 <field name="sii_detailed"/>
             </field>
 
@@ -26,9 +26,9 @@
             <field name="name" position="before">
                 <field name="sii_code"/>
                 <field name="sii_type"/>
-                <field name="retencion"/>
+                <field name="retention"/>
                 <field name="no_rec"/>
-                <field name="activo_fijo"/>
+                <field name="fixed_asset"/>
             </field>
         </field>
     </record>
@@ -41,10 +41,10 @@
             <field name="name" position="before">
                 <field name="sii_code"/>
                 <field name="sii_type"/>
-                <field name="retencion"
+                <field name="retention"
                        attrs="{'required':[('sii_type','in',['R'])], 'invisible':[('sii_type','=',False)]}"/>
                 <field name="no_rec"/>
-                <field name="activo_fijo"/>
+                <field name="fixed_asset"/>
                 <field name="sii_detailed"/>
             </field>
 
@@ -59,9 +59,9 @@
             <field name="name" position="before">
                 <field name="sii_code"/>
                 <field name="sii_type"/>
-                <field name="retencion"/>
+                <field name="retention"/>
                 <field name="no_rec"/>
-                <field name="activo_fijo"/>
+                <field name="fixed_asset"/>
             </field>
         </field>
     </record>
@@ -72,8 +72,8 @@
         <field name="inherit_id" ref="account.view_invoice_tax_tree"/>
         <field name="arch" type="xml">
             <field name="base" position="after">
-                <field name="amount_retencion"/>
-                <field name='retencion_account_id'/>
+                <field name="amount_retention"/>
+                <field name='retention_account_id'/>
             </field>
         </field>
     </record>
@@ -84,8 +84,8 @@
         <field name="inherit_id" ref="account.view_invoice_tax_form"/>
         <field name="arch" type="xml">
             <field name="base" position="after">
-                <field name="amount_retencion"/>
-                <field name='retencion_account_id'/>
+                <field name="amount_retention"/>
+                <field name='retention_account_id'/>
             </field>
         </field>
     </record>
@@ -97,15 +97,15 @@
         <field name="arch" type="xml">
             <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='account_id']"
                    position="after">
-                <field name="retencion_account_id"/>
+                <field name="retention_account_id"/>
             </xpath>
             <xpath expr="//page/field[@name='tax_line_ids']/tree/field[@name='amount']"
                    position="after">
-                <field name="amount_retencion"/>
+                <field name="amount_retention"/>
             </xpath>
             <field name="amount_tax" position="after">
-                <field name="amount_retencion"
-                       attrs="{'invisible':[('amount_retencion', '=', 0)]}"/>
+                <field name="amount_retention"
+                       attrs="{'invisible':[('amount_retention', '=', 0)]}"/>
             </field>
         </field>
     </record>
@@ -117,15 +117,15 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_id']"
                    position="after">
-                <field name="retencion_account_id"/>
+                <field name="retention_account_id"/>
             </xpath>
             <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']"
                    position="after">
-                <field name="amount_retencion"/>
+                <field name="amount_retention"/>
             </xpath>
             <field name="amount_tax" position="after">
-                <field name="amount_retencion"
-                       attrs="{'invisible':[('amount_retencion', '=', 0)]}"/>
+                <field name="amount_retention"
+                       attrs="{'invisible':[('amount_retention', '=', 0)]}"/>
             </field>
         </field>
     </record>
