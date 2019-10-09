@@ -102,7 +102,6 @@
         <field name="code">110501</field>
         <field name="reconcile" eval="True"/>
         <field ref="account.data_account_type_payable" name="user_type_id"/>
-        <field name="reconcile">1</field>
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
