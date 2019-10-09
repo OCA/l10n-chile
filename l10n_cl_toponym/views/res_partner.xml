@@ -1,0 +1,32 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_partner_activity_inherit_form">
+        <field name="name">res.partner.activities.form.inherit</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <field name="street2" position="after">
+                <field name="city_id" placeholder="Comuna" style="width: 100%"
+                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
+                       options='{"no_open": True, "no_quick_create": True}' />
+            </field>
+            <xpath expr="//field[@name='child_ids']/form//field[@name='street2']" position="after">
+                <field name="city_id" placeholder="Comuna" style="width: 100%"
+                       options='{"no_open": True, "no_quick_create": True}' />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_address_form_states_city_inherit">
+        <field name='name'>res.partner.address.form.states.city.inherit</field>
+        <field name='model'>res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_address_form"/>
+        <field name='type'>form</field>
+        <field name='arch' type='xml'>
+            <field name="state_id" position="after">
+                <field name="city_id" placeholder="Comuna" style="width: 100%" options='{"no_open": True}'/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
