@@ -1,0 +1,9 @@
+<odoo>
+
+    <menuitem id="account_reports_cl_statements_menu"
+              name="Chilean Statements"
+              parent="account.menu_finance_reports"
+              sequence="3"
+              groups="account.group_account_user"/>
+
+</odoo>
