@@ -6,7 +6,7 @@
 from odoo import api, fields, models
 
 
-class ResState(models.Model):
+class ResCountryState(models.Model):
     _inherit = 'res.country.state'
 
     @api.multi

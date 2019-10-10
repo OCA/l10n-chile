@@ -7,6 +7,6 @@ from . import (
     res_company,
     res_partner,
     res_city,
-    res_state_region,
-    res_state,
+    res_country_state_region,
+    res_country_state,
 )
