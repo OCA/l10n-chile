@@ -1417,6 +1417,13 @@ msgid "Region Name"
 msgstr "Nombre de la Región"
 
 #. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_country_state_region
+#, fuzzy
+#| msgid "Region Code"
+msgid "Region of a state"
+msgstr "Código de la Región"
+
+#. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL09209
 msgid "Renaico"
 msgstr ""
@@ -1652,7 +1659,6 @@ msgid "Sierra Gorda"
 msgstr ""
 
 #. module: l10n_cl_toponym
-#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_partner__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_users__state_id
 msgid "State"
@@ -1777,6 +1783,11 @@ msgid "Tucapel"
 msgstr ""
 
 #. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
+msgid "Ubication"
+msgstr ""
+
+#. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL14101
 msgid "Valdivia"
 msgstr ""
@@ -1854,11 +1865,6 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL05405
 msgid "Zapallar"
-msgstr ""
-
-#. module: l10n_cl_toponym
-#: model:ir.model,name:l10n_cl_toponym.model_res_country_state_region
-msgid "res.country.state.region"
 msgstr ""
 
 #. module: l10n_cl_toponym
