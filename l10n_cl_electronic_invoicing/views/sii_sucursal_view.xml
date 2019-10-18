@@ -1,0 +1,36 @@
+<odoo>
+
+    <record id="sii_sucursal_form_view" model="ir.ui.view">
+        <field name="name">sii.sucursal.form</field>
+        <field name="model">sii.sucursal</field>
+        <field name="arch" type="xml">
+            <form string="Sucursales">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="sii_code" />
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"
+                                   options="{'no_create': True, 'no_open': True}" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sii_sucursal_tree_view" model="ir.ui.view">
+        <field name="name">sii.sucursal.tree</field>
+        <field name="model">sii.sucursal</field>
+        <field name="arch" type="xml">
+            <tree string="Sucursales">
+                <field name="name" />
+                <field name="sii_code" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -16,6 +16,7 @@
         "data/account_chart_template_data.xml",
         "data/account_journal.xml",
         "views/account_tax.xml",
+        "views/menu.xml",
     ],
     "installable": True,
     "development_status": "Beta",

@@ -1,0 +1,98 @@
+<odoo>
+
+    <!-- Vista de formulario de la Secuencia -->
+    <record id="view_sequence_dte_caf_form" model="ir.ui.view">
+        <field name="name">ir.sequence.caf.form</field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view" />
+        <field name="arch" type="xml">
+            <field name="number_next_actual" position="after">
+                <field name="sii_document_class_id" options="{'no_open': True, 'no_create': True}" />
+                <field name="is_dte"/>
+                <field name="forced_by_caf"/>
+            </field>
+            <xpath expr='//notebook' position="inside">
+                <page string="CAF Files"
+                      attrs="{'invisible': [('is_dte','=',False)]}">
+                    <field name="dte_caf_ids"  context="{'default_sequence_id':active_id, 'default_company_id':company_id}">
+                        <tree string="DTE CAF Files">
+                            <field name="name"/>
+                            <field name="start_nm"/>
+                            <field name="final_nm"/>
+                            <field name="issued_date" readonly="1"/>
+                            <field name="expiration_date" readonly="1"/>
+                            <field name="use_level" widget="progressbar"/>
+                            <field name="status" readonly="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- vista de formulario -->
+    <record id="view_dte_caf_form" model="ir.ui.view">
+        <field name="name">dte.caf.form</field>
+        <field name="model">dte.caf</field>
+        <field name="arch" type="xml">
+            <form string="SII CAF Files for DTE">
+                <header>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group col="4">
+                        <field name="caf_file" filename="filename" attrs="{'invisible':[('status', '!=', 'draft')]}"/>
+                        <field name="filename" invisible="1"/>
+                    </group>
+                    <group col="4">
+                        <field name="sii_document_class"/>
+                        <field name="start_nm"/>
+                        <field name="final_nm"/>
+                        <field name="issued_date"/>
+                        <field name="expiration_date" />
+                        <field name="company_id"/>
+                        <field name="rut_n"/>
+                        <field name="sequence_id"/>
+                        <field name="use_level" widget="progressbar" backgrounds="blue:status == 'in_use';red:status == 'spent'"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- vista de arbol -->
+    <record id="view_dte_caf_tree" model="ir.ui.view">
+        <field name="name">CAF</field>
+        <field name="model">dte.caf</field>
+        <field name="arch" type="xml">
+            <tree string="CAF Files" colors="blue:status == 'draft';black:status == 'in_use';gray:status == 'spent';red:status == 'cancelled'">
+                <field name="name"/>
+                <field name="sii_document_class"/>
+                <field name="start_nm" />
+                <field name="final_nm" />
+                <field name="expiration_date" />
+                <field name="company_id" />
+                <field name="use_level" />
+                <field name="status" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_caf_files">
+        <field name="name">SII CAF Files for DTE</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dte.caf</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Please input CAF File</p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,11 @@
+cchardet
+dicttoxml
+M2Crypto
+num2words
+pdf417gen
+pysftp
+signxml
+suds-py3
+urllib3
+xlsxwriter
+xmltodict

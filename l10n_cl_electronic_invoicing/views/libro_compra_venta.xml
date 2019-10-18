@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--
+        <record id="view_electronic_stock_picking_filter" model="ir.ui.view">
+            <field name="name">l10n_cl.stock_picking.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_stock_picking_filter"/>
+            <field name="arch" type="xml">
+                <field name="number" position="attributes">
+                    <attribute name="filter_domain">['|','|','|','|', ('sii_document_number','ilike',self), ('number','ilike',self), ('origin','ilike',self), ('supplier_invoice_number', 'ilike', self), ('partner_id', 'child_of', self)]</attribute>
+                </field>
+            </field>
+        </record>
+      -->
+        <record id="electronic_book_compra_venta_tree" model="ir.ui.view">
+            <field name="name">l10n_cl.libro_compra_venta.tree</field>
+            <field name="model">account.move.book</field>
+            <field name="arch" type="xml">
+              <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" decoration-danger="state == 'Rechazado'">
+                <field name="name" />
+                <field name="periodo_tributario" />
+                <field name="date" />
+                <field name="company_id" />
+                <field name="state" />
+              </tree>
+            </field>
+        </record>
+
+        <record id="view_electroinic_book_compra_venta_form" model="ir.ui.view">
+            <field name="name">l10n_cl.libro_compra_venta.form</field>
+            <field name="model">account.move.book</field>
+            <field name="arch" type="xml">
+              <form>
+                <header>
+                  <button type="object" name="validar_libro" states="draft" string="Validate" class="oe_highlight" groups="base.group_user"/>
+                  <button string="Download XML" type="object"  name="get_xml_file"  attrs="{'invisible':[('state', 'in', ['draft'])]}"/>
+                  <button string="Send XML" type="object" class="oe_highlight" name="do_dte_send_book" attrs="{'invisible': [ ('state', 'not in', ['NoEnviado','Rechazado'])]}"/>
+                  <button string="Ask for DTE" type="object" class="oe_highlight" name="ask_for_dte_status" attrs="{'invisible': [('state', 'in', ['draft','NoEnviado'])]}"/>
+                  <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                  <field name="name" />
+                  <field name="date" />
+                  <field name="company_id" />
+                  <field name="currency_id" invisible="True"/>
+                  <field name="total_afecto" invisible="True"/>
+                  <field name="total_iva" invisible="True"/>
+                  <field name="total_exento" invisible="True"/>
+                  <field name="total_otros_imps" invisible="True"/>
+                  <field name="total" invisible="True"/>
+                  <field name="periodo_tributario" />
+                  <field name="tipo_operacion"/>
+                  <field name="tipo_libro" />
+                  <field name="tipo_envio" />
+                  <field name="folio_notificacion" attrs="{'invisible':[('tipo_libro','not in',['ESPECIAL'])],'required':[('tipo_libro','in',['ESPECIAL'])]}" />
+                  <field name="codigo_rectificacion" attrs="{'invisible':[('tipo_libro','not in',['RECTIFICA'])],'required':[('tipo_libro','in',['RECTIFICA'])]}" />
+                  <field name="fact_prop" />
+                </group>
+                <group>
+                  <field name="impuestos" options="{'no_open': True}" context="{'tipo_operacion': tipo_operacion}">
+                    <tree>
+                      <field name="tax_id" />
+                      <field name="debit" />
+                      <field name="credit" />
+                      <field name="amount" />
+                      <field name="currency_id" invisible="True"/>
+                      <field name="book_id" invisible="True" />
+                    </tree>
+                  </field>
+                </group>
+                <notebook>
+                  <page string="Movimientos">
+                    <field name="move_ids" editable="bottom" widget="many2many_list">
+                      <field name="document_number"/>
+                      <field name="date"/>
+                        <field name="line_ids" widget="one2many_list">
+                                <tree editable="bottom" string="Journal Items">
+                                    <field name="debit" sum="Total Debit"/>
+                                    <field name="credit" sum="Total Credit"/>
+                                </tree>
+                            </field>
+                    </field>
+                  </page>
+                  <page string="Boletas" attrs="{'invisible':[('tipo_operacion','!=', 'VENTA')]}">
+                    <group>
+                      <field name="boletas" editable="bottom" widget="one2many">
+                        <tree editable="top/bottom">
+                          <field name="tipo_boleta" />
+                          <field name="rango_inicial" />
+                          <field name="rango_final" />
+                          <field name="cantidad_boletas"/>
+                          <field name="currency_id" />
+                          <field name="neto" />
+                          <field name="impuesto" />
+                          <field name="monto_impuesto" />
+                          <field name="monto_total" />
+                        </tree>
+                      </field>
+                    </group>
+                  </page>
+                  <page string="Envio SII">
+                    <group>
+                      <field name='sii_message' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_receipt' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_send_ident' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_xml_response' attrs="{'invisible':[('state', 'in', ['','NoEnviado'])]}" readonly="1"/>
+                      <field name='sii_xml_request' readonly="1"/>
+                    </group>
+                  </page>
+                </notebook>
+              </form>
+            </field>
+        </record>
+
+
+    <record id="action_move_books" model="ir.actions.act_window">
+      <field name="name">Libros Cierre de Mes</field>
+      <field name="res_model">account.move.book</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="electronic_book_compra_venta_tree"/>
+      <!--<field name="search_view_id" ref="view_account_move_filter"/>
+      <field name="context"></field>-->
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Click to create a journal entry.
+        </p><p>
+          A journal entry consists of several journal items, each of
+          which is either a debit or a credit transaction.
+        </p><p>
+          Odoo automatically creates one journal entry per accounting
+          document: invoice, refund, vendor payment, bank statements,
+          etc. So, you should record journal entries manually only/mainly
+          for miscellaneous operations.
+        </p>
+      </field>
+    </record>
+
+    <menuitem
+            icon="STOCK_JUSTIFY_FILL"
+            action="action_move_books"
+            id="menu_action_move_books_form"
+            parent="account.menu_finance_reports"
+            groups="account.group_account_manager"
+            sequence="3"/>
+    </data>
+</odoo>

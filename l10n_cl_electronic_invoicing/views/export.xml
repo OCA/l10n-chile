@@ -1,0 +1,170 @@
+<odoo>
+
+    <report id="libro_xlsx"
+            model="account.move.book"
+            string="Libro xls"
+            report_type="xlsx"
+            name="account.move.book.xlsx"
+            file="account.move.book.xlsx"
+            attachment_use="True"
+            attachment="(object.state in ('Enviado','Proceso')) and ((object.name or '').replace('/','')+'.xlsx')"/>
+
+    <report id="libro_h_xlsx"
+            model="account.move.book.honorarios"
+            string="Libro Honorarios"
+            report_type="xlsx"
+            name="account.move.book.honorarios.xlsx"
+            file="account.move.book.honorarios.xlsx"
+            attachment_use="True"
+            attachment="(object.state in ('Enviado','Proceso')) and ((object.name or '').replace('/','')+'.xlsx')"/>
+
+    <record id="report_paper_format_nuevo" model="report.paperformat">
+        <field name="name">A4 Horizontal</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_right">4</field>
+        <field name="margin_left">4</field>
+        <field name="header_spacing">10</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report string="Libro CV PDF"
+            id="action_print_libro"
+            model="account.move.book"
+            report_type="qweb-pdf"
+            name="l10n_cl_electronic_invoicing.libro_cv"
+            file="l10n_cl_electronic_invoicing.libro_cv"
+            paperformat="l10n_cl_electronic_invoicing.report_paper_format_nuevo"
+            attachment_use="False"
+            attachment="object.name.replace('/','')+'.pdf'"/>
+
+    <template t-name="l10n_cl_electronic_invoicing.layout_libro">
+        <t t-call="web.basic_layout">
+            <style>
+                .table{
+                margin-bottom:0px !important;
+                }
+            </style>
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p style="text-align:left;text-transform:uppercase;font-weight:900;font-size:20px;color:black;">
+                            <span t-field="company.partner_id.ref"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-5" style="width:420px !important; text-align:center;">
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                        <p style="text-align:left;font-size:12px;color:black; text-transform:uppercase;">
+                            <span t-field="company.partner_id.name"/><br/>
+                            <t t-if="'activity_description' in company and company.activity_description.name">
+                                <span>Giro: <span t-field="company.activity_description.name" style="color:black; text-align:center;"/></span><br/>
+                            </t>
+                            <span t-field="company.partner_id.street"/>, <span t-field="company.partner_id.city_id.name"/>, <span t-field="company.partner_id.city"/><br/>
+                            <span>Fono: <span t-field="company.partner_id.phone"/></span><br/>
+                            <span>Email: <span t-field="company.partner_id.email"/></span><br/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="page" style="padding-top:55px;">
+                <div class="row">
+                    <table class="table table-condensed">
+                        <thead >
+                            <tr>
+                                <th colspan="9">Libro de Venta Sucursal <span t-field="company.name"/></th>
+                            </tr>
+                            <tr style="max-height:8px; line-height:12px; font-size:12px !important; padding:0px;">
+                                <th>Tipo Documento</th>
+                                <th>Número</th>
+                                <th>Fecha Emisión</th>
+                                <th>RUT</th>
+                                <th>Entidad</th>
+                                <th>Afecto</th>
+                                <th>Exento</th>
+                                <th>IVA</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.move_ids" t-as="m">
+                                <t t-set="totales" t-value="m.totales_por_movimiento()"/>
+                                <tr style="max-height:8px;line-height:10px !important; font-size:12px !important;">
+                                    <td style="max-height:8px;line-height:10px !important;"><span t-field="m.document_class_id.name"/></td>
+                                    <td style="max-height:8px;line-height:10px !important;"><span t-esc="m.sii_document_number or m.ref"/></td>
+                                    <td class="text-left" style="max-height:8px;line-height:10px !important;">
+                                        <span t-field="m.date" t-options="{'format': 'DD/MM/YYYY'}"/>
+                                    </td>
+                                    <td style="max-height:8px;line-height:10px !important;"><span t-field="m.partner_id.document_number"/></td>
+                                    <td style="max-height:8px;line-height:10px !important;"><span t-field="m.partner_id.name"/></td>
+                                    <td class="text-right">
+                                        $ <span t-esc="'{0:,}'.format(totales['neto'])"/>
+                                    </td>
+                                    <td class="text-right">
+                                        $ <span t-esc="'{0:,}'.format(totales['exento'])"/>
+                                    </td>
+                                    <td class="text-right">
+                                        $ <span t-esc="'{0:,}'.format(totales['iva'])"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="m.amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-left" style="font-size:12px !important;">
+                                    <strong>Total General</strong>
+                                </td>
+                                <td class="text-right" style="font-size:12px !important;">
+                                    <strong><strong><span t-field="o.total_afecto"/></strong></strong>
+                                </td>
+                                <td class="text-right" style="font-size:12px !important;">
+                                    <strong><strong><span t-field="o.total_exento"/></strong></strong>
+                                </td>
+                                <td class="text-right" style="font-size:12px !important;">
+                                    <strong><strong><span t-field="o.total_iva"/></strong></strong>
+                                </td>
+                                <td class="text-right" style="font-size:12px !important;">
+                                    <strong><strong><span t-field="o.total"/></strong></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="text-left" style="font-size:12px !important;">
+                                    <strong>Cantidad de Documentos</strong>
+                                </td>
+                                <td class="text-right" style="font-size:12px !important;">
+                                    <strong><span t-esc="len(o.move_ids)"/></strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="libro_cv" >
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="l10n_cl_electronic_invoicing.layout_libro" t-lang="o.company_id.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

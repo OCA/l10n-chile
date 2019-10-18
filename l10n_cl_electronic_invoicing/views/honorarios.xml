@@ -1,0 +1,243 @@
+<odoo>
+
+    <record id="honorarios_form" model="ir.ui.view">
+        <field name="name">account.honorarios.form</field>
+        <field name="model">account.invoice</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <form string="Boletas Honorarios">
+                <field name="available_journal_document_class_ids" invisible="1"/>
+                <field name="use_documents" invisible="1"/>
+                <field name="sii_document_number" invisible="1"/>
+                <field name="move_name" invisible="1"/>
+                <header>
+                    <button name="invoice_open" states="draft,proforma2" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
+                    <button name="%(account.action_account_invoice_payment)d" type="action" states="open" string="Register Payment" groups="account.group_account_invoice" class="oe_highlight"/>
+                    <button name="%(account.action_account_invoice_refund)d" type='action' string='Ask Refund' groups="account.group_account_invoice" attrs="{'invisible': ['|',('type', '=', 'in_refund'),('state','not in',('open','paid'))]}"/>
+                    <button name="invoice_cancel" states="draft,proforma2" string="Cancel Bill" groups="account.group_account_invoice"/>
+                    <button name="action_cancel_draft" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,paid" statusbar_colors='{"proforma":"blue","proforma2":"blue"}'/>
+                </header>
+                <div class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                    You have <bold><a class="alert-link" href="#outstanding" role="button">outstanding debits</a></bold> for this supplier. You can allocate them to mark this bill as paid.
+                </div>
+                <field name="has_outstanding" invisible="1"/>
+                <sheet string="Vendor Bill">
+                    <div>
+                        <span class="o_form_label" attrs="{'invisible': ['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_invoice')]}">Draft Bill</span>
+                        <span class="o_form_label" attrs="{'invisible': ['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_refund')]}">Draft Refund</span>
+                        <span class="o_form_label" attrs="{'invisible': ['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_invoice')]}">Bill</span>
+                        <span class="o_form_label " attrs="{'invisible': ['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_refund')]}">Refund</span>
+                        <h1 class="mt0">
+                            <field name="number" class="oe_inline"  attrs="{'invisible': [('state', '=', 'draft')]}" invisible="True"/>
+                            <field name="document_number" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <field name="type" invisible="1"/>
+                    <group>
+                        <group>
+                            <field string="Vendor" name="partner_id"
+                                   context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}"
+                                   domain="[('supplier', '=', True),
+                                        ('responsability_id.tp_sii_code','=','2')]"/>
+                            <field name="reference" string="Vendor Reference"/>
+                        </group>
+                        <group>
+                            <field name="origin" attrs="{'invisible': [('origin', '=', False)]}"/>
+                            <field name="date_invoice" string="Bill Date"/>
+                            <field name="date_due"/>
+                            <field name="move_name" invisible="1"/>
+                            <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                            <field name="company_currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Bill">
+                            <field context="{'type': type, 'journal_id': journal_id}" name="invoice_line_ids">
+                                <tree string="Bill lines" editable="bottom">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="product_id"
+                                           context="{'partner_id': parent.partner_id}"/>
+                                    <field name="name"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="account_id" groups="account.group_account_user"
+                                           domain="[('company_id', '=', parent.company_id), ('internal_type', '=', 'other')]"/>
+                                    <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                           domain="[('company_id', '=', parent.company_id), ('account_type', '=', 'normal')]"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id" groups="uom.group_uom"/>
+                                    <field name="price_unit"/>
+                                    <field name="discount" groups="sale.group_discount_per_so_line"/>
+                                    <field name="invoice_line_tax_ids" widget="many2many_tags" context="{'type':parent.type}"
+                                           domain="[('type_tax_use','=','purchase'),('company_id', '=', parent.company_id)]" options="{'no_create': True}"/>
+                                    <field name="price_subtotal"/>
+                                    <field name="currency_id" invisible="1"/>
+                                </tree>
+                            </field>
+                            <group>
+                                <group>
+                                    <div class="oe_inline">
+                                        <field name="tax_line_ids">
+                                            <tree editable="bottom" string="Taxes">
+                                                <field name="name"/>
+                                                <!--Need invisible fields for on_change to create all necessary info -->
+                                                <field name="tax_id" invisible="1"/>
+                                                <field name="sequence" invisible="1"/>
+                                                <field name="manual" invisible="1"/>
+                                                <field name="account_id" groups="account.group_account_invoice"/>
+                                                <field name="retention_account_id" groups="account.group_account_invoice"/>
+                                                <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id), ('account_type', '=', 'normal')]" groups="analytic.group_analytic_accounting"/>
+                                                <field name="amount"/>
+                                                <field name="amount_retention" />
+                                                <field name="currency_id" invisible="1"/>
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_untaxed"/>
+                                    <field name="amount_tax"/>
+                                    <field name="amount_retention" attrs="{'invisible':[('amount_retention', '=', 0)]}" />
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                    <field name="payments_widget" colspan="2" nolabel="1" widget="payment"/>
+                                    <field name="residual" class="oe_subtotal_footer_separator" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                                    <field name="reconciled" invisible="1"/>
+                                    <field name="outstanding_credits_debits_widget" colspan="2" nolabel="1" widget="payment" attrs="{'invisible': [('state', 'not in', 'open')]}"/>
+                                </group>
+                                <group string="Tratamiento del IVA">
+                                    <field name="no_rec_code" />
+                                    <field name="iva_uso_comun" />
+                                </group>
+                            </group>
+                            <div>
+                                <field name="comment" placeholder="Additional notes..."/>
+                            </div>
+                        </page>
+                        <page string="Other Info">
+                            <group>
+                                <group>
+                                    <field name="journal_id" groups="account.group_account_user" options="{'no_create': True}"
+                                           attrs="{'readonly':['|','|',('state','!=','draft'),('sii_document_number','!=',False),('move_name','!=',False)]}"
+                                           domain="[('journal_document_class_ids.sii_document_class_id.document_letter_id.name','=','M')]"/>
+                                    <field name="journal_document_class_id"
+                                           attrs="{'invisible':[('use_documents','=',False)],'required':[('use_documents','=',True)],'readonly':['|',('state','!=','draft'),('sii_document_number','!=',False)]}"
+                                           options="{'no_create': True}"/>
+                                    <field domain="[('partner_id', '=', partner_id)]" name="partner_bank_id" invisible="1"/>
+                                    <field name="user_id" string="Responsible" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'account.group_account_invoice']}"/>
+                                    <field domain="[('company_id', '=', company_id), ('internal_type', '=', 'payable'), ('deprecated', '=', False)]"
+                                           name="account_id" groups="account.group_account_manager"/>
+                                    <field name="name" invisible="1"/>
+                                    <field name="payment_term_id" options="{'no_create': True}" attrs="{'invisible': [('payment_term_id','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <field name="fiscal_position_id" options="{'no_create': True}" placeholder="Auto-detect"/>
+                                    <field name="move_id" groups="account.group_account_manager" attrs="{'invisible': [('move_id', '=', False)]}"/>
+                                    <field name="date" domain="[('state', '=', 'draft'), ('company_id', '=', company_id)]" groups="account.group_account_user"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                </group>
+                            </group>
+                            <field name="referencias" mode="tree">
+                                <form>
+                                    <group>
+                                        <field name="origen" required="True"/>
+                                        <field name="sii_referencia_TpoDocRef" required="True" />
+                                        <field name="sii_referencia_CodRef"/>
+                                        <field name="motivo"/>
+                                        <field name="fecha_documento"/>
+                                    </group>
+                                </form>
+                                <tree>
+                                    <field name="origen" required="True"/>
+                                    <field name="sii_referencia_TpoDocRef" required="True" />
+                                    <field name="sii_referencia_CodRef"/>
+                                    <field name="motivo"/>
+                                    <field name="fecha_documento"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="honorarios_tree" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                <field name="partner_id" groups="base.group_user" string="Vendor"/>
+                <field name="date_invoice" string="Bill Date"/>
+                <field name="number"/>
+                <field name="reference"/>
+                <field name="commercial_partner_id" invisible="1"/>
+                <field name="name" invisible="1"/>
+                <field name="journal_id" invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                <field name="date_due"/>
+                <field name="origin"/>
+                <field name="amount_total_signed" sum="Total"/>
+                <field name="residual_signed" string="To Pay" sum="To pay"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="company_currency_id" invisible="1"/>
+                <field name="state"/>
+                <field name="type" invisible="context.get('type',True)"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="honorarios_tree2" model="ir.actions.act_window">
+        <field name="name">Boletas Honorarios</field>
+        <field name="res_model">account.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','in',('in_invoice', 'in_refund'))]</field>
+        <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase', 'honorarios': True}</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to record a new vendor bill.
+            </p><p>
+            You can control the invoice from your vendor according to
+            what you purchased or received.
+        </p>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="load_honorarios">
+        <field name="name">Honorarios</field>
+        <field name="model_id" ref="model_account_invoice"/>
+        <field name="code">
+bh = self.pool.get('ir.model.data').get_object(cr, uid, 'l10n_cl_electronic_invoicing', 'dc_m_f_dtn')
+bhe = self.pool.get('ir.model.data').get_object(cr, uid, 'l10n_cl_electronic_invoicing', 'dc_m_d_dtn')
+journals_class_o = self.pool.get('account.journal.sii.document.class')
+journal_class = journals_class_o.browse(cr, uid, journals_class_o.search(cr, uid, [('sii_document_class_id.sii_code', 'in', [bh.sii_code, bhe.sii_code]), ('journal_id.type', 'in', ['purchase'])]))
+ids = []
+for j in journal_class:
+    if not j.journal_id.id in ids:
+        ids.append(j.journal_id.id)
+        vista = self.pool.get('ir.model.data').get_object(cr, uid, 'l10n_cl_electronic_invoicing', 'honorarios_form')
+        arbol = self.pool.get('ir.model.data').get_object(cr, uid, 'l10n_cl_electronic_invoicing', 'honorarios_tree2')
+        action = {
+            "name": "Honorarios",
+            "type": "ir.actions.act_window",
+            "view_mode": "tree,kanban,form",
+            "act_window_id": arbol.id,
+            "res_model":  'account.invoice',
+            "domain": [('type', 'in', ('in_invoice', 'in_refund')), ('journal_id', 'in', ids)],
+            "context": {'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase', 'honorarios': True},
+            "filter": True,
+        }
+        </field>
+    </record>
+
+    <menuitem id="menu_account_honorarios" name="Honorarios"
+              parent="account.menu_finance_payables"
+              action="l10n_cl_electronic_invoicing.load_honorarios" sequence="100"/>
+
+</odoo>

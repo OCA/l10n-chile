@@ -1,16 +1,12 @@
+<!-- pylint:disable=duplicate-xml-record-id -->
 <odoo>
-
-    <menuitem id="account_reports_cl_statements_menu"
-              name="Chilean Statements"
-              parent="account.menu_finance_reports"
-              sequence="3"
-              groups="account.group_account_user"/>
 
     <!-- Account Types -->
     <record id="account_account_type_NCLASIFICADO" model="account.account.type">
         <field name="name">Cuentas No Clasificadas</field>
     </record>
 
+    <!-- Account Chart Templates -->
     <record id="cl_chart_template_sii" model="account.chart.template">
         <field name="name">Chile - Plan de Cuentas SII</field>
         <field name="currency_id" ref="base.CLP"/>
@@ -1244,6 +1240,7 @@
         <field name="chart_template_id" ref="cl_chart_template_sii"/>
     </record>
 
+    <!-- Account Chart Templates -->
     <record id="cl_chart_template_sii" model="account.chart.template">
         <field name="property_account_receivable_id" ref="110301"/>
         <field name="property_account_payable_id" ref="210201"/>

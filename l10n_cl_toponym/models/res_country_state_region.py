@@ -6,8 +6,9 @@
 from odoo import fields, models
 
 
-class ResStateRegion(models.Model):
+class ResCountryStateRegion(models.Model):
     _name = 'res.country.state.region'
+    _description = 'Region of a state'
 
     name = fields.Char(string='Region Name', required=True,
                        help='The state code.')
