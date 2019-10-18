@@ -1,31 +1,25 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_cl_electronic_invoicing
+#	* l10n_cl_electronic_invoicing
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2019-04-24 12:59-0400\n"
-"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_move_book__state
-msgid ""
-"\n"
+msgid "\n"
 "         * The 'Draft' status is used when a user is encoding a new and\n"
 "           unconfirmed Invoice.\n"
 "\n"
-"         * The 'Pro-forma' status is used the invoice does not have an "
-"invoice\n"
+"         * The 'Pro-forma' status is used the invoice does not have an invoice\n"
 "           number.\n"
 "\n"
 "         * The 'Open' status is used when user create invoice, an invoice\n"
@@ -41,13 +35,11 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_result
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__state
-msgid ""
-"\n"
+msgid "\n"
 "         * The 'Draft' status is used when a user is encoding a new and\n"
 "           unconfirmed Invoice.\n"
 "\"\n"
-"         * The 'Pro-forma' status is used the invoice does not have an "
-"invoice\n"
+"         * The 'Pro-forma' status is used the invoice does not have an invoice\n"
 "           number.\n"
 "\"\n"
 "         * The 'Open' status is used when user create invoice, an invoice\n"
@@ -62,18 +54,14 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_journal_document_config__weird_documents
-msgid ""
-"\n"
+msgid "\n"
 "Include unusual taxes documents, as transfer invoice, and reissue\n"
+""
 msgstr ""
-"\n"
-"Incluye documentos de impuestos inusuales, como factura de transferencia y "
-"reemisión\n"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_journal_document_config__dte_register
-msgid ""
-"\n"
+msgid "\n"
 "This option allows you to register electronic documents (DTEs) issued by\n"
 "MiPyme SII Portal, Third parties services, or by Odoo itself\n"
 "(to register  DTEs issued by Odoo l10n_cl_dte/caf modules are needed."
@@ -87,12 +75,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
 msgid "% discount"
-msgstr "% descuento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 msgid "- Next Number:"
-msgstr "- Próximo Número:"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,code:l10n_cl_electronic_invoicing.eco_acti_101011
@@ -3481,84 +3469,65 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "                            Cajero:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "                            Dirección:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "                            Fecha:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "                            Número de Identificación:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "                            Rut:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "            Phone:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "            Shop:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
-msgid ""
-"<br/>\n"
+msgid "<br/>\n"
 "            User:"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
-msgid ""
-"<span class=\"o_form_label\" attrs=\"{'invisible': ['|',('state','&lt;"
-"&gt;','draft'), ('type','&lt;&gt;','in_invoice')]}\">Draft Bill</span>\n"
-"                        <span class=\"o_form_label\" attrs=\"{'invisible': "
-"['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_refund')]}\">Draft "
-"Refund</span>\n"
-"                        <span class=\"o_form_label\" attrs=\"{'invisible': "
-"['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_invoice')]}\">Bill</"
-"span>\n"
-"                        <span class=\"o_form_label \" attrs=\"{'invisible': "
-"['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_refund')]}\">Refund</"
-"span>"
+msgid "<span class=\"o_form_label\" attrs=\"{'invisible': ['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_invoice')]}\">Draft Bill</span>\n"
+"                        <span class=\"o_form_label\" attrs=\"{'invisible': ['|',('state','&lt;&gt;','draft'), ('type','&lt;&gt;','in_refund')]}\">Draft Refund</span>\n"
+"                        <span class=\"o_form_label\" attrs=\"{'invisible': ['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_invoice')]}\">Bill</span>\n"
+"                        <span class=\"o_form_label \" attrs=\"{'invisible': ['|',('state', '=', 'draft'), ('type','&lt;&gt;','in_refund')]}\">Refund</span>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_clean_signature_confirmation
-msgid ""
-"<span class=\"o_form_label\">This operation will clear all your\n"
-"                                    signature information. After this, you "
-"will need to\n"
-"                                    attach a signature file again. Are you "
-"sure of this?\n"
+msgid "<span class=\"o_form_label\">This operation will clear all your\n"
+"                                    signature information. After this, you will need to\n"
+"                                    attach a signature file again. Are you sure of this?\n"
 "                                </span>"
 msgstr ""
 
@@ -3569,27 +3538,18 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<span style=\"text-align: center; color:gray; font-family:Arial; font-"
-"size:9px;\">Gracias por Preferirnos, somos un equipo de  que trabajamos para "
-"usted\n"
+msgid "<span style=\"text-align: center; color:gray; font-family:Arial; font-size:9px;\">Gracias por Preferirnos, somos un equipo de  que trabajamos para usted\n"
 "                    </span><br/>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<span style=\"text-align:left; font-size:9px !important;\">\"El acuse de "
-"recibo que se declara en este acto, de acuerdo a lo dispuesto en la letra b) "
-"del Artículo 4°, y la letra c) del Artículo 5° de la Ley 19.983, acredita "
-"que la entrega de mercaderías o servicio(s) prestado(s) ha(n) sido "
-"recibido(s)\"</span>"
+msgid "<span style=\"text-align:left; font-size:9px !important;\">\"El acuse de recibo que se declara en este acto, de acuerdo a lo dispuesto en la letra b) del Artículo 4°, y la letra c) del Artículo 5° de la Ley 19.983, acredita que la entrega de mercaderías o servicio(s) prestado(s) ha(n) sido recibido(s)\"</span>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_input_layout
-msgid ""
-"<span>Boleta Afecta</span>\n"
+msgid "<span>Boleta Afecta</span>\n"
 "                            <br/>"
 msgstr ""
 
@@ -3605,15 +3565,13 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_input_layout
-msgid ""
-"<strong class=\"pull-left\">Boleta Nº:</strong>\n"
+msgid "<strong class=\"pull-left\">Boleta Nº:</strong>\n"
 "                            <span class=\"fa fa-book\"/>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_input_layout
-msgid ""
-"<strong class=\"pull-left\">Fecha:</strong>\n"
+msgid "<strong class=\"pull-left\">Fecha:</strong>\n"
 "                            <span class=\"fa fa-calendar\"/>"
 msgstr ""
 
@@ -3624,33 +3582,27 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<strong style=\"text-align:left; font-size:9px !important;\">FECHA:</strong>"
+msgid "<strong style=\"text-align:left; font-size:9px !important;\">FECHA:</strong>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<strong style=\"text-align:left; font-size:9px !important;\">FIRMA:</strong>"
+msgid "<strong style=\"text-align:left; font-size:9px !important;\">FIRMA:</strong>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<strong style=\"text-align:left; font-size:9px !important;\">NOMBRE:</strong>"
+msgid "<strong style=\"text-align:left; font-size:9px !important;\">NOMBRE:</strong>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<strong style=\"text-align:left; font-size:9px !important;\">R.U.T.:</strong>"
+msgid "<strong style=\"text-align:left; font-size:9px !important;\">R.U.T.:</strong>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-msgid ""
-"<strong style=\"text-align:left; font-size:9px !important;\">RECINTO:</"
-"strong>"
+msgid "<strong style=\"text-align:left; font-size:9px !important;\">RECINTO:</strong>"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -3720,9 +3672,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_invoice_document_with_payments
-#, fuzzy
 msgid "<strong>Monto adeudado</strong>"
-msgstr "<strong>Importe vencido</strong>"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
@@ -3731,9 +3682,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
-#, fuzzy
 msgid "<strong>Nota:</strong>"
-msgstr "<strong>Importe vencido</strong>"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
@@ -3772,11 +3722,9 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_input_layout
-msgid ""
-"<u>\n"
+msgid "<u>\n"
 "                            <b>\n"
-"                                <font class=\"text-black\">Boleta a "
-"consultar</font>\n"
+"                                <font class=\"text-black\">Boleta a consultar</font>\n"
 "                            </b>\n"
 "                        </u>"
 msgstr ""
@@ -3785,8 +3733,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_books
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_consumo_folios
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_libro_honorarios
-msgid ""
-"A journal entry consists of several journal items, each of\n"
+msgid "A journal entry consists of several journal items, each of\n"
 "          which is either a debit or a credit transaction."
 msgstr ""
 
@@ -3828,9 +3775,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_journal_document_config
-#, fuzzy
 msgid "Account Journal Document Config"
-msgstr "Configuración de documentos de diario"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_move_book
@@ -3883,7 +3829,8 @@ msgid "Acepta Contenido del Documento"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 #: selection:mail.message.dte.document,state:0
 msgid "Aceptado"
@@ -3910,15 +3857,14 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_masive_process_wizard__action
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__action
-#, fuzzy
 msgid "Action"
-msgstr "Activo"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_needaction
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_needaction
 msgid "Action Needed"
-msgstr "Acción requerida"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__active
@@ -3931,13 +3877,11 @@ msgstr "Acción requerida"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_optional_type__active
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_responsability__active
 msgid "Active"
-msgstr "Activo"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_900002
-msgid ""
-"Actividades artísticas realizadas por bandas de música, compañías de teatro, "
-"circenses y similares"
+msgid "Actividades artísticas realizadas por bandas de música, compañías de teatro, circenses y similares"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -3972,9 +3916,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_782000
-msgid ""
-"Actividades de agencias de empleo temporal (incluye empresas de servicios "
-"transitorios)"
+msgid "Actividades de agencias de empleo temporal (incluye empresas de servicios transitorios)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -3989,9 +3931,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_749004
-msgid ""
-"Actividades de agencias y agentes de representación de actores, deportistas "
-"y otras figuras públicas"
+msgid "Actividades de agencias y agentes de representación de actores, deportistas y otras figuras públicas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4016,44 +3956,32 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_99001
-msgid ""
-"Actividades de apoyo para la explotación de otras minas y canteras prestados "
-"por empresas"
+msgid "Actividades de apoyo para la explotación de otras minas y canteras prestados por empresas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_99002
-msgid ""
-"Actividades de apoyo para la explotación de otras minas y canteras prestados "
-"por profesionales"
+msgid "Actividades de apoyo para la explotación de otras minas y canteras prestados por profesionales"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_91001
-msgid ""
-"Actividades de apoyo para la extracción de petróleo y gas natural prestados "
-"por empresas"
+msgid "Actividades de apoyo para la extracción de petróleo y gas natural prestados por empresas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_91002
-msgid ""
-"Actividades de apoyo para la extracción de petróleo y gas natural prestados "
-"por profesionales"
+msgid "Actividades de apoyo para la extracción de petróleo y gas natural prestados por profesionales"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_900003
-msgid ""
-"Actividades de artistas realizadas de forma independiente: actores, músicos, "
-"escritores, entre otros"
+msgid "Actividades de artistas realizadas de forma independiente: actores, músicos, escritores, entre otros"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_881000
-msgid ""
-"Actividades de asistencia social sin alojamiento para personas de edad y "
-"personas con discapacidad"
+msgid "Actividades de asistencia social sin alojamiento para personas de edad y personas con discapacidad"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4073,16 +4001,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_872000
-msgid ""
-"Actividades de atención en instituciones para personas con discapacidad "
-"mental y toxicómanos"
+msgid "Actividades de atención en instituciones para personas con discapacidad mental y toxicómanos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_873000
-msgid ""
-"Actividades de atención en instituciones para personas de edad y personas "
-"con discapacidad física"
+msgid "Actividades de atención en instituciones para personas de edad y personas con discapacidad física"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4117,8 +4041,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_862010
-msgid ""
-"Actividades de centros de salud municipalizados (servicios de salud pública)"
+msgid "Actividades de centros de salud municipalizados (servicios de salud pública)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4148,16 +4071,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_620200
-msgid ""
-"Actividades de consultoría de informática y de gestión de instalaciones "
-"informáticas"
+msgid "Actividades de consultoría de informática y de gestión de instalaciones informáticas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_692000
-msgid ""
-"Actividades de contabilidad, teneduría de libros y auditoría; consultoría "
-"fiscal"
+msgid "Actividades de contabilidad, teneduría de libros y auditoría; consultoría fiscal"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4177,15 +4096,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_390000
-msgid ""
-"Actividades de descontaminación y otros servicios de gestión de desechos"
+msgid "Actividades de descontaminación y otros servicios de gestión de desechos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_563001
-msgid ""
-"Actividades de discotecas y cabaret (night club), con predominio del "
-"servicio de bebidas"
+msgid "Actividades de discotecas y cabaret (night club), con predominio del servicio de bebidas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4200,16 +4116,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_591300
-msgid ""
-"Actividades de distribución de películas cinematográficas, videos y "
-"programas de televisión"
+msgid "Actividades de distribución de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_102050
-msgid ""
-"Actividades de elaboración y conservación de pescado, realizadas en barcos "
-"factoría"
+msgid "Actividades de elaboración y conservación de pescado, realizadas en barcos factoría"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4219,8 +4131,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_591400
-msgid ""
-"Actividades de exhibición de películas cinematográficas y cintas de video"
+msgid "Actividades de exhibición de películas cinematográficas y cintas de video"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4245,9 +4156,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_803000
-msgid ""
-"Actividades de investigación (incluye actividades de investigadores y "
-"detectives privados)"
+msgid "Actividades de investigación (incluye actividades de investigadores y detectives privados)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4352,16 +4261,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_591200
-msgid ""
-"Actividades de postproducción de películas cinematográficas, videos y "
-"programas de televisión"
+msgid "Actividades de postproducción de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_591100
-msgid ""
-"Actividades de producción de películas cinematográficas, videos y programas "
-"de televisión"
+msgid "Actividades de producción de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4386,9 +4291,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_960902
-msgid ""
-"Actividades de salones de masajes, baños turcos, saunas, servicio de baños "
-"públicos"
+msgid "Actividades de salones de masajes, baños turcos, saunas, servicio de baños públicos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4398,9 +4301,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_802000
-msgid ""
-"Actividades de servicios de sistemas de seguridad (incluye servicios de "
-"cerrajería)"
+msgid "Actividades de servicios de sistemas de seguridad (incluye servicios de cerrajería)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4435,16 +4336,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_750002
-msgid ""
-"Actividades de veterinarios, técnicos y otro personal auxiliar, prestados de "
-"forma independiente"
+msgid "Actividades de veterinarios, técnicos y otro personal auxiliar, prestados de forma independiente"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_682000
-msgid ""
-"Actividades inmobiliarias realizadas a cambio de una retribución o por "
-"contrata"
+msgid "Actividades inmobiliarias realizadas a cambio de una retribución o por contrata"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4465,7 +4362,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__code
 msgid "Activity Code"
-msgstr "Código de Actividad"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_32200
@@ -4475,7 +4372,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Additional notes..."
-msgstr "Notas adicionales..."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_661100
@@ -4560,29 +4457,22 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_773001
-msgid ""
-"Alquiler de equipos de transporte sin operario, excepto vehículos automotores"
+msgid "Alquiler de equipos de transporte sin operario, excepto vehículos automotores"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_773002
-msgid ""
-"Alquiler de maquinaria y equipo agropecuario, forestal, de construcción e "
-"ing. civil, sin operarios"
+msgid "Alquiler de maquinaria y equipo agropecuario, forestal, de construcción e ing. civil, sin operarios"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_773003
-msgid ""
-"Alquiler de maquinaria y equipo de oficina, sin operarios (sin servicio "
-"administrativo)"
+msgid "Alquiler de maquinaria y equipo de oficina, sin operarios (sin servicio administrativo)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_772900
-msgid ""
-"Alquiler de otros efectos personales y enseres domésticos (incluye "
-"mobiliario para eventos)"
+msgid "Alquiler de otros efectos personales y enseres domésticos (incluye mobiliario para eventos)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4607,7 +4497,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_tax__amount
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__amount
 msgid "Amount"
-msgstr "Importe"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.move.book.honorarios,tipo_libro:0
@@ -4631,7 +4521,8 @@ msgid "Anulaciones Manuales de Folio"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_cf_filter
 msgid "Anulado"
@@ -4659,9 +4550,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_774000
-msgid ""
-"Arrendamiento de propiedad intelectual y similares, excepto obras protegidas "
-"por derechos de autor"
+msgid "Arrendamiento de propiedad intelectual y similares, excepto obras protegidas por derechos de autor"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4678,20 +4567,20 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_supplier_invoice_form
 msgid "Ask Refund"
-msgstr "Nota de Crédito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_book_compra_venta_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 msgid "Ask for DTE"
-msgstr "Consulta DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_attachment_count
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_attachment_count
 msgid "Attachment Count"
-msgstr "Conteo de archivos adjuntos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__authorized_users_ids
@@ -4699,13 +4588,13 @@ msgstr "Conteo de archivos adjuntos"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_user_signature_tab_form
 msgid "Authorized Users"
-msgstr "Usuarios autorizados"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_user_signature_tab_form
 msgid "Authorized Users for this Certificate"
-msgstr "Usuarios autorizados para este certificado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.res_config_settings_view_form
@@ -4731,17 +4620,17 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Auto-detect"
-msgstr "Auto-detección"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__available_journal_document_class_ids
 msgid "Available Journal Document Classes"
-msgstr "Documento de diario disponibles"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__internet_available
 msgid "Available at Internet"
-msgstr "Disponible en Internet"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_boletas__tipo_boleta
@@ -4762,28 +4651,28 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_batch_number
 msgid "Batch Number"
-msgstr "Número Batch"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__sii_batch_number
 msgid "Batch number for processing multiple invoices together"
-msgstr "Número de Batch para procesar varias facturas juntas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Bill"
-msgstr "Cuenta"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
 msgid "Bill Date"
-msgstr "Fecha factura"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Bill lines"
-msgstr "Líneas de factura"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.move.book,tipo_operacion:0
@@ -4818,7 +4707,8 @@ msgid "Book"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.book.honorarios,state:0
 #: selection:account.move.consumo_folios,state:0
 msgid "Borrador"
@@ -4826,8 +4716,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_found_layout
-msgid ""
-"Buscar\n"
+msgid "Buscar\n"
 "                nuevamente"
 msgstr ""
 
@@ -4882,7 +4771,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_document_config_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_clean_signature_confirmation
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
@@ -4901,25 +4790,20 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move__canceled
-#, fuzzy
 msgid "Cancelled?"
-msgstr "Cancelar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/notas.py:52
 #, python-format
 msgid "Cannot refund draft/proforma/cancelled invoice."
-msgstr "No se puede reembolsar estatus borrador/proforma/factura cancelada."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/notas.py:55
 #, python-format
-msgid ""
-"Cannot refund invoice which is already reconciled, invoice should be "
-"unreconciled first. You can only refund this invoice."
+msgid "Cannot refund invoice which is already reconciled, invoice should be unreconciled first. You can only refund this invoice."
 msgstr ""
-"No se puede reembolsar la factura que ya está conciliada. Se debe "
-"desconciliar la factura primero. Solo puede reembolsar esta factura."
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios_impuestos__cantidad
@@ -4951,9 +4835,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_862022
-msgid ""
-"Centros de atención odontológica privados (establecimientos de atención "
-"ambulatoria)"
+msgid "Centros de atención odontológica privados (establecimientos de atención ambulatoria)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -4976,17 +4858,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_user_signature_tab_form
 msgid "Certificate Key"
-msgstr "Llave de Certificado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__cert_owner_id
 msgid "Certificate Owner"
-msgstr "Dueño de Certificado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.popup_certificate_form
 msgid "Certificate Stuff"
-msgstr "Cosas de Certificado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
@@ -5007,7 +4889,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__city_id
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_regional_offices_form
@@ -5018,29 +4900,29 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_user_signature_tab_form
 msgid "Clean Signature"
-msgstr "Limpiar Firma"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_clean_signature_confirmation
 msgid "Clean Signature Information"
-msgstr "Limpia Información de Firma"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_invoice_tree1
 msgid "Click to create a customer invoice."
-msgstr "Click para crear una factura de venta."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_books
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_consumo_folios
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_libro_honorarios
 msgid "Click to create a journal entry."
-msgstr "Click para crear una entrada de diario."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.honorarios_tree2
 msgid "Click to record a new vendor bill."
-msgstr "Click para crear factura de proveedor."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
@@ -5051,7 +4933,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_type__code
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_responsability__code
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_class__code_template
@@ -5061,7 +4943,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: sql_constraint:sii.responsability:0
 msgid "Code must be unique!"
-msgstr "El código debe ser único!"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__sii_code
@@ -5076,7 +4958,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__company_id
@@ -5085,14 +4967,13 @@ msgstr "Compañías"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__company_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__company_id
 msgid "Company"
-msgstr "Compañía"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/caf.py:110
 #, python-format
 msgid "Company vat %s should be the same that assigned company's vat: %s!"
 msgstr ""
-"El IVA de la empresa %s debe ser el mismo IVA asignado a la empresa: %s!"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__company_id
@@ -5119,7 +5000,8 @@ msgid "Compras"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,no_rec_code:0 selection:account.move,no_rec_code:0
+#: selection:account.invoice,no_rec_code:0
+#: selection:account.move,no_rec_code:0
 msgid "Compras destinadas a IVA a generar operaciones no gravados o exentas."
 msgstr ""
 
@@ -5133,12 +5015,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_sii_concept_type
 msgid "Concept Types"
-msgstr "Tipos de conceptos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de Configuración"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_dte_config
@@ -5154,7 +5036,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_masive_dte_process_wizard_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_document_config_form
 msgid "Confirm"
-msgstr "Confirmar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_949904
@@ -5233,7 +5115,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__contact_id
@@ -5285,7 +5167,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_res_country
 msgid "Country"
-msgstr "País"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_invoice_notas
@@ -5304,9 +5186,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.dte.masive.process.wizard,action:0
-#, fuzzy
 msgid "Create"
-msgstr "Creado por"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.dte.masive.process.wizard,action:0
@@ -5316,7 +5197,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_cl_form
 msgid "Create Journal Documents"
-msgstr "Crear Documentos de Diario"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.dte.masive.process.wizard,action:0
@@ -5360,7 +5241,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__create_uid
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__create_date
@@ -5399,24 +5280,23 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__create_date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios_tax__credit
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_tax__credit
-#, fuzzy
 msgid "Credit"
-msgstr "Rectificativa"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_invoice_refund
 msgid "Credit Note"
-msgstr "Rectificativa"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.document.class,document_type:0
 msgid "Credit Notes"
-msgstr "Notas de Crédito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.server,name:l10n_cl_electronic_invoicing.ir_cron_auto_accept_documents_ir_actions_server
@@ -5464,8 +5344,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_14102
-msgid ""
-"Cría de ganado bovino para la producción de carne o como ganado reproductor"
+msgid "Cría de ganado bovino para la producción de carne o como ganado reproductor"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5535,8 +5414,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_12200
-msgid ""
-"Cultivo de frutas tropicales y subtropicales (incluye el cultivo de paltas)"
+msgid "Cultivo de frutas tropicales y subtropicales (incluye el cultivo de paltas)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5596,9 +5474,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_12700
-msgid ""
-"Cultivo de plantas con las que se preparan bebidas (incluye el cultivo de "
-"café, té y mate)"
+msgid "Cultivo de plantas con las que se preparan bebidas (incluye el cultivo de café, té y mate)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5608,9 +5484,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_13000
-msgid ""
-"Cultivo de plantas vivas incluida la producción en viveros (excepto viveros "
-"forestales)"
+msgid "Cultivo de plantas vivas incluida la producción en viveros (excepto viveros forestales)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5620,9 +5494,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_15000
-msgid ""
-"Cultivo de productos agrícolas en combinación con la cría de animales "
-"(explotación mixta)"
+msgid "Cultivo de productos agrícolas en combinación con la cría de animales (explotación mixta)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5632,9 +5504,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_11111
-msgid ""
-"Cultivo de semillas de cereales, legumbres y oleaginosas (excepto semillas "
-"de raps y maravilla)"
+msgid "Cultivo de semillas de cereales, legumbres y oleaginosas (excepto semillas de raps y maravilla)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5694,15 +5564,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_11903
-msgid ""
-"Cultivos de semillas de flores; cultivo de semillas de plantas forrajeras"
+msgid "Cultivos de semillas de flores; cultivo de semillas de plantas forrajeras"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_11902
-msgid ""
-"Cultivos forrajeros en praderas mejoradas o sembradas; cultivos "
-"suplementarios forrajeros"
+msgid "Cultivos forrajeros en praderas mejoradas o sembradas; cultivos suplementarios forrajeros"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5711,7 +5578,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios_tax__currency_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_tax__currency_id
 msgid "Currency"
-msgstr "Moneda"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_151100
@@ -5749,14 +5616,13 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_dte_caf
-#, fuzzy
 msgid "DTE CAF"
-msgstr "Archivos CAF"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sequence_dte_caf_form
 msgid "DTE CAF Files"
-msgstr "Archivos CAF"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_ir_sequence__dte_caf_ids
@@ -5778,13 +5644,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_payment_term__dte_sii_code
 msgid "DTE Sii Code"
-msgstr "Código DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__num_dtes
-#, fuzzy
 msgid "DTES Number"
-msgstr "Número Final"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_dte_masive_send_wizard_form
@@ -5795,29 +5660,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios__date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__date
 msgid "Date"
-msgstr "Fecha"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios_tax__debit
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_tax__debit
-#, fuzzy
 msgid "Debit"
-msgstr "Notas de debito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.document.class,document_type:0
 msgid "Debit Notes"
-msgstr "Notas de debito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__invoice_vat_discrimination_default
-msgid ""
-"Define behaviour on invoices reports. Discrimination or not  will depend in "
-"partner and company responsability and SII letters        setup:\n"
-"            * If No Discriminate Default, if no match found it "
-"won't             discriminate by default.\n"
-"            * If Discriminate Default, if no match found it "
-"would             discriminate by default.\n"
+msgid "Define behaviour on invoices reports. Discrimination or not  will depend in partner and company responsability and SII letters        setup:\n"
+"            * If No Discriminate Default, if no match found it won't             discriminate by default.\n"
+"            * If Discriminate Default, if no match found it would             discriminate by default.\n"
 "            "
 msgstr ""
 
@@ -5833,8 +5693,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_found_layout
-msgid ""
-"Descargar\n"
+msgid "Descargar\n"
 "                PDF"
 msgstr ""
 
@@ -5878,8 +5737,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_110120
-msgid ""
-"Destilación, rectificación y mezclas de bebidas alcohólicas; excepto pisco"
+msgid "Destilación, rectificación y mezclas de bebidas alcohólicas; excepto pisco"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -5919,30 +5777,28 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__gdr_dtail
-#, fuzzy
 msgid "Discount Reason"
-msgstr "Descuento:"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__gdr_type
-#, fuzzy
 msgid "Discount Type"
-msgstr "Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
 msgid "Discount:"
-msgstr "Descuento:"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__vat_discriminated
 msgid "Discriminate VAT on Quotations and Sale Orders?"
-msgstr "¿Discriminar el IVA en las cotizaciones y pedidos de venta?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__vat_discriminated
 msgid "Discriminate VAT?"
-msgstr "Discrimina IVA"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__display_name
@@ -5981,7 +5837,7 @@ msgstr "Discrimina IVA"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__display_name
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_351030
@@ -5991,19 +5847,18 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_referencias__invoice_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__document_id
-#, fuzzy
 msgid "Document"
-msgstr "Documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_move_line_filter
 msgid "Document Class"
-msgstr "SII Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_sii_document_class
 msgid "Document Classes"
-msgstr "Tipos de documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_class__doc_code_prefix
@@ -6012,9 +5867,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_referencias__fecha_documento
-#, fuzzy
 msgid "Document Date"
-msgstr "Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_class__document_letter_id
@@ -6027,7 +5881,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_line__document_number
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__document_number
 msgid "Document Number"
-msgstr "Número de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_document_class_id
@@ -6040,26 +5894,26 @@ msgstr "Número de Documento"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_invoice_filter
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_partner_activity_inherit_form
 msgid "Document Type"
-msgstr "Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_sii_document_type
 msgid "Document Types"
-msgstr "Tipos de documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_partner__document_number
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__document_number
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_partner_activity_inherit_form
 msgid "Document number"
-msgstr "Número de documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__document_type_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_partner__document_type_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__document_type_id
 msgid "Document type"
-msgstr "Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document_line__document_id
@@ -6076,56 +5930,53 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__document_ids
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_cl_form
 msgid "Documents"
-msgstr "Documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal__journal_document_class_ids
 msgid "Documents Class"
-msgstr "Clases de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__journal_document_class_id
 msgid "Documents Type"
-msgstr "Tipo Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_book_compra_venta_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 msgid "Download XML"
-msgstr "Descargar XML"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 msgid "Download XML Exchange"
-msgstr "Descargar XML Intercambio"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:dte.caf,status:0 selection:sii.xml.envio,state:0
+#: selection:dte.caf,status:0
+#: selection:sii.xml.envio,state:0
 msgid "Draft"
-msgstr "Borrador"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__status
-msgid ""
-"Draft: means it has not been checked yet.\n"
+msgid "Draft: means it has not been checked yet.\n"
 "\n"
 "        You must press the Check button."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__status
-msgid ""
-"Draft: means it has not been checked yet.\n"
+msgid "Draft: means it has not been checked yet.\n"
 "You must press the\"check\" button."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_dte_caf__status
-msgid ""
-"Draft: means it has not been used yet. You must put in in used\n"
-"in order to make it available for use. Spent: means that the number "
-"interval\n"
+msgid "Draft: means it has not been used yet. You must put in in used\n"
+"in order to make it available for use. Spent: means that the number interval\n"
 "has been exhausted."
 msgstr ""
 
@@ -6190,9 +6041,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_104000
-msgid ""
-"Elaboración de aceites y grasas de origen vegetal y animal (excepto "
-"elaboración de mantequilla)"
+msgid "Elaboración de aceites y grasas de origen vegetal y animal (excepto elaboración de mantequilla)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6227,9 +6076,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_107500
-msgid ""
-"Elaboración de comidas y platos preparados envasados, rotulados y con "
-"información nutricional"
+msgid "Elaboración de comidas y platos preparados envasados, rotulados y con información nutricional"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6244,8 +6091,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_107400
-msgid ""
-"Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares"
+msgid "Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6305,9 +6151,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_102040
-msgid ""
-"Elaboración y conservación de crustáceos, moluscos y otros productos "
-"acuáticos, en plantas en tierra"
+msgid "Elaboración y conservación de crustáceos, moluscos y otros productos acuáticos, en plantas en tierra"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6317,9 +6161,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_102030
-msgid ""
-"Elaboración y conservación de otros pescados, en plantas en tierra (excepto "
-"barcos factoría)"
+msgid "Elaboración y conservación de otros pescados, en plantas en tierra (excepto barcos factoría)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6336,35 +6178,31 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_supplier_invoice_form
 msgid "Electronic Invoice"
-msgstr "Factura Electrónica"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__mail_id
 msgid "Email"
-msgstr "Correo electrónico"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_mail_compose_message
 msgid "Email composition wizard"
-msgstr "Asistente de redacción de correo electrónico."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.layout_libro
 msgid "Email:"
-msgstr "Correo electrónico:"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_661903
-msgid ""
-"Empresas de asesoría y consultoría en inversión financiera; sociedades de "
-"apoyo al giro"
+msgid "Empresas de asesoría y consultoría en inversión financiera; sociedades de apoyo al giro"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_711002
-msgid ""
-"Empresas de servicios de ingeniería y actividades conexas de consultoría "
-"técnica "
+msgid "Empresas de servicios de ingeniería y actividades conexas de consultoría técnica "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6375,7 +6213,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__final_nm
 msgid "End Number"
-msgstr "Número Final"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_854200
@@ -6404,16 +6242,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_850022
-msgid ""
-"Enseñanza primaria, secundaria científico humanista y técnico profesional "
-"privada"
+msgid "Enseñanza primaria, secundaria científico humanista y técnico profesional privada"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_850012
-msgid ""
-"Enseñanza primaria, secundaria científico humanista y técnico profesional "
-"pública"
+msgid "Enseñanza primaria, secundaria científico humanista y técnico profesional pública"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6448,17 +6282,19 @@ msgid "Entrando a MntTotal "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,no_rec_code:0 selection:account.move,no_rec_code:0
+#: selection:account.invoice,no_rec_code:0
+#: selection:account.move,no_rec_code:0
 msgid "Entregas gratuitas (premios, bonificaciones, etc.) recibidos."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_sii_document_class__sequence_id
 msgid "Entry Sequence"
-msgstr "Secuencia del asiento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 msgid "Enviado"
 msgstr ""
@@ -6523,15 +6359,13 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:231
 #, python-format
-msgid ""
-"Error when opening the signature. You may have entered the wrong key or the "
-"file is not compatible."
+msgid "Error when opening the signature. You may have entered the wrong key or the file is not compatible."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: sql_constraint:dte.caf:0
 msgid "Error! Filename Already Exist!"
-msgstr "Error! El archivo ya existe!"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.move.book,tipo_libro:0
@@ -6560,9 +6394,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_662100
-msgid ""
-"Evaluación de riesgos y daños (incluye actividades de liquidadores de "
-"seguros)"
+msgid "Evaluación de riesgos y daños (incluye actividades de liquidadores de seguros)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6581,9 +6413,10 @@ msgid "Expiration Date"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:res.company,status:0 selection:res.users,status:0
+#: selection:res.company,status:0
+#: selection:res.users,status:0
 msgid "Expired"
-msgstr "Expirado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/res_users.py:187
@@ -6608,9 +6441,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_101011
-msgid ""
-"Explotación de mataderos de bovinos, ovinos, equinos, caprinos, porcinos y "
-"camélidos "
+msgid "Explotación de mataderos de bovinos, ovinos, equinos, caprinos, porcinos y camélidos "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6665,9 +6496,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_89190
-msgid ""
-"Extracción de minerales para la fabricación de abonos y productos químicos n."
-"c.p."
+msgid "Extracción de minerales para la fabricación de abonos y productos químicos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6677,9 +6506,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_72999
-msgid ""
-"Extracción de otros minerales metalíferos no ferrosos n.c.p. (excepto zinc, "
-"plomo y manganeso)"
+msgid "Extracción de otros minerales metalíferos no ferrosos n.c.p. (excepto zinc, plomo y manganeso)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6754,16 +6581,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_139200
-msgid ""
-"Fabricación de artículos confeccionados de materiales textiles, excepto "
-"prendas de vestir"
+msgid "Fabricación de artículos confeccionados de materiales textiles, excepto prendas de vestir"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_259300
-msgid ""
-"Fabricación de artículos de cuchillería, herramientas de mano y artículos de "
-"ferretería"
+msgid "Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6808,16 +6631,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_201101
-msgid ""
-"Fabricación de carbón vegetal (excepto activado); fabricación de briquetas "
-"de carbón vegetal"
+msgid "Fabricación de carbón vegetal (excepto activado); fabricación de briquetas de carbón vegetal"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_292000
-msgid ""
-"Fabricación de carrocerías para vehículos automotores; fabricación de "
-"remolques y semirremolques"
+msgid "Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6832,9 +6651,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_281400
-msgid ""
-"Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de "
-"transmisión"
+msgid "Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6854,9 +6671,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_221100
-msgid ""
-"Fabricación de cubiertas y cámaras de caucho; recauchutado y renovación de "
-"cubiertas de caucho"
+msgid "Fabricación de cubiertas y cámaras de caucho; recauchutado y renovación de cubiertas de caucho"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6881,9 +6696,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_266000
-msgid ""
-"Fabricación de equipo de irradiación y equipo electrónico de uso médico y "
-"terapéutico"
+msgid "Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6918,16 +6731,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_352020
-msgid ""
-"Fabricación de gas; distribución de combustibles gaseosos por tubería, "
-"excepto regasificación de gnl"
+msgid "Fabricación de gas; distribución de combustibles gaseosos por tubería, excepto regasificación de gnl"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_251300
-msgid ""
-"Fabricación de generadores de vapor, excepto calderas de agua caliente para "
-"calefacción central"
+msgid "Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6937,8 +6746,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_162100
-msgid ""
-"Fabricación de hojas de madera para enchapado y tableros a base de madera"
+msgid "Fabricación de hojas de madera para enchapado y tableros a base de madera"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6953,9 +6761,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_325009
-msgid ""
-"Fabricación de instrumentos y materiales médicos, oftalmológicos y "
-"odontológicos n.c.p."
+msgid "Fabricación de instrumentos y materiales médicos, oftalmológicos y odontológicos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6965,9 +6771,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_202300
-msgid ""
-"Fabricación de jabones y detergentes, preparados para limpiar, perfumes y "
-"preparados de tocador"
+msgid "Fabricación de jabones y detergentes, preparados para limpiar, perfumes y preparados de tocador"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -6987,9 +6791,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_151200
-msgid ""
-"Fabricación de maletas, bolsos y artículos similares, artículos de "
-"talabartería y guarnicionería"
+msgid "Fabricación de maletas, bolsos y artículos similares, artículos de talabartería y guarnicionería"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7004,36 +6806,27 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_282200
-msgid ""
-"Fabricación de maquinaria para la conformación de metales y de máquinas "
-"herramienta"
+msgid "Fabricación de maquinaria para la conformación de metales y de máquinas herramienta"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_282500
-msgid ""
-"Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
+msgid "Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_282600
-msgid ""
-"Fabricación de maquinaria para la elaboración de productos textiles, prendas "
-"de vestir y cueros"
+msgid "Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_282400
-msgid ""
-"Fabricación de maquinaria para la explotación de minas y canteras y para "
-"obras de construcción"
+msgid "Fabricación de maquinaria para la explotación de minas y canteras y para obras de construcción"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_281700
-msgid ""
-"Fabricación de maquinaria y equipo de oficina (excepto computadores y equipo "
-"periférico)"
+msgid "Fabricación de maquinaria y equipo de oficina (excepto computadores y equipo periférico)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7048,16 +6841,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_281100
-msgid ""
-"Fabricación de motores y turbinas, excepto para aeronaves, vehículos "
-"automotores y motocicletas"
+msgid "Fabricación de motores y turbinas, excepto para aeronaves, vehículos automotores y motocicletas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_271000
-msgid ""
-"Fabricación de motores, generadores y transformadores eléctricos, aparatos "
-"de distribución y control"
+msgid "Fabricación de motores, generadores y transformadores eléctricos, aparatos de distribución y control"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7092,9 +6881,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_162900
-msgid ""
-"Fabricación de otros productos de madera, de artículos de corcho, paja y "
-"materiales trenzables"
+msgid "Fabricación de otros productos de madera, de artículos de corcho, paja y materiales trenzables"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7154,8 +6941,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_162200
-msgid ""
-"Fabricación de partes y piezas de carpintería para edificios y construcciones"
+msgid "Fabricación de partes y piezas de carpintería para edificios y construcciones"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7170,15 +6956,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_202200
-msgid ""
-"Fabricación de pinturas, barnices y productos de revestimiento, tintas de "
-"imprenta y masillas"
+msgid "Fabricación de pinturas, barnices y productos de revestimiento, tintas de imprenta y masillas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_202100
-msgid ""
-"Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
+msgid "Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7218,9 +7001,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_210000
-msgid ""
-"Fabricación de productos farmacéuticos, sustancias químicas medicinales y "
-"productos botánicos"
+msgid "Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7240,9 +7021,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_242009
-msgid ""
-"Fabricación de productos primarios de metales preciosos y de otros metales "
-"no ferrosos n.c.p."
+msgid "Fabricación de productos primarios de metales preciosos y de otros metales no ferrosos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7332,7 +7111,8 @@ msgid "Facturas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,no_rec_code:0 selection:account.move,no_rec_code:0
+#: selection:account.invoice,no_rec_code:0
+#: selection:account.move,no_rec_code:0
 msgid "Facturas de proveedores registrados fuera de plazo."
 msgstr ""
 
@@ -7364,7 +7144,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_import_wizard__file
 msgid "File"
-msgstr "Archivo"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__filename
@@ -7372,18 +7152,18 @@ msgstr "Archivo"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__filename
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__filename
 msgid "File Name"
-msgstr "Nombre del archivo"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_import_wizard__file_opt
 msgid "File Opt"
-msgstr "Opción"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1952
 #, python-format
 msgid "Fill Partner VAT"
-msgstr "Llenar RUT del Cliente"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_649201
@@ -7419,19 +7199,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_follower_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_follower_ids
 msgid "Followers"
-msgstr "Seguidores"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_channel_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_channel_ids
 msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_partner_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Seguidores (Empresas)"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_843010
@@ -7456,7 +7236,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_ir_sequence__forced_by_caf
 msgid "Forced By CAF"
-msgstr "Forzado por el CAF"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_259100
@@ -7475,16 +7255,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_821900
-msgid ""
-"Fotocopiado, preparación de documentos y otras actividades especializadas de "
-"apoyo de oficina"
+msgid "Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo de oficina"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_949903
-msgid ""
-"Fundaciones y corporaciones; asociaciones que promueven actividades "
-"culturales o recreativas"
+msgid "Fundaciones y corporaciones; asociaciones que promueven actividades culturales o recreativas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7498,7 +7274,8 @@ msgid "Fundición de metales no ferrosos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,no_rec_code:0 selection:account.move,no_rec_code:0
+#: selection:account.invoice,no_rec_code:0
+#: selection:account.move,no_rec_code:0
 msgid "Gastos rechazados."
 msgstr ""
 
@@ -7598,7 +7375,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_cf_filter
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__cert_hash
@@ -7654,7 +7431,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_ir_sequence__is_dte
@@ -7680,34 +7457,34 @@ msgstr ""
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_unread
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_unread
 msgid "If checked new messages require your attention."
-msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_needaction
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_has_error
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.account_invoice_import_line_wizard
 msgid "Import"
-msgstr "Importar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_account_invoice_import_line_wizard
 msgid "Import Invoices"
-msgstr "Importar Facturas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.account_invoice_import_line_wizard
 msgid "Import Invoices From CSV"
-msgstr "Importar Facturas desde CSV"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_181101
@@ -7733,7 +7510,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: selection:dte.caf,status:0
 msgid "In Use"
-msgstr "En uso"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_241000
@@ -7767,23 +7544,18 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.boleta_no_found_layout
-msgid ""
-"Intentar\n"
+msgid "Intentar\n"
 "                nuevamente"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_721000
-msgid ""
-"Investigaciones y desarrollo experimental en el campo de las ciencias "
-"naturales y la ingeniería"
+msgid "Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_722000
-msgid ""
-"Investigaciones y desarrollo experimental en el campo de las ciencias "
-"sociales y las humanidades"
+msgid "Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7793,17 +7565,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
 #, python-format
 msgid "Invoice"
-msgstr "Factura"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Línea factura"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_import_wizard__invoice_opt
 msgid "Invoice Opt"
-msgstr "Opción"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__invoice_vat_discrimination_default
@@ -7814,18 +7586,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__invoice_ids
 #: selection:sii.document.class,document_type:0
 msgid "Invoices"
-msgstr "Facturas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_is_follower
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_is_follower
 msgid "Is Follower"
-msgstr "Es un seguidor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__issued_date
 msgid "Issued Date"
-msgstr "Fecha de Emisión"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_responsability__issued_letter_ids
@@ -7836,36 +7608,36 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__issuer_common_name
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__issuer_common_name
 msgid "Issuer Common Name"
-msgstr "Nombre Común del Emisor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__issuer_country
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__issuer_country
 msgid "Issuer Country"
-msgstr "País Emisor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__issuer_email_address
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__issuer_email_address
 msgid "Issuer Email Address"
-msgstr "Dirección de correo electrónico del emisor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__issuer_organization
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__issuer_organization
 msgid "Issuer Organization"
-msgstr "Organización Emisora"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__issuer_serial_number
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__issuer_serial_number
 msgid "Issuer Serial Number"
-msgstr "Número de serie del emisor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_letter__issuer_ids
 msgid "Issuers"
-msgstr "Emisor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2083
@@ -7875,8 +7647,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_sii_document_class__document_type
-msgid ""
-"It defines some behaviours on automatic journal selection and\n"
+msgid "It defines some behaviours on automatic journal selection and\n"
 "                in menus where it is shown."
 msgstr ""
 
@@ -7889,9 +7660,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_journal.py:44
 #, python-format
-msgid ""
-"It must be 4 activities maximum per journal, select the most significant "
-"ones for this journal."
+msgid "It must be 4 activities maximum per journal, select the most significant ones for this journal."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -7903,59 +7672,59 @@ msgstr ""
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_journal
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_sii_document_class__journal_id
 msgid "Journal"
-msgstr "Diario"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_account_journal_document_config_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_document_config_form
 msgid "Journal Documents Configuration"
-msgstr "Configuración de documentos de diario"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_move
 msgid "Journal Entries"
-msgstr "Asientos contables"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_move_line
 msgid "Journal Item"
-msgstr "Apunte contable"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_book_compra_venta_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_libro_honorarios_form
 msgid "Journal Items"
-msgstr "Apuntes contables"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_journal_sii_document_class
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_cl_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_journal_sii_document_class_form
 msgid "Journal SII Documents"
-msgstr "Documento diario del SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal__journal_activities_ids
 msgid "Journal Turns"
-msgstr "Giros de Diarios"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__journal_ids
 msgid "Journals"
-msgstr "Diarios"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__final_date
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__final_date
 msgid "Last Control Date"
-msgstr "Fecha último control"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__final_date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__final_date
 msgid "Last Date"
-msgstr "Ultima fecha"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr____last_update
@@ -7994,7 +7763,7 @@ msgstr "Ultima fecha"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal____last_update
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__write_uid
@@ -8033,7 +7802,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__write_uid
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__write_date
@@ -8072,13 +7841,11 @@ msgstr "Última actualización de"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__write_date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_960100
-msgid ""
-"Lavado y limpieza, incluida la limpieza en seco, de productos textiles y de "
-"piel"
+msgid "Lavado y limpieza, incluida la limpieza en seco, de productos textiles y de piel"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8095,7 +7862,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.report,name:l10n_cl_electronic_invoicing.action_print_libro
 msgid "Libro CV PDF"
-msgstr "Libro CV PD"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_move_libro_honorarios
@@ -8155,9 +7922,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_mail_message_dte
-#, fuzzy
 msgid "Mail Message DTE"
-msgstr "Mensaje"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_mail_message_dte_document
@@ -8173,7 +7939,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_main_attachment_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Adjuntos principales"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_522400
@@ -8199,26 +7965,24 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_mail_message
 msgid "Message"
-msgstr "Mensaje"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_has_error
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_has_error
 msgid "Message Delivery error"
-msgstr "Error de Envío de Mensaje"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_ids
 msgid "Messages"
-msgstr "Mensajes"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:618
 #, python-format
-msgid ""
-"Mixed signature cannot be done, all the taxes in this order must be one of "
-"those two:\n"
+msgid "Mixed signature cannot be done, all the taxes in this order must be one of those two:\n"
 "1. Included in price,\n"
 "2. Not included in price"
 msgstr ""
@@ -8294,7 +8058,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios__move_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__move_ids
 msgid "Move"
-msgstr "Asiento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_masive_send_wizard__documentos
@@ -8322,12 +8086,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_responsability__name
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: sql_constraint:sii.document.letter:0 sql_constraint:sii.responsability:0
+#: sql_constraint:sii.document.letter:0
+#: sql_constraint:sii.responsability:0
 msgid "Name must be unique!"
-msgstr "El nombre debe ser único!"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_sucursal__name
@@ -8341,8 +8106,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_sii_document_class__report_name
-msgid ""
-"Name that will be printed in reports,\n"
+msgid "Name that will be printed in reports,\n"
 "         for example CREDIT NOTE"
 msgstr ""
 
@@ -8353,12 +8117,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__next_invoice_number
-msgid ""
-"Next number that will be used. This number can be incremented frequently so "
-"the displayed value might already be obsolete"
+msgid "Next number that will be used. This number can be incremented frequently so the displayed value might already be obsolete"
 msgstr ""
-"Próximo número que se utilizará. Este número puede incrementarse "
-"frecuentemente por lo que el valor mostrado puede estar ya obsoleto."
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__nivel_minimo
@@ -8372,7 +8132,8 @@ msgid "No"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 msgid "No Enviado"
 msgstr ""
@@ -8380,24 +8141,20 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/upload_xml.py:871
 #, python-format
-msgid ""
-"No existe Diario para el tipo de documento %s, por favor añada uno primero, "
-"o ignore el documento"
+msgid "No existe Diario para el tipo de documento %s, por favor añada uno primero, o ignore el documento"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/caf.py:253
 #, python-format
-msgid ""
-"No hay CAFs disponibles para la secuencia de %s.\n"
+msgid "No hay CAFs disponibles para la secuencia de %s.\n"
 "                 Por favor suba un CAF o solicite uno en el SII."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/caf.py:219
 #, python-format
-msgid ""
-"No hay caf disponible para el documento %s folio %s.\n"
+msgid "No hay caf disponible para el documento %s folio %s.\n"
 "                Por favor solicite suba un CAF o solicite uno en el SII."
 msgstr ""
 
@@ -8421,25 +8178,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__not_after
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__not_after
 msgid "Not After"
-msgstr "No después de"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__not_after
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__not_after
 msgid "Not After this Date"
-msgstr "No después de esta fecha"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__not_before
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__not_before
 msgid "Not Before"
-msgstr "No antes"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__not_before
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__not_before
 msgid "Not Before this Date"
-msgstr "No antes de esta fecha"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.xml.envio,state:0
@@ -8466,9 +8223,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_refund__tipo_nota
-#, fuzzy
 msgid "Note Type"
-msgstr "Tipos de conceptos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document_line__new_product
@@ -8479,31 +8235,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_needaction_counter
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_needaction_counter
 msgid "Number of Actions"
-msgstr "Número de acciones"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_has_error_counter
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_has_error_counter
 msgid "Number of error"
-msgstr "Número de error"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_needaction_counter
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr "Número de mensajes que requieren una acción"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_has_error_counter
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Número de mensajes con error de envío"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__message_unread_counter
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_unread_counter
 msgid "Number of unread messages"
-msgstr "Número de mensajes no leidos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.layout_libro
@@ -8529,8 +8285,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_books
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_consumo_folios
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_move_libro_honorarios
-msgid ""
-"Odoo automatically creates one journal entry per accounting\n"
+msgid "Odoo automatically creates one journal entry per accounting\n"
 "          document: invoice, refund, vendor payment, bank statements,\n"
 "          etc. So, you should record journal entries manually only/mainly\n"
 "          for miscellaneous operations."
@@ -8538,8 +8293,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_invoice_tree1
-msgid ""
-"Odoo's electronic invoicing allows to ease and fasten the\n"
+msgid "Odoo's electronic invoicing allows to ease and fasten the\n"
 "            collection of customer payments. Your customer receives the\n"
 "            invoice by email and he can pay online and/or import it\n"
 "            in his own system."
@@ -8552,21 +8306,20 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__type
-#, fuzzy
 msgid "Operation Type"
-msgstr "Error Tipo de operación"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1093
 #, python-format
 msgid "Operation Type Error"
-msgstr "Error Tipo de operación"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1094
 #, python-format
 msgid "Operation Type Must be \"Sale\" or \"Purchase\""
-msgstr "Tipo de operación debe ser \"Venta\" o \"Compra\""
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_validar_wizard__option
@@ -8577,7 +8330,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__purchase_to_done
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__purchase_to_done
 msgid "Ordenes de Compra a validar"
-msgstr "Ordenes de Compra"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_823000
@@ -8587,35 +8340,31 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_referencias__origen
 msgid "Origin"
-msgstr "Origen"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.document.class,document_type:0
 msgid "Other Documents"
-msgstr "Otros Documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Other Info"
-msgstr "Otra Información"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__other_available
 msgid "Others available?"
-msgstr "¿Otros disponibles?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_662900
-msgid ""
-"Otras actividades auxiliares de las actividades de seguros y fondos de "
-"pensiones"
+msgid "Otras actividades auxiliares de las actividades de seguros y fondos de pensiones"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_661909
-msgid ""
-"Otras actividades auxiliares de las actividades de servicios financieros n.c."
-"p."
+msgid "Otras actividades auxiliares de las actividades de servicios financieros n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8680,9 +8429,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_812909
-msgid ""
-"Otras actividades de limpieza de edificios e instalaciones industriales n.c."
-"p."
+msgid "Otras actividades de limpieza de edificios e instalaciones industriales n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8702,9 +8449,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_649900
-msgid ""
-"Otras actividades de servicios financieros, excepto las de seguros y fondos "
-"de pensiones n.c.p."
+msgid "Otras actividades de servicios financieros, excepto las de seguros y fondos de pensiones n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8714,8 +8459,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_620900
-msgid ""
-"Otras actividades de tecnología de la información y de servicios informáticos"
+msgid "Otras actividades de tecnología de la información y de servicios informáticos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8735,22 +8479,17 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_492190
-msgid ""
-"Otras actividades de transporte urbano y suburbano de pasajeros por vía "
-"terrestre n.c.p."
+msgid "Otras actividades de transporte urbano y suburbano de pasajeros por vía terrestre n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_471990
-msgid ""
-"Otras actividades de venta al por menor en comercios no especializados n.c.p."
+msgid "Otras actividades de venta al por menor en comercios no especializados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_479909
-msgid ""
-"Otras actividades de venta por menor no realizadas en comercios, puestos de "
-"venta o mercados n.c.p."
+msgid "Otras actividades de venta por menor no realizadas en comercios, puestos de venta o mercados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8810,16 +8549,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_712009
-msgid ""
-"Otros servicios de ensayos y análisis técnicos (excepto actividades de "
-"plantas de revisión técnica)"
+msgid "Otros servicios de ensayos y análisis técnicos (excepto actividades de plantas de revisión técnica)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_799000
-msgid ""
-"Otros servicios de reservas y actividades conexas (incluye venta de entradas "
-"para teatro, y otros)"
+msgid "Otros servicios de reservas y actividades conexas (incluye venta de entradas para teatro, y otros)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8853,7 +8588,8 @@ msgid "Otros tipos de intermediación monetaria n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,no_rec_code:0 selection:account.move,no_rec_code:0
+#: selection:account.invoice,no_rec_code:0
+#: selection:account.move,no_rec_code:0
 msgid "Otros."
 msgstr ""
 
@@ -8864,9 +8600,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_journal__send_book_dte
-msgid ""
-"Para saber si se envian los Libros Fiscales al SII o se mantienen para "
-"control interno de la empresa."
+msgid "Para saber si se envian los Libros Fiscales al SII o se mantienen para control interno de la empresa."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8888,7 +8622,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_payment_term
 msgid "Payment Terms"
-msgstr "Términos de pago"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_960200
@@ -8898,9 +8632,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1130
 #, python-format
-msgid ""
-"Per legal requirement every note must include a reference to the document "
-"they are related."
+msgid "Per legal requirement every note must include a reference to the document they are related."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -8932,23 +8664,19 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1018
 #, python-format
-msgid ""
-"Please define sequence on the journal related documents to this invoice."
+msgid "Please define sequence on the journal related documents to this invoice."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_caf_files
 msgid "Please input CAF File"
-msgstr "Por favor, ingrese el archivo CAF"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__dte_service_provider
-msgid ""
-"Please select your company service provider for DTE service.\n"
+msgid "Please select your company service provider for DTE service.\n"
 "    "
 msgstr ""
-"Por favor seleccione su proveedor de Facturación Electrónica.\n"
-"    "
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_631200
@@ -8958,7 +8686,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_cf_filter
 msgid "Posted"
-msgstr "Publicado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__pre_process
@@ -8978,13 +8706,9 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_sii_document_class__doc_code_prefix
-#, fuzzy
-msgid ""
-"Prefix for Documents Codes on Invoices and Account Moves.\n"
+msgid "Prefix for Documents Codes on Invoices and Account Moves.\n"
 "                For eg. 'FAC' will build 'FAC 00001' Document Number"
 msgstr ""
-"Prefijo para códigos de documentos en facturas y movimientos de cuenta. Por "
-"ej. 'FAC' construirá 'FAC 00001' Número de documento"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_431200
@@ -9004,12 +8728,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.report,name:l10n_cl_electronic_invoicing.action_print_cedible
 msgid "Print Cedible"
-msgstr "Imprimir Cedible"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.report,name:l10n_cl_electronic_invoicing.action_print_ticket
 msgid "Print Ticket"
-msgstr "Imprimir Ticket"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__priv_key
@@ -9017,7 +8741,7 @@ msgstr "Imprimir Ticket"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_user_signature_tab_form
 msgid "Private Key"
-msgstr "Llave privada"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__private_key_bits
@@ -9116,14 +8840,13 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.dte.upload_xml.wizard,type:0
-#, fuzzy
 msgid "Purchase"
-msgstr "Facturas de compra"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.document.class,document_type:0
 msgid "Purchase Invoices"
-msgstr "Facturas de compra"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_ir_sequence__qty_available
@@ -9203,7 +8926,8 @@ msgid "Receptors"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_cf_filter
 #: selection:mail.message.dte.document,state:0
@@ -9245,7 +8969,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.invoice,claim:0
 msgid "Reclamo al  Contenido del Documento "
-msgstr "Reclamo al Contenido del Documento "
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.invoice,claim:0
@@ -9310,9 +9034,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__document_number
-#, fuzzy
 msgid "Ref. Number"
-msgstr "Número Final"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_invoice_referencias
@@ -9328,7 +9051,7 @@ msgstr ""
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:749
 #, python-format
 msgid "Refund"
-msgstr "Nota de Crédito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
@@ -9342,16 +9065,13 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice_refund__filter_refund
-msgid ""
-"Refund base on this type. You can not Modify and Cancel if the invoice is "
-"already reconciled"
+msgid "Refund base on this type. You can not Modify and Cancel if the invoice is already reconciled"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.xml.envio,state:0
-#, fuzzy
 msgid "Refused"
-msgstr "Nota de Crédito"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_352010
@@ -9361,33 +9081,32 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_regional_offices__name
 msgid "Regional Office Name"
-msgstr "Nombre de la oficina regional"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__dte_register
 msgid "Register Electronic Documents?"
-msgstr "¿Registrar documentos electrónicos?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__free_tax_zone
 msgid "Register Free-Tax Zone or # 1057 Resolution Documents?"
 msgstr ""
-"¿Registre la zona libre de impuestos o los documentos de resolución n.º 1057?"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__non_dte_register
 msgid "Register Manual Documents?"
-msgstr "¿Registrar documentos manuales?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Register Payment"
-msgstr "Registrar pago"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__settlement_invoice
 msgid "Register Settlement Invoices?"
-msgstr "¿Registrar facturas de liquidación?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
@@ -9397,9 +9116,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_841200
-msgid ""
-"Regulación de las actividades de organismos que prestan servicios "
-"sanitarios, educativos, culturales"
+msgid "Regulación de las actividades de organismos que prestan servicios sanitarios, educativos, culturales"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9425,15 +9142,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_952200
-msgid ""
-"Reparación de aparatos de uso doméstico, equipo doméstico y de jardinería"
+msgid "Reparación de aparatos de uso doméstico, equipo doméstico y de jardinería"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_952100
-msgid ""
-"Reparación de aparatos electrónicos de consumo (incluye aparatos de "
-"televisión y radio)"
+msgid "Reparación de aparatos electrónicos de consumo (incluye aparatos de televisión y radio)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9453,9 +9167,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_951200
-msgid ""
-"Reparación de equipo de comunicaciones (incluye la reparación teléfonos "
-"celulares)"
+msgid "Reparación de equipo de comunicaciones (incluye la reparación teléfonos celulares)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9465,9 +9177,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_331400
-msgid ""
-"Reparación de equipo eléctrico (excepto reparación de equipo y enseres "
-"domésticos)"
+msgid "Reparación de equipo eléctrico (excepto reparación de equipo y enseres domésticos)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9477,22 +9187,17 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_331202
-msgid ""
-"Reparación de maquinaria metalúrgica, para la minería, extracción de "
-"petróleo y para la construcción"
+msgid "Reparación de maquinaria metalúrgica, para la minería, extracción de petróleo y para la construcción"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_331203
-msgid ""
-"Reparación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
+msgid "Reparación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_331204
-msgid ""
-"Reparación de maquinaria para producir textiles, prendas de vestir, "
-"artículos de cuero y calzado  "
+msgid "Reparación de maquinaria para producir textiles, prendas de vestir, artículos de cuero y calzado  "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9512,9 +9217,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_331509
-msgid ""
-"Reparación de otros equipos de transporte n.c.p., excepto vehículos "
-"automotores"
+msgid "Reparación de otros equipos de transporte n.c.p., excepto vehículos automotores"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9533,7 +9236,8 @@ msgid "Reparación de productos elaborados de metal"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:account.invoice,sii_result:0 selection:account.move.book,state:0
+#: selection:account.invoice,sii_result:0
+#: selection:account.move.book,state:0
 #: selection:account.move.consumo_folios,state:0
 msgid "Reparo"
 msgstr ""
@@ -9551,7 +9255,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_sii_responsability
 msgid "Responsabilities"
-msgstr " Responsabilidades"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__responsability_id
@@ -9559,7 +9263,7 @@ msgstr " Responsabilidades"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_partner__responsability_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__responsability_id
 msgid "Responsability"
-msgstr "Tipo Contribuyente"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__responsable_envio
@@ -9569,7 +9273,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Responsible"
-msgstr "Responsable"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal__restore_mode
@@ -9605,17 +9309,17 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,dte_service_provider:0
 msgid "SII - Certification process"
-msgstr "SII - Proceso de certificación"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_barcode
 msgid "SII Barcode"
-msgstr "SII Código de barras"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_barcode_img
 msgid "SII Barcode Image"
-msgstr "Código de barras SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__sii_barcode_img
@@ -9625,13 +9329,13 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__sii_barcode
 msgid "SII Barcode Name"
-msgstr "Nombre Código SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_caf_files
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_dte_caf_form
 msgid "SII CAF Files for DTE"
-msgstr "SII CAF Archivo para DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_concept_type__sii_code
@@ -9639,54 +9343,52 @@ msgstr "SII CAF Archivo para DTE"
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_type__sii_code
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_optional_type__sii_code
 msgid "SII Code"
-msgstr "Código SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_cola_envio
-#, fuzzy
 msgid "SII Cola Envio"
-msgstr "SII Cola de envío"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.cola_envio
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_cola_envio_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_cola_envio_tree
 msgid "SII Cola de envío"
-msgstr "SII Cola de envío"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_concept_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_concept_type_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_concept_type_tree
 msgid "SII Concept type"
-msgstr "SII Tipo de concepto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_sii_config
 msgid "SII Configuration"
-msgstr "SII Configuración"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_dte_upload_xml_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_dte_validar_form
 msgid "SII DTE Upload XML Wizard"
-msgstr "Wizard Subida de XML"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_masive_dte_accept_wizard_form
 msgid "SII DTE masive Accept Wizard"
-msgstr "Wizard de Aceptación Masiva DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_masive_dte_process_wizard_form
-#, fuzzy
 msgid "SII DTE masive Process Wizard"
-msgstr "Wizard de Aceptación Masiva DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_dte_masive_send_wizard_form
 msgid "SII DTE masive send Wizard"
-msgstr "Wizard de Envío Masivo DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_document_class
@@ -9696,50 +9398,43 @@ msgstr "Wizard de Envío Masivo DTE"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_document_class_tree
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_regional_offices_tree
 msgid "SII Document Class"
-msgstr "SII Tipo de documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_letter__sii_document_class_ids
 msgid "SII Document Classes"
-msgstr "Tipos de Documentos SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_document_letter
 msgid "SII Document Letter"
-msgstr "SII Carta de documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move__sii_document_number
-#, fuzzy
 msgid "SII Document Number"
-msgstr "Número de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/caf.py:117
-#, fuzzy, python-format
-msgid ""
-"SII Document Type for this CAF is %s and selected\n"
-"                sequence associated document class is %s. This values should "
-"be\n"
+#, python-format
+msgid "SII Document Type for this CAF is %s and selected\n"
+"                sequence associated document class is %s. This values should be\n"
 "                equal for DTE Invoicing to work properly!"
 msgstr ""
-"SII Document Type for this CAF is %s and selected sequence\n"
-"associated document class is %s. This values should be equal for DTE "
-"Invoicing\n"
-"to work properly!"
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_document_letter_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_document_letter_tree
 msgid "SII Document class"
-msgstr "SII Tipo de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_document_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_document_type_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_document_type_tree
 msgid "SII Document type"
-msgstr "SII Tipo de documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_partner_activities_form
@@ -9747,56 +9442,56 @@ msgstr "SII Tipo de documento"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_activity_description_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_activity_description_tree
 msgid "SII Economic Activities"
-msgstr "SII Actividades Económicas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_partner_activities
 msgid "SII Economical Activities"
-msgstr "SII Actividades económicas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_activity_description
 msgid "SII Economical Activities Printable Description"
-msgstr "SII Descripción imprimible de las actividades económicas"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__dte_resolution_date
 msgid "SII Exempt Resolution Date"
-msgstr "SII Fecha de resolución exenta"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__dte_resolution_number
 msgid "SII Exempt Resolution Number"
-msgstr "SII Número de resolución exenta"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_dte_masive_accept_wizard
 msgid "SII Masive DTE Accept Wizard"
-msgstr "Aceptación Masiva de DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_dte_masive_process_wizard
 msgid "SII Masive DTE Process Wizard"
-msgstr "Asistente de procesos masivos de SII DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_dte_masive_send_wizard
 msgid "SII Masive send Wizard"
-msgstr "Envío Masivo SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_message
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__sii_message
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_message
 msgid "SII Message"
-msgstr "Mensajes del SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_optional_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_optional_type_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_optional_type_tree
 msgid "SII Optional type"
-msgstr "SII Tipo opcional"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_partner_activities
@@ -9804,34 +9499,32 @@ msgstr "SII Tipo opcional"
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_act_partner_activities
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_act_sii_activity_description
 msgid "SII Partner Activities"
-msgstr "SII Actividades del asociado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__sii_receipt
-#, fuzzy
 msgid "SII Receipt"
-msgstr "SII XML Solicitud"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__sii_receipt
-#, fuzzy
 msgid "SII Reception Message"
-msgstr "Mensajes del SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_referencias__sii_referencia_CodRef
 msgid "SII Reference Code"
-msgstr "SII Código de refencia"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_referencias__sii_referencia_TpoDocRef
 msgid "SII Reference Document Type"
-msgstr "SII Tipo de Documento De Referencia"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__sii_regional_office_id
 msgid "SII Regional Office"
-msgstr "SII Oficina regional"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_regional_offices
@@ -9839,27 +9532,26 @@ msgstr "SII Oficina regional"
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_sii_regional_offices
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_regional_offices_form
 msgid "SII Regional Offices"
-msgstr "SII Oficinas regionales"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_sii_responsability
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_responsability_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_responsability_tree
 msgid "SII Responsability"
-msgstr "SII Responsable"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_result
-#, fuzzy
 msgid "SII Result"
-msgstr "SII Responsable"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__sii_send_ident
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_send_ident
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__sii_send_ident
 msgid "SII Send Identification"
-msgstr "Identificación de envío del SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/consumo_folios.py:1139
@@ -9875,58 +9567,57 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_responsability
 msgid "SII VAT Responsability"
-msgstr "SII Responsable del IVA"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_xml_dte
 msgid "SII XML DTE"
-msgstr "SII XML DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_xml_envio
-#, fuzzy
 msgid "SII XML Envio"
-msgstr "SII XML DTE"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__sii_xml_request
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__sii_xml_request
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_xml_request
 msgid "SII XML Request"
-msgstr "SII XML Solicitud"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__sii_xml_response
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__sii_xml_response
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__sii_xml_response
 msgid "SII XML Response"
-msgstr "SII XML Respuesta"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_dte_upload_xml_wizard
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_dte_validar_wizard
 msgid "SII XML from Provider"
-msgstr "SII XML del Proveedor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_concept_type
 msgid "SII concept types"
-msgstr "SII Tipos de conceptos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_document_type
 msgid "SII document types"
-msgstr "SII Tipos de documentos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_sii_optional_type
 msgid "SII optional types"
-msgstr "SII Tipos opcionales"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_invoice__sii_result
 msgid "SII request result"
-msgstr "Solicitar Resultado SII"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/consumo_folios.py:1166
@@ -9942,9 +9633,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.sii_masive_dte_accept_wizard_form
-msgid ""
-"Se aceptarán todos los docuemtnos, se crearán todos los datos que se tengan "
-"que crear sin verificar y se enviará notificación de aceptación"
+msgid "Se aceptarán todos los docuemtnos, se crearán todos los datos que se tengan que crear sin verificar y se enviará notificación de aceptación"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -9974,25 +9663,21 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1714
-#, fuzzy, python-format
+#, python-format
 msgid "Select giro of the partner"
 msgstr ""
-"Esta tratando de validar una factura y no se a registrado un Giro al cliente "
-"seleccionado. Debe ir a la ficha del cliente y registrar el Giro asociado al "
-"mismo"
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_journal__journal_activities_ids
 msgid "Select the turns you want to             invoice in this Journal"
 msgstr ""
-"Seleccione los giros que usted quiete             facturar en este diario"
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_book_compra_venta_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_invoice_form
 msgid "Send XML"
-msgstr "Enviar XML"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.xml.envio,state:0
@@ -10004,13 +9689,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_sii_document_class__sequence
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__sequence_id
 msgid "Sequence"
-msgstr "Secuencia"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__cert_serial_number
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__cert_serial_number
 msgid "Serial Number"
-msgstr "Número de Serial"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_452001
@@ -10029,23 +9714,17 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_960901
-msgid ""
-"Servicios de adiestramiento, guardería, peluquería, paseo de mascotas "
-"(excepto act. veterinarias)"
+msgid "Servicios de adiestramiento, guardería, peluquería, paseo de mascotas (excepto act. veterinarias)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_691009
-msgid ""
-"Servicios de arbitraje; síndicos de quiebra y peritos judiciales; otras "
-"actividades jurídicas n.c.p."
+msgid "Servicios de arbitraje; síndicos de quiebra y peritos judiciales; otras actividades jurídicas n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_711001
-msgid ""
-"Servicios de arquitectura (diseño de edificios, dibujo de planos de "
-"construcción, entre otros)"
+msgid "Servicios de arquitectura (diseño de edificios, dibujo de planos de construcción, entre otros)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10085,9 +9764,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_900001
-msgid ""
-"Servicios de producción de obras de teatro, conciertos, espectáculos de "
-"danza, otras prod. escénicas"
+msgid "Servicios de producción de obras de teatro, conciertos, espectáculos de danza, otras prod. escénicas"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10167,9 +9844,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_869092
-msgid ""
-"Servicios prestados de forma independiente por otros profesionales de la "
-"salud"
+msgid "Servicios prestados de forma independiente por otros profesionales de la salud"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10184,9 +9859,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_711003
-msgid ""
-"Servicios profesionales de ingeniería y actividades conexas de consultoría "
-"técnica "
+msgid "Servicios profesionales de ingeniería y actividades conexas de consultoría técnica "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10207,7 +9880,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Set to Draft"
-msgstr "Cambiar a borrador"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:partner.activities,vat_affected:0
@@ -10236,45 +9909,43 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_21002
-msgid ""
-"Silvicultura y otras actividades forestales (excepto explotación de viveros "
-"forestales)"
+msgid "Silvicultura y otras actividades forestales (excepto explotación de viveros forestales)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:dte.caf,status:0
 msgid "Spent"
-msgstr "Gastado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__start_nm
 msgid "Start Number"
-msgstr "Numero de inicio"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__start_date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_partner__start_date
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__start_date
 msgid "Start-up Date"
-msgstr "Fecha de Inicio"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__state
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__state
 msgid "State"
-msgstr "Estado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__status
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__status
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__status
 msgid "Status"
-msgstr "Estado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.document.class,document_type:0
 msgid "Stock Picking"
-msgstr "Guía de Despacho"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_supplier_invoice_form
@@ -10286,7 +9957,7 @@ msgstr ""
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_action_account_upload_xml
 #: model:ir.ui.menu,name:l10n_cl_electronic_invoicing.menu_upload_xml
 msgid "Subir XML De Envío"
-msgstr "Subir XML de Envío"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__subject_common_name
@@ -10346,34 +10017,32 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_562900
-msgid ""
-"Suministro industrial de comidas por encargo; concesión de servicios de "
-"alimentación "
+msgid "Suministro industrial de comidas por encargo; concesión de servicios de alimentación "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:748
 #, python-format
 msgid "Supplier Invoice"
-msgstr "Factura del proveedor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:750
 #, python-format
 msgid "Supplier Refund"
-msgstr "Reembolso del proveedor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__tax_category
 msgid "TAX Category"
-msgstr "Categoría de impuesto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_tax
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_honorarios_tax__tax_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book_tax__tax_id
 msgid "Tax"
-msgstr "Impuesto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_partner__tp_sii_code
@@ -10385,7 +10054,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Taxes"
-msgstr "Impuestos"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_131200
@@ -10440,9 +10109,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/upload_xml.py:1130
 #, python-format
-msgid ""
-"The XML file does not contain documents for any company in Odoo, or it has "
-"already been processed."
+msgid "The XML file does not contain documents for any company in Odoo, or it has already been processed."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10454,24 +10121,18 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:951
 #, python-format
-msgid ""
-"The customer/supplier does not have a VAT defined. The type of invoicing "
-"document you selected requires you tu settle a VAT."
+msgid "The customer/supplier does not have a VAT defined. The type of invoicing document you selected requires you tu settle a VAT."
 msgstr ""
-"El cliente/proveedor no tiene un IVA definido. El tipo de documento de "
-"facturación que seleccionó requiere que liquide un IVA."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1982
 #, python-format
-msgid ""
-"The date of the signature cannot be before the date of the emission document."
+msgid "The date of the signature cannot be before the date of the emission document."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.action_invoice_tree1
-msgid ""
-"The discussions with your customer are automatically displayed at\n"
+msgid "The discussions with your customer are automatically displayed at\n"
 "            the bottom of each invoice."
 msgstr ""
 
@@ -10490,9 +10151,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2515
 #, python-format
-msgid ""
-"The document was not sent. It is in the Odoo internal message queue envío "
-"interna en odoo"
+msgid "The document was not sent. It is in the Odoo internal message queue envío interna en odoo"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10516,128 +10175,84 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1003
 #, python-format
-msgid ""
-"The vendor bill number must be unique per vendor.\n"
+msgid "The vendor bill number must be unique per vendor.\n"
 "Another document with the number %s already exists for vendor: %s"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/upload_xml.py:1205
 #, python-format
-msgid ""
-"There is already a purchase order with the reference: %s for this vendor: "
-"%s.\n"
+msgid "There is already a purchase order with the reference: %s for this vendor: %s.\n"
 "You cannot create a new one. Please check."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/libro.py:1372
 #, python-format
-msgid ""
-"There is no Signer Person with an         authorized signature for you in "
-"the system. Please make sure that         'user_signature_key' module has "
-"been installed and enable a digital         signature, for you or make the "
-"signer to authorize you to use his         signature."
+msgid "There is no Signer Person with an         authorized signature for you in the system. Please make sure that         'user_signature_key' module has been installed and enable a digital         signature, for you or make the signer to authorize you to use his         signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/validar.py:340
-#, fuzzy, python-format
-msgid ""
-"There is no Signer Person with an authorized\n"
+#, python-format
+msgid "There is no Signer Person with an authorized\n"
 "                     signature for you in the system. Please make sure that\n"
-"                     'user_signature_key' module has been installed and "
-"enable\n"
+"                     'user_signature_key' module has been installed and enable\n"
 "                     a digital signature, for you or make the signer to\n"
 "                     authorize you to use his signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/libro.py:722
-#, fuzzy, python-format
-msgid ""
-"There is no Signer Person with an authorized signature\n"
+#, python-format
+msgid "There is no Signer Person with an authorized signature\n"
 "                     for you in the system. Please make sure that\n"
-"                     'user_signature_key' module has been installed and "
-"enable\n"
+"                     'user_signature_key' module has been installed and enable\n"
 "                      a digital signature, for you or make the signer to\n"
 "                     authorize you to use his signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/sii_xml_envio.py:176
-#, fuzzy, python-format
-msgid ""
-"There is no Signer Person with an authorized signature\n"
+#, python-format
+msgid "There is no Signer Person with an authorized signature\n"
 "                for you in the system. Please make sure that\n"
 "                'user_signature_key' module has been installed and enable a\n"
-"                digital signature, for you or make the signer to authorize "
-"you\n"
+"                digital signature, for you or make the signer to authorize you\n"
 "                 to use his signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/consumo_folios.py:999
 #: code:addons/l10n_cl_electronic_invoicing/models/sii_xml_envio.py:197
-#, fuzzy, python-format
-msgid ""
-"There is no Signer Person with an authorized signature for\n"
-"                you in the system. Please make sure that "
-"'user_signature_key'\n"
-"                module has been installed and enable a digital signature, "
-"for\n"
+#, python-format
+msgid "There is no Signer Person with an authorized signature for\n"
+"                you in the system. Please make sure that 'user_signature_key'\n"
+"                module has been installed and enable a digital signature, for\n"
 "                you or make the signer to authorize you to use his\n"
 "                signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1400
-#, fuzzy, python-format
-msgid ""
-"There is no Signer Person with an authorized signature for you in the "
-"system. Please make sure that 'user_signature_key' module has been installed "
-"and enable a digital signature, for you or make the signer to authorize you "
-"to use his signature."
+#, python-format
+msgid "There is no Signer Person with an authorized signature for you in the system. Please make sure that 'user_signature_key' module has been installed and enable a digital signature, for you or make the signer to authorize you to use his signature."
 msgstr ""
-"Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-"módulo 'user_signature_key' se haya instalado y tenga habilitada una firma "
-"digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:717
 #, python-format
-msgid ""
-"This %s has been created from: <a href=# data-oe-model=account.invoice data-"
-"oe-id=%d>%s</a><br>Reason: %s"
+msgid "This %s has been created from: <a href=# data-oe-model=account.invoice data-oe-id=%d>%s</a><br>Reason: %s"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_account_journal_sii_document_class__sequence_id
-msgid ""
-"This field contains the information related to the numbering             of "
-"the documents entries of this document type."
+msgid "This field contains the information related to the numbering             of the documents entries of this document type."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__dte_resolution_number
-msgid ""
-"This value must be provided and must appear in your pdf or printed tribute "
-"document, under the electronic stamp to be legally valid."
+msgid "This value must be provided and must appear in your pdf or printed tribute document, under the electronic stamp to be legally valid."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10653,16 +10268,14 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.report_ticket
-msgid ""
-"Timbre Electrónico SII\n"
+msgid "Timbre Electrónico SII\n"
 "                                <br/>\n"
 "                                Resolución"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
-msgid ""
-"Timbre Electrónico SII\n"
+msgid "Timbre Electrónico SII\n"
 "                        <br/>\n"
 "                        Resolución"
 msgstr ""
@@ -10712,12 +10325,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
 msgid "To Pay"
-msgstr "A pagar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
 msgid "To pay"
-msgstr "Pagar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.action_invoice_tree1
@@ -10742,9 +10355,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__total
-#, fuzzy
 msgid "Total Amount"
-msgstr "Importe"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__total_boletas
@@ -10756,20 +10368,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_libro_honorarios_form
 msgid "Total Credit"
-msgstr "Crédito total"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_book_compra_venta_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_libro_honorarios_form
 msgid "Total Debit"
-msgstr "Débito total"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__total_exento
-#, fuzzy
 msgid "Total Exempt"
-msgstr "Débito total"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__total_exento
@@ -10783,9 +10394,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__total_neto
-#, fuzzy
 msgid "Total Net"
-msgstr "Débito total"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_book__total_otros_imps
@@ -10794,9 +10404,8 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_move_consumo_folios__total_iva
-#, fuzzy
 msgid "Total Tax"
-msgstr "Débito total"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
@@ -10805,9 +10414,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_sii_concept_type__product_types
-msgid ""
-"Translate this product types to this SII concept.        Types must be a "
-"subset of adjust,        consu and service separated by commas."
+msgid "Translate this product types to this SII concept.        Types must be a subset of adjust,        consu and service separated by commas."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -10932,19 +10539,19 @@ msgstr ""
 #: model:product.template,uom_name:l10n_cl_electronic_invoicing.producto_afecto
 #: model:product.template,uom_name:l10n_cl_electronic_invoicing.producto_exento
 msgid "Unit(s)"
-msgstr "Unidad(es)"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_unread
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_unread
 msgid "Unread Messages"
-msgstr "Mensajes sin leer"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__message_unread_counter
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "Contador de mensajes sin leer"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal_document_config__weird_documents
@@ -10952,14 +10559,15 @@ msgid "Unusual Documents"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:res.company,status:0 selection:res.users,status:0
+#: selection:res.company,status:0
+#: selection:res.users,status:0
 msgid "Unverified"
-msgstr "No verificado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_partner_activity_inherit_form
 msgid "Update RUT"
-msgstr "Actualiza RUT"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.dte.upload_xml.wizard,option:0
@@ -10969,18 +10577,18 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_dte_caf__caf_file
 msgid "Upload the CAF XML File in this holder"
-msgstr "Cargue aquí el archivo XML de CAF"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_company__key_file
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__key_file
 msgid "Upload the Signature File"
-msgstr "Cargue el Certificado Digital"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__xml_file
 msgid "Upload the XML File in this holder"
-msgstr "Cargue aquí el archivo XML"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_class__use_prefix
@@ -10991,44 +10599,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__use_documents
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_journal__use_documents
 msgid "Use Documents?"
-msgstr "¿Usa Documentos Tributarios?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__use_level
 msgid "Use Level"
-msgstr "Nivel de Uso"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_invoice_notas
-msgid ""
-"Use this option if you want to cancel an invoice and create a new\n"
-"                                one. The credit note will be created, "
-"validated and reconciled\n"
-"                                with the current invoice. A new, draft, "
-"invoice will be created\n"
+msgid "Use this option if you want to cancel an invoice and create a new\n"
+"                                one. The credit note will be created, validated and reconciled\n"
+"                                with the current invoice. A new, draft, invoice will be created\n"
 "                                so that you can edit it."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_invoice_notas
-msgid ""
-"Use this option if you want to cancel an invoice you should not\n"
-"                                have issued. The credit note will be "
-"created, validated and reconciled\n"
-"                                with the invoice. You will not be able to "
-"modify the credit note."
+msgid "Use this option if you want to cancel an invoice you should not\n"
+"                                have issued. The credit note will be created, validated and reconciled\n"
+"                                with the invoice. You will not be able to modify the credit note."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_cola_envio__user_id
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_xml_envio__user_id
 msgid "User"
-msgstr "Usuario"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_res_users
 msgid "Users"
-msgstr "Usuarios"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice__iva_uso_comun
@@ -11044,12 +10646,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_partner_activities__vat_affected
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_activity_description__vat_affected
 msgid "VAT Affected"
-msgstr "IVA afectado"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: selection:res.company,status:0 selection:res.users,status:0
+#: selection:res.company,status:0
+#: selection:res.users,status:0
 msgid "Valid"
-msgstr "Validar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.invoice,estado_recep_dte:0
@@ -11072,7 +10675,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_consumo_folios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_electroinic_libro_honorarios_form
 msgid "Validate"
-msgstr "Validar"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.dte_external_layout
@@ -11097,23 +10700,23 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_document_letter__vat_discriminated
 msgid "Vat Discriminated on Invoices?"
-msgstr "¿Discriminar el IVA en las facturas?"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
 msgid "Vendor"
-msgstr "Proveedor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Vendor Bill"
-msgstr "Documento de Proveedor"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "Vendor Reference"
-msgstr "Número de Documento"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:account.invoice.import.wizard,invoice_opt:0
@@ -11152,16 +10755,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_466100
-msgid ""
-"Venta al por mayor de combustibles sólidos, líquidos y gaseosos y productos "
-"conexos"
+msgid "Venta al por mayor de combustibles sólidos, líquidos y gaseosos y productos conexos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465100
-msgid ""
-"Venta al por mayor de computadores, equipo periférico y programas "
-"informáticos"
+msgid "Venta al por mayor de computadores, equipo periférico y programas informáticos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11181,16 +10780,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465905
-msgid ""
-"Venta al por mayor de equipo de transporte(excepto vehículos automotores, "
-"motocicletas y bicicletas)"
+msgid "Venta al por mayor de equipo de transporte(excepto vehículos automotores, motocicletas y bicicletas)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465200
-msgid ""
-"Venta al por mayor de equipo, partes y piezas electrónicos y de "
-"telecomunicaciones"
+msgid "Venta al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11200,8 +10795,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_463019
-msgid ""
-"Venta al por mayor de huevos, lácteos, abarrotes y de otros alimentos n.c.p."
+msgid "Venta al por mayor de huevos, lácteos, abarrotes y de otros alimentos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11216,37 +10810,27 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_466301
-msgid ""
-"Venta al por mayor de madera en bruto y productos primarios de la "
-"elaboración de madera"
+msgid "Venta al por mayor de madera en bruto y productos primarios de la elaboración de madera"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465901
-msgid ""
-"Venta al por mayor de maquinaria metalúrgica, para la minería, extracción de "
-"petróleo y construcción"
+msgid "Venta al por mayor de maquinaria metalúrgica, para la minería, extracción de petróleo y construcción"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465902
-msgid ""
-"Venta al por mayor de maquinaria para la elaboración de alimentos, bebidas y "
-"tabaco"
+msgid "Venta al por mayor de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465903
-msgid ""
-"Venta al por mayor de maquinaria para la industria textil, del cuero y del "
-"calzado"
+msgid "Venta al por mayor de maquinaria para la industria textil, del cuero y del calzado"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_465904
-msgid ""
-"Venta al por mayor de maquinaria y equipo de oficina; venta al por mayor de "
-"muebles de oficina"
+msgid "Venta al por mayor de maquinaria y equipo de oficina; venta al por mayor de muebles de oficina"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11256,9 +10840,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_466302
-msgid ""
-"Venta al por mayor de materiales de construcción, artículos de ferretería, "
-"gasfitería y calefacción"
+msgid "Venta al por mayor de materiales de construcción, artículos de ferretería, gasfitería y calefacción"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11333,23 +10915,17 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477391
-msgid ""
-"Venta al por menor de alimento y accesorios para mascotas en comercios "
-"especializados"
+msgid "Venta al por menor de alimento y accesorios para mascotas en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472101
-msgid ""
-"Venta al por menor de alimentos en comercios especializados (almacenes "
-"pequeños y minimarket)"
+msgid "Venta al por menor de alimentos en comercios especializados (almacenes pequeños y minimarket)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_478100
-msgid ""
-"Venta al por menor de alimentos, bebidas y tabaco en puestos de venta y "
-"mercados (incluye ferias)"
+msgid "Venta al por menor de alimentos, bebidas y tabaco en puestos de venta y mercados (incluye ferias)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11359,9 +10935,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475909
-msgid ""
-"Venta al por menor de aparatos eléctricos, textiles para el hogar y otros "
-"enseres domésticos n.c.p."
+msgid "Venta al por menor de aparatos eléctricos, textiles para el hogar y otros enseres domésticos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11371,35 +10945,27 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_476301
-msgid ""
-"Venta al por menor de artículos de caza y pesca en comercios especializados"
+msgid "Venta al por menor de artículos de caza y pesca en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475201
-msgid ""
-"Venta al por menor de artículos de ferretería y materiales de construcción "
+msgid "Venta al por menor de artículos de ferretería y materiales de construcción "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477394
-msgid ""
-"Venta al por menor de artículos de joyería, bisutería y relojería en "
-"comercios especializados"
+msgid "Venta al por menor de artículos de joyería, bisutería y relojería en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_476103
-msgid ""
-"Venta al por menor de artículos de papelería y escritorio en comercios "
-"especializados"
+msgid "Venta al por menor de artículos de papelería y escritorio en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477203
-msgid ""
-"Venta al por menor de artículos de perfumería, de tocador y cosméticos en "
-"comercios especializados"
+msgid "Venta al por menor de artículos de perfumería, de tocador y cosméticos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11414,15 +10980,12 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472200
-msgid ""
-"Venta al por menor de bebidas alcohólicas y no alcohólicas en comercios "
-"especializados (botillerías)"
+msgid "Venta al por menor de bebidas alcohólicas y no alcohólicas en comercios especializados (botillerías)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_476302
-msgid ""
-"Venta al por menor de bicicletas y sus repuestos en comercios especializados"
+msgid "Venta al por menor de bicicletas y sus repuestos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11432,30 +10995,22 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477395
-msgid ""
-"Venta al por menor de carbón, leña y otros combustibles de uso doméstico en "
-"comercios especializados"
+msgid "Venta al por menor de carbón, leña y otros combustibles de uso doméstico en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477103
-msgid ""
-"Venta al por menor de carteras, maletas y otros accesorios de viaje en "
-"comercios especializados"
+msgid "Venta al por menor de carteras, maletas y otros accesorios de viaje en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_473000
-msgid ""
-"Venta al por menor de combustibles para vehículos automotores en comercios "
-"especializados"
+msgid "Venta al por menor de combustibles para vehículos automotores en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_474100
-msgid ""
-"Venta al por menor de computadores, equipo periférico, programas "
-"informáticos y equipo de telecom."
+msgid "Venta al por menor de computadores, equipo periférico, programas informáticos y equipo de telecom."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11465,35 +11020,27 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_474200
-msgid ""
-"Venta al por menor de equipo de sonido y de video en comercios especializados"
+msgid "Venta al por menor de equipo de sonido y de video en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477397
-msgid ""
-"Venta al por menor de flores, plantas, arboles, semillas y abonos en "
-"comercios especializados"
+msgid "Venta al por menor de flores, plantas, arboles, semillas y abonos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477310
-msgid ""
-"Venta al por menor de gas licuado en bombonas (cilindros) en comercios "
-"especializados"
+msgid "Venta al por menor de gas licuado en bombonas (cilindros) en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_476200
-msgid ""
-"Venta al por menor de grabaciones de música y de video en comercios "
-"especializados"
+msgid "Venta al por menor de grabaciones de música y de video en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475902
-msgid ""
-"Venta al por menor de instrumentos musicales en comercios especializados"
+msgid "Venta al por menor de instrumentos musicales en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11518,8 +11065,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477409
-msgid ""
-"Venta al por menor de otros artículos de segunda mano en comercios n.c.p."
+msgid "Venta al por menor de otros artículos de segunda mano en comercios n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11529,28 +11075,22 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477399
-msgid ""
-"Venta al por menor de otros productos en comercios especializados n.c.p."
+msgid "Venta al por menor de otros productos en comercios especializados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_478900
-msgid ""
-"Venta al por menor de otros productos en puestos de venta y mercados "
-"(incluye ferias)"
+msgid "Venta al por menor de otros productos en puestos de venta y mercados (incluye ferias)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475202
-msgid ""
-"Venta al por menor de pinturas, barnices y lacas en comercios especializados"
+msgid "Venta al por menor de pinturas, barnices y lacas en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477102
-msgid ""
-"Venta al por menor de prendas y accesorios de vestir en comercios "
-"especializados"
+msgid "Venta al por menor de prendas y accesorios de vestir en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11560,23 +11100,17 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477201
-msgid ""
-"Venta al por menor de productos farmacéuticos y medicinales en comercios "
-"especializados"
+msgid "Venta al por menor de productos farmacéuticos y medicinales en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_478200
-msgid ""
-"Venta al por menor de productos textiles, prendas de vestir y calzado en "
-"puestos de venta y mercados"
+msgid "Venta al por menor de productos textiles, prendas de vestir y calzado en puestos de venta y mercados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_477396
-msgid ""
-"Venta al por menor de recuerdos, artesanías y artículos religiosos en "
-"comercios especializados"
+msgid "Venta al por menor de recuerdos, artesanías y artículos religiosos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11586,77 +11120,57 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472300
-msgid ""
-"Venta al por menor de tabaco y productos de tabaco en comercios "
-"especializados"
+msgid "Venta al por menor de tabaco y productos de tabaco en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475300
-msgid ""
-"Venta al por menor de tapices, alfombras y cubrimientos para paredes y pisos"
+msgid "Venta al por menor de tapices, alfombras y cubrimientos para paredes y pisos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_475100
-msgid ""
-"Venta al por menor de telas, lanas, hilos y similares en comercios "
-"especializados"
+msgid "Venta al por menor de telas, lanas, hilos y similares en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_451002
-msgid ""
-"Venta al por menor de vehículos automotores nuevos o usados (incluye "
-"compraventa)"
+msgid "Venta al por menor de vehículos automotores nuevos o usados (incluye compraventa)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_471100
-msgid ""
-"Venta al por menor en comercios de alimentos, bebidas o tabaco "
-"(supermercados e hipermercados)"
+msgid "Venta al por menor en comercios de alimentos, bebidas o tabaco (supermercados e hipermercados)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_471910
-msgid ""
-"Venta al por menor en comercios de vestuario y productos para el hogar "
-"(grandes tiendas)"
+msgid "Venta al por menor en comercios de vestuario y productos para el hogar (grandes tiendas)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472102
-msgid ""
-"Venta al por menor en comercios especializados de carne y productos cárnicos "
+msgid "Venta al por menor en comercios especializados de carne y productos cárnicos "
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472103
-msgid ""
-"Venta al por menor en comercios especializados de frutas y verduras "
-"(verdulerías)"
+msgid "Venta al por menor en comercios especializados de frutas y verduras (verdulerías)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472109
-msgid ""
-"Venta al por menor en comercios especializados de huevos, confites y "
-"productos alimenticios n.c.p."
+msgid "Venta al por menor en comercios especializados de huevos, confites y productos alimenticios n.c.p."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472104
-msgid ""
-"Venta al por menor en comercios especializados de pescado, mariscos y "
-"productos conexos"
+msgid "Venta al por menor en comercios especializados de pescado, mariscos y productos conexos"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_472105
-msgid ""
-"Venta al por menor en comercios especializados de productos de panadería y "
-"pastelería"
+msgid "Venta al por menor en comercios especializados de productos de panadería y pastelería"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11676,9 +11190,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:partner.activities,name:l10n_cl_electronic_invoicing.eco_acti_479901
-msgid ""
-"Venta al por menor realizada por independientes en la locomoción colectiva "
-"(ley 20.388)"
+msgid "Venta al por menor realizada por independientes en la locomoción colectiva (ley 20.388)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11729,13 +11241,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte__website_message_ids
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_mail_message_dte_document__website_message_ids
 msgid "Website Messages"
-msgstr "Mensajes del sitio web"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte__website_message_ids
 #: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_mail_message_dte_document__website_message_ids
 msgid "Website communication history"
-msgstr "Historial de comunicaciones del sitio web"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.PosTicket_dte
@@ -11761,7 +11273,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_sii_dte_upload_xml_wizard__xml_file
 msgid "XML File"
-msgstr "Archivos XML"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1286
@@ -11769,7 +11281,7 @@ msgstr "Archivos XML"
 #: code:addons/l10n_cl_electronic_invoicing/models/libro.py:569
 #, python-format
 msgid "XML Malformed Error:  %s"
-msgstr "XML Error mal formado: %s"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.actions.act_window,name:l10n_cl_electronic_invoicing.act_xml_recept
@@ -11832,30 +11344,28 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/validar.py:384
 #, python-format
-msgid ""
-"XML of the Reception Document\n"
+msgid "XML of the Reception Document\n"
 " %s"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_clean_signature_confirmation
 msgid "Yes"
-msgstr "Si"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,invoice_vat_discrimination_default:0
 msgid "Yes, Discriminate Default"
-msgstr "Sí, discriminar por defecto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,invoice_vat_discrimination_default:0
 msgid "Yes, No Discriminate Default"
-msgstr "No, discriminar por defecto"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.actions.act_window,help:l10n_cl_electronic_invoicing.honorarios_tree2
-msgid ""
-"You can control the invoice from your vendor according to\n"
+msgid "You can control the invoice from your vendor according to\n"
 "            what you purchased or received."
 msgstr ""
 
@@ -11876,15 +11386,12 @@ msgstr ""
 #: code:addons/l10n_cl_electronic_invoicing/models/libro.py:481
 #, python-format
 msgid "You cannot delete a Validated book."
-msgstr "No puedes eliminar un libro validado."
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2308
 #, python-format
-msgid ""
-"You cannot do mass mailing with mixed content. For this mailing, only "
-"electronic ticket, electronic exempt ticket or ticket NC (or remove the "
-"cases from the set)"
+msgid "You cannot do mass mailing with mixed content. For this mailing, only electronic ticket, electronic exempt ticket or ticket NC (or remove the cases from the set)"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11896,7 +11403,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "You have"
-msgstr "Tiene"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1877
@@ -11925,14 +11432,12 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/models/sii.py:141
 #, python-format
-msgid ""
-"You provided an invalid list of product types. Must be separated by commas."
+msgid "You provided an invalid list of product types. Must be separated by commas."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_invoice_notas
-msgid ""
-"You will be able to edit and validate this\n"
+msgid "You will be able to edit and validate this\n"
 "                                credit note directly or keep it draft,\n"
 "                                waiting for the document to be issued by\n"
 "                                your supplier/customer."
@@ -11941,9 +11446,7 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: code:addons/l10n_cl_electronic_invoicing/wizard/journal_config_wizard.py:81
 #, python-format
-msgid ""
-"Your company has not setted any responsability. Please, set your company "
-"responsability in the company partner before continue."
+msgid "Your company has not setted any responsability. Please, set your company responsability in the company partner before continue."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
@@ -11957,7 +11460,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "for this supplier. You can allocate them to mark this bill as paid."
 msgstr ""
-"para este proveedor. Puede asignarlos para marcar esta factura como pagada."
 
 #. module: l10n_cl_electronic_invoicing
 #: model:product.template,weight_uom_name:l10n_cl_electronic_invoicing.no_product
@@ -11977,12 +11479,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_account_journal_document_config_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_clean_signature_confirmation
 msgid "or"
-msgstr "o"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_form
 msgid "outstanding debits"
-msgstr "débitos pendientes"
+msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:sii.cola.envio,tipo_trabajo:0
@@ -12012,32 +11514,3 @@ msgstr ""
 msgid "¿No Enviar los libros de Compra/Venta al SII?"
 msgstr ""
 
-#~ msgid "City Code"
-#~ msgstr "Código de Ciudad"
-
-#~ msgid "Country state"
-#~ msgstr "Provincia"
-
-#~ msgid "Paid on"
-#~ msgstr "Pagado en"
-
-#~ msgid "Region Code"
-#~ msgstr "Código de la Región"
-
-#~ msgid "Region Name"
-#~ msgstr "Nombre de la Región"
-
-#~ msgid "SII Mensaje de recepción"
-#~ msgstr "SII Mensaje de recepción"
-
-#~ msgid "State - City / Manager"
-#~ msgstr "Gestión de Comunas"
-
-#~ msgid "The city code.\n"
-#~ msgstr "Código de la ciudad.\n"
-
-#~ msgid "The region code.\n"
-#~ msgstr "Código de la Región.\n"
-
-#~ msgid "The state code.\n"
-#~ msgstr "Código de la región.\n"
