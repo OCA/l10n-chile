@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-l10n_cl_chart_of_account',
+        'odoo12-addon-l10n_cl_electronic_invoicing',
         'odoo12-addon-l10n_cl_toponym',
     ],
     classifiers=[
