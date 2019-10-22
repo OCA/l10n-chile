@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record forcecreate="True" model='decimal.precision' id='currency_decimal_precision'>
+        <field name='name'>Currency</field>
+        <field name="digits">14</field>
+    </record>
+</odoo>

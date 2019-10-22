@@ -1,0 +1,6 @@
+"id","rounding","name","position","symbol","currency_unit_label"
+"base.CLP","1.0","CLP","before","CLP","Peso"
+"base.EUR","0.01","EUR","before","€","Euros"
+"base.UF","0.01","UF","after","UF","Unidad de Fomento"
+"base.USD","0.01","USD","before","USD","Dollars"
+"base.UTM","0.01","UTM","after","UTM","UTM"
