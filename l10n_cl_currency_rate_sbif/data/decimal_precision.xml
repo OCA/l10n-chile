@@ -1,0 +1,9 @@
+<odoo noupdate="1">
+
+    <!-- Precisions -->
+    <record forcecreate="True" id="currency_decimal_currency" model="decimal.precision">
+        <field name="name">Currency</field>
+        <field name="digits">14</field>
+    </record>
+
+</odoo>
