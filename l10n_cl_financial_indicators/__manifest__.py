@@ -10,7 +10,6 @@
         "data/decimal.precision.xml",
         "data/ir_cron.xml",
         "data/ir.config_parameter.xml",
-        "security/ir.model.access.csv",
         "views/update_button.xml",
         "data/res.currency.csv",
     ],
