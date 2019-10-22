@@ -3,7 +3,7 @@
     "version": "12.0.1.0.0",
     "category": "Tools",
     "license": "LGPL-3",
-    "author": "Blanco Martin & Asociados" "Odoo Community Association (OCA)",
+    "author": "Blanco Martin & Asociados, Odoo Community Association (OCA)",
     "website": "http://blancomartin.cl",
     "depends": ["base"],
     "data": [
