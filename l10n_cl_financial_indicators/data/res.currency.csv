@@ -3,4 +3,4 @@
 "base.EUR","0.01","EUR","before","€","Euros"
 "l10n_cl_financial_indicators.UF","0.01","UF","after","UF","Unidad de Fomento"
 "base.USD","0.01","USD","before","USD","Dollars"
-"base.UTM","0.01","UTM","after","UTM","UTM"
+"l10n_cl_financial_indicators.UTM","0.01","UTM","after","UTM","UTM"
