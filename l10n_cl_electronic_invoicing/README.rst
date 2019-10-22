@@ -50,7 +50,6 @@ Electronic Invoicing for Chile
 Usage
 =====
 
-Coming soon...
 
 Known issues / Roadmap
 ======================
