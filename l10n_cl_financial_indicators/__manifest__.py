@@ -2,6 +2,8 @@
     "name": "Chilean Financial Indicators",
     "version": "12.0.1.0.0",
     "category": "Tools",
+    "development_status": "Production/Stable",
+    "maintainers": ["danisan"],
     "license": "LGPL-3",
     "author": "Blanco Martin & Asociados, Odoo Community Association (OCA)",
     "website": "http://blancomartin.cl",

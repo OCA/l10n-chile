@@ -6,9 +6,9 @@
             <field name='value'>http://api.sbif.cl/api-sbifv3/recursos_api</field>
         </record>
         <!-- this can be removed in order to be asked for token in cl_base -->
-        <!--<record model='ir.config_parameter' id='sbif_fin_apikey'>
+        <record model='ir.config_parameter' id='sbif_fin_apikey'>
             <field name='key'>sbif.financial.indicators.apikey</field>
-            <field name='value'></field>
-        </record>-->
+            <field name='value'>PUT_HERE_YOUR_SBIF_TOKEN</field>
+        </record>
     </data>
 </odoo>
