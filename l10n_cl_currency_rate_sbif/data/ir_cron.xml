@@ -1,0 +1,22 @@
+<odoo>
+
+    <record model='ir.cron' id='update_cl_currency_rate'>
+        <field name="active">True</field>
+        <field name="binding_type">action</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="code">model.currency_schedule_update()</field>
+        <field name="model_id" ref="base.model_res_currency"/>
+        <field name="cron_name">Update Chilean Currencies Exchange Rates</field>
+        <field name="name">Update Chilean Currencies Exchange Rates</field>
+        <field name="numbercall">-1</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="state">code</field>
+        <field name="priority">5</field>
+        <field name="doall">True</field>
+        <field name="sequence">5</field>
+        <field name="type">ir.actions.server</field>
+        <field name="usage">ir_cron</field>
+    </record>
+
+</odoo>

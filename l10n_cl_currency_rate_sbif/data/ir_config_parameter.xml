@@ -1,0 +1,13 @@
+<odoo noupdate="1">
+
+    <record model='ir.config_parameter' id='sbif_fin_apikey'>
+        <field name='key'>sbif.financial.indicators.apikey</field>
+        <field name='value'></field>
+    </record>
+
+    <record model='ir.config_parameter' id='sbif_fin_url'>
+        <field name='key'>sbif.financial.indicators.baseurl</field>
+        <field name='value'>http://api.sbif.cl/api-sbifv3/recursos_api</field>
+    </record>
+
+</odoo>
