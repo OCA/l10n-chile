@@ -269,7 +269,7 @@ msgstr ""
 
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_city
-#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__city_id
+#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_region_state_tree
 msgid "City"
 msgstr "Ciudad"
@@ -277,6 +277,13 @@ msgstr "Ciudad"
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_city__code
 msgid "City Code"
+msgstr "Código de la Ciudad"
+
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__city_id
+#, fuzzy
+#| msgid "City Code"
+msgid "City of Address"
 msgstr "Código de la Ciudad"
 
 #. module: l10n_cl_toponym
@@ -355,7 +362,6 @@ msgid "Companies"
 msgstr "Compañías"
 
 #. module: l10n_cl_toponym
-#: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_partner_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_toponym.view_partner_address_form_states_city_inherit
 msgid "Comuna"
@@ -410,6 +416,13 @@ msgstr ""
 #: model:res.city,name:l10n_cl_toponym.CL14102
 msgid "Corral"
 msgstr ""
+
+#. module: l10n_cl_toponym
+#: model:ir.model,name:l10n_cl_toponym.model_res_country
+#, fuzzy
+#| msgid "Country state"
+msgid "Country"
+msgstr "Provincia"
 
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_country_state
@@ -642,6 +655,11 @@ msgid "Independencia"
 msgstr ""
 
 #. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_individual
+msgid "Individual VAT"
+msgstr ""
+
+#. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL01101
 msgid "Iquique"
 msgstr ""
@@ -779,6 +797,11 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL08201
 msgid "Lebu"
+msgstr ""
+
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_legal
+msgid "Legal Person VAT"
 msgstr ""
 
 #. module: l10n_cl_toponym
@@ -1044,6 +1067,11 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL10301
 msgid "Osorno"
+msgstr ""
+
+#. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_other
+msgid "Other VAT"
 msgstr ""
 
 #. module: l10n_cl_toponym
@@ -1702,6 +1730,12 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL09117
 msgid "Teodoro Schmidt"
+msgstr ""
+
+#. module: l10n_cl_toponym
+#: code:addons/l10n_cl_toponym/models/res_partner.py:37
+#, python-format
+msgid "The VAT %s already exists. VAT must be unique"
 msgstr ""
 
 #. module: l10n_cl_toponym
