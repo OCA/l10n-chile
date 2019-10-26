@@ -4887,11 +4887,6 @@ msgid "Cities"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__city_id
-msgid "City"
-msgstr ""
-
-#. module: l10n_cl_electronic_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.view_sii_regional_offices_form
 msgid "Ciudades"
 msgstr ""
@@ -5961,7 +5956,7 @@ msgid "Draft"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__status
+#: model:ir.model.fields,help:l10n_cl_electronic_invoicing.field_res_users__stage
 msgid "Draft: means it has not been checked yet.\n"
 "\n"
 "        You must press the Check button."
@@ -6034,7 +6029,7 @@ msgid "El rut: %s debe ser único"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:191
+#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:188
 #, python-format
 msgid "El usuario %s está utilizando este documento"
 msgstr ""
@@ -6357,7 +6352,7 @@ msgid "Error RCT"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:231
+#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:228
 #, python-format
 msgid "Error when opening the signature. You may have entered the wrong key or the file is not compatible."
 msgstr ""
@@ -6414,7 +6409,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,status:0
-#: selection:res.users,status:0
+#: selection:res.users,stage:0
 msgid "Expired"
 msgstr ""
 
@@ -9288,8 +9283,8 @@ msgid "Resultado"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:173
-#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:174
+#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:170
+#: code:addons/l10n_cl_electronic_invoicing/models/res_company.py:171
 #: code:addons/l10n_cl_electronic_invoicing/models/res_partner.py:90
 #: code:addons/l10n_cl_electronic_invoicing/models/res_partner.py:91
 #, python-format
@@ -9918,6 +9913,11 @@ msgid "Spent"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
+#: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__stage
+msgid "Stage"
+msgstr ""
+
+#. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__start_nm
 msgid "Start Number"
 msgstr ""
@@ -9938,7 +9938,6 @@ msgstr ""
 #. module: l10n_cl_electronic_invoicing
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_dte_caf__status
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_company__status
-#: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_res_users__status
 msgid "Status"
 msgstr ""
 
@@ -10560,7 +10559,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,status:0
-#: selection:res.users,status:0
+#: selection:res.users,stage:0
 msgid "Unverified"
 msgstr ""
 
@@ -10650,7 +10649,7 @@ msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
 #: selection:res.company,status:0
-#: selection:res.users,status:0
+#: selection:res.users,stage:0
 msgid "Valid"
 msgstr ""
 
