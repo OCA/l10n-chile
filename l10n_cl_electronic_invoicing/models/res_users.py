@@ -183,7 +183,7 @@ class ResUsers(models.Model):
                 )
             if not obj.cert or self.id not in obj.authorized_users_ids.ids:
                 return False
-        if obj.stage == "expired":
+        if obj.status == "expired":
             raise UserError(_("Expired signature since %s" % obj.not_after))
         signature_data = {
             "subject_name": obj.name,
