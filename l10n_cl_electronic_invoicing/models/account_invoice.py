@@ -686,15 +686,8 @@ class AccountInvoice(models.Model):
 
     @api.multi
     @api.returns("self")
-    def refund(
-        self,
-        date_invoice=None,
-        date=None,
-        description=None,
-        journal_id=None,
-        tipo_nota=61,
-        mode="1",
-    ):
+    def refund(self, date_invoice=None, date=None, description=None,
+               journal_id=None, tipo_nota=61, mode="1"):
         new_invoices = self.browse()
         for invoice in self:
             # create the new invoice
@@ -705,21 +698,19 @@ class AccountInvoice(models.Model):
                 description=description,
                 journal_id=journal_id,
                 tipo_nota=tipo_nota,
-                mode=mode,
-            )
+                mode=mode)
             refund_invoice = self.create(values)
             invoice_type = {
                 "out_invoice": ("customer invoices credit note"),
                 "out_refund": ("customer invoices debit note"),
                 "in_invoice": ("vendor bill credit note"),
-                "in_refund": ("vendor bill debit note"),
-            }
+                "in_refund": ("vendor bill debit note")}
             message = _(
                 "This %s has been created from: "
                 "<a href=# data-oe-model=account.invoice data-oe-id=%d>%s</a>"
-                "<br>Reason: %s"
-            ) % (invoice_type[invoice.type], invoice.id, invoice.number,
-                 description)
+                "<br>Reason: %s") % (
+                invoice_type[invoice.type], invoice.id, invoice.number,
+                description)
             refund_invoice.message_post(body=message)
             new_invoices += refund_invoice
         return new_invoices
@@ -1057,15 +1048,8 @@ a VAT."""
         return operation_type
 
     def get_valid_document_letters(
-        self,
-        partner_id,
-        operation_type="sale",
-        company=False,
-        vat_affected="SI",
-        invoice_type="out_invoice",
-        nd=False,
-    ):
-
+            self, partner_id, operation_type="sale", company=False,
+            vat_affected="SI", invoice_type="out_invoice", nd=False):
         document_letter_obj = self.env["sii.document.letter"]
         partner = self.partner_id
 
@@ -1165,11 +1149,11 @@ a VAT."""
             if inv.purchase_to_done:
                 for ptd in inv.purchase_to_done:
                     ptd.write({"state": "done"})
-        return super(AccountInvoice, self).invoice_validate()
+        return super().invoice_validate()
 
     @api.model
     def create(self, vals):
-        inv = super(AccountInvoice, self).create(vals)
+        inv = super().create(vals)
         inv.update_domain_journal()
         inv.set_default_journal()
         return inv
@@ -1218,16 +1202,8 @@ a VAT."""
         return resolution_data
 
     def create_template_envio(
-        self,
-        RutEmisor,
-        RutReceptor,
-        FchResol,
-        NroResol,
-        TmstFirmaEnv,
-        EnvioDTE,
-        signature_d,
-        SubTotDTE,
-    ):
+            self, RutEmisor, RutReceptor, FchResol, NroResol, TmstFirmaEnv,
+            EnvioDTE, signature_d, SubTotDTE):
         xml = """<SetDTE ID="SetDoc">
 <Caratula version="1.0">
 <RutEmisor>{0}</RutEmisor>

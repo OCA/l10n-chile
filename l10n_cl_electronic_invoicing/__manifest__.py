@@ -25,7 +25,7 @@
     ],
     "external_dependencies": {
         "python": [
-            "cchardet",
+            "chardet",
             "dicttoxml",
             "M2Crypto",
             "num2words",
