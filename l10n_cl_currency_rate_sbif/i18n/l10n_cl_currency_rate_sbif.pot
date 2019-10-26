@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_currency_rate_sbif
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model,name:l10n_cl_currency_rate_sbif.model_res_currency
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model,name:l10n_cl_currency_rate_sbif.model_res_currency_rate
+msgid "Currency Rate"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_sbif.field_res_currency__rate
+msgid "Current Rate"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_sbif.field_res_currency_rate__rate
+msgid "Rate"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model.fields,field_description:l10n_cl_currency_rate_sbif.field_res_currency__rounding
+msgid "Rounding Factor"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model.fields,help:l10n_cl_currency_rate_sbif.field_res_currency_rate__rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.model.fields,help:l10n_cl_currency_rate_sbif.field_res_currency__rate
+msgid "The rate of the currency to the currency of rate 1."
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model:ir.actions.server,name:l10n_cl_currency_rate_sbif.update_cl_currency_rate_ir_actions_server
+#: model:ir.cron,cron_name:l10n_cl_currency_rate_sbif.update_cl_currency_rate
+#: model:ir.cron,name:l10n_cl_currency_rate_sbif.update_cl_currency_rate
+msgid "Update Chilean Currencies Exchange Rates"
+msgstr ""
+
+#. module: l10n_cl_currency_rate_sbif
+#: model_terms:ir.ui.view,arch_db:l10n_cl_currency_rate_sbif.view_res_currency_form
+msgid "Update Currency"
+msgstr ""
+
