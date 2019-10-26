@@ -50,14 +50,14 @@ zero_values = {
 class ResUsers(models.Model):
     _inherit = "res.users"
 
-    def _compute_status(self):
+    def _compute_stage(self):
         for s in self:
             if not s.cert:
-                s.status = "unverified"
+                s.stage = "unverified"
                 continue
             expired = datetime.strptime(s.not_after, "%Y-%m-%d") < \
                 datetime.now()
-            s.status = "expired" if expired else "valid"
+            s.stage = "expired" if expired else "valid"
 
     def load_cert_pk12(self, filecontent):
         p12 = crypto.load_pkcs12(filecontent, self.dec_pass)
@@ -114,12 +114,12 @@ class ResUsers(models.Model):
     not_after = fields.Date(
         string="Not After", help="Not After this Date", readonly=True
     )
-    status = fields.Selection(
+    stage = fields.Selection(
         [("unverified", "Unverified"),
          ("valid", "Valid"),
          ("expired", "Expired")],
-        string="Status",
-        compute="_compute_status",
+        string="Stage",
+        compute="_compute_stage",
         help="""Draft: means it has not been checked yet.\n
         You must press the Check button.""",
     )
@@ -179,11 +179,11 @@ class ResUsers(models.Model):
             if not obj or not obj.cert:
                 obj = self.env["res.users"].search(
                     [("authorized_users_ids", "=", self.id),
-                     ("status", "=", "valid")]
+                     ("stage", "=", "valid")]
                 )
             if not obj.cert or self.id not in obj.authorized_users_ids.ids:
                 return False
-        if obj.status == "expired":
+        if obj.stage == "expired":
             raise UserError(_("Expired signature since %s" % obj.not_after))
         signature_data = {
             "subject_name": obj.name,
@@ -192,7 +192,7 @@ class ResUsers(models.Model):
             "cert": obj.cert}
         return signature_data
 
-    def default_status(self):
+    def default_stage(self):
         return "unverified"
 
     def load_cert_m2pem(self, *args, **kwargs):
@@ -205,7 +205,7 @@ class ResUsers(models.Model):
     def action_clean1(self):
         self.ensure_one()
         # todo: debe lanzar un wizard que confirme si se limpia o no
-        # self.status = 'unverified'
+        # self.stage = 'unverified'
         self.write(zero_values)
 
     @api.multi
@@ -219,7 +219,7 @@ class ResUsers(models.Model):
     def _get_date(self):
         self.ensure_one()
         old_date = self.issued_date
-        if self.key_file is not None and self.status == "unverified":
+        if self.key_file is not None and self.stage == "unverified":
             _logger.warning(self.key_file)
             self.issued_date = fields.datetime.now()
         else:

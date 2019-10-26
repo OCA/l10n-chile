@@ -77,7 +77,7 @@
         "views/sii_activity_description.xml",
         "views/sii_cola_envio.xml",
         "views/sii_regional_offices_view.xml",
-        "views/user_signature_tab.xml",
+        "views/res_users.xml",
         "views/account_journal_sii_document_class_view.xml",
         "views/account_move_line_view.xml",
         "views/account_move_view.xml",

@@ -10,28 +10,28 @@
                         <header>
                             <button string="Check Signature" type="object" name="action_process"
                                     class="oe_highlight"
-                                    attrs="{'invisible':[('status','!=','unverified'),('key_file', '=', False)]}"/>
+                                    attrs="{'invisible':[('stage','!=','unverified'),('key_file', '=', False)]}"/>
 
                             <button string="Clean Signature" type="object" name="action_clean1"
-                                    attrs="{'invisible': [('status', '=', 'unverified')]}"/>
+                                    attrs="{'invisible': [('stage', '=', 'unverified')]}"/>
 
 
-                            <field name="status" widget="statusbar"/>
+                            <field name="stage" widget="statusbar"/>
                         </header>
-                        <group attrs="{'invisible': [('status', '!=', 'unverified')]}">
+                        <group attrs="{'invisible': [('stage', '!=', 'unverified')]}">
                             <field name="key_file" filename="filename"/>
                             <field name="filename" invisible="1"/>
                             <field name="dec_pass" password="True"
-                            attrs="{'readonly':[('status', '!=', 'unverified')]}"/>
+                            attrs="{'readonly':[('stage', '!=', 'unverified')]}"/>
                         </group>
 
                         <div attrs="{'invisible': [
-                                ('status', '=', 'unverified')]}">
+                                ('stage', '=', 'unverified')]}">
                             <group col="4">
                                 <field name="not_before"/>
                                 <field name="not_after"/>
                             </group>
-                            <group col="4" attrs="{'invisible':[('status','=','unverified')]}" >
+                            <group col="4" attrs="{'invisible':[('stage','=','unverified')]}" >
                                 <field name="final_date"/>
                                 <field name="subject_title"/>
                                 <field name="subject_c"/>

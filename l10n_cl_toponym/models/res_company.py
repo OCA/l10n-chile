@@ -13,7 +13,8 @@ class Company(models.Model):
         related='partner_id.state_id', readonly=False, string='State')
 
     city_id = fields.Many2one(
-        related='partner_id.city_id', readonly=False, string='City')
+        related='partner_id.city_id', readonly=False,
+        string='City of Address')
 
     @api.onchange('city_id')
     def _onchange_city(self):
