@@ -7380,7 +7380,7 @@ msgid "File Opt"
 msgstr "Opción"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1952
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1928
 #, python-format
 msgid "Fill Partner VAT"
 msgstr "Llenar RUT del Cliente"
@@ -7787,7 +7787,7 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:747
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:738
 #: model:ir.model,name:l10n_cl_electronic_invoicing.model_account_invoice
 #: model:ir.model.fields,field_description:l10n_cl_electronic_invoicing.field_account_invoice_gdr__invoice_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_electronic_invoicing.honorarios_tree
@@ -7868,7 +7868,7 @@ msgid "Issuers"
 msgstr "Emisor"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2083
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2059
 #, python-format
 msgid "It cannot be lower than 0!"
 msgstr ""
@@ -7881,7 +7881,7 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2334
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2310
 #, python-format
 msgid "It is combining companies. This is not allowed in a shipping."
 msgstr ""
@@ -8557,13 +8557,13 @@ msgid "Operation Type"
 msgstr "Error Tipo de operación"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1093
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1077
 #, python-format
 msgid "Operation Type Error"
 msgstr "Error Tipo de operación"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1094
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1078
 #, python-format
 msgid "Operation Type Must be \"Sale\" or \"Purchase\""
 msgstr "Tipo de operación debe ser \"Venta\" o \"Compra\""
@@ -8896,7 +8896,7 @@ msgid "Peluquería y otros tratamientos de belleza"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1130
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1114
 #, python-format
 msgid ""
 "Per legal requirement every note must include a reference to the document "
@@ -8930,7 +8930,7 @@ msgid "Pesca marítima industrial, excepto de barcos factoría"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1018
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1009
 #, python-format
 msgid ""
 "Please define sequence on the journal related documents to this invoice."
@@ -9325,7 +9325,7 @@ msgid "Referencias"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:749
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:740
 #, python-format
 msgid "Refund"
 msgstr "Nota de Crédito"
@@ -9973,7 +9973,7 @@ msgid "Seleccione Descuento/Recargo Global"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1714
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1690
 #, fuzzy, python-format
 msgid "Select giro of the partner"
 msgstr ""
@@ -10352,13 +10352,13 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:748
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:739
 #, python-format
 msgid "Supplier Invoice"
 msgstr "Factura del proveedor"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:750
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:741
 #, python-format
 msgid "Supplier Refund"
 msgstr "Reembolso del proveedor"
@@ -10452,7 +10452,7 @@ msgid "The book has been sent successfully!"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:951
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:942
 #, python-format
 msgid ""
 "The customer/supplier does not have a VAT defined. The type of invoicing "
@@ -10462,7 +10462,7 @@ msgstr ""
 "facturación que seleccionó requiere que liquide un IVA."
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1982
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1958
 #, python-format
 msgid ""
 "The date of the signature cannot be before the date of the emission document."
@@ -10476,7 +10476,7 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1117
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1101
 #, python-format
 msgid "The document %s with the folio %s of the company %s is now stored"
 msgstr ""
@@ -10488,7 +10488,7 @@ msgid "The document type of the sequence is different"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2515
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2491
 #, python-format
 msgid ""
 "The document was not sent. It is in the Odoo internal message queue envío "
@@ -10514,7 +10514,7 @@ msgid "The upper limit must be greater than the lower limit."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1003
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:994
 #, python-format
 msgid ""
 "The vendor bill number must be unique per vendor.\n"
@@ -10606,7 +10606,7 @@ msgstr ""
 "digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1400
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1376
 #, fuzzy, python-format
 msgid ""
 "There is no Signer Person with an authorized signature for you in the "
@@ -10619,7 +10619,7 @@ msgstr ""
 "digital o solicite que le asignen una.."
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:717
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:708
 #, python-format
 msgid ""
 "This %s has been created from: <a href=# data-oe-model=account.invoice data-"
@@ -11764,7 +11764,7 @@ msgid "XML File"
 msgstr "Archivos XML"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1286
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1262
 #: code:addons/l10n_cl_electronic_invoicing/models/consumo_folios.py:482
 #: code:addons/l10n_cl_electronic_invoicing/models/libro.py:569
 #, python-format
@@ -11860,13 +11860,13 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1858
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1834
 #, python-format
 msgid "You can't assign products in exempt documents."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:777
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:768
 #, python-format
 msgid "You cannot cancel a document already accepted by SII."
 msgstr ""
@@ -11879,7 +11879,7 @@ msgid "You cannot delete a Validated book."
 msgstr "No puedes eliminar un libro validado."
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2308
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2284
 #, python-format
 msgid ""
 "You cannot do mass mailing with mixed content. For this mailing, only "
@@ -11888,7 +11888,7 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2347
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:2323
 #, python-format
 msgid "You cannot repeat the same order number"
 msgstr ""
@@ -11899,25 +11899,25 @@ msgid "You have"
 msgstr "Tiene"
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1877
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1853
 #, python-format
 msgid "You must assign at least one product."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1703
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1679
 #, python-format
 msgid "You must enter the Tax ID of the receptor"
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1737
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1713
 #, python-format
 msgid "You must enter the address of the customer."
 msgstr ""
 
 #. module: l10n_cl_electronic_invoicing
-#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1748
+#: code:addons/l10n_cl_electronic_invoicing/models/account_invoice.py:1724
 #, python-format
 msgid "You must enter the municipality of the customer."
 msgstr ""
