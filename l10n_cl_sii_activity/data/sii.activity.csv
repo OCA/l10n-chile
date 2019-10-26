@@ -1,0 +1,675 @@
+"id","parent_id/id","code","name","vat_affected","tax_category","internet_available","active"
+eco_acti_11101,,11101,Cultivo de trigo,SI,1,1,1
+eco_acti_11102,,11102,Cultivo de maíz,SI,1,1,1
+eco_acti_11103,,11103,Cultivo de avena,SI,1,1,1
+eco_acti_11104,,11104,Cultivo de cebada,SI,1,1,1
+eco_acti_11105,,11105,"Cultivo de otros cereales (excepto trigo, maíz, avena y cebada)",SI,1,1,1
+eco_acti_11106,,11106,Cultivo de porotos,SI,1,1,1
+eco_acti_11107,,11107,Cultivo de lupino,SI,1,1,1
+eco_acti_11108,,11108,Cultivo de otras legumbres (excepto porotos y lupino),SI,1,1,1
+eco_acti_11109,,11109,Cultivo de semillas de raps,SI,1,1,1
+eco_acti_11110,,11110,Cultivo de semillas de maravilla (girasol),SI,1,1,1
+eco_acti_11111,,11111,"Cultivo de semillas de cereales, legumbres y oleaginosas (excepto semillas de raps y maravilla)",SI,1,1,1
+eco_acti_11200,,11200,Cultivo de arroz,SI,1,1,1
+eco_acti_11301,,11301,Cultivo de papas,SI,1,1,1
+eco_acti_11302,,11302,Cultivo de camotes,SI,1,1,1
+eco_acti_11303,,11303,Cultivo de otros tubérculos (excepto papas y camotes),SI,1,1,1
+eco_acti_11304,,11304,Cultivo de remolacha azucarera,SI,1,1,1
+eco_acti_11305,,11305,Cultivo de semillas de hortalizas,SI,1,1,1
+eco_acti_11306,,11306,Cultivo de hortalizas y melones ,SI,1,1,1
+eco_acti_11400,,11400,Cultivo de caña de azúcar,SI,1,1,1
+eco_acti_11500,,11500,Cultivo de tabaco,SI,1,1,1
+eco_acti_11600,,11600,Cultivo de plantas de fibra,SI,1,1,1
+eco_acti_11901,,11901,Cultivo de flores,SI,1,1,1
+eco_acti_11902,,11902,Cultivos forrajeros en praderas mejoradas o sembradas; cultivos suplementarios forrajeros,SI,1,1,1
+eco_acti_11903,,11903,Cultivos de semillas de flores; cultivo de semillas de plantas forrajeras,SI,1,1,1
+eco_acti_12111,,12111,Cultivo de uva destinada a la producción de pisco y aguardiente,SI,1,1,1
+eco_acti_12112,,12112,Cultivo de uva destinada a la producción de vino,SI,1,1,1
+eco_acti_12120,,12120,Cultivo de uva para mesa,SI,1,1,1
+eco_acti_12200,,12200,Cultivo de frutas tropicales y subtropicales (incluye el cultivo de paltas),SI,1,1,1
+eco_acti_12300,,12300,Cultivo de cítricos,SI,1,1,1
+eco_acti_12400,,12400,Cultivo de frutas de pepita y de hueso,SI,1,1,1
+eco_acti_12501,,12501,Cultivo de semillas de frutas,SI,1,1,1
+eco_acti_12502,,12502,Cultivo de otros frutos y nueces de árboles y arbustos,SI,1,1,1
+eco_acti_12600,,12600,Cultivo de frutos oleaginosos (incluye el cultivo de aceitunas),SI,1,1,1
+eco_acti_12700,,12700,"Cultivo de plantas con las que se preparan bebidas (incluye el cultivo de café, té y mate)",SI,1,1,1
+eco_acti_12801,,12801,Cultivo de especias,SI,1,1,1
+eco_acti_12802,,12802,"Cultivo de plantas aromáticas, medicinales y farmacéuticas",SI,1,1,1
+eco_acti_12900,,12900,Cultivo de otras plantas perennes,SI,1,1,1
+eco_acti_13000,,13000,Cultivo de plantas vivas incluida la producción en viveros (excepto viveros forestales),SI,1,1,1
+eco_acti_14101,,14101,Cría de ganado bovino para la producción lechera,SI,1,1,1
+eco_acti_14102,,14102,Cría de ganado bovino para la producción de carne o como ganado reproductor,SI,1,1,1
+eco_acti_14200,,14200,Cría de caballos y otros equinos,SI,1,1,1
+eco_acti_14300,,14300,"Cría de llamas, alpacas, vicuñas, guanacos y otros camélidos",SI,1,1,1
+eco_acti_14410,,14410,Cría de ovejas (ovinos),SI,1,1,1
+eco_acti_14420,,14420,Cría de cabras (caprinos),SI,1,1,1
+eco_acti_14500,,14500,Cría de cerdos,SI,1,1,1
+eco_acti_14601,,14601,Cría de aves de corral para la producción de carne,SI,1,1,1
+eco_acti_14602,,14602,Cría de aves de corral para la producción de huevos,SI,1,1,1
+eco_acti_14901,,14901,Apicultura,SI,1,1,1
+eco_acti_14909,,14909,Cría de otros animales n.c.p.,SI,1,1,1
+eco_acti_15000,,15000,Cultivo de productos agrícolas en combinación con la cría de animales (explotación mixta),SI,1,1,1
+eco_acti_16100,,16100,Actividades de apoyo a la agricultura,SI,1,1,1
+eco_acti_16200,,16200,Actividades de apoyo a la ganadería,SI,1,1,1
+eco_acti_16300,,16300,Actividades poscosecha,SI,1,1,1
+eco_acti_16400,,16400,Tratamiento de semillas para propagación,SI,1,1,1
+eco_acti_17000,,17000,Caza ordinaria y mediante trampas y actividades de servicios conexas,SI,1,1,1
+eco_acti_21001,,21001,Explotación de viveros forestales,SI,1,1,1
+eco_acti_21002,,21002,Silvicultura y otras actividades forestales (excepto explotación de viveros forestales),SI,1,1,1
+eco_acti_22000,,22000,Extracción de madera,SI,1,1,1
+eco_acti_23000,,23000,Recolección de productos forestales distintos de la madera,SI,1,1,1
+eco_acti_24001,,24001,Servicios de forestación a cambio de una retribución o por contrata,SI,1,1,1
+eco_acti_24002,,24002,Servicios de corta de madera a cambio de una retribución o por contrata,SI,1,1,1
+eco_acti_24003,,24003,Servicios de extinción y prevención de incendios forestales,SI,1,1,1
+eco_acti_24009,,24009,Otros servicios de apoyo a la silvicultura n.c.p.,SI,1,1,1
+eco_acti_31110,,31110,"Pesca marítima industrial, excepto de barcos factoría",SI,1,1,1
+eco_acti_31120,,31120,Pesca marítima artesanal,SI,1,1,1
+eco_acti_31130,,31130,Recolección y extracción de productos marinos,SI,1,1,1
+eco_acti_31140,,31140,Servicios relacionados con la pesca marítima,SI,1,1,1
+eco_acti_31200,,31200,Pesca de agua dulce,SI,1,1,1
+eco_acti_32110,,32110,Cultivo y crianza de peces marinos,SI,1,1,1
+eco_acti_32120,,32120,"Cultivo, reproducción y manejo de algas marinas",SI,1,1,1
+eco_acti_32130,,32130,"Reproducción y cría de moluscos, crustáceos y gusanos marinos",SI,1,1,1
+eco_acti_32140,,32140,Servicios relacionados con la acuicultura marina,SI,1,1,1
+eco_acti_32200,,32200,Acuicultura de agua dulce,SI,1,1,1
+eco_acti_40000,,40000,Extracción y procesamiento de cobre,SI,1,1,1
+eco_acti_51000,,51000,Extracción de carbón de piedra,SI,1,1,1
+eco_acti_52000,,52000,Extracción de lignito,SI,1,1,1
+eco_acti_61000,,61000,Extracción de petróleo crudo,SI,1,1,1
+eco_acti_62000,,62000,Extracción de gas natural,SI,1,1,1
+eco_acti_71000,,71000,Extracción de minerales de hierro,SI,1,1,1
+eco_acti_72100,,72100,Extracción de minerales de uranio y torio,SI,1,1,1
+eco_acti_72910,,72910,Extracción de oro y plata,SI,1,1,1
+eco_acti_72991,,72991,Extracción de zinc y plomo,SI,1,1,1
+eco_acti_72992,,72992,Extracción de manganeso,SI,1,1,1
+eco_acti_72999,,72999,"Extracción de otros minerales metalíferos no ferrosos n.c.p. (excepto zinc, plomo y manganeso)",SI,1,1,1
+eco_acti_81000,,81000,"Extracción de piedra, arena y arcilla",SI,1,1,1
+eco_acti_89110,,89110,Extracción y procesamiento de litio,SI,1,1,1
+eco_acti_89190,,89190,Extracción de minerales para la fabricación de abonos y productos químicos n.c.p.,SI,1,1,1
+eco_acti_89200,,89200,Extracción de turba,SI,1,1,1
+eco_acti_89300,,89300,Extracción de sal,SI,1,1,1
+eco_acti_89900,,89900,Explotación de otras minas y canteras n.c.p.,SI,1,1,1
+eco_acti_91001,,91001,Actividades de apoyo para la extracción de petróleo y gas natural prestados por empresas,SI,1,1,1
+eco_acti_91002,,91002,Actividades de apoyo para la extracción de petróleo y gas natural prestados por profesionales,NO,2,1,1
+eco_acti_99001,,99001,Actividades de apoyo para la explotación de otras minas y canteras prestados por empresas,SI,1,1,1
+eco_acti_99002,,99002,Actividades de apoyo para la explotación de otras minas y canteras prestados por profesionales,NO,2,1,1
+eco_acti_101011,,101011,"Explotación de mataderos de bovinos, ovinos, equinos, caprinos, porcinos y camélidos ",SI,1,1,1
+eco_acti_101019,,101019,Explotación de mataderos de aves y de otros tipos de animales n.c.p.,SI,1,1,1
+eco_acti_101020,,101020,Elaboración y conservación de carne y productos cárnicos,SI,1,1,1
+eco_acti_102010,,102010,Producción de harina de pescado,SI,1,1,1
+eco_acti_102020,,102020,Elaboración y conservación de salmónidos,SI,1,1,1
+eco_acti_102030,,102030,"Elaboración y conservación de otros pescados, en plantas en tierra (excepto barcos factoría)",SI,1,1,1
+eco_acti_102040,,102040,"Elaboración y conservación de crustáceos, moluscos y otros productos acuáticos, en plantas en tierra",SI,1,1,1
+eco_acti_102050,,102050,"Actividades de elaboración y conservación de pescado, realizadas en barcos factoría",SI,1,1,1
+eco_acti_102060,,102060,Elaboración y procesamiento de algas,SI,1,1,1
+eco_acti_103000,,103000,"Elaboración y conservación de frutas, legumbres y hortalizas",SI,1,1,1
+eco_acti_104000,,104000,Elaboración de aceites y grasas de origen vegetal y animal (excepto elaboración de mantequilla),SI,1,1,1
+eco_acti_105000,,105000,Elaboración de productos lácteos,SI,1,1,1
+eco_acti_106101,,106101,"Molienda de trigo: producción de harina, sémola y gránulos",SI,1,1,1
+eco_acti_106102,,106102,Molienda de arroz; producción de harina de arroz,SI,1,1,1
+eco_acti_106109,,106109,Elaboración de otros productos de molinería n.c.p.,SI,1,1,1
+eco_acti_106200,,106200,Elaboración de almidones y productos derivados del almidón,SI,1,1,1
+eco_acti_107100,,107100,Elaboración de productos de panadería y pastelería,SI,1,1,1
+eco_acti_107200,,107200,Elaboración de azúcar,SI,1,1,1
+eco_acti_107300,,107300,"Elaboración de cacao, chocolate y de productos de confitería",SI,1,1,1
+eco_acti_107400,,107400,"Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares",SI,1,1,1
+eco_acti_107500,,107500,"Elaboración de comidas y platos preparados envasados, rotulados y con información nutricional",SI,1,1,1
+eco_acti_107901,,107901,"Elaboración de té, café, mate e infusiones de hierbas",SI,1,1,1
+eco_acti_107902,,107902,Elaboración de levaduras naturales o artificiales,SI,1,1,1
+eco_acti_107903,,107903,"Elaboración de vinagres, mostazas, mayonesas y condimentos en general",SI,1,1,1
+eco_acti_107909,,107909,Elaboración de otros productos alimenticios n.c.p.,SI,1,1,1
+eco_acti_108000,,108000,Elaboración de piensos preparados para animales,SI,1,1,1
+eco_acti_110110,,110110,Elaboración de pisco (industrias pisqueras),SI,1,1,1
+eco_acti_110120,,110120,"Destilación, rectificación y mezclas de bebidas alcohólicas; excepto pisco",SI,1,1,1
+eco_acti_110200,,110200,Elaboración de vinos,SI,1,1,1
+eco_acti_110300,,110300,Elaboración de bebidas malteadas y de malta,SI,1,1,1
+eco_acti_110401,,110401,Elaboración de bebidas no alcohólicas,SI,1,1,1
+eco_acti_110402,,110402,Producción de aguas minerales y otras aguas embotelladas,SI,1,1,1
+eco_acti_120001,,120001,Elaboración de cigarros y cigarrillos,SI,1,1,1
+eco_acti_120009,,120009,Elaboración de otros productos de tabaco n.c.p.,SI,1,1,1
+eco_acti_131100,,131100,Preparación e hilatura de fibras textiles,SI,1,1,1
+eco_acti_131200,,131200,Tejedura de productos textiles,SI,1,1,1
+eco_acti_131300,,131300,Acabado de productos textiles,SI,1,1,1
+eco_acti_139100,,139100,Fabricación de tejidos de punto y ganchillo,SI,1,1,1
+eco_acti_139200,,139200,"Fabricación de artículos confeccionados de materiales textiles, excepto prendas de vestir",SI,1,1,1
+eco_acti_139300,,139300,Fabricación de tapices y alfombras,SI,1,1,1
+eco_acti_139400,,139400,"Fabricación de cuerdas, cordeles, bramantes y redes",SI,1,1,1
+eco_acti_139900,,139900,Fabricación de otros productos textiles n.c.p.,SI,1,1,1
+eco_acti_141001,,141001,Fabricación de prendas de vestir de materiales textiles y similares,SI,1,1,1
+eco_acti_141002,,141002,Fabricación de prendas de vestir de cuero natural o artificial,SI,1,1,1
+eco_acti_141003,,141003,Fabricación de accesorios de vestir,SI,1,1,1
+eco_acti_141004,,141004,Fabricación de ropa de trabajo,SI,1,1,1
+eco_acti_142000,,142000,Fabricación de artículos de piel,SI,1,1,1
+eco_acti_143000,,143000,Fabricación de artículos de punto y ganchillo,SI,1,1,1
+eco_acti_151100,,151100,Curtido y adobo de cueros; adobo y teñido de pieles,SI,1,1,1
+eco_acti_151200,,151200,"Fabricación de maletas, bolsos y artículos similares, artículos de talabartería y guarnicionería",SI,1,1,1
+eco_acti_152000,,152000,Fabricación de calzado,SI,1,1,1
+eco_acti_161000,,161000,Aserrado y acepilladura de madera,SI,1,1,1
+eco_acti_162100,,162100,Fabricación de hojas de madera para enchapado y tableros a base de madera,SI,1,1,1
+eco_acti_162200,,162200,Fabricación de partes y piezas de carpintería para edificios y construcciones,SI,1,1,1
+eco_acti_162300,,162300,Fabricación de recipientes de madera,SI,1,1,1
+eco_acti_162900,,162900,"Fabricación de otros productos de madera, de artículos de corcho, paja y materiales trenzables",SI,1,1,1
+eco_acti_170110,,170110,Fabricación de celulosa y otras pastas de madera,SI,1,1,1
+eco_acti_170190,,170190,Fabricación de papel y cartón para su posterior uso industrial n.c.p.,SI,1,1,1
+eco_acti_170200,,170200,Fabricación de papel y cartón ondulado y de envases de papel y cartón,SI,1,1,1
+eco_acti_170900,,170900,Fabricación de otros artículos de papel y cartón,SI,1,1,1
+eco_acti_181101,,181101,Impresión de libros,SI,1,1,1
+eco_acti_181109,,181109,Otras actividades de impresión n.c.p.,SI,1,1,1
+eco_acti_181200,,181200,Actividades de servicios relacionadas con la impresión,SI,1,1,1
+eco_acti_182000,,182000,Reproducción de grabaciones,SI,1,1,1
+eco_acti_191000,,191000,Fabricación de productos de hornos de coque,SI,1,1,1
+eco_acti_192000,,192000,Fabricación de productos de la refinación del petróleo,SI,1,1,1
+eco_acti_201101,,201101,Fabricación de carbón vegetal (excepto activado); fabricación de briquetas de carbón vegetal,SI,1,1,1
+eco_acti_201109,,201109,Fabricación de otras sustancias químicas básicas n.c.p.,SI,1,1,1
+eco_acti_201200,,201200,Fabricación de abonos y compuestos de nitrógeno,SI,1,1,1
+eco_acti_201300,,201300,Fabricación de plásticos y caucho sintético en formas primarias,SI,1,1,1
+eco_acti_202100,,202100,Fabricación de plaguicidas y otros productos químicos de uso agropecuario,SI,1,1,1
+eco_acti_202200,,202200,"Fabricación de pinturas, barnices y productos de revestimiento, tintas de imprenta y masillas",SI,1,1,1
+eco_acti_202300,,202300,"Fabricación de jabones y detergentes, preparados para limpiar, perfumes y preparados de tocador",SI,1,1,1
+eco_acti_202901,,202901,Fabricación de explosivos y productos pirotécnicos,SI,1,1,1
+eco_acti_202909,,202909,Fabricación de otros productos químicos n.c.p.,SI,1,1,1
+eco_acti_203000,,203000,Fabricación de fibras artificiales,SI,1,1,1
+eco_acti_210000,,210000,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos",SI,1,1,1
+eco_acti_221100,,221100,Fabricación de cubiertas y cámaras de caucho; recauchutado y renovación de cubiertas de caucho,SI,1,1,1
+eco_acti_221900,,221900,Fabricación de otros productos de caucho,SI,1,1,1
+eco_acti_222000,,222000,Fabricación de productos de plástico,SI,1,1,1
+eco_acti_231001,,231001,Fabricación de vidrio plano,SI,1,1,1
+eco_acti_231002,,231002,Fabricación de vidrio hueco,SI,1,1,1
+eco_acti_231003,,231003,Fabricación de fibras de vidrio,SI,1,1,1
+eco_acti_231009,,231009,Fabricación de productos de vidrio n.c.p.,SI,1,1,1
+eco_acti_239100,,239100,Fabricación de productos refractarios,SI,1,1,1
+eco_acti_239200,,239200,Fabricación de materiales de construcción de arcilla,SI,1,1,1
+eco_acti_239300,,239300,Fabricación de otros productos de porcelana y de cerámica,SI,1,1,1
+eco_acti_239400,,239400,"Fabricación de cemento, cal y yeso",SI,1,1,1
+eco_acti_239500,,239500,"Fabricación de artículos de hormigón, cemento y yeso",SI,1,1,1
+eco_acti_239600,,239600,"Corte, talla y acabado de la piedra",SI,1,1,1
+eco_acti_239900,,239900,Fabricación de otros productos minerales no metálicos n.c.p.,SI,1,1,1
+eco_acti_241000,,241000,Industrias básicas de hierro y acero,SI,1,1,1
+eco_acti_242001,,242001,Fabricación de productos primarios de cobre,SI,1,1,1
+eco_acti_242002,,242002,Fabricación de productos primarios de aluminio,SI,1,1,1
+eco_acti_242009,,242009,Fabricación de productos primarios de metales preciosos y de otros metales no ferrosos n.c.p.,SI,1,1,1
+eco_acti_243100,,243100,Fundición de hierro y acero,SI,1,1,1
+eco_acti_243200,,243200,Fundición de metales no ferrosos,SI,1,1,1
+eco_acti_251100,,251100,Fabricación de productos metálicos para uso estructural,SI,1,1,1
+eco_acti_251201,,251201,Fabricación de recipientes de metal para gases comprimidos o licuados,SI,1,1,1
+eco_acti_251209,,251209,"Fabricación de tanques, depósitos y recipientes de metal n.c.p.",SI,1,1,1
+eco_acti_251300,,251300,"Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central",SI,1,1,1
+eco_acti_252000,,252000,Fabricación de armas y municiones,SI,1,1,1
+eco_acti_259100,,259100,"Forja, prensado, estampado y laminado de metales; pulvimetalurgia",SI,1,1,1
+eco_acti_259200,,259200,Tratamiento y revestimiento de metales; maquinado,SI,1,1,1
+eco_acti_259300,,259300,"Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería",SI,1,1,1
+eco_acti_259900,,259900,Fabricación de otros productos elaborados de metal n.c.p.,SI,1,1,1
+eco_acti_261000,,261000,Fabricación de componentes y tableros electrónicos,SI,1,1,1
+eco_acti_262000,,262000,Fabricación de computadores y equipo periférico,SI,1,1,1
+eco_acti_263000,,263000,Fabricación de equipo de comunicaciones,SI,1,1,1
+eco_acti_264000,,264000,Fabricación de aparatos electrónicos de consumo,SI,1,1,1
+eco_acti_265100,,265100,"Fabricación de equipo de medición, prueba, navegación y control",SI,1,1,1
+eco_acti_265200,,265200,Fabricación de relojes,SI,1,1,1
+eco_acti_266000,,266000,Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico,SI,1,1,1
+eco_acti_267000,,267000,Fabricación de instrumentos ópticos y equipo fotográfico,SI,1,1,1
+eco_acti_268000,,268000,Fabricación de soportes magnéticos y ópticos,SI,1,1,1
+eco_acti_271000,,271000,"Fabricación de motores, generadores y transformadores eléctricos, aparatos de distribución y control",SI,1,1,1
+eco_acti_272000,,272000,"Fabricación de pilas, baterías y acumuladores",SI,1,1,1
+eco_acti_273100,,273100,Fabricación de cables de fibra óptica,SI,1,1,1
+eco_acti_273200,,273200,Fabricación de otros hilos y cables eléctricos,SI,1,1,1
+eco_acti_273300,,273300,Fabricación de dispositivos de cableado,SI,1,1,1
+eco_acti_274000,,274000,Fabricación de equipo eléctrico de iluminación,SI,1,1,1
+eco_acti_275000,,275000,Fabricación de aparatos de uso doméstico,SI,1,1,1
+eco_acti_279000,,279000,Fabricación de otros tipos de equipo eléctrico,SI,1,1,1
+eco_acti_281100,,281100,"Fabricación de motores y turbinas, excepto para aeronaves, vehículos automotores y motocicletas",SI,1,1,1
+eco_acti_281200,,281200,Fabricación de equipo de propulsión de fluidos,SI,1,1,1
+eco_acti_281300,,281300,"Fabricación de otras bombas, compresores, grifos y válvulas",SI,1,1,1
+eco_acti_281400,,281400,"Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión",SI,1,1,1
+eco_acti_281500,,281500,"Fabricación de hornos, calderas y quemadores",SI,1,1,1
+eco_acti_281600,,281600,Fabricación de equipo de elevación y manipulación,SI,1,1,1
+eco_acti_281700,,281700,Fabricación de maquinaria y equipo de oficina (excepto computadores y equipo periférico),SI,1,1,1
+eco_acti_281800,,281800,Fabricación de herramientas de mano motorizadas,SI,1,1,1
+eco_acti_281900,,281900,Fabricación de otros tipos de maquinaria de uso general,SI,1,1,1
+eco_acti_282100,,282100,Fabricación de maquinaria agropecuaria y forestal,SI,1,1,1
+eco_acti_282200,,282200,Fabricación de maquinaria para la conformación de metales y de máquinas herramienta,SI,1,1,1
+eco_acti_282300,,282300,Fabricación de maquinaria metalúrgica,SI,1,1,1
+eco_acti_282400,,282400,Fabricación de maquinaria para la explotación de minas y canteras y para obras de construcción,SI,1,1,1
+eco_acti_282500,,282500,"Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco",SI,1,1,1
+eco_acti_282600,,282600,"Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros",SI,1,1,1
+eco_acti_282900,,282900,Fabricación de otros tipos de maquinaria de uso especial,SI,1,1,1
+eco_acti_291000,,291000,Fabricación de vehículos automotores,SI,1,1,1
+eco_acti_292000,,292000,Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques,SI,1,1,1
+eco_acti_293000,,293000,"Fabricación de partes, piezas y accesorios para vehículos automotores",SI,1,1,1
+eco_acti_301100,,301100,"Construcción de buques, embarcaciones menores y estructuras flotantes",SI,1,1,1
+eco_acti_301200,,301200,Construcción de embarcaciones de recreo y de deporte,SI,1,1,1
+eco_acti_302000,,302000,Fabricación de locomotoras y material rodante,SI,1,1,1
+eco_acti_303000,,303000,"Fabricación de aeronaves, naves espaciales y maquinaria conexa",SI,1,1,1
+eco_acti_304000,,304000,Fabricación de vehículos militares de combate,SI,1,1,1
+eco_acti_309100,,309100,Fabricación de motocicletas,SI,1,1,1
+eco_acti_309200,,309200,Fabricación de bicicletas y de sillas de ruedas,SI,1,1,1
+eco_acti_309900,,309900,Fabricación de otros tipos de equipo de transporte n.c.p.,SI,1,1,1
+eco_acti_310001,,310001,Fabricación de muebles principalmente de madera,SI,1,1,1
+eco_acti_310009,,310009,Fabricación de colchones; fabricación de otros muebles n.c.p.,SI,1,1,1
+eco_acti_321100,,321100,Fabricación de joyas y artículos conexos,SI,1,1,1
+eco_acti_321200,,321200,Fabricación de bisutería y artículos conexos,SI,1,1,1
+eco_acti_322000,,322000,Fabricación de instrumentos musicales,SI,1,1,1
+eco_acti_323000,,323000,Fabricación de artículos de deporte,SI,1,1,1
+eco_acti_324000,,324000,Fabricación de juegos y juguetes,SI,1,1,1
+eco_acti_325001,,325001,Actividades de laboratorios dentales,SI,1,1,1
+eco_acti_325009,,325009,"Fabricación de instrumentos y materiales médicos, oftalmológicos y odontológicos n.c.p.",SI,1,1,1
+eco_acti_329000,,329000,Otras industrias manufactureras n.c.p.,SI,1,1,1
+eco_acti_331100,,331100,Reparación de productos elaborados de metal,SI,1,1,1
+eco_acti_331201,,331201,Reparación de maquinaria agropecuaria y forestal,SI,1,1,1
+eco_acti_331202,,331202,"Reparación de maquinaria metalúrgica, para la minería, extracción de petróleo y para la construcción",SI,1,1,1
+eco_acti_331203,,331203,"Reparación de maquinaria para la elaboración de alimentos, bebidas y tabaco",SI,1,1,1
+eco_acti_331204,,331204,"Reparación de maquinaria para producir textiles, prendas de vestir, artículos de cuero y calzado  ",SI,1,1,1
+eco_acti_331209,,331209,Reparación de otro tipo de maquinaria y equipos industriales n.c.p.,SI,1,1,1
+eco_acti_331301,,331301,"Reparación de equipo de medición, prueba, navegación y control",SI,1,1,1
+eco_acti_331309,,331309,Reparación de otros equipos electrónicos y ópticos n.c.p.,SI,1,1,1
+eco_acti_331400,,331400,Reparación de equipo eléctrico (excepto reparación de equipo y enseres domésticos),SI,1,1,1
+eco_acti_331501,,331501,"Reparación de buques, embarcaciones menores y estructuras flotantes",SI,1,1,1
+eco_acti_331502,,331502,Reparación de aeronaves y naves espaciales,SI,1,1,1
+eco_acti_331509,,331509,"Reparación de otros equipos de transporte n.c.p., excepto vehículos automotores",SI,1,1,1
+eco_acti_331900,,331900,Reparación de otros tipos de equipo,SI,1,1,1
+eco_acti_332000,,332000,Instalación de maquinaria y equipos industriales,SI,1,1,1
+eco_acti_351011,,351011,Generación de energía eléctrica en centrales hidroeléctricas,SI,1,1,1
+eco_acti_351012,,351012,Generación de energía eléctrica en centrales termoeléctricas,SI,1,1,1
+eco_acti_351019,,351019,Generación de energía eléctrica en otras centrales n.c.p.,SI,1,1,1
+eco_acti_351020,,351020,Transmisión de energía eléctrica,SI,1,1,1
+eco_acti_351030,,351030,Distribución de energía eléctrica,SI,1,1,1
+eco_acti_352010,,352010,Regasificación de gas natural licuado (gnl),SI,1,1,1
+eco_acti_352020,,352020,"Fabricación de gas; distribución de combustibles gaseosos por tubería, excepto regasificación de gnl",SI,1,1,1
+eco_acti_353001,,353001,Suministro de vapor y de aire acondicionado,SI,1,1,1
+eco_acti_353002,,353002,Elaboración de hielo (excepto fabricación de hielo seco),SI,1,1,1
+eco_acti_360000,,360000,"Captación, tratamiento y distribución de agua",ND,1,1,1
+eco_acti_370000,,370000,Evacuación y tratamiento de aguas servidas,SI,1,1,1
+eco_acti_381100,,381100,Recogida de desechos no peligrosos,SI,1,1,1
+eco_acti_381200,,381200,Recogida de desechos peligrosos,SI,1,1,1
+eco_acti_382100,,382100,Tratamiento y eliminación de desechos no peligrosos,SI,1,1,1
+eco_acti_382200,,382200,Tratamiento y eliminación de desechos peligrosos,SI,1,1,1
+eco_acti_383001,,383001,Recuperación y reciclamiento de desperdicios y desechos metálicos,SI,1,1,1
+eco_acti_383002,,383002,Recuperación y reciclamiento de papel,SI,1,1,1
+eco_acti_383003,,383003,Recuperación y reciclamiento de vidrio,SI,1,1,1
+eco_acti_383009,,383009,Recuperación y reciclamiento de otros desperdicios y desechos n.c.p.,SI,1,1,1
+eco_acti_390000,,390000,Actividades de descontaminación y otros servicios de gestión de desechos,SI,1,1,1
+eco_acti_410010,,410010,Construcción de edificios para uso residencial,SI,1,1,1
+eco_acti_410020,,410020,Construcción de edificios para uso no residencial,SI,1,1,1
+eco_acti_421000,,421000,Construcción de carreteras y líneas de ferrocarril,SI,1,1,1
+eco_acti_422000,,422000,Construcción de proyectos de servicio público,SI,1,1,1
+eco_acti_429000,,429000,Construcción de otras obras de ingeniería civil,SI,1,1,1
+eco_acti_431100,,431100,Demolición,SI,1,1,1
+eco_acti_431200,,431200,Preparación del terreno,SI,1,1,1
+eco_acti_432100,,432100,Instalaciones eléctricas,SI,1,1,1
+eco_acti_432200,,432200,"Instalaciones de gasfitería, calefacción y aire acondicionado",SI,1,1,1
+eco_acti_432900,,432900,Otras instalaciones para obras de construcción,SI,1,1,1
+eco_acti_433000,,433000,Terminación y acabado de edificios,SI,1,1,1
+eco_acti_439000,,439000,Otras actividades especializadas de construcción,SI,1,1,1
+eco_acti_451001,,451001,Venta al por mayor de vehículos automotores,SI,1,1,1
+eco_acti_451002,,451002,Venta al por menor de vehículos automotores nuevos o usados (incluye compraventa),SI,1,1,1
+eco_acti_452001,,452001,Servicio de lavado de vehículos automotores,ND,1,1,1
+eco_acti_452002,,452002,Mantenimiento y reparación de vehículos automotores,ND,1,1,1
+eco_acti_453000,,453000,"Venta de partes, piezas y accesorios para vehículos automotores",SI,1,1,1
+eco_acti_454001,,454001,Venta de motocicletas,SI,1,1,1
+eco_acti_454002,,454002,"Venta de partes, piezas y accesorios de motocicletas",SI,1,1,1
+eco_acti_454003,,454003,Mantenimiento y reparación de motocicletas,ND,1,1,1
+eco_acti_461001,,461001,Corretaje al por mayor de productos agrícolas,SI,1,1,1
+eco_acti_461002,,461002,Corretaje al por mayor de ganado,SI,1,1,1
+eco_acti_461009,,461009,Otros tipos de corretajes o remates al por mayor n.c.p.,SI,1,1,1
+eco_acti_462010,,462010,Venta al por mayor de materias primas agrícolas,SI,1,1,1
+eco_acti_462020,,462020,Venta al por mayor de animales vivos,SI,1,1,1
+eco_acti_462090,,462090,Venta al por mayor de otras materias primas agropecuarias n.c.p.,SI,1,1,1
+eco_acti_463011,,463011,Venta al por mayor de frutas y verduras,SI,1,1,1
+eco_acti_463012,,463012,Venta al por mayor de carne y productos cárnicos,SI,1,1,1
+eco_acti_463013,,463013,"Venta al por mayor de productos del mar (pescados, mariscos y algas)",SI,1,1,1
+eco_acti_463014,,463014,Venta al por mayor de productos de confitería,SI,1,1,1
+eco_acti_463019,,463019,"Venta al por mayor de huevos, lácteos, abarrotes y de otros alimentos n.c.p.",SI,1,1,1
+eco_acti_463020,,463020,Venta al por mayor de bebidas alcohólicas y no alcohólicas,SI,1,1,1
+eco_acti_463030,,463030,Venta al por mayor de tabaco,SI,1,1,1
+eco_acti_464100,,464100,"Venta al por mayor de productos textiles, prendas de vestir y calzado",SI,1,1,1
+eco_acti_464901,,464901,"Venta al por mayor de muebles, excepto muebles de oficina",SI,1,1,1
+eco_acti_464902,,464902,Venta al por mayor de artículos eléctricos y electrónicos para el hogar,SI,1,1,1
+eco_acti_464903,,464903,"Venta al por mayor de artículos de perfumería, de tocador y cosméticos",SI,1,1,1
+eco_acti_464904,,464904,Venta al por mayor de artículos de papelería y escritorio,SI,1,1,1
+eco_acti_464905,,464905,Venta al por mayor de libros,SI,1,1,1
+eco_acti_464906,,464906,Venta al por mayor de diarios y revistas,SI,1,1,1
+eco_acti_464907,,464907,Venta al por mayor de productos farmacéuticos y medicinales ,SI,1,1,1
+eco_acti_464908,,464908,Venta al por mayor de instrumentos científicos y quirúrgicos,SI,1,1,1
+eco_acti_464909,,464909,Venta al por mayor de otros enseres domésticos n.c.p.,SI,1,1,1
+eco_acti_465100,,465100,"Venta al por mayor de computadores, equipo periférico y programas informáticos",SI,1,1,1
+eco_acti_465200,,465200,"Venta al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones",SI,1,1,1
+eco_acti_465300,,465300,"Venta al por mayor de maquinaria, equipo y materiales agropecuarios",SI,1,1,1
+eco_acti_465901,,465901,"Venta al por mayor de maquinaria metalúrgica, para la minería, extracción de petróleo y construcción",SI,1,1,1
+eco_acti_465902,,465902,"Venta al por mayor de maquinaria para la elaboración de alimentos, bebidas y tabaco",SI,1,1,1
+eco_acti_465903,,465903,"Venta al por mayor de maquinaria para la industria textil, del cuero y del calzado",SI,1,1,1
+eco_acti_465904,,465904,Venta al por mayor de maquinaria y equipo de oficina; venta al por mayor de muebles de oficina,SI,1,1,1
+eco_acti_465905,,465905,"Venta al por mayor de equipo de transporte(excepto vehículos automotores, motocicletas y bicicletas)",SI,1,1,1
+eco_acti_465909,,465909,Venta al por mayor de otros tipos de maquinaria y equipo n.c.p.,SI,1,1,1
+eco_acti_466100,,466100,"Venta al por mayor de combustibles sólidos, líquidos y gaseosos y productos conexos",SI,1,1,1
+eco_acti_466200,,466200,Venta al por mayor de metales y minerales metalíferos,SI,1,1,1
+eco_acti_466301,,466301,Venta al por mayor de madera en bruto y productos primarios de la elaboración de madera,SI,1,1,1
+eco_acti_466302,,466302,"Venta al por mayor de materiales de construcción, artículos de ferretería, gasfitería y calefacción",SI,1,1,1
+eco_acti_466901,,466901,Venta al por mayor de productos químicos,SI,1,1,1
+eco_acti_466902,,466902,Venta al por mayor de desechos metálicos (chatarra),SI,1,1,1
+eco_acti_466909,,466909,"Venta al por mayor de desperdicios, desechos y otros productos n.c.p.",SI,1,0,1
+eco_acti_469000,,469000,Venta al por mayor no especializada,SI,1,0,1
+eco_acti_471100,,471100,"Venta al por menor en comercios de alimentos, bebidas o tabaco (supermercados e hipermercados)",SI,1,1,1
+eco_acti_471910,,471910,Venta al por menor en comercios de vestuario y productos para el hogar (grandes tiendas),SI,1,1,1
+eco_acti_471990,,471990,Otras actividades de venta al por menor en comercios no especializados n.c.p.,SI,1,1,1
+eco_acti_472101,,472101,Venta al por menor de alimentos en comercios especializados (almacenes pequeños y minimarket),SI,1,1,1
+eco_acti_472102,,472102,Venta al por menor en comercios especializados de carne y productos cárnicos ,SI,1,1,1
+eco_acti_472103,,472103,Venta al por menor en comercios especializados de frutas y verduras (verdulerías),SI,1,1,1
+eco_acti_472104,,472104,"Venta al por menor en comercios especializados de pescado, mariscos y productos conexos",SI,1,1,1
+eco_acti_472105,,472105,Venta al por menor en comercios especializados de productos de panadería y pastelería,SI,1,1,1
+eco_acti_472109,,472109,"Venta al por menor en comercios especializados de huevos, confites y productos alimenticios n.c.p.",SI,1,1,1
+eco_acti_472200,,472200,Venta al por menor de bebidas alcohólicas y no alcohólicas en comercios especializados (botillerías),SI,1,1,1
+eco_acti_472300,,472300,Venta al por menor de tabaco y productos de tabaco en comercios especializados,SI,1,1,1
+eco_acti_473000,,473000,Venta al por menor de combustibles para vehículos automotores en comercios especializados,SI,1,1,1
+eco_acti_474100,,474100,"Venta al por menor de computadores, equipo periférico, programas informáticos y equipo de telecom.",SI,1,1,1
+eco_acti_474200,,474200,Venta al por menor de equipo de sonido y de video en comercios especializados,SI,1,1,1
+eco_acti_475100,,475100,"Venta al por menor de telas, lanas, hilos y similares en comercios especializados",SI,1,1,1
+eco_acti_475201,,475201,Venta al por menor de artículos de ferretería y materiales de construcción ,SI,1,1,1
+eco_acti_475202,,475202,"Venta al por menor de pinturas, barnices y lacas en comercios especializados",SI,1,1,1
+eco_acti_475203,,475203,Venta al por menor de productos de vidrio en comercios especializados,SI,1,1,1
+eco_acti_475300,,475300,"Venta al por menor de tapices, alfombras y cubrimientos para paredes y pisos",SI,1,1,1
+eco_acti_475901,,475901,Venta al por menor de muebles y colchones en comercios especializados,SI,1,1,1
+eco_acti_475902,,475902,Venta al por menor de instrumentos musicales en comercios especializados,SI,1,1,1
+eco_acti_475909,,475909,"Venta al por menor de aparatos eléctricos, textiles para el hogar y otros enseres domésticos n.c.p.",SI,1,1,1
+eco_acti_476101,,476101,Venta al por menor de libros en comercios especializados,SI,1,1,1
+eco_acti_476102,,476102,Venta al por menor de diarios y revistas en comercios especializados,SI,1,1,1
+eco_acti_476103,,476103,Venta al por menor de artículos de papelería y escritorio en comercios especializados,SI,1,1,1
+eco_acti_476200,,476200,Venta al por menor de grabaciones de música y de video en comercios especializados,SI,1,1,1
+eco_acti_476301,,476301,Venta al por menor de artículos de caza y pesca en comercios especializados,SI,1,1,1
+eco_acti_476302,,476302,Venta al por menor de bicicletas y sus repuestos en comercios especializados,SI,1,1,1
+eco_acti_476309,,476309,Venta al por menor de otros artículos y equipos de deporte n.c.p.,SI,1,1,1
+eco_acti_476400,,476400,Venta al por menor de juegos y juguetes en comercios especializados,SI,1,1,1
+eco_acti_477101,,477101,Venta al por menor de calzado en comercios especializados,SI,1,1,1
+eco_acti_477102,,477102,Venta al por menor de prendas y accesorios de vestir en comercios especializados,SI,1,1,1
+eco_acti_477103,,477103,"Venta al por menor de carteras, maletas y otros accesorios de viaje en comercios especializados",SI,1,1,1
+eco_acti_477201,,477201,Venta al por menor de productos farmacéuticos y medicinales en comercios especializados,SI,1,1,1
+eco_acti_477202,,477202,Venta al por menor de artículos ortopédicos en comercios especializados,SI,1,1,1
+eco_acti_477203,,477203,"Venta al por menor de artículos de perfumería, de tocador y cosméticos en comercios especializados",SI,1,1,1
+eco_acti_477310,,477310,Venta al por menor de gas licuado en bombonas (cilindros) en comercios especializados,SI,1,1,1
+eco_acti_477391,,477391,Venta al por menor de alimento y accesorios para mascotas en comercios especializados,SI,1,1,1
+eco_acti_477392,,477392,Venta al por menor de armas y municiones en comercios especializados,SI,1,1,1
+eco_acti_477393,,477393,Venta al por menor de artículos ópticos en comercios especializados,SI,1,1,1
+eco_acti_477394,,477394,"Venta al por menor de artículos de joyería, bisutería y relojería en comercios especializados",SI,1,1,1
+eco_acti_477395,,477395,"Venta al por menor de carbón, leña y otros combustibles de uso doméstico en comercios especializados",SI,1,1,1
+eco_acti_477396,,477396,"Venta al por menor de recuerdos, artesanías y artículos religiosos en comercios especializados",SI,1,1,1
+eco_acti_477397,,477397,"Venta al por menor de flores, plantas, arboles, semillas y abonos en comercios especializados",SI,1,1,1
+eco_acti_477398,,477398,Venta al por menor de mascotas en comercios especializados,SI,1,1,1
+eco_acti_477399,,477399,Venta al por menor de otros productos en comercios especializados n.c.p.,SI,1,1,1
+eco_acti_477401,,477401,Venta al por menor de antigüedades en comercios,SI,1,1,1
+eco_acti_477402,,477402,Venta al por menor de ropa usada en comercios,SI,1,1,1
+eco_acti_477409,,477409,Venta al por menor de otros artículos de segunda mano en comercios n.c.p.,SI,1,1,1
+eco_acti_478100,,478100,"Venta al por menor de alimentos, bebidas y tabaco en puestos de venta y mercados (incluye ferias)",SI,1,1,1
+eco_acti_478200,,478200,"Venta al por menor de productos textiles, prendas de vestir y calzado en puestos de venta y mercados",SI,1,1,1
+eco_acti_478900,,478900,Venta al por menor de otros productos en puestos de venta y mercados (incluye ferias),SI,1,1,1
+eco_acti_479100,,479100,"Venta al por menor por correo, por internet y vía telefónica",SI,1,1,1
+eco_acti_479901,,479901,Venta al por menor realizada por independientes en la locomoción colectiva (ley 20.388),SI,1,1,1
+eco_acti_479902,,479902,Venta al por menor mediante maquinas expendedoras,SI,1,1,1
+eco_acti_479903,,479903,Venta al por menor por comisionistas (no dependientes de comercios),SI,1,1,1
+eco_acti_479909,,479909,"Otras actividades de venta por menor no realizadas en comercios, puestos de venta o mercados n.c.p.",SI,1,1,1
+eco_acti_491100,,491100,Transporte interurbano de pasajeros por ferrocarril,SI,1,1,1
+eco_acti_491200,,491200,Transporte de carga por ferrocarril,SI,1,1,1
+eco_acti_492110,,492110,Transporte urbano y suburbano de pasajeros vía metro y metrotren,NO,1,1,1
+eco_acti_492120,,492120,Transporte urbano y suburbano de pasajeros vía locomoción colectiva,NO,1,1,1
+eco_acti_492130,,492130,Transporte de pasajeros vía taxi colectivo,NO,1,1,1
+eco_acti_492190,,492190,Otras actividades de transporte urbano y suburbano de pasajeros por vía terrestre n.c.p.,NO,1,1,1
+eco_acti_492210,,492210,Servicios de transporte de escolares,NO,1,1,1
+eco_acti_492220,,492220,Servicios de transporte de trabajadores,NO,1,1,1
+eco_acti_492230,,492230,Servicios de transporte de pasajeros en taxis libres y radiotaxis,NO,1,1,1
+eco_acti_492240,,492240,Servicios de transporte a turistas,NO,1,1,1
+eco_acti_492250,,492250,Transporte de pasajeros en buses interurbanos ,NO,1,1,1
+eco_acti_492290,,492290,Otras actividades de transporte de pasajeros por vía terrestre n.c.p.,NO,1,1,1
+eco_acti_492300,,492300,Transporte de carga por carretera,SI,1,1,1
+eco_acti_493010,,493010,Transporte por oleoductos,SI,1,1,1
+eco_acti_493020,,493020,Transporte por gasoductos,SI,1,1,1
+eco_acti_493090,,493090,Otras actividades de transporte por tuberías n.c.p.,SI,1,1,1
+eco_acti_501100,,501100,Transporte de pasajeros marítimo y de cabotaje,SI,1,1,1
+eco_acti_501200,,501200,Transporte de carga marítimo y de cabotaje,SI,1,1,1
+eco_acti_502100,,502100,Transporte de pasajeros por vías de navegación interiores,SI,1,1,1
+eco_acti_502200,,502200,Transporte de carga por vías de navegación interiores,SI,1,1,1
+eco_acti_511000,,511000,Transporte de pasajeros por vía aérea,SI,1,1,1
+eco_acti_512000,,512000,Transporte de carga por vía aérea,SI,1,1,1
+eco_acti_521001,,521001,Explotación de frigoríficos para almacenamiento y depósito,SI,1,1,1
+eco_acti_521009,,521009,Otros servicios de almacenamiento y depósito n.c.p.,SI,1,1,1
+eco_acti_522110,,522110,Explotación de terminales terrestres de pasajeros,SI,1,1,1
+eco_acti_522120,,522120,Explotación de estacionamientos de vehículos automotores y parquímetros,SI,1,1,1
+eco_acti_522130,,522130,Servicios prestados por concesionarios de carreteras,SI,1,1,1
+eco_acti_522190,,522190,Actividades de servicios vinculadas al transporte terrestre n.c.p.,SI,1,1,1
+eco_acti_522200,,522200,Actividades de servicios vinculadas al transporte acuático,SI,1,1,1
+eco_acti_522300,,522300,Actividades de servicios vinculadas al transporte aéreo,SI,1,1,1
+eco_acti_522400,,522400,Manipulación de la carga,SI,1,1,1
+eco_acti_522910,,522910,Agencias de aduanas,ND,1,1,1
+eco_acti_522920,,522920,Agencias de naves,ND,1,1,1
+eco_acti_522990,,522990,Otras actividades de apoyo al transporte n.c.p.,ND,1,1,1
+eco_acti_531000,,531000,Actividades postales,ND,1,1,1
+eco_acti_532000,,532000,Actividades de mensajería,ND,1,1,1
+eco_acti_551001,,551001,Actividades de hoteles,SI,1,1,1
+eco_acti_551002,,551002,Actividades de moteles,SI,1,1,1
+eco_acti_551003,,551003,Actividades de residenciales para turistas,SI,1,1,1
+eco_acti_551009,,551009,Otras actividades de alojamiento para turistas n.c.p.,SI,1,1,1
+eco_acti_552000,,552000,Actividades de camping y de parques para casas rodantes,SI,1,1,1
+eco_acti_559001,,559001,Actividades de residenciales para estudiantes y trabajadores ,SI,1,1,1
+eco_acti_559009,,559009,Otras actividades de alojamiento n.c.p.,SI,1,1,1
+eco_acti_561000,,561000,Actividades de restaurantes y de servicio móvil de comidas,SI,1,1,1
+eco_acti_562100,,562100,Suministro de comidas por encargo (servicios de banquetería),SI,1,1,1
+eco_acti_562900,,562900,Suministro industrial de comidas por encargo; concesión de servicios de alimentación ,SI,1,1,1
+eco_acti_563001,,563001,"Actividades de discotecas y cabaret (night club), con predominio del servicio de bebidas",SI,1,1,1
+eco_acti_563009,,563009,Otras actividades de servicio de bebidas n.c.p.,SI,1,1,1
+eco_acti_581100,,581100,Edición de libros,SI,1,1,1
+eco_acti_581200,,581200,Edición de directorios y listas de correo,SI,1,1,1
+eco_acti_581300,,581300,"Edición de diarios, revistas y otras publicaciones periódicas",SI,1,1,1
+eco_acti_581900,,581900,Otras actividades de edición,SI,1,1,1
+eco_acti_582000,,582000,Edición de programas informáticos,SI,1,1,1
+eco_acti_591100,,591100,"Actividades de producción de películas cinematográficas, videos y programas de televisión",ND,1,1,1
+eco_acti_591200,,591200,"Actividades de postproducción de películas cinematográficas, videos y programas de televisión",ND,1,1,1
+eco_acti_591300,,591300,"Actividades de distribución de películas cinematográficas, videos y programas de televisión",SI,1,1,1
+eco_acti_591400,,591400,Actividades de exhibición de películas cinematográficas y cintas de video,SI,1,1,1
+eco_acti_592000,,592000,Actividades de grabación de sonido y edición de música,SI,1,1,1
+eco_acti_601000,,601000,Transmisiones de radio,ND,1,1,1
+eco_acti_602000,,602000,Programación y transmisiones de televisión,ND,1,1,1
+eco_acti_611010,,611010,Telefonía fija,SI,1,1,1
+eco_acti_611020,,611020,Telefonía larga distancia,SI,1,1,1
+eco_acti_611030,,611030,Televisión de pago por cable,SI,1,1,1
+eco_acti_611090,,611090,Otros servicios de telecomunicaciones alámbricas n.c.p.,SI,1,1,1
+eco_acti_612010,,612010,Telefonía móvil celular,SI,1,1,1
+eco_acti_612020,,612020,Radiocomunicaciones móviles,SI,1,1,1
+eco_acti_612030,,612030,Televisión de pago inalámbrica,SI,1,1,1
+eco_acti_612090,,612090,Otros servicios de telecomunicaciones inalámbricas n.c.p.,SI,1,1,1
+eco_acti_613010,,613010,Telefonía móvil satelital,SI,1,1,1
+eco_acti_613020,,613020,Televisión de pago satelital,SI,1,1,1
+eco_acti_613090,,613090,Otros servicios de telecomunicaciones por satélite n.c.p.,SI,1,1,1
+eco_acti_619010,,619010,Centros de llamados y centros de acceso a internet,SI,1,1,1
+eco_acti_619090,,619090,Otras actividades de telecomunicaciones n.c.p.,SI,1,1,1
+eco_acti_620100,,620100,Actividades de programación informática,NO,2,1,1
+eco_acti_620200,,620200,Actividades de consultoría de informática y de gestión de instalaciones informáticas,ND,1,1,1
+eco_acti_620900,,620900,Otras actividades de tecnología de la información y de servicios informáticos,ND,1,1,1
+eco_acti_631100,,631100,"Procesamiento de datos, hospedaje y actividades conexas",ND,1,1,1
+eco_acti_631200,,631200,Portales web,ND,1,1,1
+eco_acti_639100,,639100,Actividades de agencias de noticias,ND,1,1,1
+eco_acti_639900,,639900,Otras actividades de servicios de información n.c.p.,SI,1,1,1
+eco_acti_641100,,641100,Banca central,SI,1,0,1
+eco_acti_641910,,641910,Actividades bancarias,SI,1,0,1
+eco_acti_641990,,641990,Otros tipos de intermediación monetaria n.c.p.,SI,1,1,1
+eco_acti_642000,,642000,Actividades de sociedades de cartera,NO,1,1,1
+eco_acti_643000,,643000,Fondos y sociedades de inversión y entidades financieras similares,NO,1,1,1
+eco_acti_649100,,649100,Leasing financiero,SI,1,1,1
+eco_acti_649201,,649201,Financieras,SI,1,1,1
+eco_acti_649202,,649202,Actividades de crédito prendario,SI,1,1,1
+eco_acti_649203,,649203,Cajas de compensación,ND,1,1,1
+eco_acti_649209,,649209,Otras actividades de concesión de crédito n.c.p.,SI,1,1,1
+eco_acti_649900,,649900,"Otras actividades de servicios financieros, excepto las de seguros y fondos de pensiones n.c.p.",SI,1,1,1
+eco_acti_651100,,651100,Seguros de vida,SI,1,0,1
+eco_acti_651210,,651210,"Seguros generales, excepto actividades de isapres",SI,1,0,1
+eco_acti_651220,,651220,Actividades de isapres,SI,1,0,1
+eco_acti_652000,,652000,Reaseguros,SI,1,0,1
+eco_acti_653000,,653000,Fondos de pensiones,SI,1,0,1
+eco_acti_661100,,661100,Administración de mercados financieros,SI,1,1,1
+eco_acti_661201,,661201,Actividades de securitizadoras,SI,1,0,1
+eco_acti_661202,,661202,Corredores de bolsa,SI,1,1,1
+eco_acti_661203,,661203,Agentes de valores,SI,1,1,1
+eco_acti_661204,,661204,Actividades de casas de cambio y operadores de divisa,ND,1,1,1
+eco_acti_661209,,661209,Otros servicios de corretaje de valores y commodities n.c.p.,SI,1,1,1
+eco_acti_661901,,661901,Actividades de cámaras de compensación,SI,1,1,1
+eco_acti_661902,,661902,Administración de tarjetas de crédito,SI,1,1,1
+eco_acti_661903,,661903,Empresas de asesoría y consultoría en inversión financiera; sociedades de apoyo al giro,ND,1,1,1
+eco_acti_661904,,661904,Actividades de clasificadoras de riesgo,SI,1,1,1
+eco_acti_661909,,661909,Otras actividades auxiliares de las actividades de servicios financieros n.c.p.,SI,1,1,1
+eco_acti_662100,,662100,Evaluación de riesgos y daños (incluye actividades de liquidadores de seguros),NO,2,1,1
+eco_acti_662200,,662200,Actividades de agentes y corredores de seguros,ND,1,1,1
+eco_acti_662900,,662900,Otras actividades auxiliares de las actividades de seguros y fondos de pensiones,ND,ND,1,1
+eco_acti_663010,,663010,Administradoras de fondos de pensiones (afp),SI,1,0,1
+eco_acti_663091,,663091,Administradoras de fondos de inversión,SI,1,1,1
+eco_acti_663092,,663092,Administradoras de fondos mutuos,SI,1,1,1
+eco_acti_663093,,663093,Administradoras de fices (fondos de inversión de capital extranjero),SI,1,1,1
+eco_acti_663094,,663094,Administradoras de fondos para la vivienda,SI,1,1,1
+eco_acti_663099,,663099,Administradoras de fondos para otros fines n.c.p.,SI,1,1,1
+eco_acti_681011,,681011,Alquiler de bienes inmuebles amoblados o con equipos y maquinarias,SI,1,1,1
+eco_acti_681012,,681012,"Compra, venta y alquiler (excepto amoblados) de inmuebles",ND,1,1,1
+eco_acti_681020,,681020,Servicios imputados de alquiler de viviendas,ND,1,1,1
+eco_acti_682000,,682000,Actividades inmobiliarias realizadas a cambio de una retribución o por contrata,ND,ND,1,1
+eco_acti_691001,,691001,Servicios de asesoramiento y representación jurídica,NO,2,1,1
+eco_acti_691002,,691002,Servicio notarial,NO,2,0,1
+eco_acti_691003,,691003,Conservador de bienes raíces,NO,2,0,1
+eco_acti_691004,,691004,Receptores judiciales,NO,2,1,1
+eco_acti_691009,,691009,Servicios de arbitraje; síndicos de quiebra y peritos judiciales; otras actividades jurídicas n.c.p.,NO,2,1,1
+eco_acti_692000,,692000,"Actividades de contabilidad, teneduría de libros y auditoría; consultoría fiscal",NO,2,1,1
+eco_acti_701000,,701000,Actividades de oficinas principales,ND,ND,1,1
+eco_acti_702000,,702000,Actividades de consultoría de gestión,ND,ND,1,1
+eco_acti_711001,,711001,"Servicios de arquitectura (diseño de edificios, dibujo de planos de construcción, entre otros)",NO,2,1,1
+eco_acti_711002,,711002,Empresas de servicios de ingeniería y actividades conexas de consultoría técnica ,SI,1,1,1
+eco_acti_711003,,711003,Servicios profesionales de ingeniería y actividades conexas de consultoría técnica ,NO,2,1,1
+eco_acti_712001,,712001,Actividades de plantas de revisión técnica para vehículos automotores,SI,1,1,1
+eco_acti_712009,,712009,Otros servicios de ensayos y análisis técnicos (excepto actividades de plantas de revisión técnica),ND,1,1,1
+eco_acti_721000,,721000,Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería,ND,1,1,1
+eco_acti_722000,,722000,Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades,ND,1,1,1
+eco_acti_731001,,731001,Servicios de publicidad prestados por empresas,SI,1,1,1
+eco_acti_731002,,731002,Servicios de publicidad prestados por profesionales,NO,2,1,1
+eco_acti_732000,,732000,Estudios de mercado y encuestas de opinión pública,ND,ND,0,1
+eco_acti_741001,,741001,Actividades de diseño de vestuario,ND,ND,1,1
+eco_acti_741002,,741002,Actividades de diseño y decoración de interiores,ND,ND,1,1
+eco_acti_741009,,741009,Otras actividades especializadas de diseño n.c.p.,ND,ND,1,1
+eco_acti_742001,,742001,"Servicios de revelado, impresión y ampliación de fotografías",SI,1,1,1
+eco_acti_742002,,742002,Servicios y actividades de fotografía ,ND,ND,1,1
+eco_acti_742003,,742003,Servicios personales de fotografía ,NO,2,1,1
+eco_acti_749001,,749001,Asesoría y gestión en la compra o venta de pequeñas y medianas empresas,ND,1,1,1
+eco_acti_749002,,749002,Servicios de traducción e interpretación prestados por empresas,SI,1,1,1
+eco_acti_749003,,749003,Servicios personales de traducción e interpretación,NO,2,1,1
+eco_acti_749004,,749004,"Actividades de agencias y agentes de representación de actores, deportistas y otras figuras públicas",SI,1,1,1
+eco_acti_749009,,749009,"Otras actividades profesionales, científicas y técnicas n.c.p.",NO,2,1,1
+eco_acti_750001,,750001,Actividades de clínicas veterinarias,ND,1,1,1
+eco_acti_750002,,750002,"Actividades de veterinarios, técnicos y otro personal auxiliar, prestados de forma independiente",NO,2,1,1
+eco_acti_771000,,771000,Alquiler de vehículos automotores sin chofer,SI,1,0,1
+eco_acti_772100,,772100,Alquiler y arrendamiento de equipo recreativo y deportivo,SI,1,1,1
+eco_acti_772200,,772200,Alquiler de cintas de video y discos,SI,1,1,1
+eco_acti_772900,,772900,Alquiler de otros efectos personales y enseres domésticos (incluye mobiliario para eventos),SI,1,1,1
+eco_acti_773001,,773001,"Alquiler de equipos de transporte sin operario, excepto vehículos automotores",SI,1,1,1
+eco_acti_773002,,773002,"Alquiler de maquinaria y equipo agropecuario, forestal, de construcción e ing. civil, sin operarios",SI,1,1,1
+eco_acti_773003,,773003,"Alquiler de maquinaria y equipo de oficina, sin operarios (sin servicio administrativo)",SI,1,1,1
+eco_acti_773009,,773009,Alquiler de otros tipos de maquinarias y equipos sin operario n.c.p.,SI,1,1,1
+eco_acti_774000,,774000,"Arrendamiento de propiedad intelectual y similares, excepto obras protegidas por derechos de autor",NO,1,1,1
+eco_acti_781000,,781000,Actividades de agencias de empleo,SI,1,1,1
+eco_acti_782000,,782000,Actividades de agencias de empleo temporal (incluye empresas de servicios transitorios),SI,1,1,1
+eco_acti_783000,,783000,Otras actividades de dotación de recursos humanos,SI,1,1,1
+eco_acti_791100,,791100,Actividades de agencias de viajes,SI,1,1,1
+eco_acti_791200,,791200,Actividades de operadores turísticos,SI,1,1,1
+eco_acti_799000,,799000,"Otros servicios de reservas y actividades conexas (incluye venta de entradas para teatro, y otros)",ND,1,1,1
+eco_acti_801001,,801001,Servicios de seguridad privada prestados por empresas,ND,1,1,1
+eco_acti_801002,,801002,Servicio de transporte de valores en vehículos blindados,SI,1,1,1
+eco_acti_801003,,801003,Servicios de seguridad privada prestados por independientes,NO,2,1,1
+eco_acti_802000,,802000,Actividades de servicios de sistemas de seguridad (incluye servicios de cerrajería),ND,1,1,1
+eco_acti_803000,,803000,Actividades de investigación (incluye actividades de investigadores y detectives privados),ND,ND,1,1
+eco_acti_811000,,811000,Actividades combinadas de apoyo a instalaciones,ND,ND,1,1
+eco_acti_812100,,812100,Limpieza general de edificios,SI,1,1,1
+eco_acti_812901,,812901,"Desratización, desinfección y exterminio de plagas no agrícolas",ND,1,1,1
+eco_acti_812909,,812909,Otras actividades de limpieza de edificios e instalaciones industriales n.c.p.,SI,1,1,1
+eco_acti_813000,,813000,"Actividades de paisajismo, servicios de jardinería y servicios conexos",SI,1,1,1
+eco_acti_821100,,821100,Actividades combinadas de servicios administrativos de oficina,SI,1,1,1
+eco_acti_821900,,821900,"Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo de oficina",SI,1,1,1
+eco_acti_822000,,822000,Actividades de call-center,SI,1,1,1
+eco_acti_823000,,823000,Organización de convenciones y exposiciones comerciales,ND,1,1,1
+eco_acti_829110,,829110,Actividades de agencias de cobro,ND,1,1,1
+eco_acti_829120,,829120,Actividades de agencias de calificación crediticia,ND,1,1,1
+eco_acti_829200,,829200,Actividades de envasado y empaquetado,SI,1,1,1
+eco_acti_829900,,829900,Otras actividades de servicios de apoyo a las empresas n.c.p.,SI,1,1,1
+eco_acti_841100,,841100,Actividades de la administración pública en general,ND,1,0,1
+eco_acti_841200,,841200,"Regulación de las actividades de organismos que prestan servicios sanitarios, educativos, culturales",ND,1,0,1
+eco_acti_841300,,841300,Regulación y facilitación de la actividad económica,ND,1,0,1
+eco_acti_842100,,842100,Relaciones exteriores,ND,1,0,1
+eco_acti_842200,,842200,Actividades de defensa,ND,1,0,1
+eco_acti_842300,,842300,Actividades de mantenimiento del orden público y de seguridad,ND,1,0,1
+eco_acti_843010,,843010,Fondo nacional de salud (fonasa) ,ND,1,0,1
+eco_acti_843020,,843020,Instituto de previsión social (ips),ND,1,0,1
+eco_acti_843090,,843090,Otros planes de seguridad social de afiliación obligatoria n.c.p.,ND,1,0,1
+eco_acti_850011,,850011,Enseñanza preescolar pública,NO,1,1,1
+eco_acti_850012,,850012,"Enseñanza primaria, secundaria científico humanista y técnico profesional pública",NO,1,1,1
+eco_acti_850021,,850021,Enseñanza preescolar privada,NO,1,1,1
+eco_acti_850022,,850022,"Enseñanza primaria, secundaria científico humanista y técnico profesional privada",NO,1,1,1
+eco_acti_853110,,853110,Enseñanza superior en universidades públicas,NO,1,0,1
+eco_acti_853120,,853120,Enseñanza superior en universidades privadas,NO,1,0,1
+eco_acti_853201,,853201,Enseñanza superior en institutos profesionales,NO,1,0,1
+eco_acti_853202,,853202,Enseñanza superior en centros de formación técnica,NO,1,1,1
+eco_acti_854100,,854100,Enseñanza deportiva y recreativa,SI,1,1,1
+eco_acti_854200,,854200,Enseñanza cultural,NO,2,1,1
+eco_acti_854901,,854901,Enseñanza preuniversitaria,NO,1,1,1
+eco_acti_854902,,854902,Servicios personales de educación,NO,2,1,1
+eco_acti_854909,,854909,Otros tipos de enseñanza n.c.p.,NO,1,1,1
+eco_acti_855000,,855000,Actividades de apoyo a la enseñanza,ND,ND,1,1
+eco_acti_861010,,861010,Actividades de hospitales y clínicas públicas,SI,1,0,1
+eco_acti_861020,,861020,Actividades de hospitales y clínicas privadas,SI,1,1,1
+eco_acti_862010,,862010,Actividades de centros de salud municipalizados (servicios de salud pública),ND,1,1,1
+eco_acti_862021,,862021,Centros médicos privados (establecimientos de atención ambulatoria),ND,1,1,1
+eco_acti_862022,,862022,Centros de atención odontológica privados (establecimientos de atención ambulatoria),ND,1,1,1
+eco_acti_862031,,862031,Servicios de médicos prestados de forma independiente,NO,2,1,1
+eco_acti_862032,,862032,Servicios de odontólogos prestados de forma independiente,NO,2,1,1
+eco_acti_869010,,869010,Actividades de laboratorios clínicos y bancos de sangre,ND,1,1,1
+eco_acti_869091,,869091,Otros servicios de atención de la salud humana prestados por empresas,ND,1,1,1
+eco_acti_869092,,869092,Servicios prestados de forma independiente por otros profesionales de la salud,NO,2,1,1
+eco_acti_871000,,871000,Actividades de atención de enfermería en instituciones,ND,1,1,1
+eco_acti_872000,,872000,Actividades de atención en instituciones para personas con discapacidad mental y toxicómanos,ND,1,1,1
+eco_acti_873000,,873000,Actividades de atención en instituciones para personas de edad y personas con discapacidad física,ND,1,1,1
+eco_acti_879000,,879000,Otras actividades de atención en instituciones,ND,1,1,1
+eco_acti_881000,,881000,Actividades de asistencia social sin alojamiento para personas de edad y personas con discapacidad,ND,1,1,1
+eco_acti_889000,,889000,Otras actividades de asistencia social sin alojamiento,ND,1,1,1
+eco_acti_900001,,900001,"Servicios de producción de obras de teatro, conciertos, espectáculos de danza, otras prod. escénicas",ND,1,1,1
+eco_acti_900002,,900002,"Actividades artísticas realizadas por bandas de música, compañías de teatro, circenses y similares",SI,1,1,1
+eco_acti_900003,,900003,"Actividades de artistas realizadas de forma independiente: actores, músicos, escritores, entre otros",NO,2,1,1
+eco_acti_900004,,900004,Servicios prestados por periodistas independientes,NO,2,1,1
+eco_acti_900009,,900009,"Otras actividades creativas, artísticas y de entretenimiento n.c.p.",ND,ND,1,1
+eco_acti_910100,,910100,Actividades de bibliotecas y archivos,ND,1,1,1
+eco_acti_910200,,910200,"Actividades de museos, gestión de lugares y edificios históricos",ND,1,1,1
+eco_acti_910300,,910300,"Actividades de jardines botánicos, zoológicos y reservas naturales",ND,1,1,1
+eco_acti_920010,,920010,Actividades de casinos de juegos,SI,1,0,1
+eco_acti_920090,,920090,Otras actividades de juegos de azar y apuestas n.c.p.,SI,1,0,1
+eco_acti_931101,,931101,Hipódromos,SI,1,1,1
+eco_acti_931102,,931102,Gestión de salas de billar; gestión de salas de bolos (bowling),SI,1,1,1
+eco_acti_931109,,931109,Gestión de otras instalaciones deportivas n.c.p.,ND,1,1,1
+eco_acti_931201,,931201,Actividades de clubes de fútbol amateur y profesional,ND,1,1,1
+eco_acti_931209,,931209,Actividades de otros clubes deportivos n.c.p.,ND,1,1,1
+eco_acti_931901,,931901,Promoción y organización de competencias deportivas,ND,1,1,1
+eco_acti_931909,,931909,Otras actividades deportivas n.c.p.,ND,1,1,1
+eco_acti_932100,,932100,Actividades de parques de atracciones y parques temáticos,SI,1,1,1
+eco_acti_932901,,932901,Gestión de salas de pool; gestión (explotación) de juegos electrónicos,SI,1,1,1
+eco_acti_932909,,932909,Otras actividades de esparcimiento y recreativas n.c.p.,ND,ND,1,1
+eco_acti_941100,,941100,Actividades de asociaciones empresariales y de empleadores,ND,1,1,1
+eco_acti_941200,,941200,Actividades de asociaciones profesionales,ND,1,1,1
+eco_acti_942000,,942000,Actividades de sindicatos,ND,1,1,1
+eco_acti_949100,,949100,Actividades de organizaciones religiosas,ND,1,0,1
+eco_acti_949200,,949200,Actividades de organizaciones políticas,ND,1,1,1
+eco_acti_949901,,949901,Actividades de centros de madres,ND,1,0,1
+eco_acti_949902,,949902,Actividades de clubes sociales,ND,1,0,1
+eco_acti_949903,,949903,Fundaciones y corporaciones; asociaciones que promueven actividades culturales o recreativas,ND,1,0,1
+eco_acti_949904,,949904,Consejo de administración de edificios y condominios,NO,1,0,1
+eco_acti_949909,,949909,Actividades de otras asociaciones n.c.p.,ND,1,1,1
+eco_acti_951100,,951100,Reparación de computadores y equipo periférico,SI,1,1,1
+eco_acti_951200,,951200,Reparación de equipo de comunicaciones (incluye la reparación teléfonos celulares),SI,1,1,1
+eco_acti_952100,,952100,Reparación de aparatos electrónicos de consumo (incluye aparatos de televisión y radio),SI,1,1,1
+eco_acti_952200,,952200,"Reparación de aparatos de uso doméstico, equipo doméstico y de jardinería",ND,1,1,1
+eco_acti_952300,,952300,Reparación de calzado y de artículos de cuero,ND,1,1,1
+eco_acti_952400,,952400,Reparación de muebles y accesorios domésticos,ND,1,1,1
+eco_acti_952900,,952900,Reparación de otros efectos personales y enseres domésticos,ND,1,1,1
+eco_acti_960100,,960100,"Lavado y limpieza, incluida la limpieza en seco, de productos textiles y de piel",SI,1,1,1
+eco_acti_960200,,960200,Peluquería y otros tratamientos de belleza,ND,ND,1,1
+eco_acti_960310,,960310,Servicios funerarios,SI,1,1,1
+eco_acti_960320,,960320,Servicios de cementerios,SI,1,1,1
+eco_acti_960901,,960901,"Servicios de adiestramiento, guardería, peluquería, paseo de mascotas (excepto act. veterinarias)",SI,1,1,1
+eco_acti_960902,,960902,"Actividades de salones de masajes, baños turcos, saunas, servicio de baños públicos",SI,1,1,1
+eco_acti_960909,,960909,Otras actividades de servicios personales n.c.p.,NO,2,1,1
+eco_acti_970000,,970000,Actividades de los hogares como empleadores de personal doméstico,NO,ND,0,1
+eco_acti_990000,,990000,Actividades de organizaciones y órganos extraterritoriales,ND,1,0,1

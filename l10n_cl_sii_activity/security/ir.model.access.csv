@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sii_activity_user,sii.activity.user,model_sii_activity,,1,0,0,0
+edit_sii_activity_manager,sii.activity.manager,model_sii_activity,,1,1,1,1
