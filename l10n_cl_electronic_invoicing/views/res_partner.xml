@@ -16,25 +16,11 @@
                 </div>
             </xpath>
 
-            <field name="street2" position="after">
-                <field name="city_id" placeholder="Comuna" style="width: 100%"
-                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
-                       options='{"no_open": True, "no_quick_create": True}' />
-            </field>
-            <!-- agregar la comuna en vista de contactos -->
-            <xpath expr="//field[@name='child_ids']/form//field[@name='street2']" position="after">
-                <field name="city_id" placeholder="Comuna" style="width: 100%"
-                       options='{"no_open": True, "no_quick_create": True}' />
-            </xpath>
-
             <field name="vat" position="after">
                 <field name="activity_description" placeholder="Glosa Descriptiva (Giro)" attrs="{'invisible': ('parent_id', '!=', False)}"/>
                 <field name="responsability_id" widget="selection" attrs="{'invisible': [('parent_id', '!=', False)]}"/>
             </field>
 
-            <field name="vat" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
             <field name="website" position="before">
                 <field name="dte_email" widget="email" attrs="{'invisible': [('parent_id', '!=', False)]}"/>
             </field>
@@ -62,18 +48,6 @@
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="document_number" filter_domain="['|','|',('document_number','ilike',self),('ref','=',self),('vat','ilike',self)]"/>
-            </field>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="view_partner_address_form_states_city_inherit">
-        <field name='name'>res.partner.address.form.states.city.inherit</field>
-        <field name='model'>res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_address_form"/>
-        <field name='type'>form</field>
-        <field name='arch' type='xml'>
-            <field name="state_id" position="after">
-                <field name="city_id" placeholder="Comuna" style="width: 100%" options='{"no_open": True}'/>
             </field>
         </field>
     </record>

@@ -93,12 +93,6 @@ stamp to be legally valid.""",
         relation="res.country.state",
         string="Ubication",
     )
-    company_activities_ids = fields.Many2many(
-        "partner.activities",
-        id1="company_id",
-        id2="activities_id",
-        string="Activities Names",
-    )
     responsability_id = fields.Many2one(
         related="partner_id.responsability_id",
         readonly=False,

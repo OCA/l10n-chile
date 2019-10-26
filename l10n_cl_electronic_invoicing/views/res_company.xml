@@ -27,8 +27,6 @@
                 <field name="document_number" />
                 <field name="responsability_id" widget="selection" />
                 <field name="start_date" />
-                <field name="company_activities_ids" placeholder="Giros de La Compañia"
-                       widget="many2many_tags" options="{'no_create': True}"/>
                 <field name="activity_description" placeholder="Glosa descriptiva"
                        required="True" />
             </field>

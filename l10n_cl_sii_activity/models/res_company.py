@@ -6,9 +6,9 @@
 from odoo import fields, models
 
 
-class SiiCountry(models.Model):
-    _inherit = "res.country"
+class ResCompany(models.Model):
+    _inherit = "res.company"
 
-    rut_natural = fields.Char("RUT persona natural", size=11)
-    rut_juridica = fields.Char("RUT persona juridica", size=11)
-    rut_otro = fields.Char("RUT otro", size=11)
+    sii_activity_ids = fields.Many2many(
+        "sii.activity", id1="company_id", id2="sii_activity_id",
+        string="SII Activities")

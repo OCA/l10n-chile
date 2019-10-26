@@ -23,7 +23,7 @@ class AccountJournal(models.Model):
     use_documents = fields.Boolean(string="Use Documents?",
                                    default="_get_default_doc")
     journal_activities_ids = fields.Many2many(
-        "partner.activities",
+        "sii.activity",
         id1="journal_id",
         id2="activities_id",
         string="Journal Turns",
