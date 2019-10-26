@@ -1,21 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* l10n_cl_electronic_invoicing
+#	* l10n_cl_sii_activity
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2019-04-24 12:59-0400\n"
-"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,code:l10n_cl_sii_activity.eco_acti_101011
@@ -3395,13 +3391,11 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__active
 msgid "Active"
-msgstr "Activo"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_900002
-msgid ""
-"Actividades artísticas realizadas por bandas de música, compañías de teatro, "
-"circenses y similares"
+msgid "Actividades artísticas realizadas por bandas de música, compañías de teatro, circenses y similares"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3436,9 +3430,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_782000
-msgid ""
-"Actividades de agencias de empleo temporal (incluye empresas de servicios "
-"transitorios)"
+msgid "Actividades de agencias de empleo temporal (incluye empresas de servicios transitorios)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3453,9 +3445,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_749004
-msgid ""
-"Actividades de agencias y agentes de representación de actores, deportistas "
-"y otras figuras públicas"
+msgid "Actividades de agencias y agentes de representación de actores, deportistas y otras figuras públicas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3480,44 +3470,32 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_99001
-msgid ""
-"Actividades de apoyo para la explotación de otras minas y canteras prestados "
-"por empresas"
+msgid "Actividades de apoyo para la explotación de otras minas y canteras prestados por empresas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_99002
-msgid ""
-"Actividades de apoyo para la explotación de otras minas y canteras prestados "
-"por profesionales"
+msgid "Actividades de apoyo para la explotación de otras minas y canteras prestados por profesionales"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_91001
-msgid ""
-"Actividades de apoyo para la extracción de petróleo y gas natural prestados "
-"por empresas"
+msgid "Actividades de apoyo para la extracción de petróleo y gas natural prestados por empresas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_91002
-msgid ""
-"Actividades de apoyo para la extracción de petróleo y gas natural prestados "
-"por profesionales"
+msgid "Actividades de apoyo para la extracción de petróleo y gas natural prestados por profesionales"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_900003
-msgid ""
-"Actividades de artistas realizadas de forma independiente: actores, músicos, "
-"escritores, entre otros"
+msgid "Actividades de artistas realizadas de forma independiente: actores, músicos, escritores, entre otros"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_881000
-msgid ""
-"Actividades de asistencia social sin alojamiento para personas de edad y "
-"personas con discapacidad"
+msgid "Actividades de asistencia social sin alojamiento para personas de edad y personas con discapacidad"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3537,16 +3515,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_872000
-msgid ""
-"Actividades de atención en instituciones para personas con discapacidad "
-"mental y toxicómanos"
+msgid "Actividades de atención en instituciones para personas con discapacidad mental y toxicómanos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_873000
-msgid ""
-"Actividades de atención en instituciones para personas de edad y personas "
-"con discapacidad física"
+msgid "Actividades de atención en instituciones para personas de edad y personas con discapacidad física"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3581,8 +3555,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_862010
-msgid ""
-"Actividades de centros de salud municipalizados (servicios de salud pública)"
+msgid "Actividades de centros de salud municipalizados (servicios de salud pública)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3612,16 +3585,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_620200
-msgid ""
-"Actividades de consultoría de informática y de gestión de instalaciones "
-"informáticas"
+msgid "Actividades de consultoría de informática y de gestión de instalaciones informáticas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_692000
-msgid ""
-"Actividades de contabilidad, teneduría de libros y auditoría; consultoría "
-"fiscal"
+msgid "Actividades de contabilidad, teneduría de libros y auditoría; consultoría fiscal"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3641,15 +3610,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_390000
-msgid ""
-"Actividades de descontaminación y otros servicios de gestión de desechos"
+msgid "Actividades de descontaminación y otros servicios de gestión de desechos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_563001
-msgid ""
-"Actividades de discotecas y cabaret (night club), con predominio del "
-"servicio de bebidas"
+msgid "Actividades de discotecas y cabaret (night club), con predominio del servicio de bebidas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3664,16 +3630,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_591300
-msgid ""
-"Actividades de distribución de películas cinematográficas, videos y "
-"programas de televisión"
+msgid "Actividades de distribución de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_102050
-msgid ""
-"Actividades de elaboración y conservación de pescado, realizadas en barcos "
-"factoría"
+msgid "Actividades de elaboración y conservación de pescado, realizadas en barcos factoría"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3683,8 +3645,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_591400
-msgid ""
-"Actividades de exhibición de películas cinematográficas y cintas de video"
+msgid "Actividades de exhibición de películas cinematográficas y cintas de video"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3709,9 +3670,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_803000
-msgid ""
-"Actividades de investigación (incluye actividades de investigadores y "
-"detectives privados)"
+msgid "Actividades de investigación (incluye actividades de investigadores y detectives privados)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3816,16 +3775,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_591200
-msgid ""
-"Actividades de postproducción de películas cinematográficas, videos y "
-"programas de televisión"
+msgid "Actividades de postproducción de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_591100
-msgid ""
-"Actividades de producción de películas cinematográficas, videos y programas "
-"de televisión"
+msgid "Actividades de producción de películas cinematográficas, videos y programas de televisión"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3850,9 +3805,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_960902
-msgid ""
-"Actividades de salones de masajes, baños turcos, saunas, servicio de baños "
-"públicos"
+msgid "Actividades de salones de masajes, baños turcos, saunas, servicio de baños públicos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3862,9 +3815,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_802000
-msgid ""
-"Actividades de servicios de sistemas de seguridad (incluye servicios de "
-"cerrajería)"
+msgid "Actividades de servicios de sistemas de seguridad (incluye servicios de cerrajería)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3899,16 +3850,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_750002
-msgid ""
-"Actividades de veterinarios, técnicos y otro personal auxiliar, prestados de "
-"forma independiente"
+msgid "Actividades de veterinarios, técnicos y otro personal auxiliar, prestados de forma independiente"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_682000
-msgid ""
-"Actividades inmobiliarias realizadas a cambio de una retribución o por "
-"contrata"
+msgid "Actividades inmobiliarias realizadas a cambio de una retribución o por contrata"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -3924,7 +3871,7 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__code
 msgid "Activity Code"
-msgstr "Código de Actividad"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_32200
@@ -4003,29 +3950,22 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_773001
-msgid ""
-"Alquiler de equipos de transporte sin operario, excepto vehículos automotores"
+msgid "Alquiler de equipos de transporte sin operario, excepto vehículos automotores"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_773002
-msgid ""
-"Alquiler de maquinaria y equipo agropecuario, forestal, de construcción e "
-"ing. civil, sin operarios"
+msgid "Alquiler de maquinaria y equipo agropecuario, forestal, de construcción e ing. civil, sin operarios"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_773003
-msgid ""
-"Alquiler de maquinaria y equipo de oficina, sin operarios (sin servicio "
-"administrativo)"
+msgid "Alquiler de maquinaria y equipo de oficina, sin operarios (sin servicio administrativo)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_772900
-msgid ""
-"Alquiler de otros efectos personales y enseres domésticos (incluye "
-"mobiliario para eventos)"
+msgid "Alquiler de otros efectos personales y enseres domésticos (incluye mobiliario para eventos)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4050,9 +3990,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_774000
-msgid ""
-"Arrendamiento de propiedad intelectual y similares, excepto obras protegidas "
-"por derechos de autor"
+msgid "Arrendamiento de propiedad intelectual y similares, excepto obras protegidas por derechos de autor"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4067,9 +4005,8 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__internet_available
-#, fuzzy
 msgid "Available on the Internet"
-msgstr "Disponible en Internet"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_641100
@@ -4093,9 +4030,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_862022
-msgid ""
-"Centros de atención odontológica privados (establecimientos de atención "
-"ambulatoria)"
+msgid "Centros de atención odontológica privados (establecimientos de atención ambulatoria)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4112,13 +4047,12 @@ msgstr ""
 #: model:ir.model,name:l10n_cl_sii_activity.model_res_company
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__company_ids
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__name
-#, fuzzy
 msgid "Complete Name"
-msgstr "Nombre del archivo"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_681012
@@ -4193,12 +4127,12 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_14601
@@ -4227,8 +4161,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_14102
-msgid ""
-"Cría de ganado bovino para la producción de carne o como ganado reproductor"
+msgid "Cría de ganado bovino para la producción de carne o como ganado reproductor"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4298,8 +4231,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_12200
-msgid ""
-"Cultivo de frutas tropicales y subtropicales (incluye el cultivo de paltas)"
+msgid "Cultivo de frutas tropicales y subtropicales (incluye el cultivo de paltas)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4359,9 +4291,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_12700
-msgid ""
-"Cultivo de plantas con las que se preparan bebidas (incluye el cultivo de "
-"café, té y mate)"
+msgid "Cultivo de plantas con las que se preparan bebidas (incluye el cultivo de café, té y mate)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4371,9 +4301,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_13000
-msgid ""
-"Cultivo de plantas vivas incluida la producción en viveros (excepto viveros "
-"forestales)"
+msgid "Cultivo de plantas vivas incluida la producción en viveros (excepto viveros forestales)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4383,9 +4311,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_15000
-msgid ""
-"Cultivo de productos agrícolas en combinación con la cría de animales "
-"(explotación mixta)"
+msgid "Cultivo de productos agrícolas en combinación con la cría de animales (explotación mixta)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4395,9 +4321,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_11111
-msgid ""
-"Cultivo de semillas de cereales, legumbres y oleaginosas (excepto semillas "
-"de raps y maravilla)"
+msgid "Cultivo de semillas de cereales, legumbres y oleaginosas (excepto semillas de raps y maravilla)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4457,15 +4381,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_11903
-msgid ""
-"Cultivos de semillas de flores; cultivo de semillas de plantas forrajeras"
+msgid "Cultivos de semillas de flores; cultivo de semillas de plantas forrajeras"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_11902
-msgid ""
-"Cultivos forrajeros en praderas mejoradas o sembradas; cultivos "
-"suplementarios forrajeros"
+msgid "Cultivos forrajeros en praderas mejoradas o sembradas; cultivos suplementarios forrajeros"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4485,14 +4406,13 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_110120
-msgid ""
-"Destilación, rectificación y mezclas de bebidas alcohólicas; excepto pisco"
+msgid "Destilación, rectificación y mezclas de bebidas alcohólicas; excepto pisco"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_351030
@@ -4521,9 +4441,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_104000
-msgid ""
-"Elaboración de aceites y grasas de origen vegetal y animal (excepto "
-"elaboración de mantequilla)"
+msgid "Elaboración de aceites y grasas de origen vegetal y animal (excepto elaboración de mantequilla)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4558,9 +4476,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_107500
-msgid ""
-"Elaboración de comidas y platos preparados envasados, rotulados y con "
-"información nutricional"
+msgid "Elaboración de comidas y platos preparados envasados, rotulados y con información nutricional"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4575,8 +4491,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_107400
-msgid ""
-"Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares"
+msgid "Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4636,9 +4551,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_102040
-msgid ""
-"Elaboración y conservación de crustáceos, moluscos y otros productos "
-"acuáticos, en plantas en tierra"
+msgid "Elaboración y conservación de crustáceos, moluscos y otros productos acuáticos, en plantas en tierra"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4648,9 +4561,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_102030
-msgid ""
-"Elaboración y conservación de otros pescados, en plantas en tierra (excepto "
-"barcos factoría)"
+msgid "Elaboración y conservación de otros pescados, en plantas en tierra (excepto barcos factoría)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4665,16 +4576,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_661903
-msgid ""
-"Empresas de asesoría y consultoría en inversión financiera; sociedades de "
-"apoyo al giro"
+msgid "Empresas de asesoría y consultoría en inversión financiera; sociedades de apoyo al giro"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_711002
-msgid ""
-"Empresas de servicios de ingeniería y actividades conexas de consultoría "
-"técnica "
+msgid "Empresas de servicios de ingeniería y actividades conexas de consultoría técnica "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4704,16 +4611,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_850022
-msgid ""
-"Enseñanza primaria, secundaria científico humanista y técnico profesional "
-"privada"
+msgid "Enseñanza primaria, secundaria científico humanista y técnico profesional privada"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_850012
-msgid ""
-"Enseñanza primaria, secundaria científico humanista y técnico profesional "
-"pública"
+msgid "Enseñanza primaria, secundaria científico humanista y técnico profesional pública"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4748,9 +4651,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_662100
-msgid ""
-"Evaluación de riesgos y daños (incluye actividades de liquidadores de "
-"seguros)"
+msgid "Evaluación de riesgos y daños (incluye actividades de liquidadores de seguros)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4770,9 +4671,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_101011
-msgid ""
-"Explotación de mataderos de bovinos, ovinos, equinos, caprinos, porcinos y "
-"camélidos "
+msgid "Explotación de mataderos de bovinos, ovinos, equinos, caprinos, porcinos y camélidos "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4827,9 +4726,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_89190
-msgid ""
-"Extracción de minerales para la fabricación de abonos y productos químicos n."
-"c.p."
+msgid "Extracción de minerales para la fabricación de abonos y productos químicos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4839,9 +4736,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_72999
-msgid ""
-"Extracción de otros minerales metalíferos no ferrosos n.c.p. (excepto zinc, "
-"plomo y manganeso)"
+msgid "Extracción de otros minerales metalíferos no ferrosos n.c.p. (excepto zinc, plomo y manganeso)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4911,16 +4806,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_139200
-msgid ""
-"Fabricación de artículos confeccionados de materiales textiles, excepto "
-"prendas de vestir"
+msgid "Fabricación de artículos confeccionados de materiales textiles, excepto prendas de vestir"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_259300
-msgid ""
-"Fabricación de artículos de cuchillería, herramientas de mano y artículos de "
-"ferretería"
+msgid "Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4965,16 +4856,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_201101
-msgid ""
-"Fabricación de carbón vegetal (excepto activado); fabricación de briquetas "
-"de carbón vegetal"
+msgid "Fabricación de carbón vegetal (excepto activado); fabricación de briquetas de carbón vegetal"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_292000
-msgid ""
-"Fabricación de carrocerías para vehículos automotores; fabricación de "
-"remolques y semirremolques"
+msgid "Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -4989,9 +4876,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_281400
-msgid ""
-"Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de "
-"transmisión"
+msgid "Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5011,9 +4896,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_221100
-msgid ""
-"Fabricación de cubiertas y cámaras de caucho; recauchutado y renovación de "
-"cubiertas de caucho"
+msgid "Fabricación de cubiertas y cámaras de caucho; recauchutado y renovación de cubiertas de caucho"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5038,9 +4921,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_266000
-msgid ""
-"Fabricación de equipo de irradiación y equipo electrónico de uso médico y "
-"terapéutico"
+msgid "Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5075,16 +4956,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_352020
-msgid ""
-"Fabricación de gas; distribución de combustibles gaseosos por tubería, "
-"excepto regasificación de gnl"
+msgid "Fabricación de gas; distribución de combustibles gaseosos por tubería, excepto regasificación de gnl"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_251300
-msgid ""
-"Fabricación de generadores de vapor, excepto calderas de agua caliente para "
-"calefacción central"
+msgid "Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5094,8 +4971,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_162100
-msgid ""
-"Fabricación de hojas de madera para enchapado y tableros a base de madera"
+msgid "Fabricación de hojas de madera para enchapado y tableros a base de madera"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5110,9 +4986,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_325009
-msgid ""
-"Fabricación de instrumentos y materiales médicos, oftalmológicos y "
-"odontológicos n.c.p."
+msgid "Fabricación de instrumentos y materiales médicos, oftalmológicos y odontológicos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5122,9 +4996,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_202300
-msgid ""
-"Fabricación de jabones y detergentes, preparados para limpiar, perfumes y "
-"preparados de tocador"
+msgid "Fabricación de jabones y detergentes, preparados para limpiar, perfumes y preparados de tocador"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5144,9 +5016,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_151200
-msgid ""
-"Fabricación de maletas, bolsos y artículos similares, artículos de "
-"talabartería y guarnicionería"
+msgid "Fabricación de maletas, bolsos y artículos similares, artículos de talabartería y guarnicionería"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5161,36 +5031,27 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_282200
-msgid ""
-"Fabricación de maquinaria para la conformación de metales y de máquinas "
-"herramienta"
+msgid "Fabricación de maquinaria para la conformación de metales y de máquinas herramienta"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_282500
-msgid ""
-"Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
+msgid "Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_282600
-msgid ""
-"Fabricación de maquinaria para la elaboración de productos textiles, prendas "
-"de vestir y cueros"
+msgid "Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_282400
-msgid ""
-"Fabricación de maquinaria para la explotación de minas y canteras y para "
-"obras de construcción"
+msgid "Fabricación de maquinaria para la explotación de minas y canteras y para obras de construcción"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_281700
-msgid ""
-"Fabricación de maquinaria y equipo de oficina (excepto computadores y equipo "
-"periférico)"
+msgid "Fabricación de maquinaria y equipo de oficina (excepto computadores y equipo periférico)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5205,16 +5066,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_281100
-msgid ""
-"Fabricación de motores y turbinas, excepto para aeronaves, vehículos "
-"automotores y motocicletas"
+msgid "Fabricación de motores y turbinas, excepto para aeronaves, vehículos automotores y motocicletas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_271000
-msgid ""
-"Fabricación de motores, generadores y transformadores eléctricos, aparatos "
-"de distribución y control"
+msgid "Fabricación de motores, generadores y transformadores eléctricos, aparatos de distribución y control"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5249,9 +5106,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_162900
-msgid ""
-"Fabricación de otros productos de madera, de artículos de corcho, paja y "
-"materiales trenzables"
+msgid "Fabricación de otros productos de madera, de artículos de corcho, paja y materiales trenzables"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5311,8 +5166,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_162200
-msgid ""
-"Fabricación de partes y piezas de carpintería para edificios y construcciones"
+msgid "Fabricación de partes y piezas de carpintería para edificios y construcciones"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5327,15 +5181,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_202200
-msgid ""
-"Fabricación de pinturas, barnices y productos de revestimiento, tintas de "
-"imprenta y masillas"
+msgid "Fabricación de pinturas, barnices y productos de revestimiento, tintas de imprenta y masillas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_202100
-msgid ""
-"Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
+msgid "Fabricación de plaguicidas y otros productos químicos de uso agropecuario"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5375,9 +5226,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_210000
-msgid ""
-"Fabricación de productos farmacéuticos, sustancias químicas medicinales y "
-"productos botánicos"
+msgid "Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5397,9 +5246,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_242009
-msgid ""
-"Fabricación de productos primarios de metales preciosos y de otros metales "
-"no ferrosos n.c.p."
+msgid "Fabricación de productos primarios de metales preciosos y de otros metales no ferrosos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5494,16 +5341,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_821900
-msgid ""
-"Fotocopiado, preparación de documentos y otras actividades especializadas de "
-"apoyo de oficina"
+msgid "Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo de oficina"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_949903
-msgid ""
-"Fundaciones y corporaciones; asociaciones que promueven actividades "
-"culturales o recreativas"
+msgid "Fundaciones y corporaciones; asociaciones que promueven actividades culturales o recreativas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5554,7 +5397,7 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_181101
@@ -5588,38 +5431,32 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_721000
-msgid ""
-"Investigaciones y desarrollo experimental en el campo de las ciencias "
-"naturales y la ingeniería"
+msgid "Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_722000
-msgid ""
-"Investigaciones y desarrollo experimental en el campo de las ciencias "
-"sociales y las humanidades"
+msgid "Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_960100
-msgid ""
-"Lavado y limpieza, incluida la limpieza en seco, de productos textiles y de "
-"piel"
+msgid "Lavado y limpieza, incluida la limpieza en seco, de productos textiles y de piel"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5663,10 +5500,10 @@ msgid "No"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
-#: selection:sii.activity,tax_category:0 selection:sii.activity,vat_affected:0
-#, fuzzy
+#: selection:sii.activity,tax_category:0
+#: selection:sii.activity,vat_affected:0
 msgid "Not Available"
-msgstr "¿Otros disponibles?"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_823000
@@ -5675,16 +5512,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_662900
-msgid ""
-"Otras actividades auxiliares de las actividades de seguros y fondos de "
-"pensiones"
+msgid "Otras actividades auxiliares de las actividades de seguros y fondos de pensiones"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_661909
-msgid ""
-"Otras actividades auxiliares de las actividades de servicios financieros n.c."
-"p."
+msgid "Otras actividades auxiliares de las actividades de servicios financieros n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5749,9 +5582,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_812909
-msgid ""
-"Otras actividades de limpieza de edificios e instalaciones industriales n.c."
-"p."
+msgid "Otras actividades de limpieza de edificios e instalaciones industriales n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5771,9 +5602,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_649900
-msgid ""
-"Otras actividades de servicios financieros, excepto las de seguros y fondos "
-"de pensiones n.c.p."
+msgid "Otras actividades de servicios financieros, excepto las de seguros y fondos de pensiones n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5783,8 +5612,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_620900
-msgid ""
-"Otras actividades de tecnología de la información y de servicios informáticos"
+msgid "Otras actividades de tecnología de la información y de servicios informáticos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5804,22 +5632,17 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_492190
-msgid ""
-"Otras actividades de transporte urbano y suburbano de pasajeros por vía "
-"terrestre n.c.p."
+msgid "Otras actividades de transporte urbano y suburbano de pasajeros por vía terrestre n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_471990
-msgid ""
-"Otras actividades de venta al por menor en comercios no especializados n.c.p."
+msgid "Otras actividades de venta al por menor en comercios no especializados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_479909
-msgid ""
-"Otras actividades de venta por menor no realizadas en comercios, puestos de "
-"venta o mercados n.c.p."
+msgid "Otras actividades de venta por menor no realizadas en comercios, puestos de venta o mercados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5879,16 +5702,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_712009
-msgid ""
-"Otros servicios de ensayos y análisis técnicos (excepto actividades de "
-"plantas de revisión técnica)"
+msgid "Otros servicios de ensayos y análisis técnicos (excepto actividades de plantas de revisión técnica)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_799000
-msgid ""
-"Otros servicios de reservas y actividades conexas (incluye venta de entradas "
-"para teatro, y otros)"
+msgid "Otros servicios de reservas y actividades conexas (incluye venta de entradas para teatro, y otros)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6048,9 +5867,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_841200
-msgid ""
-"Regulación de las actividades de organismos que prestan servicios "
-"sanitarios, educativos, culturales"
+msgid "Regulación de las actividades de organismos que prestan servicios sanitarios, educativos, culturales"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6070,15 +5887,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_952200
-msgid ""
-"Reparación de aparatos de uso doméstico, equipo doméstico y de jardinería"
+msgid "Reparación de aparatos de uso doméstico, equipo doméstico y de jardinería"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_952100
-msgid ""
-"Reparación de aparatos electrónicos de consumo (incluye aparatos de "
-"televisión y radio)"
+msgid "Reparación de aparatos electrónicos de consumo (incluye aparatos de televisión y radio)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6098,9 +5912,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_951200
-msgid ""
-"Reparación de equipo de comunicaciones (incluye la reparación teléfonos "
-"celulares)"
+msgid "Reparación de equipo de comunicaciones (incluye la reparación teléfonos celulares)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6110,9 +5922,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_331400
-msgid ""
-"Reparación de equipo eléctrico (excepto reparación de equipo y enseres "
-"domésticos)"
+msgid "Reparación de equipo eléctrico (excepto reparación de equipo y enseres domésticos)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6122,22 +5932,17 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_331202
-msgid ""
-"Reparación de maquinaria metalúrgica, para la minería, extracción de "
-"petróleo y para la construcción"
+msgid "Reparación de maquinaria metalúrgica, para la minería, extracción de petróleo y para la construcción"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_331203
-msgid ""
-"Reparación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
+msgid "Reparación de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_331204
-msgid ""
-"Reparación de maquinaria para producir textiles, prendas de vestir, "
-"artículos de cuero y calzado  "
+msgid "Reparación de maquinaria para producir textiles, prendas de vestir, artículos de cuero y calzado  "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6157,9 +5962,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_331509
-msgid ""
-"Reparación de otros equipos de transporte n.c.p., excepto vehículos "
-"automotores"
+msgid "Reparación de otros equipos de transporte n.c.p., excepto vehículos automotores"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6193,21 +5996,18 @@ msgstr ""
 #: model:ir.ui.menu,name:l10n_cl_sii_activity.menu_sii_activity
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_tree
-#, fuzzy
 msgid "SII Activities"
-msgstr "SII Actividades del asociado"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_form
-#, fuzzy
 msgid "SII Activity"
-msgstr "SII Actividades del asociado"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model,name:l10n_cl_sii_activity.model_sii_activity
-#, fuzzy
 msgid "SII Economic Activity"
-msgstr "SII Actividades Económicas"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_651100
@@ -6236,23 +6036,17 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_960901
-msgid ""
-"Servicios de adiestramiento, guardería, peluquería, paseo de mascotas "
-"(excepto act. veterinarias)"
+msgid "Servicios de adiestramiento, guardería, peluquería, paseo de mascotas (excepto act. veterinarias)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_691009
-msgid ""
-"Servicios de arbitraje; síndicos de quiebra y peritos judiciales; otras "
-"actividades jurídicas n.c.p."
+msgid "Servicios de arbitraje; síndicos de quiebra y peritos judiciales; otras actividades jurídicas n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_711001
-msgid ""
-"Servicios de arquitectura (diseño de edificios, dibujo de planos de "
-"construcción, entre otros)"
+msgid "Servicios de arquitectura (diseño de edificios, dibujo de planos de construcción, entre otros)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6292,9 +6086,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_900001
-msgid ""
-"Servicios de producción de obras de teatro, conciertos, espectáculos de "
-"danza, otras prod. escénicas"
+msgid "Servicios de producción de obras de teatro, conciertos, espectáculos de danza, otras prod. escénicas"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6374,9 +6166,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_869092
-msgid ""
-"Servicios prestados de forma independiente por otros profesionales de la "
-"salud"
+msgid "Servicios prestados de forma independiente por otros profesionales de la salud"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6391,9 +6181,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_711003
-msgid ""
-"Servicios profesionales de ingeniería y actividades conexas de consultoría "
-"técnica "
+msgid "Servicios profesionales de ingeniería y actividades conexas de consultoría técnica "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6413,9 +6201,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_21002
-msgid ""
-"Silvicultura y otras actividades forestales (excepto explotación de viveros "
-"forestales)"
+msgid "Silvicultura y otras actividades forestales (excepto explotación de viveros forestales)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6430,16 +6216,13 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_562900
-msgid ""
-"Suministro industrial de comidas por encargo; concesión de servicios de "
-"alimentación "
+msgid "Suministro industrial de comidas por encargo; concesión de servicios de alimentación "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__tax_category
-#, fuzzy
 msgid "Tax Category"
-msgstr "Categoría de impuesto"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_131200
@@ -6594,7 +6377,7 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__vat_affected
 msgid "VAT Affected"
-msgstr "IVA afectado"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_462020
@@ -6628,16 +6411,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_466100
-msgid ""
-"Venta al por mayor de combustibles sólidos, líquidos y gaseosos y productos "
-"conexos"
+msgid "Venta al por mayor de combustibles sólidos, líquidos y gaseosos y productos conexos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465100
-msgid ""
-"Venta al por mayor de computadores, equipo periférico y programas "
-"informáticos"
+msgid "Venta al por mayor de computadores, equipo periférico y programas informáticos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6657,16 +6436,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465905
-msgid ""
-"Venta al por mayor de equipo de transporte(excepto vehículos automotores, "
-"motocicletas y bicicletas)"
+msgid "Venta al por mayor de equipo de transporte(excepto vehículos automotores, motocicletas y bicicletas)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465200
-msgid ""
-"Venta al por mayor de equipo, partes y piezas electrónicos y de "
-"telecomunicaciones"
+msgid "Venta al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6676,8 +6451,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_463019
-msgid ""
-"Venta al por mayor de huevos, lácteos, abarrotes y de otros alimentos n.c.p."
+msgid "Venta al por mayor de huevos, lácteos, abarrotes y de otros alimentos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6692,37 +6466,27 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_466301
-msgid ""
-"Venta al por mayor de madera en bruto y productos primarios de la "
-"elaboración de madera"
+msgid "Venta al por mayor de madera en bruto y productos primarios de la elaboración de madera"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465901
-msgid ""
-"Venta al por mayor de maquinaria metalúrgica, para la minería, extracción de "
-"petróleo y construcción"
+msgid "Venta al por mayor de maquinaria metalúrgica, para la minería, extracción de petróleo y construcción"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465902
-msgid ""
-"Venta al por mayor de maquinaria para la elaboración de alimentos, bebidas y "
-"tabaco"
+msgid "Venta al por mayor de maquinaria para la elaboración de alimentos, bebidas y tabaco"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465903
-msgid ""
-"Venta al por mayor de maquinaria para la industria textil, del cuero y del "
-"calzado"
+msgid "Venta al por mayor de maquinaria para la industria textil, del cuero y del calzado"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_465904
-msgid ""
-"Venta al por mayor de maquinaria y equipo de oficina; venta al por mayor de "
-"muebles de oficina"
+msgid "Venta al por mayor de maquinaria y equipo de oficina; venta al por mayor de muebles de oficina"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6732,9 +6496,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_466302
-msgid ""
-"Venta al por mayor de materiales de construcción, artículos de ferretería, "
-"gasfitería y calefacción"
+msgid "Venta al por mayor de materiales de construcción, artículos de ferretería, gasfitería y calefacción"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6809,23 +6571,17 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477391
-msgid ""
-"Venta al por menor de alimento y accesorios para mascotas en comercios "
-"especializados"
+msgid "Venta al por menor de alimento y accesorios para mascotas en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472101
-msgid ""
-"Venta al por menor de alimentos en comercios especializados (almacenes "
-"pequeños y minimarket)"
+msgid "Venta al por menor de alimentos en comercios especializados (almacenes pequeños y minimarket)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_478100
-msgid ""
-"Venta al por menor de alimentos, bebidas y tabaco en puestos de venta y "
-"mercados (incluye ferias)"
+msgid "Venta al por menor de alimentos, bebidas y tabaco en puestos de venta y mercados (incluye ferias)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6835,9 +6591,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475909
-msgid ""
-"Venta al por menor de aparatos eléctricos, textiles para el hogar y otros "
-"enseres domésticos n.c.p."
+msgid "Venta al por menor de aparatos eléctricos, textiles para el hogar y otros enseres domésticos n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6847,35 +6601,27 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_476301
-msgid ""
-"Venta al por menor de artículos de caza y pesca en comercios especializados"
+msgid "Venta al por menor de artículos de caza y pesca en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475201
-msgid ""
-"Venta al por menor de artículos de ferretería y materiales de construcción "
+msgid "Venta al por menor de artículos de ferretería y materiales de construcción "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477394
-msgid ""
-"Venta al por menor de artículos de joyería, bisutería y relojería en "
-"comercios especializados"
+msgid "Venta al por menor de artículos de joyería, bisutería y relojería en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_476103
-msgid ""
-"Venta al por menor de artículos de papelería y escritorio en comercios "
-"especializados"
+msgid "Venta al por menor de artículos de papelería y escritorio en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477203
-msgid ""
-"Venta al por menor de artículos de perfumería, de tocador y cosméticos en "
-"comercios especializados"
+msgid "Venta al por menor de artículos de perfumería, de tocador y cosméticos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6890,15 +6636,12 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472200
-msgid ""
-"Venta al por menor de bebidas alcohólicas y no alcohólicas en comercios "
-"especializados (botillerías)"
+msgid "Venta al por menor de bebidas alcohólicas y no alcohólicas en comercios especializados (botillerías)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_476302
-msgid ""
-"Venta al por menor de bicicletas y sus repuestos en comercios especializados"
+msgid "Venta al por menor de bicicletas y sus repuestos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6908,30 +6651,22 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477395
-msgid ""
-"Venta al por menor de carbón, leña y otros combustibles de uso doméstico en "
-"comercios especializados"
+msgid "Venta al por menor de carbón, leña y otros combustibles de uso doméstico en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477103
-msgid ""
-"Venta al por menor de carteras, maletas y otros accesorios de viaje en "
-"comercios especializados"
+msgid "Venta al por menor de carteras, maletas y otros accesorios de viaje en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_473000
-msgid ""
-"Venta al por menor de combustibles para vehículos automotores en comercios "
-"especializados"
+msgid "Venta al por menor de combustibles para vehículos automotores en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_474100
-msgid ""
-"Venta al por menor de computadores, equipo periférico, programas "
-"informáticos y equipo de telecom."
+msgid "Venta al por menor de computadores, equipo periférico, programas informáticos y equipo de telecom."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6941,35 +6676,27 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_474200
-msgid ""
-"Venta al por menor de equipo de sonido y de video en comercios especializados"
+msgid "Venta al por menor de equipo de sonido y de video en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477397
-msgid ""
-"Venta al por menor de flores, plantas, arboles, semillas y abonos en "
-"comercios especializados"
+msgid "Venta al por menor de flores, plantas, arboles, semillas y abonos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477310
-msgid ""
-"Venta al por menor de gas licuado en bombonas (cilindros) en comercios "
-"especializados"
+msgid "Venta al por menor de gas licuado en bombonas (cilindros) en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_476200
-msgid ""
-"Venta al por menor de grabaciones de música y de video en comercios "
-"especializados"
+msgid "Venta al por menor de grabaciones de música y de video en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475902
-msgid ""
-"Venta al por menor de instrumentos musicales en comercios especializados"
+msgid "Venta al por menor de instrumentos musicales en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -6994,8 +6721,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477409
-msgid ""
-"Venta al por menor de otros artículos de segunda mano en comercios n.c.p."
+msgid "Venta al por menor de otros artículos de segunda mano en comercios n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -7005,28 +6731,22 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477399
-msgid ""
-"Venta al por menor de otros productos en comercios especializados n.c.p."
+msgid "Venta al por menor de otros productos en comercios especializados n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_478900
-msgid ""
-"Venta al por menor de otros productos en puestos de venta y mercados "
-"(incluye ferias)"
+msgid "Venta al por menor de otros productos en puestos de venta y mercados (incluye ferias)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475202
-msgid ""
-"Venta al por menor de pinturas, barnices y lacas en comercios especializados"
+msgid "Venta al por menor de pinturas, barnices y lacas en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477102
-msgid ""
-"Venta al por menor de prendas y accesorios de vestir en comercios "
-"especializados"
+msgid "Venta al por menor de prendas y accesorios de vestir en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -7036,23 +6756,17 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477201
-msgid ""
-"Venta al por menor de productos farmacéuticos y medicinales en comercios "
-"especializados"
+msgid "Venta al por menor de productos farmacéuticos y medicinales en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_478200
-msgid ""
-"Venta al por menor de productos textiles, prendas de vestir y calzado en "
-"puestos de venta y mercados"
+msgid "Venta al por menor de productos textiles, prendas de vestir y calzado en puestos de venta y mercados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_477396
-msgid ""
-"Venta al por menor de recuerdos, artesanías y artículos religiosos en "
-"comercios especializados"
+msgid "Venta al por menor de recuerdos, artesanías y artículos religiosos en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -7062,77 +6776,57 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472300
-msgid ""
-"Venta al por menor de tabaco y productos de tabaco en comercios "
-"especializados"
+msgid "Venta al por menor de tabaco y productos de tabaco en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475300
-msgid ""
-"Venta al por menor de tapices, alfombras y cubrimientos para paredes y pisos"
+msgid "Venta al por menor de tapices, alfombras y cubrimientos para paredes y pisos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_475100
-msgid ""
-"Venta al por menor de telas, lanas, hilos y similares en comercios "
-"especializados"
+msgid "Venta al por menor de telas, lanas, hilos y similares en comercios especializados"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_451002
-msgid ""
-"Venta al por menor de vehículos automotores nuevos o usados (incluye "
-"compraventa)"
+msgid "Venta al por menor de vehículos automotores nuevos o usados (incluye compraventa)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_471100
-msgid ""
-"Venta al por menor en comercios de alimentos, bebidas o tabaco "
-"(supermercados e hipermercados)"
+msgid "Venta al por menor en comercios de alimentos, bebidas o tabaco (supermercados e hipermercados)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_471910
-msgid ""
-"Venta al por menor en comercios de vestuario y productos para el hogar "
-"(grandes tiendas)"
+msgid "Venta al por menor en comercios de vestuario y productos para el hogar (grandes tiendas)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472102
-msgid ""
-"Venta al por menor en comercios especializados de carne y productos cárnicos "
+msgid "Venta al por menor en comercios especializados de carne y productos cárnicos "
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472103
-msgid ""
-"Venta al por menor en comercios especializados de frutas y verduras "
-"(verdulerías)"
+msgid "Venta al por menor en comercios especializados de frutas y verduras (verdulerías)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472109
-msgid ""
-"Venta al por menor en comercios especializados de huevos, confites y "
-"productos alimenticios n.c.p."
+msgid "Venta al por menor en comercios especializados de huevos, confites y productos alimenticios n.c.p."
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472104
-msgid ""
-"Venta al por menor en comercios especializados de pescado, mariscos y "
-"productos conexos"
+msgid "Venta al por menor en comercios especializados de pescado, mariscos y productos conexos"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_472105
-msgid ""
-"Venta al por menor en comercios especializados de productos de panadería y "
-"pastelería"
+msgid "Venta al por menor en comercios especializados de productos de panadería y pastelería"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -7152,9 +6846,7 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_479901
-msgid ""
-"Venta al por menor realizada por independientes en la locomoción colectiva "
-"(ley 20.388)"
+msgid "Venta al por menor realizada por independientes en la locomoción colectiva (ley 20.388)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -7175,1014 +6867,5 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: selection:sii.activity,vat_affected:0
 msgid "Yes"
-msgstr "Si"
+msgstr ""
 
-#~ msgid ""
-#~ "\n"
-#~ "Include unusual taxes documents, as transfer invoice, and reissue\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Incluye documentos de impuestos inusuales, como factura de transferencia "
-#~ "y reemisión\n"
-
-#~ msgid "% discount"
-#~ msgstr "% descuento"
-
-#~ msgid "- Next Number:"
-#~ msgstr "- Próximo Número:"
-
-#, fuzzy
-#~ msgid "<strong>Monto adeudado</strong>"
-#~ msgstr "<strong>Importe vencido</strong>"
-
-#, fuzzy
-#~ msgid "<strong>Nota:</strong>"
-#~ msgstr "<strong>Importe vencido</strong>"
-
-#, fuzzy
-#~ msgid "Account Journal Document Config"
-#~ msgstr "Configuración de documentos de diario"
-
-#, fuzzy
-#~ msgid "Action"
-#~ msgstr "Activo"
-
-#~ msgid "Action Needed"
-#~ msgstr "Acción requerida"
-
-#~ msgid "Additional notes..."
-#~ msgstr "Notas adicionales..."
-
-#~ msgid "Amount"
-#~ msgstr "Importe"
-
-#~ msgid "Ask Refund"
-#~ msgstr "Nota de Crédito"
-
-#~ msgid "Ask for DTE"
-#~ msgstr "Consulta DTE"
-
-#~ msgid "Attachment Count"
-#~ msgstr "Conteo de archivos adjuntos"
-
-#~ msgid "Authorized Users"
-#~ msgstr "Usuarios autorizados"
-
-#~ msgid "Authorized Users for this Certificate"
-#~ msgstr "Usuarios autorizados para este certificado"
-
-#~ msgid "Auto-detect"
-#~ msgstr "Auto-detección"
-
-#~ msgid "Available Journal Document Classes"
-#~ msgstr "Documento de diario disponibles"
-
-#~ msgid "Batch Number"
-#~ msgstr "Número Batch"
-
-#~ msgid "Batch number for processing multiple invoices together"
-#~ msgstr "Número de Batch para procesar varias facturas juntas"
-
-#~ msgid "Bill"
-#~ msgstr "Cuenta"
-
-#~ msgid "Bill Date"
-#~ msgstr "Fecha factura"
-
-#~ msgid "Bill lines"
-#~ msgstr "Líneas de factura"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#, fuzzy
-#~ msgid "Cancelled?"
-#~ msgstr "Cancelar"
-
-#~ msgid "Cannot refund draft/proforma/cancelled invoice."
-#~ msgstr "No se puede reembolsar estatus borrador/proforma/factura cancelada."
-
-#~ msgid ""
-#~ "Cannot refund invoice which is already reconciled, invoice should be "
-#~ "unreconciled first. You can only refund this invoice."
-#~ msgstr ""
-#~ "No se puede reembolsar la factura que ya está conciliada. Se debe "
-#~ "desconciliar la factura primero. Solo puede reembolsar esta factura."
-
-#~ msgid "Certificate Key"
-#~ msgstr "Llave de Certificado"
-
-#~ msgid "Certificate Owner"
-#~ msgstr "Dueño de Certificado"
-
-#~ msgid "Certificate Stuff"
-#~ msgstr "Cosas de Certificado"
-
-#~ msgid "City"
-#~ msgstr "Ciudad"
-
-#~ msgid "Clean Signature"
-#~ msgstr "Limpiar Firma"
-
-#~ msgid "Clean Signature Information"
-#~ msgstr "Limpia Información de Firma"
-
-#~ msgid "Click to create a customer invoice."
-#~ msgstr "Click para crear una factura de venta."
-
-#~ msgid "Click to create a journal entry."
-#~ msgstr "Click para crear una entrada de diario."
-
-#~ msgid "Click to record a new vendor bill."
-#~ msgstr "Click para crear factura de proveedor."
-
-#~ msgid "Code"
-#~ msgstr "Código"
-
-#~ msgid "Code must be unique!"
-#~ msgstr "El código debe ser único!"
-
-#~ msgid "Company"
-#~ msgstr "Compañía"
-
-#~ msgid "Company vat %s should be the same that assigned company's vat: %s!"
-#~ msgstr ""
-#~ "El IVA de la empresa %s debe ser el mismo IVA asignado a la empresa: %s!"
-
-#~ msgid "Concept Types"
-#~ msgstr "Tipos de conceptos"
-
-#~ msgid "Config Settings"
-#~ msgstr "Opciones de Configuración"
-
-#~ msgid "Confirm"
-#~ msgstr "Confirmar"
-
-#~ msgid "Contact"
-#~ msgstr "Contacto"
-
-#~ msgid "Country"
-#~ msgstr "País"
-
-#, fuzzy
-#~ msgid "Create"
-#~ msgstr "Creado por"
-
-#~ msgid "Create Journal Documents"
-#~ msgstr "Crear Documentos de Diario"
-
-#, fuzzy
-#~ msgid "Credit"
-#~ msgstr "Rectificativa"
-
-#~ msgid "Credit Note"
-#~ msgstr "Rectificativa"
-
-#~ msgid "Credit Notes"
-#~ msgstr "Notas de Crédito"
-
-#~ msgid "Currency"
-#~ msgstr "Moneda"
-
-#, fuzzy
-#~ msgid "DTE CAF"
-#~ msgstr "Archivos CAF"
-
-#~ msgid "DTE CAF Files"
-#~ msgstr "Archivos CAF"
-
-#~ msgid "DTE Sii Code"
-#~ msgstr "Código DTE"
-
-#, fuzzy
-#~ msgid "DTES Number"
-#~ msgstr "Número Final"
-
-#~ msgid "Date"
-#~ msgstr "Fecha"
-
-#, fuzzy
-#~ msgid "Debit"
-#~ msgstr "Notas de debito"
-
-#~ msgid "Debit Notes"
-#~ msgstr "Notas de debito"
-
-#, fuzzy
-#~ msgid "Discount Reason"
-#~ msgstr "Descuento:"
-
-#, fuzzy
-#~ msgid "Discount Type"
-#~ msgstr "Tipo de Documento"
-
-#~ msgid "Discount:"
-#~ msgstr "Descuento:"
-
-#~ msgid "Discriminate VAT on Quotations and Sale Orders?"
-#~ msgstr "¿Discriminar el IVA en las cotizaciones y pedidos de venta?"
-
-#~ msgid "Discriminate VAT?"
-#~ msgstr "Discrimina IVA"
-
-#, fuzzy
-#~ msgid "Document"
-#~ msgstr "Documentos"
-
-#~ msgid "Document Class"
-#~ msgstr "SII Tipo de Documento"
-
-#~ msgid "Document Classes"
-#~ msgstr "Tipos de documentos"
-
-#, fuzzy
-#~ msgid "Document Date"
-#~ msgstr "Tipo de Documento"
-
-#~ msgid "Document Number"
-#~ msgstr "Número de Documento"
-
-#~ msgid "Document Type"
-#~ msgstr "Tipo de Documento"
-
-#~ msgid "Document Types"
-#~ msgstr "Tipos de documentos"
-
-#~ msgid "Document number"
-#~ msgstr "Número de documento"
-
-#~ msgid "Document type"
-#~ msgstr "Tipo de Documento"
-
-#~ msgid "Documents"
-#~ msgstr "Documentos"
-
-#~ msgid "Documents Class"
-#~ msgstr "Clases de Documento"
-
-#~ msgid "Documents Type"
-#~ msgstr "Tipo Documento"
-
-#~ msgid "Download XML"
-#~ msgstr "Descargar XML"
-
-#~ msgid "Download XML Exchange"
-#~ msgstr "Descargar XML Intercambio"
-
-#~ msgid "Draft"
-#~ msgstr "Borrador"
-
-#~ msgid "Electronic Invoice"
-#~ msgstr "Factura Electrónica"
-
-#~ msgid "Email"
-#~ msgstr "Correo electrónico"
-
-#~ msgid "Email composition wizard"
-#~ msgstr "Asistente de redacción de correo electrónico."
-
-#~ msgid "Email:"
-#~ msgstr "Correo electrónico:"
-
-#~ msgid "End Number"
-#~ msgstr "Número Final"
-
-#~ msgid "Entry Sequence"
-#~ msgstr "Secuencia del asiento"
-
-#~ msgid "Error! Filename Already Exist!"
-#~ msgstr "Error! El archivo ya existe!"
-
-#~ msgid "Expired"
-#~ msgstr "Expirado"
-
-#~ msgid "File"
-#~ msgstr "Archivo"
-
-#~ msgid "File Opt"
-#~ msgstr "Opción"
-
-#~ msgid "Fill Partner VAT"
-#~ msgstr "Llenar RUT del Cliente"
-
-#~ msgid "Followers"
-#~ msgstr "Seguidores"
-
-#~ msgid "Followers (Channels)"
-#~ msgstr "Seguidores (Canales)"
-
-#~ msgid "Followers (Partners)"
-#~ msgstr "Seguidores (Empresas)"
-
-#~ msgid "Forced By CAF"
-#~ msgstr "Forzado por el CAF"
-
-#~ msgid "Group By"
-#~ msgstr "Agrupar por"
-
-#~ msgid "If checked new messages require your attention."
-#~ msgstr "Si está marcado, hay nuevos mensajes que requieren su atención"
-
-#~ msgid "If checked, new messages require your attention."
-#~ msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
-
-#~ msgid "If checked, some messages have a delivery error."
-#~ msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
-
-#~ msgid "Import"
-#~ msgstr "Importar"
-
-#~ msgid "Import Invoices"
-#~ msgstr "Importar Facturas"
-
-#~ msgid "Import Invoices From CSV"
-#~ msgstr "Importar Facturas desde CSV"
-
-#~ msgid "In Use"
-#~ msgstr "En uso"
-
-#~ msgid "Invoice"
-#~ msgstr "Factura"
-
-#~ msgid "Invoice Line"
-#~ msgstr "Línea factura"
-
-#~ msgid "Invoice Opt"
-#~ msgstr "Opción"
-
-#~ msgid "Invoices"
-#~ msgstr "Facturas"
-
-#~ msgid "Is Follower"
-#~ msgstr "Es un seguidor"
-
-#~ msgid "Issued Date"
-#~ msgstr "Fecha de Emisión"
-
-#~ msgid "Issuer Common Name"
-#~ msgstr "Nombre Común del Emisor"
-
-#~ msgid "Issuer Country"
-#~ msgstr "País Emisor"
-
-#~ msgid "Issuer Email Address"
-#~ msgstr "Dirección de correo electrónico del emisor"
-
-#~ msgid "Issuer Organization"
-#~ msgstr "Organización Emisora"
-
-#~ msgid "Issuer Serial Number"
-#~ msgstr "Número de serie del emisor"
-
-#~ msgid "Issuers"
-#~ msgstr "Emisor"
-
-#~ msgid "Journal"
-#~ msgstr "Diario"
-
-#~ msgid "Journal Documents Configuration"
-#~ msgstr "Configuración de documentos de diario"
-
-#~ msgid "Journal Entries"
-#~ msgstr "Asientos contables"
-
-#~ msgid "Journal Item"
-#~ msgstr "Apunte contable"
-
-#~ msgid "Journal Items"
-#~ msgstr "Apuntes contables"
-
-#~ msgid "Journal SII Documents"
-#~ msgstr "Documento diario del SII"
-
-#~ msgid "Journal Turns"
-#~ msgstr "Giros de Diarios"
-
-#~ msgid "Journals"
-#~ msgstr "Diarios"
-
-#~ msgid "Last Control Date"
-#~ msgstr "Fecha último control"
-
-#~ msgid "Last Date"
-#~ msgstr "Ultima fecha"
-
-#~ msgid "Libro CV PDF"
-#~ msgstr "Libro CV PD"
-
-#, fuzzy
-#~ msgid "Mail Message DTE"
-#~ msgstr "Mensaje"
-
-#~ msgid "Main Attachment"
-#~ msgstr "Adjuntos principales"
-
-#~ msgid "Message"
-#~ msgstr "Mensaje"
-
-#~ msgid "Message Delivery error"
-#~ msgstr "Error de Envío de Mensaje"
-
-#~ msgid "Messages"
-#~ msgstr "Mensajes"
-
-#~ msgid "Move"
-#~ msgstr "Asiento"
-
-#~ msgid "Name"
-#~ msgstr "Nombre"
-
-#~ msgid "Name must be unique!"
-#~ msgstr "El nombre debe ser único!"
-
-#~ msgid ""
-#~ "Next number that will be used. This number can be incremented frequently "
-#~ "so the displayed value might already be obsolete"
-#~ msgstr ""
-#~ "Próximo número que se utilizará. Este número puede incrementarse "
-#~ "frecuentemente por lo que el valor mostrado puede estar ya obsoleto."
-
-#~ msgid "Not After"
-#~ msgstr "No después de"
-
-#~ msgid "Not After this Date"
-#~ msgstr "No después de esta fecha"
-
-#~ msgid "Not Before"
-#~ msgstr "No antes"
-
-#~ msgid "Not Before this Date"
-#~ msgstr "No antes de esta fecha"
-
-#, fuzzy
-#~ msgid "Note Type"
-#~ msgstr "Tipos de conceptos"
-
-#~ msgid "Number of Actions"
-#~ msgstr "Número de acciones"
-
-#~ msgid "Number of error"
-#~ msgstr "Número de error"
-
-#~ msgid "Number of messages which requires an action"
-#~ msgstr "Número de mensajes que requieren una acción"
-
-#~ msgid "Number of messages with delivery error"
-#~ msgstr "Número de mensajes con error de envío"
-
-#~ msgid "Number of unread messages"
-#~ msgstr "Número de mensajes no leidos"
-
-#, fuzzy
-#~ msgid "Operation Type"
-#~ msgstr "Error Tipo de operación"
-
-#~ msgid "Operation Type Error"
-#~ msgstr "Error Tipo de operación"
-
-#~ msgid "Operation Type Must be \"Sale\" or \"Purchase\""
-#~ msgstr "Tipo de operación debe ser \"Venta\" o \"Compra\""
-
-#~ msgid "Ordenes de Compra a validar"
-#~ msgstr "Ordenes de Compra"
-
-#~ msgid "Origin"
-#~ msgstr "Origen"
-
-#~ msgid "Other Documents"
-#~ msgstr "Otros Documentos"
-
-#~ msgid "Other Info"
-#~ msgstr "Otra Información"
-
-#~ msgid "Payment Terms"
-#~ msgstr "Términos de pago"
-
-#~ msgid "Please input CAF File"
-#~ msgstr "Por favor, ingrese el archivo CAF"
-
-#~ msgid ""
-#~ "Please select your company service provider for DTE service.\n"
-#~ "    "
-#~ msgstr ""
-#~ "Por favor seleccione su proveedor de Facturación Electrónica.\n"
-#~ "    "
-
-#~ msgid "Posted"
-#~ msgstr "Publicado"
-
-#, fuzzy
-#~ msgid ""
-#~ "Prefix for Documents Codes on Invoices and Account Moves.\n"
-#~ "                For eg. 'FAC' will build 'FAC 00001' Document Number"
-#~ msgstr ""
-#~ "Prefijo para códigos de documentos en facturas y movimientos de cuenta. "
-#~ "Por ej. 'FAC' construirá 'FAC 00001' Número de documento"
-
-#~ msgid "Print Cedible"
-#~ msgstr "Imprimir Cedible"
-
-#~ msgid "Print Ticket"
-#~ msgstr "Imprimir Ticket"
-
-#~ msgid "Private Key"
-#~ msgstr "Llave privada"
-
-#, fuzzy
-#~ msgid "Purchase"
-#~ msgstr "Facturas de compra"
-
-#~ msgid "Purchase Invoices"
-#~ msgstr "Facturas de compra"
-
-#~ msgid "Reclamo al  Contenido del Documento "
-#~ msgstr "Reclamo al Contenido del Documento "
-
-#, fuzzy
-#~ msgid "Ref. Number"
-#~ msgstr "Número Final"
-
-#~ msgid "Refund"
-#~ msgstr "Nota de Crédito"
-
-#, fuzzy
-#~ msgid "Refused"
-#~ msgstr "Nota de Crédito"
-
-#~ msgid "Regional Office Name"
-#~ msgstr "Nombre de la oficina regional"
-
-#~ msgid "Register Electronic Documents?"
-#~ msgstr "¿Registrar documentos electrónicos?"
-
-#~ msgid "Register Free-Tax Zone or # 1057 Resolution Documents?"
-#~ msgstr ""
-#~ "¿Registre la zona libre de impuestos o los documentos de resolución n.º "
-#~ "1057?"
-
-#~ msgid "Register Manual Documents?"
-#~ msgstr "¿Registrar documentos manuales?"
-
-#~ msgid "Register Payment"
-#~ msgstr "Registrar pago"
-
-#~ msgid "Register Settlement Invoices?"
-#~ msgstr "¿Registrar facturas de liquidación?"
-
-#~ msgid "Responsabilities"
-#~ msgstr " Responsabilidades"
-
-#~ msgid "Responsability"
-#~ msgstr "Tipo Contribuyente"
-
-#~ msgid "Responsible"
-#~ msgstr "Responsable"
-
-#~ msgid "SII - Certification process"
-#~ msgstr "SII - Proceso de certificación"
-
-#~ msgid "SII Barcode"
-#~ msgstr "SII Código de barras"
-
-#~ msgid "SII Barcode Image"
-#~ msgstr "Código de barras SII"
-
-#~ msgid "SII Barcode Name"
-#~ msgstr "Nombre Código SII"
-
-#~ msgid "SII CAF Files for DTE"
-#~ msgstr "SII CAF Archivo para DTE"
-
-#~ msgid "SII Code"
-#~ msgstr "Código SII"
-
-#, fuzzy
-#~ msgid "SII Cola Envio"
-#~ msgstr "SII Cola de envío"
-
-#~ msgid "SII Cola de envío"
-#~ msgstr "SII Cola de envío"
-
-#~ msgid "SII Concept type"
-#~ msgstr "SII Tipo de concepto"
-
-#~ msgid "SII Configuration"
-#~ msgstr "SII Configuración"
-
-#~ msgid "SII DTE Upload XML Wizard"
-#~ msgstr "Wizard Subida de XML"
-
-#~ msgid "SII DTE masive Accept Wizard"
-#~ msgstr "Wizard de Aceptación Masiva DTE"
-
-#, fuzzy
-#~ msgid "SII DTE masive Process Wizard"
-#~ msgstr "Wizard de Aceptación Masiva DTE"
-
-#~ msgid "SII DTE masive send Wizard"
-#~ msgstr "Wizard de Envío Masivo DTE"
-
-#~ msgid "SII Document Class"
-#~ msgstr "SII Tipo de documento"
-
-#~ msgid "SII Document Classes"
-#~ msgstr "Tipos de Documentos SII"
-
-#~ msgid "SII Document Letter"
-#~ msgstr "SII Carta de documento"
-
-#, fuzzy
-#~ msgid "SII Document Number"
-#~ msgstr "Número de Documento"
-
-#, fuzzy
-#~ msgid ""
-#~ "SII Document Type for this CAF is %s and selected\n"
-#~ "                sequence associated document class is %s. This values "
-#~ "should be\n"
-#~ "                equal for DTE Invoicing to work properly!"
-#~ msgstr ""
-#~ "SII Document Type for this CAF is %s and selected sequence\n"
-#~ "associated document class is %s. This values should be equal for DTE "
-#~ "Invoicing\n"
-#~ "to work properly!"
-
-#~ msgid "SII Document class"
-#~ msgstr "SII Tipo de Documento"
-
-#~ msgid "SII Document type"
-#~ msgstr "SII Tipo de documento"
-
-#~ msgid "SII Economical Activities"
-#~ msgstr "SII Actividades económicas"
-
-#~ msgid "SII Economical Activities Printable Description"
-#~ msgstr "SII Descripción imprimible de las actividades económicas"
-
-#~ msgid "SII Exempt Resolution Date"
-#~ msgstr "SII Fecha de resolución exenta"
-
-#~ msgid "SII Exempt Resolution Number"
-#~ msgstr "SII Número de resolución exenta"
-
-#~ msgid "SII Masive DTE Accept Wizard"
-#~ msgstr "Aceptación Masiva de DTE"
-
-#~ msgid "SII Masive DTE Process Wizard"
-#~ msgstr "Asistente de procesos masivos de SII DTE"
-
-#~ msgid "SII Masive send Wizard"
-#~ msgstr "Envío Masivo SII"
-
-#~ msgid "SII Message"
-#~ msgstr "Mensajes del SII"
-
-#~ msgid "SII Optional type"
-#~ msgstr "SII Tipo opcional"
-
-#, fuzzy
-#~ msgid "SII Receipt"
-#~ msgstr "SII XML Solicitud"
-
-#, fuzzy
-#~ msgid "SII Reception Message"
-#~ msgstr "Mensajes del SII"
-
-#~ msgid "SII Reference Code"
-#~ msgstr "SII Código de refencia"
-
-#~ msgid "SII Reference Document Type"
-#~ msgstr "SII Tipo de Documento De Referencia"
-
-#~ msgid "SII Regional Office"
-#~ msgstr "SII Oficina regional"
-
-#~ msgid "SII Regional Offices"
-#~ msgstr "SII Oficinas regionales"
-
-#~ msgid "SII Responsability"
-#~ msgstr "SII Responsable"
-
-#, fuzzy
-#~ msgid "SII Result"
-#~ msgstr "SII Responsable"
-
-#~ msgid "SII Send Identification"
-#~ msgstr "Identificación de envío del SII"
-
-#~ msgid "SII VAT Responsability"
-#~ msgstr "SII Responsable del IVA"
-
-#~ msgid "SII XML DTE"
-#~ msgstr "SII XML DTE"
-
-#, fuzzy
-#~ msgid "SII XML Envio"
-#~ msgstr "SII XML DTE"
-
-#~ msgid "SII XML Request"
-#~ msgstr "SII XML Solicitud"
-
-#~ msgid "SII XML Response"
-#~ msgstr "SII XML Respuesta"
-
-#~ msgid "SII XML from Provider"
-#~ msgstr "SII XML del Proveedor"
-
-#~ msgid "SII concept types"
-#~ msgstr "SII Tipos de conceptos"
-
-#~ msgid "SII document types"
-#~ msgstr "SII Tipos de documentos"
-
-#~ msgid "SII optional types"
-#~ msgstr "SII Tipos opcionales"
-
-#~ msgid "SII request result"
-#~ msgstr "Solicitar Resultado SII"
-
-#, fuzzy
-#~ msgid "Select giro of the partner"
-#~ msgstr ""
-#~ "Esta tratando de validar una factura y no se a registrado un Giro al "
-#~ "cliente seleccionado. Debe ir a la ficha del cliente y registrar el Giro "
-#~ "asociado al mismo"
-
-#~ msgid "Select the turns you want to             invoice in this Journal"
-#~ msgstr ""
-#~ "Seleccione los giros que usted quiete             facturar en este diario"
-
-#~ msgid "Send XML"
-#~ msgstr "Enviar XML"
-
-#~ msgid "Sequence"
-#~ msgstr "Secuencia"
-
-#~ msgid "Serial Number"
-#~ msgstr "Número de Serial"
-
-#~ msgid "Set to Draft"
-#~ msgstr "Cambiar a borrador"
-
-#~ msgid "Spent"
-#~ msgstr "Gastado"
-
-#~ msgid "Start Number"
-#~ msgstr "Numero de inicio"
-
-#~ msgid "Start-up Date"
-#~ msgstr "Fecha de Inicio"
-
-#~ msgid "State"
-#~ msgstr "Estado"
-
-#~ msgid "Status"
-#~ msgstr "Estado"
-
-#~ msgid "Stock Picking"
-#~ msgstr "Guía de Despacho"
-
-#~ msgid "Subir XML De Envío"
-#~ msgstr "Subir XML de Envío"
-
-#~ msgid "Supplier Invoice"
-#~ msgstr "Factura del proveedor"
-
-#~ msgid "Supplier Refund"
-#~ msgstr "Reembolso del proveedor"
-
-#~ msgid "Tax"
-#~ msgstr "Impuesto"
-
-#~ msgid "Taxes"
-#~ msgstr "Impuestos"
-
-#~ msgid ""
-#~ "The customer/supplier does not have a VAT defined. The type of invoicing "
-#~ "document you selected requires you tu settle a VAT."
-#~ msgstr ""
-#~ "El cliente/proveedor no tiene un IVA definido. El tipo de documento de "
-#~ "facturación que seleccionó requiere que liquide un IVA."
-
-#~ msgid ""
-#~ "There is no Signer Person with an         authorized signature for you in "
-#~ "the system. Please make sure that         'user_signature_key' module has "
-#~ "been installed and enable a digital         signature, for you or make "
-#~ "the signer to authorize you to use his         signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#, fuzzy
-#~ msgid ""
-#~ "There is no Signer Person with an authorized\n"
-#~ "                     signature for you in the system. Please make sure "
-#~ "that\n"
-#~ "                     'user_signature_key' module has been installed and "
-#~ "enable\n"
-#~ "                     a digital signature, for you or make the signer to\n"
-#~ "                     authorize you to use his signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#, fuzzy
-#~ msgid ""
-#~ "There is no Signer Person with an authorized signature\n"
-#~ "                     for you in the system. Please make sure that\n"
-#~ "                     'user_signature_key' module has been installed and "
-#~ "enable\n"
-#~ "                      a digital signature, for you or make the signer to\n"
-#~ "                     authorize you to use his signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#, fuzzy
-#~ msgid ""
-#~ "There is no Signer Person with an authorized signature\n"
-#~ "                for you in the system. Please make sure that\n"
-#~ "                'user_signature_key' module has been installed and enable "
-#~ "a\n"
-#~ "                digital signature, for you or make the signer to "
-#~ "authorize you\n"
-#~ "                 to use his signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#, fuzzy
-#~ msgid ""
-#~ "There is no Signer Person with an authorized signature for\n"
-#~ "                you in the system. Please make sure that "
-#~ "'user_signature_key'\n"
-#~ "                module has been installed and enable a digital signature, "
-#~ "for\n"
-#~ "                you or make the signer to authorize you to use his\n"
-#~ "                signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#, fuzzy
-#~ msgid ""
-#~ "There is no Signer Person with an authorized signature for you in the "
-#~ "system. Please make sure that 'user_signature_key' module has been "
-#~ "installed and enable a digital signature, for you or make the signer to "
-#~ "authorize you to use his signature."
-#~ msgstr ""
-#~ "Usted no posee una firma autorizada en el sistema. Asegúrese de que el "
-#~ "módulo 'user_signature_key' se haya instalado y tenga habilitada una "
-#~ "firma digital o solicite que le asignen una.."
-
-#~ msgid "To Pay"
-#~ msgstr "A pagar"
-
-#~ msgid "To pay"
-#~ msgstr "Pagar"
-
-#, fuzzy
-#~ msgid "Total Amount"
-#~ msgstr "Importe"
-
-#~ msgid "Total Credit"
-#~ msgstr "Crédito total"
-
-#~ msgid "Total Debit"
-#~ msgstr "Débito total"
-
-#, fuzzy
-#~ msgid "Total Exempt"
-#~ msgstr "Débito total"
-
-#, fuzzy
-#~ msgid "Total Net"
-#~ msgstr "Débito total"
-
-#, fuzzy
-#~ msgid "Total Tax"
-#~ msgstr "Débito total"
-
-#~ msgid "Unit(s)"
-#~ msgstr "Unidad(es)"
-
-#~ msgid "Unread Messages"
-#~ msgstr "Mensajes sin leer"
-
-#~ msgid "Unread Messages Counter"
-#~ msgstr "Contador de mensajes sin leer"
-
-#~ msgid "Unverified"
-#~ msgstr "No verificado"
-
-#~ msgid "Update RUT"
-#~ msgstr "Actualiza RUT"
-
-#~ msgid "Upload the CAF XML File in this holder"
-#~ msgstr "Cargue aquí el archivo XML de CAF"
-
-#~ msgid "Upload the Signature File"
-#~ msgstr "Cargue el Certificado Digital"
-
-#~ msgid "Upload the XML File in this holder"
-#~ msgstr "Cargue aquí el archivo XML"
-
-#~ msgid "Use Documents?"
-#~ msgstr "¿Usa Documentos Tributarios?"
-
-#~ msgid "Use Level"
-#~ msgstr "Nivel de Uso"
-
-#~ msgid "User"
-#~ msgstr "Usuario"
-
-#~ msgid "Users"
-#~ msgstr "Usuarios"
-
-#~ msgid "Valid"
-#~ msgstr "Validar"
-
-#~ msgid "Validate"
-#~ msgstr "Validar"
-
-#~ msgid "Vat Discriminated on Invoices?"
-#~ msgstr "¿Discriminar el IVA en las facturas?"
-
-#~ msgid "Vendor"
-#~ msgstr "Proveedor"
-
-#~ msgid "Vendor Bill"
-#~ msgstr "Documento de Proveedor"
-
-#~ msgid "Vendor Reference"
-#~ msgstr "Número de Documento"
-
-#~ msgid "Website Messages"
-#~ msgstr "Mensajes del sitio web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de comunicaciones del sitio web"
-
-#~ msgid "XML File"
-#~ msgstr "Archivos XML"
-
-#~ msgid "XML Malformed Error:  %s"
-#~ msgstr "XML Error mal formado: %s"
-
-#~ msgid "Yes, Discriminate Default"
-#~ msgstr "Sí, discriminar por defecto"
-
-#~ msgid "Yes, No Discriminate Default"
-#~ msgstr "No, discriminar por defecto"
-
-#~ msgid "You cannot delete a Validated book."
-#~ msgstr "No puedes eliminar un libro validado."
-
-#~ msgid "You have"
-#~ msgstr "Tiene"
-
-#~ msgid "for this supplier. You can allocate them to mark this bill as paid."
-#~ msgstr ""
-#~ "para este proveedor. Puede asignarlos para marcar esta factura como "
-#~ "pagada."
-
-#~ msgid "or"
-#~ msgstr "o"
-
-#~ msgid "outstanding debits"
-#~ msgstr "débitos pendientes"
-
-#~ msgid "City Code"
-#~ msgstr "Código de Ciudad"
-
-#~ msgid "Country state"
-#~ msgstr "Provincia"
-
-#~ msgid "Paid on"
-#~ msgstr "Pagado en"
-
-#~ msgid "Region Code"
-#~ msgstr "Código de la Región"
-
-#~ msgid "Region Name"
-#~ msgstr "Nombre de la Región"
-
-#~ msgid "SII Mensaje de recepción"
-#~ msgstr "SII Mensaje de recepción"
-
-#~ msgid "State - City / Manager"
-#~ msgstr "Gestión de Comunas"
-
-#~ msgid "The city code.\n"
-#~ msgstr "Código de la ciudad.\n"
-
-#~ msgid "The region code.\n"
-#~ msgstr "Código de la Región.\n"
-
-#~ msgid "The state code.\n"
-#~ msgstr "Código de la región.\n"
