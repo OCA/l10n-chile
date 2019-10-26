@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="view_region_state_tree" model="ir.ui.view">
+        <field name="name">res.country.state.city.tree</field>
+        <field name="model">res.country.state.region</field>
+        <field name="arch" type="xml">
+            <tree string="City">
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

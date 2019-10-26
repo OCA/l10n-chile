@@ -132,9 +132,6 @@ stamp to be legally valid.""",
         readonly=False,
         relation="sii.activity.description",
     )
-    city_id = fields.Many2one(
-        related="partner_id.city_id", readonly=False, relation="res.city",
-        string="City")
     document_number = fields.Char(
         related="partner_id.document_number",
         readonly=False,
