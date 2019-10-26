@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="view_bres_company_document_form" model="ir.ui.view">
+        <field name="name">res.company.document.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Electronic Signature">
+                    <group>
+                        <group id="left">
+                            <field name="signer" required="True"/>
+                            <field name="document_ids" widget="many2many_tags"/>
+                        </group>
+                        <group id="right">
+                            <field name="cert_id"
+                                   attrs="{'invisible': [('signer', '!=', 'odoo')], 'required': [('signer', '=', 'odoo')]}"/>
+                            <field name="backend_id"
+                                   attrs="{'invisible': [('signer', '!=', 'backend')], 'required': [('signer', '=', 'backend')]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
