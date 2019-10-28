@@ -93,7 +93,7 @@ class AccountInvoiceRefund(models.TransientModel):
                         "name": prod.name,
                         "quantity": 1,
                         "price_unit": 0}]]
-                    referencias = [[0, 0, {
+                    reference_ids = [[0, 0, {
                         "origen":
                             int(inv.sii_document_number or inv.reference),
                         "sii_referencia_TpoDocRef":
@@ -111,7 +111,7 @@ class AccountInvoiceRefund(models.TransientModel):
                         "fiscal_position_id": inv.fiscal_position_id.id,
                         "type": refund_type,
                         "journal_document_class_id": document_type.id,
-                        "referencias": referencias,
+                        "reference_ids": reference_ids,
                         "invoice_line_ids": invoice_lines,
                         "tax_line_ids": False,
                         "refund_invoice_id": inv.id})

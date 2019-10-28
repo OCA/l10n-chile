@@ -955,15 +955,15 @@ class UploadXMLWizard(models.TransientModel):
                         },
                     ]
                 )
-        Referencias = documento.findall("Referencia")
-        if not self.pre_process and Referencias:
+        reference_ids = documento.findall("Referencia")
+        if not self.pre_process and reference_ids:
             refs = [(5,)]
             try:
-                for ref in Referencias:
+                for ref in reference_ids:
                     refs.append(self._prepare_ref(ref))
-                data["referencias"] = refs
+                data["reference_ids"] = refs
             except:
-                _logger.warning("No puede cargar referencias")
+                _logger.warning("No puede cargar reference_ids")
         data["invoice_line_ids"] = lines
         mnt_neto = (
             int(dte["Encabezado"]["Totales"]["MntNeto"])

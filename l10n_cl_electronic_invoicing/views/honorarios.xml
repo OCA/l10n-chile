@@ -136,7 +136,7 @@
                                     <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                                 </group>
                             </group>
-                            <field name="referencias" mode="tree">
+                            <field name="reference_ids" mode="tree">
                                 <form>
                                     <group>
                                         <field name="origen" required="True"/>

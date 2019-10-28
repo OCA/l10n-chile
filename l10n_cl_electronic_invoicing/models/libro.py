@@ -936,7 +936,7 @@ version="1.0">
         det["RUTDoc"] = self.format_vat(rec.partner_id.vat)
         det["RznSoc"] = rec.partner_id.name[:50]
         refs = []
-        for ref in inv.referencias:
+        for ref in inv.reference_ids:
             if (
                 ref.sii_referencia_CodRef
                 and ref.sii_referencia_TpoDocRef.sii_code in allowed_docs

@@ -128,7 +128,7 @@
                     </table>
                 </div>
                 <div style="min-height:500px; max-height:500px; padding-top:5px;">
-                    <t t-if="o.referencias">
+                    <t t-if="o.reference_ids">
                         <span  style="font-size:8px;"> Documento de Referencia</span>
                         <div class="row" style="border: 2px solid black; min-height:20px;" name="reference">
                             <table class="table table-condensed">
@@ -146,8 +146,8 @@
                                         <strong>Fecha del documento</strong>
                                     </th>
                                 </thead>
-                                <tbody t-if="'referencias' in o and o.referencias">
-                                    <t t-foreach="o.referencias" t-as="l">
+                                <tbody t-if="'reference_ids' in o and o.reference_ids">
+                                    <t t-foreach="o.reference_ids" t-as="l">
                                         <tr style="max-height:8px; font-size:10px !important;">
                                             <td style="border-top:0px !important;padding:0px !important;">
                                                 <span t-if="l.origen" t-field="l.origen"/>

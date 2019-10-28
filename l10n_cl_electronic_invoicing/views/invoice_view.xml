@@ -120,7 +120,7 @@
             </field>
 
             <field name="tax_line_ids" position="before">
-                <field name="referencias" mode="tree">
+                <field name="reference_ids" mode="tree">
                     <form>
                         <group>
                             <field name="origen" required="True"/>
@@ -256,22 +256,22 @@
                        options="{'no_create': True}"/>
             </field>
             <xpath expr="//notebook/page[2]/group" position="after">
-                <field name="referencias" mode="tree">
+                <field name="reference_ids" mode="tree">
                     <form>
                         <group>
                             <field name="origen" required="True"/>
-                            <field name="sii_referencia_TpoDocRef" required="True" />
-                            <field name="sii_referencia_CodRef"/>
-                            <field name="motivo"/>
-                            <field name="fecha_documento"/>
+                            <field name="class_id" required="True" />
+                            <field name="code"/>
+                            <field name="motive"/>
+                            <field name="date"/>
                         </group>
                     </form>
                     <tree>
                         <field name="origen" required="True"/>
-                        <field name="sii_referencia_TpoDocRef" required="True" />
-                        <field name="sii_referencia_CodRef"/>
-                        <field name="motivo"/>
-                        <field name="fecha_documento"/>
+                        <field name="class_id" required="True" />
+                        <field name="code"/>
+                        <field name="motive"/>
+                        <field name="date"/>
                     </tree>
                 </field>
             </xpath>

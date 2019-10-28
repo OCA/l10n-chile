@@ -205,12 +205,6 @@ class AccountInvoice(models.Model):
         related="journal_id.use_documents", string="Use Documents?",
         readonly=True
     )
-    referencias = fields.One2many(
-        "account.invoice.referencias",
-        "invoice_id",
-        readonly=True,
-        states={"draft": [("readonly", False)]},
-    )
     forma_pago = fields.Selection(
         [("1", "Contado"), ("2", "Crédito"), ("3", "Gratuito")],
         string="Forma de pago",
@@ -675,11 +669,11 @@ class AccountInvoice(models.Model):
         values.update({
             "type": invoice_type,
             "journal_document_class_id": document_type.id,
-            "referencias": [[0, 0, {
+            "reference_ids": [[0, 0, {
                 "origen":
                     int(invoice.sii_document_number or invoice.reference),
-                "sii_referencia_TpoDocRef": invoice.sii_document_class_id.id,
-                "sii_referencia_CodRef": mode,
+                "class_id": invoice.class_id.id,
+                "code": mode,
                 "motivo": description,
                 "fecha_documento": invoice.date_invoice}]]})
         return values
@@ -869,9 +863,9 @@ class AccountInvoice(models.Model):
                 "out_invoice")
         document_class_ids = []
         nd = False
-        for ref in self.referencias:
+        for ref in self.reference_ids:
             if not nd:
-                nd = ref.sii_referencia_CodRef
+                nd = ref.code
         if invoice_type in ["out_invoice", "in_invoice", "out_refund",
                             "in_refund"]:
             if journal_id:
@@ -1110,7 +1104,7 @@ a VAT."""
     def invoice_validate(self):
         for inv in self:
             if (inv.sii_document_class_id.sii_code in
-                    [55, 56, 60, 61, 111, 112, 802] and not inv.referencias):
+                    [55, 56, 60, 61, 111, 112, 802] and not inv.reference_ids):
                 raise UserError(_(
                     "Per legal requirement every note must include a reference"
                     " to the document they are related."))
@@ -1591,10 +1585,10 @@ version="1.0">
 
     @api.multi
     def _nc_boleta(self):
-        if not self.referencias or self.type != "out_refund":
+        if not self.reference_ids or self.type != "out_refund":
             return False
-        for r in self.referencias:
-            if r.sii_referencia_TpoDocRef.sii_code in [35, 38, 39, 41, 70, 71]:
+        for r in self.reference_ids:
+            if r.class_id.sii_code in [35, 38, 39, 41, 70, 71]:
                 return True
         return False
 
@@ -1813,9 +1807,9 @@ version="1.0">
         return Totales
 
     def _es_exento(self):
-        return self.sii_document_class_id.sii_code in [34, 41] or (
-            self.referencias and
-            self.referencias[0].sii_referencia_TpoDocRef.sii_code in [34, 41]
+        return self.sii_document_class_id.code in [34, 41] or (
+            self.reference_ids and
+            self.reference_ids[0].class_id.code in [34, 41]
         )
 
     def _totales(self, MntExe=0, no_product=False, taxInclude=False):
@@ -2142,9 +2136,9 @@ version="1.0">
                 dr_line["ValorDROtrMnda"] = currency_id.compute(
                     dr.valor, self.company_id.currency_id
                 )
-            if self.sii_document_class_id.sii_code in [34] and (
-                self.referencias and
-                self.referencias[0].sii_referencia_TpoDocRef.sii_code == "34"
+            if self.class_id.code in [34] and (
+                self.reference_ids and
+                self.reference_ids[0].class_id.code == "34"
             ):  # solamente si es exento
                 dr_line["IndExeDR"] = 1
             dr_lines = [{"DscRcgGlobal": dr_line}]
@@ -2178,18 +2172,18 @@ version="1.0">
             )
             lin_ref = 2
             ref_lines.extend([{"Referencia": ref_line}])
-        if self.referencias:
-            for ref in self.referencias:
+        if self.reference_ids:
+            for ref in self.reference_ids:
                 ref_line = collections.OrderedDict()
                 ref_line["NroLinRef"] = lin_ref
                 if not self._es_boleta():
-                    if ref.sii_referencia_TpoDocRef:
+                    if ref.class_id:
                         ref_line["TpoDocRef"] = (
                             self._acortar_str(
-                                ref.sii_referencia_TpoDocRef.doc_code_prefix, 3
+                                ref.class_id.doc_code_prefix, 3
                             )
-                            if ref.sii_referencia_TpoDocRef.use_prefix
-                            else ref.sii_referencia_TpoDocRef.sii_code
+                            if ref.class_id.use_prefix
+                            else ref.class_id.code
                         )
                         ref_line["FolioRef"] = ref.origen
                     ref_line["FchRef"] = \
