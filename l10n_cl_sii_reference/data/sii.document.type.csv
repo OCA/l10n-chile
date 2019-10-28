@@ -1,0 +1,7 @@
+id,code,name,sii_code,active
+dt_rut,RUT,RUT,81,1
+dt_run,RUN,Cédula,82,1
+dt_cie,CIe,CI extranjera,91,1
+dt_pas,PAS,Pasaporte,94,1
+dt_dni,DNI, DNI Extranjero,96,1
+dt_sigd,Sigd,Sin identificar/venta global diaria,99,1

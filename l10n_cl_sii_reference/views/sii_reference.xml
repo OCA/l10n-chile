@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id="view_sii_reference_form" model="ir.ui.view">
+        <field name="name">sii.reference.form</field>
+        <field name="model">sii.reference</field>
+        <field name="arch" type="xml">
+            <form string="SII Reference">
+                <sheet>
+                    <field name="name"/>
+                    <group>
+                        <group>
+                            <field name='code'/>
+                            <field name='invoice_id'/>
+                            <field name='class_id'/>
+                        </group>
+                        <group>
+                            <field name='motive'/>
+                            <field name='date'/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sii_reference_tree" model="ir.ui.view">
+        <field name="name">sii.reference.tree</field>
+        <field name="model">sii.reference</field>
+        <field name="arch" type="xml">
+            <tree string="SII References">
+                <field name='code'/>
+                <field name="name"/>
+                <field name='invoice_id'/>
+                <field name='class_id'/>
+                <field name='motive'/>
+                <field name='date'/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_sii_reference">
+        <field name="name">SII Reference</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sii.reference</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

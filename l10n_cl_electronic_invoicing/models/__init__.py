@@ -8,7 +8,6 @@ from . import (
     account_journal_sii_document_class,
     account_invoice,
     account_invoice_line,
-    account_invoice_referencias,
     account_payment_term,
     account_tax,
     account_journal,
