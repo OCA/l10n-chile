@@ -1131,7 +1131,7 @@ a VAT."""
                             .get_param("account.auto_send_dte", default=12)
                         )
                     )
-                    self.env["sii.cola_envio"].create(
+                    self.env["sii.cola.envio"].create(
                         {
                             "doc_ids": [inv.id],
                             "model": "account.invoice",
@@ -1567,7 +1567,7 @@ version="1.0">
             if envio_boleta:
                 self.browse(ids).do_dte_send(n_atencion)
                 return
-            self.env["sii.cola_envio"].create(
+            self.env["sii.cola.envio"].create(
                 {
                     "doc_ids": ids,
                     "model": "account.invoice",
