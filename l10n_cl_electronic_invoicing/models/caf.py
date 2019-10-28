@@ -123,7 +123,7 @@ has been exhausted.""",
         if flags:
             return True
         self.status = "in_use"
-        self._used_level()
+        self._compute_used_level()
 
     def _compute_used_level(self):
         for r in self:
