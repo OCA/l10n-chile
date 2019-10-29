@@ -1,0 +1,17 @@
+<odoo>
+
+    <record id="etd_account_invoice" model="etd.document">
+        <field name="name">Invoice</field>
+        <field name="model">account.invoice</field>
+        <field name="xsd" type="base64" file="l10n_cl_etd_account/data/xsd/DTE_v10.xsd"/>
+        <field name="xml" type="base64" file="l10n_cl_etd_account/data/xml/invoice.xml"/>
+    </record>
+
+    <record id="etd_account_ticket" model="etd.document">
+        <field name="name">Ticket</field>
+        <field name="model">account.invoice</field>
+        <field name="xsd" type="base64" file="l10n_cl_etd_account/data/xsd/EnvioBOLETA_v11.xsd"/>
+        <field name="xml" type="base64" file="l10n_cl_etd_account/data/xml/ticket.xml"/>
+    </record>
+
+</odoo>

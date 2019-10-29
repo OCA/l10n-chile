@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_sequence_folio_manager,access_ir_sequence_folio_manager,l10n_cl_sii_folio.model_ir_sequence_folio,account.group_account_manager,1,1,1,1

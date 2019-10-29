@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="view_account_invoice_class_form" model="ir.ui.view">
+        <field name="name">account.invoice.class_id.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="before">
+                <field name="class_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

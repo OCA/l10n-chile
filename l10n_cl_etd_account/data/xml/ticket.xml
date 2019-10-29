@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EnvioBOLETA xmlns="http://www.sii.cl/SiiDte"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.sii.cl/SiiDte EnvioBOLETA_v11.xsd"
+             version="1.0">
+    <SetDTE ID="SetDoc">
+        <Caratula version="1.0">
+            <RutEmisor>{{ o.company_id.partner_id.vat }}</RutEmisor>
+            <RutEnvia>{{ o.partner_id.vat }}</RutEnvia>
+            <RutReceptor>{{ o.partner_id.vat }}</RutReceptor>
+            <FchResol>{{ today }}</FchResol>
+            <NroResol>80</NroResol>
+            <TmstFirmaEnv>{{ now }}</TmstFirmaEnv>
+            <SubTotDTE>
+                <TpoDTE>{{ o.class_id.code }}</TpoDTE>
+                <NroDTE>1</NroDTE>
+            </SubTotDTE>
+        </Caratula>
+        <DTE xmlns="http://www.sii.cl/SiiDte" version="1.0">
+            <Documento ID="{{ o.id }}">
+                <Encabezado>
+                    <IdDoc>
+                        <TipoDTE>{{ o.class_id.code }}</TipoDTE>
+                        <Folio>{{ o.number }}</Folio>
+                        <FchEmis>{{ o.date_invoice }}</FchEmis>
+                        <IndServicio>3</IndServicio>
+                        <IndMntNeto>2</IndMntNeto>
+                    </IdDoc>
+                    <Emisor>
+                        <RUTEmisor>{{ o.company_id.partner_id.vat }}</RUTEmisor>
+                        <RznSocEmisor>{{ o.company_id.partner_id.name }}</RznSocEmisor>
+                        <GiroEmisor>{{ o.company_id.partner_id.sii_activity_id.name }}</GiroEmisor>
+                        <DirOrigen>{{ o.company_id.partner_id.street }}; {{ o.company_id.partner_id.street }}</DirOrigen>
+                        <CmnaOrigen>{{ o.company_id.partner_id.city_id.name }}</CmnaOrigen>
+                        <CiudadOrigen>{{ o.company_id.partner_id.city }}</CiudadOrigen>
+                    </Emisor>
+                    <Receptor>
+                        <RUTRecep>{{ o.partner_id.vat }}</RUTRecep>
+                        <RznSocRecep>{{ o.partner_id.name }}</RznSocRecep>
+                        <DirRecep>{{ o.partner_id.street }}; {{ o.partner_id.street2 }}</DirRecep>
+                        <CmnaRecep>{{ o.partner_id.city_id.name }}</CmnaRecep>
+                        <CiudadRecep>{{ o.partner_id.city }}</CiudadRecep>
+                    </Receptor>
+                    <Totales>
+                        <MntTotal>{{ o.amount_total }}</MntTotal>
+                    </Totales>
+                </Encabezado>
+                {% for line in o.invoice_line_ids %}
+                <Detalle>
+                    <NroLinDet>{{ loop.index }}</NroLinDet>
+                    <CdgItem>
+                        {% if line.product_id.barcode %}
+                        <TpoCodigo>EAN13</TpoCodigo>
+                        <VlrCodigo>{{ line.product_id.barcode }}</VlrCodigo>
+                        {% else %}
+                        <TpoCodigo>INT1</TpoCodigo>
+                        <VlrCodigo>{{ line.product_id.default_code }}</VlrCodigo>
+                        {% endif %}
+                    </CdgItem>
+                    <NmbItem>{{ line.product_id.default_code }}</NmbItem>
+                    <DscItem>{{ line.product_id.display_name }}</DscItem>
+                    <QtyItem>{{ line.quantity }}</QtyItem>
+                    <UnmdItem>{{ line.uom_id.name }}</UnmdItem>
+                    <PrcItem>{{ line.price_unit }}</PrcItem>
+                    <MontoItem>{{ line.price_subtotal }}</MontoItem>
+                </Detalle>
+                {% endfor %}
+                <TED version="1.0">
+                    <DD>
+                        <RE>{{ o.company_id.partner_id.vat }}</RE>
+                        <TD>{{ o.class_id.code }}</TD>
+                        <F>1</F>
+                        <FE>{{ o.date_invoice }}</FE>
+                        <RR>{{ o.partner_id.vat }}</RR>
+                        <RSR>{{ o.partner_id.name }}</RSR>
+                        <MNT>102910</MNT>
+                        <IT1>SET DE 3PC MACETERO OVALADO ENLOZADO BLA</IT1>
+                        <CAF version="1.0">
+                            <DA>
+                                <RE>{{ o.company_id.partner_id.vat }}</RE>
+                                <RS>{{ o.company_id.partner_id.name }}</RS>
+                                <TD>{{ o.class_id.code }}</TD>
+                                <RNG>
+                                    <D>1</D>
+                                    <H>1000</H>
+                                </RNG>
+                                <FA>{{ o.date_invoice }}</FA>
+                                <RSAPK>
+                                    <M>
+                                        siEISAgM2pSywlGFg7IvYuaxE0vymBdAZFo/RayX9+7H/U9parj1G888RSWSYPTP2ZZrUzVGuABqjR/iUBjImQ==
+                                    </M>
+                                    <E>Aw==</E>
+                                </RSAPK>
+                                <IDK>300</IDK>
+                            </DA>
+                            <FRMA algoritmo="SHA1withRSA">
+                                EfRHVfHNpVQ+9uvhkuBba6bydqINg/53akXE3QFOjIcSMrbLjF/PbnNjO377N6B2otK1HZe2lUw0yPYkSsscrg==
+                            </FRMA>
+                        </CAF>
+                        <TSTED>2019-04-04T16:49:14</TSTED>
+                    </DD>
+                    <FRMT algoritmo="SHA1withRSA">
+                        XJ0bdLiB/rPsMTu1rLTOdj730qPgOUuVrsal508CWuYGhJrAriljsyIJQG2MzjLd
+                        3RPkOAbKTgh5JX/a7aCGRA==
+                    </FRMT>
+                </TED>
+                <TmstFirma>2019-04-04T16:49:14</TmstFirma>
+            </Documento>
+            {% if o.company_id.signer == 'odoo' %}
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"
+                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <CanonicalizationMethod
+                            Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod
+                            Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#F1T39">
+                        <Transforms>
+                            <Transform
+                                    Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod
+                                Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>{{ o.digest_value }}</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>{{ o.signature_value }}</SignatureValue>
+                <KeyInfo>
+                    <KeyValue>
+                        <RSAKeyValue>
+                            <Modulus>{{ o.modulus }}</Modulus>
+                            <Exponent>{{ o.exponent }}</Exponent>
+                        </RSAKeyValue>
+                    </KeyValue>
+                    <X509Data>
+                        <X509Certificate>{{ o.x509_certificate }}</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+            {% endif %}
+        </DTE>
+    </SetDTE>
+    {% if o.company_id.signer == 'odoo' %}
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <CanonicalizationMethod
+                    Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod
+                    Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#SetDoc">
+                <Transforms>
+                    <Transform
+                            Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod
+                        Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>{{ o.digest_value }}</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>{{ o.signature_value }}</SignatureValue>
+        <KeyInfo>
+            <KeyValue>
+                <RSAKeyValue>
+                    <Modulus>{{ o.modulus }}</Modulus>
+                    <Exponent>{{ o.exponent }}</Exponent>
+                </RSAKeyValue>
+            </KeyValue>
+            <X509Data>
+                <X509Certificate>{{ o.x509_certificate }}</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    {% endif %}
+</EnvioBOLETA>
