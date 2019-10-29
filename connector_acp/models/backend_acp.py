@@ -12,9 +12,9 @@ class BackendAcp(models.Model):
 
     name = fields.Char(string="Name", required=True)
     host = fields.Char(string="Host", required=True)
-    port = fields.Integer(string="Port", required=True)
-    user = fields.Char(string="User", required=True)
-    password = fields.Char(string="Password", required=True)
+    port = fields.Integer(string="Port",)
+    user = fields.Char(string="User",)
+    password = fields.Char(string="Password",)
     active = fields.Boolean(string="Active", default=True)
     status = fields.Selection((('unconfirmed', 'Unconfirmed'),
                                ('confirmed', 'Confirmed')), string="Status",

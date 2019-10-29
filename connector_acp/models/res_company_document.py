@@ -10,6 +10,6 @@ class ResCompanyDocument(models.Model):
     _name = "res.company.document"
     _description = "Documents To Sign"
 
-    name = fields.Selection((), string="Document", required=True)
+    name = fields.Selection([], string="Document", required=True)
     xsd = fields.Text(string="XSD", required=True)
     xml_template = fields.Text(string="XML Template", required=True)
