@@ -22,7 +22,7 @@
         "security/ir.model.access.csv",
         "data/sii.activity.csv",
         "views/sii_activity.xml",
-        "views/res_company.xml",
+        "views/res_partner.xml",
     ],
     "application": True,
     "development_status": "Beta",
