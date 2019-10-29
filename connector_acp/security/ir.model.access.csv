@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ssl_certificate,access_ssl_certificate,model_ssl_certificate,base.group_erp_manager,1,1,1,1
-access_backend_acp,access_backend_acp,model_backend_acp,base.group_user,1,0,0,0
-access_backend_acp,access_backend_acp,model_backend_acp,connector.group_connector_manager,1,1,1,1
-access_res_company_document,access_res_company_document,model_res_company_document,base.group_user,1,0,0,0
-access_res_company_document,access_res_company_document,model_res_company_document,base.group_erp_manager,1,1,1,1
+access_ssl_certificate_manager,access_ssl_certificate,model_ssl_certificate,base.group_erp_manager,1,1,1,1
+access_backend_acp_user,access_backend_acp,model_backend_acp,base.group_user,1,0,0,0
+access_backend_acp_manager,access_backend_acp,model_backend_acp,connector.group_connector_manager,1,1,1,1
+access_res_company_document_user,access_res_company_document,model_res_company_document,base.group_user,1,0,0,0
+access_res_company_document_manager,access_res_company_document,model_res_company_document,base.group_erp_manager,1,1,1,1
