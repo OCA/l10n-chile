@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DTE xmlns="http://www.sii.cl/SiiDte" version="1.0">
+    <Documento ID="{{ o.id }}">
+        <Encabezado>
+            <IdDoc>
+                <TipoDTE>{{ o.class_id.code }}</TipoDTE>
+                <Folio>{{ o.name }}</Folio>
+                <FchEmis>{{ o.date_done }}</FchEmis>
+                <TipoDespacho>2</TipoDespacho>
+                <IndTraslado>1</IndTraslado>
+            </IdDoc>
+            <Emisor>
+                <RUTEmisor>{{ o.company_id.partner_id.vat }}</RUTEmisor>
+                <RznSoc>{{ o.company_id.partner_id.name }}</RznSoc>
+                <GiroEmis>{{ o.company_id.partner_id.sii_activity_id.code }}</GiroEmis>
+                <Telefono>{{ o.company_id.partner_id.phone }}</Telefono>
+                <CorreoEmisor>{{ o.company_id.partner_id.email }}</CorreoEmisor>
+                <Acteco>{{ o.company_id.partner_id.zip }}</Acteco>
+                <DirOrigen>{{ o.company_id.partner_id.street }}; {{ o.company_id.partner_id.street }}</DirOrigen>
+                <CmnaOrigen>{{ o.company_id.partner_id.city_id.name }}</CmnaOrigen>
+                <CiudadOrigen>{{ o.company_id.partner_id.city }}</CiudadOrigen>
+            </Emisor>
+            <Receptor>
+                <RUTRecep>{{ o.partner_id.vat }}</RUTRecep>
+                <RznSocRecep>{{ o.partner_id.name }}</RznSocRecep>
+                <GiroRecep>{{ o.partner_id.sii_activity_id.code }}</GiroRecep>
+                <CorreoRecep>{{ o.partner_id.email_etd }}</CorreoRecep>
+                <DirRecep>{{ o.partner_id.street }}; {{ o.partner_id.street2 }}</DirRecep>
+                <CmnaRecep>{{ o.partner_id.city_id.name }}</CmnaRecep>
+                <CiudadRecep>{{ o.partner_id.city }}</CiudadRecep>
+            </Receptor>
+            <Transporte>
+                <Patente>KCHZ11</Patente>
+                <RUTTrans>{{ o.carrier_id.partner_id.vat }}</RUTTrans>
+                <Chofer>
+                    <RUTChofer>8577823-4</RUTChofer>
+                    <NombreChofer>JOSE GERMAN LUTTECKE IGOR</NombreChofer>
+                </Chofer>
+                <DirDest>{{ o.carrier_id.partner_id.street }}; {{ o.carrier_id.partner_id.street2 }}</DirDest>
+                <CmnaDest>{{ o.carrier_id.partner_id.city_id.name }}</CmnaDest>
+                <CiudadDest>{{ o.carrier_id.partner_id.city }}</CiudadDest>
+            </Transporte>
+            <Totales>
+                <MntNeto>3500000</MntNeto>
+                <TasaIVA>19.0</TasaIVA>
+                <IVA>665000</IVA>
+                <MntTotal>4165000</MntTotal>
+            </Totales>
+        </Encabezado>
+        {% for line in o.move_ids %}
+        <Detalle>
+            <NroLinDet>{{ loop.index }}</NroLinDet>
+            <CdgItem>
+                {% if line.product_id.barcode %}
+                <TpoCodigo>EAN13</TpoCodigo>
+                <VlrCodigo>{{ line.product_id.barcode }}</VlrCodigo>
+                {% else %}
+                <TpoCodigo>INT1</TpoCodigo>
+                <VlrCodigo>{{ line.product_id.default_code }}</VlrCodigo>
+                {% endif %}
+            </CdgItem>
+            <NmbItem>{{ line.product_id.default_code }}</NmbItem>
+            <DscItem>{{ line.product_id.display_name }}</DscItem>
+            <QtyItem>{{ line.quantity_done }}</QtyItem>
+            <UnmdItem>{{ line.uom_id.name }}</UnmdItem>
+            <PrcItem>{{ line.product_id.standard_price }}</PrcItem>
+            <MontoItem>{{ line.product_id.standard_price * line.quantity_done }}</MontoItem>
+        </Detalle>
+        {% endfor %}
+        <TED version="1.0">
+            <DD>
+                <RE>{{ o.company_id.partner_id.vat }}</RE>
+                <TD>{{ o.class_id.code }}</TD>
+                <F>85</F>
+                <FE>{{ o.date_done }}</FE>
+                <RR>{{ o.partner_id.vat }}</RR>
+                <RSR>{{ o.partner_id.name }}</RSR>
+                <MNT>4165000</MNT>
+                <IT1>Generador 1003G14 28KW 33Kva 1500RPM</IT1>
+                <CAF version="1.0">
+                    <DA>
+                        <RE>{{ o.company_id.partner_id.vat }}</RE>
+                        <RS>{{ o.company_id.partner_id.name }}</RS>
+                        <TD>{{ o.class_id.code }}</TD>
+                        <RNG>
+                            <D>84</D>
+                            <H>133</H>
+                        </RNG>
+                        <FA>{{ o.date_done }}</FA>
+                        <RSAPK>
+                            <M>
+                                ncVWq1sYsLGvJhr7Zx+sqOXHS9g28AVCgNSpaI2ijtm2DvIxL4u8Ejd3QXVWX8Mq7jzE+ttjnPBJ+JHuC+Clkw==
+                            </M>
+                            <E>Aw==</E>
+                        </RSAPK>
+                        <IDK>300</IDK>
+                    </DA>
+                    <FRMA algoritmo="SHA1withRSA">
+                        GuNMwRWWT2PoRYB4vkOsucmHqDxk6F6Ib/iSveCYCEGtk+UH3wWkkCL+1hYXuARpc9f2UbRF7DmM8m58Vv9qGQ==
+                    </FRMA>
+                </CAF>
+                <TSTED>{{ o.date_done }}</TSTED>
+            </DD>
+            <FRMT algoritmo="SHA1withRSA">
+                JN/OfpuQyk34bFdelzKLWaXaWECzmSjMkCTI+OOQJkQk5aOt+KwuwL6xraMUOAIF
+                VZAkkIO7qXBt8Iw/7MZNYw==
+            </FRMT>
+        </TED>
+        <TmstFirma>{{ now }}</TmstFirma>
+    </Documento>
+    {% if o.company_id.signer == 'odoo' %}
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <CanonicalizationMethod
+                    Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod
+                    Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#F85T52">
+                <Transforms>
+                    <Transform
+                            Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod
+                        Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>{{ o.ssl_signature_id.digest_value }}</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>{{ o.ssl_signature_id.signature_value }}</SignatureValue>
+        <KeyInfo>
+            <KeyValue>
+                <RSAKeyValue>
+                    <Modulus>{{ o.ssl_signature_id.modulus }}</Modulus>
+                    <Exponent>{{ o.ssl_signature_id.exponent }}</Exponent>
+                </RSAKeyValue>
+            </KeyValue>
+            <X509Data>
+                <X509Certificate>{{ o.ssl_signature_id.x509_certificate }}</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    {% endif %}
+</DTE>
