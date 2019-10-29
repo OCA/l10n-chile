@@ -23,3 +23,11 @@ class BackendAcp(models.Model):
     def action_confirm(self):
         self.status = 'confirmed'
         return True
+
+    def send(self, xml):
+        # Send the XML of the document to the Third Party for signature
+        return True
+
+    def check_status(self):
+        # Check the status of the document with the Third Party
+        return True
