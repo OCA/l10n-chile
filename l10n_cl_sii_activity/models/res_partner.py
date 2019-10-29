@@ -6,9 +6,7 @@
 from odoo import fields, models
 
 
-class ResCompany(models.Model):
-    _inherit = "res.company"
+class ResPartner(models.Model):
+    _inherit = "res.partner"
 
-    sii_activity_ids = fields.Many2many(
-        "sii.activity", id1="company_id", id2="sii_activity_id",
-        string="SII Activities")
+    sii_activity_id = fields.Many2one("sii.activity", string="SII Activity")
