@@ -4044,7 +4044,6 @@ msgid "Centros médicos privados (establecimientos de atención ambulatoria)"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
-#: model:ir.model,name:l10n_cl_sii_activity.model_res_company
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__company_ids
 msgid "Companies"
 msgstr ""
@@ -4102,6 +4101,11 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_422000
 msgid "Construcción de proyectos de servicio público"
+msgstr ""
+
+#. module: l10n_cl_sii_activity
+#: model:ir.model,name:l10n_cl_sii_activity.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
@@ -5992,14 +5996,14 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:ir.actions.act_window,name:l10n_cl_sii_activity.act_sii_activity
-#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_company__sii_activity_ids
 #: model:ir.ui.menu,name:l10n_cl_sii_activity.menu_sii_activity
-#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_company_activity_inherit_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_tree
 msgid "SII Activities"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__sii_activity_id
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_users__sii_activity_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_form
 msgid "SII Activity"
 msgstr ""
