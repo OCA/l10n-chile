@@ -1,0 +1,425 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* connector_acp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: connector_acp
+#: model:ir.actions.act_window,name:connector_acp.action_backend_acp
+msgid "ACP Backends"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.ui.menu,name:connector_acp.menu_backend_acp
+msgid "ACPs"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__active
+msgid "Active"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
+msgid "Authorized Certification Provider"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_tree
+msgid "Authorized Certification Providers"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__authorized_users_ids
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Authorized Users"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_backend_acp
+msgid "Backend of Authorized Certification Providers"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.ui.menu,name:connector_acp.menu_backend
+msgid "Backends"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__cert
+msgid "Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Certificate Info"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Certificate Key"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
+msgid "Check"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Check Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Clean Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: connector_acp
+#: selection:backend.acp,status:0
+msgid "Confirmed"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__name
+msgid "Document"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_company_document
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__document_ids
+msgid "Documents To Sign"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_ssl_certificate__status
+msgid "Draft: means it has not been checked yet.\n"
+"You must press the\"check\" button."
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_bres_company_document_form
+msgid "Electronic Signature"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/ssl_certificate.py:68
+#, python-format
+msgid "Error when opening the signature. You may have entered the wrong key or the file is not compatible."
+msgstr ""
+
+#. module: connector_acp
+#: selection:ssl.certificate,status:0
+msgid "Expired"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__filename
+msgid "File Name"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "General Info"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__cert_hash
+msgid "Hash"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__host
+msgid "Host"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__id
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__id
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__id
+msgid "ID"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Issuer"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__issuer_common_name
+msgid "Issuer Common Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__issuer_country
+msgid "Issuer Country"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__issuer_email_address
+msgid "Issuer Email Address"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__issuer_organization
+msgid "Issuer Organization"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__issuer_serial_number
+msgid "Issuer Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_ssl_certificate__final_date
+msgid "Last Control Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__final_date
+msgid "Last Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__name
+msgid "Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__not_after
+msgid "Not After"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_ssl_certificate__not_after
+msgid "Not After this Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__not_before
+msgid "Not Before"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_ssl_certificate__not_before
+msgid "Not Before this Date"
+msgstr ""
+
+#. module: connector_acp
+#: selection:res.company,signer:0
+msgid "Odoo"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__password
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__dec_pass
+msgid "Password"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xml
+msgid "Path to the XML Template"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xsd
+msgid "Path to the XSD file"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_res_company__signer
+msgid "Please note that the signing authority is in charge of\n"
+"        sending the document for validation."
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__port
+msgid "Port"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__priv_key
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Private Key"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__private_key_bits
+msgid "Private Key Bits"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__private_key_check
+msgid "Private Key Check"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__private_key_type
+msgid "Private Key Type"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_ssl_certificate
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__cert_id
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "SSL Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_tree
+msgid "SSL Certificates"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__cert_serial_number
+msgid "Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__cert_signature_algor
+msgid "Signature Algorithm"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__key_file
+msgid "Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__status
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__status
+msgid "Status"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Subject"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__subject_common_name
+msgid "Subject Common Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__subject_c
+msgid "Subject Country"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__subject_email_address
+msgid "Subject Email Address"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__subject_serial_number
+msgid "Subject Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__subject_title
+msgid "Subject Title"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__backend_id
+#: selection:res.company,signer:0
+msgid "Third Party"
+msgstr ""
+
+#. module: connector_acp
+#: selection:backend.acp,status:0
+msgid "Unconfirmed"
+msgstr ""
+
+#. module: connector_acp
+#: selection:ssl.certificate,status:0
+msgid "Unverified"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_ssl_certificate__key_file
+msgid "Upload the Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__user
+msgid "User"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
+msgid "Users authorized to use this certificate"
+msgstr ""
+
+#. module: connector_acp
+#: selection:ssl.certificate,status:0
+msgid "Valid"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__cert_version
+msgid "Version"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__signer
+msgid "Who is signing?"
+msgstr ""
+
