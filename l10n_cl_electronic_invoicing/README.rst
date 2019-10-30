@@ -91,6 +91,7 @@ Contributors
 * Nelson Ramirez
 * Carlos Toledo
 * Carlos Lopez
+* Francisco Lorca
 
 Maintainers
 ~~~~~~~~~~~
