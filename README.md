@@ -13,9 +13,15 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[connector_acp](connector_acp/) | 12.0.1.0.0 | Get your documents signed by an Authorized Certification Provider
 [l10n_cl_chart_of_account](l10n_cl_chart_of_account/) | 12.0.1.0.0 | Chile Localization Chart Account SII
+[l10n_cl_currency_rate_sbif](l10n_cl_currency_rate_sbif/) | 12.0.2.0.0 | Update UF, UTM and US Dollar exchange rates using SBIF
 [l10n_cl_electronic_invoicing](l10n_cl_electronic_invoicing/) | 12.0.1.0.0 | Get your customer invoices signed by SII.
-[l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.0.0 | Cities, States and Regions from Chile
+[l10n_cl_invoicing_policy](l10n_cl_invoicing_policy/) | 12.0.1.0.0 | Ticket, Invoice or Electronic Guide
+[l10n_cl_sii_activity](l10n_cl_sii_activity/) | 12.0.1.0.0 | Set the SII Activity on Partners
+[l10n_cl_sii_reference](l10n_cl_sii_reference/) | 12.0.1.0.0 | Store document references using SII nomenclature
+[l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.1.0 | Cities, States and Regions of Chile
+[res_partner_email_etd](res_partner_email_etd/) | 12.0.1.0.0 | To receive Electronic Tax Documents
 
 [//]: # (end addons)
 
