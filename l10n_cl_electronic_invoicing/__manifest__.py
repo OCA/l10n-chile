@@ -43,7 +43,6 @@
         "data/sii_responsability.xml",
         "data/ir_cron.xml",
         "data/sii_document_type.xml",
-        "data/res_partner.xml",
         "data/product_template.xml",
         "data/ir_sequence.xml",
         "data/sii.concept.type.csv",
