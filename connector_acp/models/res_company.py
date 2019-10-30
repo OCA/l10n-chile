@@ -10,7 +10,7 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     document_ids = fields.Many2many("res.company.document",
-                                   string="Documents To Sign")
+                                    string="Documents To Sign")
     signer = fields.Selection((
         ("odoo", "Odoo"),
         ("backend", "Third Party")), string="Who is signing?",
