@@ -47,6 +47,8 @@ class ResPartner(models.Model):
     @api.multi
     def write(self, vals):
         self.check_invoicing_policy(
-            vals['invoicing_policy'] or self.invoicing_policy,
-            vals['company_type'] or self.company_type)
+            'invoicing_policy' in vals and vals['invoicing_policy'] or
+            self.invoicing_policy,
+            'company_type' in vals and vals['company_type'] or
+            self.company_type)
         return super().write(vals)
