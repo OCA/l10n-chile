@@ -29,26 +29,33 @@ class ResPartner(models.Model):
         * Electronic Guide: Only for companies. 1 invoice at the end of the
           month for all the delivery orders of that month.""")
 
-    def check_invoicing_policy(self, policy, rec_type):
+    def check_invoicing_policy(self, policy, is_company):
         if policy == 'ticket':
-            if rec_type != 'person':
+            if is_company:
                 raise UserError(_('The invoicing policy Ticket only applies '
                                   'to individuals.'))
         else:
-            if rec_type != 'company':
+            if not is_company:
                 raise UserError(_('The selected invoicing policy only applies'
                                   ' to companies.'))
 
+    @api.onchange('is_company')
+    def onchange_invoicing_policy(self):
+        self.invoicing_policy = self._default_invoicing_policy()
+
     @api.model
     def create(self, vals):
-        self.check_invoicing_policy(vals['invoicing_policy'], vals['company_type'])
+        self.check_invoicing_policy(vals['invoicing_policy'],
+                                    vals['is_company'])
         return super().create(vals)
 
     @api.multi
     def write(self, vals):
+        if 'is_company' in vals:
+            is_company = vals['is_company']
+        else:
+            is_company = self.company_type == 'company'
         self.check_invoicing_policy(
             'invoicing_policy' in vals and vals['invoicing_policy'] or
-            self.invoicing_policy,
-            'company_type' in vals and vals['company_type'] or
-            self.company_type)
+            self.invoicing_policy, is_company)
         return super().write(vals)
