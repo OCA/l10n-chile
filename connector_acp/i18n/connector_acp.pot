@@ -98,6 +98,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__create_uid
 msgid "Created by"
 msgstr ""
 
@@ -105,13 +106,20 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_date
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__create_date
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__create_date
 msgid "Created on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__digest_value
+msgid "Digest Value"
 msgstr ""
 
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -149,6 +157,11 @@ msgid "Expired"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__exponent
+msgid "Exponent"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__filename
 msgid "File Name"
 msgstr ""
@@ -172,6 +185,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__id
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__id
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__id
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__id
 msgid "ID"
 msgstr ""
 
@@ -219,6 +233,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -226,6 +241,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_uid
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__write_uid
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -233,11 +249,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_date
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__write_date
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__model_id
+msgid "Model"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__modulus
+msgid "Modulus"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__name
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__name
 msgid "Name"
 msgstr ""
 
@@ -315,6 +343,11 @@ msgid "Private Key Type"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model,name:connector_acp.model_ssl_certificate
 #: model:ir.model.fields,field_description:connector_acp.field_res_company__cert_id
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_form
@@ -324,6 +357,17 @@ msgstr ""
 #. module: connector_acp
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_certificate_tree
 msgid "SSL Certificates"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_ssl_signature
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_signature_form
+msgid "SSL Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_signature_tree
+msgid "SSL Signatures"
 msgstr ""
 
 #. module: connector_acp
@@ -339,6 +383,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__key_file
 msgid "Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__signature_value
+msgid "Signature Value"
 msgstr ""
 
 #. module: connector_acp
@@ -421,5 +470,10 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_res_company__signer
 msgid "Who is signing?"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__cert_id
+msgid "X509 Certificate"
 msgstr ""
 
