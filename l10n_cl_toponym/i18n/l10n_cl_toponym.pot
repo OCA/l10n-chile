@@ -1677,6 +1677,7 @@ msgid "Sierra Gorda"
 msgstr ""
 
 #. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_partner__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_users__state_id
 msgid "State"
@@ -1801,11 +1802,6 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL08312
 msgid "Tucapel"
-msgstr ""
-
-#. module: l10n_cl_toponym
-#: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
-msgid "Ubication"
 msgstr ""
 
 #. module: l10n_cl_toponym
