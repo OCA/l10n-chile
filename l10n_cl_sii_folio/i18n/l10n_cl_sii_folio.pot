@@ -1,0 +1,247 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_cl_sii_folio
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_ir_sequence_folio__final_nm
+msgid "CAF Ends to this number"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_dte_caf_tree
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_sequence_folio_form
+msgid "CAF Files"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_ir_sequence_folio__start_nm
+msgid "CAF Starts from this number"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__caf_file
+msgid "CAF XML File"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:99
+#, python-format
+msgid "Company vat %s should be the same that assigned company's vat: %s!"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_sequence_folio_form
+msgid "DTE CAF Files"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__folio_ids
+msgid "DTE Caf"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__class_id
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: selection:ir.sequence.folio,status:0
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_ir_sequence_folio__status
+msgid "Draft: means it has not been used yet. You must put it in used\n"
+"        in order to make it available for use.\n"
+"        Spent: means that the number interval has been exhausted."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__final_nm
+msgid "End Number"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: sql_constraint:ir.sequence.folio:0
+msgid "Error! Filename Already Exist!"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__expiration_date
+msgid "Expiration Date"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__filename
+msgid "File Name"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__forced_by_caf
+msgid "Forced By CAF"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: selection:ir.sequence.folio,status:0
+msgid "In Use"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_ir_sequence_folio
+msgid "Ir Sequence Folios"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__is_dte
+msgid "Is DTE?"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__issued_date
+msgid "Issued Date"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__nivel_minimo
+msgid "Nivel Mínimo de Folios"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model_terms:ir.actions.act_window,help:l10n_cl_sii_folio.action_caf_files
+msgid "Please input CAF File"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__qty_available
+msgid "Quantity Available"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.actions.act_window,name:l10n_cl_sii_folio.action_caf_files
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_ir_sequence_folio_form
+msgid "SII CAF Files for DTE"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__sii_document_class
+msgid "SII Document Class"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:106
+#, python-format
+msgid "SII Document Type for this CAF is %s and selected\n"
+"                sequence associated document class is %s. This values should be\n"
+"                equal for DTE Invoicing to work properly!"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_ir_sequence
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__sequence_id
+msgid "Sequence"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: selection:ir.sequence.folio,status:0
+msgid "Spent"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__start_nm
+msgid "Start Number"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__status
+msgid "Status"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:112
+#, python-format
+msgid "There is no CAF available for %s."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:94
+#, python-format
+msgid "There is no CAF available for the sequence of %s. Please upload a new CAF or request a new one to SII."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:65
+#, python-format
+msgid "There is no folio available for the document %s folio %s. Please request a new CAF to SII."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_ir_sequence_folio__caf_file
+msgid "Upload the CAF XML File in this holder"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__use_level
+msgid "Use Level"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__rut_n
+msgid "VAT"
+msgstr ""
+
