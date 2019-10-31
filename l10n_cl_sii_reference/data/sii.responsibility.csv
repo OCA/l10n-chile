@@ -1,0 +1,6 @@
+id,code,sii_code,name,active
+res_CF,CF,0,Consumidor Final,1
+res_IVARI,IVARI,1,IVA Afecto / 1ra Categoría,1
+res_BH,BHON,2,Emisor de Boleta 2da Categoría,1
+res_IVAE,IVAE,0,IVA Exento,1
+res_EXT,EXT,3,Extranjero,1

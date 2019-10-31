@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sii_responsibility_manager,sii.responsibility.manager,model_sii_responsibility,account.group_account_manager,1,1,1,1
+access_sii_responsibility_user,sii.responsibility.user,model_sii_responsibility,,1,0,0,0
+access_sii_document_type_manager,sii.document.type.manager,model_sii_document_type,account.group_account_manager,1,1,1,1
+access_sii_document_type_user,sii.document.type.user,model_sii_document_type,,1,0,0,0
+access_sii_concept_type_manager,sii.concept.type.manager,model_sii_concept_type,account.group_account_manager,1,1,1,1
+access_sii_concept_type_user,sii.concept.type.user,model_sii_concept_type,,1,0,0,0
+access_sii_document_class_manager,sii.document.class.manager,model_sii_document_class,account.group_account_manager,1,1,1,1
+access_sii_document_class_user,sii.document.class.user,model_sii_document_class,,1,0,0,0
+access_sii_document_letter_manager,sii.document.letter.manager,model_sii_document_letter,account.group_account_manager,1,1,1,1
+access_sii_document_letter_user,sii.document.letter.user,model_sii_document_letter,,1,0,0,0
+access_sii_optional_type_manager,sii.optional.type.manager,model_sii_optional_type,account.group_account_manager,1,1,1,1
+access_sii_optional_type_user,sii.optional.type.user,model_sii_optional_type,,1,0,0,0
+access_sii_reference_manager,sii_reference_manager,model_sii_reference,account.group_account_manager,1,1,1,1
+access_sii_reference_user,sii_reference_user,model_sii_reference,,1,0,0,0

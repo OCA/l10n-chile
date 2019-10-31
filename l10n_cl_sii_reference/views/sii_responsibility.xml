@@ -1,0 +1,41 @@
+<odoo>
+
+    <record id="view_sii_responsibility_form" model="ir.ui.view">
+        <field name="name">sii.responsibility.form</field>
+        <field name="model">sii.responsibility</field>
+        <field name="arch" type="xml">
+            <form string="SII Responsibility">
+                <group>
+                    <field name="name"/>
+                    <field name='code'/>
+                    <field name='sii_code'/>
+                    <field name='issued_letter_ids'/>
+                    <field name='received_letter_ids'/>
+                    <field name='active'/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sii_responsibility_tree" model="ir.ui.view">
+        <field name="name">sii.responsibility.tree</field>
+        <field name="model">sii.responsibility</field>
+        <field name="arch" type="xml">
+            <tree string="SII Responsibilities">
+                <field name="name"/>
+                <field name="code"/>
+                <field name='sii_code'/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_sii_responsibility">
+        <field name="name">SII responsibility</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sii.responsibility</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

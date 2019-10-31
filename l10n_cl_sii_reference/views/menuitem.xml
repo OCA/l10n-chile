@@ -1,0 +1,49 @@
+<odoo>
+
+    <menuitem id="menu_config_sii"
+              name="SII Configuration"
+              parent="account.menu_finance_configuration"
+              sequence="25"/>
+
+    <menuitem id="menu_config_sii_reference"
+              name="References"
+              parent="menu_config_sii"
+              sequence="10"/>
+
+    <menuitem id="menu_config_sii_reference_ref"
+              name="References"
+              action="act_sii_reference"
+              parent="menu_config_sii_reference"
+              sequence="10"/>
+
+    <menuitem id="menu_action_sii_concept_type"
+              name="Concept Types"
+              action="act_sii_concept_type"
+              parent="menu_config_sii_reference"
+              sequence="20"/>
+
+    <menuitem id="menu_action_sii_document_class"
+              name="Document Classes"
+              action="act_sii_document_class"
+              parent="menu_config_sii_reference"
+              sequence="30"/>
+
+    <menuitem id="menu_action_sii_document_letter"
+              name="Document Letters"
+              action="act_sii_document_letter"
+              parent="menu_config_sii_reference"
+              sequence="40"/>
+
+    <menuitem id="menu_action_sii_document_type"
+              name="Document Types"
+              action="act_sii_document_type"
+              parent="menu_config_sii_reference"
+              sequence="50"/>
+
+    <menuitem id="menu_action_sii_responsibility"
+              name="Responsibilities"
+              action="act_sii_responsibility"
+              parent="menu_config_sii_reference"
+              sequence="60"/>
+
+</odoo>

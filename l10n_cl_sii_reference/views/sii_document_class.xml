@@ -1,0 +1,50 @@
+<odoo>
+
+    <record id="view_sii_document_class_form" model="ir.ui.view">
+        <field name="name">sii.document.class.form</field>
+        <field name="model">sii.document.class</field>
+        <field name="arch" type="xml">
+            <form string="SII Document Class">
+                <group>
+                    <field name="name"/>
+                    <field name='code'/>
+                    <field name='prefix'/>
+                    <field name='code_template'/>
+                    <field name='document_letter_id'/>
+                    <field name='report_name'/>
+                    <field name='document_type'/>
+                    <field name='active'/>
+                    <field name='dte'/>
+                    <field name='use_prefix'/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_sii_document_class_tree" model="ir.ui.view">
+        <field name="name">sii.document.class.tree</field>
+        <field name="model">sii.document.class</field>
+        <field name="arch" type="xml">
+            <tree string="SII Document Classes">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="prefix"/>
+                <field name="code_template"/>
+                <field name="document_letter_id"/>
+                <field name='report_name'/>
+                <field name='document_type'/>
+                <field name='dte'/>
+                <field name='use_prefix'/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_sii_document_class">
+        <field name="name">SII Document Classes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sii.document.class</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
