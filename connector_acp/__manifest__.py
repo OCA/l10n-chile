@@ -27,6 +27,7 @@
         "security/ir.model.access.csv",
         "views/backend_acp.xml",
         "views/ssl_certificate.xml",
+        "views/ssl_signature.xml",
         "views/res_company.xml",
     ],
     "application": False,
