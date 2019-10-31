@@ -1,0 +1,40 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_ssl_signature_tree">
+        <field name="name">ssl.signature.tree</field>
+        <field name="model">ssl.signature</field>
+        <field name="arch" type="xml">
+            <tree string="SSL Signatures">
+                <field name="name"/>
+                <field name="signature_value"/>
+                <field name="model_id"/>
+                <field name="res_id"/>
+                <field name="cert_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_ssl_signature_form">
+        <field name="name">ssl.signature.form</field>
+        <field name="model">ssl.signature</field>
+        <field name="arch" type="xml">
+            <form string="SSL Signature">
+                <field name="name"/>
+                <group>
+                    <group col="4">
+                        <field name="model_id"/>
+                        <field name="res_id"/>
+                    </group>
+                    <group>
+                        <field name="cert_id"/>
+                        <field name="exponent"/>
+                    </group>
+                </group>
+                <field name="modulus"/>
+                <field name="signature_value"/>
+                <field name="digest_value"/>
+            </form>
+        </field>
+    </record>
+
+</odoo>
