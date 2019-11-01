@@ -232,6 +232,11 @@ msgid "ID"
 msgstr ""
 
 #. module: connector_acp
+#: selection:etd.document,model:0
+msgid "Invoice"
+msgstr ""
+
+#. module: connector_acp
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
 msgid "Issuer"
 msgstr ""
