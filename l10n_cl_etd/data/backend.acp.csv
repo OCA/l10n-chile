@@ -1,0 +1,2 @@
+"id","name","host","port","user","password","active"
+backend_acp_sii,Servicio de Impuestos Internos (SII) de Chile,sii.cl,,,,1
