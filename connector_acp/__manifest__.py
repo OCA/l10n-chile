@@ -29,8 +29,8 @@
     "data": [
         "security/ir.model.access.csv",
         "views/backend_acp.xml",
-        "views/ssl_certificate.xml",
-        "views/ssl_signature.xml",
+        "views/etd_certificate.xml",
+        "views/etd_signature.xml",
         "views/res_company.xml",
         "views/res_country.xml",
     ],
