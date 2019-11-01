@@ -3,17 +3,7 @@
 # Copyright (C) 2019 CubicERP
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-import base64
-import logging
-from collections import namedtuple
-from jinja2 import Environment, BaseLoader
-from lxml import etree
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from ...queue_job.job import job
-from ...queue_job.exception import RetryableJobError
-
-_logger = logging.getLogger(__name__)
+from odoo import fields, models
 
 
 class BackendAcp(models.Model):

@@ -7,7 +7,8 @@ import base64
 import logging
 from collections import namedtuple
 from jinja2 import Environment, BaseLoader
-from lxml import etree
+# TODO: Uncomment when the XSD validation works
+# from lxml import etree
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 from ...queue_job.job import job
@@ -77,7 +78,8 @@ class ResSslMixin(models.AbstractModel):
         # Render the XML
         xml_file = self.File_details(self.name or self.number + '.xml',
                                      template.render(kwargs))
-        xml = str.encode(xml_file.filecontent)
+        # TODO: Uncomment once the XSD validation works
+        # xml = str.encode(xml_file.filecontent)
         # Attache XML file to the document
         self.env['ir.attachment'].create({
             'name': xml_file.filename,
@@ -86,8 +88,9 @@ class ResSslMixin(models.AbstractModel):
             'datas_fname': xml_file.filename,
             'res_model': self._name,
             'res_id': self.id})
+        # TODO: Uncomment once the XSD files are properly formed
         # Check the rendered XML against the XSD
-        # xsd = document_id.xsd
+        # xsd = base64.b64decode(document_id.xsd).decode('utf-8')
         # try:
         #     xmlschema = etree.XMLSchema(xsd)
         #     xml_doc = etree.fromstring(xml)

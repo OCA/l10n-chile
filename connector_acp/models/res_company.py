@@ -13,7 +13,8 @@ class ResCompany(models.Model):
                                     string="Documents To Sign")
     signer = fields.Selection((
         ("odoo", "Odoo"),
-        ("backend", "Authorized Certification Provider")), string="Who is signing?",
+        ("backend", "Authorized Certification Provider")),
+        string="Who is signing?",
         required=True, default="odoo",
         help="""Please note that the signing authority is in charge of
         sending the document for validation.""")
