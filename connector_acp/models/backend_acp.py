@@ -3,7 +3,17 @@
 # Copyright (C) 2019 CubicERP
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from odoo import fields, models
+import base64
+import logging
+from collections import namedtuple
+from jinja2 import Environment, BaseLoader
+from lxml import etree
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from ...queue_job.job import job
+from ...queue_job.exception import RetryableJobError
+
+_logger = logging.getLogger(__name__)
 
 
 class BackendAcp(models.Model):
@@ -21,6 +31,13 @@ class BackendAcp(models.Model):
                               default='unconfirmed')
 
     def action_confirm(self):
+        """
+        Called by the Check button on the form view
+        Set the status to 'confirmed' if the backend:
+         - accepts connections
+         - authorizes the given credentials
+        :return: True or False whether the backend is usable
+        """
         self.status = 'confirmed'
         return True
 

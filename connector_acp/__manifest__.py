@@ -21,6 +21,9 @@
     ],
     "external_dependencies": {
         "python": [
+            "collections",
+            "jinja2",
+            "lxml",
         ]
     },
     "data": [
@@ -29,6 +32,7 @@
         "views/ssl_certificate.xml",
         "views/ssl_signature.xml",
         "views/res_company.xml",
+        "views/res_country.xml",
     ],
     "application": False,
     "development_status": "Beta",

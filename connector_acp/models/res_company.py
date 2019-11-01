@@ -13,9 +13,10 @@ class ResCompany(models.Model):
                                     string="Documents To Sign")
     signer = fields.Selection((
         ("odoo", "Odoo"),
-        ("backend", "Third Party")), string="Who is signing?",
+        ("backend", "Authorized Certification Provider")), string="Who is signing?",
         required=True, default="odoo",
         help="""Please note that the signing authority is in charge of
         sending the document for validation.""")
-    backend_id = fields.Many2one("backend.acp", string="Third Party")
+    backend_id = fields.Many2one("backend.acp",
+                                 string="Authorized Certification Provider")
     cert_id = fields.Many2one("ssl.certificate", string="SSL Certificate")
