@@ -18,6 +18,6 @@ class ResCompany(models.Model):
         sii = self.env.ref('l10n_cl_etd.backend_acp_sii')
         for record in self:
             if record.backend_acp_id.id == sii.id:
-                raise ValidationError(
+                raise ValidationError(_(
                     "%s does not sign documents. Please select another "
-                    "provider." % sii.name)
+                    "provider." % sii.name))
