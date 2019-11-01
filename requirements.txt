@@ -1,6 +1,6 @@
 cchardet
 dicttoxml
-Jinja==2.10.1
+Jinja2==2.10.1
 M2Crypto
 num2words
 pdf417gen
