@@ -11,5 +11,4 @@ from . import (
     sii_document_type,
     sii_concept_type,
     sii_optional_type,
-    account_invoice,
 )

@@ -20,6 +20,4 @@ class SiiReference(models.Model):
         ("3", "Fix the amount of the referenced document")],
         string="Code")
     motive = fields.Char(string="Motive")
-    invoice_id = fields.Many2one("account.invoice", string="Invoice",
-                                 ondelete="cascade", index=True, copy=False)
     date = fields.Date(string="Document Date", required=True)
