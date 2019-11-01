@@ -14,6 +14,12 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: connector_acp
+#: code:addons/connector_acp/models/res_ssl_mixin.py:144
+#, python-format
+msgid "%s Status: <b>%s</b>"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.actions.act_window,name:connector_acp.action_backend_acp
 msgid "ACP Backends"
 msgstr ""
@@ -29,7 +35,9 @@ msgid "Active"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__backend_id
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
+#: selection:res.company,signer:0
 msgid "Authorized Certification Provider"
 msgstr ""
 
@@ -47,6 +55,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model,name:connector_acp.model_backend_acp
 msgid "Backend of Authorized Certification Providers"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_country__backend_acp_id
+msgid "Backend to the Tax Authority"
 msgstr ""
 
 #. module: connector_acp
@@ -95,6 +108,11 @@ msgid "Confirmed"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_country
+msgid "Country"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__create_uid
@@ -118,14 +136,10 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_res_ssl_mixin__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__display_name
 msgid "Display Name"
-msgstr ""
-
-#. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__name
-msgid "Document"
 msgstr ""
 
 #. module: connector_acp
@@ -138,6 +152,12 @@ msgstr ""
 #: model:ir.model.fields,help:connector_acp.field_ssl_certificate__status
 msgid "Draft: means it has not been checked yet.\n"
 "You must press the\"check\" button."
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/res_ssl_mixin.py:149
+#, python-format
+msgid "ETD has been sent to %s but failed with the following message: <b>%s</b>"
 msgstr ""
 
 #. module: connector_acp
@@ -184,6 +204,7 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__id
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document__id
+#: model:ir.model.fields,field_description:connector_acp.field_res_ssl_mixin__id
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__id
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__id
 msgid "ID"
@@ -232,6 +253,7 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_res_company_document____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_res_ssl_mixin____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_signature____last_update
 msgid "Last Modified on"
@@ -265,6 +287,7 @@ msgstr ""
 
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__name
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__name
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__name
 msgid "Name"
 msgstr ""
@@ -295,19 +318,14 @@ msgid "Odoo"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__model
+msgid "Odoo Model"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__password
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_certificate__dec_pass
 msgid "Password"
-msgstr ""
-
-#. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xml
-msgid "Path to the XML Template"
-msgstr ""
-
-#. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xsd
-msgid "Path to the XSD file"
 msgstr ""
 
 #. module: connector_acp
@@ -360,9 +378,20 @@ msgid "SSL Certificates"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_ssl_mixin
+msgid "SSL Mixin"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model,name:connector_acp.model_ssl_signature
+#: model:ir.model.fields,field_description:connector_acp.field_res_ssl_mixin__signature_id
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_ssl_signature_form
 msgid "SSL Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_res_ssl_mixin__signature_id
+msgid "SSL Signature of the Document"
 msgstr ""
 
 #. module: connector_acp
@@ -427,9 +456,9 @@ msgid "Subject Title"
 msgstr ""
 
 #. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_res_company__backend_id
-#: selection:res.company,signer:0
-msgid "Third Party"
+#: code:addons/connector_acp/models/res_ssl_mixin.py:136
+#, python-format
+msgid "The backend is not confirmed. Please check the connection to the backend first."
 msgstr ""
 
 #. module: connector_acp
@@ -475,5 +504,15 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_ssl_signature__cert_id
 msgid "X509 Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xml
+msgid "XML Template"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company_document__xsd
+msgid "XSD File"
 msgstr ""
 
