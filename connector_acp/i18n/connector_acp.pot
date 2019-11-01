@@ -355,6 +355,11 @@ msgid "Password"
 msgstr ""
 
 #. module: connector_acp
+#: selection:etd.document,model:0
+msgid "Picking"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,help:connector_acp.field_res_company__signer
 msgid "Please note that the signing authority is in charge of\n"
 "        sending the document for validation."
