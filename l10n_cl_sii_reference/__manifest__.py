@@ -16,7 +16,7 @@
     "website": "https://github.com/OCA/l10n-chile",
     "license": "AGPL-3",
     "depends": [
-        "account",
+        "l10n_cl_sii",
     ],
     "data": [
         "data/sii.responsibility.csv",
@@ -33,7 +33,6 @@
         "views/sii_optional_type.xml",
         "views/sii_reference.xml",
         "views/menuitem.xml",
-        "views/account_invoice.xml",
     ],
     "application": False,
     "development_status": "Beta",

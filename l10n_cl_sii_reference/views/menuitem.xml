@@ -1,13 +1,8 @@
 <odoo>
 
-    <menuitem id="menu_config_sii"
-              name="SII Configuration"
-              parent="account.menu_finance_configuration"
-              sequence="25"/>
-
     <menuitem id="menu_config_sii_reference"
               name="References"
-              parent="menu_config_sii"
+              parent="l10n_cl_sii.menu_config_sii"
               sequence="10"/>
 
     <menuitem id="menu_config_sii_reference_ref"
