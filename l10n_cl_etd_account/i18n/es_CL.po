@@ -34,6 +34,13 @@ msgstr "Factura"
 msgid "Odoo Model"
 msgstr ""
 
+#. module: l10n_cl_etd_account
+#: selection:etd.document,model:0
+#, fuzzy
+#| msgid "Stock Picking"
+msgid "Picking"
+msgstr "Guía de Despacho"
+
 #~ msgid "Active"
 #~ msgstr "Activo"
 
@@ -853,9 +860,6 @@ msgstr ""
 
 #~ msgid "Status"
 #~ msgstr "Estado"
-
-#~ msgid "Stock Picking"
-#~ msgstr "Guía de Despacho"
 
 #~ msgid "Subir XML De Envío"
 #~ msgstr "Subir XML de Envío"
