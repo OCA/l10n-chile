@@ -10,6 +10,7 @@ class ResCompanyDocument(models.Model):
     _name = "res.company.document"
     _description = "Documents To Sign"
 
-    name = fields.Selection([], string="Document", required=True)
-    xsd = fields.Char(string="Path to the XSD file", required=True)
-    xml = fields.Char(string="Path to the XML Template", required=True)
+    name = fields.Char(string="Name", required=True)
+    model = fields.Selection([], string="Odoo Model", required=True)
+    xsd = fields.Binary(string="XSD File", required=True)
+    xml = fields.Binary(string="XML Template", required=True)

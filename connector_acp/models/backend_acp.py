@@ -21,6 +21,13 @@ class BackendAcp(models.Model):
                               default='unconfirmed')
 
     def action_confirm(self):
+        """
+        Called by the Check button on the form view
+        Set the status to 'confirmed' if the backend:
+         - accepts connections
+         - authorizes the given credentials
+        :return: True or False whether the backend is usable
+        """
         self.status = 'confirmed'
         return True
 
