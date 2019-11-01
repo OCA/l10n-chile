@@ -160,12 +160,6 @@ msgid "If True, the VAT will be discriminated on invoice report."
 msgstr ""
 
 #. module: l10n_cl_sii_reference
-#: model:ir.model,name:l10n_cl_sii_reference.model_account_invoice
-#: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__invoice_id
-msgid "Invoice"
-msgstr ""
-
-#. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Invoices"
 msgstr ""
@@ -292,15 +286,8 @@ msgid "Receptors"
 msgstr ""
 
 #. module: l10n_cl_sii_reference
-#: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_account_invoice__reference_ids
-msgid "Reference"
-msgstr ""
-
-#. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_config_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_config_sii_reference_ref
-#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_invoice_form
-#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_supplier_invoice_form
 msgid "References"
 msgstr ""
 
@@ -326,16 +313,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_concept_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_concept_type_tree
 msgid "SII Concept Types"
-msgstr ""
-
-#. module: l10n_cl_sii_reference
-#: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_config_sii
-msgid "SII Configuration"
-msgstr ""
-
-#. module: l10n_cl_sii_reference
-#: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_account_invoice__class_id
-msgid "SII Document"
 msgstr ""
 
 #. module: l10n_cl_sii_reference
@@ -437,11 +414,6 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__sii_code
 msgid "Tax Payer SII Code"
-msgstr ""
-
-#. module: l10n_cl_sii_reference
-#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_invoice_form
-msgid "Taxes"
 msgstr ""
 
 #. module: l10n_cl_sii_reference
