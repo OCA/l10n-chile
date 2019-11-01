@@ -14,11 +14,18 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [connector_acp](connector_acp/) | 12.0.1.0.0 | Get your documents signed by an Authorized Certification Provider
+[connector_acp_xerox](connector_acp_xerox/) | 12.0.1.0.0 | Get Xerox to sign your documents and send them to SII
 [l10n_cl_chart_of_account](l10n_cl_chart_of_account/) | 12.0.1.0.0 | Chile Localization Chart Account SII
 [l10n_cl_currency_rate_sbif](l10n_cl_currency_rate_sbif/) | 12.0.2.0.0 | Update UF, UTM and US Dollar exchange rates using SBIF
+[l10n_cl_etd](l10n_cl_etd/) | 12.0.1.0.0 | Sign and send documents to SII.
+[l10n_cl_etd_account](l10n_cl_etd_account/) | 12.0.1.0.0 | Sign your invoices and send them to SII.
+[l10n_cl_etd_stock](l10n_cl_etd_stock/) | 12.0.1.0.0 | Sign your delivery orders and send them to SII.
 [l10n_cl_invoicing_policy](l10n_cl_invoicing_policy/) | 12.0.1.0.0 | Ticket, Invoice or Electronic Guide
+[l10n_cl_sii](l10n_cl_sii/) | 12.0.1.0.0 | Provides the Settings > SII menuitem
 [l10n_cl_sii_activity](l10n_cl_sii_activity/) | 12.0.1.0.0 | Set the SII Activity on Partners
+[l10n_cl_sii_folio](l10n_cl_sii_folio/) | 12.0.1.0.0 | Sign your documents and send them to SII.
 [l10n_cl_sii_reference](l10n_cl_sii_reference/) | 12.0.1.0.0 | Store document references using SII nomenclature
+[l10n_cl_sii_reference_account](l10n_cl_sii_reference_account/) | 12.0.1.0.0 | Store document references using SII nomenclature
 [l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.1.0 | Cities, States and Regions of Chile
 [res_partner_email_etd](res_partner_email_etd/) | 12.0.1.0.0 | To receive Electronic Tax Documents
 
