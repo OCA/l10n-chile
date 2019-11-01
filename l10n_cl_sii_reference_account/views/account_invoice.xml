@@ -1,0 +1,70 @@
+<odoo>
+
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="name">account.invoice.sii.form</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="tax_line_ids" position="before">
+                <separator string="References"/>
+                <field name="reference_ids" nolabel="1" mode="tree">
+                    <form>
+                    <field name="name"/>
+                    <group>
+                        <group>
+                            <field name='code'/>
+                            <field name='class_id'/>
+                        </group>
+                        <group>
+                            <field name='motive'/>
+                            <field name='date'/>
+                        </group>
+                    </group>
+                    </form>
+                    <tree>
+                        <field name="name" required="True"/>
+                        <field name="class_id" required="True"/>
+                        <field name="code"/>
+                        <field name="motive"/>
+                        <field name="date"/>
+                    </tree>
+                </field>
+                <separator string="Taxes"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_supplier_invoice_form" model="ir.ui.view">
+        <field name="name">l10n_cl.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[2]/group" position="after">
+                <separator string="References"/>
+                <field name="reference_ids" mode="tree">
+                    <form>
+                    <field name="name"/>
+                    <group>
+                        <group>
+                            <field name='code'/>
+                            <field name='class_id'/>
+                        </group>
+                        <group>
+                            <field name='motive'/>
+                            <field name='date'/>
+                        </group>
+                    </group>
+                    </form>
+                    <tree>
+                        <field name="name" required="True"/>
+                        <field name="class_id" required="True"/>
+                        <field name="code"/>
+                        <field name="motive"/>
+                        <field name="date"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
