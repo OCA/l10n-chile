@@ -1,0 +1,8 @@
+<odoo>
+
+    <menuitem id="menu_config_sii"
+              name="SII"
+              parent="base.menu_administration"
+              sequence="100"/>
+
+</odoo>
