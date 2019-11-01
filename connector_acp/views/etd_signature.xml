@@ -1,10 +1,10 @@
 <odoo>
 
-    <record model="ir.ui.view" id="view_ssl_signature_tree">
-        <field name="name">ssl.signature.tree</field>
-        <field name="model">ssl.signature</field>
+    <record model="ir.ui.view" id="view_etd_signature_tree">
+        <field name="name">etd.signature.tree</field>
+        <field name="model">etd.signature</field>
         <field name="arch" type="xml">
-            <tree string="SSL Signatures">
+            <tree string="ETD Signatures">
                 <field name="name"/>
                 <field name="signature_value"/>
                 <field name="model_id"/>
@@ -14,11 +14,11 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_ssl_signature_form">
-        <field name="name">ssl.signature.form</field>
-        <field name="model">ssl.signature</field>
+    <record model="ir.ui.view" id="view_etd_signature_form">
+        <field name="name">etd.signature.form</field>
+        <field name="model">etd.signature</field>
         <field name="arch" type="xml">
-            <form string="SSL Signature">
+            <form string="ETD Signature">
                 <field name="name"/>
                 <group>
                     <group col="4">

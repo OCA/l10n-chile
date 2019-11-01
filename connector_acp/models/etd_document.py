@@ -6,9 +6,9 @@
 from odoo import fields, models
 
 
-class ResCompanyDocument(models.Model):
-    _name = "res.company.document"
-    _description = "Documents To Sign"
+class EtdDocument(models.Model):
+    _name = "etd.document"
+    _description = "Electronic Tax Documents To Sign"
 
     name = fields.Char(string="Name", required=True)
     model = fields.Selection([], string="Odoo Model", required=True)

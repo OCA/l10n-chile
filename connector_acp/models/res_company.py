@@ -9,8 +9,7 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    document_ids = fields.Many2many("res.company.document",
-                                    string="Documents To Sign")
+    etd_ids = fields.Many2many("etd.document", string="Documents To Sign")
     signer = fields.Selection((
         ("odoo", "Odoo"),
         ("backend", "Authorized Certification Provider")),
@@ -18,6 +17,6 @@ class ResCompany(models.Model):
         required=True, default="odoo",
         help="""Please note that the signing authority is in charge of
         sending the document for validation.""")
-    backend_id = fields.Many2one("backend.acp",
-                                 string="Authorized Certification Provider")
-    cert_id = fields.Many2one("ssl.certificate", string="SSL Certificate")
+    backend_acp_id = fields.Many2one(
+        "backend.acp", string="Authorized Certification Provider")
+    cert_id = fields.Many2one("etd.certificate", string="SSL Certificate")

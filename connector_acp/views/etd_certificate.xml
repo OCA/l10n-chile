@@ -1,10 +1,10 @@
 <odoo>
 
-    <record model="ir.ui.view" id="view_ssl_certificate_tree">
-        <field name="name">ssl.certificate.tree</field>
-        <field name="model">ssl.certificate</field>
+    <record model="ir.ui.view" id="view_etd_certificate_tree">
+        <field name="name">etd.certificate.tree</field>
+        <field name="model">etd.certificate</field>
         <field name="arch" type="xml">
-            <tree string="SSL Certificates">
+            <tree string="etd Certificates">
                 <field name="subject_title"/>
                 <field name="not_before"/>
                 <field name="not_after"/>
@@ -13,11 +13,11 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_ssl_certificate_form">
-        <field name="name">ssl.certificate.form</field>
-        <field name="model">ssl.certificate</field>
+    <record model="ir.ui.view" id="view_etd_certificate_form">
+        <field name="name">etd.certificate.form</field>
+        <field name="model">etd.certificate</field>
         <field name="arch" type="xml">
-            <form string="SSL Certificate">
+            <form string="etd Certificate">
                 <header>
                     <button string="Check Signature" type="object" name="action_process"
                             class="oe_highlight"

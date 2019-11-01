@@ -4,11 +4,11 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from . import (
-    ssl_certificate,
-    ssl_signature,
-    res_ssl_mixin,
+    etd_certificate,
+    etd_signature,
+    etd_mixin,
     backend_acp,
-    res_company_document,
+    etd_document,
     res_company,
     res_country,
 )

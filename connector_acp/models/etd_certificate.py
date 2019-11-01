@@ -48,8 +48,8 @@ zero_values = {
 }
 
 
-class SslCertificate(models.Model):
-    _name = "ssl.certificate"
+class EtdCertificate(models.Model):
+    _name = "etd.certificate"
     _description = "SSL Certificate"
     _rec_name = "subject_title"
 

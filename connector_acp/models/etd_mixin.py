@@ -17,12 +17,12 @@ from ...queue_job.exception import RetryableJobError
 _logger = logging.getLogger(__name__)
 
 
-class ResSslMixin(models.AbstractModel):
-    _name = 'res.ssl.mixin'
-    _description = 'SSL Mixin'
+class EtdMixin(models.AbstractModel):
+    _name = 'etd.mixin'
+    _description = 'Electronic Tax Document Mixin'
 
     signature_id = fields.Many2one(
-        'ssl.signature', string='SSL Signature',
+        'etd.signature', string='SSL Signature',
         help="SSL Signature of the Document")
 
     _env = None
@@ -41,13 +41,13 @@ class ResSslMixin(models.AbstractModel):
                 loader=BaseLoader())
         return self._env
 
-    def get_document(self):
+    def get_etd_document(self):
         """
         Return one res.company.document to generate the XML file of the record
         :return: The res.company.document that needs be used to generate the
          XML file
         """
-        res = self.company_id.document_ids.filtered(
+        res = self.company_id.etd_ids.filtered(
             lambda x: x.model == self._name)
         return res
 
@@ -58,6 +58,9 @@ class ResSslMixin(models.AbstractModel):
         """
         return {}
 
+    def get_etd_filename(self):
+        return self.name or self.number
+
     def build_xml(self):
         """
         Build the XML of the record using the company documents and the
@@ -65,9 +68,9 @@ class ResSslMixin(models.AbstractModel):
         :return: XML string of the record
         """
         self.set_jinja_env()
-        document_id = self.get_document()
+        etd_id = self.get_etd_document()
         # Get the template
-        template = self._env.from_string(base64.b64decode(document_id.xml).
+        template = self._env.from_string(base64.b64decode(etd_id.xml).
                                          decode('utf-8'))
         # Additional keywords used in the template
         kwargs = self.prepare_keywords()
@@ -75,8 +78,9 @@ class ResSslMixin(models.AbstractModel):
             'o': self,
             'now': fields.datetime.now(),
             'today': fields.datetime.today()})
+        xml_filename = self.get_etd_filename()
         # Render the XML
-        xml_file = self.File_details(self.name or self.number + '.xml',
+        xml_file = self.File_details(xml_filename + '.xml',
                                      template.render(kwargs))
         # TODO: Uncomment once the XSD validation works
         # xml = str.encode(xml_file.filecontent)
@@ -130,7 +134,7 @@ class ResSslMixin(models.AbstractModel):
             backend = self.company_id.partner_id.country_id.backend_acp_id
         else:
             # Use the backend of the ACP
-            backend = self.company_id.backend_id
+            backend = self.company_id.backend_acp_id
         # Determine the backend to send the XML
         if backend.status != 'confirmed':
             raise UserError(_("The backend is not confirmed. Please check the"
