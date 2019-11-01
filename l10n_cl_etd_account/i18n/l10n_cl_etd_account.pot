@@ -29,3 +29,8 @@ msgstr ""
 msgid "Odoo Model"
 msgstr ""
 
+#. module: l10n_cl_etd_account
+#: selection:etd.document,model:0
+msgid "Picking"
+msgstr ""
+
