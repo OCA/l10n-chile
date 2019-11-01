@@ -16,7 +16,7 @@
     "website": "https://github.com/OCA/l10n-chile",
     "license": "AGPL-3",
     "depends": [
-        "l10n_cl_sii_reference",
+        "l10n_cl_sii_reference_account",
     ],
     "data": [
         "security/ir.model.access.csv",
