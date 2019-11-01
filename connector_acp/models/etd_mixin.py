@@ -43,8 +43,8 @@ class EtdMixin(models.AbstractModel):
 
     def get_etd_document(self):
         """
-        Return one res.company.document to generate the XML file of the record
-        :return: The res.company.document that needs be used to generate the
+        Return one etd.document to generate the XML file of the record
+        :return: The etd.document that needs be used to generate the
          XML file
         """
         res = self.company_id.etd_ids.filtered(

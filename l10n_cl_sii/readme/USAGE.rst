@@ -1,1 +1,1 @@
-* Go to
+* Go to Settings > SII

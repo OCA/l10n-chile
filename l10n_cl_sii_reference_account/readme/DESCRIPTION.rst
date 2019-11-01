@@ -1,1 +1,1 @@
-This module provides the different types of references from SII (https://sii.cl).
+This module allows you to set SII references on invoices.
