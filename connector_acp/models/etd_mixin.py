@@ -5,10 +5,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import base64
 import logging
+import time
 from collections import namedtuple
 from jinja2 import Environment, BaseLoader
-# TODO: Uncomment when the XSD validation works
-# from lxml import etree
+from lxml import etree
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 from ...queue_job.job import job
@@ -58,19 +58,18 @@ class EtdMixin(models.AbstractModel):
         """
         return {}
 
-    def get_etd_filename(self):
-        return self.name or self.number
+    def get_etd_filename(self, file):
+        return '%s.%s' % (self.name or self.number, file.file_type)
 
-    def build_xml(self):
+    def build_file(self, file):
         """
-        Build the XML of the record using the company documents and the
-        related XML template and XSD
-        :return: XML string of the record
+        Build the file of the record using the company documents and the
+        related template and
+        :return: A dictionary with the filename and the content
         """
         self.set_jinja_env()
-        etd_id = self.get_etd_document()
         # Get the template
-        template = self._env.from_string(base64.b64decode(etd_id.xml).
+        template = self._env.from_string(base64.b64decode(file.template).
                                          decode('utf-8'))
         # Additional keywords used in the template
         kwargs = self.prepare_keywords()
@@ -78,42 +77,57 @@ class EtdMixin(models.AbstractModel):
             'o': self,
             'now': fields.datetime.now(),
             'today': fields.datetime.today()})
-        xml_filename = self.get_etd_filename()
-        # Render the XML
-        xml_file = self.File_details(xml_filename + '.xml',
-                                     template.render(kwargs))
-        # TODO: Uncomment once the XSD validation works
-        # xml = str.encode(xml_file.filecontent)
-        # Attache XML file to the document
-        self.env['ir.attachment'].create({
-            'name': xml_file.filename,
-            'type': 'binary',
-            'datas': base64.b64encode(xml_file.filecontent.encode("utf-8")),
-            'datas_fname': xml_file.filename,
-            'res_model': self._name,
-            'res_id': self.id})
-        # TODO: Uncomment once the XSD files are properly formed
-        # Check the rendered XML against the XSD
-        # xsd = base64.b64decode(document_id.xsd).decode('utf-8')
-        # try:
-        #     xmlschema = etree.XMLSchema(xsd)
-        #     xml_doc = etree.fromstring(xml)
-        #     result = xmlschema.validate(xml_doc)
-        #     if not result:
-        #         xmlschema.assert_(xml_doc)
-        #     return xml
-        # except AssertionError as e:
-        #     _logger.warning(etree.tostring(xml_doc))
-        #     raise UserError(_("XML Malformed Error: %s") % e.args)
+        filename = self.get_etd_filename(file)
+        # Render the file
+        res_file = self.File_details(filename, template.render(kwargs))
+        res_content = str.encode(res_file.filecontent)
+        if file.validator:
+            # Check the rendered file against the validator
+            validator = base64.b64decode(file.validator).decode('utf-8')
+            if file.file_type == "xml":
+                try:
+                    xmlschema = etree.XMLSchema(validator)
+                    xml_doc = etree.fromstring(res_content)
+                    result = xmlschema.validate(xml_doc)
+                    if not result:
+                        xmlschema.assert_(xml_doc)
+                except AssertionError as e:
+                    _logger.warning(etree.tostring(xml_doc))
+                    raise UserError(_("XML Malformed Error: %s") % e.args)
+        # Attach file to the record
+        if file.save:
+            self.env['ir.attachment'].create({
+                'name': res_file.filename,
+                'type': 'binary',
+                'datas':
+                    base64.b64encode(res_file.filecontent.encode("utf-8")),
+                'datas_fname': res_file.filename,
+                'res_model': self._name,
+                'res_id': self.id})
+        return {'name': filename, 'content': res_content}
 
-    def sign_xml(self, xml):
+    def build_files(self):
         """
-        Sign the XML using the certificate
+        Build the files and returns a dictionary with file name and string
+        :return: Dictionary of file and string
+        """
+        # Get the document
+        etd = self.get_etd_document()
+        res = []
+        for file in etd.file_ids:
+            res.append(self.build_file(file))
+        return res
+
+    def sign_files(self, files, certificate):
+        """
+        Sign the file using the certificate
         Store the signature and link it to the record
-        :param xml: XML string of the record
+        :param files: List of string
         :param certificate: SSL Certificate record
         :return: XML string with the SSL signature included
         """
+        for file in files:
+            pass
         return True
 
     @job
@@ -124,32 +138,38 @@ class EtdMixin(models.AbstractModel):
         :param res_model: ir.model of the document to sign
         :param res_id: id of the document to sign
         """
-        # Build the XML of the document
-        xml = self.build_xml()
+        # Build the files for the document
+        files = self.build_files()
         # Sign the document
         if self.company_id.signer == 'odoo':
-            # Use the SSL Certificate to sign the XML
-            xml = self.sign_xml(xml)
+            # Use the SSL Certificate to sign the files
+            files = self.sign_files(files, self.company_id.cert_id)
             # Use the backend of the Tax Authority
             backend = self.company_id.partner_id.country_id.backend_acp_id
         else:
             # Use the backend of the ACP
             backend = self.company_id.backend_acp_id
-        # Determine the backend to send the XML
+        # Determine if the backend is usable
         if backend.status != 'confirmed':
             raise UserError(_("The backend is not confirmed. Please check the"
                               " connection to the backend first."))
-        # Send the XML to backend
-        reply = backend.send(xml)
-        # Send the XML
-        if reply:
+        # Send the files to backend
+        response = backend.send(files)
+        # Check the response
+        if response.success:
             # Check the status of the document
-            status = backend.check_status()
-            message = _("%s Status: <b>%s</b>" % (backend.name, status))
+            status = backend.check_status(response.ref)
+            i = 1
+            while not (status and status.success):
+                time.sleep(i)
+                i += 1
+                status = backend.check_status(response.ref)
+            message = _("%s Status: <b>%s</b>" % (backend.name,
+                                                  status.message))
             self.message_post(body=message)
         else:
             message = _("ETD has been sent to %s but failed with"
                         " the following message: <b>%s</b>" %
-                        (backend.name, reply))
+                        (backend.name, response.message))
             self.message_post(body=message)
-            raise RetryableJobError(reply)
+            raise RetryableJobError(response)
