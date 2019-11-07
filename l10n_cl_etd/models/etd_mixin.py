@@ -9,4 +9,9 @@ from odoo import fields, models
 class EtdMixin(models.AbstractModel):
     _inherit = 'etd.mixin'
 
-    class_id = fields.Many2one("sii.document.class", string="SII Document")
+    def _compute_class_id_domain(self):
+        return []
+
+    class_id = fields.Many2one(
+        "sii.document.class", string="SII Document",
+        domain=lambda self: self._compute_class_id_domain())
