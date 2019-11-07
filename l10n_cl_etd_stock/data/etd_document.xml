@@ -3,8 +3,6 @@
     <record id="etd_document_stock_picking" model="etd.document">
         <field name="name">Picking</field>
         <field name="model">stock.picking</field>
-        <field name="xsd" type="base64" file="l10n_cl_etd_stock/static/xsd/DTE_v10.xsd"/>
-        <field name="xml" type="base64" file="l10n_cl_etd_stock/static/xml/picking.xml"/>
     </record>
 
 </odoo>

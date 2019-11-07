@@ -1,0 +1,13 @@
+<odoo>
+
+    <record id="etd_file_stock_picking" model="etd.document.file">
+        <field name="name">Picking</field>
+        <field name="document_id" ref="l10n_cl_etd_stock.etd_document_stock_picking"/>
+        <field name="file_type">xml</field>
+        <field name="grouped">False</field>
+        <field name="save">True</field>
+        <field name="validator" type="base64" file="l10n_cl_etd_stock/static/xsd/DTE_v10.xsd"/>
+        <field name="template" type="base64" file="l10n_cl_etd_stock/static/xml/picking.xml"/>
+    </record>
+
+</odoo>

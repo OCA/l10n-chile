@@ -1,5 +1,5 @@
 Company
--------
+~~~~~~~
 
 * Go to Settings > User & Companies > Companies
 * Create or select a company
@@ -8,7 +8,7 @@ Company
 * Select the documents to sign: Picking
 
 Carriers
---------
+~~~~~~~~
 
 * Go to Inventory > Configuration > Delivery Methods
 * Set the Related Partner with their VAT to each carrier

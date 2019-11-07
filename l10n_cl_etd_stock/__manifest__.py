@@ -22,6 +22,7 @@
     ],
     "data": [
         "data/etd_document.xml",
+        "data/etd_document_file.xml",
         "views/stock_picking.xml",
         "views/delivery_carrier.xml",
     ],
