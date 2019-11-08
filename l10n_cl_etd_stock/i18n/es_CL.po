@@ -7,26 +7,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2019-04-24 12:59-0400\n"
-"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"PO-Revision-Date: 2019-11-08 16:39+0000\n"
+"Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: l10n_cl_etd_stock
 #: model:ir.model,name:l10n_cl_etd_stock.model_delivery_carrier
 msgid "Delivery Methods"
-msgstr ""
+msgstr "Métodos de Despacho"
 
 #. module: l10n_cl_etd_stock
 #: model:ir.model,name:l10n_cl_etd_stock.model_etd_document
-#, fuzzy
 msgid "Electronic Tax Documents To Sign"
-msgstr "¿Registrar documentos electrónicos?"
+msgstr "Documentos Tributarios Electrónicos a Firmar"
 
 #. module: l10n_cl_etd_stock
 #: selection:etd.document,model:0
@@ -36,7 +35,7 @@ msgstr "Factura"
 #. module: l10n_cl_etd_stock
 #: model:ir.model.fields,field_description:l10n_cl_etd_stock.field_etd_document__model
 msgid "Odoo Model"
-msgstr ""
+msgstr "Modelo Odoo"
 
 #. module: l10n_cl_etd_stock
 #: selection:etd.document,model:0
@@ -47,12 +46,12 @@ msgstr "Guía de Despacho"
 #. module: l10n_cl_etd_stock
 #: model:ir.model.fields,field_description:l10n_cl_etd_stock.field_delivery_carrier__partner_id
 msgid "Related Partner"
-msgstr ""
+msgstr "Partner Relacionado"
 
 #. module: l10n_cl_etd_stock
 #: model:ir.model,name:l10n_cl_etd_stock.model_stock_picking
 msgid "Transfer"
-msgstr ""
+msgstr "Transferir"
 
 #~ msgid "Active"
 #~ msgstr "Activo"
