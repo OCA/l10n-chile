@@ -14,9 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:148
+#: code:addons/connector_acp/models/etd_mixin.py:167
 #, python-format
 msgid "%s Status: <b>%s</b>"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__grouped
+msgid "1 file for multiple documents"
 msgstr ""
 
 #. module: connector_acp
@@ -35,6 +40,11 @@ msgid "Active"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__save
+msgid "Attach the generated file to the record"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_res_company__backend_acp_id
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
 #: selection:res.company,signer:0
@@ -50,6 +60,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__authorized_users_ids
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
 msgid "Authorized Users"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "BZIP2"
 msgstr ""
 
 #. module: connector_acp
@@ -104,6 +119,16 @@ msgid "Companies"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_document__compress
+msgid "Compress the file(s) before sending it"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__compress
+msgid "Compression"
+msgstr ""
+
+#. module: connector_acp
 #: selection:backend.acp,status:0
 msgid "Confirmed"
 msgstr ""
@@ -117,6 +142,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__create_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__create_uid
 msgid "Created by"
 msgstr ""
@@ -125,6 +151,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__create_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__create_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__create_date
 msgid "Created on"
 msgstr ""
@@ -138,9 +165,15 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_mixin__display_name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__document_id
+msgid "Document"
 msgstr ""
 
 #. module: connector_acp
@@ -166,7 +199,7 @@ msgid "ETD Signatures"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:153
+#: code:addons/connector_acp/models/etd_mixin.py:173
 #, python-format
 msgid "ETD has been sent to %s but failed with the following message: <b>%s</b>"
 msgstr ""
@@ -208,6 +241,16 @@ msgid "File Name"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__file_type
+msgid "File Type"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__file_ids
+msgid "Files"
+msgstr ""
+
+#. module: connector_acp
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
 msgid "General Info"
 msgstr ""
@@ -226,6 +269,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__id
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__id
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__id
 #: model:ir.model.fields,field_description:connector_acp.field_etd_mixin__id
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__id
 msgid "ID"
@@ -280,6 +324,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_etd_mixin____last_update
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature____last_update
 msgid "Last Modified on"
@@ -289,6 +334,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__write_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__write_uid
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -297,6 +343,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__write_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__write_date
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__write_date
 msgid "Last Updated on"
 msgstr ""
@@ -314,8 +361,14 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document__name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__name
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__name
 msgid "Name"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "None"
 msgstr ""
 
 #. module: connector_acp
@@ -469,7 +522,27 @@ msgid "Subject Title"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:140
+#: selection:etd.document,compress:0
+msgid "TAR GZ"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document.file,file_type:0
+msgid "TXT"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__template
+msgid "Template File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_document_file
+msgid "Template for Electronic Tax Documents To Sign"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:154
 #, python-format
 msgid "The backend is not confirmed. Please check the connection to the backend first."
 msgstr ""
@@ -505,6 +578,11 @@ msgid "Valid"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__validator
+msgid "Validator File"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert_version
 msgid "Version"
 msgstr ""
@@ -515,13 +593,19 @@ msgid "Who is signing?"
 msgstr ""
 
 #. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_etd_document__xml
-msgid "XML Template"
+#: selection:etd.document.file,file_type:0
+msgid "XML"
 msgstr ""
 
 #. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_etd_document__xsd
-msgid "XSD File"
+#: code:addons/connector_acp/models/etd_mixin.py:96
+#, python-format
+msgid "XML Malformed Error: %s"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "ZIP"
 msgstr ""
 
 #. module: connector_acp
