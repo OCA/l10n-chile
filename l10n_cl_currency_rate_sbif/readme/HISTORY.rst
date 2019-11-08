@@ -1,7 +1,7 @@
 Version 1.0
------------
+~~~~~~~~~~~
 
-Enhancementes of this version
+Enhancements of this version
 
 1. Ensure that base currency is set to CLP
 2. Adds UF y UTM as currencies. In case they have been deleted, it also adds USD and EUR
