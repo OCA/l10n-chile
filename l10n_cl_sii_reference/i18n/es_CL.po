@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2019-11-08 16:39+0000\n"
+"Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: none\n"
 "Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__active
@@ -22,39 +24,39 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_optional_type__active
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_optional_type__apply_rule
 msgid "Apply rule"
-msgstr ""
+msgstr "Aplicar regla"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.reference,code:0
 msgid "Cancel the referenced document"
-msgstr ""
+msgstr "Cancelar el documento referenciado"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_type__code
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__code
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__code
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__code_template
 msgid "Code Template for Journal"
-msgstr ""
+msgstr "Plantilla de Código para Diario"
 
 #. module: l10n_cl_sii_reference
 #: sql_constraint:sii.responsibility:0
 msgid "Code must be unique!"
-msgstr ""
+msgstr "¡Código debe ser único!"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_action_sii_concept_type
 msgid "Concept Types"
-msgstr ""
+msgstr "Tipo de Conceptos"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__create_uid
@@ -65,7 +67,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__create_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__create_date
@@ -76,12 +78,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__create_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Credit Notes"
-msgstr ""
+msgstr "Notas de Crédito"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__dte
@@ -91,7 +93,7 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Debit Notes"
-msgstr ""
+msgstr "Notas de Débito"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__display_name
@@ -102,47 +104,47 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__display_name
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a Mostrar"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_action_sii_document_class
 msgid "Document Classes"
-msgstr ""
+msgstr "Clases de Documento"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__date
 msgid "Document Date"
-msgstr ""
+msgstr "Fecha de Documento"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__document_letter_id
 msgid "Document Letter"
-msgstr ""
+msgstr "Letra de Documento"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_action_sii_document_letter
 msgid "Document Letters"
-msgstr ""
+msgstr "Letras de Documento"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__document_type
 msgid "Document Type"
-msgstr ""
+msgstr "Tipo de Documento"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_action_sii_document_type
 msgid "Document Types"
-msgstr ""
+msgstr "Tipos de Documentos"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.reference,code:0
 msgid "Fix the amount of the referenced document"
-msgstr ""
+msgstr "Arreglar el monto del documento referenciado"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.reference,code:0
 msgid "Fix the text of the referenced document"
-msgstr ""
+msgstr "Arreglar el texto del documento referenciado"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__id
@@ -158,12 +160,12 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_letter__vat_discriminated
 msgid "If True, the VAT will be discriminated on invoice report."
-msgstr ""
+msgstr "Si Verdadero, el impuesto será discriminado en el reporte de facturas."
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Invoices"
-msgstr ""
+msgstr "Facturas"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__issued_letter_ids
@@ -173,7 +175,7 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_letter__issuer_ids
 msgid "Issuers"
-msgstr ""
+msgstr "Emisores"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_class__document_type
@@ -190,7 +192,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference____last_update
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificación en"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__write_uid
@@ -201,7 +203,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__write_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Útima Actualización por"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__write_date
@@ -212,12 +214,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__write_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Útima Actualización en"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__motive
 msgid "Motive"
-msgstr ""
+msgstr "Motivo"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__name
@@ -227,38 +229,38 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_optional_type__name
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__name
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: l10n_cl_sii_reference
 #: sql_constraint:sii.document.letter:0
 #: sql_constraint:sii.responsibility:0
 msgid "Name must be unique!"
-msgstr ""
+msgstr "¡Nombre debe ser único!"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__report_name
 msgid "Name on Reports"
-msgstr ""
+msgstr "Nombre en Reportes"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_class__report_name
 msgid "Name that will be printed in reports, for example CREDIT NOTE"
-msgstr ""
+msgstr "Nombre que será impreso en reportes, por ejemplo NOTA DE CRÉDITO"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__name
 msgid "Origin"
-msgstr ""
+msgstr "Origen"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Other Documents"
-msgstr ""
+msgstr "Otros Documentos"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__prefix
 msgid "Prefix"
-msgstr ""
+msgstr "Prefijo"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_class__prefix
@@ -269,33 +271,33 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__product_types
 msgid "Product Types"
-msgstr ""
+msgstr "Tipos de Productos"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Purchase Invoices"
-msgstr ""
+msgstr "Facturas de Compra"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__received_letter_ids
 msgid "Received Letters"
-msgstr ""
+msgstr "Letras Recibidas"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_letter__receptor_ids
 msgid "Receptors"
-msgstr ""
+msgstr "Receptores"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_config_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_config_sii_reference_ref
 msgid "References"
-msgstr ""
+msgstr "Referencias"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.ui.menu,name:l10n_cl_sii_reference.menu_action_sii_responsibility
 msgid "Responsibilities"
-msgstr ""
+msgstr "Responsabilidades"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__sii_code
@@ -303,109 +305,109 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_type__sii_code
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_optional_type__sii_code
 msgid "SII Code"
-msgstr ""
+msgstr "Código SII"
 
 #. module: l10n_cl_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_concept_type_form
 msgid "SII Concept Type"
-msgstr ""
+msgstr "Tipo de Concepto SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_concept_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_concept_type_tree
 msgid "SII Concept Types"
-msgstr ""
+msgstr "Tipos de Conceptos SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_document_class
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__class_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_class_form
 msgid "SII Document Class"
-msgstr ""
+msgstr "Clase de Documentos SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_document_class
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_letter__class_ids
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_class_tree
 msgid "SII Document Classes"
-msgstr ""
+msgstr "Clases de Documentos SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_document_letter
 msgid "SII Document Letter"
-msgstr ""
+msgstr "Letra de Documento SII"
 
 #. module: l10n_cl_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_letter_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_letter_tree
 msgid "SII Document class"
-msgstr ""
+msgstr "Clase de Documento SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_document_letter
 msgid "SII Document letter"
-msgstr ""
+msgstr "Letra de Documento SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_document_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_type_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_document_type_tree
 msgid "SII Document type"
-msgstr ""
+msgstr "Tipo de Documento SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_optional_type
 msgid "SII Optional Types"
-msgstr ""
+msgstr "Tipos Opcionales SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_optional_type
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_optional_type_form
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_optional_type_tree
 msgid "SII Optional type"
-msgstr ""
+msgstr "Tipo Opcional SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_reference_form
 msgid "SII Reference"
-msgstr ""
+msgstr "Referencia SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_reference_tree
 msgid "SII References"
-msgstr ""
+msgstr "Referencias SII"
 
 #. module: l10n_cl_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_responsibility_tree
 msgid "SII Responsibilities"
-msgstr ""
+msgstr "Responsabilidades SII"
 
 #. module: l10n_cl_sii_reference
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference.view_sii_responsibility_form
 msgid "SII Responsibility"
-msgstr ""
+msgstr "Responsabilidad SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_responsibility
 msgid "SII VAT Responsibility"
-msgstr ""
+msgstr "Responsabilidad Tributaria SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_concept_type
 msgid "SII concept types"
-msgstr ""
+msgstr "Tipos de Concepto SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model,name:l10n_cl_sii_reference.model_sii_document_type
 msgid "SII document types"
-msgstr ""
+msgstr "Tipos de Documento SII"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.actions.act_window,name:l10n_cl_sii_reference.act_sii_responsibility
 msgid "SII responsibility"
-msgstr ""
+msgstr "Responsabilidad SII"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
@@ -415,7 +417,7 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__sii_code
 msgid "Tax Payer SII Code"
-msgstr ""
+msgstr "Código de Pagador de Impuesto"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_concept_type__product_types
@@ -425,12 +427,12 @@ msgstr ""
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__use_prefix
 msgid "Use the prefix in the reference"
-msgstr ""
+msgstr "Use el prefijo en la referencia"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_letter__vat_discriminated
 msgid "VAT Discriminated on Invoices?"
-msgstr ""
+msgstr "¿Impuesto Discriminado en Facturas?"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_optional_type__value_computation
@@ -441,7 +443,7 @@ msgstr ""
 #: code:addons/l10n_cl_sii_reference/models/sii_concept_type.py:29
 #, python-format
 msgid "Warning!"
-msgstr ""
+msgstr "¡Advertencia!"
 
 #. module: l10n_cl_sii_reference
 #: code:addons/l10n_cl_sii_reference/models/sii_concept_type.py:30
