@@ -85,6 +85,7 @@ Changelog
 =========
 
 Version 1.0
+~~~~~~~~~~~
 
 Enhancements of this version
 
