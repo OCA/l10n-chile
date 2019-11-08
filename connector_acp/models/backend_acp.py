@@ -31,10 +31,26 @@ class BackendAcp(models.Model):
         self.status = 'confirmed'
         return True
 
-    def send(self, xml):
-        # Send the XML of the document to the Third Party for signature
-        return True
+    def send(self, files):
+        """
+        Send the files to the backend
+        :param files: List of dictionary with 'name' for the filename and
+        'content' for the content
+        :return: A dictionary with:
+         - a boolean 'success': True if the transfer was successful,
+          False otherwise
+         - a string 'message': Message to be displayed to the end user
+         - a string 'ref': Reference of the transfer to request the status
+        """
+        return {'success': True, 'message': "OK", 'ref': '1'}
 
-    def check_status(self):
-        # Check the status of the document with the Third Party
-        return True
+    def check_status(self, ref):
+        """
+        Check the status of the file processing with the backend
+        :param ref: String to identify the files you want to get the status
+        :return: A dictionary with:
+         - a boolean 'success': True if the status is completed,
+                                False otherwise
+         - a string 'message': Message to be displayed to the end user
+        """
+        return {'success': True, 'message': "OK"}

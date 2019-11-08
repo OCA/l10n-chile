@@ -24,6 +24,7 @@
     "data": [
         "security/ir.model.access.csv",
         "data/etd_document.xml",
+        "data/etd_document_file.xml",
         "views/account_invoice.xml",
     ],
     "application": True,

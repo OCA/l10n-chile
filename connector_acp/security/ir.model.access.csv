@@ -6,3 +6,5 @@ access_backend_acp_user,access_backend_acp,model_backend_acp,base.group_user,1,0
 access_backend_acp_manager,access_backend_acp,model_backend_acp,connector.group_connector_manager,1,1,1,1
 access_etd_document_user,access_etd_document,model_etd_document,base.group_user,1,0,0,0
 access_etd_document_manager,access_etd_document,model_etd_document,base.group_erp_manager,1,1,1,1
+access_etd_document_file_user,access_etd_document_file,model_etd_document_file,base.group_user,1,0,0,0
+access_etd_document_file_manager,access_etd_document_file,model_etd_document_file,base.group_erp_manager,1,1,1,1

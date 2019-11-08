@@ -10,6 +10,10 @@ class AccountInvoice(models.Model):
     _name = 'account.invoice'
     _inherit = ['account.invoice', 'etd.mixin']
 
+    def _compute_class_id_domain(self):
+        return [('document_type', 'in', ('invoice', 'invoice_in',
+                                         'debit_note', 'credit_note'))]
+
     def get_etd_document(self):
         res = super().get_etd_document()
         res = res.filtered(

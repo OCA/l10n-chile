@@ -9,6 +9,7 @@ from . import (
     etd_mixin,
     backend_acp,
     etd_document,
+    etd_document_file,
     res_company,
     res_country,
 )

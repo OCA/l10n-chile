@@ -14,10 +14,10 @@ Electronic Invoicing for Chile
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fl10n--chile-lightgray.png?logo=github
-    :target: https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_electronic_invoicing
+    :target: https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_sii_folio
     :alt: OCA/l10n-chile
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/l10n-chile-12-0/l10n-chile-12-0-l10n_cl_electronic_invoicing
+    :target: https://translation.odoo-community.org/projects/l10n-chile-12-0/l10n-chile-12-0-l10n_cl_sii_folio
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/236/12.0
@@ -25,22 +25,8 @@ Electronic Invoicing for Chile
 
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
-* Factura Electrónica (FAC 33, FNA 34): Ok envío, Ok muestra impresa, Ok Certificación
-* Nota de Crédito Electrónica: Ok envío, Ok muestra impresa, Ok Certificación
-* Nota de Débito Electrónica: Ok envío, Ok muestra impresa, Ok Certificación
-* Recepción XML Intercambio: Ok recepción, Ok respuesta mercaderías, Ok respuesta Validación Comercial, Ok Envío Recepción al SII, Ok Certificación
-* Libro de Compra Venta: Ok envío al SII, Ok Certificación (Básico y Exentos)
-* Consumo de Folios: Validación OK, Envío OK, Certificación OK
-* Boleta Electrónica por BO (39, 41): Validación Ok, Muestra impresa No probado aún, Información Pública no adaptada aún
-* Libro Boletas Electrónica: Validación Ok, Creación XML OK
-* Boleta Electrónica por POS (39, 41): Validación Ok, Muestras Impresas Ticket OK, Generación XML Ok, Visaulización Pública Ok, Certificación OK vía https://gitlab.com/dansanti/l10n_cl_dte_point_of_sale
-* Nota de Crédito Electrónica para Boletas (Solo por BO POS): Validación Ok, Generación XML Ok, Muestras Impresas Ticket OK, Certificación OK vía https://gitlab.com/dansanti/l10n_cl_dte_point_of_sale
-* Guía de Despacho Electrónica: Ok envío, Ok muestra impresa, Ok Certificación, vía https://gitlab.com/dansanti/l10n_cl_stock_picking
-* Libro Guía Despacho: Ok envío, Ok Muestras impresas, Ok Certificación, vía https://gitlab.com/dansanti/l10n_cl_stock_picking
-* Factoring (Cesión de Créditos): Ok Envío, Ok Certificación, vía https://gitlab.com/dansanti/l10n_cl_dte_factoring
-* Factura de Exportación Electrónica (110 con sus NC 111 y ND 112): No Portado, No Probado vía https://gitlab.com/dansanti/l10n_cl_dte_exportacion
-* Liquidación de Facturas: No desarrollada
-* Factura de Compra Electrónica (46): No desarrollada
+This module allows you to upload CAF files from (https://sii.cl) and keep
+track of your folios.
 
 **Table of contents**
 
@@ -50,19 +36,9 @@ Electronic Invoicing for Chile
 Usage
 =====
 
-
-Known issues / Roadmap
-======================
-
-* Include unit tests
-* Split the module and clean up the source code
-
-Changelog
-=========
-
-* Se tomaron los inicios de github.com/odoo-chile/l10n_cl_dte y otros módulos de odoo-chile y la continuación de estos en github.com/dansanti/l10n_cl_dte.
-* Este repositorio se crea con la finalidad de unificar módulos y facilitar la mantención de la facturación electrónica, que se estaba muy complejo
-* Obtener módulo de exportación xlsx "Base report xlsx" desde https://github.com/OCA/reporting-engine
+* Go to Settings > User & Companies > Companies
+* Create or select a company
+* Go to the Activities tab to set them
 
 Bug Tracker
 ===========
@@ -70,7 +46,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/l10n-chile/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/l10n-chile/issues/new?body=module:%20l10n_cl_electronic_invoicing%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/l10n-chile/issues/new?body=module:%20l10n_cl_sii_folio%0Aversion:%2012.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -83,6 +59,7 @@ Authors
 * Daniel Santibáñez Polanco
 * Cooperativa OdooCoop
 * Konos
+* Open Source Integrators
 
 Contributors
 ~~~~~~~~~~~~
@@ -91,6 +68,9 @@ Contributors
 * Nelson Ramirez
 * Carlos Toledo
 * Carlos Lopez
+* Open Source Integrators <https://www.opensourceintegrators.com>
+
+  * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -113,6 +93,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-nelsonramirezs| 
 
-This module is part of the `OCA/l10n-chile <https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_electronic_invoicing>`_ project on GitHub.
+This module is part of the `OCA/l10n-chile <https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_sii_folio>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
