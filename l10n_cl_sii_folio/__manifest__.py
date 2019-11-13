@@ -8,13 +8,20 @@
     "summary": "Sign your documents and send them to SII.",
     "version": "12.0.1.0.0",
     "category": "Localization/Chile",
-    "author": "Daniel Santibáñez Polanco, "
+    "author": "Daniel Blanco, "
+              "Blanco Martín & Asociados, "
+              "Daniel Santibáñez Polanco, "
               "Cooperativa OdooCoop, "
               "Konos, "
               "Open Source Integrators, "
               "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",
     "license": "AGPL-3",
+    'external_dependencies': {
+        'python': [
+            'xmltodict',
+        ],
+    },
     "depends": [
         "l10n_cl_sii_reference_account",
     ],
