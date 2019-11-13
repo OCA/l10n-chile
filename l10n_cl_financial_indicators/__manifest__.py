@@ -7,7 +7,7 @@
     "license": "LGPL-3",
     "author": "Blanco Martin & Asociados, Odoo Community Association (OCA)",
     "website": "http://blancomartin.cl",
-    "depends": ["base"],
+    "depends": ["base", "decimal_precision"],
     "data": [
         "data/decimal.precision.xml",
         "data/ir_cron.xml",
