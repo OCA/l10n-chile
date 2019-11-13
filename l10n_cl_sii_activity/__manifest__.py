@@ -8,7 +8,9 @@
     "summary": "Set the SII Activity on Partners",
     "version": "12.0.1.0.0",
     "category": "Localization/Chile",
-    "author": "Daniel Santibáñez Polanco, "
+    "author": "Daniel Blanco, "
+              "Blanco Martín & Asociados, "
+              "Daniel Santibáñez Polanco, "
               "Cooperativa OdooCoop, "
               "Konos, "
               "Open Source Integrators, "
