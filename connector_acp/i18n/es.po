@@ -1,0 +1,620 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* connector_acp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:167
+#, python-format
+msgid "%s Status: <b>%s</b>"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__grouped
+msgid "1 file for multiple documents"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.actions.act_window,name:connector_acp.action_backend_acp
+msgid "ACP Backends"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.ui.menu,name:connector_acp.menu_backend_acp
+msgid "ACPs"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__active
+msgid "Active"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__save
+msgid "Attach the generated file to the record"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__backend_acp_id
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
+#: selection:res.company,signer:0
+msgid "Authorized Certification Provider"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_tree
+msgid "Authorized Certification Providers"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__authorized_users_ids
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Authorized Users"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "BZIP2"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_backend_acp
+msgid "Backend of Authorized Certification Providers"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_country__backend_acp_id
+msgid "Backend to the Tax Authority"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.ui.menu,name:connector_acp.menu_backend
+msgid "Backends"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__cert_id
+msgid "Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Certificate Info"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Certificate Key"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_backend_acp_form
+msgid "Check"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Check Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Clean Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_document__compress
+msgid "Compress the file(s) before sending it"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__compress
+msgid "Compression"
+msgstr ""
+
+#. module: connector_acp
+#: selection:backend.acp,status:0
+msgid "Confirmed"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_res_country
+msgid "Country"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__create_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__create_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__digest_value
+msgid "Digest Value"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_mixin__display_name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__document_id
+msgid "Document"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__etd_ids
+msgid "Documents To Sign"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_certificate__status
+msgid "Draft: means it has not been checked yet.\n"
+"You must press the\"check\" button."
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_signature
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_signature_form
+msgid "ETD Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_signature_tree
+msgid "ETD Signatures"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:173
+#, python-format
+msgid "ETD has been sent to %s but failed with the following message: <b>%s</b>"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_res_company_etd_form
+msgid "Electronic Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_mixin
+msgid "Electronic Tax Document Mixin"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_document
+msgid "Electronic Tax Documents To Sign"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_certificate.py:68
+#, python-format
+msgid "Error when opening the signature. You may have entered the wrong key or the file is not compatible."
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.certificate,status:0
+msgid "Expired"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__exponent
+msgid "Exponent"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__filename
+msgid "File Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__file_type
+msgid "File Type"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__file_ids
+msgid "Files"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "General Info"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert_hash
+msgid "Hash"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__host
+msgid "Host"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_mixin__id
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__id
+msgid "ID"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,model:0
+msgid "Invoice"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Issuer"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__issuer_common_name
+msgid "Issuer Common Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__issuer_country
+msgid "Issuer Country"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__issuer_email_address
+msgid "Issuer Email Address"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__issuer_organization
+msgid "Issuer Organization"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__issuer_serial_number
+msgid "Issuer Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_certificate__final_date
+msgid "Last Control Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__final_date
+msgid "Last Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_mixin____last_update
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__write_uid
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__write_date
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__model_id
+msgid "Model"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__modulus
+msgid "Modulus"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__name
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__name
+msgid "Name"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "None"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__not_after
+msgid "Not After"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_certificate__not_after
+msgid "Not After this Date"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__not_before
+msgid "Not Before"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_certificate__not_before
+msgid "Not Before this Date"
+msgstr ""
+
+#. module: connector_acp
+#: selection:res.company,signer:0
+msgid "Odoo"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__model
+msgid "Odoo Model"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__password
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__dec_pass
+msgid "Password"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,model:0
+msgid "Picking"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_res_company__signer
+msgid "Please note that the signing authority is in charge of\n"
+"        sending the document for validation."
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__port
+msgid "Port"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__priv_key
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Private Key"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__private_key_bits
+msgid "Private Key Bits"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__private_key_check
+msgid "Private Key Check"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__private_key_type
+msgid "Private Key Type"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_certificate
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__cert_id
+msgid "SSL Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_mixin__signature_id
+msgid "SSL Signature"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_mixin__signature_id
+msgid "SSL Signature of the Document"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert_serial_number
+msgid "Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert_signature_algor
+msgid "Signature Algorithm"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__key_file
+msgid "Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_signature__signature_value
+msgid "Signature Value"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__status
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__status
+msgid "Status"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Subject"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__subject_common_name
+msgid "Subject Common Name"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__subject_c
+msgid "Subject Country"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__subject_email_address
+msgid "Subject Email Address"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__subject_serial_number
+msgid "Subject Serial Number"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__subject_title
+msgid "Subject Title"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "TAR GZ"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document.file,file_type:0
+msgid "TXT"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__template
+msgid "Template File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model,name:connector_acp.model_etd_document_file
+msgid "Template for Electronic Tax Documents To Sign"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:154
+#, python-format
+msgid "The backend is not confirmed. Please check the connection to the backend first."
+msgstr ""
+
+#. module: connector_acp
+#: selection:backend.acp,status:0
+msgid "Unconfirmed"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.certificate,status:0
+msgid "Unverified"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_certificate__key_file
+msgid "Upload the Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__user
+msgid "User"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "Users authorized to use this certificate"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.certificate,status:0
+msgid "Valid"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__validator
+msgid "Validator File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__cert_version
+msgid "Version"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_res_company__signer
+msgid "Who is signing?"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document.file,file_type:0
+msgid "XML"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:96
+#, python-format
+msgid "XML Malformed Error: %s"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,compress:0
+msgid "ZIP"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
+msgid "etd Certificate"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_tree
+msgid "etd Certificates"
+msgstr ""
