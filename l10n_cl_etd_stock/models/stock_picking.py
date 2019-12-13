@@ -21,3 +21,19 @@ class StockPicking(models.Model):
             if sign and picking.location_dest_id.usage == 'customer':
                 self.with_delay().document_sign()
         return res
+
+    @api.model
+    def create(self, vals):
+        partner_obj = self.env['res.partner']
+        partner = partner_obj
+        sii_obj = self.env['sii.document.class']
+        sii_document = sii_obj.search(
+            [('name', 'ilike', 'Guía de Despacho Electrónica'),
+             ('prefix', '=', 'GDE'),
+             ('code', '=', 52),
+             ('document_type', '=', 'stock_picking')], limit=1)
+        if vals.get('partner_id'):
+            partner = partner_obj.browse(vals.get('partner_id'))
+        if partner and partner.invoice_policy == 'eguide':
+            vals.update({'class_id': sii_document and sii_document.id})
+        return super(StockPicking, self).create(vals)

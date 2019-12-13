@@ -19,6 +19,7 @@
         "l10n_cl_etd",
         "delivery",
         "stock",
+        "l10n_cl_invoicing_policy",
     ],
     "data": [
         "data/etd_document.xml",
