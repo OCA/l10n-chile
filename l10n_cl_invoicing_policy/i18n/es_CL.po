@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e-20191022\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-01 15:06+0000\n"
-"PO-Revision-Date: 2019-11-01 12:12-0300\n"
-"Last-Translator: Nelson Ramírez <info@konos.cl>\n"
+"PO-Revision-Date: 2019-12-14 20:05+0000\n"
+"Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
-"Language: es\n"
+"Language: es_CL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #. module: l10n_cl_invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
@@ -59,19 +59,19 @@ msgstr "Factura"
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid "Invoicing Policy"
-msgstr "Política de Facturación"
+msgstr "Documento de Entrega"
 
 #. module: l10n_cl_invoicing_policy
 #: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:35
 #, python-format
 msgid "The invoicing policy Ticket only applies to individuals."
-msgstr "La política de facturación Boleta solo se aplica a persona natural."
+msgstr "El documento de entrega Boleta solo se aplica a persona natural."
 
 #. module: l10n_cl_invoicing_policy
 #: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:39
 #, python-format
 msgid "The selected invoicing policy only applies to companies."
-msgstr "La política de facturación seleccionada solo se aplica a empresas."
+msgstr "El documento de entrega seleccionado solo se aplica a empresas."
 
 #. module: l10n_cl_invoicing_policy
 #: selection:res.partner,invoicing_policy:0
