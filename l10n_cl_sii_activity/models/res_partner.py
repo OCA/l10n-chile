@@ -11,4 +11,5 @@ class ResPartner(models.Model):
 
     sii_activity_id = fields.Many2one("sii.activity", string="SII Activity")
 
-    activity_description = fields.Many2one('sii.activity.description', string='Activity Description', ondelete="restrict")
+    activity_description = fields.Many2one(
+        'sii.activity.description', string='Activity Description', ondelete="restrict")
