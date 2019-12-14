@@ -12,3 +12,4 @@ class PartnerActivities(models.Model):
     active = fields.Boolean(
         'Active', help="Allows you to hide the activity without removing it.",
         default=True)
+    

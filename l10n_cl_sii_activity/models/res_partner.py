@@ -13,3 +13,4 @@ class ResPartner(models.Model):
 
     activity_description = fields.Many2one(
         'sii.activity.description', string='Activity Description', ondelete="restrict")
+    
