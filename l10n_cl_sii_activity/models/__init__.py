@@ -6,4 +6,6 @@
 from . import (
     sii_activity,
     res_partner,
+    res_company,
+    sii_activity_description,
 )

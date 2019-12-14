@@ -10,3 +10,5 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     sii_activity_id = fields.Many2one("sii.activity", string="SII Activity")
+
+    activity_description = fields.Many2one('sii.activity.description', string='Activity Description', ondelete="restrict")
