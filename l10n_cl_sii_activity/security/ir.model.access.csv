@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sii_activity_user,sii.activity.user,model_sii_activity,,1,0,0,0
 edit_sii_activity_manager,sii.activity.manager,model_sii_activity,,1,1,1,1
+access_sii_activity_description_user,sii.activity.description.user,model_sii_activity_description,,1,0,1,0
+edit_sii_activity_description_manager,sii.activity.description.manager,model_sii_activity_description,,1,1,1,1
