@@ -6,10 +6,10 @@
 from odoo import fields, models
 
 
-class ResPartner(models.Model):
-    _inherit = "res.partner"
-
-    sii_activity_id = fields.Many2one("sii.activity", string="SII Activity")
+class CompanyTurns(models.Model):
+    _inherit = 'res.company'
 
     activity_description = fields.Many2one(
-        'sii.activity.description', string='Activity Description', ondelete="restrict")
+        string='Activity Description',
+        related='partner_id.activity_description',
+        relation='sii.activity.description')
