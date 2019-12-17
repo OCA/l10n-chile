@@ -67,44 +67,48 @@ class EtdMixin(models.AbstractModel):
         related template and
         :return: A dictionary with the filename and the content
         """
-        self.set_jinja_env()
-        # Get the template
-        template = self._env.from_string(base64.b64decode(file.template).
-                                         decode('utf-8'))
-        # Additional keywords used in the template
-        kwargs = self.prepare_keywords()
-        kwargs.update({
-            'o': self,
-            'now': fields.datetime.now(),
-            'today': fields.datetime.today()})
-        filename = self.get_etd_filename(file)
-        # Render the file
-        res_file = self.File_details(filename, template.render(kwargs))
-        res_content = str.encode(res_file.filecontent)
-        if file.validator:
-            # Check the rendered file against the validator
-            validator = base64.b64decode(file.validator).decode('utf-8')
-            if file.file_type == "xml":
-                try:
-                    xmlschema = etree.XMLSchema(validator)
-                    xml_doc = etree.fromstring(res_content)
-                    result = xmlschema.validate(xml_doc)
-                    if not result:
-                        xmlschema.assert_(xml_doc)
-                except AssertionError as e:
-                    _logger.warning(etree.tostring(xml_doc))
-                    raise UserError(_("XML Malformed Error: %s") % e.args)
-        # Attach file to the record
-        if file.save:
-            self.env['ir.attachment'].create({
-                'name': res_file.filename,
-                'type': 'binary',
-                'datas':
-                    base64.b64encode(res_file.filecontent.encode("utf-8")),
-                'datas_fname': res_file.filename,
-                'res_model': self._name,
-                'res_id': self.id})
-        return {'name': filename, 'content': res_content}
+        file_list = []
+        for rec in self:
+            rec.set_jinja_env()
+
+            # Get the template
+            template = rec._env.from_string(base64.b64decode(file.template).
+                                             decode('utf-8'))
+            # Additional keywords used in the template
+            kwargs = rec.prepare_keywords()
+            kwargs.update({
+                'o': rec,
+                'now': fields.datetime.now(),
+                'today': fields.datetime.today()})
+            filename = rec.get_etd_filename(file)
+            # Render the file
+            res_file = rec.File_details(filename, template.render(kwargs))
+            res_content = str.encode(res_file.filecontent)
+            if file.validator:
+                # Check the rendered file against the validator
+                validator = base64.b64decode(file.validator).decode('utf-8')
+                if file.file_type == "xml":
+                    try:
+                        xmlschema = etree.XMLSchema(validator)
+                        xml_doc = etree.fromstring(res_content)
+                        result = xmlschema.validate(xml_doc)
+                        if not result:
+                            xmlschema.assert_(xml_doc)
+                    except AssertionError as e:
+                        _logger.warning(etree.tostring(xml_doc))
+                        raise UserError(_("XML Malformed Error: %s") % e.args)
+            # Attach file to the record
+            if file.save:
+                self.env['ir.attachment'].create({
+                    'name': res_file.filename,
+                    'type': 'binary',
+                    'datas':
+                        base64.b64encode(res_file.filecontent.encode("utf-8")),
+                    'datas_fname': res_file.filename,
+                    'res_model': rec._name,
+                    'res_id': rec.id})
+            file_list.append({'name': filename, 'content': res_content})
+        return ", ".join( repr(e) for e in file_list )
 
     def build_files(self):
         """

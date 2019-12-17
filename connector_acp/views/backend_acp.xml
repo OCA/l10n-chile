@@ -35,6 +35,7 @@
                         <group id="left">
                             <field name="host"/>
                             <field name="port"/>
+                            <field name="type_of_connection"/>
                         </group>
                         <group id="right">
                             <field name="user"/>
