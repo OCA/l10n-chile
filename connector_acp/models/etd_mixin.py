@@ -31,6 +31,7 @@ class EtdMixin(models.AbstractModel):
     @api.model
     def set_jinja_env(self):
         """Set the Jinja2 environment.
+
         The environment will helps the system to find the templates to render.
         :return: jinja2.Environment instance.
         """
@@ -43,7 +44,8 @@ class EtdMixin(models.AbstractModel):
 
     def get_etd_document(self):
         """
-        Return one etd.document to generate the XML file of the record
+        Return one etd.document to generate the XML file of the record.
+
         :return: The etd.document that needs be used to generate the
          XML file
         """
@@ -52,19 +54,24 @@ class EtdMixin(models.AbstractModel):
         return res
 
     def prepare_keywords(self):
-        """
-        Returns a dictionary of keywords used in the template
+        """Return a dictionary of keywords used in the template.
+
         :return: Dictionary of keywords used in the template
         """
-        return {}
+        return {
+            'o': self,
+            'now': fields.datetime.now(),
+            'today': fields.datetime.today()
+        }
 
     def get_etd_filename(self, file):
         return '%s.%s' % (self.name or self.number, file.file_type)
 
     def build_file(self, file):
-        """
+        """Build File.
+
         Build the file of the record using the company documents and the
-        related template and
+        related template.
         :return: A dictionary with the filename and the content
         """
         file_list = []
@@ -72,23 +79,24 @@ class EtdMixin(models.AbstractModel):
             rec.set_jinja_env()
 
             # Get the template
-            template = rec._env.from_string(base64.b64decode(file.template).
-                                             decode('utf-8'))
+            template = rec._env.from_string(
+                base64.b64decode(file.template).decode('utf-8'))
             # Additional keywords used in the template
             kwargs = rec.prepare_keywords()
-            kwargs.update({
-                'o': rec,
-                'now': fields.datetime.now(),
-                'today': fields.datetime.today()})
             filename = rec.get_etd_filename(file)
             # Render the file
             res_file = rec.File_details(filename, template.render(kwargs))
             res_content = str.encode(res_file.filecontent)
             if file.validator:
                 # Check the rendered file against the validator
-                validator = base64.b64decode(file.validator).decode('utf-8')
+                # validator = base64.b64decode(file.validator).decode('utf-8')
+                validator = base64.b64decode(file.validator)
+                # validator = file.validator
                 if file.file_type == "xml":
                     try:
+                        # validator1 = etree.fromstring(validator)
+
+                        # validator1 = etree.parse(validator)
                         xmlschema = etree.XMLSchema(validator)
                         xml_doc = etree.fromstring(res_content)
                         result = xmlschema.validate(xml_doc)
@@ -108,10 +116,11 @@ class EtdMixin(models.AbstractModel):
                     'res_model': rec._name,
                     'res_id': rec.id})
             file_list.append({'name': filename, 'content': res_content})
-        return ", ".join( repr(e) for e in file_list )
+        return ", ".join(repr(e) for e in file_list)
 
     def build_files(self):
-        """
+        """Build Files.
+
         Build the files and returns a dictionary with file name and string
         :return: Dictionary of file and string
         """
@@ -123,7 +132,8 @@ class EtdMixin(models.AbstractModel):
         return res
 
     def sign_files(self, files, certificate):
-        """
+        """Sign Files.
+
         Sign the file using the certificate
         Store the signature and link it to the record
         :param files: List of string
@@ -136,7 +146,8 @@ class EtdMixin(models.AbstractModel):
 
     @job
     def document_sign(self):
-        """
+        """Document Sign.
+
         Sign or get the document signed, attach the ETD to the record and log
          a message in the chatter with the status
         :param res_model: ir.model of the document to sign

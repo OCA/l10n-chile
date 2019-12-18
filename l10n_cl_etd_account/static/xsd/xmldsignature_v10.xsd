@@ -17,7 +17,7 @@
 Fecha ultima actualización : 10-03-05
 
 -->
-<ds:schema targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:xmldsig="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<ds:schema targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:xmldsig="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="https://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<ds:element name="Signature" type="xmldsig:SignatureType">
 		<ds:annotation>
 			<ds:documentation>Firma Digital sobre Documento</ds:documentation>

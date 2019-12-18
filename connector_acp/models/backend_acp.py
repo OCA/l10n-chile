@@ -19,11 +19,10 @@ class BackendAcp(models.Model):
     status = fields.Selection((('unconfirmed', 'Unconfirmed'),
                                ('confirmed', 'Confirmed')), string="Status",
                               default='unconfirmed')
-    type_of_connection = fields.Selection(
-        [('usb', 'USB'),
-         ('wifi', 'WIFI')],
+    connection_type = fields.Selection(
+        [('nd', 'Not defined')],
         string="Type of Connection",
-        default='usb')
+        default='nd')
 
     def action_confirm(self):
         """
