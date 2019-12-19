@@ -67,6 +67,12 @@ class EtdMixin(models.AbstractModel):
     def get_etd_filename(self, file):
         return '%s.%s' % (self.name or self.number, file.file_type)
 
+    def get_etd_directory(self, file, file_list, res_content):
+        filename = self.get_etd_filename(file)
+        for file_dict in file_list:
+            if filename in file_dict:
+                file_dict['content'] += res_content
+
     def build_file(self, file):
         """Build File.
 
@@ -75,6 +81,7 @@ class EtdMixin(models.AbstractModel):
         :return: A dictionary with the filename and the content
         """
         file_list = []
+        files = []
         for rec in self:
             rec.set_jinja_env()
 
@@ -87,16 +94,16 @@ class EtdMixin(models.AbstractModel):
             # Render the file
             res_file = rec.File_details(filename, template.render(kwargs))
             res_content = str.encode(res_file.filecontent)
+            if file.file_type == 'txt':
+                if filename in files:
+                    file.grouped = True
+                    rec.get_etd_directory(file, file_list, res_content)
+
             if file.validator:
                 # Check the rendered file against the validator
-                # validator = base64.b64decode(file.validator).decode('utf-8')
-                validator = base64.b64decode(file.validator)
-                # validator = file.validator
+                validator = base64.b64decode(file.validator).decode('utf-8')
                 if file.file_type == "xml":
                     try:
-                        # validator1 = etree.fromstring(validator)
-
-                        # validator1 = etree.parse(validator)
                         xmlschema = etree.XMLSchema(validator)
                         xml_doc = etree.fromstring(res_content)
                         result = xmlschema.validate(xml_doc)
@@ -118,15 +125,17 @@ class EtdMixin(models.AbstractModel):
             file_list.append({'name': filename, 'content': res_content})
         return ", ".join(repr(e) for e in file_list)
 
-    def build_files(self):
+    def build_files(self, files=None):
         """Build Files.
 
         Build the files and returns a dictionary with file name and string
         :return: Dictionary of file and string
         """
         # Get the document
+        if not files:
+            files = []
         etd = self.get_etd_document()
-        res = []
+        res = files
         for file in etd.file_ids:
             res.append(self.build_file(file))
         return res

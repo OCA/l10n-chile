@@ -20,4 +20,14 @@
         <field name="template" type="base64" file="l10n_cl_etd_account/static/xml/ticket.xml"/>
     </record>
 
+    <!-- Sample TXT file for Account Invoice -->
+    <record id="etd_txt_file_account_invoice" model="etd.document.file">
+        <field name="name">Invoice Text</field>
+        <field name="document_id" ref="l10n_cl_etd_account.etd_account_invoice"/>
+        <field name="file_type">txt</field>
+        <field name="grouped">False</field>
+        <field name="save">True</field>
+        <field name="template" type="base64" file="l10n_cl_etd_account/static/txt/sample.txt"/>
+    </record>
+
 </odoo>

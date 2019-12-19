@@ -27,6 +27,5 @@ class AccountInvoice(models.Model):
         sign = self._name in [x.model for x in self.company_id.etd_ids]
         for invoice in self:
             if sign and invoice.type in ('out_invoice', 'out_refund'):
-                self.with_context(test_queue_job_no_delay=True).\
-                    with_delay().document_sign()
+                self.with_delay().document_sign()
         return res

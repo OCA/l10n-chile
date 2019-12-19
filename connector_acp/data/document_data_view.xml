@@ -1,0 +1,13 @@
+<odoo>
+
+    <record id="etd_account_invoice" model="etd.document">
+        <field name="name">Invoice</field>
+        <field name="model">account.invoice</field>
+    </record>
+
+    <record id="etd_account_ticket" model="etd.document">
+        <field name="name">Ticket</field>
+        <field name="model">account.invoice</field>
+    </record>
+
+</odoo>
