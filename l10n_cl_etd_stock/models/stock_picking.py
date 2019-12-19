@@ -34,6 +34,6 @@ class StockPicking(models.Model):
              ('document_type', '=', 'stock_picking')], limit=1)
         if vals.get('partner_id'):
             partner = partner_obj.browse(vals.get('partner_id'))
-        if partner and partner.invoice_policy == 'eguide':
+        if partner and partner.invoicing_policy == 'eguide':
             vals.update({'class_id': sii_document and sii_document.id})
         return super(StockPicking, self).create(vals)
