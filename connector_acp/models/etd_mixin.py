@@ -68,12 +68,13 @@ class EtdMixin(models.AbstractModel):
         return '%s.%s' % (self.name or self.number, file.file_type)
 
     def get_etd_directory(self, file, file_list, res_content):
-        filename = self.get_etd_filename(file)
-        for file_dict in file_list:
-            if filename in file_dict:
-                file_dict['content'] += res_content
+        pass
+        # filename = self.get_etd_filename(file)
+        # for file_dict in file_list:
+        #     if filename in file_dict:
+        #         file_dict['content'] += res_content
 
-    def build_file(self, file):
+    def build_file(self, file, files=None):
         """Build File.
 
         Build the file of the record using the company documents and the
@@ -81,7 +82,7 @@ class EtdMixin(models.AbstractModel):
         :return: A dictionary with the filename and the content
         """
         file_list = []
-        files = []
+        files = files or []
         for rec in self:
             rec.set_jinja_env()
 
@@ -95,9 +96,10 @@ class EtdMixin(models.AbstractModel):
             res_file = rec.File_details(filename, template.render(kwargs))
             res_content = str.encode(res_file.filecontent)
             if file.file_type == 'txt':
-                if filename in files:
-                    file.grouped = True
-                    rec.get_etd_directory(file, file_list, res_content)
+                if file.grouped and filename in [f['name'] for f in files]:
+                    file_rec = [f for f in files if f['name'] == filename]
+                if file_rec:
+                    file_rec['content'] += res_content
 
             if file.validator:
                 # Check the rendered file against the validator
