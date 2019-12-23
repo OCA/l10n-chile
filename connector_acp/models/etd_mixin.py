@@ -31,6 +31,7 @@ class EtdMixin(models.AbstractModel):
     @api.model
     def set_jinja_env(self):
         """Set the Jinja2 environment.
+
         The environment will helps the system to find the templates to render.
         :return: jinja2.Environment instance.
         """
@@ -43,7 +44,8 @@ class EtdMixin(models.AbstractModel):
 
     def get_etd_document(self):
         """
-        Return one etd.document to generate the XML file of the record
+        Return one etd.document to generate the XML file of the record.
+
         :return: The etd.document that needs be used to generate the
          XML file
         """
@@ -52,74 +54,93 @@ class EtdMixin(models.AbstractModel):
         return res
 
     def prepare_keywords(self):
-        """
-        Returns a dictionary of keywords used in the template
+        """Return a dictionary of keywords used in the template.
+
         :return: Dictionary of keywords used in the template
         """
-        return {}
+        return {
+            'o': self,
+            'now': fields.datetime.now(),
+            'today': fields.datetime.today()
+        }
 
     def get_etd_filename(self, file):
         return '%s.%s' % (self.name or self.number, file.file_type)
 
-    def build_file(self, file):
-        """
+    def get_etd_directory(self, file, file_list, res_content):
+        pass
+
+    def build_file(self, file, files=None):
+        """Build File.
+
         Build the file of the record using the company documents and the
-        related template and
+        related template.
         :return: A dictionary with the filename and the content
         """
-        self.set_jinja_env()
-        # Get the template
-        template = self._env.from_string(base64.b64decode(file.template).
-                                         decode('utf-8'))
-        # Additional keywords used in the template
-        kwargs = self.prepare_keywords()
-        kwargs.update({
-            'o': self,
-            'now': fields.datetime.now(),
-            'today': fields.datetime.today()})
-        filename = self.get_etd_filename(file)
-        # Render the file
-        res_file = self.File_details(filename, template.render(kwargs))
-        res_content = str.encode(res_file.filecontent)
-        if file.validator:
-            # Check the rendered file against the validator
-            validator = base64.b64decode(file.validator).decode('utf-8')
-            if file.file_type == "xml":
-                try:
-                    xmlschema = etree.XMLSchema(validator)
-                    xml_doc = etree.fromstring(res_content)
-                    result = xmlschema.validate(xml_doc)
-                    if not result:
-                        xmlschema.assert_(xml_doc)
-                except AssertionError as e:
-                    _logger.warning(etree.tostring(xml_doc))
-                    raise UserError(_("XML Malformed Error: %s") % e.args)
-        # Attach file to the record
-        if file.save:
-            self.env['ir.attachment'].create({
-                'name': res_file.filename,
-                'type': 'binary',
-                'datas':
-                    base64.b64encode(res_file.filecontent.encode("utf-8")),
-                'datas_fname': res_file.filename,
-                'res_model': self._name,
-                'res_id': self.id})
-        return {'name': filename, 'content': res_content}
+        file_list = []
+        files = files or []
+        for rec in self:
+            rec.set_jinja_env()
 
-    def build_files(self):
-        """
+            # Get the template
+            template = rec._env.from_string(
+                base64.b64decode(file.template).decode('utf-8'))
+            # Additional keywords used in the template
+            kwargs = rec.prepare_keywords()
+            filename = rec.get_etd_filename(file)
+            # Render the file
+            res_file = rec.File_details(filename, template.render(kwargs))
+            res_content = str.encode(res_file.filecontent)
+            if file.file_type == 'txt':
+                if file.grouped and filename in [f['name'] for f in files]:
+                    file_rec = [f for f in files if f['name'] == filename]
+                if file_rec:
+                    file_rec['content'] += res_content
+
+            if file.validator:
+                # Check the rendered file against the validator
+                validator = base64.b64decode(file.validator).decode('utf-8')
+                if file.file_type == "xml":
+                    try:
+                        xmlschema = etree.XMLSchema(validator)
+                        xml_doc = etree.fromstring(res_content)
+                        result = xmlschema.validate(xml_doc)
+                        if not result:
+                            xmlschema.assert_(xml_doc)
+                    except AssertionError as e:
+                        _logger.warning(etree.tostring(xml_doc))
+                        raise UserError(_("XML Malformed Error: %s") % e.args)
+            # Attach file to the record
+            if file.save:
+                self.env['ir.attachment'].create({
+                    'name': res_file.filename,
+                    'type': 'binary',
+                    'datas':
+                        base64.b64encode(res_file.filecontent.encode("utf-8")),
+                    'datas_fname': res_file.filename,
+                    'res_model': rec._name,
+                    'res_id': rec.id})
+            file_list.append({'name': filename, 'content': res_content})
+        return ", ".join(repr(e) for e in file_list)
+
+    def build_files(self, files=None):
+        """Build Files.
+
         Build the files and returns a dictionary with file name and string
         :return: Dictionary of file and string
         """
         # Get the document
+        if not files:
+            files = []
         etd = self.get_etd_document()
-        res = []
+        res = files
         for file in etd.file_ids:
             res.append(self.build_file(file))
         return res
 
     def sign_files(self, files, certificate):
-        """
+        """Sign Files.
+
         Sign the file using the certificate
         Store the signature and link it to the record
         :param files: List of string
@@ -132,7 +153,8 @@ class EtdMixin(models.AbstractModel):
 
     @job
     def document_sign(self):
-        """
+        """Document Sign.
+
         Sign or get the document signed, attach the ETD to the record and log
          a message in the chatter with the status
         :param res_model: ir.model of the document to sign
