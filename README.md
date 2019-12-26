@@ -19,7 +19,7 @@ addon | version | summary
 [l10n_cl_currency_rate_sbif](l10n_cl_currency_rate_sbif/) | 12.0.2.0.0 | Update UF, UTM and US Dollar exchange rates using SBIF
 [l10n_cl_etd](l10n_cl_etd/) | 12.0.1.0.0 | Sign and send documents to SII.
 [l10n_cl_etd_account](l10n_cl_etd_account/) | 12.0.1.0.0 | Sign your invoices and send them to SII.
-[l10n_cl_etd_stock](l10n_cl_etd_stock/) | 12.0.1.0.0 | Sign your delivery orders and send them to SII.
+[l10n_cl_etd_stock](l10n_cl_etd_stock/) | 12.0.1.1.0 | Sign your delivery orders and send them to SII.
 [l10n_cl_invoicing_policy](l10n_cl_invoicing_policy/) | 12.0.1.0.0 | Ticket, Invoice or Electronic Guide
 [l10n_cl_sii](l10n_cl_sii/) | 12.0.1.0.0 | Provides the Settings > SII menuitem
 [l10n_cl_sii_activity](l10n_cl_sii_activity/) | 12.0.1.0.0 | Set the SII Activity on Partners
