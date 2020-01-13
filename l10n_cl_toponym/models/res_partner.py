@@ -43,7 +43,8 @@ class ResPartner(models.Model):
         vat = self.vat
         if len(self.vat) == 9:
             # Format: XX.XXX.XXX-X
-            formatted_vat = vat[0:2] + "." + vat[2:5] + "." + vat[5:8] + "-" + vat[8]
+            formatted_vat = \
+                vat[0:2] + "." + vat[2:5] + "." + vat[5:8] + "-" + vat[8]
             self.vat = formatted_vat
         elif len(self.vat) != 12:
             raise UserError(_("The VAT is not valid."))
@@ -52,7 +53,7 @@ class ResPartner(models.Model):
     def check_vat(self):
         if len(self.vat) != 12:
             raise UserError(_("The VAT must contain 12 characters."))
-        vat_raw = self.vat.replace('.','').replace('-','')
+        vat_raw = self.vat.replace('.', '').replace('-', '')
         body, vdig = vat_raw[:-1], vat_raw[-1].upper()
         try:
             vali = list(range(2, 8)) + [2, 3]
