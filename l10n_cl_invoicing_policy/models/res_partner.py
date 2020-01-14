@@ -11,10 +11,9 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     def _default_invoicing_policy(self):
-        res = 'ticket'
         if self.company_type == 'company':
-            res = 'invoice'
-        return res
+            return 'invoice'
+        return 'ticket'
 
     invoicing_policy = fields.Selection(
         (("ticket", "Ticket"),
@@ -29,34 +28,17 @@ class ResPartner(models.Model):
         * Electronic Guide: Only for companies. 1 invoice at the end of the
           month for all the delivery orders of that month.""")
 
-    def check_invoicing_policy(self, policy, is_company):
-        if policy == 'ticket':
-            if is_company:
+    @api.constrains('is_company', 'invoicing_policy')
+    def check_invoicing_policy(self):
+        if self.invoicing_policy == 'ticket':
+            if self.is_company:
                 raise UserError(_('The invoicing policy Ticket only applies '
                                   'to individuals.'))
         else:
-            if not is_company:
+            if not self.is_company:
                 raise UserError(_('The selected invoicing policy only applies'
                                   ' to companies.'))
 
     @api.onchange('is_company')
     def onchange_invoicing_policy(self):
         self.invoicing_policy = self._default_invoicing_policy()
-
-    @api.model
-    def create(self, vals):
-        self.check_invoicing_policy(vals['invoicing_policy'],
-                                    vals['is_company'])
-        return super().create(vals)
-
-    @api.multi
-    def write(self, vals):
-        if 'is_company' in vals or 'invoicing_policy' in vals:
-            if 'is_company' in vals:
-                is_company = vals['is_company']
-            else:
-                is_company = self.company_type == 'company'
-            self.check_invoicing_policy(
-                'invoicing_policy' in vals and vals['invoicing_policy'] or
-                self.invoicing_policy, is_company)
-        return super().write(vals)
