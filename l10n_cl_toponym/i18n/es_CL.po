@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e-20190116\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-22 12:25+0000\n"
-"PO-Revision-Date: 2019-11-08 16:39+0000\n"
+"PO-Revision-Date: 2020-01-14 14:13+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL11201
@@ -225,7 +225,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country_state_region__child_ids
 msgid "Child Regions"
-msgstr ""
+msgstr "Regiones Hijas"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL11401
@@ -653,7 +653,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_individual
 msgid "Individual VAT"
-msgstr ""
+msgstr "R.U.T Personal"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL01101
@@ -798,7 +798,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_legal
 msgid "Legal Person VAT"
-msgstr ""
+msgstr "R.U.T de Representante Legal"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL07303
@@ -1068,7 +1068,7 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_country__vat_other
 msgid "Other VAT"
-msgstr ""
+msgstr "Otro R.U.T"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL04301
@@ -1685,7 +1685,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_partner__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_users__state_id
 msgid "State"
-msgstr ""
+msgstr "Región"
 
 #. module: l10n_cl_toponym
 #: model:res.groups,name:l10n_cl_toponym.state_manager
