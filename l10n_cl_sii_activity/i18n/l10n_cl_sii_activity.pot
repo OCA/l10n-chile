@@ -3874,6 +3874,12 @@ msgid "Activity Code"
 msgstr ""
 
 #. module: l10n_cl_sii_activity
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__activity_description
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_users__activity_description
+msgid "Activity Description"
+msgstr ""
+
+#. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_32200
 msgid "Acuicultura de agua dulce"
 msgstr ""
