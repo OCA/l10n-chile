@@ -63,4 +63,4 @@ class ResPartner(models.Model):
             if operar != vdig:
                 raise UserError(_("The VAT is not valid."))
         except IndexError:
-            return False
+            raise UserError(_("The VAT is not valid."))
