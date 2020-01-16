@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <field name="vat" position="after">
                 <field name="sii_activity_id"/>
+                <field name="activity_description"/>
             </field>
         </field>
     </record>
