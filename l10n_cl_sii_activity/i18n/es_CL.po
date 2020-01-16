@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2019-11-10 18:34+0000\n"
+"PO-Revision-Date: 2020-01-16 20:13+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,code:l10n_cl_sii_activity.eco_acti_101011
@@ -3929,10 +3929,8 @@ msgstr "Código de Actividad"
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__activity_description
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_users__activity_description
-#, fuzzy
-#| msgid "Activity Code"
 msgid "Activity Description"
-msgstr "Código de Actividad"
+msgstr "Giro"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_32200
@@ -4502,7 +4500,7 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nombre Mostrado"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_351030
@@ -5564,7 +5562,7 @@ msgstr ""
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_sii_activity__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_181101
@@ -5674,9 +5672,8 @@ msgstr ""
 
 #. module: l10n_cl_sii_activity
 #: selection:sii.activity,tax_category:0 selection:sii.activity,vat_affected:0
-#, fuzzy
 msgid "Not Available"
-msgstr "¿Otros disponibles?"
+msgstr "No Disponible"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_823000
@@ -6201,9 +6198,8 @@ msgstr ""
 #: model:ir.actions.act_window,name:l10n_cl_sii_activity.act_sii_activity
 #: model:ir.ui.menu,name:l10n_cl_sii_activity.menu_sii_activity
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_tree
-#, fuzzy
 msgid "SII Activities"
-msgstr "SII Actividades del asociado"
+msgstr "Actividades SII"
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__sii_activity_id
@@ -6214,9 +6210,8 @@ msgstr "Actividades SII"
 
 #. module: l10n_cl_sii_activity
 #: model:ir.model,name:l10n_cl_sii_activity.model_sii_activity
-#, fuzzy
 msgid "SII Economic Activity"
-msgstr "SII Actividades Económicas"
+msgstr "Actividades Económicas SII"
 
 #. module: l10n_cl_sii_activity
 #: model:sii.activity,name:l10n_cl_sii_activity.eco_acti_651100
