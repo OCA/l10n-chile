@@ -1734,6 +1734,20 @@ msgid "The VAT %s already exists. VAT must be unique"
 msgstr ""
 
 #. module: l10n_cl_toponym
+#: code:addons/l10n_cl_toponym/models/res_partner.py:50
+#: code:addons/l10n_cl_toponym/models/res_partner.py:64
+#: code:addons/l10n_cl_toponym/models/res_partner.py:66
+#, python-format
+msgid "The VAT is not valid."
+msgstr ""
+
+#. module: l10n_cl_toponym
+#: code:addons/l10n_cl_toponym/models/res_partner.py:55
+#, python-format
+msgid "The VAT must contain 12 characters."
+msgstr ""
+
+#. module: l10n_cl_toponym
 #: model:ir.model.fields,help:l10n_cl_toponym.field_res_city__code
 msgid "The city code."
 msgstr "El código de la ciudad."
