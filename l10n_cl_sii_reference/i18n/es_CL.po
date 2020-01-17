@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-11-10 18:34+0000\n"
+"PO-Revision-Date: 2020-01-17 13:13+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: none\n"
 "Language: es_CL\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.8\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_concept_type__active
@@ -88,7 +88,7 @@ msgstr "Notas de Crédito"
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__dte
 msgid "DTE"
-msgstr ""
+msgstr "DTE"
 
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
@@ -155,7 +155,7 @@ msgstr "Arreglar el texto del documento referenciado"
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_reference__id
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_letter__vat_discriminated
@@ -416,7 +416,7 @@ msgstr "Responsabilidad SII"
 #. module: l10n_cl_sii_reference
 #: selection:sii.document.class,document_type:0
 msgid "Stock Picking"
-msgstr ""
+msgstr "Preparación de Pedidos"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_responsibility__sii_code
@@ -427,6 +427,8 @@ msgstr "Código de Pagador de Impuesto"
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_concept_type__product_types
 msgid "Translate the product type to this SII concept. Types must be a subset of adjust, consu and service separated by commas."
 msgstr ""
+"Traduzca el tipo de producto a este concepto SII. Los tipos deben ser un "
+"subconjunto de ajuste, consumible y servicio separados por comas."
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,field_description:l10n_cl_sii_reference.field_sii_document_class__use_prefix
@@ -454,3 +456,5 @@ msgstr "¡Advertencia!"
 #, python-format
 msgid "You provided an invalid list of product types. Must be separated by commas."
 msgstr ""
+"Usted proporcionó una lista inválida de tipos de productos. Debe estar "
+"separado por comas."
