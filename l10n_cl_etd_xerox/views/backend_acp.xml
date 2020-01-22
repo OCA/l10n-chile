@@ -1,0 +1,16 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_backend_acp_form">
+        <field name="name">backend.acp.form Add Send Immediately</field>
+        <field name="model">backend.acp</field>
+        <field name="inherit_id" ref="connector_acp.view_backend_acp_form"/>
+        <field name="arch" type="xml">
+
+            <field name="password" position="after">
+                <field name="send_immediately" />
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
