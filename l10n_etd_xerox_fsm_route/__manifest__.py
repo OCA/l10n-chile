@@ -15,7 +15,8 @@
     'maintainers': ['max3903'],
     "depends": [
         "l10n_cl_etd_xerox",
-        "fieldservice",
+        "fieldservice_account",
+        "fieldservice_stock",
     ],
     "data": [
         "data/etd_xerox_cron.xml",
