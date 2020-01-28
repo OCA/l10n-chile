@@ -22,3 +22,7 @@ class EtdDocumentFile(models.Model):
         string="Attach the generated file to the record")
     template = fields.Binary(string="Template File")
     validator = fields.Binary(string="Validator File")
+    template_text = fields.Text(
+        string="Template Text",
+        help="Used if not template file is provided")
+    template_name = fields.Char(string="Filename Template")

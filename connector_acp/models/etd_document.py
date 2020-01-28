@@ -12,11 +12,10 @@ class EtdDocument(models.Model):
 
     name = fields.Char(string="Name", required=True)
     model = fields.Selection([], string="Odoo Model", required=True)
+    invoicing_policy = fields.Selection(
+        [("ticket", "Ticket"),
+         ("invoice", "Invoice"),
+         ("eguide", "Electronic Guide")],
+    )
     file_ids = fields.One2many("etd.document.file", "document_id",
                                string="Files")
-    compress = fields.Selection([
-        ("none", "None"), ("zip", "ZIP"), ("tgz", "TAR GZ"),
-        ("bzip2", "BZIP2")],
-        default="none",
-        string="Compression",
-        help="Compress the file(s) before sending it")

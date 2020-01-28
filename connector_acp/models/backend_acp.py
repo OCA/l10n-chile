@@ -19,6 +19,10 @@ class BackendAcp(models.Model):
     status = fields.Selection((('unconfirmed', 'Unconfirmed'),
                                ('confirmed', 'Confirmed')), string="Status",
                               default='unconfirmed')
+    connection_type = fields.Selection(
+        [('nd', 'Not defined')],
+        string="Type of Connection",
+        default='nd')
 
     def action_confirm(self):
         """
@@ -31,10 +35,10 @@ class BackendAcp(models.Model):
         self.status = 'confirmed'
         return True
 
-    def send(self, files):
+    def send(self, file_dict):
         """
         Send the files to the backend
-        :param files: List of dictionary with 'name' for the filename and
+        :param files: dictionary with 'name' for the filename and
         'content' for the content
         :return: A dictionary with:
          - a boolean 'success': True if the transfer was successful,
