@@ -6,7 +6,7 @@
 {
     "name": "Toponyms of Chile",
     "summary": "Cities, States and Regions of Chile",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.2.0",
     "category": "Localization/Toponyms",
     "author": "Konos, "
               "Blanco Martín & Asociados, "
