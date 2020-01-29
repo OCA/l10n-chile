@@ -1734,15 +1734,15 @@ msgid "The VAT %s already exists. VAT must be unique"
 msgstr ""
 
 #. module: l10n_cl_toponym
-#: code:addons/l10n_cl_toponym/models/res_partner.py:50
-#: code:addons/l10n_cl_toponym/models/res_partner.py:64
-#: code:addons/l10n_cl_toponym/models/res_partner.py:66
+#: code:addons/l10n_cl_toponym/models/res_partner.py:51
+#: code:addons/l10n_cl_toponym/models/res_partner.py:67
+#: code:addons/l10n_cl_toponym/models/res_partner.py:69
 #, python-format
 msgid "The VAT is not valid."
 msgstr ""
 
 #. module: l10n_cl_toponym
-#: code:addons/l10n_cl_toponym/models/res_partner.py:55
+#: code:addons/l10n_cl_toponym/models/res_partner.py:57
 #, python-format
 msgid "The VAT must contain 12 characters."
 msgstr ""
