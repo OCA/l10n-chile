@@ -73,6 +73,7 @@ Contributors
 * Open Source Integrators <https://opensourceintegrators.com>:
 
   * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+  * Bhavesh Odedra <bodedra@opensourceintegrators.com>
 
 Maintainers
 ~~~~~~~~~~~
