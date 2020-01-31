@@ -40,7 +40,7 @@ msgid "Company"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:99
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:92
 #, python-format
 msgid "Company vat %s should be the same that assigned company's vat: %s!"
 msgstr ""
@@ -184,7 +184,7 @@ msgid "SII Document Class"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:106
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence_folio.py:99
 #, python-format
 msgid "SII Document Type for this CAF is %s and selected\n"
 "                sequence associated document class is %s. This values should be\n"
