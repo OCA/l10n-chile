@@ -42,28 +42,30 @@ class ResPartner(models.Model):
     def onchange_vat(self):
         vat = self.vat
         if vat:
-            if len(self.vat) == 9:
+            if len(vat) == 9:
                 # Format: XX.XXX.XXX-X
                 formatted_vat = \
                     vat[0:2] + "." + vat[2:5] + "." + vat[5:8] + "-" + vat[8]
                 self.vat = formatted_vat
-            elif len(self.vat) != 12:
+            elif len(vat) != 12:
                 raise UserError(_("The VAT is not valid."))
 
+    @api.multi
     @api.constrains('vat')
     def check_vat(self):
-        if self.vat:
-            if len(self.vat) != 12:
-                raise UserError(_("The VAT must contain 12 characters."))
-            vat_raw = self.vat.replace('.', '').replace('-', '')
-            body, vdig = vat_raw[:-1], vat_raw[-1].upper()
-            try:
-                vali = list(range(2, 8)) + [2, 3]
-                operar = "0123456789K0"[
-                    11 - (sum([int(digit) * factor
-                               for digit, factor in zip(body[::-1],
-                                                        vali)]) % 11)]
-                if operar != vdig:
+        for rec in self:
+            if rec.vat:
+                if len(rec.vat) != 12:
+                    raise UserError(_("The VAT must contain 12 characters."))
+                vat_raw = rec.vat.replace('.', '').replace('-', '')
+                body, vdig = vat_raw[:-1], vat_raw[-1].upper()
+                try:
+                    vali = list(range(2, 8)) + [2, 3]
+                    operar = "0123456789K0"[
+                        11 - (sum([int(digit) * factor
+                                   for digit, factor in
+                                   zip(body[::-1], vali)]) % 11)]
+                    if operar != vdig:
+                        raise UserError(_("The VAT is not valid."))
+                except IndexError:
                     raise UserError(_("The VAT is not valid."))
-            except IndexError:
-                raise UserError(_("The VAT is not valid."))
