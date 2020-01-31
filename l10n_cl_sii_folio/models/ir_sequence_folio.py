@@ -3,23 +3,16 @@
 # Copyright (C) 2019 CubicERP
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from datetime import date
-from dateutil.relativedelta import relativedelta
+import base64
 import logging
-from odoo import api, fields, models, _
+from datetime import date
+
+import xmltodict
+from dateutil.relativedelta import relativedelta
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
-
-try:
-    import xmltodict
-except ImportError:
-    pass
-
-try:
-    import base64
-except ImportError:
-    pass
 
 
 class IrSequenceFolio(models.Model):
