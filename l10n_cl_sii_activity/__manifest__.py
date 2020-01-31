@@ -6,7 +6,7 @@
 {
     "name": "Partner Activity from SII",
     "summary": "Set the SII Activity on Partners",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.2.0",
     "category": "Localization/Chile",
     "author": "Daniel Blanco, "
               "Blanco Martín & Asociados, "
