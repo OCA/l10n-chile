@@ -56,6 +56,8 @@ Credits
 Authors
 ~~~~~~~
 
+* Daniel Blanco
+* Blanco Martín & Asociados
 * Daniel Santibáñez Polanco
 * Cooperativa OdooCoop
 * Konos
