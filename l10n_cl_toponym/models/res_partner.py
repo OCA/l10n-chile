@@ -42,12 +42,13 @@ class ResPartner(models.Model):
     def onchange_vat(self):
         if self.vat:
             vat = self.vat
-            if len(self.vat) == 9:
+        if vat:
+            if len(vat) == 9:
                 # Format: XX.XXX.XXX-X
                 formatted_vat = \
                     vat[0:2] + "." + vat[2:5] + "." + vat[5:8] + "-" + vat[8]
                 self.vat = formatted_vat
-            elif len(self.vat) != 12:
+            elif len(vat) != 12:
                 raise UserError(_("The VAT is not valid."))
 
     @api.multi
