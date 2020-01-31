@@ -15,7 +15,6 @@ from odoo.exceptions import UserError
 _logger = logging.getLogger(__name__)
 
 
-
 class IrSequenceFolio(models.Model):
     _name = "ir.sequence.folio"
     _description = "Ir Sequence Folios"
