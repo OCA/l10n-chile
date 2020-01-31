@@ -40,8 +40,7 @@ class ResPartner(models.Model):
 
     @api.onchange('vat')
     def onchange_vat(self):
-        if self.vat:
-            vat = self.vat
+        vat = self.vat
         if vat:
             if len(vat) == 9:
                 # Format: XX.XXX.XXX-X
