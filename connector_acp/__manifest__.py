@@ -5,27 +5,18 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "ACP Connector",
-    "summary": "Get your documents signed by an Authorized Certification "
-               "Provider",
+    "summary": "Get your documents signed by an Authorized Certification Provider",
     "version": "12.0.1.0.0",
     "category": "Localization",
     "author": "Daniel Santibáñez Polanco, "
-              "Cooperativa OdooCoop, "
-              "Konos, "
-              "Open Source Integrators, "
-              "Odoo Community Association (OCA)",
+    "Cooperativa OdooCoop, "
+    "Konos, "
+    "Open Source Integrators, "
+    "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",
     "license": "AGPL-3",
-    "depends": [
-        "connector",
-    ],
-    "external_dependencies": {
-        "python": [
-            "collections",
-            "jinja2",
-            "lxml",
-        ]
-    },
+    "depends": ["connector", ],
+    "external_dependencies": {"python": ["collections", "jinja2", "lxml", ]},
     "data": [
         "security/ir.model.access.csv",
         "views/backend_acp.xml",

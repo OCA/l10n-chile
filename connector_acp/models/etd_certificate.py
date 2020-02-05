@@ -65,9 +65,12 @@ class EtdCertificate(models.Model):
         try:
             p12 = crypto.load_pkcs12(filecontent, self.dec_pass)
         except UserError:
-            raise UserError(_(
-                "Error when opening the signature. You may have entered the "
-                "wrong key or the file is not compatible."))
+            raise UserError(
+                _(
+                    "Error when opening the signature. You may have entered the "
+                    "wrong key or the file is not compatible."
+                )
+            )
 
         cert = p12.get_certificate()
         privky = p12.get_privatekey()
@@ -75,9 +78,11 @@ class EtdCertificate(models.Model):
         subject = cert.get_subject()
 
         self.not_before = datetime.strptime(
-            cert.get_notBefore().decode("utf-8"), "%Y%m%d%H%M%SZ").date()
+            cert.get_notBefore().decode("utf-8"), "%Y%m%d%H%M%SZ"
+        ).date()
         self.not_after = datetime.strptime(
-            cert.get_notAfter().decode("utf-8"), "%Y%m%d%H%M%SZ").date()
+            cert.get_notAfter().decode("utf-8"), "%Y%m%d%H%M%SZ"
+        ).date()
 
         # self.final_date =
         self.subject_c = subject.C
@@ -115,47 +120,43 @@ class EtdCertificate(models.Model):
         string="Signature File",
         required=False,
         store=True,
-        help="Upload the Signature File")
+        help="Upload the Signature File",
+    )
     dec_pass = fields.Char(string="Password")
 
     # Expiration and Status
     not_before = fields.Date(
-        string="Not Before", help="Not Before this Date", readonly=True)
+        string="Not Before", help="Not Before this Date", readonly=True
+    )
     not_after = fields.Date(
-        string="Not After", help="Not After this Date", readonly=True)
+        string="Not After", help="Not After this Date", readonly=True
+    )
     status = fields.Selection(
-        [("unverified", "Unverified"),
-         ("valid", "Valid"),
-         ("expired", "Expired")],
+        [("unverified", "Unverified"), ("valid", "Valid"), ("expired", "Expired")],
         string="Status",
         compute="_compute_check_signature",
         help="""Draft: means it has not been checked yet.\nYou must press the\
-"check" button.""")
+"check" button.""",
+    )
     final_date = fields.Date(
-        string="Last Date", help="Last Control Date", readonly=True)
+        string="Last Date", help="Last Control Date", readonly=True
+    )
 
     # Subject
     subject_title = fields.Char(string="Subject Title", readonly=True)
     subject_c = fields.Char(string="Subject Country", readonly=True)
     subject_serial_number = fields.Char(string="Subject Serial Number")
-    subject_common_name = fields.Char(
-        string="Subject Common Name", readonly=True)
-    subject_email_address = fields.Char(string="Subject Email Address",
-                                        readonly=True)
+    subject_common_name = fields.Char(string="Subject Common Name", readonly=True)
+    subject_email_address = fields.Char(string="Subject Email Address", readonly=True)
     # Issuer
     issuer_country = fields.Char(string="Issuer Country", readonly=True)
-    issuer_serial_number = fields.Char(string="Issuer Serial Number",
-                                       readonly=True)
-    issuer_common_name = fields.Char(string="Issuer Common Name",
-                                     readonly=True)
-    issuer_email_address = fields.Char(string="Issuer Email Address",
-                                       readonly=True)
-    issuer_organization = fields.Char(string="Issuer Organization",
-                                      readonly=True)
+    issuer_serial_number = fields.Char(string="Issuer Serial Number", readonly=True)
+    issuer_common_name = fields.Char(string="Issuer Common Name", readonly=True)
+    issuer_email_address = fields.Char(string="Issuer Email Address", readonly=True)
+    issuer_organization = fields.Char(string="Issuer Organization", readonly=True)
     # Certificate Data
     cert_serial_number = fields.Char(string="Serial Number", readonly=True)
-    cert_signature_algor = fields.Char(string="Signature Algorithm",
-                                       readonly=True)
+    cert_signature_algor = fields.Char(string="Signature Algorithm", readonly=True)
     cert_version = fields.Char(string="Version", readonly=True)
     cert_hash = fields.Char(string="Hash", readonly=True)
 
@@ -166,8 +167,7 @@ class EtdCertificate(models.Model):
     # cacert = fields.Char('CA Cert', readonly=True)
     cert = fields.Text(string="Certificate", readonly=True)
     priv_key = fields.Text(string="Private Key", readonly=True)
-    authorized_users_ids = fields.Many2many("res.users",
-                                            string="Authorized Users")
+    authorized_users_ids = fields.Many2many("res.users", string="Authorized Users")
 
     @api.multi
     def action_clean1(self):

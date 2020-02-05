@@ -6,7 +6,6 @@
 import base64
 import logging
 import time
-from collections import namedtuple
 from jinja2 import Environment, BaseLoader
 from lxml import etree
 from odoo import api, fields, models, _
@@ -14,16 +13,17 @@ from odoo.exceptions import UserError
 from ...queue_job.job import job
 from ...queue_job.exception import RetryableJobError
 
+
 _logger = logging.getLogger(__name__)
 
 
 class EtdMixin(models.AbstractModel):
-    _name = 'etd.mixin'
-    _description = 'Electronic Tax Document Mixin'
+    _name = "etd.mixin"
+    _description = "Electronic Tax Document Mixin"
 
     signature_id = fields.Many2one(
-        'etd.signature', string='SSL Signature',
-        help="SSL Signature of the Document")
+        "etd.signature", string="SSL Signature", help="SSL Signature of the Document"
+    )
 
     _env = None
 
@@ -36,9 +36,8 @@ class EtdMixin(models.AbstractModel):
         """
         if self._env is None:
             self._env = Environment(
-                lstrip_blocks=True,
-                trim_blocks=True,
-                loader=BaseLoader())
+                lstrip_blocks=True, trim_blocks=True, loader=BaseLoader()
+            )
         return self._env
 
     def get_etd_document(self):
@@ -48,8 +47,7 @@ class EtdMixin(models.AbstractModel):
         :return: The etd.document that needs be used to generate the
          XML file
         """
-        res = self.company_id.etd_ids.filtered(
-            lambda x: x.model == self._name)
+        res = self.company_id.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
     def prepare_keywords(self):
@@ -58,9 +56,9 @@ class EtdMixin(models.AbstractModel):
         :return: Dictionary of keywords used in the template
         """
         return {
-            'o': self,
-            'now': fields.datetime.now(),
-            'today': fields.datetime.today()
+            "o": self,
+            "now": fields.datetime.now(),
+            "today": fields.datetime.today(),
         }
 
     def _render_jinja_template(self, template_text):
@@ -84,7 +82,7 @@ class EtdMixin(models.AbstractModel):
         if etd_file.template_name:
             res = self._render_jinja_template(etd_file.template_name)
         else:
-            res = '%s.%s' % (self.display_name, etd_file.file_type)
+            res = "%s.%s" % (self.display_name, etd_file.file_type)
         return res
 
     def _build_file(self, etd_file, file_dict=None):
@@ -101,9 +99,9 @@ class EtdMixin(models.AbstractModel):
         """
         file_dict = file_dict or {}
         for rec in self:
-            file_template = (
-                etd_file.template_text or
-                base64.b64decode(etd_file.template).decode('utf-8'))
+            file_template = etd_file.template_text or base64.b64decode(
+                etd_file.template
+            ).decode("utf-8")
             file_name = rec.get_etd_filename(etd_file)
             file_text = rec._render_jinja_template(file_template)
 
@@ -115,8 +113,7 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.validator and etd_file.file_type == "xml":
                 # Check the rendered file against the validator
-                validator = base64.b64decode(
-                    etd_file.validator).decode('utf-8')
+                validator = base64.b64decode(etd_file.validator).decode("utf-8")
                 try:
                     xmlschema = etree.XMLSchema(validator)
                     xml_doc = etree.fromstring(file_text)
@@ -129,14 +126,16 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.save:
                 # Attach file to the record
-                self.env['ir.attachment'].create({
-                    'name': file_name,
-                    'type': 'binary',
-                    'datas':
-                        base64.b64encode(file_text.encode("utf-8")),
-                    'datas_fname': file_name,
-                    'res_model': rec._name,
-                    'res_id': rec.id})
+                self.env["ir.attachment"].create(
+                    {
+                        "name": file_name,
+                        "type": "binary",
+                        "datas": base64.b64encode(file_text.encode("utf-8")),
+                        "datas_fname": file_name,
+                        "res_model": rec._name,
+                        "res_id": rec.id,
+                    }
+                )
             # Update the file_dict with the result
             file_dict[file_name] = file_text
         return file_dict
@@ -192,7 +191,7 @@ class EtdMixin(models.AbstractModel):
         # Build the files for the document
         file_dict = self.build_files()
         # Sign the document
-        if self.company_id.signer == 'odoo':
+        if self.company_id.signer == "odoo":
             # Use the SSL Certificate to sign the files
             file_dict = self.sign_files(file_dict, self.company_id.cert_id)
             # Use the backend of the Tax Authority
@@ -201,27 +200,32 @@ class EtdMixin(models.AbstractModel):
             # Use the backend of the ACP
             backend = self.company_id.backend_acp_id
         # Determine if the backend is usable
-        if backend.status != 'confirmed':
-            raise UserError(_("The backend is not confirmed. Please check the"
-                              " connection to the backend first."))
+        if backend.status != "confirmed":
+            raise UserError(
+                _(
+                    "The backend is not confirmed. Please check the"
+                    " connection to the backend first."
+                )
+            )
         # Send the files to backend
         response = backend.send(file_dict)
         # Check the response
-        if response.get('success'):
+        if response.get("success"):
             # Check the status of the document
-            status = backend.check_status(response.get('ref'))
+            status = backend.check_status(response.get("ref"))
             i = 1
             while not (status and status.success):
                 time.sleep(i)
                 i += 1
-                status = backend.check_status(response.get('ref'))
-            message = _("%s Status: <b>%s</b>" % (backend.name,
-                                                  status.message))
+                status = backend.check_status(response.get("ref"))
+            message = _("%s Status: <b>%s</b>" % (backend.name, status.message))
             self.message_post(body=message)
         else:
-            message = _("ETD has been sent to %s but failed with"
-                        " the following message: <b>%s</b>" %
-                        (backend.name, response.get('message')))
+            message = _(
+                "ETD has been sent to %s but failed with"
+                " the following message: <b>%s</b>"
+                % (backend.name, response.get("message"))
+            )
             self.message_post(body=message)
             raise RetryableJobError(response)
         return True

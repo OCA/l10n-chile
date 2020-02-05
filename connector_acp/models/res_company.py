@@ -10,13 +10,15 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     etd_ids = fields.Many2many("etd.document", string="Documents To Sign")
-    signer = fields.Selection((
-        ("odoo", "Odoo"),
-        ("backend", "Authorized Certification Provider")),
+    signer = fields.Selection(
+        (("odoo", "Odoo"), ("backend", "Authorized Certification Provider")),
         string="Who is signing?",
-        required=True, default="odoo",
+        required=True,
+        default="odoo",
         help="""Please note that the signing authority is in charge of
-        sending the document for validation.""")
+        sending the document for validation.""",
+    )
     backend_acp_id = fields.Many2one(
-        "backend.acp", string="Authorized Certification Provider")
+        "backend.acp", string="Authorized Certification Provider"
+    )
     cert_id = fields.Many2one("etd.certificate", string="SSL Certificate")

@@ -13,9 +13,6 @@ class EtdDocument(models.Model):
     name = fields.Char(string="Name", required=True)
     model = fields.Selection([], string="Odoo Model", required=True)
     invoicing_policy = fields.Selection(
-        [("ticket", "Ticket"),
-         ("invoice", "Invoice"),
-         ("eguide", "Electronic Guide")],
+        [("ticket", "Ticket"), ("invoice", "Invoice"), ("eguide", "Electronic Guide")],
     )
-    file_ids = fields.One2many("etd.document.file", "document_id",
-                               string="Files")
+    file_ids = fields.One2many("etd.document.file", "document_id", string="Files")

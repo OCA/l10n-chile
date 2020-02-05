@@ -16,13 +16,14 @@ class BackendAcp(models.Model):
     user = fields.Char(string="User",)
     password = fields.Char(string="Password",)
     active = fields.Boolean(string="Active", default=True)
-    status = fields.Selection((('unconfirmed', 'Unconfirmed'),
-                               ('confirmed', 'Confirmed')), string="Status",
-                              default='unconfirmed')
+    status = fields.Selection(
+        (("unconfirmed", "Unconfirmed"), ("confirmed", "Confirmed")),
+        string="Status",
+        default="unconfirmed",
+    )
     connection_type = fields.Selection(
-        [('nd', 'Not defined')],
-        string="Type of Connection",
-        default='nd')
+        [("nd", "Not defined")], string="Type of Connection", default="nd"
+    )
 
     def action_confirm(self):
         """
@@ -32,7 +33,7 @@ class BackendAcp(models.Model):
          - authorizes the given credentials
         :return: True or False whether the backend is usable
         """
-        self.status = 'confirmed'
+        self.status = "confirmed"
         return True
 
     def send(self, file_dict):
@@ -46,7 +47,7 @@ class BackendAcp(models.Model):
          - a string 'message': Message to be displayed to the end user
          - a string 'ref': Reference of the transfer to request the status
         """
-        return {'success': True, 'message': "OK", 'ref': '1'}
+        return {"success": True, "message": "OK", "ref": "1"}
 
     def check_status(self, ref):
         """
@@ -57,4 +58,4 @@ class BackendAcp(models.Model):
                                 False otherwise
          - a string 'message': Message to be displayed to the end user
         """
-        return {'success': True, 'message': "OK"}
+        return {"success": True, "message": "OK"}
