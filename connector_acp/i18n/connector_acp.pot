@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:167
+#: code:addons/connector_acp/models/etd_mixin.py:221
 #, python-format
 msgid "%s Status: <b>%s</b>"
 msgstr ""
@@ -60,11 +60,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__authorized_users_ids
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_certificate_form
 msgid "Authorized Users"
-msgstr ""
-
-#. module: connector_acp
-#: selection:etd.document,compress:0
-msgid "BZIP2"
 msgstr ""
 
 #. module: connector_acp
@@ -119,18 +114,13 @@ msgid "Companies"
 msgstr ""
 
 #. module: connector_acp
-#: model:ir.model.fields,help:connector_acp.field_etd_document__compress
-msgid "Compress the file(s) before sending it"
-msgstr ""
-
-#. module: connector_acp
-#: model:ir.model.fields,field_description:connector_acp.field_etd_document__compress
-msgid "Compression"
-msgstr ""
-
-#. module: connector_acp
 #: selection:backend.acp,status:0
 msgid "Confirmed"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_backend_acp__connection_type
+msgid "Connection Type"
 msgstr ""
 
 #. module: connector_acp
@@ -188,6 +178,12 @@ msgid "Draft: means it has not been checked yet.\n"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.actions.act_window,name:connector_acp.action_backend_etd_document
+#: model:ir.ui.menu,name:connector_acp.menu_backend_etd_document
+msgid "ETD Documents"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model,name:connector_acp.model_etd_signature
 #: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_signature_form
 msgid "ETD Signature"
@@ -199,9 +195,14 @@ msgid "ETD Signatures"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:173
+#: code:addons/connector_acp/models/etd_mixin.py:227
 #, python-format
 msgid "ETD has been sent to %s but failed with the following message: <b>%s</b>"
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,invoicing_policy:0
+msgid "Electronic Guide"
 msgstr ""
 
 #. module: connector_acp
@@ -220,7 +221,7 @@ msgid "Electronic Tax Documents To Sign"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_certificate.py:68
+#: code:addons/connector_acp/models/etd_certificate.py:69
 #, python-format
 msgid "Error when opening the signature. You may have entered the wrong key or the file is not compatible."
 msgstr ""
@@ -243,6 +244,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__file_type
 msgid "File Type"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__template_name
+msgid "Filename Template"
 msgstr ""
 
 #. module: connector_acp
@@ -276,8 +282,14 @@ msgid "ID"
 msgstr ""
 
 #. module: connector_acp
+#: selection:etd.document,invoicing_policy:0
 #: selection:etd.document,model:0
 msgid "Invoice"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__invoicing_policy
+msgid "Invoicing Policy"
 msgstr ""
 
 #. module: connector_acp
@@ -367,11 +379,6 @@ msgid "Name"
 msgstr ""
 
 #. module: connector_acp
-#: selection:etd.document,compress:0
-msgid "None"
-msgstr ""
-
-#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__not_after
 msgid "Not After"
 msgstr ""
@@ -389,6 +396,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,help:connector_acp.field_etd_certificate__not_before
 msgid "Not Before this Date"
+msgstr ""
+
+#. module: connector_acp
+#: selection:backend.acp,connection_type:0
+msgid "Not defined"
 msgstr ""
 
 #. module: connector_acp
@@ -522,11 +534,6 @@ msgid "Subject Title"
 msgstr ""
 
 #. module: connector_acp
-#: selection:etd.document,compress:0
-msgid "TAR GZ"
-msgstr ""
-
-#. module: connector_acp
 #: selection:etd.document.file,file_type:0
 msgid "TXT"
 msgstr ""
@@ -537,14 +544,24 @@ msgid "Template File"
 msgstr ""
 
 #. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__template_text
+msgid "Template Text"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model,name:connector_acp.model_etd_document_file
 msgid "Template for Electronic Tax Documents To Sign"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:154
+#: code:addons/connector_acp/models/etd_mixin.py:205
 #, python-format
 msgid "The backend is not confirmed. Please check the connection to the backend first."
+msgstr ""
+
+#. module: connector_acp
+#: selection:etd.document,invoicing_policy:0
+msgid "Ticket"
 msgstr ""
 
 #. module: connector_acp
@@ -560,6 +577,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,help:connector_acp.field_etd_certificate__key_file
 msgid "Upload the Signature File"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,help:connector_acp.field_etd_document_file__template_text
+msgid "Used if not template file is provided"
 msgstr ""
 
 #. module: connector_acp
@@ -598,14 +620,9 @@ msgid "XML"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:96
+#: code:addons/connector_acp/models/etd_mixin.py:125
 #, python-format
 msgid "XML Malformed Error: %s"
-msgstr ""
-
-#. module: connector_acp
-#: selection:etd.document,compress:0
-msgid "ZIP"
 msgstr ""
 
 #. module: connector_acp
