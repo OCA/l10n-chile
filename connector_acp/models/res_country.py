@@ -9,5 +9,6 @@ from odoo import fields, models
 class ResCountry(models.Model):
     _inherit = "res.country"
 
-    backend_acp_id = fields.Many2one("backend.acp",
-                                     string="Backend to the Tax Authority")
+    backend_acp_id = fields.Many2one(
+        "backend.acp", string="Backend to the Tax Authority"
+    )

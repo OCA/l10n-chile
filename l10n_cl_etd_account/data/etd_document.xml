@@ -3,11 +3,13 @@
     <record id="etd_account_invoice" model="etd.document">
         <field name="name">Invoice</field>
         <field name="model">account.invoice</field>
+        <field name="invoicing_policy">invoice</field>
     </record>
 
     <record id="etd_account_ticket" model="etd.document">
         <field name="name">Ticket</field>
         <field name="model">account.invoice</field>
+        <field name="invoicing_policy">ticket</field>
     </record>
 
 </odoo>

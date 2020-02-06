@@ -35,10 +35,11 @@
                         <group id="left">
                             <field name="host"/>
                             <field name="port"/>
+                            <field name="connection_type"/>
                         </group>
                         <group id="right">
                             <field name="user"/>
-                            <field name="password"/>
+                            <field name="password" password="True"/>
                         </group>
                     </group>
                 </sheet>
@@ -54,6 +55,14 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="action_backend_etd_document">
+        <field name="name">ETD Documents</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">etd.document</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem id="menu_backend"
               name="Backends"
               sequence="20"
@@ -64,5 +73,11 @@
               parent="menu_backend"
               sequence="10"
               action="action_backend_acp"/>
+
+    <menuitem id="menu_backend_etd_document"
+              name="ETD Documents"
+              parent="menu_backend"
+              sequence="20"
+              action="action_backend_etd_document"/>
 
 </odoo>

@@ -11,14 +11,17 @@ class EtdDocumentFile(models.Model):
     _description = "Template for Electronic Tax Documents To Sign"
 
     name = fields.Char(string="Name", required=True)
-    document_id = fields.Many2one("etd.document", string="Document",
-                                  required=True)
-    file_type = fields.Selection([("xml", "XML"), ("txt", "TXT")],
-                                 default="xml",
-                                 string="File Type")
+    document_id = fields.Many2one("etd.document", string="Document", required=True)
+    file_type = fields.Selection(
+        [("xml", "XML"), ("txt", "TXT")], default="xml", string="File Type"
+    )
     grouped = fields.Boolean(string="1 file for multiple documents")
     save = fields.Boolean(
-        default=True,
-        string="Attach the generated file to the record")
+        default=True, string="Attach the generated file to the record"
+    )
     template = fields.Binary(string="Template File")
     validator = fields.Binary(string="Validator File")
+    template_text = fields.Text(
+        string="Template Text", help="Used if not template file is provided"
+    )
+    template_name = fields.Char(string="Filename Template")

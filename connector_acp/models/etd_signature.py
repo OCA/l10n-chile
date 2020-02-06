@@ -15,7 +15,6 @@ class EtdSignature(models.Model):
     exponent = fields.Char(string="Exponent", required=True)
     modulus = fields.Char(string="Modulus", required=True)
     digest_value = fields.Char(string="Digest Value", required=True)
-    cert_id = fields.Many2one("etd.certificate", string="Certificate",
-                              required=True)
+    cert_id = fields.Many2one("etd.certificate", string="Certificate", required=True)
     model_id = fields.Many2one("ir.model", string="Model", required=True)
     res_id = fields.Integer(string="Record ID", required=True)
