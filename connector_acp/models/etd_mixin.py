@@ -3,6 +3,7 @@
 # Copyright (C) 2019 CubicERP
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import datetime
 import base64
 import logging
 import time
@@ -59,6 +60,11 @@ class EtdMixin(models.AbstractModel):
             "o": self,
             "now": fields.datetime.now(),
             "today": fields.datetime.today(),
+            "date_to_string": fields.Date.to_string,
+            "time_to_string": fields.Datetime.to_string,
+            "date": datetime.date,
+            "datetime": datetime.datetime,
+            "timedelta": datetime.timedelta,
         }
 
     def _render_jinja_template(self, template_text):
@@ -73,6 +79,24 @@ class EtdMixin(models.AbstractModel):
         # Render the file
         res = template.render(kwargs)
         return res
+
+    def get_etd_template(self, etd_file):
+        """
+        Get the file template to render.
+        """
+        file_template = etd_file.template_text or base64.b64decode(
+            etd_file.template
+        ).decode("utf-8")
+        if etd_file.file_type == 'txt':
+            # Make text templates more comformatable to edit:
+            # Remove initial and trailing whitespace
+            # Remove implicit line breaks
+            # Consider explicit line breaks entered as "\n"
+            file_template = file_template.strip()
+            file_template = file_template.replace("\r\n", "")
+            file_template = file_template.replace("\n", "")
+            file_template = file_template.replace("\\n", "\n")
+        return file_template
 
     def get_etd_filename(self, etd_file):
         """
@@ -99,17 +123,15 @@ class EtdMixin(models.AbstractModel):
         """
         file_dict = file_dict or {}
         for rec in self:
-            file_template = etd_file.template_text or base64.b64decode(
-                etd_file.template
-            ).decode("utf-8")
+            file_template = rec.get_etd_template(etd_file)
             file_name = rec.get_etd_filename(etd_file)
             file_text = rec._render_jinja_template(file_template)
 
             if etd_file.grouped:
                 # Append text to an already existing file
-                prev_file_text = file_dict.get(file_name)
-                if prev_file_text:
-                    file_text = prev_file_text + file_text
+                prev_file_text = file_dict.get(file_name) or ''
+                # TODO: not optimal, consider using a list of lines instead
+                file_text = prev_file_text + file_text
 
             if etd_file.validator and etd_file.file_type == "xml":
                 # Check the rendered file against the validator

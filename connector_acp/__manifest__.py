@@ -21,6 +21,7 @@
         "security/ir.model.access.csv",
         "views/backend_acp.xml",
         "views/etd_certificate.xml",
+        "views/etd_document_file.xml",
         "views/etd_signature.xml",
         "views/res_company.xml",
         "views/res_country.xml",

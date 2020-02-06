@@ -4,6 +4,7 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import fields, models
+from odoo.exceptions import UserError
 
 
 class EtdDocumentFile(models.Model):
@@ -25,3 +26,12 @@ class EtdDocumentFile(models.Model):
         string="Template Text", help="Used if not template file is provided"
     )
     template_name = fields.Char(string="Filename Template")
+
+    def action_test(self):
+        self.ensure_one()
+        file_dict = self.document_id.test_document._build_file(self)
+        res_lines = []
+        for name, content in file_dict.items():
+            res_lines.extend(['', name, content])
+        # TODO return a message without rolling back user changes
+        raise UserError('\n'.join(res_lines))
