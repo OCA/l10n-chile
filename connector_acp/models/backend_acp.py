@@ -18,11 +18,13 @@ class BackendAcp(models.Model):
     active = fields.Boolean(string="Active", default=True)
     status = fields.Selection(
         (("unconfirmed", "Unconfirmed"), ("confirmed", "Confirmed")),
-        string="Status",
         default="unconfirmed",
+        required="True",
     )
     connection_type = fields.Selection(
-        [("nd", "Not defined")], string="Type of Connection", default="nd"
+        [("nd", "Not defined")],
+        default="nd",
+        required="True",
     )
 
     def action_confirm(self):
