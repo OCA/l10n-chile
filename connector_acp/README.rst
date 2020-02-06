@@ -87,9 +87,11 @@ Contributors
 * Nelson Ramirez
 * Carlos Toledo
 * Carlos Lopez
+
 * Open Source Integrators <https://www.opensourceintegrators.com>
 
   * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+  * Daniel Reis <dreis@opensourceintegrators.com>
 
 Maintainers
 ~~~~~~~~~~~
