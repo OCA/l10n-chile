@@ -237,6 +237,11 @@ msgid "Exponent"
 msgstr ""
 
 #. module: connector_acp
+#: selection:backend.acp,connection_type:0
+msgid "FTP"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__filename
 msgid "File Name"
 msgstr ""
