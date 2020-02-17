@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo12-addon-connector_acp',
+        'odoo12-addon-connector_acp_ftp',
         'odoo12-addon-l10n_cl_chart_of_account',
         'odoo12-addon-l10n_cl_currency_rate_sbif',
         'odoo12-addon-l10n_cl_etd',
