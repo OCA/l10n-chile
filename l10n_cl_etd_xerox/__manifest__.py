@@ -20,7 +20,13 @@
     "website": "https://github.com/OCA/l10n-chile",
     "development_status": "Beta",
     "maintainers": ["max3903"],
-    "depends": ["l10n_cl_etd_account", "l10n_cl_etd_stock", "connector_acp_ftp"],
+    "depends": [
+        "connector_acp_ftp",
+        "l10n_cl_etd_account",
+        "l10n_cl_sii_activity",
+        "l10n_cl_sii_folio",
+        "l10n_cl_etd_stock",
+    ],
     "data": [
         "data/backend.acp.csv",
         "data/etd_document_invoice.xml",

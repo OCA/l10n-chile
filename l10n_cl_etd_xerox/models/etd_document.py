@@ -59,5 +59,6 @@ class EtdDocument(models.Model):
             file_dict = {}
             for key, records in grouped_data.items():
                 for record in records:
+                    # FIXME: run .with_delay. Implies some code reorg
                     file_dict = record.build_files(file_dict)
             company.backend_acp_id.send(file_dict)
