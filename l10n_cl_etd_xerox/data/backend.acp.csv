@@ -1,0 +1,2 @@
+"id","name","connection_type","host","send_immediately","active"
+backend_acp_xerox,Xerox Service,ftp,localhost,0,1

@@ -17,7 +17,8 @@ class AccountInvoice(models.Model):
     def get_etd_document(self):
         res = super().get_etd_document()
         res = res.filtered(
-            lambda x: x.invoicing_policy == self.partner_id.invoicing_policy)
+            lambda x: x.invoicing_policy == self.partner_id.invoicing_policy
+            or not x.invoicing_policy)
         return res
 
     @api.multi
