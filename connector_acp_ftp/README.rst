@@ -16,18 +16,37 @@ FTP ACP Connector
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fl10n--chile-lightgray.png?logo=github
     :target: https://github.com/OCA/l10n-chile/tree/12.0/connector_acp_ftp
     :alt: OCA/l10n-chile
-.. |badge4| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
+.. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+    :target: https://translation.odoo-community.org/projects/l10n-chile-12-0/l10n-chile-12-0-connector_acp_ftp
+    :alt: Translate me on Weblate
+.. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/236/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| 
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
-Support FTP protocol as a connector backend
+This module adds support for FTP protocol to ACP connector backend.
+It can be used to send data to third party services that will handle
+the electronic document communication to SII.
 
 **Table of contents**
 
 .. contents::
    :local:
+
+Usage
+=====
+
+Suggested setup steps for local tests:
+
+- Locally install FTP service:
+
+  - Install vsftpd: ``sudo apt install vsftpd``.
+    Additional documention available at https://help.ubuntu.com/community/vsftpd
+  - Edit ``/etc/vsftpd.conf``, changing the entry ``write_enable=YES``
+  - (Res)start the service: ``sudo service vsftpd stop && sudo service vsftpd stop``
+  - Test the connection with the ``ftp`` client. User you sysytem user and password.
+    The FTP default work directory will be your home directory.
 
 Bug Tracker
 ===========
@@ -46,13 +65,18 @@ Authors
 ~~~~~~~
 
 * Open Source Integrators
-* Odoo Community Association (OCA)
 
 Contributors
 ~~~~~~~~~~~~
 
-* Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-* Nikita Vaghela <nikita.vaghela.serpentcs@gmail.com>
+* Open Source Integrators <https://www.@opensourceintegrators.com>
+
+    * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+    * Daniel Reis <dreis@opensourceintegrators.com>
+
+* Serpent Consulting Services Pvt. Ltd. <https://www.serpentcs.com>
+
+    * Nikita Vaghela <nikita.vaghela.serpentcs@gmail.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -66,6 +90,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
+    :target: https://github.com/max3903
+    :alt: max3903
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-max3903| 
 
 This module is part of the `OCA/l10n-chile <https://github.com/OCA/l10n-chile/tree/12.0/connector_acp_ftp>`_ project on GitHub.
 
