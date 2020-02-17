@@ -16,13 +16,25 @@ Xerox Electronic Document
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fl10n--chile-lightgray.png?logo=github
     :target: https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_etd_xerox
     :alt: OCA/l10n-chile
-.. |badge4| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
+.. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
+    :target: https://translation.odoo-community.org/projects/l10n-chile-12-0/l10n-chile-12-0-l10n_cl_etd_xerox
+    :alt: Translate me on Weblate
+.. |badge5| image:: https://img.shields.io/badge/runbot-Try%20me-875A7B.png
     :target: https://runbot.odoo-community.org/runbot/236/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| 
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
-Use Xerox electronic document communication
+Prepare and send data files to the Xerox service,
+that will then be responsoble for SII documentation of the legal documents,
+and provide additional document management services.
+
+The documents to send are arranged in "groups".
+The default group is by day.
+The Field Services extension makes this group to also be by route (or truck).
+
+Each document group will be a directory, with a specific name and file structure,
+that be sent to Xerox through FTP. 
 
 **Table of contents**
 
@@ -46,13 +58,17 @@ Authors
 ~~~~~~~
 
 * Open Source Integrators
-* Odoo Community Association (OCA)
 
 Contributors
 ~~~~~~~~~~~~
 
-* Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-* Hemangini Patel <h.patel.serpentcs@gmail.com>
+* Open Source Integrators <https://www.@opensourceintegrators.com>
+
+    * Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+
+* Serpent Consulting Services Pvt. Ltd. <https://www.serpentcs.com>
+
+    * Hemangini Patel <h.patel.serpentcs@gmail.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -66,6 +82,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
+    :target: https://github.com/max3903
+    :alt: max3903
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-max3903| 
 
 This module is part of the `OCA/l10n-chile <https://github.com/OCA/l10n-chile/tree/12.0/l10n_cl_etd_xerox>`_ project on GitHub.
 
