@@ -13,7 +13,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[connector_acp](connector_acp/) | 12.0.2.0.0 | Get your documents signed by an Authorized Certification Provider
+[connector_acp](connector_acp/) | 12.0.3.0.0 | Get your documents signed by an Authorized Certification Provider
 [l10n_cl_chart_of_account](l10n_cl_chart_of_account/) | 12.0.1.0.0 | Chile Localization Chart Account SII
 [l10n_cl_currency_rate_sbif](l10n_cl_currency_rate_sbif/) | 12.0.2.0.0 | Update UF, UTM and US Dollar exchange rates using SBIF
 [l10n_cl_etd](l10n_cl_etd/) | 12.0.1.0.0 | Sign and send documents to SII.
