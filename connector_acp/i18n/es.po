@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:221
+#: code:addons/connector_acp/models/etd_mixin.py:243
 #, python-format
 msgid "%s Status: <b>%s</b>"
 msgstr ""
@@ -197,7 +197,7 @@ msgid "ETD Signatures"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:227
+#: code:addons/connector_acp/models/etd_mixin.py:249
 #, python-format
 msgid ""
 "ETD has been sent to %s but failed with the following message: <b>%s</b>"
@@ -254,6 +254,11 @@ msgstr ""
 #. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_document_file__template_name
 msgid "Filename Template"
+msgstr ""
+
+#. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_document_file_form
+msgid "Filename template"
 msgstr ""
 
 #. module: connector_acp
@@ -418,6 +423,11 @@ msgid "Odoo Model"
 msgstr ""
 
 #. module: connector_acp
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_document_file_form
+msgid "Or use text template"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_backend_acp__password
 #: model:ir.model.fields,field_description:connector_acp.field_etd_certificate__dec_pass
 msgid "Password"
@@ -559,7 +569,17 @@ msgid "Template for Electronic Tax Documents To Sign"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:205
+#: model_terms:ir.ui.view,arch_db:connector_acp.view_etd_document_file_form
+msgid "Test"
+msgstr ""
+
+#. module: connector_acp
+#: model:ir.model.fields,field_description:connector_acp.field_etd_document__test_document
+msgid "Test Document"
+msgstr ""
+
+#. module: connector_acp
+#: code:addons/connector_acp/models/etd_mixin.py:227
 #, python-format
 msgid ""
 "The backend is not confirmed. Please check the connection to the backend "
@@ -627,7 +647,7 @@ msgid "XML"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:125
+#: code:addons/connector_acp/models/etd_mixin.py:147
 #, python-format
 msgid "XML Malformed Error: %s"
 msgstr ""
