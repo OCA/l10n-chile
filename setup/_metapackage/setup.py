@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo12-addon-l10n_cl_etd',
         'odoo12-addon-l10n_cl_etd_account',
         'odoo12-addon-l10n_cl_etd_stock',
+        'odoo12-addon-l10n_cl_etd_xerox',
         'odoo12-addon-l10n_cl_invoicing_policy',
         'odoo12-addon-l10n_cl_sii',
         'odoo12-addon-l10n_cl_sii_activity',
