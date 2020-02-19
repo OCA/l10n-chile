@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e-20190116\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-22 12:25+0000\n"
-"PO-Revision-Date: 2020-01-30 01:13+0000\n"
+"PO-Revision-Date: 2020-02-19 03:13+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
@@ -282,7 +282,7 @@ msgstr "Código de la Ciudad"
 #. module: l10n_cl_toponym
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__city_id
 msgid "City of Address"
-msgstr "Ciudad de Dirección"
+msgstr "Comuna"
 
 #. module: l10n_cl_toponym
 #: model:res.city,name:l10n_cl_toponym.CL08403
