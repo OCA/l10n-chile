@@ -59,10 +59,9 @@ class BackendAcp(models.Model):
     def action_confirm(self):
         self.ensure_one()
         if self.connection_type == "ftp":
+            # Interruped with an error if connection fails
             self._ftp_upload(None)
-            return True
-        else:
-            return super().action_confirm()
+        return super().action_confirm()
 
     def _send_ftp(self, file_dict):
         temp_dir = tempfile.mkdtemp()
