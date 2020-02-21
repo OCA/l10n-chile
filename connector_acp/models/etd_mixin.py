@@ -236,11 +236,12 @@ class EtdMixin(models.AbstractModel):
             # Check the status of the document
             status = backend.check_status(response.get("ref"))
             i = 1
-            while not (status and status.success):
+            while not (status and status.get('success')):
                 time.sleep(i)
                 i += 1
                 status = backend.check_status(response.get("ref"))
-            message = _("%s Status: <b>%s</b>" % (backend.name, status.message))
+            message = _("%s Status: <b>%s</b>" % (backend.name,
+                                                  status.get('message')))
             self.message_post(body=message)
         else:
             message = _(
