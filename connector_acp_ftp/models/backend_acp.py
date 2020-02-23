@@ -46,23 +46,19 @@ class BackendAcp(models.Model):
         This method is used to upload all file in temp directory.
         """
         self.ensure_one()
-        with ftplib.FTP(
-            not self.port and self.host,
-            self.user,
-            self.password,
-            self.port and (self.host, self.port),
-        ) as ftp_session:
+        with ftplib.FTP() as ftp:
+            ftp.connect(self.host, self.port or 21)
+            ftp.login(self.user, self.password)
             # if no local dir given, just try connection and exit
             if from_local_dir:
-                self._ftp_upload_directory(ftp_session, from_local_dir, to_server_dir)
+                self._ftp_upload_directory(ftp, from_local_dir, to_server_dir)
 
     def action_confirm(self):
         self.ensure_one()
         if self.connection_type == "ftp":
+            # Interruped with an error if connection fails
             self._ftp_upload(None)
-            return True
-        else:
-            return super().action_confirm()
+        return super().action_confirm()
 
     def _send_ftp(self, file_dict):
         temp_dir = tempfile.mkdtemp()
