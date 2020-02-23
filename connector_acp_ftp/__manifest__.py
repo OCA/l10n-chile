@@ -4,7 +4,7 @@
 
 {
     "name": "FTP ACP Connector",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "license": "AGPL-3",
     "category": "Localization",
     "summary": "Support FTP protocol as a connector backend.",
