@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:243
+#: code:addons/connector_acp/models/etd_mixin.py:244
 #, python-format
 msgid "%s Status: <b>%s</b>"
 msgstr ""
@@ -197,7 +197,7 @@ msgid "ETD Signatures"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:249
+#: code:addons/connector_acp/models/etd_mixin.py:250
 #, python-format
 msgid ""
 "ETD has been sent to %s but failed with the following message: <b>%s</b>"
