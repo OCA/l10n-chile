@@ -4,7 +4,7 @@
 
 {
     "name": "Xerox Electronic Document",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "license": "AGPL-3",
     "category": "Localization",
     "summary": "Use Xerox electronic document communication.",
