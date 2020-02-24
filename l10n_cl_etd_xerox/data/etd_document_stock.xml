@@ -39,7 +39,7 @@
 {# 19 RUTEmisor #}{{(emisor.vat or '').replace('.', '')}};
 {# 20 RznSoc #}{{emisor.name}};
 {# 21 GiroEmis #}{{emisor.activity_description}};
-{# 22 Acteco #}{{ emisor.sii_activity_id.code }};
+{# 22 Acteco #}{{ emisor.partner_id.sii_activity_id.code }};
 {# 23 Sucursal #}{{origen.name}};
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #}{{    ' '.join([origen.street or '', origen.street2 or ''])[:60] }};
