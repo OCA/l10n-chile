@@ -13,17 +13,21 @@ class EtdDocument(models.Model):
     def _xerox_get_records(self, company_id, run_date):
         """Find and returns all documents."""
         next_date = date_utils.add(run_date, 1)
-        invoices = self.env["account.invoice"].search(
-            [("date_invoice", "=", run_date), ("state", "in", ["open", "paid"])]
-        )
-        deliveries = self.env["stock.picking"].search(
-            [
-                ("picking_type_code", "=", "outgoing"),
-                ("state", "=", "done"),
-                ("date_done", ">=", run_date),
-                ("date_done", "<=", next_date),
-            ]
-        )
+        class_ids = self.env["sii.document.class"].search([
+            ("dte", "=", True)
+        ]).ids
+        invoices = self.env["account.invoice"].search([
+            ("date_invoice", "=", run_date),
+            ("state", "in", ["open", "paid"]),
+            ("class_id", "in", class_ids)
+        ])
+        deliveries = self.env["stock.picking"].search([
+            ("picking_type_code", "=", "outgoing"),
+            ("state", "=", "done"),
+            ("date_done", ">=", run_date),
+            ("date_done", "<=", next_date),
+            ("class_id", "in", class_ids)
+        ])
         return (invoices, deliveries)
 
     @api.model
@@ -45,6 +49,7 @@ class EtdDocument(models.Model):
         companies = self.env["res.company"].search(
             [
                 ("backend_acp_id", "!=", False),
+                ("backend_acp_id.status", "=", 'confirmed'),
                 ("backend_acp_id.send_immediately", "=", False),
             ]
         )
