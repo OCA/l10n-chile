@@ -23,12 +23,16 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: res_partner_email_etd
+#: model:ir.model.fields,field_description:res_partner_email_etd.field_fsm_location__email_etd
+#: model:ir.model.fields,field_description:res_partner_email_etd.field_fsm_person__email_etd
 #: model:ir.model.fields,field_description:res_partner_email_etd.field_res_partner__email_etd
 #: model:ir.model.fields,field_description:res_partner_email_etd.field_res_users__email_etd
 msgid "Email ETD"
 msgstr "Correo Electrónico DTE"
 
 #. module: res_partner_email_etd
+#: model:ir.model.fields,help:res_partner_email_etd.field_fsm_location__email_etd
+#: model:ir.model.fields,help:res_partner_email_etd.field_fsm_person__email_etd
 #: model:ir.model.fields,help:res_partner_email_etd.field_res_partner__email_etd
 #: model:ir.model.fields,help:res_partner_email_etd.field_res_users__email_etd
 msgid "Email address to receive Electronic Tax Documents"
