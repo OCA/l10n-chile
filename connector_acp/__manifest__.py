@@ -6,7 +6,7 @@
 {
     "name": "ACP Connector",
     "summary": "Get your documents signed by an Authorized Certification Provider",
-    "version": "12.0.3.0.1",
+    "version": "12.0.3.0.2",
     "category": "Localization",
     "author": "Daniel Santibáñez Polanco, "
     "Cooperativa OdooCoop, "
