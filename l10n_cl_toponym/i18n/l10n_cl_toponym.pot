@@ -1677,6 +1677,8 @@ msgid "Sierra Gorda"
 msgstr ""
 
 #. module: l10n_cl_toponym
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_fsm_location__state_id
+#: model:ir.model.fields,field_description:l10n_cl_toponym.field_fsm_person__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_company__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_partner__state_id
 #: model:ir.model.fields,field_description:l10n_cl_toponym.field_res_users__state_id
