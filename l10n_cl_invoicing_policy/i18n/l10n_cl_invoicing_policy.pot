@@ -14,6 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_cl_invoicing_policy
+#: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_fsm_location__invoicing_policy
+#: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_fsm_person__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid "\n"
@@ -40,6 +42,8 @@ msgid "Invoice"
 msgstr ""
 
 #. module: l10n_cl_invoicing_policy
+#: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_fsm_location__invoicing_policy
+#: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_fsm_person__invoicing_policy
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid "Invoicing Policy"
