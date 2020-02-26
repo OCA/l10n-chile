@@ -18,6 +18,8 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: l10n_cl_invoicing_policy
+#: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_fsm_location__invoicing_policy
+#: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_fsm_person__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid ""
@@ -56,6 +58,8 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: l10n_cl_invoicing_policy
+#: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_fsm_location__invoicing_policy
+#: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_fsm_person__invoicing_policy
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,field_description:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid "Invoicing Policy"
