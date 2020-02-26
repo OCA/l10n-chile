@@ -3927,6 +3927,8 @@ msgid "Activity Code"
 msgstr "Código de Actividad"
 
 #. module: l10n_cl_sii_activity
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_fsm_location__activity_description
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_fsm_person__activity_description
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__activity_description
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_users__activity_description
 msgid "Activity Description"
@@ -6202,6 +6204,8 @@ msgid "SII Activities"
 msgstr "Actividades SII"
 
 #. module: l10n_cl_sii_activity
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_fsm_location__sii_activity_id
+#: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_fsm_person__sii_activity_id
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_partner__sii_activity_id
 #: model:ir.model.fields,field_description:l10n_cl_sii_activity.field_res_users__sii_activity_id
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_activity.view_sii_activity_form
