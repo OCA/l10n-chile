@@ -3,8 +3,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from datetime import date
+import logging
 from odoo import api, fields, models
 from odoo.tools import date_utils
+
+
+_logger = logging.getLogger(__name__)
 
 
 class EtdDocument(models.Model):
@@ -12,23 +16,24 @@ class EtdDocument(models.Model):
 
     def _xerox_get_records(self, company_id, run_date):
         """Find and returns all documents."""
-        next_date = date_utils.add(run_date, 1)
+        next_date = date_utils.add(run_date, days=1)
         class_ids = self.env["sii.document.class"].search([
             ("dte", "=", True)
         ]).ids
-        invoices = self.env["account.invoice"].search([
+        recs = {}
+        recs['account.invoice'] = self.env["account.invoice"].search([
             ("date_invoice", "=", run_date),
             ("state", "in", ["open", "paid"]),
             ("class_id", "in", class_ids)
         ])
-        deliveries = self.env["stock.picking"].search([
+        recs['stock.picking'] = self.env["stock.picking"].search([
             ("picking_type_code", "=", "outgoing"),
             ("state", "=", "done"),
             ("date_done", ">=", run_date),
             ("date_done", "<=", next_date),
             ("class_id", "in", class_ids)
         ])
-        return (invoices, deliveries)
+        return recs
 
     @api.model
     def cron_xerox_send_files(self, run_date=None):
@@ -41,7 +46,7 @@ class EtdDocument(models.Model):
         if not run_date:
             # Use yesterday
             today = fields.Date.context_today(self)
-            run_date = date_utils.add(today, -1)
+            run_date = date_utils.add(today, days=-1)
         elif not isinstance(run_date, date):
             # Convert t Date object
             run_date = fields.Date.to_date(run_date)
@@ -53,12 +58,18 @@ class EtdDocument(models.Model):
                 ("backend_acp_id.send_immediately", "=", False),
             ]
         )
+        if not companies:
+            _logger.info('No Company is configured for Xerox integration')
 
         for company in companies:
             ungrouped_rsets = self._xerox_get_records(company, run_date)
+            doc_count = sum(len(x) for x in ungrouped_rsets.values())
+            _logger.info(
+                'Found %d documents for company %s', doc_count, company.name)
+            # Group records by file set, using rule in `xerox_group()`
             grouped_data = {}
-            for rset in ungrouped_rsets:
-                # In place update of the greped data dict
+            for rset in ungrouped_rsets.values():
+                # In place update of the grouped data dict
                 grouped_data = rset.xerox_group(grouped_data)
 
             file_dict = {}

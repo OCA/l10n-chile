@@ -18,4 +18,10 @@
         "fieldservice_account",
         "fieldservice_stock",
     ],
+    "data": [
+        "data/etd_document_route_01.xml",
+        "data/etd_document_route_05.xml",
+        "data/etd_document_route_07.xml",
+        "data/etd_document_route_11.xml",
+    ]
 }

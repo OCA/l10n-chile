@@ -169,9 +169,10 @@ class EtdMixin(models.AbstractModel):
         :return: Dictionary of filename and content
         """
         file_dict = file_dict or {}
-        etd = self.get_etd_document()
-        for etd_file in etd.file_ids:
-            file_dict = self._build_file(etd_file, file_dict)
+        etds = self.get_etd_document()
+        for etd in etds:
+            for etd_file in etd.file_ids:
+                file_dict = self._build_file(etd_file, file_dict)
         return file_dict
 
     def sign_file(self, file_text, certificate):
