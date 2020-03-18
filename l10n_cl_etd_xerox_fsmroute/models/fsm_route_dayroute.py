@@ -15,9 +15,9 @@ class FSMDayRoute(models.Model):
         default=lambda s: s.env.user.company_id)
 
     def write(self, values):
-        res = super().write(values)
-        if 'stage_id' in values and 'is_writing_flag' not in self.env.context:
-            new_stage = self.stage_id.browse(values['stage_id'])
+        if values.get('stage_id', False) and not \
+                self.env.context.get('is_writing_flag', False):
+            new_stage = self.stage_id.browse(values.get('stage_id'))
             if new_stage.is_closed:
-                self.write({'date_close': fields.Datetime.now()})
-        return res
+                values.update({'date_close': fields.Datetime.now()})
+        return super().write(values)
