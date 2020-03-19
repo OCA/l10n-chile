@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2020-01-17 13:13+0000\n"
+"PO-Revision-Date: 2020-03-19 23:13+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
@@ -45,7 +45,7 @@ msgstr "Guía de Despacho"
 #. module: l10n_cl_etd_stock
 #: model:ir.model.fields,field_description:l10n_cl_etd_stock.field_delivery_carrier__partner_id
 msgid "Related Partner"
-msgstr "Partner Relacionado"
+msgstr "Contacto Relacionado"
 
 #. module: l10n_cl_etd_stock
 #: model:ir.model,name:l10n_cl_etd_stock.model_stock_picking
