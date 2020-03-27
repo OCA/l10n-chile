@@ -15,6 +15,7 @@ class StockPicking(models.Model):
 
     @api.multi
     def action_done(self):
+        res = super(StockPicking, self).action_done()
         for rec in self:
             res = super(StockPicking, rec).action_done()
             sign = rec._name in [x.model for x in rec.company_id.etd_ids]
