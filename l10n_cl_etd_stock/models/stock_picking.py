@@ -15,11 +15,11 @@ class StockPicking(models.Model):
 
     @api.multi
     def action_done(self):
-        res = super().action_done()
-        sign = self._name in [x.model for x in self.company_id.etd_ids]
-        for picking in self:
-            if sign and picking.location_dest_id.usage == 'customer':
-                self.with_delay().document_sign()
+        res = super(StockPicking, self).action_done()
+        for rec in self:
+            sign = rec._name in [x.model for x in rec.company_id.etd_ids]
+            if sign and rec.location_dest_id.usage == 'customer':
+                rec.with_delay().document_sign()
         return res
 
     @api.model
