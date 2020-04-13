@@ -80,7 +80,7 @@ class IrSequenceFolio(models.Model):
         self.final_nm = result["RNG"]["H"]
         self.sii_document_class = result["TD"]
         self.issued_date = result["FA"]
-        if self.sequence_id.sii_document_class_id.sii_code not in [34, 52]:
+        if self.sequence_id.class_id.code not in [34, 52]:
             self.expiration_date = date(
                 int(result["FA"][:4]),
                 int(result["FA"][5:7]),
@@ -94,13 +94,13 @@ class IrSequenceFolio(models.Model):
                 % (self.rut_n, self.company_id.vat)
             )
         elif self.sii_document_class != \
-                self.sequence_id.sii_document_class_id.sii_code:
+                self.sequence_id.class_id.code:
             raise UserError(
                 _("""SII Document Type for this CAF is %s and selected
                 sequence associated document class is %s. This values should be
                 equal for DTE Invoicing to work properly!""")
                 % (self.sii_document_class,
-                   self.sequence_id.sii_document_class_id.sii_code)
+                   self.sequence_id.class_id.code)
             )
         if flags:
             return True
@@ -141,7 +141,7 @@ class IrSequenceFolio(models.Model):
         diff = self.final_nm - int(folio)
         if diff <= self.nivel_minimo:
             return "Nivel bajo de CAF para %s, quedan %s folios" % (
-                self.sequence_id.sii_document_class_id.name,
+                self.sequence_id.class_id.name,
                 diff,
             )
         return ""
