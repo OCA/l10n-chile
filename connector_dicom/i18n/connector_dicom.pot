@@ -1,47 +1,43 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* connector_dicom
+#	* connector_dicom
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0+e-20191022\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-01 19:18+0000\n"
-"PO-Revision-Date: 2020-04-01 16:28-0300\n"
-"Last-Translator: Nelson Ramírez  <nramirez@konos.cl>\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.3\n"
 
 #. module: connector_dicom
 #: model_terms:ir.actions.act_window,help:connector_dicom.res_partner_dicom_action
 msgid "Click to create a new Dicom's log."
-msgstr "Haga clic para crear un nuevo registro de Dicom."
+msgstr ""
 
 #. module: connector_dicom
 #: code:addons/connector_dicom/models/res_partner.py:108
 #, python-format
 msgid "Connection Error"
-msgstr "Error de conexión"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model,name:connector_dicom.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_fsm_location__dicom_count
@@ -49,7 +45,7 @@ msgstr "Creado el"
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner__dicom_count
 #: model:ir.model.fields,field_description:connector_dicom.field_res_users__dicom_count
 msgid "Dicom Count"
-msgstr "Contador Dicom"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_fsm_location__dicom_date
@@ -58,24 +54,23 @@ msgstr "Contador Dicom"
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__date
 #: model:ir.model.fields,field_description:connector_dicom.field_res_users__dicom_date
 msgid "Dicom Date"
-msgstr "Fecha Puntaje"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.view_res_partner_form
 msgid "Dicom History"
-msgstr "Historia de Dicom"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model,name:connector_dicom.model_res_partner_dicom
-#, fuzzy
 msgid "Dicom Log of a Partner"
-msgstr "Puntuación de Dicom por Contacto"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_form
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_tree
 msgid "Dicom Logs"
-msgstr "Registros de Dicom"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_fsm_location__dicom_score
@@ -84,12 +79,12 @@ msgstr "Registros de Dicom"
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__dicom_score
 #: model:ir.model.fields,field_description:connector_dicom.field_res_users__dicom_score
 msgid "Dicom Score"
-msgstr "Indicador de Riesgo"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_graph
 msgid "Dicom Score Per Partner"
-msgstr "Puntuación de Dicom por Contacto"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_fsm_location__dicom_ids
@@ -97,77 +92,69 @@ msgstr "Puntuación de Dicom por Contacto"
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner__dicom_ids
 #: model:ir.model.fields,field_description:connector_dicom.field_res_users__dicom_ids
 msgid "Dicoms"
-msgstr "Dicoms"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.view_res_partner_form
 msgid "Financial Approve"
-msgstr "Aprobación Financiera"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_search
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.actions.act_window,help:connector_dicom.res_partner_dicom_action
-msgid ""
-"Here you can add various dicom entries for all partners.\n"
-"                You can also show dicom score for a particular partner "
-"using\n"
+msgid "Here you can add various dicom entries for all partners.\n"
+"                You can also show dicom score for a particular partner using\n"
 "                the search field."
 msgstr ""
-"Aquí puede agregar varias entradas de dicom para todos los socios.\n"
-"            También puede mostrar la puntuación de dicom para un socio en "
-"particular usando\n"
-"            el campo de búsqueda."
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.model.fields,field_description:connector_dicom.field_res_partner_dicom__partner_id
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_search
 msgid "Partner"
-msgstr "Empresa"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.res_partner_dicom_view_search
 msgid "Partner Dicom"
-msgstr "Contacto Dicom"
+msgstr ""
 
 #. module: connector_dicom
 #: model:ir.actions.act_window,name:connector_dicom.res_partner_dicom_action
 #: model:ir.ui.menu,name:connector_dicom.res_partner_dicom_menu
 msgid "Partner's Dicom"
-msgstr "Dicom del Contacto"
+msgstr ""
 
 #. module: connector_dicom
 #: model_terms:ir.ui.view,arch_db:connector_dicom.view_res_partner_form
 msgid "Update Dicom"
-msgstr "Actualizar Dicom"
+msgstr ""
 
-#~ msgid "Partner log for a Dicom"
-#~ msgstr "Registros Dicom de Contacto"
