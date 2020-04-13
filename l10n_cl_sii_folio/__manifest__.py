@@ -6,7 +6,7 @@
 {
     "name": "Electronic Invoicing for Chile",
     "summary": "Sign your documents and send them to SII.",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.1.1",
     "category": "Localization/Chile",
     "author": "Daniel Blanco, "
               "Blanco Martín & Asociados, "
