@@ -1,0 +1,39 @@
+<!-- Copyright (C) 2019 Konos
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="view_res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.dicom.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <sheet position="before">
+                <header>
+                    <button string="Update Dicom" type="object" name="update_dicom"/>
+                </header>
+            </sheet>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="res_partner_dicom_action"
+                    class="oe_inline oe_stat_button"
+                    type="object"
+                    context="{'active_id': id}"
+                    icon="fa-users">
+                    <field string="Dicom History"
+                           name="dicom_count"
+                           widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//notebook[last()]" position="inside">
+                <page string="Financial Approve" name="financial_approve">
+                    <group>
+                        <group>
+                            <field name="dicom_score"/>
+                            <field name="dicom_date"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

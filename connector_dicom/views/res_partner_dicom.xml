@@ -1,0 +1,112 @@
+<!-- Copyright (C) 2020 Konos
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id='res_partner_dicom_view_form' model='ir.ui.view'>
+        <field name="name">res_partner.dicom.form</field>
+        <field name="model">res.partner.dicom</field>
+        <field name="arch" type="xml">
+            <form string="Dicom Logs">
+                <sheet>
+                    <group>
+                        <field name="partner_id" required="1"/>
+                        <field name="dicom_score" class="oe_inline" />
+                        <field name="date"/>
+                        <field name="create_uid"/>
+                        <field name="create_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='res_partner_dicom_view_tree' model='ir.ui.view'>
+        <field name="name">res_partner.dicom.tree</field>
+        <field name="model">res.partner.dicom</field>
+        <field name="arch" type="xml">
+            <tree string="Dicom Logs" editable="top">
+                <field name="date" />
+                <field name="partner_id"/>
+                <field name="dicom_score" />
+                <field name="create_uid"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='res_partner_dicom_view_kanban' model='ir.ui.view'>
+        <field name="name">res_partner.dicom.kanban</field>
+        <field name="model">res.partner.dicom</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong>
+                                    <field name="partner_id"/>
+                                    <span class="pull-right"><field name="date"/></span>
+                                </strong>
+                            </div>
+                            <div>
+                                <span class="pull-right"><field name="dicom_score"/></span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='res_partner_dicom_view_search' model='ir.ui.view'>
+        <field name="name">res_partner.dicom.search</field>
+        <field name="model">res.partner.dicom</field>
+        <field name="arch" type="xml">
+            <search string="Partner Dicom" >
+                <field name="partner_id" />
+                <field name="dicom_score"/>
+                <field name="date"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_partner"
+                            context="{'group_by': 'partner_id'}"
+                            string="Partner"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_partner_dicom_view_graph" model="ir.ui.view">
+        <field name="name">res_partner.dicom.graph</field>
+        <field name="model">res.partner.dicom</field>
+        <field name="arch" type="xml">
+            <graph string="Dicom Score Per Partner">
+                <field name="partner_id" type="row"/>
+                <field name="dicom_score" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id='res_partner_dicom_action' model='ir.actions.act_window'>
+        <field name="name">Partner's Dicom</field>
+        <field name="res_model">res.partner.dicom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form,graph</field>
+        <field name="context">{"search_default_groupby_partner": True}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new Dicom's log.
+            </p>
+            <p>
+                Here you can add various dicom entries for all partners.
+                You can also show dicom score for a particular partner using
+                the search field.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="res_partner_dicom_action"
+              parent="contacts.menu_localisation"
+              id="res_partner_dicom_menu"
+              groups="base.group_partner_manager"
+              sequence="6"/>
+
+</odoo>
