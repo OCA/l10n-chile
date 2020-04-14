@@ -86,14 +86,15 @@ class IrSequenceFolio(models.Model):
                 int(result["FA"][5:7]),
                 int(result["FA"][8:10])
             ) + relativedelta(months=6)
-        self.rut_n = "CL" + result["RE"].replace("-", "")
-        if self.rut_n != self.company_id.vat.replace("L0", "L"):
-            raise UserError(
-                _("Company vat %s should be the same that assigned company's "
-                  "vat: %s!")
-                % (self.rut_n, self.company_id.vat)
-            )
-        elif self.sii_document_class != \
+        if result["RE"] != self.company_id.vat:
+            self.rut_n = "CL" + result["RE"].replace("-", "")
+            if self.rut_n != self.company_id.vat.replace("L0", "L"):
+                raise UserError(
+                    _("Company vat %s should be the same"
+                      " that assigned company's vat: %s!")
+                    % (self.rut_n, self.company_id.vat)
+                )
+        if self.sii_document_class != \
                 self.sequence_id.class_id.code:
             raise UserError(
                 _("""SII Document Type for this CAF is %s and selected
