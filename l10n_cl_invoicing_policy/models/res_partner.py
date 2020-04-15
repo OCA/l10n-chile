@@ -11,7 +11,10 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     def _default_invoicing_policy(self):
-        if self.company_type == 'company':
+        rec = self
+        while rec.parent_id:
+            rec = rec.parent_id
+        if rec.company_type == 'company':
             return 'invoice'
         return 'ticket'
 
@@ -22,22 +25,28 @@ class ResPartner(models.Model):
         string="Invoicing Policy", required=True,
         default=_default_invoicing_policy,
         help="""
-        * Ticket: Only for individuals. 1 invoice for each delivery order.
-        * Invoice: Only for companies. The VAT is required. 1 invoice for each
-          delivery order. Requires the customer PO # on the SO/Invoice.
-        * Electronic Guide: Only for companies. 1 invoice at the end of the
-          month for all the delivery orders of that month.""")
+        * Ticket: Only for individuals and their children.
+          1 invoice for each delivery order.
+        * Invoice: Only for companies and their children. The VAT is required.
+          1 invoice for each delivery order.
+          Requires the customer PO # on the SO/Invoice.
+        * Electronic Guide: Only for companies and their children.
+          1 invoice at the end of the month for all the delivery orders of
+          that month.""")
 
-    @api.constrains('is_company', 'invoicing_policy')
+    @api.multi
+    @api.constrains('is_company', 'invoicing_policy', 'parent_id')
     def check_invoicing_policy(self):
-        if self.invoicing_policy == 'ticket':
-            if self.is_company:
-                raise UserError(_('The invoicing policy Ticket only applies '
-                                  'to individuals.'))
-        else:
-            if not self.is_company:
-                raise UserError(_('The selected invoicing policy only applies'
-                                  ' to companies.'))
+        for rec in self:
+            root = rec
+            while root.parent_id:
+                root = root.parent_id
+            if root.is_company and rec.invoicing_policy == 'ticket':
+                raise UserError(_(
+                    'The invoicing policy Ticket only applies to individuals.'))
+            if not root.is_company and rec.invoicing_policy != 'ticket':
+                raise UserError(_(
+                    'The selected invoicing policy only applies to companies.'))
 
     @api.onchange('is_company')
     def onchange_invoicing_policy(self):
