@@ -18,5 +18,5 @@ class EtdMixin(models.AbstractModel):
             return (self.date, self.id)
         elif key and hasattr(self, "fsm_order_id"):
             route = self.fsm_order_id.fsm_route_id
-            key += route.id
+            key += (route.id, )
         return key
