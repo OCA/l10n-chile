@@ -19,8 +19,7 @@
             <form string="Authorized Certification Provider">
                 <header>
                     <button string="Check" type="object" name="action_confirm"
-                            class="oe_highlight"
-                            attrs="{'invisible': [('status', '!=', 'unconfirmed')]}" />
+                            class="oe_highlight" />
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>

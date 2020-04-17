@@ -11,13 +11,12 @@ class EtdMixin(models.AbstractModel):
 
     def _xerox_group_key(self):
         """
-        Given a Model record.
-
-        returns a tuple, to use as grouping key.
+        Group documents by their corresponding Day Route
         """
         key = super()._xerox_group_key()
-        # WIP
-        if key and hasattr(self, "fsm_order_id"):
+        if self._name == "fsm.route.dayroute":
+            return (self.date, self.id)
+        elif key and hasattr(self, "fsm_order_id"):
             route = self.fsm_order_id.fsm_route_id
-            key += route.id
+            key += (route.id, )
         return key
