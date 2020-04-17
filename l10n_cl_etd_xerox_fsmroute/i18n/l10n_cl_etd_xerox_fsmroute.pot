@@ -14,12 +14,47 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: l10n_cl_etd_xerox_fsmroute
+#: model:ir.model.fields,field_description:l10n_cl_etd_xerox_fsmroute.field_fsm_route_dayroute__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: model:ir.model.fields,field_description:l10n_cl_etd_xerox_fsmroute.field_fsm_route_dayroute__date_close
+msgid "Date Close"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: selection:etd.document,model:0
+msgid "Day Route"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
 #: model:ir.model,name:l10n_cl_etd_xerox_fsmroute.model_etd_mixin
 msgid "Electronic Tax Document Mixin"
 msgstr ""
 
 #. module: l10n_cl_etd_xerox_fsmroute
-#: model:ir.model,name:l10n_cl_etd_xerox_fsmroute.model_fsm_route
-msgid "Field Service Route"
+#: model:ir.model,name:l10n_cl_etd_xerox_fsmroute.model_etd_document
+msgid "Electronic Tax Documents To Sign"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: model:ir.model,name:l10n_cl_etd_xerox_fsmroute.model_fsm_route_dayroute
+msgid "Field Service Route Dayroute"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: selection:etd.document,model:0
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: model:ir.model.fields,field_description:l10n_cl_etd_xerox_fsmroute.field_etd_document__model
+msgid "Odoo Model"
+msgstr ""
+
+#. module: l10n_cl_etd_xerox_fsmroute
+#: selection:etd.document,model:0
+msgid "Picking"
 msgstr ""
 
