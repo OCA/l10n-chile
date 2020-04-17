@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:244
+#: code:addons/connector_acp/models/etd_mixin.py:245
 #, python-format
 msgid "%s Status: <b>%s</b>"
 msgstr ""
@@ -147,6 +147,11 @@ msgid "Created on"
 msgstr ""
 
 #. module: connector_acp
+#: selection:etd.document,model:0
+msgid "Day Route"
+msgstr ""
+
+#. module: connector_acp
 #: model:ir.model.fields,field_description:connector_acp.field_etd_signature__digest_value
 msgid "Digest Value"
 msgstr ""
@@ -195,7 +200,7 @@ msgid "ETD Signatures"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:250
+#: code:addons/connector_acp/models/etd_mixin.py:251
 #, python-format
 msgid "ETD has been sent to %s but failed with the following message: <b>%s</b>"
 msgstr ""
@@ -579,7 +584,7 @@ msgid "Test Document"
 msgstr ""
 
 #. module: connector_acp
-#: code:addons/connector_acp/models/etd_mixin.py:227
+#: code:addons/connector_acp/models/etd_mixin.py:228
 #, python-format
 msgid "The backend is not confirmed. Please check the connection to the backend first."
 msgstr ""
