@@ -18,6 +18,11 @@ msgstr ""
 "X-Generator: Weblate 3.8\n"
 
 #. module: l10n_cl_etd_account
+#: selection:etd.document,model:0
+msgid "Day Route"
+msgstr ""
+
+#. module: l10n_cl_etd_account
 #: model:ir.model,name:l10n_cl_etd_account.model_etd_document
 msgid "Electronic Tax Documents To Sign"
 msgstr "Documentos Tributarios Electrónicos a Firmar"
