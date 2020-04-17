@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="model">account.journal</field>
+        <field name="name">account.journal.form</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Documents"
+                      attrs="{'invisible': [('type', 'not in', ('sale', 'purchase'))]}">
+                    <field name='journal_document_class_ids'
+                           context="{'journal_type': type}" editable="bottom"
+                           widget="one2many">
+                        <tree string="SII Documents" editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="class_id"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                            <field name='sequence_id'
+                                   context="{'default_class_id': class_id}"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
