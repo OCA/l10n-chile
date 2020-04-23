@@ -22,14 +22,28 @@ msgstr ""
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_fsm_person__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "        * Ticket: Only for individuals. 1 invoice for each delivery "
+#| "order.\n"
+#| "        * Invoice: Only for companies. The VAT is required. 1 invoice for "
+#| "each\n"
+#| "          delivery order. Requires the customer PO # on the SO/Invoice.\n"
+#| "        * Electronic Guide: Only for companies. 1 invoice at the end of "
+#| "the\n"
+#| "          month for all the delivery orders of that month."
 msgid ""
 "\n"
-"        * Ticket: Only for individuals. 1 invoice for each delivery order.\n"
-"        * Invoice: Only for companies. The VAT is required. 1 invoice for "
-"each\n"
-"          delivery order. Requires the customer PO # on the SO/Invoice.\n"
-"        * Electronic Guide: Only for companies. 1 invoice at the end of the\n"
-"          month for all the delivery orders of that month."
+"        * Ticket: Only for individuals and their children.\n"
+"          1 invoice for each delivery order.\n"
+"        * Invoice: Only for companies and their children. The VAT is "
+"required.\n"
+"          1 invoice for each delivery order.\n"
+"          Requires the customer PO # on the SO/Invoice.\n"
+"        * Electronic Guide: Only for companies and their children.\n"
+"          1 invoice at the end of the month for all the delivery orders of\n"
+"          that month."
 msgstr ""
 "\n"
 "        * Boleta: Solo para persona natural. 1 factura para cada guía de "
@@ -66,13 +80,13 @@ msgid "Invoicing Policy"
 msgstr "Documento de Entrega"
 
 #. module: l10n_cl_invoicing_policy
-#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:35
+#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:45
 #, python-format
 msgid "The invoicing policy Ticket only applies to individuals."
 msgstr "El documento de entrega Boleta solo se aplica a persona natural."
 
 #. module: l10n_cl_invoicing_policy
-#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:39
+#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:48
 #, python-format
 msgid "The selected invoicing policy only applies to companies."
 msgstr "El documento de entrega seleccionado solo se aplica a empresas."
