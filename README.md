@@ -24,7 +24,7 @@ addon | version | summary
 [l10n_cl_etd_stock](l10n_cl_etd_stock/) | 12.0.1.1.1 | Sign your delivery orders and send them to SII.
 [l10n_cl_etd_xerox](l10n_cl_etd_xerox/) | 12.0.1.0.2 | Use Xerox electronic document communication.
 [l10n_cl_etd_xerox_fsmroute](l10n_cl_etd_xerox_fsmroute/) | 12.0.1.0.0 | Generate electronic documents for FSM Day routes.
-[l10n_cl_invoicing_policy](l10n_cl_invoicing_policy/) | 12.0.1.0.1 | Ticket, Invoice or Electronic Guide
+[l10n_cl_invoicing_policy](l10n_cl_invoicing_policy/) | 12.0.1.0.2 | Ticket, Invoice or Electronic Guide
 [l10n_cl_sii](l10n_cl_sii/) | 12.0.1.0.0 | Provides the Settings > SII menuitem
 [l10n_cl_sii_activity](l10n_cl_sii_activity/) | 12.0.1.2.0 | Set the SII Activity on Partners
 [l10n_cl_sii_folio](l10n_cl_sii_folio/) | 12.0.1.1.2 | Sign your documents and send them to SII.
