@@ -19,11 +19,14 @@ msgstr ""
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_partner__invoicing_policy
 #: model:ir.model.fields,help:l10n_cl_invoicing_policy.field_res_users__invoicing_policy
 msgid "\n"
-"        * Ticket: Only for individuals. 1 invoice for each delivery order.\n"
-"        * Invoice: Only for companies. The VAT is required. 1 invoice for each\n"
-"          delivery order. Requires the customer PO # on the SO/Invoice.\n"
-"        * Electronic Guide: Only for companies. 1 invoice at the end of the\n"
-"          month for all the delivery orders of that month."
+"        * Ticket: Only for individuals and their children.\n"
+"          1 invoice for each delivery order.\n"
+"        * Invoice: Only for companies and their children. The VAT is required.\n"
+"          1 invoice for each delivery order.\n"
+"          Requires the customer PO # on the SO/Invoice.\n"
+"        * Electronic Guide: Only for companies and their children.\n"
+"          1 invoice at the end of the month for all the delivery orders of\n"
+"          that month."
 msgstr ""
 
 #. module: l10n_cl_invoicing_policy
@@ -50,13 +53,13 @@ msgid "Invoicing Policy"
 msgstr ""
 
 #. module: l10n_cl_invoicing_policy
-#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:35
+#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:45
 #, python-format
 msgid "The invoicing policy Ticket only applies to individuals."
 msgstr ""
 
 #. module: l10n_cl_invoicing_policy
-#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:39
+#: code:addons/l10n_cl_invoicing_policy/models/res_partner.py:48
 #, python-format
 msgid "The selected invoicing policy only applies to companies."
 msgstr ""
