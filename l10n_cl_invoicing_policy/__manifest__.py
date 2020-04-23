@@ -6,7 +6,7 @@
 {
     "name": "Invoicing Policy on Partner",
     "summary": "Ticket, Invoice or Electronic Guide",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.2",
     "category": "Localization/Chile",
     "author": "Daniel Santibáñez Polanco, "
               "Cooperativa OdooCoop, "
