@@ -30,7 +30,7 @@ class EtdDocument(models.Model):
             ("picking_type_code", "=", "outgoing"),
             ("state", "=", "done"),
             ("date_done", ">=", run_date),
-            ("date_done", "<=", next_date),
+            ("date_done", "<", next_date),
             ("class_id", "in", class_ids)
         ])
         return recs

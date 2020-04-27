@@ -18,6 +18,7 @@
         "l10n_cl_sii_activity",
         "l10n_cl_sii_folio",
         "l10n_cl_etd_stock",
+        "fieldservice_vehicle",
     ],
     "data": [
         "data/backend.acp.csv",
