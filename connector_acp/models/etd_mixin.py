@@ -104,7 +104,9 @@ class EtdMixin(models.AbstractModel):
         This can be a relative path with a directory name.
         """
         if etd_file.template_name:
-            res = self._render_jinja_template(etd_file.template_name)
+            res = self._render_jinja_template(
+                etd_file.template_name).strip()
+            res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
             res = "%s.%s" % (self.display_name, etd_file.file_type)
         return res
