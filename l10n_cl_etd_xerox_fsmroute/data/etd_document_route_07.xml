@@ -11,7 +11,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'cab' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'cab' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set cliente = o.env.user.company_id.partner_id %} {# TODO: o.company_id (add company_id to fsm.route.dayroute) #}
 {% set emisor = cliente %}
@@ -178,7 +186,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'ane' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'ane' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente            #}{{(o.env.user.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
@@ -213,7 +229,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'det' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'det' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {# List Invoices #}
@@ -375,7 +399,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'an2' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'an2' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {# List Invoices #}
@@ -417,7 +449,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'des' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'des' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}***** VACIO *****;
 {# 2 Tipo #};
@@ -438,7 +478,15 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'ref' %}{% set tipo = '007' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'ref' %}
+{% set tipo = "007" %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}**** VACIO ****;
 {# 2 Tipo #};

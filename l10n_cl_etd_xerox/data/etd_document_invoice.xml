@@ -12,12 +12,20 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_cab_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'cab' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{o.class_id.code}};
-{# 4 Folio FIXME o.folio_number #}{{o.number}};
+{# 4 Folio #}{{o.number}};
 {# 5 FechEmis #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja TODO Nota de credito fuera de plazo #};
 {# 7 TipoDespacho TODO o.transport_type #}2;
@@ -71,7 +79,7 @@
         {% set amount_exempt = amount_exempt + line.price_subtotal %}
     {% endif %}
 {% endfor %}
-{# 47 MntNeto #}{{ amount_taxed + amount_exempt }};
+{# 47 MntNeto #}{{ o.amount_total }};
 {# 48 MntExe #}{{ amount_exempt }};
 {# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
@@ -179,26 +187,34 @@
 </record>
 
 <record id="etd_file_xerox_invoice_ane" model="etd.document.file">
-        <field name="name">ANE Header Annex</field>
-        <field name="document_id" ref="etd_xerox_invoice"/>
-        <field name="file_type">txt</field>
-        <field name="grouped">True</field>
-        <field name="save">False</field>
-        <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_ane_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
-        <field name="template_text">
+    <field name="name">ANE Header Annex</field>
+    <field name="document_id" ref="etd_xerox_invoice"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name"> {%
+   set infix = 'ane' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_text">
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio FIXME o.folio_number #}{{o.number}};
+{# 3 Folio #}{{o.number}};
 {# 4 Número copias #}1;
 {# 5 Observaciones #}{{o.note}};
-{# 6 Fecha Cancelación #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
+{# 6 Fecha Cancelación #};
 {# 7 Medio de pago TODO-??? #};
 {# 8 Término del pago - días #};
-{# 9 Información de transporte TODO #};
+{# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
 {# 10 Código vendedor #}{{o.user_id.ref or ''}};
-{# 11 Valor a pagar #}{{o.amount_total}};
-{# 12 Lugar Emisión TODO-??? #};
-{# 13 Código Precio TODO-??? #};
+{# 11 Valor a pagar #}{{ o.amount_total }};
+{# 12 Lugar Emisión #}{{ o.company_id.city or '' }};
+{# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #}{{o.user_id.ref or ''}};
@@ -219,14 +235,22 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_det_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'det' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.invoice_line_ids %}
 {% set line_num = line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio FIXME o.folio_number #}{{o.number}};
+{# 3 Folio #}{{o.number}};
 {# 4 NroLinDet #}{{ line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 VlrCodigo #}{{line.product_id.default_code}};
@@ -236,10 +260,10 @@
 {# 10 VlrCodigo #};
 {# 11 TpoCodigo #};
 {# 12 VlrCodigo #};
-{# 13 TpoCodigo #}{{line.name[:80]}};
+{# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #};
+{# 16 NmbItem #}{{ line.name[:80] }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
@@ -299,14 +323,22 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_an2_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'an2' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.invoice_line_ids %}
 {% set line_num = line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio FIXME o.folio_number #}{{o.number}};
+{# 3 Folio #}{{o.number}};
 {# 4 Numero Detalle #}{{ line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{line.product_id.default_code}};
@@ -323,19 +355,28 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_des_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'des' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
-{% for line in o.invoice_line_ids %}
+{% set lines = o.invoice_line_ids.filtered('discount') %}
+{% for line in lines %}
 {% set line_num = line_num + 1 %}
-{# 1 Cliente #}***** VACIO *****;
-{# 2 Tipo #};
-{# 3 Folio #};
-{# 4 NroLineaDR #};
+{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo #}{{o.class_id.code}};
+{# 3 Folio #}{{o.number}};
+{# 2 NroLineaDR #}{{ line_num }};
 {# 5 TpoMov #};
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
-{# 8 ValorDR #};
+{# 8 ValorDR #}{{ o.discount }};
 {# 9 IndExeDR #};
 {{ '\n' }}
 {% endfor %}
@@ -348,14 +389,22 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">/interxerox/{{o.date_invoice.strftime('%m')}}/{{o.company_id.partner_id.ref or '00000'}}/{{o.date_invoice.strftime('%d')}}/dte_ref_81_{{"{:03d}".format(o.class_id.code or 0)}}_{{o.date_invoice.strftime('%Y%m%d_%H%M%S')}}_00000_00000_000_{{o.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name"> {%
+   set infix = 'ref' %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.date %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set warehouse  = "00041"
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for ref in o.reference_ids %}
 {% set line_num = line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio FIXME o.folio_number #}{{o.number}};
+{# 3 Folio #}{{o.number}};
 {# 2 NroLineaRef #}{{ line_num }};
 {# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
 {# 4 IndGlobal #};
@@ -366,20 +415,6 @@
 {# 10 RazonRef #};
 {# 11 CorrFact #};
 {% endfor %}
-{% if not o.reference_ids  %}
-{# 1 Cliente #}**** VACIO ****;
-{# 2 Tipo #};
-{# 3 Folio #};
-{# 2 NroLineaRef #};
-{# 3 TpoDocRef #};
-{# 4 IndGlobal #};
-{# 5 FolioRef #};
-{# 6 RUTOtr #};
-{# 8 FchRef #};
-{# 9 CodRef #};
-{# 10 RazonRef #};
-{# 11 CorrFact #};
-{% endif %}
 {{ '\n' }}
     </field>
 </record>

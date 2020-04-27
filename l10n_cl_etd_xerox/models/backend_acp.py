@@ -8,6 +8,8 @@ from odoo import api, fields, models
 class BackendAcp(models.Model):
     _inherit = "backend.acp"
 
+    xerox_company_code = fields.Char(
+        help="Use only for Xerox ETD Services")
     send_immediately = fields.Boolean(
         default=True,
         help="Send documents immediately to this backend"
