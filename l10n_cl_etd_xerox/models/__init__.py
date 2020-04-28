@@ -5,3 +5,4 @@
 from . import backend_acp
 from . import etd_mixin
 from . import etd_document
+from . import stock_warehouse
