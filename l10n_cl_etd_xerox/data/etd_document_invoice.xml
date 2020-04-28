@@ -19,8 +19,8 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
@@ -32,7 +32,7 @@
 {# 8 IndTraslado TODO o.move_reason #}{{2 if o.class_id.code in (33, 52) else ''}};
 {# 9 IndServicio TODO-??? #};
 {# 10 Mnt Bruto #};
-{# 11 FmaPago TODO o.payment_term_id.dte_sii_code #}1;
+{# 11 FmaPago #}{{ 1 if o.class_id.code == 39 else 2 }};
 {# 12 FechCancel #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
 {# 13 PeriodoDesde #};
 {# 14 PeriodoHasta #};
@@ -42,9 +42,9 @@
 {# 18 FchVenc #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
 {# 19 RUTEmisor #}{{(o.company_id.vat or '').replace('.', '')}};
 {# 20 RznSoc #}{{o.company_id.name}};
-{# 21 GiroEmis #}{{o.company_id.activity_description}};
+{# 21 GiroEmis #}{{ o.company_id.partner_id.activity_description }};
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
-{# 23 Sucursal TODO-??? #};
+{# 23 Sucursal #};{{o.company_id.name}}
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #}{{    ' '.join([o.company_id.street or '', o.company_id.street2 or ''])[:60] }};
 {# 26 CmnaOrigen #}{{   o.company_id.city_id.name or '' }};
@@ -68,22 +68,17 @@
 {# 44 DirDest #}{{' '.join([o.partner_shipping_id.street or '', o.partner_shipping_id.street2 or ''])[:60] }};
 {# 45 CmnaDest #}{{o.partner_shipping_id.city_id.name or ''}};
 {# 46 CiudadDest #}{{o.partner_shipping_id.city or ''}};
-{% set amount_taxed = 0 %}
-{% set amount_tax = 0 %}
 {% set amount_exempt = 0 %}
 {% for line in o.invoice_line_ids %}
-    {% if line.price_tax != 0 %}
-        {% set amount_taxed = amount_taxed + line.price_subtotal %}
-        {% set amount_tax = amount_tax + line.price_tax %}
-    {% else %}
+    {% if line.price_tax == 0 %}
         {% set amount_exempt = amount_exempt + line.price_subtotal %}
     {% endif %}
 {% endfor %}
-{# 47 MntNeto #}{{ o.amount_total }};
-{# 48 MntExe #}{{ amount_exempt }};
+{# 47 MntNeto #}{{ o.amount_total|int }};
+{# 48 MntExe #}{{ amount_exempt|int }};
 {# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
-{# 51 IVA #}{{ o.amount_tax }};
+{# 51 IVA #}{{ o.amount_tax|int }};
 {# 52 TipoImp #};
 {# 53 TasaImp #};
 {# 54 MontoImp #};
@@ -177,7 +172,7 @@
 {# 142 IVANoRet #};
 {# 143 CredEC #};
 {# 144 GrntDep #};
-{# 145 MntTotal #}{{o.amount_total}};
+{# 145 MntTotal #}{{ o.amount_total|int }};
 {# 146 MontoNF #};
 {# 147 MontoPeriodo #};
 {# 148 SaldoAnterior #};
@@ -199,21 +194,23 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1] %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "" %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.number}};
-{# 4 Número copias #}1;
+{# 4 Número copias #}2;
 {# 5 Observaciones #}{{o.note}};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago TODO-??? #};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
 {# 10 Código vendedor #}{{o.user_id.ref or ''}};
-{# 11 Valor a pagar #}{{ o.amount_total }};
-{# 12 Lugar Emisión #}{{ o.company_id.city or '' }};
+{# 11 Valor a pagar #}{{ o.amount_total|int }};
+{# 12 Lugar Emisión #}{{ warehouse.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
@@ -223,7 +220,7 @@
 {# 19 Afecto IABA #};
 {# 20 IABA #};
 {# 21 Hora emisión #}{{o.create_date.strftime('%H:%M')}};
-{# 22 Afecto IVA #}{{o.amount_tax}};
+{# 22 Afecto IVA #}{{ o.amount_tax|int }};
 {# 23 Número de pedido #}{{o.origin}};
 {{ '\n' }}
     </field>
@@ -242,8 +239,8 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.invoice_line_ids %}
@@ -282,12 +279,12 @@
 {# 32 FechElabor #};
 {# 33 FechVencim #};
 {# 34 UnmdItem #}{{line.uom_id.name[:4]}};
-{# 35 PrcItem #}{{line.price_unit}};
+{# 35 PrcItem #}{{ line.price_unit|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
 {# 39 DescuentoPct #}{{line.discount}};
-{# 40 DescuentoMonto #}{{line.discount and line.price_subtotal - (1-line.discount/100)*(line.quantity*line.price_unit) or ''}};
+{# 40 DescuentoMonto #}{{line.discount and (line.price_subtotal - (1-line.discount/100)*(line.quantity*line.price_unit)) or 0|int }};
 {# 41 TipoDscto #}{{line.discount and '%' or ''}};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
@@ -311,7 +308,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{line.price_subtotal}};
+{# 64 MontoItem #}{{ line.price_subtotal|int }};
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -330,8 +327,8 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.invoice_line_ids %}
@@ -362,8 +359,8 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% set lines = o.invoice_line_ids.filtered('discount') %}
@@ -396,8 +393,8 @@
 {% set date = o.date %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1]
+%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5)}}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for ref in o.reference_ids %}
