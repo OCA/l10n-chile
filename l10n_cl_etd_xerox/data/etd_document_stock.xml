@@ -212,7 +212,7 @@
 {# 10 Código vendedor #};
 {# 11 Valor a pagar #}{{ order.amount_total|int }};
 {# 12 Lugar Emisión #}{{ origen.name }};
-{# 13 Código Precio #};
+{# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
@@ -222,7 +222,7 @@
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M')}};
 {# 22 Afecto IVA #}{{ order.amount_untaxed|int }};
-{# 23 Número de pedido #}{{ o.origin }};
+{# 23 Número de pedido #}{{ o.origin.strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }};
 {{ '\n' }}
     </field>
 </record>
