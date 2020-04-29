@@ -50,7 +50,7 @@
 {# 20 RznSoc #}{{emisor.name}};
 {# 21 GiroEmis #}{{emisor.activity_description}};
 {# 22 Acteco #}{{ emisor.sii_activity_id.code }};
-{# 23 Sucursal #};{{emisor.name}}
+{# 23 Sucursal #}{{emisor.name}};
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #}{{    origen.street[:60] or "" }};
 {# 26 CmnaOrigen #}{{   origen.city_id.name or '' }};
@@ -76,7 +76,7 @@
 {# 46 CiudadDest #}{{dest.city or ''}};
 {# 47 MntNeto #}{{ order.amount_total|int }};
 {# 48 MntExe #};
-{# 49 MntBase #}{{ order.amount_untaxed|int }};
+{# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
 {# 51 IVA #}{{ order.amount_tax|int }};
 {# 52 TipoImp #};

@@ -33,8 +33,8 @@
 {# 4 Folio #}{{o.name}};
 {# 5 FechEmis #}{{o.date and o.date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
-{# 7 TipoDespacho #}2;
-{# 8 IndTraslado #}2;
+{# 7 TipoDespacho #};
+{# 8 IndTraslado #};
 {# 9 IndServicio #};
 {# 10 Mnt Bruto #};
 {# 11 FmaPago #};
@@ -61,9 +61,9 @@
 {# 32 RznSocRecep #}{{ recep.name}};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{    ' '.join([recep.street or '', recep.street2 or ''])[:60] }};
-{# 36 CmnaRecep #}{{   recep.city_id.name or ''}};
-{# 37 CiudadRecep #}{{ recep.city or ''}};
+{# 35 DirRecep #};
+{# 36 CmnaRecep TODO -> recep! #}{{   recep.city_id.name or ''}};
+{# 37 CiudadRecep #};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
 {# 40 CiudadPostal #};
@@ -196,34 +196,6 @@
 {% set warehouse  = "00041"
 %}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set amount_total = 0 %}
-{% for invoice in o.invoice_ids %}
-    {% set amount_total = amount_total + invoice.amount_total %}
-{% endfor %}
-{# 1 Cliente #}{{(o.env.user.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}5;
-{# 3 Folio #}{{o.number}};
-{# 4 Número copias #}0;
-{# 5 Observaciones TODO #};
-{# 6 Fecha Cancelación #};
-{# 7 Medio de pago #};
-{# 8 Término del pago - días #};
-{# 9 Información de transporte #}{{ o.fsm_vehicle_id.name }};
-{# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ amount_total }};
-{# 12 Lugar Emisión TODO #}???;
-{# 13 Código Precio #};
-{# 14 Local #};
-{# 15 Sector #};
-{# 16 Territorio #};
-{# 17 Carga #}1;
-{# 18 Depósito TODO #}41;
-{# 19 Afecto IABA #};
-{# 20 IABA #};
-{# 21 Hora emisión #}{{o.date_start_planned and o.date_start_planned.strftime('%H:%M') or ''}};
-{# 22 Afecto IVA #};
-{# 23 Número de pedido #};
-{{ '\n' }}
     </field>
 </record>
 
