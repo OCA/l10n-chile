@@ -19,7 +19,7 @@ class BackendAcp(models.Model):
 
     @api.model
     def _build_xerox_control_file(self, file_dict):
-        PREFIX = 'dte_ctr_ot_000'
+        PREFIX = 'dte_ctr_ot_000_'
         res = {}
         for file_path, file_text in file_dict.items():
             file_dir, file_name = os.path.split(file_path)
