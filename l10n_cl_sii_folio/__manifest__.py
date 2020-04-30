@@ -27,6 +27,8 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "views/account_journal.xml",
+        "views/account_journal_document.xml",
         "views/ir_sequence.xml",
         "views/ir_sequence_folio.xml",
     ],

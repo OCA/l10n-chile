@@ -6,4 +6,7 @@
 from . import (
     ir_sequence,
     ir_sequence_folio,
+    account_journal_document,
+    account_journal,
+    account_move,
 )
