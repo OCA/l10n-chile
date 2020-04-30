@@ -4,6 +4,14 @@
     <field name="name">Xerox Stock</field>
     <field name="model">stock.picking</field>
     <field name="invoicing_policy"></field>
+    <field name="template_text_include">{%
+   set tipo = ("000%d" % o.class_id.code)[-3:] %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set date = o.scheduled_date %}
+{% set truck = o.fsm_vehicle_id.name or "000" %}
+{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
+{% set warehouse  = o.sale_id.warehouse_id
+%} </field>
 </record>
 
 <record id="etd_file_xerox_stock_cab" model="etd.document.file">
@@ -12,15 +20,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'cab' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_cab_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set date = o.scheduled_date %}
 {% set emisor = o.company_id.partner_id %}
@@ -187,15 +189,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'ane' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_ane_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set date = o.scheduled_date %}
 {% set origen = o.sale_id.warehouse_id.partner_id %}
@@ -233,15 +229,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'det' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_det_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.move_ids_without_package %}
@@ -321,15 +311,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'an2' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_an2_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for line in o.move_ids_without_package %}
@@ -353,15 +337,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'des' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_des_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% set lines = o.move_ids_without_package.mapped('sale_line_id').filtered('discount') %}
@@ -387,15 +365,9 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'ref' %}
-{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.fsm_order_id.dayroute_id.name or "00000" %}
-{% set warehouse  = o.sale_id.warehouse_id
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse.xerox_code[-5:].zfill(5) }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_ref_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for ref in o.move_ids_without_package.mapped('sale_line_id.order_id.invoice_ids.reference_ids') %}
