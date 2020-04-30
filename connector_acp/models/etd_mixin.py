@@ -26,10 +26,11 @@ class EtdMixin(models.AbstractModel):
         "etd.signature", string="SSL Signature", help="SSL Signature of the Document"
     )
 
+    # TODO: deprecate _env
     _env = None
 
     @api.model
-    def set_jinja_env(self):
+    def _set_jinja_env(self):
         """Set the Jinja2 environment.
 
         The environment will helps the system to find the templates to render.
@@ -51,7 +52,7 @@ class EtdMixin(models.AbstractModel):
         res = self.company_id.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
-    def prepare_keywords(self):
+    def _prepare_jinja_context(self):
         """Return a dictionary of keywords used in the template.
 
         :return: Dictionary of keywords used in the template
@@ -69,42 +70,50 @@ class EtdMixin(models.AbstractModel):
 
     def _render_jinja_template(self, template_text):
         """
-        In: self recordset and template string
+        In: self recordset and ETD File for the template to use
         Out: string with the processed template
         """
-        self.set_jinja_env()
-        template = self._env.from_string(template_text)
-        # Additional keywords used in the template
-        kwargs = self.prepare_keywords()
-        # Render the file
-        res = template.render(kwargs)
+        # Render the template
+        jinja_env = Environment(
+            lstrip_blocks=True, trim_blocks=True, loader=BaseLoader())
+        template = jinja_env.from_string(template_text)
+        eval_context = self._prepare_jinja_context()
+        res = template.render(eval_context)
         return res
 
-    def get_etd_template(self, etd_file):
+    def _get_etd_filetext(self, etd_file):
         """
         Get the file template to render.
         """
-        file_template = etd_file.template_text or base64.b64decode(
-            etd_file.template
-        ).decode("utf-8")
-        if etd_file.file_type == 'txt':
-            # Make text templates more comformatable to edit:
-            # Remove initial and trailing whitespace
+        if etd_file.template:
+            # XML template
+            template_text = base64.b64decode(
+                etd_file.template).decode("utf-8")
+        else:
+            # Text template
+            template_text = "%s%s" % (
+                (etd_file.document_id.template_text_include or "").strip(),
+                etd_file.template_text.strip())
+            # Make text templates more comfortable to edit:
             # Remove implicit line breaks
-            # Consider explicit line breaks entered as "\n"
-            file_template = file_template.strip()
-            file_template = file_template.replace("\r\n", "")
-            file_template = file_template.replace("\n", "")
-            file_template = file_template.replace("\\n", "\n")
-        return file_template
+            # Consider explicit line breaks entered as "\\n"
+            template_text = template_text.replace("\r\n", "")
+            template_text = template_text.replace("\n", "")
+            template_text = template_text.replace("\\n", "\n")
+        return self._render_jinja_template(template_text)
 
-    def get_etd_filename(self, etd_file):
+    def _get_etd_filename(self, etd_file):
         """
         Get the file name.
         This can be a relative path with a directory name.
         """
         if etd_file.template_name:
-            res = self._render_jinja_template(etd_file.template_name)
+            template_text = "%s%s" % (
+                (etd_file.document_id.template_text_include or "").strip(),
+                etd_file.template_name.strip())
+            res = self._render_jinja_template(template_text)
+            # Remove possible line breaks from file names
+            res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
             res = "%s.%s" % (self.display_name, etd_file.file_type)
         return res
@@ -123,9 +132,8 @@ class EtdMixin(models.AbstractModel):
         """
         file_dict = file_dict or {}
         for rec in self:
-            file_template = rec.get_etd_template(etd_file)
-            file_name = rec.get_etd_filename(etd_file)
-            file_text = rec._render_jinja_template(file_template)
+            file_name = rec._get_etd_filename(etd_file)
+            file_text = rec._get_etd_filetext(etd_file)
 
             if etd_file.grouped:
                 # Append text to an already existing file

@@ -29,8 +29,8 @@ class EtdDocument(models.Model):
         recs['stock.picking'] = self.env["stock.picking"].search([
             ("picking_type_code", "=", "outgoing"),
             ("state", "=", "done"),
-            ("date_done", ">=", run_date),
-            ("date_done", "<=", next_date),
+            ("scheduled_date", ">=", run_date),
+            ("scheduled_date", "<", next_date),
             ("class_id", "in", class_ids)
         ])
         return recs

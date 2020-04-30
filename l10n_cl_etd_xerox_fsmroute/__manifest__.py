@@ -17,6 +17,7 @@
         "fieldservice_route",
         "fieldservice_account",
         "fieldservice_stock",
+        "fieldservice_vehicle",
     ],
     "data": [
         "data/etd_document_route_01.xml",
