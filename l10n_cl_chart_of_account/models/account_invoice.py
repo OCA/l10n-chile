@@ -4,33 +4,6 @@
 from odoo import fields, models
 
 
-class AccountInvoiceTax(models.Model):
-    _inherit = "account.invoice.tax"
-
-    amount_retention = fields.Monetary(string="Retention", default=0.00)
-    retention_account_id = fields.Many2one(
-        'account.account', string='Retention Account',
-        domain=[('deprecated', '=', False)])
-
-    def _getNet(self, currency):
-        net = 0
-        for tax in self:
-            base = tax.base
-            price_tax_included = 0
-            for line in tax.invoice_id.invoice_line_ids:
-                if tax.tax_id in line.invoice_line_tax_ids and \
-                        tax.tax_id.price_include:
-                    price_tax_included += line.price_tax_included
-            if price_tax_included > 0 and \
-                    tax.tax_id.sii_type in ["R"] and tax.tax_id.amount > 0:
-                base = currency.round(price_tax_included)
-            elif price_tax_included > 0 and tax.tax_id.amount > 0:
-                base = currency.round(price_tax_included /
-                                      (1 + tax.tax_id.amount / 100.0))
-            net += base
-        return net
-
-
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
@@ -38,7 +11,7 @@ class AccountInvoice(models.Model):
         # TODO: Search for a better way to apply the retention
         for inv in self:
             amount_retention = 0
-            neto = 0
+            net = 0
             amount_tax = 0
             included = False
             for tax in inv.tax_line_ids:
@@ -48,12 +21,12 @@ class AccountInvoice(models.Model):
                 amount_retention += tax.amount_retention
             inv.amount_retention = amount_retention
             if included:
-                neto += inv.tax_line_ids._getNeto(inv.currency_id)
+                net += inv.tax_line_ids._getNet(inv.currency_id)
                 amount_retention += amount_retention
             else:
-                neto += sum(
+                net += sum(
                     line.price_subtotal for line in inv.invoice_line_ids)
-            inv.amount_untaxed = neto
+            inv.amount_untaxed = net
             inv.amount_tax = amount_tax
             inv.amount_total = \
                 inv.amount_untaxed + inv.amount_tax - amount_retention
