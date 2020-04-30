@@ -7,7 +7,8 @@ import os
 import tempfile
 import shutil
 import ftplib
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)
@@ -17,9 +18,12 @@ class BackendAcp(models.Model):
     _inherit = "backend.acp"
 
     connection_type = fields.Selection(selection_add=[("ftp", "FTP")])
+    ftp_directory = fields.Char(
+        help="FTP Directory to upload the files to")
 
     @api.model
-    def _ftp_upload_directory(self, ftp_session, from_local_dir, to_server_dir):
+    def _ftp_upload_directory(self, ftp_session,
+                              from_local_dir, to_server_dir):
         """
         Given a local directory, upload all files and subdirs.
         - change server work directory
@@ -27,7 +31,13 @@ class BackendAcp(models.Model):
         - search subdirs in local directory, and recursively upload them
         """
         # List and upload files
-        ftp_session.cwd(to_server_dir)
+        _logger.debug('Changing to directory %s', to_server_dir)
+        try:
+            ftp_session.cwd(to_server_dir)
+        except Exception as e:
+            raise UserError(
+                    _("Error changing directory to %s:\n%s")
+                % (to_server_dir, str(e)))
         from_path, subdir_list, file_list = next(os.walk(from_local_dir))
         for file_name in file_list:
             file_path = os.path.join(from_path, file_name)
@@ -40,12 +50,16 @@ class BackendAcp(models.Model):
                 ftp_session, os.path.join(from_local_dir, subdir), subdir
             )
 
-    def _ftp_upload(self, from_local_dir, to_server_dir="."):
+    def _ftp_upload(self, from_local_dir, to_server_dir=""):
         """Send FTP files to the temp.
 
         This method is used to upload all file in temp directory.
         """
         self.ensure_one()
+        if self.ftp_directory and to_server_dir:
+            to_server_dir = os.path.join(self.ftp_directory, to_server_dir)
+        else:
+            to_server_dir = to_server_dir or self.ftp_directory
         with ftplib.FTP() as ftp:
             ftp.connect(self.host, self.port or 21)
             ftp.login(self.user, self.password)
