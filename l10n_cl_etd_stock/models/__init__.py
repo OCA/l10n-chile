@@ -7,4 +7,5 @@ from . import (
     etd_document,
     delivery_carrier,
     stock_picking,
+    stock_picking_batch,
 )
