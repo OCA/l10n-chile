@@ -72,16 +72,14 @@ class IrSequence(models.Model):
                         continue
                 alert_msg = caffile.check_nivel(folio)
                 if alert_msg != "":
-                    self.env["bus.bus"].sendone(
-                        (self._cr.dbname, "dte.caf",
-                         self.env.user.partner_id.id),
-                        {
-                            "title": "Alert on CAF",
-                            "message": alert_msg,
-                            "url": "res_config",
-                            "type": "dte_notif",
-                        },
-                    )
+                    self.env["bus.bus"].sendone((
+                        self._cr.dbname, "dte.caf",
+                        self.env.user.partner_id.id), {
+                        "title": "Alert on CAF",
+                        "message": alert_msg,
+                        "url": "res_config",
+                        "type": "dte_notif",
+                    })
                 return caffile.decode_caf()
         raise UserError(_(msg))
 
@@ -109,8 +107,8 @@ class IrSequence(models.Model):
         menor = False
         cafs = self.get_caf_files(folio)
         if not cafs:
-            raise UserError(_("There is no CAF available for %s.") %
-                            self.name)
+            raise UserError(_(
+                "There is no CAF available for %s." % self.name))
         for c in cafs:
             if not menor or c.start_nm < menor.start_nm:
                 menor = c
@@ -122,8 +120,7 @@ class IrSequence(models.Model):
         if self.implementation == "standard":
             number_next = self.number_next_actual
         folio = super(IrSequence, self)._next_do()
-        if self.class_id and self.forced_by_caf and \
-                self.folio_ids:
+        if self.class_id and self.forced_by_caf and self.folio_ids:
             self.update_next_by_caf(folio)
             actual = self.number_next
             if self.implementation == "standard":
