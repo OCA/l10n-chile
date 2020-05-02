@@ -1,0 +1,15 @@
+<odoo>
+
+    <record id="view_stock_picking_batch_sii_class" model="ir.ui.view">
+        <field name="name">stock.picking.batch.sii.document.class</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id"
+               ref="stock_picking_batch.stock_picking_batch_form"/>
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="class_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
