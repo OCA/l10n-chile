@@ -3,6 +3,28 @@
 <record id="etd_document_route_07" model="etd.document">
     <field name="name">Xerox 07 - Route Summary</field>
     <field name="model">fsm.route.dayroute</field>
+    <field name="template_text_include">{%
+   set tipo = "007" %}
+{% set date = o.date %}
+{% set warehouse_obj = o.mapped('order_ids.warehouse_id')[:1] %}
+{% set warehouse = warehouse_obj.xerox_code or "" %}
+{% set company_obj = warehouse_obj.company_id %}
+{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set truck = o.fsm_vehicle_id.name or "" %}
+{% set shift = o.name or "" %}
+{% set fsm_orders = o.order_ids %}
+{% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
+{% set deliveries = o.mapped('order_ids.picking_ids').filtered('class_id') %}
+
+{% set transp = o.person_id.partner_id %}
+{% set cliente = transp %}
+{% set emisor = cliente %}
+{% set origen = warehouse_obj.partner_id %}
+{% set recep = transp %}
+{% set dest = origen %}
+{% set HINI = "700" %}
+{% set HFIN = "2300" %}
+</field>
 </record>
 
 <record id="etd_document_route_07_cab" model="etd.document.file">
@@ -11,30 +33,18 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'cab' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_cab_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set cliente = o.env.user.company_id.partner_id %} {# TODO: o.company_id (add company_id to fsm.route.dayroute) #}
-{% set emisor = cliente %}
-{% set origen = cliente %}
-{% set recep = cliente %}
-{% set dest = cliente %}
-{% set transp = o.person_id.partner_id %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
-{# 3 Tipo #}7;
+{# 3 Tipo #}{{tipo}};
 {# 4 Folio #}{{o.name}};
-{# 5 FechEmis #}{{o.date and o.date.strftime('%Y-%m-%d')}};
+{# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
-{# 7 TipoDespacho #}2;
-{# 8 IndTraslado #}2;
+{# 7 TipoDespacho #};
+{# 8 IndTraslado #};
 {# 9 IndServicio #};
 {# 10 Mnt Bruto #};
 {# 11 FmaPago #};
@@ -61,7 +71,7 @@
 {# 32 RznSocRecep #}{{recep.name}};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{ (recep.street + ' ' + recep.street2)[:60] }};
+{# 35 DirRecep #}{{ (recep.street or ' ')[:60] }};
 {# 36 CmnaRecep #}{{recep.city_id.name or ''}};
 {# 37 CiudadRecep #}{{recep.city or ''}};
 {# 38 DirPostal #};
@@ -186,37 +196,31 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'ane' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_ane_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente            #}{{(o.env.user.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}7;
-{# 3 Folio              #}{{o.number}};
+{# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo               #}{{tipo}};
+{# 3 Folio              #}{{o.name}};
 {# 4 Número copias      #}1;
 {# 5 Observaciones TODO #};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #};
 {# 8 Término del pago - días #};
-{# 9 Información de transporte TODO #}{{ o.fsm_vehicle_id.name }};
+{# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
 {# 11 Valor a pagar     #}{{ o.name }};
-{# 12 Lugar Emisión TODO #}???;
+{# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
-{# 14 Local #}0;
+{# 14 Local #};
 {# 15 Sector #};
 {# 16 Territorio #};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};
 {# 20 IABA #};
-{# 21 Hora emisión      #}{{o.date_start_planned and o.date_start_planned.strftime('%H:%M') or ''}};
+{# 21 Hora emisión      #}{{date and date.strftime('%H:%M') or ''}};
 {# 22 Afecto IVA #};
 {# 23 Número de pedido #};
 {{ '\n' }}
@@ -229,27 +233,20 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'det' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_det_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {# List Invoices #}
-{% for order in o.order_ids %}
-{% for invoice in order.invoice_ids %}
-{% set line_num = line_num + 1 %}
+{% for invoice in invoices %}
+{% set totals.line_num = totals.line_num + 1 %}
 {% set customer = invoice.partner_id %}
 {% set delivery_addr = invoice.partner_id %}
-{# 1 Cliente            #}{{ (o.env.user.company_id.vat or '').replace('.', '')[:8]}};
+{# 1 Cliente            #}{{ (ientevat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{ o.name}};
-{# 4 NroLinDet          #}{{ line_num }};
+{# 3 Folio              #}{{ o.name }};
+{# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo          #}{{ invoice.name}};
 {# 7 TpoCodigo #};
@@ -261,7 +258,7 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem           #}{{ customer.name }};
+{# 16 NmbItem           #}{{ customer.activity_description }};
 {# 17 DscItem           #}{{ (customer.vat or '').replace('.', '') }};
 {# 18 QtyRef            #}{# TODO "D.PZO." ??? #];
 {# 19 UnmdRef #};
@@ -280,12 +277,12 @@
 {# 32 FechElabor        #}{{ invoice.payment_term_id.note or invoice.payment_term_id.name }};
 {# 33 FechVencim        #}{{ invoice.date_due }};
 {# 34 UnmdItem #};
-{# 35 PrcItem           #}{# TODO Horario Entrega ??? #};
-{# 36 PrcOtrMon         #}{# TODO Horario Entrega ??? #};
-{# 37 Moneda            #}{# TODO Horario No Entrega ??? #};
-{# 38 FctConv           #}{# TODO Horario No Entrega ??? #};
-{# 39 DescuentoPct      #}{# TODO Horario Entrega ??? #};
-{# 40 DescuentoMonto    #}{# TODO Horario Entrega ??? #};
+{# 35 PrcItem           #}{{ "700" }};
+{# 36 PrcOtrMon         #}{{ "2300" }};
+{# 37 Moneda            #}0;
+{# 38 FctConv           #}0;
+{# 39 DescuentoPct      #}{{ "700" }};
+{# 40 DescuentoMonto    #}{{ "2300" }};
 {# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
@@ -309,20 +306,18 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem         #}{{ invoice.amount_total }};
+{# 64 MontoItem         #}{{ invoice.amount_total|int }};
 {{ '\n' }}
 {% endfor %}
-{% endfor %}
 {# List Delivery Orders #}
-{% for order in o.order_ids%}
-{% for picking in order.move_ids.mapped('picking_id')%}
-{% set line_num = line_num + 1 %}
+{% for picking in deliveries %}
+{% set totals.line_num = totals.line_num + 1 %}
 {% set customer = picking.partner_id %}
 {% set delivery_addr = picking.partner_id %}
-{# 1 Cliente            #}{{ (o.env.user.company_id.vat or '').replace('.', '')[:8]}};
+{# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
 {# 3 Folio              #}{{ o.name}};
-{# 4 NroLinDet          #}{{ line_num }};
+{# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo          #}{{ picking.name}};
 {# 7 TpoCodigo #};
@@ -351,7 +346,7 @@
 {# 30 SubQty #};
 {# 31 SubCod #};
 {# 32 FechElabor        #}{{ picking.picking_type_id.name }};
-{# 33 FechVencim        #}{# picking.scheduled_date] #};
+{# 33 FechVencim        #}{# picking.scheduled_date #};
 {# 34 UnmdItem #};
 {# 35 PrcItem           #}{# TODO Horario Entrega ??? #};
 {# 36 PrcOtrMon         #}{# TODO Horario Entrega ??? #};
@@ -382,13 +377,12 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{% set amount_total = 0 %}
+{% set totals = namespace(amount_total=0) %}
 {% for line in picking.move_ids_without_package %}
-{% set amount_total = amount_total + line.sale_line_id.price_subtotal %}
+{% set totals.amount_total = totals.amount_total + line.sale_line_id.price_subtotal %}
 {% endfor %}
-{# 64 MontoItem         #}{{ amount_total }};
+{# 64 MontoItem         #}{{ totals.amount_total|int }};
 {{ '\n' }}
-{% endfor %}
 {% endfor %}
     </field>
 </record>
@@ -399,40 +393,32 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'an2' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_an2_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {# List Invoices #}
-{% for order in o.order_ids %}
-{% for invoice in order.invoice_ids %}
-{% set line_num = line_num + 1 %}
-{# 1 Cliente            #}{{ (o.env.user.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}7;
-{# 3 Folio              #}{{ o.name }};
-{# 4 Numero Detalle     #}{{ line_num }};
+{% for invoice in invoices %}
+{% set totals.line_num = totals.line_num + 1 %}
+{# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo               #}{{tipo}};
+{# 3 Folio              #}{{ invoice.number }};
+{# 4 Numero Detalle     #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
 {{ '\n' }}
 {% endfor %}
-{% endfor %}
 {# List Delivery Orders #}
-{% for order in o.order_ids%}
+{% for order in pickings %}
 {% for picking in order.move_ids%}
-{% set line_num = line_num + 1 %}
-{# 1 Cliente            #}{{ (o.env.user.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}7;
-{# 3 Folio              #}{{ o.name }};
-{# 4 Numero Detalle     #}{{ line_num }};
+{% set totals.line_num = totals.line_num + 1 %}
+{# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo               #}{{tipo}};
+{# 3 Folio              #}{{ picking.name }};
+{# 4 Numero Detalle     #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
@@ -449,17 +435,11 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'des' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_des_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente #}***** VACIO *****;
+{# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
 {# 4 NroLineaDR #};
@@ -478,17 +458,11 @@
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> {%
-   set infix = 'ref' %}
-{% set tipo = "007" %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.date %}
-{% set truck = o.fsm_vehicle_id.name or "000" %}
-{% set shift = o.name or "00000" %}
-{% set warehouse  = "00041"
-%}/interxerox/{{ date.strftime('%m') }}/{{ warehouse }}/{{ date.strftime('%d') }}/dte_{{ infix }}_{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_name">
+dte_ref_
+{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente #}**** VACIO ****;
+{# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
 {# 2 NroLineaRef #};
