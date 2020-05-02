@@ -23,24 +23,9 @@ class EtdMixin(models.AbstractModel):
     _description = "Electronic Tax Document Mixin"
 
     signature_id = fields.Many2one(
-        "etd.signature", string="SSL Signature", help="SSL Signature of the Document"
+        "etd.signature", string="SSL Signature",
+        help="SSL Signature of the Document"
     )
-
-    # TODO: deprecate _env
-    _env = None
-
-    @api.model
-    def _set_jinja_env(self):
-        """Set the Jinja2 environment.
-
-        The environment will helps the system to find the templates to render.
-        :return: jinja2.Environment instance.
-        """
-        if self._env is None:
-            self._env = Environment(
-                lstrip_blocks=True, trim_blocks=True, loader=BaseLoader()
-            )
-        return self._env
 
     def get_etd_document(self):
         """
@@ -49,7 +34,9 @@ class EtdMixin(models.AbstractModel):
         :return: The etd.document that needs be used to generate the
          XML file
         """
-        res = self.company_id.etd_ids.filtered(lambda x: x.model == self._name)
+        company = (self.company_id if hasattr(self, 'company_id')
+                   else self.env.user.company_id)
+        res = company.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
     def _prepare_jinja_context(self):
@@ -100,7 +87,14 @@ class EtdMixin(models.AbstractModel):
             template_text = template_text.replace("\r\n", "")
             template_text = template_text.replace("\n", "")
             template_text = template_text.replace("\\n", "\n")
-        return self._render_jinja_template(template_text)
+        try:
+            res = self._render_jinja_template(template_text)
+        except Exception as e:
+            raise UserError(
+                _("Error rendering file content %s "
+                  "for document %s - %s:\n\n%s")
+                % (etd_file.name, str(self), self.display_name, str(e)))
+        return res
 
     def _get_etd_filename(self, etd_file):
         """
@@ -111,7 +105,13 @@ class EtdMixin(models.AbstractModel):
             template_text = "%s%s" % (
                 (etd_file.document_id.template_text_include or "").strip(),
                 etd_file.template_name.strip())
-            res = self._render_jinja_template(template_text)
+            try:
+                res = self._render_jinja_template(template_text)
+            except Exception as e:
+                raise UserError(
+                    _("Error rendering file name %s "
+                      "for document %s - %s:\n\n%s")
+                    % (etd_file.name, str(self), self.display_name, str(e)))
             # Remove possible line breaks from file names
             res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
