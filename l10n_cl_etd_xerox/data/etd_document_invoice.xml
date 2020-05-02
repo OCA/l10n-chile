@@ -233,13 +233,13 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
-{% set line_num = line_num + 1 %}
+{% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.number}};
-{# 4 NroLinDet #}{{ line_num }};
+{# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 VlrCodigo #}{{line.product_id.default_code}};
 {# 7 TpoCodigo #};
@@ -315,13 +315,13 @@ dte_det_
 dte_an2_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
-{% set line_num = line_num + 1 %}
+{% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.number}};
-{# 4 Numero Detalle #}{{ line_num }};
+{# 4 Numero Detalle #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{line.product_id.default_code}};
 {# 7 Grado Alcoholico #};
@@ -341,14 +341,14 @@ dte_an2_
 dte_des_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {% set lines = o.invoice_line_ids.filtered('discount') %}
-{% for line in lines %}
-{% set line_num = line_num + 1 %}
+{% for line in totals.lines %}
+{% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.number}};
-{# 2 NroLineaDR #}{{ line_num }};
+{# 2 NroLineaDR #}{{ totals.line_num }};
 {# 5 TpoMov #};
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
