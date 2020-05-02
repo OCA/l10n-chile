@@ -4,7 +4,7 @@
 
 {
     "name": "Chile Localization Chart Account SII",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "author": "Konos, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",
     "category": "Localization/Chile",
