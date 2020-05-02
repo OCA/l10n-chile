@@ -23,6 +23,7 @@
     "data": [
         "data/etd_document_invoice.xml",
         "data/etd_document_stock.xml",
+        "data/etd_document_stock_batch.xml",
         "data/etd_xerox_cron.xml",
         "views/backend_acp.xml",
         "views/stock_warehouse.xml",
