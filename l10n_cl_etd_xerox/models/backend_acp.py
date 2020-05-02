@@ -10,6 +10,8 @@ class BackendAcp(models.Model):
 
     xerox_company_code = fields.Char(
         help="Use only for Xerox ETD Services")
+    xerox_center_code = fields.Char(
+        help="Use only for Xerox ETD Services")
     send_immediately = fields.Boolean(
         default=True,
         help="Send documents immediately to this backend"

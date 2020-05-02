@@ -8,6 +8,7 @@
 
             <field name="password" position="after">
                 <field name="xerox_company_code" />
+                <field name="xerox_center_code" />
                 <field name="send_immediately" />
             </field>
 

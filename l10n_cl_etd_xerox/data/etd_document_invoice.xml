@@ -6,11 +6,12 @@
     <field name="invoicing_policy"></field>
     <field name="template_text_include">{%
    set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set company_code = o.company_id.backend_acp_id.xerox_company_code or "00" %}
+{% set center_code = o.company_id.backend_acp_id.xerox_center_code or "00" %}
 {% set date = o.date_invoice %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
 {% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
-{% set warehouse  = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1] %}</field>
+{% set warehouse_addr = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1].partner_id or o.company_id.partner_id %}</field>
 </record>
 
 <record id="etd_file_xerox_invoice_cab" model="etd.document.file">
@@ -21,7 +22,7 @@
     <field name="save">False</field>
     <field name="template_name">
 dte_cab_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt
     </field>
     <field name="template_text">
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
@@ -48,9 +49,9 @@ dte_cab_
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
 {# 23 Sucursal #}{{o.company_id.name}};
 {# 24 CodSIISucur #};
-{# 25 DirOrigen #}{{ (warehouse.partner_id.street or '')[:60] }};
-{# 26 CmnaOrigen #}{{ warehouse.partner_id.city_id.name or '' }};
-{# 27 CiudadOrigen #}{{ warehouse.partner_id.city }};
+{# 25 DirOrigen #}{{ (warehouse_addr.street or '')[:60] }};
+{# 26 CmnaOrigen #}{{ warehouse_addr.city_id.name or '' }};
+{# 27 CiudadOrigen #}{{ warehouse_addr.city }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{     (o.partner_id.vat or '').replace('.', '')}};
@@ -191,7 +192,7 @@ dte_cab_
     <field name="save">False</field>
     <field name="template_name">
 dte_ane_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1] %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "" %}
@@ -231,7 +232,7 @@ dte_ane_
     <field name="save">False</field>
     <field name="template_name">
 dte_det_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
@@ -313,7 +314,7 @@ dte_det_
     <field name="save">False</field>
     <field name="template_name">
 dte_an2_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
@@ -339,7 +340,7 @@ dte_an2_
     <field name="save">False</field>
     <field name="template_name">
 dte_des_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% set lines = o.invoice_line_ids.filtered('discount') %}
@@ -367,7 +368,7 @@ dte_des_
     <field name="save">False</field>
     <field name="template_name"> 
 dte_ref_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse.xerox_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set line_num = 0 %}
 {% for ref in o.reference_ids %}
