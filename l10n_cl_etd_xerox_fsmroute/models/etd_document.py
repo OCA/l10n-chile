@@ -16,7 +16,7 @@ class EtdDocument(models.Model):
         res = super()._xerox_get_records(company_id, run_date)
         # next_date = date_utils.add(run_date, days=1)
         res['fsm.route.dayroute'] = self.env["fsm.route.dayroute"].search([
-            ("stage_id.is_closed", "=", "True"),
+            # ("stage_id.is_closed", "=", "True"),
             # TODO: should we use a Close Date instead of the run Date?
             # ("date_close", ">=", run_date),
             # ("date_close", "<", next_date),
