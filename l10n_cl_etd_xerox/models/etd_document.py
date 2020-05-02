@@ -35,6 +35,11 @@ class EtdDocument(models.Model):
             ("scheduled_date", "<", next_date),
             ("class_id", "in", class_ids)
         ])
+        recs['stock.picking.batch'] = self.env["stock.picking.batch"].search([
+            ("date", "=", run_date),
+            ("class_id", "in", class_ids),
+            ('picking_ids', '!=', False),
+        ])
         return recs
 
     @api.model
