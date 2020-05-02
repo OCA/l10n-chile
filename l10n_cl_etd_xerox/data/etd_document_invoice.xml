@@ -71,14 +71,14 @@ dte_cab_
 {# 44 DirDest #}{{' '.join([o.partner_shipping_id.street or '', o.partner_shipping_id.street2 or ''])[:60] }};
 {# 45 CmnaDest #}{{o.partner_shipping_id.city_id.name or ''}};
 {# 46 CiudadDest #}{{o.partner_shipping_id.city or ''}};
-{% set amount_exempt = 0 %}
+{% set totals = namespace(amount_exempt=0) %}
 {% for line in o.invoice_line_ids %}
     {% if line.price_tax == 0 %}
-        {% set amount_exempt = amount_exempt + line.price_subtotal %}
+        {% set totals.amount_exempt = totals.amount_exempt + line.price_subtotal %}
     {% endif %}
 {% endfor %}
 {# 47 MntNeto #}{{ o.amount_total|int }};
-{# 48 MntExe #}{{ amount_exempt|int }};
+{# 48 MntExe #}{{ totals.amount_exempt|int }};
 {# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
 {# 51 IVA #}{{ o.amount_tax|int }};
@@ -370,13 +370,13 @@ dte_des_
 dte_ref_
 {{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {% for ref in o.reference_ids %}
-{% set line_num = line_num + 1 %}
+{% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.number}};
-{# 2 NroLineaRef #}{{ line_num }};
+{# 2 NroLineaRef #}{{ totals.line_num }};
 {# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
 {# 4 IndGlobal #};
 {# 5 FolioRef #}{{ref.invoice_id.class_id.name or ''}};
