@@ -268,7 +268,7 @@ dte_det_
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
-{# 21 QtyItem #}{{line.quantity_done}};
+{# 21 QtyItem #}{{ (line.quantity_done or line.product_uom_qty) }};
 {# 22 SubQty #};
 {# 23 SubCod #};
 {# 24 SubQty #};
@@ -287,7 +287,7 @@ dte_det_
 {# 37 Moneda #};
 {# 38 FctConv #};
 {# 39 DescuentoPct #}{{line.sale_line_id.discount}};
-{# 40 DescuentoMonto #}{{line.sale_line_id.discount and (line.sale_line_id.price_subtotal - (1-line.sale_line_id.discount/100)*(line.quantity_done*line.sale_line_id.price_unit)) or ''}};
+{# 40 DescuentoMonto #}{{line.sale_line_id.discount and (line.sale_line_id.price_subtotal - (1-line.sale_line_id.discount/100)*((line.quantity_done or line.product_uom_qty)*line.sale_line_id.price_unit)) or ''}};
 {# 41 TipoDscto #}{{line.sale_line_id.discount and '%' or ''}};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
