@@ -88,7 +88,7 @@ class EtdMixin(models.AbstractModel):
             template_text = template_text.replace("\n", "")
             template_text = template_text.replace("\\n", "\n")
         try:
-            res = self._render_jinja_template(template_text)
+            res = self._render_jinja_template(template_text).strip()
         except Exception as e:
             raise UserError(
                 _("Error rendering file content %s "
