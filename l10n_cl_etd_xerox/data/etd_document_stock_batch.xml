@@ -32,6 +32,7 @@
     {% set totals.amount_tax = totals.amount_tax + sale.amount_tax %}
     {% set totals.amount_untaxed = totals.amount_untaxed + sale.amount_untaxed %}
 {% endfor %}
+{% set lines = o.get_xerox_lines() %}
     </field>
 </record>
 
@@ -246,14 +247,15 @@ dte_det_
 {{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines %}
+{% for key, vals in lines.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
+{% set product, uom = key %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.name}};
 {# 4 NroLinDet #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 VlrCodigo #}{{line.product_id.default_code}};
+{# 6 VlrCodigo #}{{ product.default_code}};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -263,12 +265,12 @@ dte_det_
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{line.product_id.name[:80]}};
+{# 16 NmbItem #}{{product.name[:80]}};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
-{# 21 QtyItem #}{{line.quantity_done}};
+{# 21 QtyItem #}{{vals['quantity']}};
 {# 22 SubQty #};
 {# 23 SubCod #};
 {# 24 SubQty #};
@@ -281,14 +283,14 @@ dte_det_
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{line.product_uom.name[:4]}};
-{# 35 PrcItem #}{{ line.sale_line_id.price_unit|int }};
+{# 34 UnmdItem #}{{uom.name[:4]}};
+{# 35 PrcItem #}{{ (vals['quantity'] and vals['amount'] / vals['quantity'] or 0)|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{line.sale_line_id.discount}};
-{# 40 DescuentoMonto #}{{line.sale_line_id.discount and (line.sale_line_id.price_subtotal - (1-line.sale_line_id.discount/100)*(line.quantity_done*line.sale_line_id.price_unit)) or ''}};
-{# 41 TipoDscto #}{{line.sale_line_id.discount and '%' or ''}};
+{# 39 DescuentoPct #};
+{# 40 DescuentoMonto #};
+{# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
 {# 44 ValorDscto #};
@@ -311,7 +313,7 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.sale_line_id.price_subtotal|int }};
+{# 64 MontoItem #}{{ vals['amount']|int }};
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -328,14 +330,14 @@ dte_an2_
 {{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines %}
+{% for key, vals in lines.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{o.name}};
 {# 4 Numero Detalle #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{line.product_id.default_code}};
+{# 6 Código del item 01 #}{{ key[0].default_code }};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
 {{ '\n' }}
@@ -354,16 +356,16 @@ dte_des_
 {{ company_code }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines.mapped('sale_line_id').filtered('discount') %}
+{% for key, vals in {}.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ key[0].name }};
 {# 2 NroLineaDR #}{{ counter.line_num }};
 {# 5 TpoMov #};
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
-{# 8 ValorDR #}{{ o.discount }};
+{# 8 ValorDR #};
 {# 9 IndExeDR #};
 {{ '\n' }}
 {% endfor %}
