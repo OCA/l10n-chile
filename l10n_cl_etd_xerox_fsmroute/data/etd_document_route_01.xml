@@ -198,9 +198,9 @@ dte_cab_
 dte_ane_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set amount_residual = 0 %}
+{% set totals = namespace(amount_residual=0) %}
 {% for invoice in invoices %}
-    {% set amount_residual = amount_residual + invoice.amount_residual %}
+    {% set totals.amount_residual = totals.amount_residual + invoice.amount_residual %}
 {% endfor %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
@@ -212,7 +212,7 @@ dte_ane_
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ amount_residual|int }};
+{# 11 Valor a pagar #}{{ totals.amount_residual|int }};
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
@@ -239,14 +239,14 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set line_num = 0 %}
+{% set totals = namespace(line_num=0) %}
 {% for order in deliveries %}
 {% for line in order.move_ids%}
-{% set line_num = line_num + 1 %}
+{% set totals.line_num = totals.line_num + 1 %}
 {# TODO 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
 {# 3 Folio #}{{o.name}};
-{# 4 NroLinDet #}{{ line_num }};
+{# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #}{{line.product_id.default_code}};
 {# 7 TpoCodigo #};
