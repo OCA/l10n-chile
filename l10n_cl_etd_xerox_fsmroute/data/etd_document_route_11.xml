@@ -198,9 +198,9 @@ dte_cab_
 dte_ane_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set amount_total = 0 %}
+{% set totals = namespace(amount_total=0) %}
 {% for invoice in invoices %}
-    {% set amount_total = amount_total + invoice.amount_total %}
+    {% set totals.amount_total = totals.amount_total + invoice.amount_total %}
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}11;
@@ -212,7 +212,7 @@ dte_ane_
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ amount_total|int }};
+{# 11 Valor a pagar #}{{ totals.amount_total|int }};
 {# 12 Lugar Emisión #}{{origen.name}};
 {# 13 Código Precio #};
 {# 14 Local #}0;
@@ -239,17 +239,14 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set amount_cash = 0 %}
-{% set count_cash = 0 %}
-{% set amount_other = 0 %}
-{% set count_other = 0 %}
+{% set totals = namespace(amount_cash=0, count_cash=0, amount_other=0, count_other=0) %}
 {% for invoice in invoices %}
   {% if (invoice.payment_term_id.name or '').lower() == 'contado' %}
-    {% set amount_cash = amount_cash + invoice.amount_total %}
-    {% set count_cash = count_cash + 1 %}
+    {% set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
+    {% set totals.count_cash = totals.count_cash + 1 %}
   {% else %}
-    {% set amount_other = amount_other + invoice.amount_total %}
-    {% set count_other = count_other + 1 %}
+    {% set totals.amount_other = totals.amount_other + invoice.amount_total %}
+    {% set totals.count_other = totals.count_other + 1 %}
   {% endif %}
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
@@ -273,13 +270,13 @@ dte_det_
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
-{# 22 SubQty            #}{{ count_other|int }};
+{# 22 SubQty            #}{{ totals.count_other|int }};
 {# 23 SubCod #};
 {# 24 SubQty            #}0;
 {# 25 SubCod #};
 {# 26 SubQty            #}0;
 {# 27 SubCod #};
-{# 28 SubQty            #}{{ count_cash|int }};
+{# 28 SubQty            #}{{ totals.count_cash|int }};
 {# 29 SubCod #};
 {# 30 SubQty #};
 {# 31 SubCod #};
@@ -293,13 +290,13 @@ dte_det_
 {# 39 DescuentoPct #};
 {# 40 DescuentoMonto #};
 {# 41 TipoDscto #};
-{# 42 ValorDscto        #}{{ amount_other|int }};
+{# 42 ValorDscto        #}{{ totals.amount_other|int }};
 {# 43 TipoDscto #};
 {# 44 ValorDscto        #}0;
 {# 45 TipoDscto #};
 {# 46 ValorDscto        #}0;
 {# 47 TipoDscto #};
-{# 48 ValorDscto        #}{{ amount_cash|int }};
+{# 48 ValorDscto        #}{{ totals.amount_cash|int }};
 {# 49 TipoDscto #};
 {# 50 ValorDscto        #}0;
 {# 51 RecargoPct #};
