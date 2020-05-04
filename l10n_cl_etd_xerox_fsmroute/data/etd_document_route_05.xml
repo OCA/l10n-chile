@@ -236,74 +236,6 @@ dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
-{% for line in deliveries %}
-{% set totals.line_num = totals.line_num + 1 %}
-{# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{o.name}};
-{# 4 NroLinDet #}{{ totals.line_num }};
-{# 5 TpoCodigo #};
-{# 6 VlrCodigo #};
-{# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{line.name}};
-{# 9 TpoCodigo #};
-{# 10 VlrCodigo #};
-{# 11 TpoCodigo #};
-{# 12 VlrCodigo #};
-{# 13 TpoCodigo #};
-{# 14 VlrCodigo #};
-{# 15 IndExe #};
-{# 16 NmbItem #};
-{# 17 DscItem #};
-{# 18 QtyRef #};
-{# 19 UnmdRef #};
-{# 20 PecRef #};
-{# 21 QtyItem #};
-{# 22 SubQty #};
-{# 23 SubCod #};
-{# 24 SubQty #};
-{# 25 SubCod #};
-{# 26 SubQty #};
-{# 27 SubCod #};
-{# 28 SubQty #};
-{# 29 SubCod #};
-{# 30 SubQty #};
-{# 31 SubCod #};
-{# 32 FechElabor #};
-{# 33 FechVencim #};
-{# 34 UnmdItem #};
-{# 35 PrcItem #};
-{# 36 PrcOtrMon #};
-{# 37 Moneda #};
-{# 38 FctConv #};
-{# 39 DescuentoPct #};
-{# 40 DescuentoMonto #};
-{# 41 TipoDscto #};
-{# 42 ValorDscto #};
-{# 43 TipoDscto #};
-{# 44 ValorDscto #};
-{# 45 TipoDscto #};
-{# 46 ValorDscto #};
-{# 47 TipoDscto #};
-{# 48 ValorDscto #};
-{# 49 TipoDscto #};
-{# 50 ValorDscto #};
-{# 51 RecargoPct #};
-{# 52 RecargoMonto #};
-{# 53 TipoRecargo #};
-{# 54 ValorRecargo #};
-{# 55 TipoRecargo #};
-{# 56 ValorRecargo #};
-{# 57 TipoRecargo #};
-{# 58 ValorRecargo #};
-{# 59 TipoRecargo #};
-{# 60 ValorRecargo #};
-{# 61 TipoRecargo #};
-{# 62 ValorRecargo #};
-{# 63 CodImpAdic #};
-{# 64 MontoItem #};
-{{ '\n' }}
-{% endfor %}
 {% for line in invoices %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
@@ -371,6 +303,76 @@ dte_det_
 {# 63 CodImpAdic #};
 {# 64 MontoItem #};
 {{ '\n' }}
+{% endfor %}
+{% for line in deliveries %}
+{% if line.picking_type_id.code == 'outgoing' %}
+{% set totals.line_num = totals.line_num + 1 %}
+{# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo #}{{ tipo }};
+{# 3 Folio #}{{o.name}};
+{# 4 NroLinDet #}{{ totals.line_num }};
+{# 5 TpoCodigo #};
+{# 6 VlrCodigo #};
+{# 7 TpoCodigo #};
+{# 8 VlrCodigo #}{{line.name}};
+{# 9 TpoCodigo #};
+{# 10 VlrCodigo #};
+{# 11 TpoCodigo #};
+{# 12 VlrCodigo #};
+{# 13 TpoCodigo #};
+{# 14 VlrCodigo #};
+{# 15 IndExe #};
+{# 16 NmbItem #};
+{# 17 DscItem #};
+{# 18 QtyRef #};
+{# 19 UnmdRef #};
+{# 20 PecRef #};
+{# 21 QtyItem #};
+{# 22 SubQty #};
+{# 23 SubCod #};
+{# 24 SubQty #};
+{# 25 SubCod #};
+{# 26 SubQty #};
+{# 27 SubCod #};
+{# 28 SubQty #};
+{# 29 SubCod #};
+{# 30 SubQty #};
+{# 31 SubCod #};
+{# 32 FechElabor #};
+{# 33 FechVencim #};
+{# 34 UnmdItem #};
+{# 35 PrcItem #};
+{# 36 PrcOtrMon #};
+{# 37 Moneda #};
+{# 38 FctConv #};
+{# 39 DescuentoPct #};
+{# 40 DescuentoMonto #};
+{# 41 TipoDscto #};
+{# 42 ValorDscto #};
+{# 43 TipoDscto #};
+{# 44 ValorDscto #};
+{# 45 TipoDscto #};
+{# 46 ValorDscto #};
+{# 47 TipoDscto #};
+{# 48 ValorDscto #};
+{# 49 TipoDscto #};
+{# 50 ValorDscto #};
+{# 51 RecargoPct #};
+{# 52 RecargoMonto #};
+{# 53 TipoRecargo #};
+{# 54 ValorRecargo #};
+{# 55 TipoRecargo #};
+{# 56 ValorRecargo #};
+{# 57 TipoRecargo #};
+{# 58 ValorRecargo #};
+{# 59 TipoRecargo #};
+{# 60 ValorRecargo #};
+{# 61 TipoRecargo #};
+{# 62 ValorRecargo #};
+{# 63 CodImpAdic #};
+{# 64 MontoItem #};
+{{ '\n' }}
+{% endif %}
 {% endfor %}
     </field>
 </record>
