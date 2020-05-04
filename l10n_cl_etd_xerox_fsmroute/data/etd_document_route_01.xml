@@ -12,10 +12,8 @@
 {% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
 {% set truck = o.fsm_vehicle_id.name or "" %}
 {% set shift = o.name or "" %}
-{% set fsm_orders = o.order_ids %}
-{% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.mapped('order_ids.picking_ids').filtered('class_id') %}
 
+{% set lines = o.get_xerox_data() %}
 {% set cliente = company_obj.partner_id %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
@@ -198,28 +196,24 @@ dte_cab_
 dte_ane_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set totals = namespace(amount_residual=0) %}
-{% for invoice in invoices %}
-    {% set totals.amount_residual = totals.amount_residual + invoice.amount_residual %}
-{% endfor %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}1;
+{# 2 Tipo #}{{ tipo }};
 {# 3 Folio #}{{o.name}};
 {# 4 Número copias #}1;
-{# 5 Observaciones TODO #}{{o.name}};
+{# 5 Observaciones #}{{o.name}};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ totals.amount_residual|int }};
+{# 11 Valor a pagar #}{{ o.name }};
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
 {# 17 Carga #}1;
-{# 18 Depósito #}41;
+{# 18 Depósito #}{{ center }};
 {# 19 Afecto IABA #};
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M') or ''}};
@@ -239,16 +233,13 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set totals = namespace(line_num=0) %}
-{% for order in deliveries %}
-{% for line in order.move_ids%}
-{% set totals.line_num = totals.line_num + 1 %}
-{# TODO 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{% for line in lines %}
+{# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
 {# 3 Folio #}{{o.name}};
-{# 4 NroLinDet #}{{ totals.line_num }};
+{# 4 NroLinDet #}{{ line['index']|int }};
 {# 5 TpoCodigo #};
-{# 6 VlrCodigo #}{{line.product_id.default_code}};
+{# 6 VlrCodigo #}{{ line['code'] }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -258,12 +249,12 @@ dte_det_
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{line.product_id.name[:80]}};
+{# 16 NmbItem #}{{ line['name'][:80]}};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
-{# 21 QtyItem #}{{line.product_uom_qty}};
+{# 21 QtyItem #}{{ line['quantity']|int }};
 {# 22 SubQty #};
 {# 23 SubCod #};
 {# 24 SubQty #};
@@ -276,14 +267,14 @@ dte_det_
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{line.product_uom.name[:4]}};
-{# 35 PrcItem #}{{line.sale_line_id.price_unit}};
+{# 34 UnmdItem #}{{ line['uom'][:4] }};
+{# 35 PrcItem #}{{ line['price']|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{line.sale_line_id.discount}};
-{# 40 DescuentoMonto #}{{line.sale_line_id.discount and line.sale_line_id.price_subtotal - (1-line.sale_line_id.discount/100)*(line.quantity_done*line.sale_line_id.price_unit) or ''}};
-{# 41 TipoDscto #}{{line.sale_line_id.discount and '%' or ''}};
+{# 39 DescuentoPct #};
+{# 40 DescuentoMonto #};
+{# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
 {# 44 ValorDscto #};
@@ -306,9 +297,8 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{line.sale_line_id.price_subtotal}};
+{# 64 MontoItem #};
 {{ '\n' }}
-{% endfor %}
 {% endfor %}
     </field>
 </record>
