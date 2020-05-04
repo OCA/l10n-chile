@@ -7,11 +7,6 @@ from odoo import fields, models
 class PickingBatch(models.Model):
     _inherit = "stock.picking.batch"
 
-    # TODO: move this this fieldservice_route
-    company_id = fields.Many2one(
-        'res.company',
-        default=lambda s: s.env.user.company_id)
-
     def get_xerox_lines(self):
         """
         Returns  a dictionary with the lines for the Xerox Picking Batch report
