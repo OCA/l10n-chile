@@ -237,13 +237,19 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set totals = namespace(line_num=0) %}
+{% set totals = namespace(line_num=0, amount=0, quantity=0) %}
 {# List Invoices #}
 {% for invoice in invoices %}
 {% set totals.line_num = totals.line_num + 1 %}
 {% set customer = invoice.partner_id %}
 {% set delivery_addr = invoice.partner_id %}
-{# 1 Cliente            #}{{ (ientevat or '').replace('.', '')[:8]}};
+{% set totals.amount = 0 %}
+{% set totals.quantity = 0 %}
+{% for line in invoice.invoice_line_ids %}
+{% set totals.amount = totals.amount + line.price_subtotal %}
+{% set totals.quantity = totals.quantity + line.quantity %}
+{% endfor %}
+{# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
 {# 3 Folio              #}{{ o.name }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
@@ -252,7 +258,7 @@ dte_det_
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo          #}{# (delivery_addr.street)[:60] #};
 {# 9 TpoCodigo          #}GNM;
-{# 10 VlrCodigo         #}3;
+{# 10 VlrCodigo         #}{{ totals.quantity }};
 {# 11 TpoCodigo         #}CER;
 {# 12 VlrCodigo         #}0;
 {# 13 TpoCodigo #};
@@ -260,7 +266,7 @@ dte_det_
 {# 15 IndExe #};
 {# 16 NmbItem           #}{{ customer.activity_description }};
 {# 17 DscItem           #}{{ (customer.vat or '').replace('.', '') }};
-{# 18 QtyRef            #}{# TODO "D.PZO." ??? #];
+{# 18 QtyRef            #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
@@ -277,12 +283,12 @@ dte_det_
 {# 32 FechElabor        #}{{ invoice.payment_term_id.note or invoice.payment_term_id.name }};
 {# 33 FechVencim        #}{{ invoice.date_due }};
 {# 34 UnmdItem #};
-{# 35 PrcItem           #}{{ "700" }};
-{# 36 PrcOtrMon         #}{{ "2300" }};
+{# 35 PrcItem           #}700;
+{# 36 PrcOtrMon         #}2300;
 {# 37 Moneda            #}0;
 {# 38 FctConv           #}0;
-{# 39 DescuentoPct      #}{{ "700" }};
-{# 40 DescuentoMonto    #}{{ "2300" }};
+{# 39 DescuentoPct      #}700;
+{# 40 DescuentoMonto    #}2300;
 {# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
@@ -306,15 +312,22 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem         #}{{ invoice.amount_total|int }};
-{{ '\n' }}
-{% endfor %}
-{# List Delivery Orders #}
-{% for picking in deliveries %}
-{% set totals.line_num = totals.line_num + 1 %}
-{% set customer = picking.partner_id %}
-{% set delivery_addr = picking.partner_id %}
-{# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
+{# 64 MontoItem         #}{{ invoice.amount|int }};
+{{ '\n'
+}}{% endfor
+%}{# List Delivery Orders #}{%
+for picking in deliveries %}{%
+if picking.picking_type_id.code == 'outgoing' %}{%
+set totals.line_num = totals.line_num + 1 %}{%
+set customer = picking.partner_id %}{%
+set delivery_addr = picking.partner_id %}{%
+set totals.amount = 0 %}{%
+set totals.quantity = 0 %}{%
+for line in picking.move_ids_without_package %}{%
+  set totals.amount = totals.amount + line.sale_line_id.price_subtotal %}{%
+  set totals.quantity = totals.quantity + (line.quantity_done or line.product_uom_qty) %}{%
+endfor %}{#
+   1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
 {# 3 Folio              #}{{ o.name}};
 {# 4 NroLinDet          #}{{ totals.line_num }};
@@ -331,7 +344,7 @@ dte_det_
 {# 15 IndExe #};
 {# 16 NmbItem           #}{{ customer.name }};
 {# 17 DscItem           #}{{ (customer.vat or '').replace('.', '') }};
-{# 18 QtyRef            #}{# TODO "D.PZO." ??? #];
+{# 18 QtyRef            #}{{ totals.quantity }};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
@@ -346,14 +359,14 @@ dte_det_
 {# 30 SubQty #};
 {# 31 SubCod #};
 {# 32 FechElabor        #}{{ picking.picking_type_id.name }};
-{# 33 FechVencim        #}{# picking.scheduled_date #};
+{# 33 FechVencim        #}{# TODO picking.scheduled_date #};
 {# 34 UnmdItem #};
-{# 35 PrcItem           #}{# TODO Horario Entrega ??? #};
-{# 36 PrcOtrMon         #}{# TODO Horario Entrega ??? #};
-{# 37 Moneda            #}{# TODO Horario No Entrega ??? #};
-{# 38 FctConv           #}{# TODO Horario No Entrega ??? #};
-{# 39 DescuentoPct      #}{# TODO Horario Entrega ??? #};
-{# 40 DescuentoMonto    #}{# TODO Horario Entrega ??? #};
+{# 35 PrcItem           #}700;
+{# 36 PrcOtrMon         #}2300
+{# 37 Moneda            #}0;
+{# 38 FctConv           #}0;
+{# 39 DescuentoPct      #}700;
+{# 40 DescuentoMonto    #}2300;
 {# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
@@ -377,12 +390,9 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{% set totals = namespace(amount_total=0) %}
-{% for line in picking.move_ids_without_package %}
-{% set totals.amount_total = totals.amount_total + line.sale_line_id.price_subtotal %}
-{% endfor %}
-{# 64 MontoItem         #}{{ totals.amount_total|int }};
+{# 64 MontoItem         #}{{ totals.amount|int }};
 {{ '\n' }}
+{% endif %}
 {% endfor %}
     </field>
 </record>
