@@ -23,6 +23,7 @@
 {% set origen = warehouse.partner_id %}
 {% set recep = warehouse.partner_id %}
 {% set dest = warehouse.partner_id %}
+{% set transp = o.vehicle_id.person_id.partner_id %}
 
 {% set sales = o.mapped('picking_ids.sale_id') %}
 {% set picking_lines = o.mapped('picking_ids.move_ids_without_package') %}
@@ -33,7 +34,7 @@
     {% set totals.amount_untaxed = totals.amount_untaxed + sale.amount_untaxed %}
 {% endfor %}
 {% set lines = o.get_xerox_lines() %}
-    </field>
+</field>
 </record>
 
 <record id="etd_file_xerox_stock_batch_cab" model="etd.document.file">
@@ -49,7 +50,7 @@ dte_cab_
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{o.class_id.code}};
-{# 4 Folio #}{{o.name}};
+{# 4 Folio #}{{ digits_only(o.name) }};
 {# 5 FechEmis #}{{ date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho TODO x.transport_type #}2;
@@ -88,7 +89,7 @@ dte_cab_
 {# 40 CiudadPostal #};
 {# 41 RUTSolicita #};
 {# 42 Patente #};
-{# 43 RUTTrans TODO x.carrier_id.partner_id.vat #};
+{# 43 RUTTrans #}{{ transp.vat }};
 {# 44 DirDest #}{{' '.join([dest.street or '', dest.street2 or ''])[:60] }};
 {# 45 CmnaDest #}{{dest.city_id.name or ''}};
 {# 46 CiudadDest #}{{dest.city or ''}};
@@ -211,7 +212,7 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Número copias #}3;
 {# 5 Observaciones #}{{o.note or ""}};
 {# 6 Fecha Cancelación #}{{ date and date.strftime('%Y-%m-%d')}};
@@ -221,7 +222,7 @@ dte_ane_
 {# 10 Código vendedor #};
 {# 11 Valor a pagar #}{{ totals.amount_total|int }};
 {# 12 Lugar Emisión #}{{ origen.name }};
-{# 13 Código Precio #}{{ dest.ref }};
+{# 13 Código Precio #}{{ transp.ref }};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
@@ -252,7 +253,7 @@ dte_det_
 {% set product, uom = key %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 VlrCodigo #}{{ product.default_code}};
@@ -284,7 +285,7 @@ dte_det_
 {# 32 FechElabor #};
 {# 33 FechVencim #};
 {# 34 UnmdItem #}{{uom.name[:4]}};
-{# 35 PrcItem #}{{ (vals['quantity'] and vals['amount'] / vals['quantity'] or 0)|int }};
+{# 35 PrcItem #}{{ vals['price']|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
@@ -334,7 +335,7 @@ dte_an2_
 {% set counter.line_num = counter.line_num + 1 %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Numero Detalle #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{ key[0].default_code }};
@@ -387,7 +388,7 @@ dte_ref_
 {% set counter.line_num = counter.line_num + 1 %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 2 NroLineaRef #}{{ counter.line_num }};
 {# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
 {# 4 IndGlobal #};

@@ -12,10 +12,15 @@ class PickingBatch(models.Model):
         Returns  a dictionary with the lines for the Xerox Picking Batch report
         """
         lines = {}
-        for line in self.mapped('picking_ids.move_ids_without_package'):
-            key = (line.product_id, line.product_uom)
-            lines.setdefault(key, {'quantity': 0, 'amount': 0})
-            lines[key]['quantity'] += (
-                line.quantity_done or line.product_uom_qty)
-            lines[key]['amount'] += line.sale_line_id.price_subtotal
+        for move in self.mapped('picking_ids.move_ids_without_package'):
+            key = (move.product_id, move.product_uom)
+            lines.setdefault(key, {'quantity': 0, 'price': 0, 'amount': 0})
+            line = lines[key]
+            line['quantity'] += (move.quantity_done or move.product_uom_qty)
+        so_lines = self.mapped('picking_ids.sale_id.order_line')
+        for key, line in lines.items():
+            line['price'] = max(
+                x.price_unit for x in so_lines
+                if x.product_id == key[0] and x.product_uom == key[1])
+            line['amount'] = line['quantity'] * line['price']
         return lines

@@ -73,6 +73,9 @@ class EtdDocument(models.Model):
             doc_count = sum(len(x) for x in ungrouped_rsets.values())
             _logger.info(
                 'Found %d documents for company %s', doc_count, company.name)
+            for model, rset in ungrouped_rsets.items():
+                _logger.info(
+                    '- %s: %s' % (model, rset.mapped('display_name')))
             # Group records by file set, using rule in `xerox_group()`
             grouped_data = {}
             for rset in ungrouped_rsets.values():
