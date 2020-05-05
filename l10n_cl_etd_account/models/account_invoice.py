@@ -81,6 +81,6 @@ class AccountInvoice(models.Model):
             vals.update({
                 'class_id': self.env['sii.document.class'].search([
                     ('code', '=', sii_code)
-                ], limit=1) or False
+                ], limit=1).id or False
             })
         return super().create(vals)
