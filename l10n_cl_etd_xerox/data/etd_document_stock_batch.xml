@@ -92,7 +92,7 @@ dte_cab_
 {# 44 DirDest #}{{' '.join([dest.street or '', dest.street2 or ''])[:60] }};
 {# 45 CmnaDest #}{{dest.city_id.name or ''}};
 {# 46 CiudadDest #}{{dest.city or ''}};
-{# 47 MntNeto #}{{ totals.amount_total|int }};
+{# 47 MntNeto #}{{ totals.amount_untaxed|int }};
 {# 48 MntExe #};
 {# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
