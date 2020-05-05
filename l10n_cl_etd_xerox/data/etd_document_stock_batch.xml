@@ -15,7 +15,7 @@
 {% set date = o.date %}
 {% set truck = (vehicle.name or "")[-5:].zfill(5) %}
 {% set shift = (dayroute.name or "")[-3:].zfill(3) %}
-{% set center = (warehouse.xerox_code or company-center_code or "")[-5:].zfill(5) %}
+{% set center = (warehouse.xerox_code or company.backend_acp_id.xerox_center_code or "")[-5:].zfill(5) %}
 {% set index = "000" %}
 
 {% set cliente_rut = (company.vat or '').replace('.', '')[:8] %}
