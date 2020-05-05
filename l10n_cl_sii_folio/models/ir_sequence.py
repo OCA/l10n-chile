@@ -104,28 +104,20 @@ class IrSequence(models.Model):
         if self.class_id:
             return
         folio = folio or self._get_folio()
-        menor = False
+        minimum = False
         cafs = self.get_caf_files(folio)
         if not cafs:
             raise UserError(_(
                 "There is no CAF available for %s." % self.name))
         for c in cafs:
-            if not menor or c.start_nm < menor.start_nm:
-                menor = c
-        if menor and int(folio) < menor.start_nm:
-            self.sudo(SUPERUSER_ID).write({"number_next": menor.start_nm})
+            if not minimum or c.start_nm < minimum.start_nm:
+                minimum = c
+        if minimum and int(folio) < minimum.start_nm:
+            self.sudo(SUPERUSER_ID).write({"number_next": minimum.start_nm})
 
     def _next_do(self):
-        number_next = self.number_next
-        if self.implementation == "standard":
-            number_next = self.number_next_actual
-        folio = super(IrSequence, self)._next_do()
+        folio = super()._next_do()
         if self.class_id and self.forced_by_caf and self.folio_ids:
+            # Update the next number if we finished the CAF
             self.update_next_by_caf(folio)
-            actual = self.number_next
-            if self.implementation == "standard":
-                actual = self.number_next_actual
-            if number_next + 1 != actual:  # Fue actualizado
-                number_next = actual
-            folio = self.get_next_char(number_next)
         return folio
