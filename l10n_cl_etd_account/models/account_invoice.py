@@ -65,18 +65,22 @@ class AccountInvoice(models.Model):
     @api.model
     def create(self, vals):
         if 'class_id' not in vals:
-            # Get partner
-            partner = self.env['res.partner'].browse(
-                vals.get('partner_id', False))
-            if partner.invoicing_policy == 'ticket':
-                # Boleta Electrónica
-                sii_code = 35
-            elif partner.invoicing_policy == 'invoice':
-                # Factura Electrónica
-                sii_code = 33
+            if vals.get('type', False) == 'out_invoice':
+                # Get partner
+                partner = self.env['res.partner'].browse(
+                    vals.get('partner_id', False))
+                if partner.invoicing_policy == 'invoice':
+                    # Factura Electrónica
+                    sii_code = 33
+                elif partner.invoicing_policy == 'ticket':
+                    # Boleta Electrónica
+                    sii_code = 39
+            elif vals.get('type', False) == 'out_refund':
+                # Nota de crédito Electrónica
+                sii_code = 61
             vals.update({
                 'class_id': self.env['sii.document.class'].search([
                     ('code', '=', sii_code)
-                ], limit=1)
+                ], limit=1) or False
             })
         return super().create(vals)
