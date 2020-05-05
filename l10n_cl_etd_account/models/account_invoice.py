@@ -78,9 +78,10 @@ class AccountInvoice(models.Model):
             elif vals.get('type', False) == 'out_refund':
                 # Nota de crédito Electrónica
                 sii_code = 61
-            vals.update({
-                'class_id': self.env['sii.document.class'].search([
-                    ('code', '=', sii_code)
-                ], limit=1).id or False
-            })
+            if sii_code:
+                vals.update({
+                    'class_id': self.env['sii.document.class'].search([
+                        ('code', '=', sii_code)
+                    ], limit=1).id or False
+                })
         return super().create(vals)
