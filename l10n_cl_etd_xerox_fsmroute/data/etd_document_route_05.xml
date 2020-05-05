@@ -14,14 +14,17 @@
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
 {% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.mapped('order_ids.picking_ids').filtered('class_id') %}
-
+{% set deliveries = o.env['stock.picking'].search([
+    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
+    ('picking_type_id.code', '=', 'outgoing'),
+]) %}
 {% set transp = o.person_id.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
+{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -38,7 +41,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}5;
-{# 4 Folio #}{{o.name}};
+{# 4 Folio #}{{ folio(o.name) }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -240,12 +243,12 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ folio(o.name) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{line.number}};
+{# 8 VlrCodigo #}{{ folio(line.number) }};
 {# 9 TpoCodigo #};
 {# 10 VlrCodigo #};
 {# 11 TpoCodigo #};
@@ -309,12 +312,12 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ folio(o.name) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{line.name}};
+{# 8 VlrCodigo #}{{ folio(line.name) }};
 {# 9 TpoCodigo #};
 {# 10 VlrCodigo #};
 {# 11 TpoCodigo #};

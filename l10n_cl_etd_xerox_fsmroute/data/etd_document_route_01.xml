@@ -20,6 +20,7 @@
 {% set transp = o.person_id.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
+{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -36,7 +37,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
-{# 4 Folio #}{{o.name}};
+{# 4 Folio #}{{ folio(o.name) }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho TODO o.transport_type #}2;
@@ -198,15 +199,15 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ folio(o.name) }};
 {# 4 Número copias #}1;
-{# 5 Observaciones #}{{o.name}};
+{# 5 Observaciones #}{{ folio(o.name) }};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ o.name }};
+{# 11 Valor a pagar #}{{ folio(o.name) }};
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
@@ -236,7 +237,7 @@ dte_det_
 {% for line in lines %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
-{# 3 Folio #}{{o.name}};
+{# 3 Folio #}{{ folio(o.name) }};
 {# 4 NroLinDet #}{{ line['index']|int }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #}{{ line['code'] }};
