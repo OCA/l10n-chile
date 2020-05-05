@@ -77,7 +77,7 @@ dte_cab_
         {% set totals.amount_exempt = totals.amount_exempt + line.price_subtotal %}
     {% endif %}
 {% endfor %}
-{# 47 MntNeto #}{{ o.amount_total|int }};
+{# 47 MntNeto #}{{ o.amount_untaxed|int }};
 {# 48 MntExe #}{{ totals.amount_exempt|int }};
 {# 49 MntBase #};
 {# 50 TasaIVA TODO #}19;
