@@ -241,8 +241,8 @@ dte_det_
 {# List Invoices #}
 {% for invoice in invoices %}
 {% set totals.line_num = totals.line_num + 1 %}
-{% set customer = invoice.partner_id %}
-{% set delivery_addr = invoice.partner_id %}
+{% set customer = invoice.partner_id.commercial_partner_id %}
+{% set delivery_addr = invoice.partner_shipping_id or invoice.partner_id %}
 {% set totals.amount = 0 %}
 {% set totals.quantity = 0 %}
 {% for line in invoice.invoice_line_ids %}
@@ -254,9 +254,9 @@ dte_det_
 {# 3 Folio              #}{{ digits_only(o.name)  }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
-{# 6 VlrCodigo          #}{{ digits_only(invoice.name) }};
+{# 6 VlrCodigo          #}{{ digits_only(invoice.number) }};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo          #}{# (delivery_addr.street)[:60] #};
+{# 8 VlrCodigo          #}{{ (delivery_addr.street or delivery_addr.name)[:60] }};
 {# 9 TpoCodigo          #}GNM;
 {# 10 VlrCodigo         #}{{ totals.quantity }};
 {# 11 TpoCodigo         #}CER;
@@ -264,8 +264,8 @@ dte_det_
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem           #}{{ customer.activity_description }};
-{# 17 DscItem           #}{{ (customer.vat or '').replace('.', '') }};
+{# 16 NmbItem           #}{{ customer.name }};
+{# 17 DscItem           #}{{ customer.vat }};
 {# 18 QtyRef            #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
@@ -319,7 +319,7 @@ dte_det_
 for picking in deliveries %}{%
 if picking.picking_type_id.code == 'outgoing' %}{%
 set totals.line_num = totals.line_num + 1 %}{%
-set customer = picking.partner_id %}{%
+set customer = picking.partner_id.commercial_partner_id %}{%
 set delivery_addr = picking.partner_id %}{%
 set totals.amount = 0 %}{%
 set totals.quantity = 0 %}{%
@@ -329,12 +329,12 @@ for line in picking.move_ids_without_package %}{%
 endfor %}{#
    1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{  digits_only(o.name) }};
+{# 3 Folio              #}{{ digits_only(o.name) }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo          #}{{ digits_only(picking.name) }};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo          #}{{ delivery_addr.street }};
+{# 8 VlrCodigo          #}{{ delivery_addr.street[:60] }};
 {# 9 TpoCodigo          #}GNM;
 {# 10 VlrCodigo         #}0;
 {# 11 TpoCodigo         #}CER;
@@ -343,7 +343,7 @@ endfor %}{#
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
 {# 16 NmbItem           #}{{ customer.name }};
-{# 17 DscItem           #}{{ (customer.vat or '').replace('.', '') }};
+{# 17 DscItem           #}{{ customer.vat  }};
 {# 18 QtyRef            #}{{ totals.quantity }};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
@@ -358,11 +358,11 @@ endfor %}{#
 {# 29 SubCod            #}TUB;
 {# 30 SubQty #};
 {# 31 SubCod #};
-{# 32 FechElabor        #}{{ picking.picking_type_id.name }};
-{# 33 FechVencim        #}{# TODO picking.scheduled_date #};
+{# 32 FechElabor        #}GUIA BOTELLON;
+{# 33 FechVencim        #}{{ picking.scheduled_date.strftime('%Y-%m-%d') }};
 {# 34 UnmdItem #};
 {# 35 PrcItem           #}700;
-{# 36 PrcOtrMon         #}2300
+{# 36 PrcOtrMon         #}2300;
 {# 37 Moneda            #}0;
 {# 38 FctConv           #}0;
 {# 39 DescuentoPct      #}700;
@@ -414,27 +414,23 @@ dte_an2_
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
 {# 3 Folio              #}{{ digits_only(invoice.number) }};
-{# 4 Numero Detalle     #}{{ totals.line_num }};
+{# 4 Numero Detalle     #}1;
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
-{{ '\n' }}
-{% endfor %}
-{# List Delivery Orders #}
-{% for order in pickings %}
-{% for picking in order.move_ids%}
+{{ '\n' }}{% endfor %}{# List Delivery Orders #}
+{% for picking in deliveries %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}{{tipo}};
+{# 2 Tipo               #}{{ tipo }};
 {# 3 Folio              #}{{ digits_only(picking.name) }};
-{# 4 Numero Detalle     #}{{ totals.line_num }};
+{# 4 Numero Detalle     #}1;
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
 {{ '\n' }}
-{% endfor %}
 {% endfor %}
     </field>
 </record>

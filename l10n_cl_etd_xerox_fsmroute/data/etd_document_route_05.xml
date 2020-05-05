@@ -18,13 +18,12 @@
     ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
     ('picking_type_id.code', '=', 'outgoing'),
 ]) %}
-{% set transp = o.person_id.partner_id %}
+{% set transp = o.person_id.partner_id or company_oj.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
-{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -41,7 +40,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}5;
-{# 4 Folio #}{{ folio(o.name) }};
+{# 4 Folio #}{{ digits_only(o.name) }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -201,31 +200,31 @@ dte_cab_
 dte_ane_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente #};
-{# 2 Tipo #};
-{# 3 Folio #};
-{# 4 Número copias #};
-{# 5 Observaciones #};
+{# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo #}{{ tipo }};
+{# 3 Folio #}{{ digits_only(o.name) }};
+{# 4 Número copias #}0;
+{# 5 Observaciones #}{{ digits_only(o.name) }};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #};
 {# 8 Término del pago - días #};
-{# 9 Información de transporte #};
+{# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #};
-{# 12 Lugar Emisión #};
+{# 11 Valor a pagar #}{{ digits_only(o.name) }};
+{# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
 {# 17 Carga #}1;
-{# 18 Depósito #}41;
+{# 18 Depósito #}{{ warehouse }};
 {# 19 Afecto IABA #};
 {# 20 IABA #};
-{# 21 Hora emisión #};
+{# 21 Hora emisión #}{{ date and date.strftime('%H:%M') or ''}};
 {# 22 Afecto IVA #};
 {# 23 Número de pedido #};
 {{ '\n' }}
-    </field>
+</field>
 </record>
 
 <record id="etd_xerox_route_05_det" model="etd.document.file">
@@ -243,12 +242,12 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ folio(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{ folio(line.number) }};
+{# 8 VlrCodigo #}{{ digits_only(line.number) }};
 {# 9 TpoCodigo #};
 {# 10 VlrCodigo #};
 {# 11 TpoCodigo #};
@@ -312,12 +311,12 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ folio(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{ folio(line.name) }};
+{# 8 VlrCodigo #}{{ digits_only(line.name) }};
 {# 9 TpoCodigo #};
 {# 10 VlrCodigo #};
 {# 11 TpoCodigo #};
