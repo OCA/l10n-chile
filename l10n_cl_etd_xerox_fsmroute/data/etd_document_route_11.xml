@@ -14,7 +14,10 @@
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
 {% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.mapped('order_ids.picking_ids').filtered('class_id') %}
+{% set deliveries = o.env['stock.picking'].search([
+    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
+    ('picking_type_id.code', '=', 'outgoing'),
+]) %}
 
 {% set transp = o.person_id.partner_id %}
 {% set cliente = transp %}
@@ -22,6 +25,7 @@
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
+{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -38,7 +42,7 @@ dte_cab_
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version            #}1.0;
 {# 3 Tipo               #}{{ tipo }};
-{# 4 Folio              #}{{o.name}};
+{# 4 Folio              #}{{ folio(o.name) }};
 {# 5 FechEmis           #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -204,7 +208,7 @@ dte_ane_
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}11;
-{# 3 Folio              #}{{o.name}};
+{# 3 Folio              #}{{ folio(o.name) }};
 {# 4 Número copias      #}1;
 {# 5 Observaciones #};
 {# 6 Fecha Cancelación #};
@@ -251,7 +255,7 @@ dte_det_
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{ tipo }};
-{# 3 Folio              #}{{ o.name }};
+{# 3 Folio              #}{{  folio(o.name)  }};
 {# 4 NroLinDet          #}1;
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};

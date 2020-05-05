@@ -14,16 +14,16 @@
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
 {% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.mapped('order_ids.picking_ids').filtered('class_id') %}
-
+{% set deliveries = o.env['stock.picking'].search([
+    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
+    ('picking_type_id.code', '=', 'outgoing'),
+]) %}
 {% set transp = o.person_id.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
-{% set HINI = "700" %}
-{% set HFIN = "2300" %}
 </field>
 </record>
 
@@ -40,7 +40,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
-{# 4 Folio #}{{o.name}};
+{# 4 Folio #}{{ digits_only(o.name) }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -202,7 +202,7 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
-{# 3 Folio              #}{{o.name}};
+{# 3 Folio              #}{{ digits_only(o.name) }};
 {# 4 Número copias      #}1;
 {# 5 Observaciones TODO #};
 {# 6 Fecha Cancelación #};
@@ -210,7 +210,7 @@ dte_ane_
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar     #}{{ o.name }};
+{# 11 Valor a pagar     #}{{  digits_only(o.name)  }};
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #};
@@ -251,10 +251,10 @@ dte_det_
 {% endfor %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{ o.name }};
+{# 3 Folio              #}{{ digits_only(o.name)  }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
-{# 6 VlrCodigo          #}{{ invoice.name}};
+{# 6 VlrCodigo          #}{{ digits_only(invoice.name) }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo          #}{# (delivery_addr.street)[:60] #};
 {# 9 TpoCodigo          #}GNM;
@@ -312,7 +312,7 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem         #}{{ invoice.amount|int }};
+{# 64 MontoItem         #}{{ invoice.amount_total|int }};
 {{ '\n'
 }}{% endfor
 %}{# List Delivery Orders #}{%
@@ -329,10 +329,10 @@ for line in picking.move_ids_without_package %}{%
 endfor %}{#
    1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{ o.name}};
+{# 3 Folio              #}{{  digits_only(o.name) }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
-{# 6 VlrCodigo          #}{{ picking.name}};
+{# 6 VlrCodigo          #}{{ digits_only(picking.name) }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo          #}{{ delivery_addr.street }};
 {# 9 TpoCodigo          #}GNM;
@@ -413,7 +413,7 @@ dte_an2_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
-{# 3 Folio              #}{{ invoice.number }};
+{# 3 Folio              #}{{ digits_only(invoice.number) }};
 {# 4 Numero Detalle     #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
@@ -427,7 +427,7 @@ dte_an2_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
-{# 3 Folio              #}{{ picking.name }};
+{# 3 Folio              #}{{ digits_only(picking.name) }};
 {# 4 Numero Detalle     #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};

@@ -31,12 +31,11 @@ class FSMDayRoute(models.Model):
         pickings = self.mapped(
             'order_ids.picking_ids.move_ids_without_package')
         for line in pickings:
-            picking_type = line.picking_id.picking_type_id
-            section_key = picking_type.code or ''
-            sections.setdefault(section_key, picking_type.name or '')
+            section_key = line.product_id.categ_id
+            section_name = section_key.complete_name
+            sections.setdefault(section_key, section_name or '')
 
             key = (line.product_id, line.product_uom)
-            picking_type = line.picking_id.picking_type_id
             lines.setdefault(
                 key,
                 {'code': line.product_id.default_code,
