@@ -64,7 +64,7 @@ class AccountInvoice(models.Model):
 
     @api.model
     def create(self, vals):
-        if 'class_id' not in vals:
+        if not vals.get('class_id', False):
             if vals.get('type', False) == 'out_invoice':
                 # Get partner
                 partner = self.env['res.partner'].browse(
