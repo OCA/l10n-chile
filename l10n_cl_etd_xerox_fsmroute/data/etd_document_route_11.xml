@@ -25,7 +25,6 @@
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
-{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -42,7 +41,7 @@ dte_cab_
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version            #}1.0;
 {# 3 Tipo               #}{{ tipo }};
-{# 4 Folio              #}{{ folio(o.name) }};
+{# 4 Folio              #}{{ digits_only(o.name) }};
 {# 5 FechEmis           #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -208,7 +207,7 @@ dte_ane_
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}11;
-{# 3 Folio              #}{{ folio(o.name) }};
+{# 3 Folio              #}{{ digits_only(o.name) }};
 {# 4 Número copias      #}1;
 {# 5 Observaciones #};
 {# 6 Fecha Cancelación #};
@@ -255,7 +254,7 @@ dte_det_
 {% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{ tipo }};
-{# 3 Folio              #}{{  folio(o.name)  }};
+{# 3 Folio              #}{{ digits_only(o.name) }};
 {# 4 NroLinDet          #}1;
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};

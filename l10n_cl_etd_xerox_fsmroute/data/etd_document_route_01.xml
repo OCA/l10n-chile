@@ -20,7 +20,6 @@
 {% set transp = o.person_id.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
-{% macro folio(code) -%}{{ (code or '').strip("ABCDEFGHIJKLMNOPQRSTUVWXYZ_-\/") }}{%- endmacro %}
 </field>
 </record>
 
@@ -37,7 +36,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
-{# 4 Folio #}{{ folio(o.name) }};
+{# 4 Folio #}{{ digits_only(o.name) }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho TODO o.transport_type #}2;
@@ -76,7 +75,7 @@ dte_cab_
 {# 40 CiudadPostal #};
 {# 41 RUTSolicita #};
 {# 42 Patente #};
-{# 43 RUTTrans #}{{(transp.vat or '').replace('.', '')[:8]}};
+{# 43 RUTTrans #}{{ transp.vat }};
 {# 44 DirDest #}{{ (dest.street or '')[:60] }};
 {# 45 CmnaDest #}{{ dest.city_id.name or ''}};
 {# 46 CiudadDest #}{{ dest.city or ''}};
@@ -199,22 +198,22 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ folio(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Número copias #}1;
-{# 5 Observaciones #}{{ folio(o.name) }};
+{# 5 Observaciones #}{{ digits_only(o.name) }};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ folio(o.name) }};
+{# 11 Valor a pagar #}{{ digits_only(o.name) }};
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
 {# 17 Carga #}1;
-{# 18 Depósito #}{{ center }};
+{# 18 Depósito #}{{ warehouse }};
 {# 19 Afecto IABA #};
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M') or ''}};
@@ -237,7 +236,7 @@ dte_det_
 {% for line in lines %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
-{# 3 Folio #}{{ folio(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ line['index']|int }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #}{{ line['code'] }};
