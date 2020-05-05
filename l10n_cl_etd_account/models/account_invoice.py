@@ -57,7 +57,7 @@ class AccountInvoice(models.Model):
         refunds = super().refund(
             date_invoice=date_invoice, date=date, description=description,
             journal_id=journal_id)
-        for index, invoice in self:
+        for index, invoice in enumerate(self):
             sii_doc = invoice.get_reverse_sii_document()
             refunds[index].class_id = sii_doc.id or False
         return refunds
