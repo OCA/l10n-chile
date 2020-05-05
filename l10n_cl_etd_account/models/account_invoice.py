@@ -61,3 +61,22 @@ class AccountInvoice(models.Model):
             sii_doc = invoice.get_reverse_sii_document()
             refunds[index].class_id = sii_doc.id or False
         return refunds
+
+    @api.model
+    def create(self, vals):
+        if 'class_id' not in vals:
+            # Get partner
+            partner = self.env['res.partner'].browse(
+                vals.get('partner_id', False))
+            if partner.invoicing_policy == 'ticket':
+                # Boleta Electrónica
+                sii_code = 35
+            elif partner.invoicing_policy == 'invoice':
+                # Factura Electrónica
+                sii_code = 33
+            vals.update({
+                'class_id': self.env['sii.document.class'].search([
+                    ('code', '=', sii_code)
+                ], limit=1)
+            })
+        return super().create(vals)
