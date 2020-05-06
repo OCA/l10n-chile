@@ -19,12 +19,28 @@
     ('picking_type_id.code', '=', 'outgoing'),
 ]) %}
 
-{% set transp = o.person_id.partner_id %}
+{% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
+
+{% set totals = namespace(count=0, count_sign=0, count_cash=0, amount=0, amount_sign=0, amount_cash=0, quantity=0) %}
+{% for invoice in invoices %}
+{%   set totals.count = totals.count + 1 %}
+{%   set totals.amount = totals.amount + invoice.amount_total %}
+{%   if invoice.payment_term_id.name.lower() == 'contado' %}
+{%     set totals.count_cash = totals.count_cash + 1 %}
+{%     set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
+{%   else %}
+{%     set totals.count_sign = totals.count_sign + 1 %}
+{%     set totals.amount_sign = totals.amount_sign + invoice.amount_total %}
+{%   endif %}
+{%   for line in invoice.invoice_line_ids %}
+{%     set totals.quantity = totals.quantity + line.quantity %}
+{%   endfor %}
+{% endfor %}
 </field>
 </record>
 
@@ -91,10 +107,10 @@ dte_cab_
 {# 51 IVA #};
 {# 52 TipoImp           #}GNM;
 {# 53 TasaImp #};
-{# 54 MontoImp          #}{# TODO Total Clientes GNM/TOT ??? #};
+{# 54 MontoImp          #}{{ totals.quantity|int }};
 {# 55 TipoImp #}CER;
 {# 56 TasaImp #};
-{# 57 MontoImp TODO #};
+{# 57 MontoImp #}0;
 {# 58 TipoImp #}CNF;
 {# 59 TasaImp #};
 {# 60 MontoImp #}0;
@@ -103,52 +119,52 @@ dte_cab_
 {# 63 MontoImp #}0;
 {# 64 TipoImp #}LIC;
 {# 65 TasaImp #};
-{# 66 MontoImp #};
+{# 66 MontoImp #}0;
 {# 67 TipoImp #}OTR;
 {# 68 TasaImp #};
-{# 69 MontoImp TODO #};
+{# 69 MontoImp #}0;
 {# 70 TipoImp #}TUB;
 {# 71 TasaImp #};
-{# 72 MontoImp TODO #};
+{# 72 MontoImp #}0;
 {# 73 TipoImp #}TOT;
 {# 74 TasaImp #};
-{# 75 MontoImp #};
+{# 75 MontoImp #}{{ totals.quantity|int }};
 {# 76 TipoImp #};
 {# 77 TasaImp #};
-{# 78 MontoImp TODO #};
+{# 78 MontoImp #}{{ totals.count_sign|int }};
 {# 79 TipoImp #};
 {# 80 TasaImp #};
-{# 81 MontoImp TODO #};
+{# 81 MontoImp #}{{ totals.amount_sign|int }};
 {# 82 TipoImp #};
 {# 83 TasaImp #};
-{# 84 MontoImp TODO #};
+{# 84 MontoImp #}0;
 {# 85 TipoImp #};
 {# 86 TasaImp #};
-{# 87 MontoImp TODO #};
+{# 87 MontoImp #}0;
 {# 88 TipoImp #};
 {# 89 TasaImp #};
-{# 90 MontoImp TODO #};
+{# 90 MontoImp #}0;
 {# 91 TipoImp #};
 {# 92 TasaImp #};
-{# 93 MontoImp TODO #};
+{# 93 MontoImp #}0;
 {# 94 TipoImp #};
 {# 95 TasaImp #};
-{# 96 MontoImp TODO #};
+{# 96 MontoImp #}{{ totals.count_cash|int }};
 {# 97 TipoImp #};
 {# 98 TasaImp #};
-{# 99 MontoImp TODO #};
+{# 99 MontoImp #}{{ totals.amount_cash|int }};
 {# 100 TipoImp #};
 {# 101 TasaImp #};
-{# 102 MontoImp #};
+{# 102 MontoImp #}0;
 {# 103 TipoImp #};
 {# 104 TasaImp #};
-{# 105 MontoImp #};
+{# 105 MontoImp #}0;
 {# 106 TipoImp #};
 {# 107 TasaImp #};
-{# 108 MontoImp TODO #};
+{# 108 MontoImp #}{{ totals.count|int }};
 {# 109 TipoImp #};
 {# 110 TasaImp #};
-{# 111 MontoImp TODO #};
+{# 111 MontoImp #}{{ totals.amount|int }};
 {# 112 TipoImp #};
 {# 113 TasaImp #};
 {# 114 MontoImp #};
@@ -201,10 +217,6 @@ dte_cab_
 dte_ane_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set totals = namespace(amount_total=0) %}
-{% for invoice in invoices %}
-    {% set totals.amount_total = totals.amount_total + invoice.amount_total %}
-{% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}11;
 {# 3 Folio              #}{{ digits_only(o.name) }};
@@ -215,14 +227,14 @@ dte_ane_
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ totals.amount_total|int }};
+{# 11 Valor a pagar #}{{ totals.amount_cash|int }};
 {# 12 Lugar Emisión #}{{origen.name}};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
 {# 16 Territorio #};
-{# 17 Carga             #}1;
-{# 18 Depósito          #}41;
+{# 17 Carga             #}{{ shift }};
+{# 18 Depósito          #}{{ warehouse }};
 {# 19 Afecto IABA #};
 {# 20 IABA #};
 {# 21 Hora emisión      #}{{ date and date.strftime('%H:%M') or ''}};
@@ -242,16 +254,6 @@ dte_ane_
 dte_det_
 {{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set totals = namespace(amount_cash=0, count_cash=0, amount_other=0, count_other=0) %}
-{% for invoice in invoices %}
-  {% if (invoice.payment_term_id.name or '').lower() == 'contado' %}
-    {% set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
-    {% set totals.count_cash = totals.count_cash + 1 %}
-  {% else %}
-    {% set totals.amount_other = totals.amount_other + invoice.amount_total %}
-    {% set totals.count_other = totals.count_other + 1 %}
-  {% endif %}
-{% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{ tipo }};
 {# 3 Folio              #}{{ digits_only(o.name) }};
@@ -273,7 +275,7 @@ dte_det_
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
-{# 22 SubQty            #}{{ totals.count_other|int }};
+{# 22 SubQty            #}{{ totals.count_sign|int }};
 {# 23 SubCod #};
 {# 24 SubQty            #}0;
 {# 25 SubCod #};
@@ -293,7 +295,7 @@ dte_det_
 {# 39 DescuentoPct #};
 {# 40 DescuentoMonto #};
 {# 41 TipoDscto #};
-{# 42 ValorDscto        #}{{ totals.amount_other|int }};
+{# 42 ValorDscto        #}{{ totals.amount_sign|int }};
 {# 43 TipoDscto #};
 {# 44 ValorDscto        #}0;
 {# 45 TipoDscto #};
