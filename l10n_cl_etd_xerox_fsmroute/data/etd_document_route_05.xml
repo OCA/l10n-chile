@@ -18,7 +18,7 @@
     ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
     ('picking_type_id.code', '=', 'outgoing'),
 ]) %}
-{% set transp = o.person_id.partner_id or company_oj.partner_id %}
+{% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
