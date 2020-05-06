@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-24 16:35+0000\n"
-"PO-Revision-Date: 2020-03-19 23:13+0000\n"
+"PO-Revision-Date: 2020-05-06 03:19+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: \n"
 "Language: es_CL\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: l10n_cl_etd_stock
 #: selection:etd.document,model:0
 msgid "Day Route"
-msgstr ""
+msgstr "Ruta del Día"
 
 #. module: l10n_cl_etd_stock
 #: model:ir.model,name:l10n_cl_etd_stock.model_delivery_carrier
