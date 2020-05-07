@@ -5,11 +5,11 @@
     <field name="model">fsm.route.dayroute</field>
     <field name="template_text_include">{%
    set tipo = "007" %}
+{% set company = "ot" %}
 {% set date = o.date %}
 {% set warehouse_obj = o.mapped('order_ids.warehouse_id')[:1] %}
 {% set warehouse = warehouse_obj.xerox_code or "" %}
 {% set company_obj = warehouse_obj.company_id %}
-{% set company = o.company_id.backend_acp_id.xerox_company_code or "00" %}
 {% set truck = o.fsm_vehicle_id.name or "" %}
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
@@ -18,9 +18,9 @@
     ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
     ('picking_type_id.code', '=', 'outgoing'),
 ]) %}
+
+{% set cliente = company_obj.partner_id %}
 {% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
-{% set cliente = transp %}
-{% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set recep = transp %}
 {% set dest = origen %}
@@ -35,9 +35,9 @@
     <field name="save">False</field>
     <field name="template_name">
 dte_cab_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{# 1 Cliente TRANSP #}{{(transp.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
 {# 4 Folio #}{{ digits_only(o.name) }};
@@ -198,7 +198,7 @@ dte_cab_
     <field name="save">False</field>
     <field name="template_name">
 dte_ane_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
@@ -235,7 +235,7 @@ dte_ane_
     <field name="save">False</field>
     <field name="template_name">
 dte_det_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0, amount=0, quantity=0) %}
 {# List Invoices #}
@@ -405,7 +405,7 @@ endfor %}{#
     <field name="save">False</field>
     <field name="template_name">
 dte_an2_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {# List Invoices #}
@@ -443,8 +443,9 @@ dte_an2_
     <field name="save">False</field>
     <field name="template_name">
 dte_des_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
+{% if False %}
 {# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
@@ -455,6 +456,7 @@ dte_des_
 {# 8 ValorDR #};
 {# 9 IndExeDR #};
 {{ '\n' }}
+{% endif %}
     </field>
 </record>
 
@@ -466,8 +468,9 @@ dte_des_
     <field name="save">False</field>
     <field name="template_name">
 dte_ref_
-{{ company }}_{{ tipo }}_{{date.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
+{% if False %}
 {# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
@@ -481,6 +484,7 @@ dte_ref_
 {# 10 RazonRef #};
 {# 11 CorrFact #};
 {{ '\n' }}
+{% endif %}
     </field>
 </record>
 

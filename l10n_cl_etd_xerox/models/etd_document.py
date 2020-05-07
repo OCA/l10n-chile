@@ -20,13 +20,18 @@ class EtdDocument(models.Model):
         class_ids = self.env["sii.document.class"].search([
             ("dte", "=", True)
         ]).ids
+        now = fields.Datetime.context_timestamp(
+            self.env.user,
+            fields.Datetime.now())
         recs = {}
-        recs['account.invoice'] = self.env["account.invoice"].search([
+        Invoice = self.env["account.invoice"].with_context(context_now=now)
+        recs['account.invoice'] = Invoice.search([
             ("date_invoice", "=", run_date),
             ("state", "in", ["open", "paid"]),
             ("class_id", "in", class_ids)
         ])
-        recs['stock.picking'] = self.env["stock.picking"].search([
+        Picking = self.env["stock.picking"].with_context(context_now=now)
+        recs['stock.picking'] = Picking.search([
             ("picking_type_code", "=", "outgoing"),
             # Deliveries are signed once they are waiting or confirmed
             # They will ony be "done" when delivered at customer site
@@ -35,7 +40,8 @@ class EtdDocument(models.Model):
             ("scheduled_date", "<", next_date),
             ("class_id", "in", class_ids)
         ])
-        recs['stock.picking.batch'] = self.env["stock.picking.batch"].search([
+        Batch = self.env["stock.picking.batch"].with_context(context_now=now)
+        recs['stock.picking.batch'] = Batch.search([
             ("date", "=", run_date),
             ("class_id", "in", class_ids),
             ('picking_ids', '!=', False),
