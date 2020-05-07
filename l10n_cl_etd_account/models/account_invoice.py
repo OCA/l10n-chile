@@ -86,3 +86,18 @@ class AccountInvoice(models.Model):
                     ], limit=1).id or False
                 })
         return super().create(vals)
+
+    @api.depends('tax_line_ids')
+    def compute_sii_document_class(self):
+        for rec in self:
+            if not rec.tax_line_ids:
+                # Boleta Electrónica (39) -> Boleta Electrónica Exenta (41)
+                if rec.class_id and rec.class_id.code == 39:
+                    rec.class_id = self.env['sii.document.class'].search([
+                        ('code', '=', 41)
+                    ], limit=1).id or False
+                # Factura Electrónica (33) -> Factura Electrónica Exenta (34)
+                if rec.class_id and rec.class_id.code == 33:
+                    rec.class_id = self.env['sii.document.class'].search([
+                        ('code', '=', 34)
+                    ], limit=1).id or False
