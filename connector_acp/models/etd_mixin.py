@@ -46,7 +46,12 @@ class EtdMixin(models.AbstractModel):
         """
         return {
             "o": self,
-            "now": fields.datetime.now(),
+            "now": self.env.context.get(
+                'context_now',
+                fields.Datetime.context_timestamp(
+                    self.env.user,
+                    fields.Datetime.now())
+                ),
             "today": fields.datetime.today(),
             "date_to_string": fields.Date.to_string,
             "time_to_string": fields.Datetime.to_string,
@@ -90,12 +95,17 @@ class EtdMixin(models.AbstractModel):
             template_text = template_text.replace("\n", "")
             template_text = template_text.replace("\\n", "\n")
         try:
-            res = self._render_jinja_template(template_text).strip()
+            res = self._render_jinja_template(template_text).strip(' ')
         except Exception as e:
             raise UserError(
                 _("Error rendering file content %s "
-                  "for document %s - %s:\n\n%s")
-                % (etd_file.name, str(self), self.display_name, str(e)))
+                  "for document %s %s, %s:\n\n%s") % (
+                  etd_file.document_id.name,
+                  etd_file.name,
+                  str(self),
+                  self.display_name,
+                  str(e)
+                ))
         return res
 
     def _get_etd_filename(self, etd_file):
@@ -112,8 +122,13 @@ class EtdMixin(models.AbstractModel):
             except Exception as e:
                 raise UserError(
                     _("Error rendering file name %s "
-                      "for document %s - %s:\n\n%s")
-                    % (etd_file.name, str(self), self.display_name, str(e)))
+                      "for document %s %s, %s:\n\n%s") % (
+                      etd_file.document_id.name,
+                      etd_file.name,
+                      str(self),
+                      self.display_name,
+                      str(e)
+                    ))
             # Remove possible line breaks from file names
             res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
