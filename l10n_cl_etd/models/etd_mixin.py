@@ -14,4 +14,5 @@ class EtdMixin(models.AbstractModel):
 
     class_id = fields.Many2one(
         "sii.document.class", string="SII Document",
+        track_visibility='onchange',
         domain=lambda self: self._compute_class_id_domain())
