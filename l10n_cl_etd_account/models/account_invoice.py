@@ -65,15 +65,13 @@ class AccountInvoice(models.Model):
     @api.model
     def create(self, vals):
         if not vals.get('class_id', False):
-            sii_code = False
+            # Default: Factura Electrónica
+            sii_code = 33
             if vals.get('type', False) == 'out_invoice':
                 # Get partner
                 partner = self.env['res.partner'].browse(
                     vals.get('partner_id', False))
-                if partner.invoicing_policy == 'invoice':
-                    # Factura Electrónica
-                    sii_code = 33
-                elif partner.invoicing_policy == 'ticket':
+                if partner.invoicing_policy == 'ticket':
                     # Boleta Electrónica
                     sii_code = 39
             elif vals.get('type', False) == 'out_refund':
