@@ -30,7 +30,7 @@
 {% for invoice in invoices %}
 {%   set totals.count = totals.count + 1 %}
 {%   set totals.amount = totals.amount + invoice.amount_total %}
-{%   if invoice.payment_term_id.name.lower() == 'contado' %}
+{%   if not invoice.payment_term_id or invoice.payment_term_id.name.lower() == 'contado' %}
 {%     set totals.count_cash = totals.count_cash + 1 %}
 {%     set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
 {%   else %}
