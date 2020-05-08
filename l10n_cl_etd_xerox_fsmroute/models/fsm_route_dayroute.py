@@ -48,8 +48,8 @@ class FSMDayRoute(models.Model):
             lines[key]['quantity'] += (
                 line.quantity_done or line.product_uom_qty)
             lines[key]['price'] = max(
-                lines[key]['price'],
-                line.sale_line_id.price_unit,
+                lines[key]['price'] or 0,
+                line.sale_line_id.price_unit or 0,
                 )
 
         report_lines = []
