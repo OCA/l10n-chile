@@ -14,38 +14,50 @@ _logger = logging.getLogger(__name__)
 class EtdDocument(models.Model):
     _inherit = "etd.document"
 
-    def _xerox_get_records(self, company_id, run_date):
-        """Find and returns all documents."""
-        next_date = date_utils.add(run_date, days=1)
-        class_ids = self.env["sii.document.class"].search([
-            ("dte", "=", True)
-        ]).ids
-        now = fields.Datetime.context_timestamp(
-            self.env.user,
-            fields.Datetime.now())
-        recs = {}
-        Invoice = self.env["account.invoice"].with_context(context_now=now)
-        recs['account.invoice'] = Invoice.search([
+    def _xerox_get_domain_invoice(self, run_date, classes):
+        return [
             ("date_invoice", "=", run_date),
             ("state", "in", ["open", "paid"]),
-            ("class_id", "in", class_ids)
-        ])
-        Picking = self.env["stock.picking"].with_context(context_now=now)
-        recs['stock.picking'] = Picking.search([
+            ("class_id", "in", classes.ids),
+        ]
+
+    def _xerox_get_domain_picking(self, run_date, classes):
+        run_date1 = date_utils.add(run_date, days=1)
+        return [
             ("picking_type_code", "=", "outgoing"),
             # Deliveries are signed once they are waiting or confirmed
             # They will ony be "done" when delivered at customer site
             ("state", "not in", ("draft", "cancel")),
             ("scheduled_date", ">=", run_date),
-            ("scheduled_date", "<", next_date),
-            ("class_id", "in", class_ids)
-        ])
-        Batch = self.env["stock.picking.batch"].with_context(context_now=now)
-        recs['stock.picking.batch'] = Batch.search([
+            ("scheduled_date", "<", run_date1),
+            ("class_id", "in", classes.ids),
+        ]
+
+    def _xerox_get_domain_picking_batch(self, run_date, classes):
+        return [
             ("date", "=", run_date),
-            ("class_id", "in", class_ids),
+            ("class_id", "in", classes.ids),
             ('picking_ids', '!=', False),
+        ]
+
+    def _xerox_get_records(self, company_id, run_date):
+        """Find and returns all documents."""
+        classes = self.env["sii.document.class"].search([
+            ("dte", "=", True)
         ])
+        now = fields.Datetime.context_timestamp(
+            self.env.user,
+            fields.Datetime.now())
+        recs = {}
+        Invoice = self.env["account.invoice"].with_context(context_now=now)
+        recs['account.invoice'] = Invoice.search(
+            self._xerox_get_domain_invoice(run_date, classes))
+        Picking = self.env["stock.picking"].with_context(context_now=now)
+        recs['stock.picking'] = Picking.search(
+            self._xerox_get_domain_picking(run_date, classes))
+        Batch = self.env["stock.picking.batch"].with_context(context_now=now)
+        recs['stock.picking.batch'] = Batch.search(
+            self._xerox_get_domain_picking_batch(run_date, classes))
         return recs
 
     @api.model
