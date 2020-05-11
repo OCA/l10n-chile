@@ -40,7 +40,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}5;
-{# 4 Folio #}{{ digits_only(o.name) }};
+{# 4 Folio #}{{ digits_only(o.name) + tipo }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -203,7 +203,7 @@ dte_ane_
 {% if False %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ digits_only(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 Número copias #}0;
 {# 5 Observaciones #}{{ digits_only(o.name) }};
 {# 6 Fecha Cancelación #};
@@ -244,7 +244,7 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ digits_only(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};
@@ -313,7 +313,7 @@ dte_det_
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ digits_only(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #};

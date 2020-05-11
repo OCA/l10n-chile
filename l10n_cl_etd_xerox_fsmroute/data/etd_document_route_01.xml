@@ -36,7 +36,7 @@ dte_cab_
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
-{# 4 Folio #}{{ digits_only(o.name) }};
+{# 4 Folio #}{{ digits_only(o.name) + tipo }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho TODO o.transport_type #}2;
@@ -198,7 +198,7 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
-{# 3 Folio #}{{ digits_only(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 Número copias #}1;
 {# 5 Observaciones #}{{ digits_only(o.name) }};
 {# 6 Fecha Cancelación #};
@@ -236,7 +236,7 @@ dte_det_
 {% for line in lines %}
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}1;
-{# 3 Folio #}{{ digits_only(o.name) }};
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet #}{{ line['index']|int }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #}{{ line['code'] }};

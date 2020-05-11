@@ -40,7 +40,7 @@ dte_cab_
 {# 1 Cliente TRANSP #}{{(transp.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{tipo}};
-{# 4 Folio #}{{ digits_only(o.name) }};
+{# 4 Folio #}{{ digits_only(o.name) + tipo }};
 {# 5 FechEmis #}{{date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho #};
@@ -202,7 +202,7 @@ dte_ane_
     <field name="template_text">
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
-{# 3 Folio              #}{{ digits_only(o.name) }};
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
 {# 4 Número copias      #}1;
 {# 5 Observaciones TODO #};
 {# 6 Fecha Cancelación #};
@@ -251,7 +251,7 @@ dte_det_
 {% endfor %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{ digits_only(o.name)  }};
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo          #}{{ digits_only(invoice.number) }};
@@ -329,7 +329,7 @@ for line in picking.move_ids_without_package %}{%
 endfor %}{#
    1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}7;
-{# 3 Folio              #}{{ digits_only(o.name) }};
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet          #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo          #}{{ digits_only(picking.name) }};
