@@ -35,11 +35,13 @@ class EtdDocument(models.Model):
             dayroutes
             .mapped('order_ids.invoice_ids')
             .filtered('class_id')
+            .filtered(lambda inv: inv.status in ["open", "paid"])
         )
         res['stock.picking'] |= (
             dayroutes
             .mapped('order_ids.picking_ids')
             .filtered('class_id')
-            .filtered(lambda s: s.picking_type_id.code == 'outgoing')
+            .filtered(lambda pick: pick.picking_type_id.code == 'outgoing')
+            .filtered(lambda pick: pick.state not in ("draft", "cancel"))
         )
         return res
