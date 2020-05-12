@@ -214,7 +214,7 @@ dte_ane_
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Número copias #}3;
-{# 5 Observaciones #}{{o.note or ""}};
+{# 5 Observaciones (o.note) #}Precios referenciales. Valor final en su factura mensual.;
 {# 6 Fecha Cancelación #}{{ date and date.strftime('%Y-%m-%d')}};
 {# 7 Medio de pago #}Guia Botellón;
 {# 8 Término del pago - días #}1;
