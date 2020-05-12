@@ -11,16 +11,16 @@ class EtdDocument(models.Model):
         selection_add=[("fsm.route.dayroute", "Day Route")])
 
     @api.model
-    def _xerox_get_domain_invoice(self, run_date, classes):
+    def _xerox_get_domain_invoice(self, run_date):
         # Only invoices at run date without a DayRoute assigned
-        res = super()._xerox_get_domain_invoice(run_date, classes)
+        res = super()._xerox_get_domain_invoice(run_date)
         res.append(('fsm_order_ids', '=', False))
         return res
 
     @api.model
-    def _xerox_get_domain_picking(self, run_date, classes):
+    def _xerox_get_domain_picking(self, run_date):
         # Only pickings at run date without a DayRoute assigned
-        res = super()._xerox_get_domain_picking(run_date, classes)
+        res = super()._xerox_get_domain_picking(run_date)
         res.append(('fsm_order_id', '=', False))
         return res
 
