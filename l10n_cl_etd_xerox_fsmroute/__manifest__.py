@@ -20,6 +20,7 @@
         "fieldservice_vehicle",
     ],
     "data": [
+        "views/fsm_route_dayroute.xml",
         "data/etd_document_route_01.xml",
         "data/etd_document_route_05.xml",
         "data/etd_document_route_07.xml",

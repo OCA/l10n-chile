@@ -5,6 +5,7 @@
 from datetime import date
 import logging
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 from odoo.tools import date_utils
 
 
@@ -14,14 +15,16 @@ _logger = logging.getLogger(__name__)
 class EtdDocument(models.Model):
     _inherit = "etd.document"
 
-    def _xerox_get_domain_invoice(self, run_date, classes):
+    @api.model
+    def _xerox_get_domain_invoice(self, run_date):
         return [
             ("date_invoice", "=", run_date),
             ("state", "in", ["open", "paid"]),
-            ("class_id", "in", classes.ids),
+            ("class_id.dte", "=", True),
         ]
 
-    def _xerox_get_domain_picking(self, run_date, classes):
+    @api.model
+    def _xerox_get_domain_picking(self, run_date):
         run_date1 = date_utils.add(run_date, days=1)
         return [
             ("picking_type_code", "=", "outgoing"),
@@ -30,35 +33,57 @@ class EtdDocument(models.Model):
             ("state", "not in", ("draft", "cancel")),
             ("scheduled_date", ">=", run_date),
             ("scheduled_date", "<", run_date1),
-            ("class_id", "in", classes.ids),
+            ("class_id.dte", "=", True),
         ]
 
-    def _xerox_get_domain_picking_batch(self, run_date, classes):
+    @api.model
+    def _xerox_get_domain_picking_batch(self, run_date):
         return [
             ("date", "=", run_date),
-            ("class_id", "in", classes.ids),
+            ("class_id.dte", "=", True),
             ('picking_ids', '!=', False),
         ]
 
-    def _xerox_get_records(self, company_id, run_date):
+    @api.model
+    def _xerox_get_records_day(self, company_id, run_date):
         """Find and returns all documents."""
-        classes = self.env["sii.document.class"].search([
-            ("dte", "=", True)
-        ])
         now = fields.Datetime.context_timestamp(
             self.env.user,
             fields.Datetime.now())
         recs = {}
         Invoice = self.env["account.invoice"].with_context(context_now=now)
         recs['account.invoice'] = Invoice.search(
-            self._xerox_get_domain_invoice(run_date, classes))
+            self._xerox_get_domain_invoice(run_date))
         Picking = self.env["stock.picking"].with_context(context_now=now)
         recs['stock.picking'] = Picking.search(
-            self._xerox_get_domain_picking(run_date, classes))
+            self._xerox_get_domain_picking(run_date))
         Batch = self.env["stock.picking.batch"].with_context(context_now=now)
         recs['stock.picking.batch'] = Batch.search(
-            self._xerox_get_domain_picking_batch(run_date, classes))
+            self._xerox_get_domain_picking_batch(run_date))
         return recs
+
+    @api.model
+    def xerox_build_files(self, rsets):
+        """
+        Given a dict with the document recorsets,
+        builds a dict with the file name an content
+        """
+        doc_count = sum(len(x) for x in rsets.values())
+        _logger.info(
+            'Building files for %d documents', doc_count)
+        for model, rset in rsets.items():
+            _logger.info('- %s: %s' % (model, rset.mapped('display_name')))
+        # Group records by file set, using rule in `xerox_group()`
+        grouped_data = {}
+        for rset in rsets.values():
+            # In place update of the grouped data dict
+            grouped_data = rset.xerox_group(grouped_data)
+
+        file_dict = {}
+        for key, records in grouped_data.items():
+            for record in records:
+                file_dict = record.build_files(file_dict)
+        return file_dict
 
     @api.model
     def cron_xerox_send_files(self, run_date=None):
@@ -73,7 +98,7 @@ class EtdDocument(models.Model):
             today = fields.Date.context_today(self)
             run_date = date_utils.add(today, days=-1)
         elif not isinstance(run_date, date):
-            # Convert t Date object
+            # Convert to Date object
             run_date = fields.Date.to_date(run_date)
 
         companies = self.env["res.company"].search(
@@ -87,22 +112,6 @@ class EtdDocument(models.Model):
             _logger.info('No Company is configured for Xerox integration')
 
         for company in companies:
-            ungrouped_rsets = self._xerox_get_records(company, run_date)
-            doc_count = sum(len(x) for x in ungrouped_rsets.values())
-            _logger.info(
-                'Found %d documents for company %s', doc_count, company.name)
-            for model, rset in ungrouped_rsets.items():
-                _logger.info(
-                    '- %s: %s' % (model, rset.mapped('display_name')))
-            # Group records by file set, using rule in `xerox_group()`
-            grouped_data = {}
-            for rset in ungrouped_rsets.values():
-                # In place update of the grouped data dict
-                grouped_data = rset.xerox_group(grouped_data)
-
-            file_dict = {}
-            for key, records in grouped_data.items():
-                for record in records:
-                    # FIXME: run .with_delay. Implies some code reorg
-                    file_dict = record.build_files(file_dict)
+            rsets = self._xerox_get_records_day(company, run_date)
+            file_dict = self.xerox_build_files(rsets)
             company.backend_acp_id.send(file_dict)
