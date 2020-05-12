@@ -13,11 +13,6 @@
 {% set truck = o.fsm_vehicle_id.name or "" %}
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
-{% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.env['stock.picking'].search([
-    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
-    ('picking_type_id.code', '=', 'outgoing'),
-]) %}
 {% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
 {% set cliente = transp %}
 {% set emisor = cliente %}
@@ -240,7 +235,7 @@ dte_det_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
-{% for line in invoices %}
+{% for line in o.shipping_invoice_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
@@ -308,7 +303,7 @@ dte_det_
 {# 64 MontoItem #};
 {{ '\n' }}
 {% endfor %}
-{% for line in deliveries %}
+{% for line in o.shipping_picking_ids %}
 {% if line.picking_type_id.code == 'outgoing' %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente #}{{ (transp.vat or '').replace('.', '')[:8]}};
