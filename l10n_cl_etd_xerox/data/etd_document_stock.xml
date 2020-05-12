@@ -23,6 +23,7 @@
 {% set origen = o.sale_id.warehouse_id.partner_id %}
 {% set recep = o.partner_id.parent_id or o.partner_id %}
 {% set dest = o.partner_id %}
+{% set transp = o.fsm_order_id.person_id.commercial_partner_id %}
 
 {% set sales = o.sale_id %}
 {% set picking_lines = o.move_ids_without_package %}
@@ -76,8 +77,8 @@ dte_cab_
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{     (recep.vat or '').replace('.', '')}};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{recep.name}};
-{# 33 GiroRecep #}{{recep.activity_description}};
+{# 32 RznSocRecep #}{{recep.commercial_partner_id.name}};
+{# 33 GiroRecep #}{{recep.commercial_partner_id.activity_description}};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{' '.join([recep.street or '', recep.street2 or ''])[:60] }};
 {# 36 CmnaRecep #}{{recep.city_id.name or ''}};
@@ -222,8 +223,8 @@ dte_ane_
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
-{# 15 Sector #};
-{# 16 Territorio #};
+{# 15 Sector #}{{ dayroute.name }};
+{# 16 Territorio #}{{ transp.name }};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};

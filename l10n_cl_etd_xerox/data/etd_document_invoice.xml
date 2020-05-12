@@ -10,7 +10,8 @@
 {% set center_code = o.company_id.backend_acp_id.xerox_center_code or "00" %}
 {% set date = o.date_invoice %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
-{% set shift = o.mapped('fsm_order_ids.dayroute_id')[:1].name or "00000" %}
+{% set dayroute = o.mapped('fsm_order_ids.dayroute_id')[:1] %}
+{% set shift = dayroute.name or "00000" %}
 {% set warehouse_addr = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1].partner_id or o.company_id.partner_id %}
 </field>
 </record>
@@ -57,8 +58,8 @@ dte_cab_
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{     (o.partner_id.vat or '').replace('.', '')}};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{o.partner_id.name}};
-{# 33 GiroRecep #}{{o.partner_id.activity_description}};
+{# 32 RznSocRecep #}{{o.partner_id.commercial_partner_id.name}};
+{# 33 GiroRecep #}{{o.partner_id.commercial_partner_id.activity_description}};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60] }};
 {# 36 CmnaRecep #}{{o.partner_id.city_id.name or ''}};
@@ -204,7 +205,7 @@ dte_ane_
 {% set payment = o.payment_ids[:1] %}
 {# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
 {# 6 Fecha Cancelación #};
-{# 7 Medio de pago TODO-??? #};
+{# 7 Medio de pago #}{{ o.payment_term_id.name }};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
 {# 10 Código vendedor #}{{o.user_id.ref or ''}};
@@ -212,8 +213,8 @@ dte_ane_
 {# 12 Lugar Emisión #}{{ warehouse.name }};
 {# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
-{# 15 Sector #};
-{# 16 Territorio #}{{o.user_id.ref or ''}};
+{# 15 Sector #}{{ dayroute.name }};
+{# 16 Territorio #}{{ o.user_id.ref }};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};
