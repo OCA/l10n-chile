@@ -18,7 +18,7 @@
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set transp = o.person_id.partner_id %}
-{% set recep = transp %}
+{% set recep = origen %}
 {% set dest = origen %}
 </field>
 </record>
@@ -64,10 +64,10 @@ dte_cab_
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{ (recep.vat or '').replace('.', '')}};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{recep.name}};
+{# 32 RznSocRecep #}{{recep.commercial_partner_id.name}};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{ (recep.street or '')[:60] }};
+{# 35 DirRecep #}{{ (recep.name or '')[:60] }};
 {# 36 CmnaRecep #}{{ recep.city_id.name or ''}};
 {# 37 CiudadRecep #}{{recep.city or ''}};
 {# 38 DirPostal #};
@@ -76,7 +76,7 @@ dte_cab_
 {# 41 RUTSolicita #};
 {# 42 Patente #};
 {# 43 RUTTrans #}{{ transp.vat }};
-{# 44 DirDest #}{{ (dest.street or '')[:60] }};
+{# 44 DirDest #}{{ (dest.name or '')[:60] }};
 {# 45 CmnaDest #}{{ dest.city_id.name or ''}};
 {# 46 CiudadDest #}{{ dest.city or ''}};
 {# 47 MntNeto #};
