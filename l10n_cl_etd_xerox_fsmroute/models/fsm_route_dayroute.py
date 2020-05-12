@@ -13,12 +13,16 @@ class FSMDayRoute(models.Model):
 
     def _compute_shipping(self):
         for dayroute in self:
-            dayroute.shipping_invoice_ids = (
+            invoices = (
                 dayroute
                 .mapped('order_ids.invoice_ids')
                 .filtered('class_id')
                 .filtered(lambda x: x.state in ['open', 'paid'])
             )
+            dayroute.shipping_invoice_ids = (
+                invoices.filtered(lambda x: x.class_id.code != 61))
+            dayroute.closing_invoice_ids = (
+                invoices.filtered(lambda x: x.class_id.code == 61))
             dayroute.shipping_picking_ids = (
                 dayroute
                 .mapped('order_ids.picking_ids')
@@ -31,6 +35,8 @@ class FSMDayRoute(models.Model):
         'account.invoice', compute='_compute_shipping')
     shipping_picking_ids = fields.Many2many(
         'stock.picking', compute='_compute_shipping')
+    closing_invoice_ids = fields.Many2many(
+        'account.invoice', compute='_compute_shipping')
 
     # TODO: move these fields to fieldservice_route
     is_closed = fields.Boolean(related='stage_id.is_closed')
@@ -53,14 +59,10 @@ class FSMDayRoute(models.Model):
         """
         ETDDocument = self.env['etd.document']
         for company in self.mapped('company_id'):
-            if company.backend_acp_id.status != 'confirmed':
-                raise UserError(
-                    _('Company %s is not configured for Xerox integration')
-                    % company.display_name)
+            # Generate presales files
             dayroutes = self.filtered(lambda x: x.company_id == company)
             rsets = ETDDocument._xerox_add_records_dayroute(dayroutes)
-            file_dict = ETDDocument.xerox_build_files(rsets)
-            company.backend_acp_id.send(file_dict)
+            ETDDocument.xerox_build_and_send_files(company, rsets)
 
     def get_xerox_data(self):
         """
