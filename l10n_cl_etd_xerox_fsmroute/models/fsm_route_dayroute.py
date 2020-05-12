@@ -2,14 +2,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from odoo import fields, models, _
+from odoo.exceptions import UserError
 
 
 class FSMDayRoute(models.Model):
     _name = 'fsm.route.dayroute'
     _inherit = ['fsm.route.dayroute', 'etd.mixin']
 
+    # TODO: move these fields to fieldservice_route
+    is_closed = fields.Boolean(related='stage_id.is_closed')
     date_close = fields.Datetime()
-    # TODO: move this this fieldservice_route
     company_id = fields.Many2one(
         'res.company',
         default=lambda s: s.env.user.company_id)
@@ -21,6 +23,21 @@ class FSMDayRoute(models.Model):
             if new_stage.is_closed:
                 values.update({'date_close': fields.Datetime.now()})
         return super().write(values)
+
+    def action_xerox_send_files(self):
+        """
+        Generate and send Xerox files for the selected Day Routes
+        """
+        ETDDocument = self.env['etd.document']
+        for company in self.mapped('company_id'):
+            if company.backend_acp_id.status != 'confirmed':
+                raise UserError(
+                    _('Company %s is not configured for Xerox integration')
+                    % company.display_name)
+            dayroutes = self.filtered(lambda x: x.company_id == company)
+            rsets = ETDDocument._xerox_add_records_dayroute(dayroutes)
+            file_dict = ETDDocument.xerox_build_files(rsets)
+            company.backend_acp_id.send(file_dict)
 
     def get_xerox_data(self):
         """
