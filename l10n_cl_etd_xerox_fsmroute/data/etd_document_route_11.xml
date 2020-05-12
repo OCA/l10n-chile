@@ -13,11 +13,6 @@
 {% set truck = o.fsm_vehicle_id.name or "" %}
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
-{% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.env['stock.picking'].search([
-    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
-    ('picking_type_id.code', '=', 'outgoing'),
-]) %}
 
 {% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
 {% set cliente = transp %}
@@ -27,7 +22,7 @@
 {% set dest = origen %}
 
 {% set totals = namespace(count=0, count_sign=0, count_cash=0, amount=0, amount_sign=0, amount_cash=0, quantity=0) %}
-{% for invoice in invoices %}
+{% for invoice in o.shipping_invoices %}
 {%   set totals.count = totals.count + 1 %}
 {%   set totals.amount = totals.amount + invoice.amount_total %}
 {%   if not invoice.payment_term_id or invoice.payment_term_id.name.lower() == 'contado' %}

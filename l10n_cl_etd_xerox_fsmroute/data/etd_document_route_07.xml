@@ -13,11 +13,6 @@
 {% set truck = o.fsm_vehicle_id.name or "" %}
 {% set shift = o.name or "" %}
 {% set fsm_orders = o.order_ids %}
-{% set invoices = o.mapped('order_ids.invoice_ids').filtered('class_id') %}
-{% set deliveries = o.env['stock.picking'].search([
-    ('id', 'in', o.mapped('order_ids.picking_ids').filtered('class_id').ids),
-    ('picking_type_id.code', '=', 'outgoing'),
-]) %}
 
 {% set cliente = company_obj.partner_id %}
 {% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
@@ -239,7 +234,7 @@ dte_det_
     <field name="template_text">
 {% set totals = namespace(line_num=0, amount=0, quantity=0) %}
 {# List Invoices #}
-{% for invoice in invoices %}
+{% for invoice in o.shipping_invoice_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {% set customer = invoice.partner_id.commercial_partner_id %}
 {% set delivery_addr = invoice.partner_shipping_id or invoice.partner_id %}
@@ -316,8 +311,7 @@ dte_det_
 {{ '\n'
 }}{% endfor
 %}{# List Delivery Orders #}{%
-for picking in deliveries %}{%
-if picking.picking_type_id.code == 'outgoing' %}{%
+for picking in o.shipping_picking_ids %}{%
 set totals.line_num = totals.line_num + 1 %}{%
 set customer = picking.partner_id.commercial_partner_id %}{%
 set delivery_addr = picking.partner_id %}{%
@@ -392,7 +386,6 @@ endfor %}{#
 {# 63 CodImpAdic #};
 {# 64 MontoItem         #}{{ totals.amount|int }};
 {{ '\n' }}
-{% endif %}
 {% endfor %}
     </field>
 </record>
@@ -409,7 +402,7 @@ dte_an2_
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {# List Invoices #}
-{% for invoice in invoices %}
+{% for invoice in o.shipping_invoice_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{tipo}};
@@ -420,7 +413,7 @@ dte_an2_
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
 {{ '\n' }}{% endfor %}{# List Delivery Orders #}
-{% for picking in deliveries %}
+{% for picking in o.shipping_picking_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{ tipo }};

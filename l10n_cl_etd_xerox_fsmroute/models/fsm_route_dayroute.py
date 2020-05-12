@@ -9,6 +9,29 @@ class FSMDayRoute(models.Model):
     _name = 'fsm.route.dayroute'
     _inherit = ['fsm.route.dayroute', 'etd.mixin']
 
+    # Xerox reports helper fields:
+
+    def _compute_shipping(self):
+        for dayroute in self:
+            dayroute.shipping_invoice_ids = (
+                dayroute
+                .mapped('order_ids.invoice_ids')
+                .filtered('class_id')
+                .filtered(lambda x: x.state in ['open', 'paid'])
+            )
+            dayroute.shipping_picking_ids = (
+                dayroute
+                .mapped('order_ids.picking_ids')
+                .filtered('class_id')
+                .filtered(lambda x: x.picking_type_id.code == 'outgoing')
+                .filtered(lambda x: x.state in ['open', 'paid'])
+            )
+
+    shipping_invoice_ids = fields.Many2many(
+        'account.invoice', compute='_compute_shipping')
+    shipping_picking_ids = fields.Many2many(
+        'stock.picking', compute='_compute_shipping')
+
     # TODO: move these fields to fieldservice_route
     is_closed = fields.Boolean(related='stage_id.is_closed')
     date_close = fields.Datetime()
