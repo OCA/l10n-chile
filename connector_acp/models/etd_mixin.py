@@ -39,19 +39,14 @@ class EtdMixin(models.AbstractModel):
         res = company.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
-    def _prepare_jinja_context(self):
+    def _prepare_jinja_context(self, now=None):
         """Return a dictionary of keywords used in the template.
 
         :return: Dictionary of keywords used in the template
         """
         return {
             "o": self,
-            "now": self.env.context.get(
-                'context_now',
-                fields.Datetime.context_timestamp(
-                    self.env.user,
-                    fields.Datetime.now())
-                ),
+            "now": now,
             "today": fields.datetime.today(),
             "date_to_string": fields.Date.to_string,
             "time_to_string": fields.Datetime.to_string,
@@ -62,7 +57,7 @@ class EtdMixin(models.AbstractModel):
                 lambda text: ''.join(x for x in text if x.isdigit())),
         }
 
-    def _render_jinja_template(self, template_text):
+    def _render_jinja_template(self, template_text, now=None):
         """
         In: self recordset and ETD File for the template to use
         Out: string with the processed template
@@ -71,11 +66,11 @@ class EtdMixin(models.AbstractModel):
         jinja_env = Environment(
             lstrip_blocks=True, trim_blocks=True, loader=BaseLoader())
         template = jinja_env.from_string(template_text)
-        eval_context = self._prepare_jinja_context()
+        eval_context = self._prepare_jinja_context(now=now)
         res = template.render(eval_context)
         return res
 
-    def _get_etd_filetext(self, etd_file):
+    def _get_etd_filetext(self, etd_file, now=None):
         """
         Get the file template to render.
         """
@@ -95,7 +90,7 @@ class EtdMixin(models.AbstractModel):
             template_text = template_text.replace("\n", "")
             template_text = template_text.replace("\\n", "\n")
         try:
-            res = self._render_jinja_template(template_text).strip(' ')
+            res = self._render_jinja_template(template_text, now=now).strip(' ')
         except Exception as e:
             raise UserError(
                 _("Error rendering file content %s "
@@ -108,7 +103,7 @@ class EtdMixin(models.AbstractModel):
                 ))
         return res
 
-    def _get_etd_filename(self, etd_file):
+    def _get_etd_filename(self, etd_file, now=None):
         """
         Get the file name.
         This can be a relative path with a directory name.
@@ -118,7 +113,7 @@ class EtdMixin(models.AbstractModel):
                 (etd_file.document_id.template_text_include or "").strip(),
                 etd_file.template_name.strip())
             try:
-                res = self._render_jinja_template(template_text)
+                res = self._render_jinja_template(template_text, now=now)
             except Exception as e:
                 raise UserError(
                     _("Error rendering file name %s "
@@ -135,7 +130,7 @@ class EtdMixin(models.AbstractModel):
             res = "%s.%s" % (self.display_name, etd_file.file_type)
         return res
 
-    def _build_file(self, etd_file, file_dict=None):
+    def _build_file(self, etd_file, file_dict=None, now=None):
         """Build File.
 
         Build the file of the record using the company documents and the
@@ -149,8 +144,8 @@ class EtdMixin(models.AbstractModel):
         """
         file_dict = file_dict or {}
         for rec in self:
-            file_name = rec._get_etd_filename(etd_file)
-            file_text = rec._get_etd_filetext(etd_file)
+            file_name = rec._get_etd_filename(etd_file, now=now)
+            file_text = rec._get_etd_filetext(etd_file, now=now)
 
             if etd_file.grouped:
                 # Append text to an already existing file
@@ -187,7 +182,7 @@ class EtdMixin(models.AbstractModel):
             file_dict[file_name] = file_text
         return file_dict
 
-    def build_files(self, file_dict=None):
+    def build_files(self, file_dict=None, now=None):
         """Build Files.
 
         Build the files and returns a dictionary with file name and string
@@ -197,7 +192,7 @@ class EtdMixin(models.AbstractModel):
         etds = self.get_etd_document()
         for etd in etds:
             for etd_file in etd.file_ids:
-                file_dict = self._build_file(etd_file, file_dict)
+                file_dict = self._build_file(etd_file, file_dict, now=now)
         return file_dict
 
     def sign_file(self, file_text, certificate):

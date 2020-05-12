@@ -2,12 +2,16 @@
 # Copyright (C) 2019 Serpent Consulting Services Pvt. Ltd.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models
+from odoo import fields, models
 from ...queue_job.job import job
 
 
 class EtdMixin(models.AbstractModel):
     _inherit = "etd.mixin"
+
+    xerox_send_timestamp = fields.Char(
+        index=True,
+        help="Timestamp when was sent to Xerox for signing")
 
     @job
     def document_sign(self):

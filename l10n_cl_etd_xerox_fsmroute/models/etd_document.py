@@ -11,37 +11,35 @@ class EtdDocument(models.Model):
         selection_add=[("fsm.route.dayroute", "Day Route")])
 
     @api.model
-    def _xerox_get_domain_invoice(self, run_date):
+    def _xerox_get_domain_invoice(self, run_date=None, force=False):
         # Only invoices at run date without a DayRoute assigned
-        res = super()._xerox_get_domain_invoice(run_date)
+        res = super()._xerox_get_domain_invoice(run_date, force)
         res.append(('fsm_order_ids', '=', False))
         return res
 
     @api.model
-    def _xerox_get_domain_picking(self, run_date):
+    def _xerox_get_domain_picking(self, run_date=None, force=False):
         # Only pickings at run date without a DayRoute assigned
-        res = super()._xerox_get_domain_picking(run_date)
+        res = super()._xerox_get_domain_picking(run_date, force)
         res.append(('fsm_order_id', '=', False))
         return res
+
+    @api.model
+    def _xerox_get_domain_dayroute(self, run_date=None, force=False):
+        domain = []
+        if run_date:
+            domain.append(("date", "=", run_date))
+        if not force:
+            domain.append(("xerox_send_timestamp", "=", False))
+        return domain
 
     @api.model
     def _xerox_add_records_dayroute(self, dayroutes, rsets=None):
         """
         Given Day Routes and dictionary with recordsets,
         adds the Day Routes and corresponding documents to the recorsets dict.
-
-        The `context_now` context key is ensured to be kept/set
-        in the added records.
         """
-        if rsets:
-            rec0 = list(rsets.values())[0]
-            now = rec0.env.context['context_now']
-        else:
-            rsets = {}
-            now = fields.Datetime.context_timestamp(
-                self.env.user,
-                fields.Datetime.now())
-        dayroutes = dayroutes.with_context(context_now=now)
+        rsets = rsets or {}
         rsets['fsm.route.dayroute'] = dayroutes
         # Include Invoices and Pickings linked to the DayRoute
         # regardless of their document date
@@ -63,9 +61,10 @@ class EtdDocument(models.Model):
         return rsets
 
     @api.model
-    def _xerox_get_records_day(self, company_id, run_date):
-        res = super()._xerox_get_records_day(company_id, run_date)
+    def _xerox_get_records_day(self, company, run_date=None, force=None):
+        res = super()._xerox_get_records_day(company, run_date, force)
         Dayroute = self.env["fsm.route.dayroute"]
-        dayroutes = Dayroute.search([("date", "=", run_date)])
+        dayroutes = Dayroute.search(
+            self._xerox_get_domain_dayroute(run_date, force))
         res = self._xerox_add_records_dayroute(dayroutes, res)
         return res
