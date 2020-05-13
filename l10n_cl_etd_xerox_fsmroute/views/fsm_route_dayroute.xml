@@ -9,7 +9,7 @@
                 <field name="xerox_pending_sign_count" invisible="True" />
                 <button name="action_xerox_send_files" type="object"
                         string="Send Xerox Files"
-                        attrs="{'invisible': [('xerox_pending_sign_count', '>', 0)]}"
+                        attrs="{'invisible': [('xerox_pending_sign_count', '=', False)]}"
                 />
             </field>
         </field>
