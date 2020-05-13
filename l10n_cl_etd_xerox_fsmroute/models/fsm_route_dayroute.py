@@ -28,7 +28,7 @@ class FSMDayRoute(models.Model):
                 .mapped('order_ids.picking_ids')
                 .filtered('class_id')
                 .filtered(lambda x: x.picking_type_id.code == 'outgoing')
-                .filtered(lambda x: x.state in ['open', 'paid'])
+                .filtered(lambda x: x.state in ['assigned', 'done'])
                 .filtered(lambda x: not x.xerox_send_timestamp)
             )
             dayroute.xerox_pending_sign_count = (
