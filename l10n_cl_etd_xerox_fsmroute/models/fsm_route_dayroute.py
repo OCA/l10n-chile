@@ -12,24 +12,28 @@ class FSMDayRoute(models.Model):
     # Xerox reports helper fields:
 
     def _compute_shipping(self):
+        """
+        Helper fields for Xerox file generation
+        """
         for dayroute in self:
-            invoices = (
+            dayroute.shipping_invoice_ids = (
                 dayroute
                 .mapped('order_ids.invoice_ids')
                 .filtered('class_id')
                 .filtered(lambda x: x.state in ['open', 'paid'])
+                .filtered(lambda x: not x.xerox_send_timestamp)
             )
-            dayroute.shipping_invoice_ids = (
-                invoices.filtered(lambda x: x.class_id.code != 61))
-            dayroute.closing_invoice_ids = (
-                invoices.filtered(lambda x: x.class_id.code == 61))
             dayroute.shipping_picking_ids = (
                 dayroute
                 .mapped('order_ids.picking_ids')
                 .filtered('class_id')
                 .filtered(lambda x: x.picking_type_id.code == 'outgoing')
                 .filtered(lambda x: x.state in ['open', 'paid'])
+                .filtered(lambda x: not x.xerox_send_timestamp)
             )
+            dayroute.xerox_pending_sign_count = (
+                len(dayroute.shipping_invoice_ids) +
+                len(dayroute.shipping_picking_ids))
 
     shipping_invoice_ids = fields.Many2many(
         'account.invoice', compute='_compute_shipping')
@@ -37,6 +41,9 @@ class FSMDayRoute(models.Model):
         'stock.picking', compute='_compute_shipping')
     closing_invoice_ids = fields.Many2many(
         'account.invoice', compute='_compute_shipping')
+    xerox_pending_sign_count = fields.Boolean(
+        'Documents pending Xerox signing',
+        compute='_compute_shipping')
 
     # TODO: move these fields to fieldservice_route
     is_closed = fields.Boolean(related='stage_id.is_closed')
