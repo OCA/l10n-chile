@@ -143,6 +143,10 @@ class EtdMixin(models.AbstractModel):
         :return: A file_dict dictionary with the filename and the content
         """
         file_dict = file_dict or {}
+        if not now:
+            now = fields.Datetime.context_timestamp(
+                self.env.user,
+                fields.Datetime.now())
         for rec in self:
             file_name = rec._get_etd_filename(etd_file, now=now)
             file_text = rec._get_etd_filetext(etd_file, now=now)
