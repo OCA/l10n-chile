@@ -19,8 +19,9 @@ class PickingBatch(models.Model):
             line['quantity'] += (move.quantity_done or move.product_uom_qty)
         so_lines = self.mapped('picking_ids.sale_id.order_line')
         for key, line in lines.items():
-            line['price'] = max(
+            prices = [
                 x.price_unit for x in so_lines
-                if x.product_id == key[0] and x.product_uom == key[1])
+                if x.product_id == key[0] and x.product_uom == key[1]]
+            line['price'] = max(prices) if prices else 0
             line['amount'] = line['quantity'] * line['price']
         return lines
