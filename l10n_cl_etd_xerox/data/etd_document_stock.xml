@@ -223,8 +223,8 @@ dte_ane_
 {# 12 Lugar Emisión #}{{ origen.name }};
 {# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
-{# 15 Sector #}{{ dayroute.name }};
-{# 16 Territorio #}{{ transp.name }};
+{# 15 Sector #}{{ digits_only(dayroute.name) }};
+{# 16 Territorio #};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};

@@ -25,7 +25,7 @@
 {% for invoice in o.shipping_invoices %}
 {%   set totals.count = totals.count + 1 %}
 {%   set totals.amount = totals.amount + invoice.amount_total %}
-{%   if not invoice.payment_term_id or invoice.payment_term_id.name.lower() == 'contado' %}
+{%   if invoice.partner_id.delivery_condition == 'immediate' %}
 {%     set totals.count_cash = totals.count_cash + 1 %}
 {%     set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
 {%   else %}
