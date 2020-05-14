@@ -45,15 +45,3 @@ class EtdDocument(models.Model):
         domain = super()._xerox_get_domain_picking_batch(run_date, force)
         domain = [('id', '=', 0)]  # Always False
         return domain
-
-    @api.model
-    def _xerox_get_domain_dayroute(self, run_date=None, force=False,
-                                   dayroutes=None):
-        domain = []
-        if run_date:
-            domain.append(("date", "=", run_date))
-        if not force:
-            domain.append(("xerox_send_timestamp", "=", False))
-        if dayroutes:
-            domain.append(('id', 'in', dayroutes.ids))
-        return domain
