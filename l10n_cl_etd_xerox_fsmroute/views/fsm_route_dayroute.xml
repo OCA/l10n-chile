@@ -11,6 +11,10 @@
                         string="Send Xerox Files"
                         attrs="{'invisible': [('xerox_pending_sign_count', '=', False)]}"
                 />
+                <button name="action_xerox_send_files_force" type="object"
+                        string="Force Send Xerox Files"
+                        groups="base.group_system"
+                />
             </field>
         </field>
     </record>
