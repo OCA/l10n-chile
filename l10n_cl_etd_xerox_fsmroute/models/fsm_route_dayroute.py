@@ -85,14 +85,10 @@ class FSMDayRoute(models.Model):
         """
         Returns a dict with the recordsets to send to Xerox
         """
-        ETDDocument = self.env['etd.document']
+        dayroutes = self
         # Include Dayroutes with shipping documents to send
         # Only for presales lots, that have documents to ship
-        dayroutes_domain = ETDDocument._xerox_get_domain_dayroute(
-            force=force, dayroutes=self)
-        dayroutes = self.with_context(xerox_force=force).search(
-            dayroutes_domain)
-        dayroutes_with_docs = dayroutes.filtered('xerox_shipping_docs_count')
+        dayroutes_with_docs = self.filtered('xerox_shipping_docs_count')
         return {
             'fsm.route.dayroute': dayroutes_with_docs,
             'account.invoice': dayroutes.mapped('shipping_invoice_ids'),
@@ -116,10 +112,12 @@ class FSMDayRoute(models.Model):
         Generate and send Xerox files for the selected Day Routes
         One call per Company
         """
-        self.with_delay().xerox_send_files()
+        # TODO: don't send if there is nothing to send
+        # TODO: enable queue
+        self.xerox_send_files()
 
     def action_xerox_send_files_force(self):
-        self.with_delay().xerox_send_files(force=True)
+        self.xerox_send_files(force=True)
 
     # ==== Helpers for Xerox file templates ====
 
