@@ -275,7 +275,7 @@ dte_det_
 {# 29 SubCod            #}TUB;
 {# 30 SubQty #};
 {# 31 SubCod #};
-{# 32 FechElabor        #}{{ invoice.payment_term_id.note or invoice.payment_term_id.name }};
+{# 32 FechElabor        #}{{ 'Contado' if o.delivery_addr.payment_condition == 'immediate' else 'Solo firma' }};
 {# 33 FechVencim        #}{{ invoice.date_due }};
 {# 34 UnmdItem #};
 {# 35 PrcItem           #}700;
