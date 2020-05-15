@@ -85,7 +85,7 @@ class FSMDayRoute(models.Model):
         """
         Returns a dict with the recordsets to send to Xerox
         """
-        dayroutes = self
+        dayroutes = self.with_context(xerox_force=force)
         # Include Dayroutes with shipping documents to send
         # Only for presales lots, that have documents to ship
         dayroutes_with_docs = self.filtered('xerox_shipping_docs_count')
