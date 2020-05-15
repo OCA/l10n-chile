@@ -48,7 +48,11 @@ class FSMDayRoute(models.Model):
             load_pick_domain = ETDDocument._xerox_get_domain_picking(
                 force=force, dayroutes=self, picking_type="internal")
             load_pickings = self.env['stock.picking'].search(load_pick_domain)
-            dayroute.shipping_batchpick_ids = load_pickings.mapped('batch_id')
+            batchpicks_possible = load_pickings.mapped('batch_id')
+            batchpick_domain = ETDDocument._xerox_get_domain_picking_batch(
+                force=force, batchpicks=batchpicks_possible)
+            dayroute.shipping_batchpick_ids = \
+                self.env['stock.picking.batch'].search(batchpick_domain)
 
             # Total counts
             dayroute.xerox_pending_sign_count = (
@@ -72,10 +76,10 @@ class FSMDayRoute(models.Model):
         'stock.picking', compute='_compute_shipping')
     shipping_batchpick_ids = fields.Many2many(
         'stock.picking.batch', compute='_compute_shipping')
-    xerox_pending_sign_count = fields.Boolean(
+    xerox_pending_sign_count = fields.Integer(
         'Documents pending Xerox signing',
         compute='_compute_shipping')
-    xerox_shipping_docs_count = fields.Boolean(
+    xerox_shipping_docs_count = fields.Integer(
         "Shipping documents to send to Xerox. "
         "Presales lots have shippingd docs, "
         "Route closing docs don't.",
