@@ -54,7 +54,7 @@ class EtdMixin(models.AbstractModel):
             "datetime": datetime.datetime,
             "timedelta": datetime.timedelta,
             "digits_only": (
-                lambda text: ''.join(x for x in text if x.isdigit())),
+                lambda text: ''.join(x for x in (text or '') if x.isdigit())),
         }
 
     def _render_jinja_template(self, template_text, now=None):
