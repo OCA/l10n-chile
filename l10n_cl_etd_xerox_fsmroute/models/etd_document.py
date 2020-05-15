@@ -40,8 +40,10 @@ class EtdDocument(models.Model):
 
     @api.model
     def _xerox_get_domain_picking_batch(self, run_date=None, force=False,
-                                        dayroutes=None):
-        # TODO: properly exclude DayRoute picking batches from cron runs
+                                        batchpicks=None):
         domain = super()._xerox_get_domain_picking_batch(run_date, force)
-        domain = [('id', '=', 0)]  # Always False
+        if batchpicks:
+            domain.append(('id', 'in', batchpicks.ids))
+        else:
+            domain = [('id', '=', 0)]  # Always False
         return domain
