@@ -26,6 +26,7 @@
         "data/etd_document_stock_batch.xml",
         "data/etd_xerox_cron.xml",
         "views/backend_acp.xml",
+        "views/account_invoice.xml",
         "views/stock_warehouse.xml",
     ],
     "demo": [

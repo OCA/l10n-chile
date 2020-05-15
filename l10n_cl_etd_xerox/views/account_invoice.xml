@@ -1,0 +1,19 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_account_invoice_xerox">
+        <field name="name">account.invoice.xerox</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_open" position="after">
+                <field name="xerox_send_timestamp" invisible="1" />
+                <button name="document_sign"
+                        type="object"
+                        string="Sign"
+                        states="open"
+                        attrs="{'invisible': [('xerox_send_timestamp', '!=', False)]}" />
+            </button>
+        </field>
+    </record>
+
+</odoo>
