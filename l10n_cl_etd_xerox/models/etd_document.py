@@ -1,7 +1,6 @@
 # Copyright (C) 2019 Open Source Integrators
 # Copyright (C) 2019 Serpent Consulting Services Pvt. Ltd.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
 from datetime import date
 import logging
 from odoo import api, fields, models, _
@@ -28,8 +27,8 @@ class EtdDocument(models.Model):
         return domain
 
     @api.model
-    def _xerox_get_domain_picking(self, run_date=None, force=False,
-                                  picking_type="outgoing"):
+    def _xerox_get_domain_picking(
+            self, run_date=None, force=False, picking_type="outgoing"):
         domain = [
             ("picking_type_code", "=", picking_type),
             # Deliveries are signed once they are waiting or confirmed
@@ -42,7 +41,7 @@ class EtdDocument(models.Model):
             domain.extend([
                 ("scheduled_date", ">=", run_date),
                 ("scheduled_date", "<", run_date1),
-                ])
+            ])
         if not force:
             domain.append(("xerox_send_timestamp", "=", False))
         return domain
@@ -69,7 +68,7 @@ class EtdDocument(models.Model):
                 self._xerox_get_domain_picking(run_date, force)),
             'stock.picking.batch': self.env["stock.picking.batch"].search(
                 self._xerox_get_domain_picking_batch(run_date)),
-            }
+        }
 
     @api.model
     def xerox_build_and_send_files(self, company, rsets):
@@ -123,13 +122,11 @@ class EtdDocument(models.Model):
         if run_date and not isinstance(run_date, date):
             run_date = fields.Date.to_date(run_date)
 
-        companies = self.env["res.company"].search(
-            [
-                ("backend_acp_id", "!=", False),
-                ("backend_acp_id.status", "=", 'confirmed'),
-                ("backend_acp_id.send_immediately", "=", False),
-            ]
-        )
+        companies = self.env["res.company"].search([
+            ("backend_acp_id", "!=", False),
+            ("backend_acp_id.status", "=", 'confirmed'),
+            ("backend_acp_id.send_immediately", "=", False),
+        ])
         if not companies:
             _logger.info('No Company is configured for Xerox integration')
 
