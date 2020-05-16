@@ -1,7 +1,6 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-
-from odoo import fields, models, _
+from odoo import api, fields, models, _
 from odoo.addons.queue_job.job import job
 
 
@@ -16,10 +15,11 @@ class FSMDayRoute(models.Model):
         'res.company',
         default=lambda s: s.env.user.company_id)
 
+    @api.multi
     def write(self, values):
         if values.get('stage_id', False) and not \
                 self.env.context.get('is_writing_flag', False):
-            new_stage = self.stage_id.browse(values.get('stage_id'))
+            new_stage = self.env['fsm.stage'].browse(values.get('stage_id'))
             if new_stage.is_closed:
                 values.update({'date_close': fields.Datetime.now()})
         return super().write(values)
