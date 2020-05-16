@@ -1,6 +1,5 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo import api, fields, models
 
 
@@ -16,8 +15,8 @@ class EtdDocument(models.Model):
     # are included
 
     @api.model
-    def _xerox_get_domain_invoice(self, run_date=None, force=False,
-                                  dayroutes=None):
+    def _xerox_get_domain_invoice(
+            self, run_date=None, force=False, dayroutes=None):
         domain = super()._xerox_get_domain_invoice(run_date, force)
         if dayroutes:
             fsm_orders = dayroutes.mapped('order_ids')
@@ -27,8 +26,9 @@ class EtdDocument(models.Model):
         return domain
 
     @api.model
-    def _xerox_get_domain_picking(self, run_date=None, force=False,
-                                  picking_type="outgoing", dayroutes=None):
+    def _xerox_get_domain_picking(
+            self, run_date=None, force=False, picking_type="outgoing",
+            dayroutes=None):
         domain = super()._xerox_get_domain_picking(
             run_date=run_date, force=force, picking_type=picking_type)
         if dayroutes:
@@ -39,8 +39,8 @@ class EtdDocument(models.Model):
         return domain
 
     @api.model
-    def _xerox_get_domain_picking_batch(self, run_date=None, force=False,
-                                        batchpicks=None):
+    def _xerox_get_domain_picking_batch(
+            self, run_date=None, force=False, batchpicks=None):
         domain = super()._xerox_get_domain_picking_batch(run_date, force)
         if batchpicks:
             domain.append(('id', 'in', batchpicks.ids))

@@ -8,13 +8,14 @@ class FSMDayRoute(models.Model):
     _name = 'fsm.route.dayroute'
     _inherit = ['fsm.route.dayroute', 'etd.mixin']
 
-    # TODO: move these fields to fieldservice_route
+    # TODO: To move to fieldservice_route
     is_closed = fields.Boolean(related='stage_id.is_closed')
     date_close = fields.Datetime()
     company_id = fields.Many2one(
         'res.company',
         default=lambda s: s.env.user.company_id)
 
+    # TODO: To move to fieldservice_route
     @api.multi
     def write(self, values):
         if values.get('stage_id', False) and not \
@@ -81,7 +82,7 @@ class FSMDayRoute(models.Model):
         compute='_compute_shipping')
     xerox_shipping_docs_count = fields.Integer(
         "Shipping documents to send to Xerox. "
-        "Presales lots have shippingd docs, "
+        "Presales lots have shipping docs, "
         "Route closing docs don't.",
         compute="_compute_shipping")
 
