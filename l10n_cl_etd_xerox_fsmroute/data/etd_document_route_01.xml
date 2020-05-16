@@ -18,7 +18,7 @@
 {% set emisor = cliente %}
 {% set origen = warehouse_obj.partner_id %}
 {% set transp = o.person_id.partner_id %}
-{% set recep = origen %}
+{% set recep = transp %}
 {% set dest = origen %}
 </field>
 </record>
@@ -43,7 +43,7 @@ dte_cab_
 {# 8 IndTraslado TODO o.move_reason #}2;
 {# 9 IndServicio #};
 {# 10 Mnt Bruto #};
-{# 11 FmaPago TODO o.payment_term_id.dte_sii_code #};
+{# 11 FmaPago #};
 {# 12 FechCancel #};
 {# 13 PeriodoDesde #};
 {# 14 PeriodoHasta #};

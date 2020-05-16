@@ -28,9 +28,10 @@ class EtdDocument(models.Model):
         return domain
 
     @api.model
-    def _xerox_get_domain_picking(self, run_date=None, force=False):
+    def _xerox_get_domain_picking(self, run_date=None, force=False,
+                                  picking_type="outgoing"):
         domain = [
-            ("picking_type_code", "=", "outgoing"),
+            ("picking_type_code", "=", picking_type),
             # Deliveries are signed once they are waiting or confirmed
             # They will ony be "done" when delivered at customer site
             ("state", "not in", ("draft", "cancel")),
