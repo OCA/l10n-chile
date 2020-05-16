@@ -18,6 +18,13 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: l10n_cl_etd_stock
+#: model:ir.model,name:l10n_cl_etd_stock.model_stock_picking_batch
+#, fuzzy
+#| msgid "Picking"
+msgid "Batch Picking"
+msgstr "Guía de Despacho"
+
+#. module: l10n_cl_etd_stock
 #: selection:etd.document,model:0
 msgid "Day Route"
 msgstr "Ruta del Día"
