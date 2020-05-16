@@ -6,7 +6,7 @@
 {
     "name": "Base for Electronic Tax Document for Chile",
     "summary": "Sign and send documents to SII.",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Localization/Chile",
     "author": "Daniel Santibáñez Polanco, "
               "Cooperativa OdooCoop, "
