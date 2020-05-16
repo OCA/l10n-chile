@@ -239,12 +239,14 @@ dte_det_
 {% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
-{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}{{o.class_id.code}};
+{% set discount_amount = line.discount and (line.price_subtotal - (1-line.discount/100)*(line.quantity*line.price_unit)) or 0 %}
+{% set price_unit_with_tax = (line.total - discount_amount) / line.quantity %}
+{# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 VlrCodigo #}{{line.product_id.default_code}};
+{# 6 VlrCodigo #}{{ line.product_id.default_code }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -259,7 +261,7 @@ dte_det_
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
-{# 21 QtyItem #}{{line.quantity}};
+{# 21 QtyItem #}{{ line.quantity }};
 {# 22 SubQty #};
 {# 23 SubCod #};
 {# 24 SubQty #};
@@ -272,14 +274,14 @@ dte_det_
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{line.uom_id.name[:4]}};
-{# 35 PrcItem #}{{ line.price_unit|int }};
+{# 34 UnmdItem #}{{ line.uom_id.name[:4] }};
+{# 35 PrcItem #}{{ line.price_unit if tipo != '039' else price_unit_with_tax|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{line.discount}};
-{# 40 DescuentoMonto #}{{line.discount and (line.price_subtotal - (1-line.discount/100)*(line.quantity*line.price_unit)) or 0|int }};
-{# 41 TipoDscto #}{{line.discount and '%' or ''}};
+{# 39 DescuentoPct #}{{ line.discount }};
+{# 40 DescuentoMonto #}{{ discount_amount|int }};
+{# 41 TipoDscto #}{{ line.discount and '%' or '' }};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
 {# 44 ValorDscto #};
@@ -302,7 +304,7 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.price_subtotal|int }};
+{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.total|int }};
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -368,7 +370,7 @@ dte_des_
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name"> 
+    <field name="template_name">
 dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
