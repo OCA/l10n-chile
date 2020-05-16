@@ -18,13 +18,14 @@
     "depends": [
         "l10n_cl_etd",
         "delivery",
-        "stock",
+        "stock_picking_batch",
         "l10n_cl_invoicing_policy",
     ],
     "data": [
         "data/etd_document.xml",
         "data/etd_document_file.xml",
         "views/stock_picking.xml",
+        "views/stock_picking_batch.xml",
         "views/delivery_carrier.xml",
     ],
     "application": True,
