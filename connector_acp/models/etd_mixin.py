@@ -26,6 +26,13 @@ class EtdMixin(models.AbstractModel):
         "etd.signature", string="SSL Signature",
         help="SSL Signature of the Document"
     )
+    date_sign = fields.Datetime(
+        "Signature Date",
+        track_visibility='onchange',
+        help="""Empty if the document has not been signed. Filled in when the
+        document is signed or sent for signature. Used to avoid signing or
+        sending the same document twice."""
+    )
 
     def get_etd_document(self):
         """
