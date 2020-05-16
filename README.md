@@ -19,7 +19,7 @@ addon | version | summary
 [connector_dicom_crm](connector_dicom_crm/) | 12.0.1.0.0 | Get and store the Dicom score of your leads
 [l10n_cl_chart_of_account](l10n_cl_chart_of_account/) | 12.0.1.0.1 | Chile Localization Chart Account SII
 [l10n_cl_currency_rate_sbif](l10n_cl_currency_rate_sbif/) | 12.0.2.0.0 | Update UF, UTM and US Dollar exchange rates using SBIF
-[l10n_cl_etd](l10n_cl_etd/) | 12.0.1.0.0 | Sign and send documents to SII.
+[l10n_cl_etd](l10n_cl_etd/) | 12.0.1.1.0 | Sign and send documents to SII.
 [l10n_cl_etd_account](l10n_cl_etd_account/) | 12.0.2.0.0 | Sign your invoices and send them to SII.
 [l10n_cl_etd_stock](l10n_cl_etd_stock/) | 12.0.1.1.1 | Sign your delivery orders and send them to SII.
 [l10n_cl_etd_xerox](l10n_cl_etd_xerox/) | 12.0.1.0.2 | Use Xerox electronic document communication.
