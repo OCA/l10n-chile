@@ -68,7 +68,7 @@ class AccountInvoice(models.Model):
                 sol.blanket_order_line.order_id))
         for picking in sol.order_id.picking_ids.filtered(
                 lambda x:
-                x.class_id is not False and
+                x.class_id.id is not False and
                 x.picking_type_id.code == 'outgoing'):
             ref.create(self.prepare_ref_values(picking))
         return True
