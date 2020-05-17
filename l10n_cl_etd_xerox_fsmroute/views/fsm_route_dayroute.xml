@@ -9,8 +9,9 @@
                 <field name="xerox_pending_sign_count" invisible="True" />
                 <button name="action_xerox_send_files"
                         type="object"
+                        class="oe_highlight"
                         string="Sign"
-                        attrs="{'invisible': [('xerox_pending_sign_count', '=', False)]}"
+                        attrs="{'invisible': [('xerox_pending_sign_count', '=', 0)]}"
                 />
             </field>
         </field>

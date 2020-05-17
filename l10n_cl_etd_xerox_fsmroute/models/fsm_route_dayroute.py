@@ -95,7 +95,8 @@ class FSMDayRoute(models.Model):
         # Only for presales lots, that have documents to ship
         dayroutes_with_docs = self.filtered('xerox_shipping_docs_count')
         return {
-            'fsm.route.dayroute': dayroutes_with_docs,
+            'fsm.route.dayroute':
+                dayroutes_with_docs if not force else dayroutes,
             'account.invoice': dayroutes.mapped('shipping_invoice_ids'),
             'stock.picking': dayroutes.mapped('shipping_picking_ids'),
             'stock.batch.picking': dayroutes.mapped('shipping_batchpick_ids'),

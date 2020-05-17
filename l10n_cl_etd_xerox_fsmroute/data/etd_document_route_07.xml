@@ -294,8 +294,8 @@ dte_det_
 {# 48 ValorDscto #};
 {# 49 TipoDscto #};
 {# 50 ValorDscto #};
-{# 51 RecargoPct        #}0;
-{# 52 RecargoMonto      #}0;
+{# 51 RecargoPct #}0;
+{# 52 RecargoMonto #}0;
 {# 53 TipoRecargo #};
 {# 54 ValorRecargo #};
 {# 55 TipoRecargo #};
@@ -307,60 +307,60 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem         #}{{ invoice.amount_total|int }};
-{{ '\n'
-}}{% endfor
-%}{# List Delivery Orders #}{%
-for picking in o.shipping_picking_ids %}{%
-set totals.line_num = totals.line_num + 1 %}{%
-set customer = picking.partner_id.commercial_partner_id %}{%
-set delivery_addr = picking.partner_id %}{%
-set totals.amount = 0 %}{%
-set totals.quantity = 0 %}{%
-for line in picking.move_ids_without_package %}{%
-  set totals.amount = totals.amount + line.sale_line_id.price_subtotal %}{%
-  set totals.quantity = totals.quantity + (line.quantity_done or line.product_uom_qty) %}{%
-endfor %}{#
-   1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}7;
-{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
-{# 4 NroLinDet          #}{{ totals.line_num }};
+{# 64 MontoItem #}{{ invoice.amount_total|int }};
+{{ '\n' }}
+{% endfor %}
+{# List Delivery Orders #}
+{% for picking in o.shipping_picking_ids %}
+{% set totals.line_num = totals.line_num + 1 %}
+{% set customer = picking.partner_id.commercial_partner_id %}
+{% set delivery_addr = picking.partner_id %}
+{% set totals.amount = 0 %}
+{% set totals.quantity = 0 %}
+{% for line in picking.move_ids_without_package %}
+{% set totals.amount = totals.amount + line.sale_line_id.price_subtotal %}
+{% set totals.quantity = totals.quantity + (line.quantity_done or line.product_uom_qty) %}
+{% endfor %}
+{# 1 Cliente #}{{ (cliente.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}7;
+{# 3 Folio #}{{ digits_only(o.name) + tipo }};
+{# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #};
-{# 6 VlrCodigo          #}{{ digits_only(picking.name) }};
+{# 6 VlrCodigo #}{{ digits_only(picking.name) }};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo          #}{{ delivery_addr.street[:60] }};
-{# 9 TpoCodigo          #}GNM;
-{# 10 VlrCodigo         #}0;
-{# 11 TpoCodigo         #}CER;
-{# 12 VlrCodigo         #}0;
+{# 8 VlrCodigo #}{{ delivery_addr.street[:60] }};
+{# 9 TpoCodigo #}GNM;
+{# 10 VlrCodigo #}0;
+{# 11 TpoCodigo #}CER;
+{# 12 VlrCodigo #}0;
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem           #}{{ customer.name }};
-{# 17 DscItem           #}{{ customer.vat  }};
-{# 18 QtyRef            #}{{ totals.quantity }};
+{# 16 NmbItem #}{{ customer.name }};
+{# 17 DscItem #}{{ customer.vat  }};
+{# 18 QtyRef #}{{ totals.quantity }};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
-{# 22 SubQty            #}0;
-{# 23 SubCod            #}VNO;
-{# 24 SubQty            #}0;
-{# 25 SubCod            #}LIC;
-{# 26 SubQty            #}0;
-{# 27 SubCod            #}OTR;
-{# 28 SubQty            #}0;
-{# 29 SubCod            #}TUB;
+{# 22 SubQty #}0;
+{# 23 SubCod #}VNO;
+{# 24 SubQty #}0;
+{# 25 SubCod #}LIC;
+{# 26 SubQty #}0;
+{# 27 SubCod #}OTR;
+{# 28 SubQty #}0;
+{# 29 SubCod #}TUB;
 {# 30 SubQty #};
 {# 31 SubCod #};
-{# 32 FechElabor        #}GUIA BOTELLON;
-{# 33 FechVencim        #}{{ picking.scheduled_date.strftime('%Y-%m-%d') }};
+{# 32 FechElabor #}GUIA BOTELLON;
+{# 33 FechVencim #}{{ picking.scheduled_date.strftime('%Y-%m-%d') }};
 {# 34 UnmdItem #};
-{# 35 PrcItem           #}700;
-{# 36 PrcOtrMon         #}2300;
-{# 37 Moneda            #}0;
-{# 38 FctConv           #}0;
-{# 39 DescuentoPct      #}700;
-{# 40 DescuentoMonto    #}2300;
+{# 35 PrcItem #}700;
+{# 36 PrcOtrMon #}2300;
+{# 37 Moneda #}0;
+{# 38 FctConv #}0;
+{# 39 DescuentoPct #}700;
+{# 40 DescuentoMonto #}2300;
 {# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
@@ -371,8 +371,8 @@ endfor %}{#
 {# 48 ValorDscto #};
 {# 49 TipoDscto #};
 {# 50 ValorDscto #};
-{# 51 RecargoPct        #}0;
-{# 52 RecargoMonto      #}0;
+{# 51 RecargoPct #}0;
+{# 52 RecargoMonto #}0;
 {# 53 TipoRecargo #};
 {# 54 ValorRecargo #};
 {# 55 TipoRecargo #};
@@ -384,7 +384,8 @@ endfor %}{#
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem         #}{{ totals.amount|int }};
+{# 64 MontoItem #}
+{{ totals.amount|int }};
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -412,17 +413,19 @@ dte_an2_
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #};
-{{ '\n' }}{% endfor %}{# List Delivery Orders #}
+{{ '\n' }}
+{% endfor %}
+{# List Delivery Orders #}
 {% for picking in o.shipping_picking_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {# 1 Cliente            #}{{ (cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}{{ tipo }};
 {# 3 Folio              #}{{ digits_only(picking.name) }};
 {# 4 Numero Detalle     #}1;
-{# 5 TpoCodigo #};
+{# 5 TpoCodigo          #};
 {# 6 Código del item 01 #};
-{# 7 Grado Alcoholico #};
-{# 8 Pinta #};
+{# 7 Grado Alcoholico   #};
+{# 8 Pinta              #};
 {{ '\n' }}
 {% endfor %}
     </field>
