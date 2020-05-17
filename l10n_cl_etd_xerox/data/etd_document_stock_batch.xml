@@ -398,8 +398,8 @@ dte_ref_
 {# 9 CodRef TODO-??? #};
 {# 10 RazonRef #};
 {# 11 CorrFact #};
-{% endfor %}
 {{ '\n' }}
+{% endfor %}
     </field>
 </record>
 

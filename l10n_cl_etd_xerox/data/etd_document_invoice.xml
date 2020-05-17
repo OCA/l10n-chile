@@ -240,7 +240,7 @@ dte_det_
 {% for line in o.invoice_line_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
 {% set discount_amount = line.discount and (line.price_subtotal - (1-line.discount/100)*(line.quantity*line.price_unit)) or 0 %}
-{% set price_unit_with_tax = (line.total - discount_amount) / line.quantity %}
+{% set price_unit_with_tax = (line.price_total - discount_amount) / line.quantity %}
 {# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
 {# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
@@ -304,7 +304,7 @@ dte_det_
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.total|int }};
+{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.price_total|int }};
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -381,13 +381,13 @@ dte_ref_
 {# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 2 NroLineaRef #}{{ totals.line_num }};
-{# 3 TpoDocRef #}{{ ref.invoice_id.class_id.code or 0 }};
+{# 3 TpoDocRef #}{{ ref.class_id.code or 0 }};
 {# 4 IndGlobal #};
-{# 5 FolioRef #}{{ ref.name or '' }};
+{# 5 FolioRef #}{{ digits_only(ref.name) or '' }};
 {# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
 {# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
 {# 9 CodRef #}{{ ref.code or "" }};
-{# 10 RazonRef #};
+{# 10 RazonRef #}{{ ref.motive or "" }};
 {# 11 CorrFact #};
 {{ '\n' }}
 {% endfor %}

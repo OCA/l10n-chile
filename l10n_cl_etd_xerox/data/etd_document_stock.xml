@@ -384,20 +384,20 @@ dte_ref_
 {% set counter = namespace(line_num=0) %}
 {% for ref in picking_lines.mapped('sale_line_id.order_id.invoice_ids.reference_ids') %}
 {% set counter.line_num = counter.line_num + 1 %}
-{# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{ digits_only(o.name) }};
-{# 2 NroLineaRef #}{{ counter.line_num }};
-{# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
-{# 4 IndGlobal #};
-{# 5 FolioRef #}{{ref.invoice_id.class_id.name or ''}};
-{# 6 RUTOtr #}{{ref.invoice_id.partner_id.vat or ''}};
-{# 8 FchRef #}{{ref.invoice_id.date_invoice.strftime('%Y-%m-%d')}};
+{# 1 Cliente         #}{{ cliente_rut }};
+{# 2 Tipo            #}{{ o.class_id.code }};
+{# 3 Folio           #}{{ digits_only(o.name) }};
+{# 2 NroLineaRef     #}{{ counter.line_num }};
+{# 3 TpoDocRef       #}{{ ref.invoice_id.class_id.code or 0 }};
+{# 4 IndGlobal       #};
+{# 5 FolioRef        #}{{ digits_only(ref.invoice_id.number) or '' }};
+{# 6 RUTOtr          #}{{ ref.invoice_id.partner_id.vat or '' }};
+{# 8 FchRef          #}{{ ref.invoice_id.date_invoice.strftime('%Y-%m-%d') }};
 {# 9 CodRef TODO-??? #};
-{# 10 RazonRef #};
-{# 11 CorrFact #};
-{% endfor %}
+{# 10 RazonRef       #}{{ ref.motive or '' }};
+{# 11 CorrFact       #};
 {{ '\n' }}
+{% endfor %}
     </field>
 </record>
 

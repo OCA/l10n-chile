@@ -10,7 +10,7 @@
                 <button name="document_sign"
                         type="object"
                         string="Sign"
-                        attrs="{'invisible': ['|', ('state', 'not in', ['open', 'paid']), ('xerox_send_timestamp', '!=', False)]}" />
+                        attrs="{'invisible': [('class_id', '=', False), '|', ('state', 'not in', ['open', 'paid']), ('xerox_send_timestamp', '!=', False)]}" />
             </button>
         </field>
     </record>
