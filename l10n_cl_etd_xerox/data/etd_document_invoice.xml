@@ -56,10 +56,10 @@ dte_cab_
 {# 27 CiudadOrigen #}{{ warehouse_addr.city }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
-{# 30 RUTRecep #}{{     (o.partner_id.vat or '').replace('.', '')}};
+{# 30 RUTRecep #}{{ (o.partner_id.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{o.partner_id.commercial_partner_id.name}};
-{# 33 GiroRecep #}{{o.partner_id.commercial_partner_id.activity_description or ""}};
+{# 32 RznSocRecep #}{{ o.partner_id.commercial_partner_id.name }};
+{# 33 GiroRecep #}{{ o.partner_id.commercial_partner_id.activity_description or "" }};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60] }};
 {# 36 CmnaRecep #}{{o.partner_id.city_id.name or ''}};
@@ -377,20 +377,20 @@ dte_ref_
 {% set totals = namespace(line_num=0) %}
 {% for ref in o.reference_ids[:30] %}
 {% set totals.line_num = totals.line_num + 1 %}
-{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}{{o.class_id.code}};
+{# 1 Cliente #}{{( o.company_id.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 2 NroLineaRef #}{{ totals.line_num }};
-{# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
+{# 3 TpoDocRef #}{{ ref.invoice_id.class_id.code or 0 }};
 {# 4 IndGlobal #};
-{# 5 FolioRef #}{{ref.invoice_id.class_id.name or ''}};
-{# 6 RUTOtr #}{{ref.invoice_id.partner_id.vat or ''}};
-{# 8 FchRef #}{{ref.invoice_id.date_invoice.strftime('%Y-%m-%d')}};
-{# 9 CodRef #}{{ref.code or ""}};
+{# 5 FolioRef #}{{ ref.name or '' }};
+{# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
+{# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
+{# 9 CodRef #}{{ ref.code or "" }};
 {# 10 RazonRef #};
 {# 11 CorrFact #};
-{% endfor %}
 {{ '\n' }}
+{% endfor %}
     </field>
 </record>
 
