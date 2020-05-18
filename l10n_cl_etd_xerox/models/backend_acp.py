@@ -23,6 +23,7 @@ class BackendAcp(models.Model):
     def _build_xerox_control_file(self, file_dict):
         PREFIX = 'dte_ctr_ot_000_'
         res = {}
+        index = 0
         for file_path, file_text in file_dict.items():
             file_dir, file_name = os.path.split(file_path)
             control_name = PREFIX + file_name[len(PREFIX):]
@@ -32,7 +33,9 @@ class BackendAcp(models.Model):
             control_line = '%s;%s;%d\n' % (
                 file_name, file_dir, line_count)
             res[control_path] += control_line
-
+            index += 1
+        # Adding the control file in its own content
+        res[control_path] += '%s;%s;%d\n' % (control_name, file_dir, index + 1)
         return res
 
     def _send_ftp(self, file_dict):
