@@ -21,7 +21,7 @@
 {% set cliente_rut = (company.vat or '').replace('.', '')[:8] %}
 {% set emisor = company.partner_id %}
 {% set origen = warehouse.partner_id %}
-{% set recep = warehouse.partner_id %}
+{% set recep = company.partner_id %}
 {% set dest = warehouse.partner_id %}
 {% set transp = o.vehicle_id.person_id.partner_id.commercial_partner_id %}
 
