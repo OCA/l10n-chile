@@ -32,6 +32,7 @@ class BackendAcp(models.Model):
             control_line = '%s;%s;%d\n' % (
                 file_name, file_dir, line_count)
             res[control_path] += control_line
+
         return res
 
     def _send_ftp(self, file_dict):

@@ -9,7 +9,7 @@
 {% set company_code = o.company_id.backend_acp_id.xerox_company_code or "00" %}
 {% set center_code = o.company_id.backend_acp_id.xerox_center_code or "00" %}
 {% set date = o.date_invoice %}
-{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" %}
+{% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "00000" %}
 {% set dayroute = o.mapped('fsm_order_ids.dayroute_id')[:1] %}
 {% set shift = dayroute.name or "00000" %}
 {% set warehouse_addr = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1].partner_id or o.company_id.partner_id %}
@@ -24,7 +24,7 @@
     <field name="save">False</field>
     <field name="template_name">
 dte_cab_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt
     </field>
     <field name="template_text">
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
@@ -194,7 +194,7 @@ dte_cab_
     <field name="save">False</field>
     <field name="template_name">
 dte_ane_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set warehouse  = o.mapped('invoice_line_ids.sale_line_ids.order_id.warehouse_id')[:1] %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "" %}
@@ -234,7 +234,7 @@ dte_ane_
     <field name="save">False</field>
     <field name="template_name">
 dte_det_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
@@ -318,7 +318,7 @@ dte_det_
     <field name="save">False</field>
     <field name="template_name">
 dte_an2_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for line in o.invoice_line_ids %}
@@ -344,7 +344,7 @@ dte_an2_
     <field name="save">False</field>
     <field name="template_name">
 dte_des_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% set lines = o.invoice_line_ids.filtered('discount') %}
@@ -372,7 +372,7 @@ dte_des_
     <field name="save">False</field>
     <field name="template_name">
 dte_ref_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for ref in o.reference_ids[:30] %}

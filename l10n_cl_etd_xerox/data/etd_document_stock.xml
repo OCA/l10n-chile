@@ -14,7 +14,7 @@
 {% set company_code = company.backend_acp_id.xerox_company_code or "00" %}
 {% set date = o.scheduled_date %}
 {% set truck = (vehicle.name or "")[-5:].zfill(5) %}
-{% set shift = (dayroute.name or "")[-3:].zfill(3) %}
+{% set shift = (dayroute.name or "")[-5:].zfill(5) %}
 {% set center = (warehouse.xerox_code or company.backend_acp_id.xerox_center_code or "")[-5:].zfill(5) %}
 {% set index = "000" %}
 
