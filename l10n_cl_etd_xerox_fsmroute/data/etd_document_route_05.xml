@@ -30,7 +30,7 @@
     <field name="save">False</field>
     <field name="template_name">
 dte_cab_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version #}1.0;
@@ -193,7 +193,7 @@ dte_cab_
     <field name="save">False</field>
     <field name="template_name">
 dte_ane_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{ tipo }};
@@ -230,7 +230,7 @@ dte_ane_
     <field name="save">False</field>
     <field name="template_name">
 dte_det_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
 {% for line in o.shipping_invoice_ids %}
@@ -382,7 +382,7 @@ dte_det_
     <field name="save">False</field>
     <field name="template_name">
 dte_an2_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
 {# 1 Cliente #};
@@ -406,7 +406,7 @@ dte_an2_
     <field name="save">False</field>
     <field name="template_name">
 dte_des_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
 {# 1 Cliente #};
@@ -431,7 +431,7 @@ dte_des_
     <field name="save">False</field>
     <field name="template_name">
 dte_ref_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-3:].zfill(3) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
 {# 1 Cliente #};
