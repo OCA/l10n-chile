@@ -76,23 +76,23 @@ dte_cab_
 {# 27 CiudadOrigen #}{{ origen.city or '' }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
-{# 30 RUTRecep #}{{     (recep.vat or '').replace('.', '')}};
+{# 30 RUTRecep #}{{ (recep.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{recep.name}};
-{# 33 GiroRecep #}{{recep.commercial_partner_id.activity_description}};
+{# 32 RznSocRecep #}{{ recep.commercial_partner_id.name }};
+{# 33 GiroRecep #}{{ recep.commercial_partner_id.activity_description }};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{' '.join([recep.street or '', recep.street2 or ''])[:60] }};
-{# 36 CmnaRecep #}{{recep.city_id.name or ''}};
-{# 37 CiudadRecep #}{{recep.city or ''}};
+{# 35 DirRecep #}{{ ' '.join([recep.street or '', recep.street2 or ''])[:60] }};
+{# 36 CmnaRecep #}{{ recep.city_id.name or '' }};
+{# 37 CiudadRecep #}{{ recep.city or '' }};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
 {# 40 CiudadPostal #};
 {# 41 RUTSolicita #};
 {# 42 Patente #};
 {# 43 RUTTrans #}{{ transp.vat }};
-{# 44 DirDest #}{{' '.join([dest.street or '', dest.street2 or ''])[:60] }};
-{# 45 CmnaDest #}{{dest.city_id.name or ''}};
-{# 46 CiudadDest #}{{dest.city or ''}};
+{# 44 DirDest #}{{ ' '.join([dest.street or '', dest.street2 or ''])[:60] }};
+{# 45 CmnaDest #}{{ dest.city_id.name or '' }};
+{# 46 CiudadDest #}{{ dest.city or '' }};
 {# 47 MntNeto #}{{ totals.amount_untaxed|int }};
 {# 48 MntExe #};
 {# 49 MntBase #};
@@ -382,25 +382,7 @@ dte_des_
     <field name="template_name">
 dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
-    <field name="template_text">
-{% set counter = namespace(line_num=0) %}
-{% for ref in picking_lines.mapped('sale_line_id.order_id.invoice_ids.reference_ids') %}
-{% set counter.line_num = counter.line_num + 1 %}
-{# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{ digits_only(o.name) }};
-{# 2 NroLineaRef #}{{ counter.line_num }};
-{# 3 TpoDocRef #}{{ref.invoice_id.class_id.code or 0}};
-{# 4 IndGlobal #};
-{# 5 FolioRef #}{{ref.invoice_id.class_id.name or ''}};
-{# 6 RUTOtr #}{{ref.invoice_id.partner_id.vat or ''}};
-{# 8 FchRef #}{{ref.invoice_id.date_invoice.strftime('%Y-%m-%d')}};
-{# 9 CodRef TODO-??? #};
-{# 10 RazonRef #};
-{# 11 CorrFact #};
-{{ '\n' }}
-{% endfor %}
-    </field>
+    <field name="template_text"/>
 </record>
 
 </odoo>

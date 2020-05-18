@@ -205,7 +205,7 @@ dte_ane_
 {% set payment = o.payment_ids[:1] %}
 {# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
 {# 6 Fecha Cancelación #};
-{# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' else 'Solo firma' }};
+{# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' or tipo == '039' else 'Solo firma' }};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
 {# 10 Código vendedor #}{{o.user_id.ref or ''}};
