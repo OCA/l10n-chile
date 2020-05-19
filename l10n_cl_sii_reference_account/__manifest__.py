@@ -6,7 +6,7 @@
 {
     "name": "References from SII",
     "summary": "Store document references using SII nomenclature",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Localization/Chile",
     "author": "Daniel Santibáñez Polanco, "
               "Cooperativa OdooCoop, "
