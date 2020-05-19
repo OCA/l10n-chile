@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cl_sii_reference_account
+# 	* l10n_cl_sii_reference_account
 #
 msgid ""
 msgstr ""
@@ -42,3 +42,8 @@ msgstr "Referencias SII"
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_reference_account.view_invoice_form
 msgid "Taxes"
 msgstr "Impuestos"
+
+#. module: l10n_cl_sii_reference_account
+#: sql_constraint:sii.reference:0
+msgid "The document is already referenced on this invoice!"
+msgstr ""
