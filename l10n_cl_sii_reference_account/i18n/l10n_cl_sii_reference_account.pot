@@ -40,3 +40,8 @@ msgstr ""
 msgid "Taxes"
 msgstr ""
 
+#. module: l10n_cl_sii_reference_account
+#: sql_constraint:sii.reference:0
+msgid "The document is already referenced on this invoice!"
+msgstr ""
+
