@@ -10,10 +10,13 @@ class BackendAcp(models.Model):
 
     xerox_company_code = fields.Char(
         help="Use only for Xerox ETD Services")
-    xerox_center_code = fields.Char(
-        help="Use only for Xerox ETD Services")
     xerox_company_short_name = fields.Char(
         help="Use only for Xerox ETD Services")
+    xerox_path = fields.Char(
+        help="""Use only for Xerox ETD Services:\n
+        * 1st parameter: Current month with 2 digits\n
+        * 2nd parameter: Xerox code from the warehouse with 5 digits\n
+        * 3rd parameter: Current day with 2 digits""")
     send_immediately = fields.Boolean(
         default=True,
         help="Send documents immediately to this backend"
@@ -26,22 +29,32 @@ class BackendAcp(models.Model):
         PREFIX = 'dte_ctr_ot_000_'
         res = {}
         index = 0
-        file_set_leg = self.xerox_company_code + self.xerox_company_short_name
+        ctl_leg = self.xerox_company_code + self.xerox_company_short_name
+        ctl_leg += "" if self.prod_environment else "Desa"
+        ctl_no_leg = "Ctl" if self.prod_environment else "00CtlDesa"
+        today = fields.Date.context_today(self)
         for file_path, file_text in file_dict.items():
             file_dir, file_name = os.path.split(file_path)
             control_name = PREFIX + file_name[len(PREFIX):]
             control_path = os.path.join(file_dir, control_name)
             res.setdefault(control_path, '')
+            # Xerox Path
+            xerox_code = file_name[47:52]
+            xerox_path = self.xerox_path % (
+                today.strftime("%m"), xerox_code, today.strftime("%d"))
+            # Ctl for non-legal documents, file_set_leg for legal ones
+            ctl = ctl_no_leg if file_name[8:10] == "ot" else ctl_leg
+            # Number of lines of the file
             line_count = len(file_text.rstrip().splitlines())
-            # ctl for non-legal documents, file_set_leg for legal ones
-            file_set = "ctl" if file_text[8:10] == "ot" else file_set_leg
+            # Generate the line of the file
             control_line = '%s;%s;%s;%d\n' % (
-                file_name, file_dir, file_set, line_count)
+                file_name, xerox_path, ctl, line_count)
             res[control_path] += control_line
             index += 1
         # Adding the control file in its own content
-        res[control_path] += '%s;%s;ctl;%d\n' % (
-            control_name, file_dir, index + 1)
+        ctl = "Ctl" if self.prod_environment else "00CtlDesa"
+        res[control_path] += '%s;%s;%s;%d\n' % (
+            control_name, xerox_path, ctl, index + 1)
         return res
 
     def _send_ftp(self, file_dict):

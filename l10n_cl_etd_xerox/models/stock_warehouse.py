@@ -8,4 +8,5 @@ class Warehouse(models.Model):
     _inherit = "stock.warehouse"
 
     xerox_code = fields.Char(
+        required=True, default="00000", size=5,
         help="Code to use for Xerox ETD integration")

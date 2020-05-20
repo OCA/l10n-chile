@@ -7,12 +7,13 @@
     <field name="template_text_include">{%
    set tipo = ("000%d" % o.class_id.code)[-3:] %}
 {% set company_code = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set center_code = o.company_id.backend_acp_id.xerox_center_code or "00" %}
+{% set warehouse = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1]
+{% set center_code = warehouse_id.xerox_code or "00" %}
 {% set date = o.date_invoice %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "00000" %}
 {% set dayroute = o.mapped('fsm_order_ids.dayroute_id')[:1] %}
 {% set shift = dayroute.name or "00000" %}
-{% set warehouse_addr = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1].partner_id or o.company_id.partner_id %}
+{% set warehouse_addr = warehouse.partner_id or o.company_id.partner_id %}
 </field>
 </record>
 
