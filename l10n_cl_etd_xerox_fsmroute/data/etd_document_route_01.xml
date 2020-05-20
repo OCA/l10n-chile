@@ -3,8 +3,10 @@
 <record id="etd_xerox_route_01" model="etd.document">
     <field name="name">Xerox 01 - Route Stock Load</field>
     <field name="model">fsm.route.dayroute</field>
-    <field name="template_text_include">{%
-   set tipo = "001" %}
+    <field name="template_text_include">
+{% set path = o.company_id.backend_acp_id.xerox_company_code + o.company_id.backend_acp_id.xerox_company_short_name %}
+{% set prod = o.company_id.backend_acp_id.prod_environment %}
+{% set tipo = "001" %}
 {% set company = "ot" %}
 {% set date = o.date %}
 {% set warehouse_obj = o.mapped('order_ids.warehouse_id')[:1] %}
@@ -25,12 +27,13 @@
 
 <record id="etd_xerox_route_01_cab" model="etd.document.file">
     <field name="name">CAB Header</field>
+    <field name="sequence">10</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_cab_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_cab_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{( cliente.vat or '').replace('.', '')[:8] }};
@@ -188,12 +191,13 @@ dte_cab_
 
 <record id="etd_xerox_route_01_ane" model="etd.document.file">
     <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ane_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_ane_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ (cliente.vat or '').replace('.', '')[:8] }};
@@ -225,12 +229,13 @@ dte_ane_
 
 <record id="etd_xerox_route_01_det" model="etd.document.file">
     <field name="name">DET Detail</field>
+    <field name="sequence">20</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_det_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_det_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% for line in lines %}
@@ -305,12 +310,13 @@ dte_det_
 
 <record id="etd_xerox_route_01_an2" model="etd.document.file">
     <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_an2_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_an2_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
@@ -329,12 +335,13 @@ dte_an2_
 
 <record id="etd_xerox_route_01_des" model="etd.document.file">
     <field name="name">DES Discounts and Surcharges</field>
+    <field name="sequence">40</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_des_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_des_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
@@ -354,12 +361,13 @@ dte_des_
 
 <record id="etd_xerox_route_01_ref" model="etd.document.file">
     <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_route_01"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ref_
+{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_ref_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
