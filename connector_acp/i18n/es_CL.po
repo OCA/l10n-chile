@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-05-06 03:19+0000\n"
+"PO-Revision-Date: 2020-05-20 06:19+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: none\n"
 "Language: es_CL\n"
@@ -30,7 +30,7 @@ msgstr "1 archivo para múltiples documentos"
 #. module: connector_acp
 #: model:ir.actions.act_window,name:connector_acp.action_backend_acp
 msgid "ACP Backends"
-msgstr ""
+msgstr "ACP Backends"
 
 #. module: connector_acp
 #: model:ir.ui.menu,name:connector_acp.menu_backend_acp
@@ -610,7 +610,7 @@ msgstr ""
 #. module: connector_acp
 #: selection:etd.document,invoicing_policy:0
 msgid "Ticket"
-msgstr ""
+msgstr "Boleta"
 
 #. module: connector_acp
 #: selection:backend.acp,status:0
