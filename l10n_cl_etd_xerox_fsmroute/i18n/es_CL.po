@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-05-06 03:19+0000\n"
+"PO-Revision-Date: 2020-05-20 06:19+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: none\n"
 "Language: es_CL\n"
@@ -29,7 +29,7 @@ msgstr "Fecha de Cierre"
 #. module: l10n_cl_etd_xerox_fsmroute
 #: selection:etd.document,model:0
 msgid "Day Route"
-msgstr "Ruta del Día"
+msgstr "Ruta Diaria"
 
 #. module: l10n_cl_etd_xerox_fsmroute
 #: model:ir.model,name:l10n_cl_etd_xerox_fsmroute.model_etd_mixin
