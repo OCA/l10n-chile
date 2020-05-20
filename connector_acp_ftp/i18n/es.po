@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2020-05-06 03:19+0000\n"
+"PO-Revision-Date: 2020-05-20 06:19+0000\n"
 "Last-Translator: Nelson Ramírez Sánchez <info@konos.cl>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -19,19 +19,19 @@ msgstr ""
 #. module: connector_acp_ftp
 #: model:ir.model,name:connector_acp_ftp.model_backend_acp
 msgid "Backend of Authorized Certification Providers"
-msgstr "Backend de Proveedores de Certificación Autorizados"
+msgstr "Backend de Proveedores de Certificados Autorizados"
 
 #. module: connector_acp_ftp
 #: model:ir.model.fields,field_description:connector_acp_ftp.field_backend_acp__connection_type
 msgid "Connection Type"
-msgstr "Tipo de Conexión"
+msgstr "Tipo Conexión"
 
 #. module: connector_acp_ftp
 #: selection:backend.acp,connection_type:0
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #. module: connector_acp_ftp
 #: selection:backend.acp,connection_type:0
 msgid "Not defined"
-msgstr "No está definido"
+msgstr "No definido"
