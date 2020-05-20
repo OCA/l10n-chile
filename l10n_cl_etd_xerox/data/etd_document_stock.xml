@@ -3,8 +3,10 @@
 <record id="etd_xerox_stock" model="etd.document">
     <field name="name">Xerox Stock</field>
     <field name="model">stock.picking</field>
-    <field name="invoicing_policy"></field>
+    <field name="invoicing_policy"/>
     <field name="template_text_include">
+{% set path = o.company_id.backend_acp_id.xerox_company_code + o.company_id.backend_acp_id.xerox_company_short_name %}
+{% set prod = o.company_id.backend_acp_id.prod_environment %}
 {% set tipo = ("000%d" % o.class_id.code)[-3:] %}
 {% set company = o.company_id %}
 {% set warehouse  = o.sale_id.warehouse_id %}
@@ -38,12 +40,13 @@
 
 <record id="etd_file_xerox_stock_cab" model="etd.document.file">
     <field name="name">CAB Header</field>
+    <field name="sequence">10</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_cab_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_cab_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -201,12 +204,13 @@ dte_cab_
 
 <record id="etd_file_xerox_stock_ane" model="etd.document.file">
     <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ane_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -238,12 +242,13 @@ dte_ane_
 
 <record id="etd_file_xerox_stock_det" model="etd.document.file">
     <field name="name">DET Detail</field>
+    <field name="sequence">20</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_det_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -320,12 +325,13 @@ dte_det_
 
 <record id="etd_file_xerox_stock_an2" model="etd.document.file">
     <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_an2_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -346,12 +352,13 @@ dte_an2_
 
 <record id="etd_file_xerox_stock_des" model="etd.document.file">
     <field name="name">DES Discounts and Surcharges</field>
+    <field name="sequence">40</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_des_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_des_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -373,12 +380,13 @@ dte_des_
 
 <record id="etd_file_xerox_stock_ref" model="etd.document.file">
     <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_stock"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ref_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text"/>
 </record>

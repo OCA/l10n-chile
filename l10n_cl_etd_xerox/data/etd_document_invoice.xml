@@ -3,9 +3,11 @@
 <record id="etd_xerox_invoice" model="etd.document">
     <field name="name">Xerox Invoice</field>
     <field name="model">account.invoice</field>
-    <field name="invoicing_policy"></field>
-    <field name="template_text_include">{%
-   set tipo = ("000%d" % o.class_id.code)[-3:] %}
+    <field name="invoicing_policy"/>
+    <field name="template_text_include">
+{% set path = o.company_id.backend_acp_id.xerox_company_code + o.company_id.backend_acp_id.xerox_company_short_name %}
+{% set prod = o.company_id.backend_acp_id.prod_environment %}
+{% set tipo = ("000%d" % o.class_id.code)[-3:] %}
 {% set company_code = o.company_id.backend_acp_id.xerox_company_code or "00" %}
 {% set warehouse = o.env['sale.order'].search([('name', '=', o.origin)]).warehouse_id[:1] %}
 {% set center_code = warehouse.xerox_code or "00" %}
@@ -19,12 +21,13 @@
 
 <record id="etd_file_xerox_invoice_cab" model="etd.document.file">
     <field name="name">CAB Header</field>
+    <field name="sequence">10</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_cab_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_cab_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt
     </field>
     <field name="template_text">
@@ -189,19 +192,20 @@ dte_cab_
 
 <record id="etd_file_xerox_invoice_ane" model="etd.document.file">
     <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ane_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
+{% set payment = o.payment_ids[:1] %}
 {# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 Número copias #}2;
-{% set payment = o.payment_ids[:1] %}
 {# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
 {# 6 Fecha Cancelación #};
 {# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' or tipo == '039' else 'Solo firma' }};
@@ -227,12 +231,13 @@ dte_ane_
 
 <record id="etd_file_xerox_invoice_det" model="etd.document.file">
     <field name="name">DET Detail</field>
+    <field name="sequence">20</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_det_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
@@ -311,12 +316,13 @@ dte_det_
 
 <record id="etd_file_xerox_invoice_an2" model="etd.document.file">
     <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_an2_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
@@ -337,12 +343,13 @@ dte_an2_
 
 <record id="etd_file_xerox_invoice_des" model="etd.document.file">
     <field name="name">DES Discounts and Surcharges</field>
+    <field name="sequence">40</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_des_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_des_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
@@ -365,12 +372,13 @@ dte_des_
 
 <record id="etd_file_xerox_invoice_ref" model="etd.document.file">
     <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ref_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
