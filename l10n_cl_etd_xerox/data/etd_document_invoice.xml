@@ -185,7 +185,7 @@
 {# 146 MontoNF #};
 {# 147 MontoPeriodo #};
 {# 148 SaldoAnterior #};
-{# 149 VlrPagar #};
+{# 149 VlrPagar #}
 {{ '\n' }}
     </field>
 </record>
@@ -224,7 +224,7 @@
 {# 20 IABA #};
 {# 21 Hora emisión #}{{o.create_date.strftime('%H:%M')}};
 {# 22 Afecto IVA #}{{ o.amount_tax|int }};
-{# 23 Número de pedido #}{{ digits_only(o.origin) }};
+{# 23 Número de pedido #}{{ digits_only(o.origin) }}
 {{ '\n' }}
     </field>
 </record>
@@ -308,7 +308,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.price_total|int }};
+{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.price_total|int }}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -335,7 +335,7 @@
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{line.product_id.default_code}};
 {# 7 Grado Alcoholico #};
-{# 8 Pinta #};
+{# 8 Pinta #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -364,7 +364,7 @@
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
 {# 8 ValorDR #}{{ o.discount }};
-{# 9 IndExeDR #};
+{# 9 IndExeDR #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -395,7 +395,7 @@
 {# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
 {# 9 CodRef #}{{ ref.code or "" }};
 {# 10 RazonRef #}{{ ref.motive or "" }};
-{# 11 CorrFact #};
+{# 11 CorrFact #}
 {{ '\n' }}
 {% endfor %}
     </field>

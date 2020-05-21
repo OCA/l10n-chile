@@ -46,7 +46,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_cab_
+dte_cab_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -197,7 +197,7 @@
 {# 146 MontoNF #};
 {# 147 MontoPeriodo #};
 {# 148 SaldoAnterior #};
-{# 149 VlrPagar #};
+{# 149 VlrPagar #}
 {{ '\n' }}
     </field>
 </record>
@@ -210,7 +210,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
+dte_ane_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -235,7 +235,7 @@
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M')}};
 {# 22 Afecto IVA #}{{ totals.amount_untaxed|int }};
-{# 23 Número de pedido #}{{ digits_only(o.origin) }};
+{# 23 Número de pedido #}{{ digits_only(o.origin) }}
 {{ '\n' }}
     </field>
 </record>
@@ -248,7 +248,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
+dte_det_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -317,7 +317,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.sale_line_id.price_subtotal|int }};
+{# 64 MontoItem #}{{ line.sale_line_id.price_subtotal|int }}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -331,7 +331,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
+dte_an2_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -344,7 +344,7 @@
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{line.product_id.default_code}};
 {# 7 Grado Alcoholico #};
-{# 8 Pinta #};
+{# 8 Pinta #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -358,7 +358,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_des_
+dte_des_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -372,7 +372,7 @@
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
 {# 8 ValorDR #}{{ o.discount }};
-{# 9 IndExeDR #};
+{# 9 IndExeDR #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -386,7 +386,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
+dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text"/>
 </record>
