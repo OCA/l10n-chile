@@ -18,7 +18,7 @@
                         type="object"
                         class="oe_highlight"
                         string="Sign"
-                        context="{'xerox': '61'}"
+                        context="{'xerox': 61}"
                         attrs="{'invisible': ['|', ('is_closed', '=', False), ('xerox_pending_sign_count', '=', 0)]}"
                 />
             </field>
