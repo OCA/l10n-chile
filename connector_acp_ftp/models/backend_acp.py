@@ -44,8 +44,11 @@ class BackendAcp(models.Model):
             with open(file_path, "rb") as file_obj:
                 ftp_session.storlines("STOR %s" % file_name, file_obj)
         for subdir in subdir_list:
-            if subdir not in ftp_session.nlst():
-                ftp_session.mkd(subdir)
+            # TODO: Fix when support for virtual directories is available.
+            #  With Microsoft FTP service, virtual directories do not show up
+            #  in the list and give an error if you try to create them
+            # if subdir not in ftp_session.nlst():
+            #     ftp_session.mkd(subdir)
             self._ftp_upload_directory(
                 ftp_session, os.path.join(from_local_dir, subdir), subdir
             )
