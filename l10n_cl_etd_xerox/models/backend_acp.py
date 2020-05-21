@@ -45,7 +45,7 @@ class BackendAcp(models.Model):
             file_dir, file_name = os.path.split(file_path)
             control_name = PREFIX + file_name[len(PREFIX):]
             control_path = os.path.join(ctl + '/', control_name)
-            res.setdefault(control_path, '' )
+            res.setdefault(control_path, '')
             # Xerox Path
             xerox_code = file_name[47:52]
             xerox_path = self.xerox_path % (
