@@ -19,7 +19,7 @@ class BackendAcp(models.Model):
 
     connection_type = fields.Selection(selection_add=[("ftp", "FTP")])
     ftp_directory = fields.Char(
-        help="FTP Directory to upload the files to")
+        help="FTP Directory to upload the files to. Must end with /")
 
     @api.model
     def _ftp_upload_directory(self, ftp_session,
