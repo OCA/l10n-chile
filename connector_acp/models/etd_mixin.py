@@ -24,10 +24,12 @@ class EtdMixin(models.AbstractModel):
 
     signature_id = fields.Many2one(
         "etd.signature", string="SSL Signature",
+        copy=False,
         help="SSL Signature of the Document"
     )
     date_sign = fields.Datetime(
         "Signature Date",
+        copy=False,
         track_visibility='onchange',
         help="""Empty if the document has not been signed. Filled in when the
         document is signed or sent for signature. Used to avoid signing or
@@ -99,15 +101,15 @@ class EtdMixin(models.AbstractModel):
         try:
             res = self._render_jinja_template(template_text, now=now).strip(' ')
         except Exception as e:
-            raise UserError(
-                _("Error rendering file content %s "
-                  "for document %s %s, %s:\n\n%s") % (
-                  etd_file.document_id.name,
-                  etd_file.name,
-                  str(self),
-                  self.display_name,
-                  str(e)
-                ))
+            raise UserError(_(
+                "Error rendering file content %s "
+                "for document %s %s, %s:\n\n%s") % (
+                etd_file.document_id.name,
+                etd_file.name,
+                str(self),
+                self.display_name,
+                str(e)
+            ))
         return res
 
     def _get_etd_filename(self, etd_file, now=None):
@@ -122,15 +124,15 @@ class EtdMixin(models.AbstractModel):
             try:
                 res = self._render_jinja_template(template_text, now=now)
             except Exception as e:
-                raise UserError(
-                    _("Error rendering file name %s "
-                      "for document %s %s, %s:\n\n%s") % (
-                      etd_file.document_id.name,
-                      etd_file.name,
-                      str(self),
-                      self.display_name,
-                      str(e)
-                    ))
+                raise UserError(_(
+                    "Error rendering file name %s "
+                    "for document %s %s, %s:\n\n%s") % (
+                    etd_file.document_id.name,
+                    etd_file.name,
+                    str(self),
+                    self.display_name,
+                    str(e)
+                ))
             # Remove possible line breaks from file names
             res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
@@ -166,7 +168,8 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.validator and etd_file.file_type == "xml":
                 # Check the rendered file against the validator
-                validator = base64.b64decode(etd_file.validator).decode("utf-8")
+                validator = \
+                    base64.b64decode(etd_file.validator).decode("utf-8")
                 try:
                     xmlschema = etree.XMLSchema(validator)
                     xml_doc = etree.fromstring(file_text)
@@ -179,16 +182,14 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.save:
                 # Attach file to the record
-                self.env["ir.attachment"].create(
-                    {
-                        "name": file_name,
-                        "type": "binary",
-                        "datas": base64.b64encode(file_text.encode("utf-8")),
-                        "datas_fname": file_name,
-                        "res_model": rec._name,
-                        "res_id": rec.id,
-                    }
-                )
+                self.env["ir.attachment"].create({
+                    "name": file_name,
+                    "type": "binary",
+                    "datas": base64.b64encode(file_text.encode("utf-8")),
+                    "datas_fname": file_name,
+                    "res_model": rec._name,
+                    "res_id": rec.id,
+                })
             # Update the file_dict with the result
             file_dict[file_name] = file_text
         return file_dict
@@ -255,12 +256,10 @@ class EtdMixin(models.AbstractModel):
             backend = self.company_id.backend_acp_id
         # Determine if the backend is usable
         if backend.status != "confirmed":
-            raise UserError(
-                _(
-                    "The backend is not confirmed. Please check the"
-                    " connection to the backend first."
-                )
-            )
+            raise UserError(_(
+                "The backend is not confirmed. Please check the"
+                " connection to the backend first."
+            ))
         # Send the files to backend
         response = backend.send(file_dict)
         # Check the response
@@ -272,9 +271,11 @@ class EtdMixin(models.AbstractModel):
                 time.sleep(i)
                 i += 1
                 status = backend.check_status(response.get("ref"))
-            message = _("%s Status: <b>%s</b>" % (backend.name,
-                                                  status.get('message')))
+            message = _(
+                "%s Status: <b>%s</b>" % (backend.name, status.get('message'))
+            )
             self.message_post(body=message)
+            self.date_sign = fields.Datetime.now()
         else:
             message = _(
                 "ETD has been sent to %s but failed with"
