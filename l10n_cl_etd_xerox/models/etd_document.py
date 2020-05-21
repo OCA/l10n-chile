@@ -20,10 +20,13 @@ class EtdDocument(models.Model):
             ("state", "in", ["open", "paid"]),
             ("class_id.dte", "=", True),
         ]
+        code = self.env.context.get('xerox', False)
+        if code:
+            domain.append(("class_id.code", "=", code))
         if run_date:
             domain.append(("date_invoice", "=", run_date))
         if not force:
-            domain.append(("xerox_send_timestamp", "=", False))
+            domain.append(("date_sign", "=", False))
         return domain
 
     @api.model
@@ -36,6 +39,9 @@ class EtdDocument(models.Model):
             ("state", "not in", ("draft", "cancel")),
             ("class_id.dte", "=", True),
         ]
+        code = self.env.context.get('xerox', False)
+        if code:
+            domain.append(("class_id.code", "=", code))
         if run_date:
             run_date1 = date_utils.add(run_date, days=1)
             domain.extend([
@@ -43,7 +49,7 @@ class EtdDocument(models.Model):
                 ("scheduled_date", "<", run_date1),
             ])
         if not force:
-            domain.append(("xerox_send_timestamp", "=", False))
+            domain.append(("date_sign", "=", False))
         return domain
 
     @api.model
@@ -52,15 +58,18 @@ class EtdDocument(models.Model):
             ("class_id.dte", "=", True),
             ('picking_ids', "!=", False),
         ]
+        code = self.env.context.get('xerox', False)
+        if code:
+            domain.append(("class_id.code", "=", code))
         if run_date:
             domain.append(("date", "=", run_date))
         if not force:
-            domain.append(("xerox_send_timestamp", "=", False))
+            domain.append(("date_sign", "=", False))
         return domain
 
     @api.model
-    def _xerox_get_records_day(self, company, run_date=None, force=False):
-        """Find and returns all documents."""
+    def _xerox_get_records(self, company, run_date=None, force=False):
+        """Find and return documents."""
         return {
             'account.invoice': self.env["account.invoice"].search(
                 self._xerox_get_domain_invoice(run_date, force)),
@@ -74,7 +83,7 @@ class EtdDocument(models.Model):
     def xerox_build_and_send_files(self, company, rsets):
         """
         Given a dict with the document recorsets,
-        builds a dict with the file name an content
+        builds a dict with the file name and content
         """
         # TODO: split lots if exceeding size limit
         if company.backend_acp_id.status != 'confirmed':
@@ -83,11 +92,11 @@ class EtdDocument(models.Model):
                 % company.display_name)
         now = fields.Datetime.context_timestamp(
             self.env.user,
-            fields.Datetime.now())
+            fields.Datetime.now()
+        )
         # Set documents as sent. In case of error, this will be rolled back.
         for rset in rsets.values():
-            rset.update(
-                {'xerox_send_timestamp': fields.Datetime.to_string(now)})
+            rset.update({'date_sign': fields.Datetime.now()})
         doc_count = sum(len(x) for x in rsets.values())
         _logger.info(
             'Building files for %s with timestamp %s, with %d documents',
@@ -106,7 +115,8 @@ class EtdDocument(models.Model):
         for key, records in grouped_data.items():
             for record in records:
                 file_dict = record.build_files(file_dict, now=now)
-        company.backend_acp_id.send(file_dict)
+        code = self.env.context.get('xerox', False)
+        company.backend_acp_id.with_context(xerox=code).send(file_dict)
 
     def cron_xerox_send_files(self, run_date=None, force=False):
         """
@@ -125,12 +135,13 @@ class EtdDocument(models.Model):
         companies = self.env["res.company"].search([
             ("backend_acp_id", "!=", False),
             ("backend_acp_id.status", "=", 'confirmed'),
-            ("backend_acp_id.send_immediately", "=", False),
         ])
         if not companies:
             _logger.info('No Company is configured for Xerox integration')
 
         for company in companies:
-            rsets = self._xerox_get_records_day(
-                company, run_date, force)
-            self.xerox_build_and_send_files(company, rsets)
+            for code in [33, 61]:
+                rsets = self.with_context(xerox=code)._xerox_get_records(
+                    company, run_date, force)
+                self.with_context(xerox=code).xerox_build_and_send_files(
+                    company, rsets)

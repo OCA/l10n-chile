@@ -46,7 +46,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_cab_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_cab_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -210,7 +210,7 @@ dte_cab_
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ane_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
@@ -248,7 +248,7 @@ dte_ane_
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_det_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -331,7 +331,7 @@ dte_det_
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_an2_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -358,7 +358,7 @@ dte_an2_
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_des_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_des_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
@@ -386,7 +386,7 @@ dte_des_
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-dte_ref_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text"/>
 </record>

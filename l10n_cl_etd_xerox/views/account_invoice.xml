@@ -10,8 +10,8 @@
                 <button name="document_sign"
                         type="object"
                         string="Sign"
-                        context="{'xerox': True}"
-                        attrs="{'invisible': [('class_id', '=', False), '|', ('state', 'not in', ['open', 'paid']), ('date_sign', '!=', False)]}" />
+                        context="{'xerox_invoice': True}"
+                        attrs="{'invisible': ['|', '|', ('class_id', '=', False), ('state', 'not in', ['open', 'paid']), ('date_sign', '!=', False)]}" />
             </button>
         </field>
     </record>
