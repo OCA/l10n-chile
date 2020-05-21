@@ -4,8 +4,8 @@
     <field name="name">Xerox 01 - Route Stock Load</field>
     <field name="model">fsm.route.dayroute</field>
     <field name="template_text_include">
-{% set path = o.company_id.backend_acp_id.xerox_company_code + o.company_id.backend_acp_id.xerox_company_short_name %}
 {% set prod = o.company_id.backend_acp_id.prod_environment %}
+{% set path = 'Ctl/' if prod else '00CtlDesa/' %}
 {% set tipo = "001" %}
 {% set company = "ot" %}
 {% set date = o.date %}
@@ -33,7 +33,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_cab_
+{{ path }}dte_cab_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{( cliente.vat or '').replace('.', '')[:8] }};
@@ -184,7 +184,7 @@
 {# 146 MontoNF #};
 {# 147 MontoPeriodo #};
 {# 148 SaldoAnterior #};
-{# 149 VlrPagar #};
+{# 149 VlrPagar #}
 {{ '\n' }}
     </field>
 </record>
@@ -197,7 +197,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_ane_
+{{ path }}dte_ane_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ (cliente.vat or '').replace('.', '')[:8] }};
@@ -222,7 +222,7 @@
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M') or '' }};
 {# 22 Afecto IVA #};
-{# 23 Número de pedido #};
+{# 23 Número de pedido #}
 {{ '\n' }}
     </field>
 </record>
@@ -235,7 +235,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_det_
+{{ path }}dte_det_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% for line in lines %}
@@ -302,7 +302,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #};
+{# 64 MontoItem #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -316,7 +316,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_an2_
+{{ path }}dte_an2_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
@@ -327,7 +327,7 @@
 {# 5 TpoCodigo #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico #};
-{# 8 Pinta #};
+{# 8 Pinta #}
 {{ '\n' }}
 {% endif %}
     </field>
@@ -341,7 +341,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_des_
+{{ path }}dte_des_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
@@ -353,7 +353,7 @@
 {# 6 GlosaDR #};
 {# 7 TpoValor #};
 {# 8 ValorDR #};
-{# 9 IndExeDR #};
+{# 9 IndExeDR #}
 {{ '\n' }}
 {% endif %}
     </field>
@@ -367,7 +367,7 @@
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/Ctl/') if prod else (path + '/00CtlDesa/') }}dte_ref_
+{{ path }}dte_ref_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
@@ -382,7 +382,7 @@
 {# 8 FchRef #};
 {# 9 CodRef #};
 {# 10 RazonRef #};
-{# 11 CorrFact #};
+{# 11 CorrFact #}
 {{ '\n' }}
 {% endif %}
     </field>
