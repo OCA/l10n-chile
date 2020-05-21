@@ -7,11 +7,20 @@
         <field name="arch" type="xml">
             <field name="stage_id" position="before">
                 <field name="xerox_pending_sign_count" invisible="True" />
+                <field name="is_closed" invisible="True" />
                 <button name="action_xerox_send_files"
                         type="object"
                         class="oe_highlight"
                         string="Sign"
-                        attrs="{'invisible': [('xerox_pending_sign_count', '=', 0)]}"
+                        context="{'xerox': 'presale'}"
+                        attrs="{'invisible': ['|', ('is_closed', '!=', False), ('xerox_pending_sign_count', '=', 0)]}"
+                />
+                <button name="action_xerox_send_files"
+                        type="object"
+                        class="oe_highlight"
+                        string="Sign"
+                        context="{'xerox': '61'}"
+                        attrs="{'invisible': ['|', ('is_closed', '=', False), ('xerox_pending_sign_count', '=', 0)]}"
                 />
             </field>
         </field>
