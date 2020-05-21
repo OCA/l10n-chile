@@ -1,29 +1,12 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-from odoo import api, fields, models, _
+from odoo import fields, models, _
 from odoo.addons.queue_job.job import job
 
 
 class FSMDayRoute(models.Model):
     _name = 'fsm.route.dayroute'
     _inherit = ['fsm.route.dayroute', 'etd.mixin']
-
-    # TODO: To move to fieldservice_route
-    is_closed = fields.Boolean(related='stage_id.is_closed')
-    date_close = fields.Datetime()
-    company_id = fields.Many2one(
-        'res.company',
-        default=lambda s: s.env.user.company_id)
-
-    # TODO: To move to fieldservice_route
-    @api.multi
-    def write(self, values):
-        if values.get('stage_id', False) and not \
-                self.env.context.get('is_writing_flag', False):
-            new_stage = self.env['fsm.stage'].browse(values.get('stage_id'))
-            if new_stage.is_closed:
-                values.update({'date_close': fields.Datetime.now()})
-        return super().write(values)
 
     def _compute_shipping(self):
         """
@@ -94,10 +77,15 @@ class FSMDayRoute(models.Model):
         # Include Dayroutes with shipping documents to send
         # Only for presales lots, that have documents to ship
         dayroutes_with_docs = self.filtered('xerox_shipping_docs_count')
+        # For presale
+        invoices = dayroutes.mapped('shipping_invoice_ids')
+        if self.env.context.get('xerox', False) == 61:
+            # For liquidation
+            invoices = invoices.filtered(lambda x: x.class_id.code == 61)
         return {
             'fsm.route.dayroute':
-                dayroutes_with_docs if not force else dayroutes,
-            'account.invoice': dayroutes.mapped('shipping_invoice_ids'),
+                dayroutes if force else dayroutes_with_docs,
+            'account.invoice': invoices,
             'stock.picking': dayroutes.mapped('shipping_picking_ids'),
             'stock.batch.picking': dayroutes.mapped('shipping_batchpick_ids'),
         }

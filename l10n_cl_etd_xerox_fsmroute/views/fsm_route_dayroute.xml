@@ -12,7 +12,6 @@
                         type="object"
                         class="oe_highlight"
                         string="Sign"
-                        context="{'xerox': 'presale'}"
                         attrs="{'invisible': ['|', ('is_closed', '!=', False), ('xerox_pending_sign_count', '=', 0)]}"
                 />
                 <button name="action_xerox_send_files"
