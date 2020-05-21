@@ -10,15 +10,18 @@ class EtdMixin(models.AbstractModel):
 
     @job
     def document_sign(self):
-        # If xerox=True
+        # If xerox_invoice=True
         if self.env.context.get('xerox_invoice', False):
             # Update xerox with the class code of the document to sign
             code = str(self.class_id.code)
             self.env.context = dict(self.env.context)
             self.env.context.update({'xerox': code})
             return super().document_sign()
-        else:
+        elif self.env.context.get('xerox', False):
             return super().document_sign()
+        else:
+            # No automatic signing
+            return True
 
     def _xerox_group_key(self):
         """

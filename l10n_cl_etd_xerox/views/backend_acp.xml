@@ -8,7 +8,6 @@
             <field name="password" position="after">
                 <field name="xerox_company_code" />
                 <field name="xerox_company_short_name" />
-                <field name="xerox_company_queue" />
                 <field name="xerox_path" />
                 <field name="send_immediately" />
             </field>

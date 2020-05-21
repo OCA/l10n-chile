@@ -16,8 +16,6 @@ class BackendAcp(models.Model):
         * 1st parameter: Current month with 2 digits
         * 2nd parameter: Xerox code from the warehouse with 5 digits
         * 3rd parameter: Current day with 2 digits""")
-    xerox_company_queue = fields.Char(
-        help="Use only for Xerox ETD Services")
     send_immediately = fields.Boolean(
         default=True,
         help="Send documents immediately to this backend"
