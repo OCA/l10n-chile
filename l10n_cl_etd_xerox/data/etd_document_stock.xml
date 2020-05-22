@@ -81,7 +81,7 @@
 {# 30 RUTRecep #}{{ (recep.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
 {# 32 RznSocRecep #}{{ recep.commercial_partner_id.name }};
-{# 33 GiroRecep #}{{ recep.commercial_partner_id.activity_description }};
+{# 33 GiroRecep #}{{ recep.commercial_partner_id.activity_description[:39] or '.' }};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{ ' '.join([recep.street or '', recep.street2 or ''])[:60] }};
 {# 36 CmnaRecep #}{{ recep.city_id.name or '' }};

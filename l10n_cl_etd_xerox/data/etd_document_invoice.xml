@@ -63,7 +63,7 @@
 {# 30 RUTRecep #}{{ (o.partner_id.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
 {# 32 RznSocRecep #}{{ o.partner_id.commercial_partner_id.name }};
-{# 33 GiroRecep #}{{ o.partner_id.commercial_partner_id.activity_description or "" }};
+{# 33 GiroRecep #}{{ o.partner_id.commercial_partner_id.activity_description[:39] or '.' }};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60] }};
 {# 36 CmnaRecep #}{{o.partner_id.city_id.name or ''}};
