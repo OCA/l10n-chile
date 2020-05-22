@@ -29,6 +29,10 @@ class BackendAcp(models.Model):
         default="nd",
         required="True",
     )
+    auto_sign = fields.Boolean(
+        string="Auto sign",
+        help="Automatically sign or send the document for signing when the "
+             "document is confirmed/validated.")
 
     def toggle_prod_environment(self):
         for rec in self:
