@@ -283,7 +283,7 @@
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{ line.discount }};
+{# 39 DescuentoPct #}{{ line.discount|int }};
 {# 40 DescuentoMonto #}{{ discount_amount|int }};
 {# 41 TipoDscto #}{{ line.discount and '%' or '' }};
 {# 42 ValorDscto #};
@@ -308,7 +308,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.price_subtotal if tipo != '039' else line.price_total|int }}
+{# 64 MontoItem #}{{ line.price_subtotal|int if tipo != '039' else line.price_total|int }}
 {{ '\n' }}
 {% endfor %}
     </field>
