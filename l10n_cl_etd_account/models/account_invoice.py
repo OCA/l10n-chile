@@ -36,8 +36,10 @@ class AccountInvoice(models.Model):
     def invoice_validate(self):
         res = super().invoice_validate()
         sign = self._name in [x.model for x in self.company_id.etd_ids]
+        auto_sign = self.company_id.backend_acp_id.auto_sign
         for invoice in self:
-            if sign and invoice.type in ('out_invoice', 'out_refund'):
+            if auto_sign and sign and invoice.type in \
+                    ('out_invoice', 'out_refund'):
                 self.with_delay().document_sign()
         return res
 
