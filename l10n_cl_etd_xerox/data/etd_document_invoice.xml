@@ -283,8 +283,8 @@
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{ line.discount|int }};
-{# 40 DescuentoMonto #}{{ discount_amount|int }};
+{# 39 DescuentoPct #}{{ line.discount|int or '' }};
+{# 40 DescuentoMonto #}{{ discount_amount|int or '' }};
 {# 41 TipoDscto #}{{ line.discount and '%' or '' }};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
