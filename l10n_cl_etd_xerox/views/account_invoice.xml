@@ -3,15 +3,11 @@
     <record model="ir.ui.view" id="view_account_invoice_xerox">
         <field name="name">account.invoice.xerox</field>
         <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="inherit_id"
+               ref="l10n_cl_etd_account.view_account_invoice_class_form"/>
         <field name="arch" type="xml">
-            <button name="action_invoice_open" position="after">
-                <field name="date_sign" invisible="1" />
-                <button name="document_sign"
-                        type="object"
-                        string="Sign"
-                        context="{'xerox_invoice': True}"
-                        attrs="{'invisible': ['|', '|', ('class_id', '=', False), ('state', 'not in', ['open', 'paid']), ('date_sign', '!=', False)]}" />
+            <button name="document_sign" position="attributes">
+                <attribute name="context">{'xerox_invoice': True}</attribute>
             </button>
         </field>
     </record>

@@ -15,9 +15,9 @@
     "depends": [
         "connector_acp_ftp",
         "l10n_cl_etd_account",
+        "l10n_cl_etd_stock",
         "l10n_cl_sii_activity",
         "l10n_cl_sii_folio",
-        "l10n_cl_etd_stock",
         "fieldservice_vehicle",
     ],
     "data": [

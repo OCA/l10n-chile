@@ -17,11 +17,8 @@ class EtdMixin(models.AbstractModel):
             self.env.context = dict(self.env.context)
             self.env.context.update({'xerox': code})
             return super().document_sign()
-        elif self.env.context.get('xerox', False):
-            return super().document_sign()
         else:
-            # No automatic signing
-            return True
+            return super().document_sign()
 
     def _xerox_group_key(self):
         """
