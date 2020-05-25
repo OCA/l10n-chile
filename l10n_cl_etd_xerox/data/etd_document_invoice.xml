@@ -335,7 +335,7 @@
 {# 5 TpoCodigo #}INT1;
 {# 6 Código del item 01 #}{{ line.product_id.default_code }};
 {# 7 Grado Alcoholico #};
-{# 8 Pinta #}
+{# 8 Pinta #}{{ (line.price_total / line.quantity)|int if tipo == '033' else '' }}
 {{ '\n' }}
 {% endfor %}
     </field>
