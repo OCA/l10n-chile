@@ -6,7 +6,7 @@
         <field name="inherit_id"
                ref="l10n_cl_etd_stock.view_stock_picking_sii_class"/>
         <field name="arch" type="xml">
-            <button name="document_sign" position="attribute">
+            <button name="document_sign" position="attributes">
                 <attribute name="context">{'xerox': 52}</attribute>
             </button>
         </field>
