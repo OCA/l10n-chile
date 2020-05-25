@@ -220,7 +220,7 @@
 {# 4 Número copias #}3;
 {# 5 Observaciones (o.note) #}{{ esc("Précios référenciales. Valor final en su factura mensual.") }};
 {# 6 Fecha Cancelación #}{{ date and date.strftime('%Y-%m-%d')}};
-{# 7 Medio de pago #}{{ esc("Guía Botellón" }};
+{# 7 Medio de pago #}{{ esc("Guía Botellón") }};
 {# 8 Término del pago - días #}1;
 {# 9 Información de transporte #}{{ esc(vehicle.name) }};
 {# 10 Código vendedor #};
