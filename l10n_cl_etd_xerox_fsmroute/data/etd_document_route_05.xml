@@ -70,7 +70,7 @@
 {# 33 GiroRecep #};
 {# 34 Contacto #};
 {# 35 DirRecep #};
-{# 36 CmnaRecep TODO -> recep! #}{{ esc(recep.city_id.name) or '' }};
+{# 36 CmnaRecep TODO -> recep! #}{{ esc(recep.city_id.name or '') }};
 {# 37 CiudadRecep #};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};

@@ -69,9 +69,9 @@
 {# 32 RznSocRecep #}{{ esc(recep.name) }};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{ (esc(recep.street) or ' ')[:60] }};
-{# 36 CmnaRecep #}{{ esc(recep.city_id.name) or '' }};
-{# 37 CiudadRecep #}{{ esc(recep.city) or '' }};
+{# 35 DirRecep #}{{ esc(recep.street or ' ')[:60] }};
+{# 36 CmnaRecep #}{{ esc(recep.city_id.name or '') }};
+{# 37 CiudadRecep #}{{ esc(recep.city or '') }};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
 {# 40 CiudadPostal #};
@@ -333,7 +333,7 @@
 {# 5 TpoCodigo #};
 {# 6 VlrCodigo #}{{ digits_only(picking.name) }};
 {# 7 TpoCodigo #};
-{# 8 VlrCodigo #}{{ esc(delivery_addr.street)[:60] }};
+{# 8 VlrCodigo #}{{ esc(delivery_addr.street or '')[:60] }};
 {# 9 TpoCodigo #}GNM;
 {# 10 VlrCodigo #}0;
 {# 11 TpoCodigo #}CER;

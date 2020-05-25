@@ -51,23 +51,23 @@
 {# 18 FchVenc #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 19 RUTEmisor #}{{ (o.company_id.vat or '').replace('.', '') }};
 {# 20 RznSoc #}{{ esc(o.company_id.name) }};
-{# 21 GiroEmis #}{{ esc(o.company_id.partner_id.activity_description) }};
+{# 21 GiroEmis #}{{ esc(o.company_id.partner_id.activity_description or '.') }};
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
 {# 23 Sucursal #}{{ esc(o.company_id.name) }};
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #}{{ esc((warehouse_addr.street or '')[:60]) }};
-{# 26 CmnaOrigen #}{{ esc(warehouse_addr.city_id.name) or '' }};
-{# 27 CiudadOrigen #}{{ esc(warehouse_addr.city) }};
+{# 26 CmnaOrigen #}{{ esc(warehouse_addr.city_id.name or '') }};
+{# 27 CiudadOrigen #}{{ esc(warehouse_addr.city or '') }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{ (o.partner_id.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
 {# 32 RznSocRecep #}{{ esc(o.partner_id.commercial_partner_id.name) }};
-{# 33 GiroRecep #}{{ esc(o.partner_id.commercial_partner_id.activity_description[:39]) or '.' }};
+{# 33 GiroRecep #}{{ esc(o.partner_id.commercial_partner_id.activity_description[:39] or '.') }};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{ esc(' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60]) }};
-{# 36 CmnaRecep #}{{ esc(o.partner_id.city_id.name) or ''}};
-{# 37 CiudadRecep #}{{ esc(o.partner_id.city) or ''}};
+{# 36 CmnaRecep #}{{ esc(o.partner_id.city_id.name or '') }};
+{# 37 CiudadRecep #}{{ esc(o.partner_id.city or '') }};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
 {# 40 CiudadPostal #};
@@ -76,7 +76,7 @@
 {# 43 RUTTrans TODO o.carrier_id.partner_id.vat #};
 {# 44 DirDest #}{{ esc(' '.join([o.partner_shipping_id.street or '', o.partner_shipping_id.street2 or ''])[:60]) }};
 {# 45 CmnaDest #}{{ esc(o.partner_shipping_id.city_id.name) or ''}};
-{# 46 CiudadDest #}{{ esc(o.partner_shipping_id.city) or ''}};
+{# 46 CiudadDest #}{{ esc(o.partner_shipping_id.city or '') }};
 {% set totals = namespace(amount_exempt=0) %}
 {% for line in o.invoice_line_ids %}
     {% if line.price_tax == 0 %}
@@ -202,8 +202,8 @@
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set payment = o.payment_ids[:1] %}
-{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}{{o.class_id.code}};
+{# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 Número copias #}2;
 {# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
@@ -213,7 +213,7 @@
 {# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
 {# 10 Código vendedor #}{{ o.user_id.ref or '' }};
 {# 11 Valor a pagar #}{{ o.amount_total|int }};
-{# 12 Lugar Emisión #}{{ esc(warehouse.name) }};
+{# 12 Lugar Emisión #}{{ esc(warehouse.name or '') }};
 {# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
 {# 15 Sector #}{{ digits_only(dayroute.name) }};
@@ -394,7 +394,7 @@
 {# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
 {# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
 {# 9 CodRef #}{{ ref.code or "" }};
-{# 10 RazonRef #}{{ esc(ref.motive) or "" }};
+{# 10 RazonRef #}{{ esc(ref.motive or '') }};
 {# 11 CorrFact #}
 {{ '\n' }}
 {% endfor %}
