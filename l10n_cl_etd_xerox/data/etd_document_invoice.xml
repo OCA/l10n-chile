@@ -49,7 +49,7 @@
 {# 16 TermPagoCdg #};
 {# 17 TermPagoDias #};
 {# 18 FchVenc #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
-{# 19 RUTEmisor #}{{(o.company_id.vat or '').replace('.', '')}};
+{# 19 RUTEmisor #}{{ (o.company_id.vat or '').replace('.', '') }};
 {# 20 RznSoc #}{{ esc(o.company_id.name) }};
 {# 21 GiroEmis #}{{ esc(o.company_id.partner_id.activity_description) }};
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
@@ -250,7 +250,7 @@
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 NroLinDet #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 VlrCodigo #}{{ line.product_id.default_code }};
+{# 6 VlrCodigo #}{{ line.product_id.default_code[:8] }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -333,7 +333,7 @@
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 Numero Detalle #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{ line.product_id.default_code }};
+{# 6 Código del item 01 #}{{ line.product_id.default_code[:8] }};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #}{{ (line.price_total / line.quantity)|int if tipo == '033' else '' }}
 {{ '\n' }}

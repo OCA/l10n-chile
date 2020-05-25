@@ -261,7 +261,7 @@
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 VlrCodigo #}{{ product.default_code}};
+{# 6 VlrCodigo #}{{ product.default_code[:8] }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -344,7 +344,7 @@
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Numero Detalle #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{ key[0].default_code }};
+{# 6 Código del item 01 #}{{ key[0].default_code[:8] }};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #}
 {{ '\n' }}
