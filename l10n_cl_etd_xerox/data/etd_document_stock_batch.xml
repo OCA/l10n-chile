@@ -271,7 +271,7 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{ esc(product.name[:80]) }};
+{# 16 NmbItem #}{{ esc(product.name[:40]) }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
