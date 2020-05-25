@@ -51,13 +51,13 @@
 {# 18 FchVenc #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 19 RUTEmisor #}{{(o.company_id.vat or '').replace('.', '')}};
 {# 20 RznSoc #}{{ esc(o.company_id.name) }};
-{# 21 GiroEmis #}{{ o.company_id.partner_id.activity_description }};
+{# 21 GiroEmis #}{{ esc(o.company_id.partner_id.activity_description) }};
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
 {# 23 Sucursal #}{{ esc(o.company_id.name) }};
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #}{{ esc((warehouse_addr.street or '')[:60]) }};
 {# 26 CmnaOrigen #}{{ esc(warehouse_addr.city_id.name) or '' }};
-{# 27 CiudadOrigen #}{{ warehouse_addr.city }};
+{# 27 CiudadOrigen #}{{ esc(warehouse_addr.city) }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{ (o.partner_id.vat or '').replace('.', '') }};
@@ -260,7 +260,7 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{ esc(line.name[:80]) }};
+{# 16 NmbItem #}{{ esc(line.name)[:80] }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
@@ -394,7 +394,7 @@
 {# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
 {# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
 {# 9 CodRef #}{{ ref.code or "" }};
-{# 10 RazonRef #}{{ ref.motive or "" }};
+{# 10 RazonRef #}{{ esc(ref.motive) or "" }};
 {# 11 CorrFact #}
 {{ '\n' }}
 {% endfor %}
