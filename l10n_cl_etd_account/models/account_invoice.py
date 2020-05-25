@@ -35,7 +35,7 @@ class AccountInvoice(models.Model):
         self.amount_base_tax = \
             sum(line.price_subtotal
                 for line in self.invoice_line_ids
-                if not line.invoice_line_tax_ids)
+                if line.invoice_line_tax_ids)
 
     def _compute_class_id_domain(self):
         return [('document_type', 'in', ('invoice', 'invoice_in',
