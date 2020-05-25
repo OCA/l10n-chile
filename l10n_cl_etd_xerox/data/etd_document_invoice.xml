@@ -278,7 +278,7 @@
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{ line.uom_id.name[:4] }};
+{# 34 UnmdItem #}{{ line.uom_id.name[:2] }};
 {# 35 PrcItem #}{{ line.price_unit if tipo != '039' else price_unit_with_tax|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};

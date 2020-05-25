@@ -287,7 +287,7 @@
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{ line.product_uom.name[:4] }};
+{# 34 UnmdItem #}{{ line.product_uom.name[:2] }};
 {# 35 PrcItem #}{{ line.sale_line_id.price_unit|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};

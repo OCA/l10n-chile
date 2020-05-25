@@ -289,7 +289,7 @@
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{uom.name[:4]}};
+{# 34 UnmdItem #}{{uom.name[:2]}};
 {# 35 PrcItem #}{{ vals['price']|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};

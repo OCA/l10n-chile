@@ -272,7 +272,7 @@
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{ line['uom'][:4] }};
+{# 34 UnmdItem #}{{ line['uom'][:2] }};
 {# 35 PrcItem #}{{ line['price']|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
