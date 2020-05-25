@@ -9,7 +9,8 @@ import logging
 import time
 from jinja2 import Environment, BaseLoader
 from lxml import etree
-from odoo import api, fields, models, _
+from xml.sax.saxutils import escape
+from odoo import fields, models, _
 from odoo.exceptions import UserError
 from ...queue_job.job import job
 from ...queue_job.exception import RetryableJobError
@@ -53,6 +54,29 @@ class EtdMixin(models.AbstractModel):
 
         :return: Dictionary of keywords used in the template
         """
+        escape_table = {
+            'á': '&aacute',
+            'Á': '&Aacute',
+            'é': '&eacute',
+            'É': '&Eacute',
+            'í': '&iacute',
+            'Í': '&Iacute',
+            'ñ': '&ntilde;',
+            'Ñ': '&Ntilde;',
+            'ó': '&oacute',
+            'Ó': '&Oacute',
+            'ú': '&uacute',
+            'Ú': '&uacute',
+            'ü': '&uuml',
+            'Ü': '&Uuml',
+            'º': '&#8470;',
+            '"': "&quot;",
+            "'": "&apos;",
+            '¿': "&iquest;",
+            '¡': "&iexcl;",
+            '«': '&laquo;',
+            '»': '&raquo;',
+        }
         return {
             "o": self,
             "now": now,
@@ -64,6 +88,7 @@ class EtdMixin(models.AbstractModel):
             "timedelta": datetime.timedelta,
             "digits_only": (
                 lambda text: ''.join(x for x in (text or '') if x.isdigit())),
+            "esc": (lambda text: escape(text, escape_table)),
         }
 
     def _render_jinja_template(self, template_text, now=None):

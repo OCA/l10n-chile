@@ -31,11 +31,11 @@
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt
     </field>
     <field name="template_text">
-{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
+{# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
 {# 2 Version #}1.0;
 {# 3 Tipo #}{{o.class_id.code}};
 {# 4 Folio #}{{ digits_only(o.number) }};
-{# 5 FechEmis #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
+{# 5 FechEmis #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 6 IndNoRebaja TODO Nota de credito fuera de plazo #};
 {# 7 TipoDespacho TODO o.transport_type #}{{2 if o.class_id.code in (33, 52) else ''}};
 {# 8 IndTraslado TODO o.move_reason #}{{2 if o.class_id.code in (33, 52) else ''}};
@@ -48,35 +48,35 @@
 {# 15 MedioPago #};
 {# 16 TermPagoCdg #};
 {# 17 TermPagoDias #};
-{# 18 FchVenc #}{{o.date_invoice and o.date_invoice.strftime('%Y-%m-%d')}};
+{# 18 FchVenc #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 19 RUTEmisor #}{{(o.company_id.vat or '').replace('.', '')}};
-{# 20 RznSoc #}{{o.company_id.name}};
+{# 20 RznSoc #}{{ esc(o.company_id.name) }};
 {# 21 GiroEmis #}{{ o.company_id.partner_id.activity_description }};
 {# 22 Acteco #}{{ o.company_id.partner_id.sii_activity_id.code }};
-{# 23 Sucursal #}{{o.company_id.name}};
+{# 23 Sucursal #}{{ esc(o.company_id.name) }};
 {# 24 CodSIISucur #};
-{# 25 DirOrigen #}{{ (warehouse_addr.street or '')[:60] }};
-{# 26 CmnaOrigen #}{{ warehouse_addr.city_id.name or '' }};
+{# 25 DirOrigen #}{{ esc((warehouse_addr.street or '')[:60]) }};
+{# 26 CmnaOrigen #}{{ esc(warehouse_addr.city_id.name) or '' }};
 {# 27 CiudadOrigen #}{{ warehouse_addr.city }};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{ (o.partner_id.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{ o.partner_id.commercial_partner_id.name }};
-{# 33 GiroRecep #}{{ o.partner_id.commercial_partner_id.activity_description[:39] or '.' }};
+{# 32 RznSocRecep #}{{ esc(o.partner_id.commercial_partner_id.name) }};
+{# 33 GiroRecep #}{{ esc(o.partner_id.commercial_partner_id.activity_description[:39]) or '.' }};
 {# 34 Contacto #};
-{# 35 DirRecep #}{{' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60] }};
-{# 36 CmnaRecep #}{{o.partner_id.city_id.name or ''}};
-{# 37 CiudadRecep #}{{o.partner_id.city or ''}};
+{# 35 DirRecep #}{{ esc(' '.join([o.partner_id.street or '', o.partner_id.street2 or ''])[:60]) }};
+{# 36 CmnaRecep #}{{ esc(o.partner_id.city_id.name) or ''}};
+{# 37 CiudadRecep #}{{ esc(o.partner_id.city) or ''}};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
 {# 40 CiudadPostal #};
 {# 41 RUTSolicita #};
 {# 42 Patente #};
 {# 43 RUTTrans TODO o.carrier_id.partner_id.vat #};
-{# 44 DirDest #}{{' '.join([o.partner_shipping_id.street or '', o.partner_shipping_id.street2 or ''])[:60] }};
-{# 45 CmnaDest #}{{o.partner_shipping_id.city_id.name or ''}};
-{# 46 CiudadDest #}{{o.partner_shipping_id.city or ''}};
+{# 44 DirDest #}{{ esc(' '.join([o.partner_shipping_id.street or '', o.partner_shipping_id.street2 or ''])[:60]) }};
+{# 45 CmnaDest #}{{ esc(o.partner_shipping_id.city_id.name) or ''}};
+{# 46 CiudadDest #}{{ esc(o.partner_shipping_id.city) or ''}};
 {% set totals = namespace(amount_exempt=0) %}
 {% for line in o.invoice_line_ids %}
     {% if line.price_tax == 0 %}
@@ -211,9 +211,9 @@
 {# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' or tipo == '039' else 'Solo firma' }};
 {# 8 Término del pago - días #};
 {# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
-{# 10 Código vendedor #}{{o.user_id.ref or ''}};
+{# 10 Código vendedor #}{{ o.user_id.ref or '' }};
 {# 11 Valor a pagar #}{{ o.amount_total|int }};
-{# 12 Lugar Emisión #}{{ warehouse.name }};
+{# 12 Lugar Emisión #}{{ esc(warehouse.name) }};
 {# 13 Código Precio #}{{ o.partner_id.ref }};
 {# 14 Local #}0;
 {# 15 Sector #}{{ digits_only(dayroute.name) }};
@@ -260,7 +260,7 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{ line.name[:80] }};
+{# 16 NmbItem #}{{ esc(line.name[:80]) }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
@@ -333,7 +333,7 @@
 {# 3 Folio #}{{ digits_only(o.number) }};
 {# 4 Numero Detalle #}{{ totals.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{line.product_id.default_code}};
+{# 6 Código del item 01 #}{{ line.product_id.default_code }};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #}
 {{ '\n' }}

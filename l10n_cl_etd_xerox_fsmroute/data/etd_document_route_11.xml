@@ -68,8 +68,8 @@
 {# 14 PeriodoHasta      #};
 {# 15 MedioPago         #};
 {# 16 TermPagoCdg       #};
-{# 17 TermPagoDias #};
-{# 18 FchVenc #};
+{# 17 TermPagoDias      #};
+{# 18 FchVenc           #};
 {# 19 RUTEmisor #};
 {# 20 RznSoc #};
 {# 21 GiroEmis #};
@@ -83,7 +83,7 @@
 {# 29 RUTMandante #};
 {# 30 RUTRecep          #}{{ (transp.vat or '').replace('.', '')}};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep       #}{{ transp.name }};
+{# 32 RznSocRecep       #}{{ esc(transp.name) }};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
 {# 35 DirRecep #};
@@ -104,11 +104,11 @@
 {# 50 TasaIVA #};
 {# 51 IVA #};
 {# 52 TipoImp           #}GNM;
-{# 53 TasaImp #};
+{# 53 TasaImp           #};
 {# 54 MontoImp          #}{{ totals.quantity|int }};
-{# 55 TipoImp #}CER;
-{# 56 TasaImp #};
-{# 57 MontoImp #}0;
+{# 55 TipoImp           #}CER;
+{# 56 TasaImp           #};
+{# 57 MontoImp          #}0;
 {# 58 TipoImp #}CNF;
 {# 59 TasaImp #};
 {# 60 MontoImp #}0;
@@ -227,7 +227,7 @@
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor   #};
 {# 11 Valor a pagar     #}{{  digits_only(o.name)  }};
-{# 12 Lugar Emisión     #}{{origen.name}};
+{# 12 Lugar Emisión     #}{{ esc(origen.name) }};
 {# 13 Código Precio     #};
 {# 14 Local             #}0;
 {# 15 Sector            #};
@@ -269,7 +269,7 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem           #}{{ origen.commercial_partner_id.name }};
+{# 16 NmbItem           #}{{ esc(origen.commercial_partner_id.name) }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};

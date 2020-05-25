@@ -64,13 +64,13 @@
 {# 27 CiudadOrigen #};
 {# 28 CdgVendedor #};
 {# 29 RUTMandante #};
-{# 30 RUTRecep #}{{   (recep.vat or '').replace('.', '')}};
+{# 30 RUTRecep #}{{ (recep.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{ recep.name}};
+{# 32 RznSocRecep #}{{ esc(recep.name) }};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
 {# 35 DirRecep #};
-{# 36 CmnaRecep TODO -> recep! #}{{   recep.city_id.name or ''}};
+{# 36 CmnaRecep TODO -> recep! #}{{ esc(recep.city_id.name) or '' }};
 {# 37 CiudadRecep #};
 {# 38 DirPostal #};
 {# 39 CmnaPostal #};
@@ -210,7 +210,7 @@
 {# 9 Información de transporte #}{{ truck }};
 {# 10 Código vendedor #};
 {# 11 Valor a pagar #}{{ digits_only(o.name) }};
-{# 12 Lugar Emisión #}{{ origen.name }};
+{# 12 Lugar Emisión #}{{ esc(origen.name) }};
 {# 13 Código Precio #};
 {# 14 Local #}0;
 {# 15 Sector #};
