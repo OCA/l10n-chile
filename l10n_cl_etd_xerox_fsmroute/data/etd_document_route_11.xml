@@ -24,7 +24,7 @@
 {% set dest = origen %}
 
 {% set totals = namespace(count=0, count_sign=0, count_cash=0, amount=0, amount_sign=0, amount_cash=0, quantity=0) %}
-{% for invoice in o.shipping_invoices %}
+{% for invoice in o.shipping_invoice_ids %}
 {%   set totals.count = totals.count + 1 %}
 {%   set totals.amount = totals.amount + invoice.amount_total %}
 {%   if invoice.partner_id.delivery_condition == 'immediate' %}
@@ -205,44 +205,6 @@
     </field>
 </record>
 
-<record id="etd_xerox_route_11_ane" model="etd.document.file">
-    <field name="name">ANE Header Annex</field>
-    <field name="sequence">50</field>
-    <field name="document_id" ref="etd_xerox_route_11"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">
-{{ path }}dte_ane_
-{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
-    <field name="template_text">
-{# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}11;
-{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
-{# 4 Número copias      #}1;
-{# 5 Observaciones      #};
-{# 6 Fecha Cancelación  #};
-{# 7 Medio de pago      #};
-{# 8 Término del pago - días #};
-{# 9 Información de transporte #}{{ truck }};
-{# 10 Código vendedor   #};
-{# 11 Valor a pagar     #}{{  digits_only(o.name)  }};
-{# 12 Lugar Emisión     #}{{ esc(origen.name) }};
-{# 13 Código Precio     #};
-{# 14 Local             #}0;
-{# 15 Sector            #};
-{# 16 Territorio        #};
-{# 17 Carga             #}1;
-{# 18 Depósito          #}{{ warehouse }};
-{# 19 Afecto IABA       #};
-{# 20 IABA              #};
-{# 21 Hora emisión      #}{{ date and date.strftime('%H:%M') or ''}};
-{# 22 Afecto IVA        #};
-{# 23 Número de pedido  #}
-{{ '\n' }}
-    </field>
-</record>
-
 <record id="etd_xerox_route_11_det" model="etd.document.file">
     <field name="name">DET Detail</field>
     <field name="sequence">20</field>
@@ -322,26 +284,30 @@
     </field>
 </record>
 
-<record id="etd_xerox_route_11_an2" model="etd.document.file">
-    <field name="name">AN2 Detail Annex</field>
-    <field name="sequence">60</field>
+<record id="etd_xerox_route_11_ref" model="etd.document.file">
+    <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ path }}dte_an2_
+{{ path }}dte_ref_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
 {# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
-{# 4 Numero Detalle #};
-{# 5 TpoCodigo #};
-{# 6 Código del item 01 #};
-{# 7 Grado Alcoholico #};
-{# 8 Pinta #}
+{# 2 NroLineaRef #};
+{# 3 TpoDocRef #};
+{# 4 IndGlobal #};
+{# 5 FolioRef #};
+{# 6 RUTOtr #};
+{# 8 FchRef #};
+{# 9 CodRef #};
+{# 10 RazonRef #};
+{# 11 CorrFact #}
 {{ '\n' }}
 {% endif %}
     </field>
@@ -374,30 +340,64 @@
     </field>
 </record>
 
-<record id="etd_xerox_route_11_ref" model="etd.document.file">
-    <field name="name">REF References</field>
-    <field name="sequence">30</field>
+<record id="etd_xerox_route_11_ane" model="etd.document.file">
+    <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ path }}dte_ref_
+{{ path }}dte_ane_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_text">
+{# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo               #}11;
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
+{# 4 Número copias      #}1;
+{# 5 Observaciones      #};
+{# 6 Fecha Cancelación  #};
+{# 7 Medio de pago      #};
+{# 8 Término del pago - días #};
+{# 9 Información de transporte #}{{ truck }};
+{# 10 Código vendedor   #};
+{# 11 Valor a pagar     #}{{  digits_only(o.name)  }};
+{# 12 Lugar Emisión     #}{{ esc(origen.name) }};
+{# 13 Código Precio     #};
+{# 14 Local             #}0;
+{# 15 Sector            #};
+{# 16 Territorio        #};
+{# 17 Carga             #}1;
+{# 18 Depósito          #}{{ warehouse }};
+{# 19 Afecto IABA       #};
+{# 20 IABA              #};
+{# 21 Hora emisión      #}{{ date and date.strftime('%H:%M') or ''}};
+{# 22 Afecto IVA        #};
+{# 23 Número de pedido  #}
+{{ '\n' }}
+    </field>
+</record>
+
+<record id="etd_xerox_route_11_an2" model="etd.document.file">
+    <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
+    <field name="document_id" ref="etd_xerox_route_11"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ path }}dte_an2_
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% if False %}
 {# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
-{# 2 NroLineaRef #};
-{# 3 TpoDocRef #};
-{# 4 IndGlobal #};
-{# 5 FolioRef #};
-{# 6 RUTOtr #};
-{# 8 FchRef #};
-{# 9 CodRef #};
-{# 10 RazonRef #};
-{# 11 CorrFact #}
+{# 4 Numero Detalle #};
+{# 5 TpoCodigo #};
+{# 6 Código del item 01 #};
+{# 7 Grado Alcoholico #};
+{# 8 Pinta #}
 {{ '\n' }}
 {% endif %}
     </field>

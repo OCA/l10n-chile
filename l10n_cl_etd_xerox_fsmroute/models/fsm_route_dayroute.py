@@ -121,29 +121,28 @@ class FSMDayRoute(models.Model):
         """
         lines = {}
         sections = {}
-        pickings = self.mapped(
-            'order_ids.picking_ids.move_ids_without_package')
-        for line in pickings:
+        moves = self.mapped(
+            'shipping_batchpick_ids.picking_ids.move_ids_without_package')
+        for line in moves:
             section_key = line.product_id.categ_id
             section_name = section_key.complete_name
             sections.setdefault(section_key, section_name or '')
 
             key = (line.product_id, line.product_uom)
-            lines.setdefault(
-                key,
-                {'code': line.product_id.default_code,
-                 'name': line.product_id.name,
-                 'uom': line.product_uom.name,
-                 'quantity': 0,
-                 'price': 0,
-                 'section_key': section_key,
-                 })
+            lines.setdefault(key, {
+                'code': line.product_id.default_code,
+                'name': line.product_id.name,
+                'uom': line.product_uom.name,
+                'quantity': 0,
+                'price': 0,
+                'section_key': section_key,
+            })
             lines[key]['quantity'] += (
                 line.quantity_done or line.product_uom_qty)
             lines[key]['price'] = max(
                 lines[key]['price'] or 0,
                 line.sale_line_id.price_unit or 0,
-                )
+            )
 
         report_lines = []
         index = 1
@@ -159,7 +158,7 @@ class FSMDayRoute(models.Model):
                     'uom': '',
                     'quantity': '',
                     'price': '',
-                    })
+                })
                 index = index + 1
                 for line in section_lines:
                     line['index'] = index
