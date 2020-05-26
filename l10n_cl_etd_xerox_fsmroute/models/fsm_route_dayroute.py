@@ -130,7 +130,7 @@ class FSMDayRoute(models.Model):
 
             key = (line.product_id, line.product_uom)
             lines.setdefault(key, {
-                'code': line.product_id.default_code,
+                'code': line.product_id.ref_etd,
                 'name': line.product_id.name,
                 'uom': line.product_uom.name,
                 'quantity': 0,
