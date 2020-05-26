@@ -38,7 +38,7 @@
     <field name="template_text">
 {# 1 Cliente #}{{( cliente.vat or '').replace('.', '')[:8] }};
 {# 2 Version #}1.0;
-{# 3 Tipo #}{{ tipo }};
+{# 3 Tipo #}1;
 {# 4 Folio #}{{ digits_only(o.name) + tipo }};
 {# 5 FechEmis #}{{ date and date.strftime('%Y-%m-%d') }};
 {# 6 IndNoRebaja #};
@@ -201,7 +201,7 @@
 {{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {# 1 Cliente #}{{ (cliente.vat or '').replace('.', '')[:8] }};
-{# 2 Tipo #}{{ tipo }};
+{# 2 Tipo #}1;
 {# 3 Folio #}{{ digits_only(o.name) + tipo }};
 {# 4 Número copias #}1;
 {# 5 Observaciones #}{{ digits_only(o.name) }};
