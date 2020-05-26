@@ -37,6 +37,7 @@ class EtdDocument(models.Model):
             # Deliveries are signed once they are waiting or confirmed
             # They will ony be "done" when delivered at customer site
             ("state", "not in", ("draft", "cancel")),
+            ("class_id", "!=", False),
             ("class_id.dte", "=", True),
         ]
         code = self.env.context.get('xerox', False)
@@ -55,6 +56,7 @@ class EtdDocument(models.Model):
     @api.model
     def _xerox_get_domain_picking_batch(self, run_date=None, force=False):
         domain = [
+            ("class_id", "!=", False),
             ("class_id.dte", "=", True),
             ('picking_ids', "!=", False),
         ]

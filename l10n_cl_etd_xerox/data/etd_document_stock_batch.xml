@@ -203,44 +203,6 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_batch_ane" model="etd.document.file">
-    <field name="name">ANE Header Annex</field>
-    <field name="sequence">50</field>
-    <field name="document_id" ref="etd_xerox_stock_batch"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
-    <field name="template_text">
-{# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{ digits_only(o.name) }};
-{# 4 Número copias #}3;
-{# 5 Observaciones (o.note) #}{{ esc("Précios référenciales. Valor final en su factura mensual.") }};
-{# 6 Fecha Cancelación #}{{ date and date.strftime('%Y-%m-%d')}};
-{# 7 Medio de pago #}{{ esc("Guía Botellón") }};
-{# 8 Término del pago - días #}1;
-{# 9 Información de transporte #}{{ esc(vehicle.name) }};
-{# 10 Código vendedor #};
-{# 11 Valor a pagar #}{{ totals.amount_total|int }};
-{# 12 Lugar Emisión #}{{ esc(origen.name) }};
-{# 13 Código Precio #}{{ transp.ref }};
-{# 14 Local #}0;
-{# 15 Sector #}{{ digits_only(dayroute.name) }};
-{# 16 Territorio #}{{ esc(transp.name) }};
-{# 17 Carga #}1;
-{# 18 Depósito #}41;
-{# 19 Afecto IABA #};
-{# 20 IABA #};
-{# 21 Hora emisión #}{{ date and date.strftime('%H:%M')}};
-{# 22 Afecto IVA #}{{ totals.amount_untaxed|int }};
-{# 23 Número de pedido #}
-{{ '\n' }}
-    </field>
-</record>
-
 <record id="etd_file_xerox_stock_batch_det" model="etd.document.file">
     <field name="name">DET Detail</field>
     <field name="sequence">20</field>
@@ -250,14 +212,14 @@
     <field name="save">False</field>
     <field name="template_name">
 {{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{ now.strftime('%Y%m%d_%H%M%S') }}_{{ truck }}_{{ shift }}_{{ index }}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
 {% for key, vals in lines.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
 {% set product, uom = key %}
 {# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{o.class_id.code}};
+{# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
@@ -325,31 +287,17 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_batch_an2" model="etd.document.file">
-    <field name="name">AN2 Detail Annex</field>
-    <field name="sequence">60</field>
+<record id="etd_file_xerox_stock_batch_ref" model="etd.document.file">
+    <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
-    <field name="template_text">
-{% set counter = namespace(line_num=0) %}
-{% for key, vals in lines.items() %}
-{% set counter.line_num = counter.line_num + 1 %}
-{# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{o.class_id.code}};
-{# 3 Folio #}{{ digits_only(o.name) }};
-{# 4 Numero Detalle #}{{ counter.line_num }};
-{# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{ key[0].default_code[:8] }};
-{# 7 Grado Alcoholico #};
-{# 8 Pinta #}
-{{ '\n' }}
-{% endfor %}
-    </field>
+    <field name="template_text"/>
 </record>
 
 <record id="etd_file_xerox_stock_batch_des" model="etd.document.file">
@@ -380,17 +328,69 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_batch_ref" model="etd.document.file">
-    <field name="name">REF References</field>
-    <field name="sequence">30</field>
+<record id="etd_file_xerox_stock_batch_ane" model="etd.document.file">
+    <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
-    <field name="template_text"/>
+    <field name="template_text">
+{# 1 Cliente #}{{ cliente_rut }};
+{# 2 Tipo #}{{ o.class_id.code }};
+{# 3 Folio #}{{ digits_only(o.name) }};
+{# 4 Número copias #}3;
+{# 5 Observaciones (o.note) #}{{ esc("Précios référenciales. Valor final en su factura mensual.") }};
+{# 6 Fecha Cancelación #}{{ date and date.strftime('%Y-%m-%d')}};
+{# 7 Medio de pago #}{{ esc("Guía Botellón") }};
+{# 8 Término del pago - días #}1;
+{# 9 Información de transporte #}{{ esc(vehicle.name) }};
+{# 10 Código vendedor #};
+{# 11 Valor a pagar #}{{ totals.amount_total|int }};
+{# 12 Lugar Emisión #}{{ esc(origen.name) }};
+{# 13 Código Precio #}{{ transp.ref }};
+{# 14 Local #}1;
+{# 15 Sector #}{{ digits_only(dayroute.name) }};
+{# 16 Territorio #}{{ esc(transp.name) }};
+{# 17 Carga #}1;
+{# 18 Depósito #}41;
+{# 19 Afecto IABA #};
+{# 20 IABA #};
+{# 21 Hora emisión #}{{ date and date.strftime('%H:%M')}};
+{# 22 Afecto IVA #}{{ totals.amount_untaxed|int }};
+{# 23 Número de pedido #}
+{{ '\n' }}
+    </field>
+</record>
+
+<record id="etd_file_xerox_stock_batch_an2" model="etd.document.file">
+    <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
+    <field name="template_text">
+{% set counter = namespace(line_num=0) %}
+{% for key, vals in lines.items() %}
+{% set counter.line_num = counter.line_num + 1 %}
+{# 1 Cliente #}{{ cliente_rut }};
+{# 2 Tipo #}{{o.class_id.code}};
+{# 3 Folio #}{{ digits_only(o.name) }};
+{# 4 Numero Detalle #}{{ counter.line_num }};
+{# 5 TpoCodigo #}INT1;
+{# 6 Código del item 01 #}{{ key[0].default_code[:8] }};
+{# 7 Grado Alcoholico #};
+{# 8 Pinta #}
+{{ '\n' }}
+{% endfor %}
+    </field>
 </record>
 
 </odoo>

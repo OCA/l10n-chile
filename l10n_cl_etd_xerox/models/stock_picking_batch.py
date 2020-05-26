@@ -3,12 +3,12 @@
 from odoo import models
 
 
-class PickingBatch(models.Model):
+class StockPickingBatch(models.Model):
     _inherit = "stock.picking.batch"
 
     def get_xerox_lines(self):
         """
-        Returns  a dictionary with the lines for the Xerox Picking Batch report
+        Returns a dictionary with the lines for the Xerox Picking Batch report
         """
         lines = {}
         for move in self.mapped('picking_ids.move_ids_without_package'):

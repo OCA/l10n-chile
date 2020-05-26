@@ -33,7 +33,7 @@
     <field name="template_text">
 {# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
 {# 2 Version #}1.0;
-{# 3 Tipo #}{{o.class_id.code}};
+{# 3 Tipo #}{{ o.class_id.code }};
 {# 4 Folio #}{{ digits_only(o.number) }};
 {# 5 FechEmis #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 6 IndNoRebaja TODO Nota de credito fuera de plazo #};
@@ -190,45 +190,6 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_invoice_ane" model="etd.document.file">
-    <field name="name">ANE Header Annex</field>
-    <field name="sequence">50</field>
-    <field name="document_id" ref="etd_xerox_invoice"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
-    <field name="template_text">
-{% set payment = o.payment_ids[:1] %}
-{# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
-{# 2 Tipo #}{{ o.class_id.code }};
-{# 3 Folio #}{{ digits_only(o.number) }};
-{# 4 Número copias #}2;
-{# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
-{# 6 Fecha Cancelación #};
-{# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' or tipo == '039' else 'Solo firma' }};
-{# 8 Término del pago - días #};
-{# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
-{# 10 Código vendedor #}{{ o.user_id.ref or '' }};
-{# 11 Valor a pagar #}{{ o.amount_total|int }};
-{# 12 Lugar Emisión #}{{ esc(warehouse.name or '') }};
-{# 13 Código Precio #}{{ o.partner_id.ref }};
-{# 14 Local #}0;
-{# 15 Sector #}{{ digits_only(dayroute.name) }};
-{# 16 Territorio #}{{ o.user_id.ref }};
-{# 17 Carga #}1;
-{# 18 Depósito #}41;
-{# 19 Afecto IABA #};
-{# 20 IABA #};
-{# 21 Hora emisión #}{{o.create_date.strftime('%H:%M')}};
-{# 22 Afecto IVA #}{{ o.amount_base_tax|int }};
-{# 23 Número de pedido #}{{ digits_only(o.origin) }}
-{{ '\n' }}
-    </field>
-</record>
-
 <record id="etd_file_xerox_invoice_det" model="etd.document.file">
     <field name="name">DET Detail</field>
     <field name="sequence">20</field>
@@ -314,28 +275,32 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_invoice_an2" model="etd.document.file">
-    <field name="name">AN2 Detail Annex</field>
-    <field name="sequence">60</field>
+<record id="etd_file_xerox_invoice_ref" model="etd.document.file">
+    <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
-{% for line in o.invoice_line_ids %}
+{% for ref in o.reference_ids[:30] %}
 {% set totals.line_num = totals.line_num + 1 %}
-{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo #}{{o.class_id.code}};
+{# 1 Cliente #}{{( o.company_id.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.number) }};
-{# 4 Numero Detalle #}{{ totals.line_num }};
-{# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{ line.product_id.default_code[:8] }};
-{# 7 Grado Alcoholico #};
-{# 8 Pinta #}{{ (line.price_total / line.quantity)|int if tipo == '033' else '' }}
+{# 2 NroLineaRef #}{{ totals.line_num }};
+{# 3 TpoDocRef #}{{ ref.class_id.prefix if ref.class_id.prefix == "HES" else ref.class_id.code }};
+{# 4 IndGlobal #};
+{# 5 FolioRef #}{{ digits_only(ref.name) or '' }};
+{# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
+{# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
+{# 9 CodRef #}{{ ref.code or "" }};
+{# 10 RazonRef #}{{ esc(ref.motive or '') }};
+{# 11 CorrFact #}
 {{ '\n' }}
 {% endfor %}
     </field>
@@ -370,32 +335,67 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_invoice_ref" model="etd.document.file">
-    <field name="name">REF References</field>
-    <field name="sequence">30</field>
+<record id="etd_file_xerox_invoice_ane" model="etd.document.file">
+    <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
     <field name="document_id" ref="etd_xerox_invoice"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
-{{ (path + '/') if prod else (path + 'Desa/') }}dte_ref_
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_ane_
+{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
+    <field name="template_text">
+{% set payment = o.payment_ids[:1] %}
+{# 1 Cliente #}{{ (o.company_id.vat or '').replace('.', '')[:8] }};
+{# 2 Tipo #}{{ o.class_id.code }};
+{# 3 Folio #}{{ digits_only(o.number) }};
+{# 4 Número copias #}2;
+{# 5 Observaciones #}{{ payment and ("Pagado %s - %s" % (payment.journal_id.name, payment.communication)) or "" }};
+{# 6 Fecha Cancelación #};
+{# 7 Medio de pago #}{{ 'Contado' if o.partner_id.payment_condition == 'immediate' or tipo == '039' else 'Solo firma' }};
+{# 8 Término del pago - días #};
+{# 9 Información de transporte #}{{ o.mapped('fsm_order_ids.vehicle_id')[:1].name or "000" }};
+{# 10 Código vendedor #}{{ o.user_id.ref or '' }};
+{# 11 Valor a pagar #}{{ o.amount_total|int }};
+{# 12 Lugar Emisión #}{{ esc(warehouse.name or '') }};
+{# 13 Código Precio #}{{ o.partner_id.ref }};
+{# 14 Local #}0;
+{# 15 Sector #}{{ digits_only(dayroute.name) }};
+{# 16 Territorio #}{{ o.user_id.ref }};
+{# 17 Carga #}1;
+{# 18 Depósito #}41;
+{# 19 Afecto IABA #};
+{# 20 IABA #};
+{# 21 Hora emisión #}{{o.create_date.strftime('%H:%M')}};
+{# 22 Afecto IVA #}{{ o.amount_base_tax|int }};
+{# 23 Número de pedido #}{{ digits_only(o.origin) }}
+{{ '\n' }}
+    </field>
+</record>
+
+<record id="etd_file_xerox_invoice_an2" model="etd.document.file">
+    <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
+    <field name="document_id" ref="etd_xerox_invoice"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ (path + '/') if prod else (path + 'Desa/') }}dte_an2_
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ center_code[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
 {% set totals = namespace(line_num=0) %}
-{% for ref in o.reference_ids[:30] %}
+{% for line in o.invoice_line_ids %}
 {% set totals.line_num = totals.line_num + 1 %}
-{# 1 Cliente #}{{( o.company_id.vat or '').replace('.', '')[:8] }};
-{# 2 Tipo #}{{ o.class_id.code }};
+{# 1 Cliente #}{{(o.company_id.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{ digits_only(o.number) }};
-{# 2 NroLineaRef #}{{ totals.line_num }};
-{# 3 TpoDocRef #}{{ ref.class_id.prefix if ref.class_id.prefix == "HES" else ref.class_id.code }};
-{# 4 IndGlobal #};
-{# 5 FolioRef #}{{ digits_only(ref.name) or '' }};
-{# 6 RUTOtr #}{{ ref.invoice_id.partner_id.vat or '' }};
-{# 8 FchRef #}{{ ref.date.strftime('%Y-%m-%d') }};
-{# 9 CodRef #}{{ ref.code or "" }};
-{# 10 RazonRef #}{{ esc(ref.motive or '') }};
-{# 11 CorrFact #}
+{# 4 Numero Detalle #}{{ totals.line_num }};
+{# 5 TpoCodigo #}INT1;
+{# 6 Código del item 01 #}{{ line.product_id.default_code[:8] }};
+{# 7 Grado Alcoholico #};
+{# 8 Pinta #}{{ ('0|' + ((line.price_total / line.quantity)|int)|string + '.0|') if tipo == '033' else '' }}
 {{ '\n' }}
 {% endfor %}
     </field>
