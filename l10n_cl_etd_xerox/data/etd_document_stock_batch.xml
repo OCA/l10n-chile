@@ -354,7 +354,7 @@
 {# 13 Código Precio #}{{ transp.ref }};
 {# 14 Local #}1;
 {# 15 Sector #}{{ digits_only(dayroute.name) }};
-{# 16 Territorio #}{{ esc(transp.name) }};
+{# 16 Territorio #}{{ esc(transp.name)[:35] }};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};
