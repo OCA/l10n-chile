@@ -351,8 +351,7 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}
-{{ totals.amount|int }}
+{# 64 MontoItem #}{{ totals.amount|int }}
 {{ '\n' }}
 {% endfor %}
     </field>
