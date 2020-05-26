@@ -19,6 +19,7 @@
         "connector_acp",
         "document",
         "res_partner_email_etd",
+        "l10n_cl_product",
         "l10n_cl_toponym",
         "l10n_cl_sii_activity",
         "l10n_cl_sii_folio",
