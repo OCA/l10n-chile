@@ -228,7 +228,7 @@
 {# 15 IndExe            #};
 {# 16 NmbItem           #}{{ esc(customer.name) }};
 {# 17 DscItem           #}{{ customer.vat }};
-{# 18 QtyRef            #};
+{# 18 QtyRef            #}1;
 {# 19 UnmdRef           #};
 {# 20 PecRef            #};
 {# 21 QtyItem           #};
@@ -297,7 +297,7 @@
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #}{{ esc(delivery_addr.street or '')[:60] }};
 {# 9 TpoCodigo #}GNM;
-{# 10 VlrCodigo #}0;
+{# 10 VlrCodigo #}{{ totals.quantity }};
 {# 11 TpoCodigo #}CER;
 {# 12 VlrCodigo #}0;
 {# 13 TpoCodigo #};
@@ -305,7 +305,7 @@
 {# 15 IndExe #};
 {# 16 NmbItem #}{{ esc(customer.name) }};
 {# 17 DscItem #}{{ customer.vat }};
-{# 18 QtyRef #}{{ totals.quantity }};
+{# 18 QtyRef #}1;
 {# 19 UnmdRef #};
 {# 20 PecRef #};
 {# 21 QtyItem #};
