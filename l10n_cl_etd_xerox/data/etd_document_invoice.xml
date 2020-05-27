@@ -9,8 +9,9 @@
 {% set prod = o.company_id.backend_acp_id.prod_environment %}
 {% set tipo = ("000%d" % o.class_id.code)[-3:] %}
 {% set company_code = o.company_id.backend_acp_id.xerox_company_code or "00" %}
-{% set origin = o.env['sale.order'].search([('name', '=', o.origin)]) or o.env['account.account'].search([('name', '=', o.origin)]) or False %}
-{% set warehouse = origin.warehouse_id[:1] or False %}
+{% set origin = o.env['account.invoice'].search([('number', '=', o.origin)]) %}
+{% set sale = o.env['sale.order'].search([('name', '=', o.origin)]) or o.env['sale.order'].search([('name', '=', origin.origin)]) %}
+{% set warehouse = sale.warehouse_id[:1] %}
 {% set center_code = warehouse.xerox_code or o.partner_id.city_id.fsm_route_id.territory_id.warehouse_id.xerox_code or "00" %}
 {% set date = o.date_invoice %}
 {% set truck = o.mapped('fsm_order_ids.vehicle_id')[:1].name or "00000" %}
