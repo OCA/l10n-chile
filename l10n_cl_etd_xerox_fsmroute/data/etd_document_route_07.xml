@@ -274,7 +274,7 @@
 {# 61 TipoRecargo       #};
 {# 62 ValorRecargo      #};
 {# 63 CodImpAdic        #};
-{# 64 MontoItem         #}{{ invoice.amount_total|int }};
+{# 64 MontoItem         #}{{ invoice.amount_total|int }}
 {{ '\n' }}
 {% endfor %}
 {# List Delivery Orders #}
@@ -472,7 +472,7 @@
 {# 5 TpoCodigo          #};
 {# 6 Código del item 01 #};
 {# 7 Grado Alcoholico   #};
-{# 8 Pinta              #};
+{# 8 Pinta              #}
 {{ '\n' }}
 {% endfor %}
 {# List Delivery Orders #}
