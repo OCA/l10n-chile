@@ -49,12 +49,8 @@ class EtdMixin(models.AbstractModel):
         res = company.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
-    def _prepare_jinja_context(self, now=None):
-        """Return a dictionary of keywords used in the template.
-
-        :return: Dictionary of keywords used in the template
-        """
-        escape_table = {
+    def prepare_character_mapping(self):
+        return {
             'á': 'a',
             'Á': 'A',
             'é': 'e',
@@ -69,8 +65,16 @@ class EtdMixin(models.AbstractModel):
             'Ú': 'U',
             'ü': 'u',
             'Ü': 'U',
-            'º': '*',
+            "\xba": '*',
+            "\xb0": '*',
         }
+
+    def _prepare_jinja_context(self, now=None):
+        """Return a dictionary of keywords used in the template.
+
+        :return: Dictionary of keywords used in the template
+        """
+        escape_table = self.prepare_character_mapping()
         return {
             "o": self,
             "now": now,
