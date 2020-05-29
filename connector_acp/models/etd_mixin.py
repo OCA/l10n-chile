@@ -267,7 +267,11 @@ class EtdMixin(models.AbstractModel):
         :param res_id: id of the document to sign
         """
         # Build the files for the document
-        file_dict = self.build_files()
+        now = fields.Datetime.context_timestamp(
+            self.env.user,
+            fields.Datetime.now()
+        )
+        file_dict = self.build_files(now=now)
         # Sign the document
         if self.company_id.signer == "odoo":
             # Use the SSL Certificate to sign the files
@@ -298,7 +302,7 @@ class EtdMixin(models.AbstractModel):
                 "%s Status: <b>%s</b>" % (backend.name, status.get('message'))
             )
             self.message_post(body=message)
-            self.date_sign = fields.Datetime.now()
+            self.date_sign = now
         else:
             message = _(
                 "ETD has been sent to %s but failed with"
