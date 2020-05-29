@@ -8,9 +8,9 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     ref_etd = fields.Char(
-        string="ETD Code", size=8, required=True,
+        string="ETD Code", size=8,
         help="Product code used for electronic invoicing and shipping. "
-             "Limited to 8 digits. Required and unique by company.")
+             "Limited to 8 digits. Unique by company.")
 
     _sql_constraints = [(
         "company_ref_etd",
