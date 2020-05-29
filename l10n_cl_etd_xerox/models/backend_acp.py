@@ -48,8 +48,8 @@ class BackendAcp(models.Model):
             xerox_code = file_name[47:52]
             xerox_path = self.xerox_path % (
                 today.strftime("%m"), xerox_code, today.strftime("%d"))
-            # 'Ctl'/'00CtlDesa' for non-legal documents
-            # '81Man'/'81ManDesa' for legal ones
+            # 'Ctl'/'00CtlDesa' if non-legal documents
+            # '81Man'/'81ManDesa' otherwise
             ctl_file = ctl_no_legal if file_name[8:10] == "ot" else ctl_legal
             # Number of lines of the file
             line_count = len(file_text.rstrip().splitlines())

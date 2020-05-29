@@ -13,7 +13,7 @@ class EtdMixin(models.AbstractModel):
         # If xerox_invoice=True
         if self.env.context.get('xerox_invoice', False):
             # Update xerox with the class code of the document to sign
-            code = str(self.class_id.code)
+            code = self.class_id.code
             self.env.context = dict(self.env.context)
             self.env.context.update({'xerox': code})
             return super().document_sign()
