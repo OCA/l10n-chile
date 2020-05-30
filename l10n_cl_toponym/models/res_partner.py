@@ -46,7 +46,7 @@ class ResPartner(models.Model):
                 # Format: XX.XXX.XXX-X
                 formatted_vat = \
                     vat[0:2] + "." + vat[2:5] + "." + vat[5:8] + "-" + vat[8]
-                self.vat = formatted_vat
+                self.vat = formatted_vat.upper()
             elif len(vat) != 12:
                 raise UserError(_("The VAT is not valid."))
 
