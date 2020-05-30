@@ -30,7 +30,7 @@ addon | version | summary
 [l10n_cl_sii_folio](l10n_cl_sii_folio/) | 12.0.1.1.2 | Sign your documents and send them to SII.
 [l10n_cl_sii_reference](l10n_cl_sii_reference/) | 12.0.1.0.0 | Store document references using SII nomenclature
 [l10n_cl_sii_reference_account](l10n_cl_sii_reference_account/) | 12.0.1.1.0 | Store document references using SII nomenclature
-[l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.3.0 | Cities, States and Regions of Chile
+[l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.3.1 | Cities, States and Regions of Chile
 [res_partner_email_etd](res_partner_email_etd/) | 12.0.1.0.0 | To receive Electronic Tax Documents
 
 [//]: # (end addons)
