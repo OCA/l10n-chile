@@ -60,7 +60,7 @@ class ResPartner(models.Model):
                 rec.dicom_count = 0
 
     @api.multi
-    def partner_dicom_action(self):
+    def res_partner_dicom_action(self):
         dicom_ids = self.mapped('dicom_ids')
         action = \
             self.env.ref(
