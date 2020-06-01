@@ -20,6 +20,7 @@ setuptools.setup(
         'odoo12-addon-l10n_cl_etd_xerox',
         'odoo12-addon-l10n_cl_etd_xerox_fsmroute',
         'odoo12-addon-l10n_cl_invoicing_policy',
+        'odoo12-addon-l10n_cl_product',
         'odoo12-addon-l10n_cl_sii',
         'odoo12-addon-l10n_cl_sii_activity',
         'odoo12-addon-l10n_cl_sii_folio',
