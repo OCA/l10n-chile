@@ -40,7 +40,7 @@
 {# 5 FechEmis #}{{ o.date_invoice and o.date_invoice.strftime('%Y-%m-%d') }};
 {# 6 IndNoRebaja TODO Nota de credito fuera de plazo #};
 {# 7 TipoDespacho TODO o.transport_type #}{{2 if o.class_id.code in (33, 52) else ''}};
-{# 8 IndTraslado TODO o.move_reason #}{{2 if o.class_id.code in (33, 52) else ''}};
+{# 8 IndTraslado TODO o.move_reason #};
 {# 9 IndServicio TODO-??? #}{{3 if o.class_id.code == 39 else ''}};
 {# 10 Mnt Bruto #};
 {# 11 FmaPago #}{{ 1 if o.class_id.code == 39 else 2 }};
