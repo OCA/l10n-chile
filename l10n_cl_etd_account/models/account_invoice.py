@@ -25,7 +25,6 @@ class AccountInvoice(models.Model):
         string='Untaxed Amount', store=True, readonly=True,
         compute='_compute_amount', track_visibility='always')
 
-    @api.one
     @api.depends(
         'invoice_line_ids.price_subtotal', 'tax_line_ids.amount',
         'tax_line_ids.amount_rounding', 'currency_id', 'company_id',
