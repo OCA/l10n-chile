@@ -22,7 +22,7 @@ class BackendAcp(models.Model):
 
     @api.model
     def _ftp_upload_directory(
-            self, ftp_session,from_local_dir, to_server_dir):
+            self, ftp_session, from_local_dir, to_server_dir):
         """
         Given a local directory, upload all files and subdirs.
         - change server work directory
