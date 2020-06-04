@@ -2,4 +2,4 @@
 * In Odoo, go to Settings
 * Activate the developer mode
 * Go to Settings > Technical > Parameters > System Parameters
-* Search and set your `dicom.user` and `dicom.password` with the info from Dicom
+* Search and set your `dicom.url`, `dicom.user` and `dicom.password` with the info from Dicom
