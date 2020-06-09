@@ -51,11 +51,13 @@ msgstr ""
 "El IVA de la empresa %s debe ser el mismo IVA asignado a la empresa: %s!"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__create_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__create_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_date
 msgid "Created on"
 msgstr "Creado en"
@@ -71,14 +73,26 @@ msgid "DTE Caf"
 msgstr "CAF DTE"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__display_name
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__display_name
 msgid "Display Name"
 msgstr "Nombre mostrado"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__class_id
+msgid "Document Class"
+msgstr "SII Tipo de Documento"
+
+#. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__class_id
 msgid "Document Type"
 msgstr "Tipo de Documento"
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal__journal_document_class_ids
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
+msgid "Documents"
+msgstr "Documentos"
 
 #. module: l10n_cl_sii_folio
 #: selection:ir.sequence.folio,status:0
@@ -102,6 +116,13 @@ msgid "End Number"
 msgstr "Número Final"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__sequence_id
+#, fuzzy
+#| msgid "Sequence"
+msgid "Entry Sequence"
+msgstr "Secuencia"
+
+#. module: l10n_cl_sii_folio
 #: sql_constraint:ir.sequence.folio:0
 msgid "Error! Filename Already Exist!"
 msgstr "Error! El archivo ya existe!"
@@ -122,6 +143,7 @@ msgid "Forced By CAF"
 msgstr "Forzado por el CAF"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__id
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__id
 msgid "ID"
 msgstr "ID (identificación)"
@@ -147,21 +169,42 @@ msgid "Issued Date"
 msgstr "Fecha de Emisión"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_journal
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_journal_document
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_journal_sii_document_class_form
+msgid "Journal SII Documents"
+msgstr "Documento diario del SII"
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document____last_update
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__write_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_uid
 msgid "Last Updated by"
 msgstr "Última actualización de"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__write_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__name
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__name
 msgid "Name"
 msgstr "Nombre"
@@ -170,6 +213,18 @@ msgstr "Nombre"
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__nivel_minimo
 msgid "Nivel Mínimo de Folios"
 msgstr "Nivel Mínimo de Folios"
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/account_move.py:46
+#, python-format
+msgid "Please define a sequence for the credit notes"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/account_move.py:57
+#, python-format
+msgid "Please define a sequence on the journal."
+msgstr ""
 
 #. module: l10n_cl_sii_folio
 #: model_terms:ir.actions.act_window,help:l10n_cl_sii_folio.action_caf_files
@@ -207,7 +262,15 @@ msgstr ""
 "                igual al del DTE para que el documento funcione bien!"
 
 #. module: l10n_cl_sii_folio
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
+#, fuzzy
+#| msgid "SII Document Class"
+msgid "SII Documents"
+msgstr "SII Tipo de Documento"
+
+#. module: l10n_cl_sii_folio
 #: model:ir.model,name:l10n_cl_sii_folio.model_ir_sequence
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__sequence
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__sequence_id
 msgid "Sequence"
 msgstr "Secuencia"
@@ -228,13 +291,19 @@ msgid "Status"
 msgstr "Estado"
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:112
+#: code:addons/l10n_cl_sii_folio/models/account_journal_document.py:43
+#, python-format
+msgid "The document class must be the same as the one on the sequence!"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:110
 #, python-format
 msgid "There is no CAF available for %s."
 msgstr "No hay CAF disponibles para %s."
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:94
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:92
 #, python-format
 msgid ""
 "There is no CAF available for the sequence of %s. Please upload a new CAF or "
@@ -254,6 +323,13 @@ msgstr ""
 "nuevo CAF al SII."
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_account_journal_document__sequence_id
+msgid ""
+"This field contains the information related to the numbering\n"
+"        of the documents entries of this document type."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
 #: model:ir.model.fields,help:l10n_cl_sii_folio.field_ir_sequence_folio__caf_file
 msgid "Upload the CAF XML File in this holder"
 msgstr "Cargue aquí el archivo XML de CAF"
@@ -267,6 +343,11 @@ msgstr "Nivel de Uso"
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__rut_n
 msgid "VAT"
 msgstr "RUT"
+
+#. module: l10n_cl_sii_folio
+#: sql_constraint:account.journal.document:0
+msgid "You can only have one sequence per journal and document class."
+msgstr ""
 
 #~ msgid "Active"
 #~ msgstr "Activo"
@@ -505,9 +586,6 @@ msgstr "RUT"
 #~ msgid "Document"
 #~ msgstr "Documentos"
 
-#~ msgid "Document Class"
-#~ msgstr "SII Tipo de Documento"
-
 #~ msgid "Document Classes"
 #~ msgstr "Tipos de documentos"
 
@@ -526,9 +604,6 @@ msgstr "RUT"
 
 #~ msgid "Document type"
 #~ msgstr "Tipo de Documento"
-
-#~ msgid "Documents"
-#~ msgstr "Documentos"
 
 #~ msgid "Documents Class"
 #~ msgstr "Clases de Documento"
@@ -629,23 +704,14 @@ msgstr "RUT"
 #~ msgid "Issuers"
 #~ msgstr "Emisor"
 
-#~ msgid "Journal"
-#~ msgstr "Diario"
-
 #~ msgid "Journal Documents Configuration"
 #~ msgstr "Configuración de documentos de diario"
-
-#~ msgid "Journal Entries"
-#~ msgstr "Asientos contables"
 
 #~ msgid "Journal Item"
 #~ msgstr "Apunte contable"
 
 #~ msgid "Journal Items"
 #~ msgstr "Apuntes contables"
-
-#~ msgid "Journal SII Documents"
-#~ msgstr "Documento diario del SII"
 
 #~ msgid "Journal Turns"
 #~ msgstr "Giros de Diarios"
