@@ -24,7 +24,7 @@
                         <field name="final_nm"/>
                         <field name="issued_date"/>
                         <field name="expiration_date" />
-                        <field name="company_id"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
                         <field name="rut_n"/>
                         <field name="sequence_id"/>
                         <field name="use_level" widget="progressbar" backgrounds="blue:status == 'in_use';red:status == 'spent'"/>
