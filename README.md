@@ -28,7 +28,7 @@ addon | version | summary
 [l10n_cl_product](l10n_cl_product/) | 12.0.1.0.0 | Manage product codes for electronic invoicing
 [l10n_cl_sii](l10n_cl_sii/) | 12.0.1.0.0 | Provides the Settings > SII menuitem
 [l10n_cl_sii_activity](l10n_cl_sii_activity/) | 12.0.1.2.0 | Set the SII Activity on Partners
-[l10n_cl_sii_folio](l10n_cl_sii_folio/) | 12.0.1.1.2 | Sign your documents and send them to SII.
+[l10n_cl_sii_folio](l10n_cl_sii_folio/) | 12.0.1.2.0 | Sign your documents and send them to SII.
 [l10n_cl_sii_reference](l10n_cl_sii_reference/) | 12.0.1.0.0 | Store document references using SII nomenclature
 [l10n_cl_sii_reference_account](l10n_cl_sii_reference_account/) | 12.0.1.1.0 | Store document references using SII nomenclature
 [l10n_cl_toponym](l10n_cl_toponym/) | 12.0.1.3.1 | Cities, States and Regions of Chile
