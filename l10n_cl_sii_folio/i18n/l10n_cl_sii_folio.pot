@@ -46,11 +46,13 @@ msgid "Company vat %s should be the same that assigned company's vat: %s!"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__create_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__create_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__create_date
 msgid "Created on"
 msgstr ""
@@ -66,13 +68,25 @@ msgid "DTE Caf"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__display_name
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__class_id
+msgid "Document Class"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence__class_id
 msgid "Document Type"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal__journal_document_class_ids
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
+msgid "Documents"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
@@ -90,6 +104,11 @@ msgstr ""
 #. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__final_nm
 msgid "End Number"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__sequence_id
+msgid "Entry Sequence"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
@@ -113,6 +132,7 @@ msgid "Forced By CAF"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__id
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__id
 msgid "ID"
 msgstr ""
@@ -138,21 +158,42 @@ msgid "Issued Date"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_journal
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__journal_id
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_move
+msgid "Journal Entries"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model,name:l10n_cl_sii_folio.model_account_journal_document
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_journal_sii_document_class_form
+msgid "Journal SII Documents"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document____last_update
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__write_uid
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__write_date
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__name
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__name
 msgid "Name"
 msgstr ""
@@ -160,6 +201,18 @@ msgstr ""
 #. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__nivel_minimo
 msgid "Nivel Mínimo de Folios"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/account_move.py:46
+#, python-format
+msgid "Please define a sequence for the credit notes"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/account_move.py:57
+#, python-format
+msgid "Please define a sequence on the journal."
 msgstr ""
 
 #. module: l10n_cl_sii_folio
@@ -192,7 +245,13 @@ msgid "SII Document Type for this CAF is %s and selected\n"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
+msgid "SII Documents"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
 #: model:ir.model,name:l10n_cl_sii_folio.model_ir_sequence
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__sequence
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__sequence_id
 msgid "Sequence"
 msgstr ""
@@ -213,13 +272,19 @@ msgid "Status"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:112
+#: code:addons/l10n_cl_sii_folio/models/account_journal_document.py:43
+#, python-format
+msgid "The document class must be the same as the one on the sequence!"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:110
 #, python-format
 msgid "There is no CAF available for %s."
 msgstr ""
 
 #. module: l10n_cl_sii_folio
-#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:94
+#: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:92
 #, python-format
 msgid "There is no CAF available for the sequence of %s. Please upload a new CAF or request a new one to SII."
 msgstr ""
@@ -228,6 +293,12 @@ msgstr ""
 #: code:addons/l10n_cl_sii_folio/models/ir_sequence.py:65
 #, python-format
 msgid "There is no folio available for the document %s folio %s. Please request a new CAF to SII."
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: model:ir.model.fields,help:l10n_cl_sii_folio.field_account_journal_document__sequence_id
+msgid "This field contains the information related to the numbering\n"
+"        of the documents entries of this document type."
 msgstr ""
 
 #. module: l10n_cl_sii_folio
@@ -243,5 +314,10 @@ msgstr ""
 #. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_ir_sequence_folio__rut_n
 msgid "VAT"
+msgstr ""
+
+#. module: l10n_cl_sii_folio
+#: sql_constraint:account.journal.document:0
+msgid "You can only have one sequence per journal and document class."
 msgstr ""
 
