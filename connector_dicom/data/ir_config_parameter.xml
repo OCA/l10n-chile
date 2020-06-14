@@ -12,7 +12,7 @@
 
     <record model='ir.config_parameter' id='dicom_url'>
         <field name='key'>dicom.url</field>
-        <field name='value'>https://qws.equifax.cl/osb-efx/equifax/Platinum360PassengerV2?wsdl</field>
+        <field name='value'></field>
     </record>
 
 </odoo>
