@@ -31,10 +31,11 @@ class AccountInvoice(models.Model):
         'date_invoice', 'type')
     def _compute_amount(self):
         super()._compute_amount()
-        self.amount_base_tax = \
-            sum(line.price_subtotal
-                for line in self.invoice_line_ids
-                if line.invoice_line_tax_ids)
+        for rec in self:
+            rec.amount_base_tax = \
+                sum(line.price_subtotal
+                    for line in rec.invoice_line_ids
+                    if line.invoice_line_tax_ids)
 
     def _compute_class_id_domain(self):
         return [('document_type', 'in', ('invoice', 'invoice_in',
