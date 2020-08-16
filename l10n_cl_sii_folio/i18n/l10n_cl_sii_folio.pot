@@ -84,6 +84,7 @@ msgid "Document Type"
 msgstr ""
 
 #. module: l10n_cl_sii_folio
+#: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_bank_statement_import_journal_creation__journal_document_class_ids
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal__journal_document_class_ids
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
 msgid "Documents"
