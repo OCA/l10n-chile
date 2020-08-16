@@ -118,7 +118,6 @@ msgstr "Número Final"
 #. module: l10n_cl_sii_folio
 #: model:ir.model.fields,field_description:l10n_cl_sii_folio.field_account_journal_document__sequence_id
 #, fuzzy
-#| msgid "Sequence"
 msgid "Entry Sequence"
 msgstr "Secuencia"
 
@@ -264,7 +263,6 @@ msgstr ""
 #. module: l10n_cl_sii_folio
 #: model_terms:ir.ui.view,arch_db:l10n_cl_sii_folio.view_account_journal_form
 #, fuzzy
-#| msgid "SII Document Class"
 msgid "SII Documents"
 msgstr "SII Tipo de Documento"
 
