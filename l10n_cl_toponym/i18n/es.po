@@ -418,7 +418,6 @@ msgstr ""
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_country
 #, fuzzy
-#| msgid "Country state"
 msgid "Country"
 msgstr "Provincia"
 
@@ -1445,7 +1444,6 @@ msgstr "Nombre de la Región"
 #. module: l10n_cl_toponym
 #: model:ir.model,name:l10n_cl_toponym.model_res_country_state_region
 #, fuzzy
-#| msgid "Region Code"
 msgid "Region of a state"
 msgstr "Código de la Región"
 
