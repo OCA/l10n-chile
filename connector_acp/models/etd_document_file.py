@@ -10,8 +10,10 @@ from odoo.exceptions import UserError
 class EtdDocumentFile(models.Model):
     _name = "etd.document.file"
     _description = "Template for Electronic Tax Documents To Sign"
+    _order = "sequence asc"
 
     name = fields.Char(string="Name", required=True)
+    sequence = fields.Integer(string="Sequence")
     document_id = fields.Many2one("etd.document", string="Document", required=True)
     file_type = fields.Selection(
         [("xml", "XML"), ("txt", "TXT")], default="xml", string="File Type"

@@ -5,6 +5,13 @@
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
+            <button name="action_invoice_open" position="after">
+                <field name="date_sign" invisible="1" />
+                <button name="document_sign"
+                        type="object"
+                        string="Sign"
+                        attrs="{'invisible': ['|', '|', ('class_id', '=', False), ('state', 'not in', ['open', 'paid']), ('date_sign', '!=', False)]}" />
+            </button>
             <field name="payment_term_id" position="before">
                 <field name="class_id"/>
             </field>

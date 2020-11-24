@@ -16,6 +16,9 @@ class BackendAcp(models.Model):
     user = fields.Char(string="User",)
     password = fields.Char(string="Password",)
     active = fields.Boolean(string="Active", default=True)
+    prod_environment = fields.Boolean(
+        "Environment",
+        help="Set to True if your credentials are certified for production.")
     status = fields.Selection(
         (("unconfirmed", "Unconfirmed"), ("confirmed", "Confirmed")),
         default="unconfirmed",
@@ -26,6 +29,14 @@ class BackendAcp(models.Model):
         default="nd",
         required="True",
     )
+    auto_sign = fields.Boolean(
+        string="Auto sign",
+        help="Automatically sign or send the document for signing when the "
+             "document is confirmed/validated.")
+
+    def toggle_prod_environment(self):
+        for rec in self:
+            rec.prod_environment = not rec.prod_environment
 
     @api.onchange('host', 'port', 'user', 'password')
     def onchange_status(self):

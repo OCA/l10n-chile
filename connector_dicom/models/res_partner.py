@@ -114,6 +114,5 @@ class ResPartner(models.Model):
                 self.dicom_date = fields.Date.context_today(self)
             Count += 1
 
-    @api.one
     def update_dicom(self):
         self.onchange_documents()

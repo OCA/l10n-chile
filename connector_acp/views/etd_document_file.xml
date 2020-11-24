@@ -1,10 +1,20 @@
 <odoo>
 
+    <record model="ir.ui.view" id="view_etd_document_file_tree">
+        <field name="name">etd.document.file.tree</field>
+        <field name="model">etd.document.file</field>
+        <field name="arch" type="xml">
+            <tree string="ETD Document Files">
+                <field name="sequence" widget="handle"/>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_etd_document_file_form">
         <field name="name">etd.document.file.form</field>
         <field name="model">etd.document.file</field>
         <field name="arch" type="xml">
-
             <form>
                 <group>
                     <group>
@@ -14,19 +24,17 @@
                         <field name="validator"/>
                     </group>
                     <group>
+                        <field name="sequence" />
                         <field name="grouped"/>
                         <field name="save"/>
                         <field name="document_id"/>
                     </group>
                 </group>
-
                 <separator name="separator_template" string="Or use text template"/>
                 <button name="action_test" type="object" string="Test" />
                 <field name="template_name" placeholder="Filename template" />
                 <field name="template_text" placehoder="Text file template" widget="ace" options="{'mode': 'python'}"/>
-
             </form>
-
         </field>
     </record>
 

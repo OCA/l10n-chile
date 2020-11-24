@@ -1,0 +1,28 @@
+<odoo>
+
+    <record id="fsm_route_dayroute_form_xerox" model="ir.ui.view">
+        <field name="name">fsm.route.dayroute Xerox</field>
+        <field name="inherit_id" ref="fieldservice_route.fsm_route_dayroute_form"/>
+        <field name="model">fsm.route.dayroute</field>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="before">
+                <field name="xerox_pending_sign_count" invisible="True" />
+                <field name="is_closed" invisible="True" />
+                <button name="action_xerox_send_files"
+                        type="object"
+                        class="oe_highlight"
+                        string="Sign"
+                        attrs="{'invisible': ['|', ('is_closed', '!=', False), ('xerox_pending_sign_count', '=', 0)]}"
+                />
+                <button name="action_xerox_send_files"
+                        type="object"
+                        class="oe_highlight"
+                        string="Sign"
+                        context="{'xerox': 61}"
+                        attrs="{'invisible': ['|', ('is_closed', '=', False), ('xerox_pending_sign_count', '=', 0)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>

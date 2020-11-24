@@ -9,4 +9,8 @@ from odoo import fields, models
 class EtdDocument(models.Model):
     _inherit = "etd.document"
 
-    model = fields.Selection(selection_add=[("stock.picking", "Picking")])
+    model = fields.Selection(
+        selection_add=[
+            ("stock.picking", "Picking"),
+            ("stock.picking.batch", "Batch Picking"),
+        ])
