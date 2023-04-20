@@ -169,11 +169,11 @@ class EtdCertificate(models.Model):
     priv_key = fields.Text(string="Private Key", readonly=True)
     authorized_users_ids = fields.Many2many("res.users", string="Authorized Users")
 
-    @api.multi
+
     def action_clean1(self):
         self.write(zero_values)
 
-    @api.multi
+
     def action_process(self):
         filecontent = base64.b64decode(self.key_file)
         self.load_cert_pk12(filecontent)
