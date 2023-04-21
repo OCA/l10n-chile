@@ -11,8 +11,8 @@ from jinja2 import Environment, BaseLoader
 from lxml import etree
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
-from ...queue_job.job import job
-from ...queue_job.exception import RetryableJobError
+from queue_job.job import job
+from queue_job.exception import RetryableJobError
 
 
 _logger = logging.getLogger(__name__)

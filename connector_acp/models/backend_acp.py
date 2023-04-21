@@ -5,7 +5,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import api, fields, models
 
-
 class BackendAcp(models.Model):
     _name = "backend.acp"
     _description = "Backend of Authorized Certification Providers"
@@ -17,14 +16,14 @@ class BackendAcp(models.Model):
     password = fields.Char(string="Password",)
     active = fields.Boolean(string="Active", default=True)
     status = fields.Selection(
-        (("unconfirmed", "Unconfirmed"), ("confirmed", "Confirmed")),
+        [("unconfirmed", "Unconfirmed"), ("confirmed", "Confirmed")],
         default="unconfirmed",
-        required="True",
+        required=True,
     )
     connection_type = fields.Selection(
         [("nd", "Not defined")],
         default="nd",
-        required="True",
+        required=True,
     )
 
     @api.onchange('host', 'port', 'user', 'password')
