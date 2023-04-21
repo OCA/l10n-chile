@@ -33,7 +33,7 @@
                            attrs="{'readonly':[('status', '!=', 'unverified')]}"/>
                 </group>
                 <div attrs="{'invisible': [('status', '=', 'unverified')]}">
-                    <group col="4">
+                    <group colspan="4">
                         <field name="not_before"/>
                         <field name="not_after"/>
                         <field name="final_date"/>
