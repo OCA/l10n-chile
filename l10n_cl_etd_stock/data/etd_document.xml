@@ -1,8 +1,0 @@
-<odoo>
-
-    <record id="etd_document_stock_picking" model="etd.document">
-        <field name="name">Picking</field>
-        <field name="model">stock.picking</field>
-    </record>
-
-</odoo>
