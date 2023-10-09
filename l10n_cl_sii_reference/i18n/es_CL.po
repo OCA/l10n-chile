@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cl_sii_reference
+# 	* l10n_cl_sii_reference
 #
 msgid ""
 msgstr ""
@@ -179,7 +179,8 @@ msgstr "Emisores"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_class__document_type
-msgid "It defines some behaviours on automatic journal selection and\n"
+msgid ""
+"It defines some behaviours on automatic journal selection and\n"
 "                in menus where it is shown."
 msgstr ""
 "Define algún comportamiento en la selección de diarios y\n"
@@ -234,8 +235,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: l10n_cl_sii_reference
-#: sql_constraint:sii.document.letter:0
-#: sql_constraint:sii.responsibility:0
+#: sql_constraint:sii.document.letter:0 sql_constraint:sii.responsibility:0
 msgid "Name must be unique!"
 msgstr "¡Nombre debe ser único!"
 
@@ -266,7 +266,8 @@ msgstr "Prefijo"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_document_class__prefix
-msgid "Prefix for Documents Codes on Invoices and Account Moves.\n"
+msgid ""
+"Prefix for Documents Codes on Invoices and Account Moves.\n"
 "                For eg. 'FAC' will build 'FAC 00001' Document Number"
 msgstr ""
 "Prefijo para Códigos de Documentos en Facturas y Asientos Contables.\n"
@@ -425,7 +426,9 @@ msgstr "Código de Pagador de Impuesto"
 
 #. module: l10n_cl_sii_reference
 #: model:ir.model.fields,help:l10n_cl_sii_reference.field_sii_concept_type__product_types
-msgid "Translate the product type to this SII concept. Types must be a subset of adjust, consu and service separated by commas."
+msgid ""
+"Translate the product type to this SII concept. Types must be a subset of "
+"adjust, consu and service separated by commas."
 msgstr ""
 "Traduzca el tipo de producto a este concepto SII. Los tipos deben ser un "
 "subconjunto de ajuste, consumible y servicio separados por comas."
@@ -454,7 +457,8 @@ msgstr "¡Advertencia!"
 #. module: l10n_cl_sii_reference
 #: code:addons/l10n_cl_sii_reference/models/sii_concept_type.py:30
 #, python-format
-msgid "You provided an invalid list of product types. Must be separated by commas."
+msgid ""
+"You provided an invalid list of product types. Must be separated by commas."
 msgstr ""
 "Usted proporcionó una lista inválida de tipos de productos. Debe estar "
 "separado por comas."
