@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cl_chart_of_account
+# 	* l10n_cl_chart_of_account
 #
 msgid ""
 msgstr ""
@@ -17,8 +17,7 @@ msgstr ""
 "X-Generator: Weblate 3.8\n"
 
 #. module: l10n_cl_chart_of_account
-#: selection:account.tax,sii_type:0
-#: selection:account.tax.template,sii_type:0
+#: selection:account.tax,sii_type:0 selection:account.tax.template,sii_type:0
 msgid "Anticipated"
 msgstr "Anticipado"
 
@@ -61,8 +60,7 @@ msgid "Invoice Tax"
 msgstr "Impuesto de Factura"
 
 #. module: l10n_cl_chart_of_account
-#: selection:account.tax,sii_type:0
-#: selection:account.tax.template,sii_type:0
+#: selection:account.tax,sii_type:0 selection:account.tax.template,sii_type:0
 #: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_invoice__amount_retention
 #: model:ir.model.fields,field_description:l10n_cl_chart_of_account.field_account_invoice_tax__amount_retention
 msgid "Retention"
