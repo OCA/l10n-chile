@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* connector_acp_ftp
+# 	* connector_acp_ftp
 #
 msgid ""
 msgstr ""
