@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_cl_etd_xerox
+# 	* l10n_cl_etd_xerox
 #
 msgid ""
 msgstr ""
@@ -38,7 +38,9 @@ msgstr "Enviar Inmediatamente"
 
 #. module: l10n_cl_etd_xerox
 #: model:ir.model.fields,help:l10n_cl_etd_xerox.field_backend_acp__send_immediately
-msgid "Send documents immediately to this backend Otherwise they should wait to be sent by a backgroung scheduler job."
+msgid ""
+"Send documents immediately to this backend Otherwise they should wait to be "
+"sent by a backgroung scheduler job."
 msgstr ""
 "Enviar documentos inmediatamente a este backend, de lo contrario debe "
 "esperar a ser enviado por la tarea programada."
