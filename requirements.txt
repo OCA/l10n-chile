@@ -1,12 +1,5 @@
-cchardet
-dicttoxml
-Jinja2==2.10.1
-M2Crypto
-num2words
-pdf417gen
-pysftp
-signxml
-suds-py3
-urllib3
-xlsxwriter
+# generated from manifests external_dependencies
+collections
+jinja2
+lxml
 xmltodict
