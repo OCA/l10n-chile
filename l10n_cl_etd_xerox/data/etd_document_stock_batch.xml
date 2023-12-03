@@ -1,47 +1,48 @@
 <odoo noupdate="1"><!-- These definitions are customer configurable -->
 
-<record id="etd_xerox_stock" model="etd.document">
-    <field name="name">Xerox Stock</field>
-    <field name="model">stock.picking</field>
+<record id="etd_xerox_stock_batch" model="etd.document">
+    <field name="name">Xerox Stock Batch</field>
+    <field name="model">stock.picking.batch</field>
     <field name="invoicing_policy"/>
     <field name="template_text_include">
 {% set path = o.company_id.backend_acp_id.xerox_company_code + o.company_id.backend_acp_id.xerox_company_short_name %}
 {% set prod = o.company_id.backend_acp_id.prod_environment %}
 {% set tipo = ("000%d" % o.class_id.code)[-3:] %}
-{% set company = o.company_id %}
-{% set warehouse  = o.sale_id.warehouse_id %}
-{% set dayroute  = o.fsm_order_id.dayroute_id %}
-{% set vehicle  = o.fsm_vehicle_id %}
+{% set company = o.mapped('picking_ids.company_id')[:1] %}
+{% set warehouse  = o.mapped('picking_ids.sale_id.warehouse_id')[:1] %}
+{% set dayroute  = o.mapped('picking_ids.fsm_order_id.dayroute_id')[:1] %}
+{% set vehicle  = o.vehicle_id %}
 
 {% set company_code = company.backend_acp_id.xerox_company_code or "00" %}
-{% set date = o.scheduled_date %}
+{% set date = o.date %}
 {% set truck = (vehicle.name or "")[-5:].zfill(5) %}
 {% set shift = (dayroute.name or "")[-5:].zfill(5) %}
 {% set center = (warehouse.xerox_code or "")[-5:].zfill(5) %}
 {% set index = "000" %}
 
 {% set cliente_rut = (company.vat or '').replace('.', '')[:8] %}
-{% set emisor = o.company_id.partner_id %}
-{% set origen = o.sale_id.warehouse_id.partner_id %}
-{% set recep = o.partner_id.parent_id or o.partner_id %}
-{% set dest = o.partner_id %}
-{% set transp = o.fsm_order_id.person_id.commercial_partner_id %}
+{% set emisor = company.partner_id %}
+{% set origen = warehouse.partner_id %}
+{% set recep = company.partner_id %}
+{% set dest = warehouse.partner_id %}
+{% set transp = o.vehicle_id.person_id.partner_id.commercial_partner_id %}
 
-{% set sales = o.sale_id %}
-{% set picking_lines = o.move_ids_without_package %}
+{% set sales = o.mapped('picking_ids.sale_id') %}
+{% set picking_lines = o.mapped('picking_ids.move_ids_without_package') %}
 {% set totals = namespace(amount_total=0, amount_tax=0, amount_untaxed=0) %}
 {% for sale in sales %}
     {% set totals.amount_total = totals.amount_total + sale.amount_total %}
     {% set totals.amount_tax = totals.amount_tax + sale.amount_tax %}
     {% set totals.amount_untaxed = totals.amount_untaxed + sale.amount_untaxed %}
 {% endfor %}
+{% set lines = o.get_xerox_lines() %}
 </field>
 </record>
 
-<record id="etd_file_xerox_stock_cab" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_cab" model="etd.document.file">
     <field name="name">CAB Header</field>
     <field name="sequence">10</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
@@ -51,23 +52,23 @@
     <field name="template_text">
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Version #}1.0;
-{# 3 Tipo #}{{ o.class_id.code }};
+{# 3 Tipo #}{{o.class_id.code}};
 {# 4 Folio #}{{ digits_only(o.name) }};
-{# 5 FechEmis #}{{ date and date.strftime('%Y-%m-%d') }};
+{# 5 FechEmis #}{{ date and date.strftime('%Y-%m-%d')}};
 {# 6 IndNoRebaja #};
 {# 7 TipoDespacho TODO x.transport_type #}2;
-{# 8 IndTraslado TODO x.move_reason #}{{ 2 if o.class_id.code in (33, 52) else '' }};
+{# 8 IndTraslado TODO x.move_reason #}{{2 if o.class_id.code in (33, 52) else ''}};
 {# 9 IndServicio #};
 {# 10 Mnt Bruto #};
 {# 11 FmaPago #}{{ 1 if o.class_id.code == 39 else 2 }};
-{# 12 FechCancel #}{{ date and date.strftime('%Y-%m-%d') }};
+{# 12 FechCancel #}{{ date and date.strftime('%Y-%m-%d')}};
 {# 13 PeriodoDesde #};
 {# 14 PeriodoHasta #};
 {# 15 MedioPago #};
 {# 16 TermPagoCdg #};
 {# 17 TermPagoDias #};
-{# 18 FchVenc #}{{ date and date.strftime('%Y-%m-%d') }};
-{# 19 RUTEmisor #}{{ (emisor.vat or '').replace('.', '') }};
+{# 18 FchVenc #}{{ date and date.strftime('%Y-%m-%d')}};
+{# 19 RUTEmisor #}{{(emisor.vat or '').replace('.', '')}};
 {# 20 RznSoc #}{{ esc(emisor.name) }};
 {# 21 GiroEmis #}{{ esc(emisor.activity_description or '.') }};
 {# 22 Acteco #}{{ emisor.sii_activity_id.code }};
@@ -80,8 +81,8 @@
 {# 29 RUTMandante #};
 {# 30 RUTRecep #}{{ (recep.vat or '').replace('.', '') }};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep #}{{ esc(recep.commercial_partner_id.name) }};
-{# 33 GiroRecep #}{{ esc(recep.commercial_partner_id.activity_description[:39] or '.') }};
+{# 32 RznSocRecep #}{{ esc(recep.name) }};
+{# 33 GiroRecep #}{{ esc(recep.activity_description[:39] or '.') }};
 {# 34 Contacto #};
 {# 35 DirRecep #}{{ esc(' '.join([recep.street or '', recep.street2 or ''])[:60]) }};
 {# 36 CmnaRecep #}{{ esc(recep.city_id.name or '') }};
@@ -91,7 +92,7 @@
 {# 40 CiudadPostal #};
 {# 41 RUTSolicita #};
 {# 42 Patente #};
-{# 43 RUTTrans TODO x.carrier_id.partner_id.vat #};
+{# 43 RUTTrans #}{{ transp.vat }};
 {# 44 DirDest #}{{ esc(' '.join([dest.street or '', dest.street2 or ''])[:60]) }};
 {# 45 CmnaDest #}{{ esc(dest.city_id.name or '') }};
 {# 46 CiudadDest #}{{ esc(dest.city or '') }};
@@ -202,26 +203,27 @@
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_det" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_det" model="etd.document.file">
     <field name="name">DET Detail</field>
     <field name="sequence">20</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
     <field name="template_name">
 {{ (path + '/') if prod else (path + 'Desa/') }}dte_det_
-{{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
+{{ company_code }}_{{ tipo }}_{{ now.strftime('%Y%m%d_%H%M%S') }}_{{ truck }}_{{ shift }}_{{ index }}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines %}
+{% for key, vals in lines.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
+{% set product, uom = key %}
 {# 1 Cliente #}{{ cliente_rut }};
 {# 2 Tipo #}{{ o.class_id.code }};
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 NroLinDet #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 VlrCodigo #}{{ line.product_id.ref_etd[:8] }};
+{# 6 VlrCodigo #}{{ product.ref_etd[:8] }};
 {# 7 TpoCodigo #};
 {# 8 VlrCodigo #};
 {# 9 TpoCodigo #};
@@ -231,12 +233,12 @@
 {# 13 TpoCodigo #};
 {# 14 VlrCodigo #};
 {# 15 IndExe #};
-{# 16 NmbItem #}{{ esc(line.product_id.name)[:40] }};
+{# 16 NmbItem #}{{ esc(product.name[:40]) }};
 {# 17 DscItem #};
 {# 18 QtyRef #};
 {# 19 UnmdRef #};
 {# 20 PecRef #};
-{# 21 QtyItem #}{{ (line.quantity_done or line.product_uom_qty) }};
+{# 21 QtyItem #}{{ vals['quantity'] }};
 {# 22 SubQty #};
 {# 23 SubCod #};
 {# 24 SubQty #};
@@ -249,14 +251,14 @@
 {# 31 SubCod #};
 {# 32 FechElabor #};
 {# 33 FechVencim #};
-{# 34 UnmdItem #}{{ line.product_uom.name[:2] }};
-{# 35 PrcItem #}{{ line.sale_line_id.price_unit|int }};
+{# 34 UnmdItem #}{{ uom.name[:2] }};
+{# 35 PrcItem #}{{ vals['price']|int }};
 {# 36 PrcOtrMon #};
 {# 37 Moneda #};
 {# 38 FctConv #};
-{# 39 DescuentoPct #}{{ line.sale_line_id.discount|int or '' }};
-{# 40 DescuentoMonto #}{{ line.sale_line_id.discount and (line.sale_line_id.price_subtotal - (1 - line.sale_line_id.discount / 100) * ((line.quantity_done or line.product_uom_qty) * line.sale_line_id.price_unit)) or '' }};
-{# 41 TipoDscto #}{{ line.sale_line_id.discount and '%' or '' }};
+{# 39 DescuentoPct #};
+{# 40 DescuentoMonto #};
+{# 41 TipoDscto #};
 {# 42 ValorDscto #};
 {# 43 TipoDscto #};
 {# 44 ValorDscto #};
@@ -279,16 +281,16 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #}{{ line.sale_line_id.price_subtotal|int }}
+{# 64 MontoItem #}{{ vals['amount']|int }}
 {{ '\n' }}
 {% endfor %}
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_ref" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_ref" model="etd.document.file">
     <field name="name">REF References</field>
     <field name="sequence">30</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
@@ -298,10 +300,10 @@
     <field name="template_text"/>
 </record>
 
-<record id="etd_file_xerox_stock_des" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_des" model="etd.document.file">
     <field name="name">DES Discounts and Surcharges</field>
     <field name="sequence">40</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
@@ -310,26 +312,26 @@
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines.mapped('sale_line_id').filtered('discount') %}
+{% for key, vals in {}.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
-{# 1 Cliente    #}{{ cliente_rut }};
-{# 2 Tipo       #}{{o.class_id.code}};
-{# 3 Folio      #}{{ digits_only(o.name) }};
+{# 1 Cliente #}{{ cliente_rut }};
+{# 2 Tipo #}{{o.class_id.code}};
+{# 3 Folio #}{{ key[0].name }};
 {# 2 NroLineaDR #}{{ counter.line_num }};
-{# 5 TpoMov     #};
-{# 6 GlosaDR    #};
-{# 7 TpoValor   #};
-{# 8 ValorDR    #}{{ o.discount }};
-{# 9 IndExeDR   #}
+{# 5 TpoMov #};
+{# 6 GlosaDR #};
+{# 7 TpoValor #};
+{# 8 ValorDR #};
+{# 9 IndExeDR #}
 {{ '\n' }}
 {% endfor %}
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_ane" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_ane" model="etd.document.file">
     <field name="name">ANE Header Annex</field>
     <field name="sequence">50</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
@@ -349,25 +351,25 @@
 {# 10 Código vendedor #};
 {# 11 Valor a pagar #}{{ totals.amount_total|int }};
 {# 12 Lugar Emisión #}{{ esc(origen.name) }};
-{# 13 Código Precio #}{{ o.partner_id.ref }};
-{# 14 Local #}0;
+{# 13 Código Precio #}{{ transp.ref }};
+{# 14 Local #}1;
 {# 15 Sector #}{{ digits_only(dayroute.name) }};
-{# 16 Territorio #};
+{# 16 Territorio #}{{ esc(transp.name)[:35] }};
 {# 17 Carga #}1;
 {# 18 Depósito #}41;
 {# 19 Afecto IABA #};
 {# 20 IABA #};
 {# 21 Hora emisión #}{{ date and date.strftime('%H:%M')}};
 {# 22 Afecto IVA #}{{ totals.amount_untaxed|int }};
-{# 23 Número de pedido #}{{ digits_only(o.origin) }}
+{# 23 Número de pedido #}
 {{ '\n' }}
     </field>
 </record>
 
-<record id="etd_file_xerox_stock_an2" model="etd.document.file">
+<record id="etd_file_xerox_stock_batch_an2" model="etd.document.file">
     <field name="name">AN2 Detail Annex</field>
     <field name="sequence">60</field>
-    <field name="document_id" ref="etd_xerox_stock"/>
+    <field name="document_id" ref="etd_xerox_stock_batch"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
@@ -376,14 +378,14 @@
 {{ company_code }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck }}_{{ shift }}_{{ index}}_{{ center }}.txt</field>
     <field name="template_text">
 {% set counter = namespace(line_num=0) %}
-{% for line in picking_lines %}
+{% for key, vals in lines.items() %}
 {% set counter.line_num = counter.line_num + 1 %}
 {# 1 Cliente #}{{ cliente_rut }};
-{# 2 Tipo #}{{ o.class_id.code }};
+{# 2 Tipo #}{{o.class_id.code}};
 {# 3 Folio #}{{ digits_only(o.name) }};
 {# 4 Numero Detalle #}{{ counter.line_num }};
 {# 5 TpoCodigo #}INT1;
-{# 6 Código del item 01 #}{{ line.product_id.ref_etd[:8] or '' }};
+{# 6 Código del item 01 #}{{ key[0].ref_etd[:8] }};
 {# 7 Grado Alcoholico #};
 {# 8 Pinta #}
 {{ '\n' }}

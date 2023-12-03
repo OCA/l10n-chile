@@ -3,40 +3,77 @@
 <record id="etd_xerox_route_11" model="etd.document">
     <field name="name">Xerox 11 - Route Totals</field>
     <field name="model">fsm.route.dayroute</field>
+    <field name="template_text_include">
+{% set prod = o.company_id.backend_acp_id.prod_environment %}
+{% set path = 'Ctl/' if prod else '00CtlDesa/' %}
+{% set tipo = "011" %}
+{% set company = "ot" %}
+{% set date = o.date %}
+{% set warehouse_obj = o.mapped('order_ids.warehouse_id')[:1] %}
+{% set warehouse = warehouse_obj.xerox_code or "" %}
+{% set company_obj = warehouse_obj.company_id %}
+{% set truck = o.fsm_vehicle_id.name or "" %}
+{% set shift = o.name or "" %}
+{% set fsm_orders = o.order_ids %}
+
+{% set transp = o.person_id.partner_id.commercial_partner_id or company_obj.partner_id %}
+{% set cliente = transp %}
+{% set emisor = cliente %}
+{% set origen = warehouse_obj.partner_id %}
+{% set recep = transp %}
+{% set dest = origen %}
+
+{% set totals = namespace(count=0, count_sign=0, count_cash=0, amount=0, amount_sign=0, amount_cash=0, quantity=0) %}
+{% for invoice in o.shipping_invoice_ids %}
+{%   set totals.count = totals.count + 1 %}
+{%   set totals.amount = totals.amount + invoice.amount_total %}
+{%   if invoice.partner_id.delivery_condition == 'immediate' %}
+{%     set totals.count_cash = totals.count_cash + 1 %}
+{%     set totals.amount_cash = totals.amount_cash + invoice.amount_total %}
+{%   else %}
+{%     set totals.count_sign = totals.count_sign + 1 %}
+{%     set totals.amount_sign = totals.amount_sign + invoice.amount_total %}
+{%   endif %}
+{%   for line in invoice.invoice_line_ids %}
+{%     set totals.quantity = totals.quantity + line.quantity %}
+{%   endfor %}
+{% endfor %}
+</field>
 </record>
 
 <record id="etd_xerox_route_11_cab" model="etd.document.file">
     <field name="name">CAB Header</field>
+    <field name="sequence">10</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'cab' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name">
+{{ path }}dte_cab_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set cliente = o.env.user.company_id.partner_id %} {# TODO: o.company_id (add company_id to fsm.route.dayroute) #}
-{% set transp = o.person_id.partner_id %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Version            #}1.0;
 {# 3 Tipo               #}11;
-{# 4 Folio              #}{{o.name}};
-{# 5 FechEmis           #}{{o.date and o.date.strftime('%Y-%m-%d')}};
-{# 6 IndNoRebaja #};
-{# 7 TipoDespacho #};
-{# 8 IndTraslado #};
-{# 9 IndServicio #};
-{# 10 Mnt Bruto #};
-{# 11 FmaPago #};
-{# 12 FechCancel #};
-{# 13 PeriodoDesde #};
-{# 14 PeriodoHasta #};
-{# 15 MedioPago #};
-{# 16 TermPagoCdg #};
-{# 17 TermPagoDias #};
-{# 18 FchVenc #};
-{# 19 RUTEmisor #};
-{# 20 RznSoc #};
-{# 21 GiroEmis #};
-{# 22 Acteco            #}{{ o.order_ids | length }};
+{# 4 Folio              #}{{ digits_only(o.name) + tipo }};
+{# 5 FechEmis           #}{{date and date.strftime('%Y-%m-%d')}};
+{# 6 IndNoRebaja        #};
+{# 7 TipoDespacho       #};
+{# 8 IndTraslado        #};
+{# 9 IndServicio        #};
+{# 10 Mnt Bruto         #};
+{# 11 FmaPago           #};
+{# 12 FechCancel        #};
+{# 13 PeriodoDesde      #};
+{# 14 PeriodoHasta      #};
+{# 15 MedioPago         #};
+{# 16 TermPagoCdg       #};
+{# 17 TermPagoDias      #};
+{# 18 FchVenc           #};
+{# 19 RUTEmisor         #};
+{# 20 RznSoc            #};
+{# 21 GiroEmis          #};
+{# 22 Acteco            #}{{ fsm_orders | length }};
 {# 23 Sucursal #};
 {# 24 CodSIISucur #};
 {# 25 DirOrigen #};
@@ -46,7 +83,7 @@
 {# 29 RUTMandante #};
 {# 30 RUTRecep          #}{{ (transp.vat or '').replace('.', '')}};
 {# 31 CdgIntRecep #};
-{# 32 RznSocRecep       #}{{ transp.name }};
+{# 32 RznSocRecep       #}{{ esc(transp.name) }};
 {# 33 GiroRecep #};
 {# 34 Contacto #};
 {# 35 DirRecep #};
@@ -67,65 +104,65 @@
 {# 50 TasaIVA #};
 {# 51 IVA #};
 {# 52 TipoImp           #}GNM;
-{# 53 TasaImp #};
-{# 54 MontoImp          #}{# TODO Total Clientes GNM/TOT ??? #};
-{# 55 TipoImp #};
-{# 56 TasaImp #};
-{# 57 MontoImp #};
-{# 58 TipoImp #};
+{# 53 TasaImp           #};
+{# 54 MontoImp          #}{{ totals.quantity|int }};
+{# 55 TipoImp           #}CER;
+{# 56 TasaImp           #};
+{# 57 MontoImp          #}0;
+{# 58 TipoImp #}CNF;
 {# 59 TasaImp #};
-{# 60 MontoImp #};
-{# 61 TipoImp #};
+{# 60 MontoImp #}0;
+{# 61 TipoImp #}VNO;
 {# 62 TasaImp #};
-{# 63 MontoImp #};
-{# 64 TipoImp #};
+{# 63 MontoImp #}0;
+{# 64 TipoImp #}LIC;
 {# 65 TasaImp #};
-{# 66 MontoImp #};
-{# 67 TipoImp #};
+{# 66 MontoImp #}0;
+{# 67 TipoImp #}OTR;
 {# 68 TasaImp #};
-{# 69 MontoImp #};
-{# 70 TipoImp #};
+{# 69 MontoImp #}0;
+{# 70 TipoImp #}TUB;
 {# 71 TasaImp #};
-{# 72 MontoImp #};
-{# 73 TipoImp #};
+{# 72 MontoImp #}0;
+{# 73 TipoImp #}TOT;
 {# 74 TasaImp #};
-{# 75 MontoImp #};
+{# 75 MontoImp #}{{ totals.quantity|int }};
 {# 76 TipoImp #};
 {# 77 TasaImp #};
-{# 78 MontoImp #};
+{# 78 MontoImp #}{{ totals.count_sign|int }};
 {# 79 TipoImp #};
 {# 80 TasaImp #};
-{# 81 MontoImp #};
+{# 81 MontoImp #}{{ totals.amount_sign|int }};
 {# 82 TipoImp #};
 {# 83 TasaImp #};
-{# 84 MontoImp #};
+{# 84 MontoImp #}0;
 {# 85 TipoImp #};
 {# 86 TasaImp #};
-{# 87 MontoImp #};
+{# 87 MontoImp #}0;
 {# 88 TipoImp #};
 {# 89 TasaImp #};
-{# 90 MontoImp #};
+{# 90 MontoImp #}0;
 {# 91 TipoImp #};
 {# 92 TasaImp #};
-{# 93 MontoImp #};
+{# 93 MontoImp #}0;
 {# 94 TipoImp #};
 {# 95 TasaImp #};
-{# 96 MontoImp #};
+{# 96 MontoImp #}{{ totals.count_cash|int }};
 {# 97 TipoImp #};
 {# 98 TasaImp #};
-{# 99 MontoImp #};
+{# 99 MontoImp #}{{ totals.amount_cash|int }};
 {# 100 TipoImp #};
 {# 101 TasaImp #};
-{# 102 MontoImp #};
+{# 102 MontoImp #}0;
 {# 103 TipoImp #};
 {# 104 TasaImp #};
-{# 105 MontoImp #};
+{# 105 MontoImp #}0;
 {# 106 TipoImp #};
 {# 107 TasaImp #};
-{# 108 MontoImp #};
+{# 108 MontoImp #}{{ totals.count|int }};
 {# 109 TipoImp #};
 {# 110 TasaImp #};
-{# 111 MontoImp #};
+{# 111 MontoImp #}{{ totals.amount|int }};
 {# 112 TipoImp #};
 {# 113 TasaImp #};
 {# 114 MontoImp #};
@@ -163,120 +200,70 @@
 {# 146 MontoNF #};
 {# 147 MontoPeriodo #};
 {# 148 SaldoAnterior #};
-{# 149 VlrPagar #};
-{{ '\n' }}
-    </field>
-</record>
-
-<record id="etd_xerox_route_11_ane" model="etd.document.file">
-    <field name="name">ANE Header Annex</field>
-    <field name="document_id" ref="etd_xerox_route_11"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">{% set infix = 'ane' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
-    <field name="template_text">
-{% set amount_total = 0 %}
-{% for invoice in o.invoice_ids %}
-    {% set amount_total = amount_total + invoice.amount_total %}
-{% endfor %}
-{# 1 Cliente            #}{{(o.env.user.company_id.vat or '').replace('.', '')[:8]}};
-{# 2 Tipo               #}11;
-{# 3 Folio              #}{{o.number}};
-{# 4 Número copias      #}1;
-{# 5 Observaciones #};
-{# 6 Fecha Cancelación #};
-{# 7 Medio de pago #};
-{# 8 Término del pago - días #};
-{# 9 Información de transporte #}{{ o.fsm_vehicle_id.name }};
-{# 10 Código vendedor #};
-{# 11 Valor a pagar     #}{{ o.name }};
-{# 12 Lugar Emisión TODO #}MAN TALCA;
-{# 13 Código Precio #};
-{# 14 Local #}0;
-{# 15 Sector #};
-{# 16 Territorio #};
-{# 17 Carga             #}1;
-{# 18 Depósito          #}41;
-{# 19 Afecto IABA #};
-{# 20 IABA #};
-{# 21 Hora emisión      #}{{ o.date_start_planned and o.date_start_planned.strftime('%H:%M') or ''}};
-{# 22 Afecto IVA #};
-{# 23 Número de pedido #};
+{# 149 VlrPagar #}
 {{ '\n' }}
     </field>
 </record>
 
 <record id="etd_xerox_route_11_det" model="etd.document.file">
     <field name="name">DET Detail</field>
+    <field name="sequence">20</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'det' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name">
+{{ path }}dte_det_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{% set cliente = o.env.user.company_id.partner_id %} {# TODO: o.company_id (add company_id to fsm.route.dayroute) #}
-{% set amount_cash = 0 %}
-{% set count_cash = 0 %}
-{% set amount_other = 0 %}
-{% set count_other = 0 %}
-{% for invoice in o.order_ids.mapped('invoice_ids') %}
-  {% if (invoice.payment_term_id.name or '').lower() == 'contado' %}
-    {% set amount_cash = amount_cash + invoice.amount_total %}
-    {% set count_cash = count_cash + 1 %}
-  {% else %}
-    {% set amount_other = amount_other + invoice.amount_total %}
-    {% set count_other = count_other + 1 %}
-  {% endif %}
-{% endfor %}
 {# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
 {# 2 Tipo               #}11;
-{# 3 Folio              #}{{ o.name }};
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
 {# 4 NroLinDet          #}1;
-{# 5 TpoCodigo #};
-{# 6 VlrCodigo #};
-{# 7 TpoCodigo #};
-{# 8 VlrCodigo #};
-{# 9 TpoCodigo #};
-{# 10 VlrCodigo #};
-{# 11 TpoCodigo #};
-{# 12 VlrCodigo #};
-{# 13 TpoCodigo #};
-{# 14 VlrCodigo #};
-{# 15 IndExe #};
-{# 16 NmbItem           #}{{ cliente.name }};
-{# 17 DscItem #};
-{# 18 QtyRef #};
-{# 19 UnmdRef #};
-{# 20 PecRef #};
-{# 21 QtyItem #};
-{# 22 SubQty            #}{{ count_other }};
-{# 23 SubCod #};
+{# 5 TpoCodigo          #};
+{# 6 VlrCodigo          #};
+{# 7 TpoCodigo          #};
+{# 8 VlrCodigo          #};
+{# 9 TpoCodigo          #};
+{# 10 VlrCodigo         #};
+{# 11 TpoCodigo         #};
+{# 12 VlrCodigo         #};
+{# 13 TpoCodigo         #};
+{# 14 VlrCodigo         #};
+{# 15 IndExe            #};
+{# 16 NmbItem           #}{{ esc(origen.commercial_partner_id.name) }};
+{# 17 DscItem           #};
+{# 18 QtyRef            #};
+{# 19 UnmdRef           #};
+{# 20 PecRef            #};
+{# 21 QtyItem           #};
+{# 22 SubQty            #}{{ totals.count_sign|int }};
+{# 23 SubCod            #};
 {# 24 SubQty            #}0;
-{# 25 SubCod #};
+{# 25 SubCod            #};
 {# 26 SubQty            #}0;
-{# 27 SubCod #};
-{# 28 SubQty            #}{{ count_cash }};
-{# 29 SubCod #};
-{# 30 SubQty #};
-{# 31 SubCod #};
-{# 32 FechElabor #};
-{# 33 FechVencim #};
-{# 34 UnmdItem #};
-{# 35 PrcItem #};
-{# 36 PrcOtrMon #};
+{# 27 SubCod            #};
+{# 28 SubQty            #}{{ totals.count_cash|int }};
+{# 29 SubCod            #};
+{# 30 SubQty            #};
+{# 31 SubCod            #};
+{# 32 FechElabor        #};
+{# 33 FechVencim        #};
+{# 34 UnmdItem          #};
+{# 35 PrcItem           #};
+{# 36 PrcOtrMon         #};
 {# 37 Moneda #};
 {# 38 FctConv #};
 {# 39 DescuentoPct #};
 {# 40 DescuentoMonto #};
 {# 41 TipoDscto #};
-{# 42 ValorDscto        #}{{ amount_other }};
+{# 42 ValorDscto        #}{{ totals.amount_sign|int }};
 {# 43 TipoDscto #};
 {# 44 ValorDscto        #}0;
 {# 45 TipoDscto #};
 {# 46 ValorDscto        #}0;
 {# 47 TipoDscto #};
-{# 48 ValorDscto        #}{{ amount_cash }};
+{# 48 ValorDscto        #}{{ totals.amount_cash|int }};
 {# 49 TipoDscto #};
 {# 50 ValorDscto        #}0;
 {# 51 RecargoPct #};
@@ -292,61 +279,24 @@
 {# 61 TipoRecargo #};
 {# 62 ValorRecargo #};
 {# 63 CodImpAdic #};
-{# 64 MontoItem #};
+{# 64 MontoItem #}
 {{ '\n' }}
     </field>
 </record>
 
-<record id="etd_xerox_route_11_an2" model="etd.document.file">
-    <field name="name">AN2 Detail Annex</field>
-    <field name="document_id" ref="etd_xerox_route_11"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">{% set infix = 'an2' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
-    <field name="template_text">
-{# 1 Cliente #}**** VACIO ****;
-{# 2 Tipo #};
-{# 3 Folio #};
-{# 4 Numero Detalle #};
-{# 5 TpoCodigo #};
-{# 6 Código del item 01 #};
-{# 7 Grado Alcoholico #};
-{# 8 Pinta #};
-{{ '\n' }}
-    </field>
-</record>
-
-<record id="etd_xerox_route_11_des" model="etd.document.file">
-    <field name="name">DES Discounts and Surcharges</field>
-    <field name="document_id" ref="etd_xerox_route_11"/>
-    <field name="file_type">txt</field>
-    <field name="grouped">True</field>
-    <field name="save">False</field>
-    <field name="template_name">{% set infix = 'des' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
-    <field name="template_text">
-{# 1 Cliente #}***** VACIO *****;
-{# 2 Tipo #};
-{# 3 Folio #};
-{# 4 NroLineaDR #};
-{# 5 TpoMov #};
-{# 6 GlosaDR #};
-{# 7 TpoValor #};
-{# 8 ValorDR #};
-{# 9 IndExeDR #};
-{{ '\n' }}
-    </field>
-</record>
-
-<record id="etd_xerox_route_01_ref" model="etd.document.file">
+<record id="etd_xerox_route_11_ref" model="etd.document.file">
     <field name="name">REF References</field>
+    <field name="sequence">30</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
     <field name="grouped">True</field>
     <field name="save">False</field>
-    <field name="template_name">{% set infix = 'ref' %}{% set tipo = '011' %}/interxerox/{{ o.date.strftime('%m') }}/{{ o.env.user.company_id.partner_id.ref or '00000' }}/{{ o.date.strftime('%d') }}/dte_{{ infix }}_ot_{{ tipo }}_{{ o.date.strftime('%Y%m%d_%H%M%S') }}_{{ o.fsm_vehicle_id.name[:3].zfill(5) }}_00000_000_{{o.env.user.company_id.partner_id.ref or '00000'}}.txt</field>
+    <field name="template_name">
+{{ path }}dte_ref_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
     <field name="template_text">
-{# 1 Cliente #}**** VACIO ****;
+{% if False %}
+{# 1 Cliente #};
 {# 2 Tipo #};
 {# 3 Folio #};
 {# 2 NroLineaRef #};
@@ -357,8 +307,99 @@
 {# 8 FchRef #};
 {# 9 CodRef #};
 {# 10 RazonRef #};
-{# 11 CorrFact #};
+{# 11 CorrFact #}
 {{ '\n' }}
+{% endif %}
+    </field>
+</record>
+
+<record id="etd_xerox_route_11_des" model="etd.document.file">
+    <field name="name">DES Discounts and Surcharges</field>
+    <field name="sequence">40</field>
+    <field name="document_id" ref="etd_xerox_route_11"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ path }}dte_des_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt
+    </field>
+    <field name="template_text">
+{% if False %}
+{# 1 Cliente #};
+{# 2 Tipo #};
+{# 3 Folio #};
+{# 4 NroLineaDR #};
+{# 5 TpoMov #};
+{# 6 GlosaDR #};
+{# 7 TpoValor #};
+{# 8 ValorDR #};
+{# 9 IndExeDR #}
+{{ '\n' }}
+{% endif %}
+    </field>
+</record>
+
+<record id="etd_xerox_route_11_ane" model="etd.document.file">
+    <field name="name">ANE Header Annex</field>
+    <field name="sequence">50</field>
+    <field name="document_id" ref="etd_xerox_route_11"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ path }}dte_ane_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_text">
+{# 1 Cliente            #}{{(cliente.vat or '').replace('.', '')[:8]}};
+{# 2 Tipo               #}11;
+{# 3 Folio              #}{{ digits_only(o.name) + tipo }};
+{# 4 Número copias      #}1;
+{# 5 Observaciones      #};
+{# 6 Fecha Cancelación  #};
+{# 7 Medio de pago      #};
+{# 8 Término del pago - días #};
+{# 9 Información de transporte #}{{ truck }};
+{# 10 Código vendedor   #};
+{# 11 Valor a pagar     #}{{  digits_only(o.name)  }};
+{# 12 Lugar Emisión     #}{{ esc(origen.name) }};
+{# 13 Código Precio     #};
+{# 14 Local             #}0;
+{# 15 Sector            #};
+{# 16 Territorio        #};
+{# 17 Carga             #}1;
+{# 18 Depósito          #}{{ warehouse }};
+{# 19 Afecto IABA       #};
+{# 20 IABA              #};
+{# 21 Hora emisión      #}{{ date and date.strftime('%H:%M') or ''}};
+{# 22 Afecto IVA        #};
+{# 23 Número de pedido  #}
+{{ '\n' }}
+    </field>
+</record>
+
+<record id="etd_xerox_route_11_an2" model="etd.document.file">
+    <field name="name">AN2 Detail Annex</field>
+    <field name="sequence">60</field>
+    <field name="document_id" ref="etd_xerox_route_11"/>
+    <field name="file_type">txt</field>
+    <field name="grouped">True</field>
+    <field name="save">False</field>
+    <field name="template_name">
+{{ path }}dte_an2_
+{{ company }}_{{ tipo }}_{{now.strftime('%Y%m%d_%H%M%S')}}_{{ truck[-5:].zfill(5) }}_{{ shift[-5:].zfill(5) }}_000_{{ warehouse[-5:].zfill(5) }}.txt</field>
+    <field name="template_text">
+{% if False %}
+{# 1 Cliente #};
+{# 2 Tipo #};
+{# 3 Folio #};
+{# 4 Numero Detalle #};
+{# 5 TpoCodigo #};
+{# 6 Código del item 01 #};
+{# 7 Grado Alcoholico #};
+{# 8 Pinta #}
+{{ '\n' }}
+{% endif %}
     </field>
 </record>
 

@@ -54,10 +54,10 @@
                         <VlrCodigo>{{ line.product_id.barcode }}</VlrCodigo>
                         {% else %}
                         <TpoCodigo>INT1</TpoCodigo>
-                        <VlrCodigo>{{ line.product_id.default_code }}</VlrCodigo>
+                        <VlrCodigo>{{ line.product_id.ref_etd }}</VlrCodigo>
                         {% endif %}
                     </CdgItem>
-                    <NmbItem>{{ line.product_id.default_code }}</NmbItem>
+                    <NmbItem>{{ line.product_id.ref_etd }}</NmbItem>
                     <DscItem>{{ line.product_id.display_name }}</DscItem>
                     <QtyItem>{{ line.quantity }}</QtyItem>
                     <UnmdItem>{{ line.uom_id.name }}</UnmdItem>

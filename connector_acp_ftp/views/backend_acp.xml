@@ -1,0 +1,17 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_backend_acp_form">
+        <field name="name">backend.acp.form add FTP fields</field>
+        <field name="model">backend.acp</field>
+        <field name="inherit_id" ref="connector_acp.view_backend_acp_form"/>
+        <field name="arch" type="xml">
+
+            <field name="connection_type" position="after">
+                <field name="ftp_directory"
+                       attrs="{'invisible': [('connection_type', '!=', 'ftp')]}" />
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

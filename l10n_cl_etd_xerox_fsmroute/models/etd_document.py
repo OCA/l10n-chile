@@ -1,8 +1,6 @@
 # Copyright (C) 2019 Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
-from odoo import fields, models
-from odoo.tools import date_utils
+from odoo import api, fields, models
 
 
 class EtdDocument(models.Model):
@@ -11,13 +9,41 @@ class EtdDocument(models.Model):
     model = fields.Selection(
         selection_add=[("fsm.route.dayroute", "Day Route")])
 
-    def _xerox_get_records(self, company_id, run_date):
+    # For cron generated runs, dayroutes are ignored
+    # Documents related to a dayroute won't be included
+    # For per dayrout runs, only documents related to the dayroute
+    # are included
 
-        res = super()._xerox_get_records(company_id, run_date)
-        next_date = date_utils.add(run_date, days=1)
-        res['fsm.route.dayroute'] = self.env["fsm.route.dayroute"].search([
-            ("stage_id.is_closed", "=", "True"),
-            ("date_close", ">=", run_date),
-            ("date_close", "<", next_date),
-        ])
-        return res
+    @api.model
+    def _xerox_get_domain_invoice(
+            self, run_date=None, force=False, dayroutes=None):
+        domain = super()._xerox_get_domain_invoice(run_date, force)
+        if dayroutes:
+            fsm_orders = dayroutes.mapped('order_ids')
+            domain.append(('fsm_order_ids', 'in', fsm_orders.ids))
+        else:
+            domain.append(('fsm_order_ids', '=', False))
+        return domain
+
+    @api.model
+    def _xerox_get_domain_picking(
+            self, run_date=None, force=False, picking_type="outgoing",
+            dayroutes=None):
+        domain = super()._xerox_get_domain_picking(
+            run_date=run_date, force=force, picking_type=picking_type)
+        if dayroutes:
+            fsm_orders = dayroutes.mapped('order_ids')
+            domain.append(('fsm_order_id', 'in', fsm_orders.ids))
+        else:
+            domain.append(('fsm_order_id', '=', False))
+        return domain
+
+    @api.model
+    def _xerox_get_domain_picking_batch(
+            self, run_date=None, force=False, batchpicks=None):
+        domain = super()._xerox_get_domain_picking_batch(run_date, force)
+        if batchpicks:
+            domain.append(('id', 'in', batchpicks.ids))
+        else:
+            domain = [('id', '=', 0)]  # Always False
+        return domain

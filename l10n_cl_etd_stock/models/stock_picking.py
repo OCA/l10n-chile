@@ -17,8 +17,9 @@ class StockPicking(models.Model):
     def action_done(self):
         res = super(StockPicking, self).action_done()
         for rec in self:
+            auto_sign = rec.company_id.backend_acp_id.auto_sign
             sign = rec._name in [x.model for x in rec.company_id.etd_ids]
-            if sign and rec.location_dest_id.usage == 'customer':
+            if auto_sign and sign and rec.location_dest_id.usage == 'customer':
                 rec.with_delay().document_sign()
         return res
 

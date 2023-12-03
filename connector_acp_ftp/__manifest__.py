@@ -13,5 +13,5 @@
     "development_status": "Beta",
     "maintainers": ["max3903"],
     "depends": ["connector_acp"],
-    "data": [],
+    "data": ["views/backend_acp.xml"],
 }

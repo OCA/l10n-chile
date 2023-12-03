@@ -9,7 +9,8 @@ import logging
 import time
 from jinja2 import Environment, BaseLoader
 from lxml import etree
-from odoo import api, fields, models, _
+from xml.sax.saxutils import escape
+from odoo import fields, models, _
 from odoo.exceptions import UserError
 from ...queue_job.job import job
 from ...queue_job.exception import RetryableJobError
@@ -23,23 +24,18 @@ class EtdMixin(models.AbstractModel):
     _description = "Electronic Tax Document Mixin"
 
     signature_id = fields.Many2one(
-        "etd.signature", string="SSL Signature", help="SSL Signature of the Document"
+        "etd.signature", string="SSL Signature",
+        copy=False,
+        help="SSL Signature of the Document"
     )
-
-    _env = None
-
-    @api.model
-    def set_jinja_env(self):
-        """Set the Jinja2 environment.
-
-        The environment will helps the system to find the templates to render.
-        :return: jinja2.Environment instance.
-        """
-        if self._env is None:
-            self._env = Environment(
-                lstrip_blocks=True, trim_blocks=True, loader=BaseLoader()
-            )
-        return self._env
+    date_sign = fields.Datetime(
+        "Signature Date",
+        copy=False,
+        track_visibility='onchange',
+        help="""Empty if the document has not been signed. Filled in when the
+        document is signed or sent for signature. Used to avoid signing or
+        sending the same document twice."""
+    )
 
     def get_etd_document(self):
         """
@@ -48,68 +44,125 @@ class EtdMixin(models.AbstractModel):
         :return: The etd.document that needs be used to generate the
          XML file
         """
-        res = self.company_id.etd_ids.filtered(lambda x: x.model == self._name)
+        company = (self.company_id if hasattr(self, 'company_id')
+                   else self.env.user.company_id)
+        res = company.etd_ids.filtered(lambda x: x.model == self._name)
         return res
 
-    def prepare_keywords(self):
+    def prepare_character_mapping(self):
+        return {
+            'á': 'a',
+            'Á': 'A',
+            'é': 'e',
+            'É': 'E',
+            'í': 'i',
+            'Í': 'I',
+            'ñ': 'n',
+            'Ñ': 'N',
+            'ó': 'o',
+            'Ó': 'O',
+            'ú': 'u',
+            'Ú': 'U',
+            'ü': 'u',
+            'Ü': 'U',
+            "\xba": '*',
+            "\xb0": '*',
+        }
+
+    def _prepare_jinja_context(self, now=None):
         """Return a dictionary of keywords used in the template.
 
         :return: Dictionary of keywords used in the template
         """
+        escape_table = self.prepare_character_mapping()
         return {
             "o": self,
-            "now": fields.datetime.now(),
+            "now": now,
             "today": fields.datetime.today(),
             "date_to_string": fields.Date.to_string,
             "time_to_string": fields.Datetime.to_string,
             "date": datetime.date,
             "datetime": datetime.datetime,
             "timedelta": datetime.timedelta,
+            "digits_only": (
+                lambda text: ''.join(x for x in (text or '') if x.isdigit())),
+            "esc": (lambda text: escape(text, escape_table)),
         }
 
-    def _render_jinja_template(self, template_text):
+    def _render_jinja_template(self, template_text, now=None):
         """
-        In: self recordset and template string
+        In: self recordset and ETD File for the template to use
         Out: string with the processed template
         """
-        self.set_jinja_env()
-        template = self._env.from_string(template_text)
-        # Additional keywords used in the template
-        kwargs = self.prepare_keywords()
-        # Render the file
-        res = template.render(kwargs)
+        # Render the template
+        jinja_env = Environment(
+            lstrip_blocks=True, trim_blocks=True, loader=BaseLoader())
+        template = jinja_env.from_string(template_text)
+        eval_context = self._prepare_jinja_context(now=now)
+        res = template.render(eval_context)
         return res
 
-    def get_etd_template(self, etd_file):
+    def _get_etd_filetext(self, etd_file, now=None):
         """
         Get the file template to render.
         """
-        file_template = etd_file.template_text or base64.b64decode(
-            etd_file.template
-        ).decode("utf-8")
-        if etd_file.file_type == 'txt':
-            # Make text templates more comformatable to edit:
-            # Remove initial and trailing whitespace
+        if etd_file.template:
+            # XML template
+            template_text = base64.b64decode(
+                etd_file.template).decode("utf-8")
+        else:
+            # Text template
+            template_text = "%s%s" % (
+                (etd_file.document_id.template_text_include or "").strip(),
+                etd_file.template_text.strip())
+            # Make text templates more comfortable to edit:
             # Remove implicit line breaks
-            # Consider explicit line breaks entered as "\n"
-            file_template = file_template.strip()
-            file_template = file_template.replace("\r\n", "")
-            file_template = file_template.replace("\n", "")
-            file_template = file_template.replace("\\n", "\n")
-        return file_template
+            # Consider explicit line breaks entered as "\\n"
+            template_text = template_text.replace("\r\n", "")
+            template_text = template_text.replace("\n", "")
+            template_text = template_text.replace("\\n", "\n")
+        try:
+            res = self._render_jinja_template(template_text, now=now).strip(' ')
+        except Exception as e:
+            raise UserError(_(
+                "Error rendering file content %s "
+                "for document %s %s, %s:\n\n%s") % (
+                etd_file.document_id.name,
+                etd_file.name,
+                str(self),
+                self.display_name,
+                str(e)
+            ))
+        return res
 
-    def get_etd_filename(self, etd_file):
+    def _get_etd_filename(self, etd_file, now=None):
         """
         Get the file name.
         This can be a relative path with a directory name.
         """
         if etd_file.template_name:
-            res = self._render_jinja_template(etd_file.template_name)
+            template_text = "%s%s" % (
+                (etd_file.document_id.template_text_include or "").strip(),
+                etd_file.template_name.strip())
+            try:
+                res = self._render_jinja_template(template_text, now=now)
+            except Exception as e:
+                raise UserError(_(
+                    "Error rendering file name %s "
+                    "for document %s %s, %s:\n\n%s") % (
+                    etd_file.document_id.name,
+                    etd_file.name,
+                    str(self),
+                    self.display_name,
+                    str(e)
+                ))
+            # Remove possible line breaks from file names
+            res = res.translate(str.maketrans('', '', '\r\n\t'))
         else:
             res = "%s.%s" % (self.display_name, etd_file.file_type)
         return res
 
-    def _build_file(self, etd_file, file_dict=None):
+    def _build_file(self, etd_file, file_dict=None, now=None):
         """Build File.
 
         Build the file of the record using the company documents and the
@@ -122,10 +175,13 @@ class EtdMixin(models.AbstractModel):
         :return: A file_dict dictionary with the filename and the content
         """
         file_dict = file_dict or {}
+        if not now:
+            now = fields.Datetime.context_timestamp(
+                self.env.user,
+                fields.Datetime.now())
         for rec in self:
-            file_template = rec.get_etd_template(etd_file)
-            file_name = rec.get_etd_filename(etd_file)
-            file_text = rec._render_jinja_template(file_template)
+            file_name = rec._get_etd_filename(etd_file, now=now)
+            file_text = rec._get_etd_filetext(etd_file, now=now)
 
             if etd_file.grouped:
                 # Append text to an already existing file
@@ -135,7 +191,8 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.validator and etd_file.file_type == "xml":
                 # Check the rendered file against the validator
-                validator = base64.b64decode(etd_file.validator).decode("utf-8")
+                validator = \
+                    base64.b64decode(etd_file.validator).decode("utf-8")
                 try:
                     xmlschema = etree.XMLSchema(validator)
                     xml_doc = etree.fromstring(file_text)
@@ -148,21 +205,19 @@ class EtdMixin(models.AbstractModel):
 
             if etd_file.save:
                 # Attach file to the record
-                self.env["ir.attachment"].create(
-                    {
-                        "name": file_name,
-                        "type": "binary",
-                        "datas": base64.b64encode(file_text.encode("utf-8")),
-                        "datas_fname": file_name,
-                        "res_model": rec._name,
-                        "res_id": rec.id,
-                    }
-                )
+                self.env["ir.attachment"].create({
+                    "name": file_name,
+                    "type": "binary",
+                    "datas": base64.b64encode(file_text.encode("utf-8")),
+                    "datas_fname": file_name,
+                    "res_model": rec._name,
+                    "res_id": rec.id,
+                })
             # Update the file_dict with the result
             file_dict[file_name] = file_text
         return file_dict
 
-    def build_files(self, file_dict=None):
+    def build_files(self, file_dict=None, now=None):
         """Build Files.
 
         Build the files and returns a dictionary with file name and string
@@ -172,7 +227,7 @@ class EtdMixin(models.AbstractModel):
         etds = self.get_etd_document()
         for etd in etds:
             for etd_file in etd.file_ids:
-                file_dict = self._build_file(etd_file, file_dict)
+                file_dict = self._build_file(etd_file, file_dict, now=now)
         return file_dict
 
     def sign_file(self, file_text, certificate):
@@ -212,7 +267,11 @@ class EtdMixin(models.AbstractModel):
         :param res_id: id of the document to sign
         """
         # Build the files for the document
-        file_dict = self.build_files()
+        now = fields.Datetime.context_timestamp(
+            self.env.user,
+            fields.Datetime.now()
+        )
+        file_dict = self.build_files(now=now)
         # Sign the document
         if self.company_id.signer == "odoo":
             # Use the SSL Certificate to sign the files
@@ -224,12 +283,10 @@ class EtdMixin(models.AbstractModel):
             backend = self.company_id.backend_acp_id
         # Determine if the backend is usable
         if backend.status != "confirmed":
-            raise UserError(
-                _(
-                    "The backend is not confirmed. Please check the"
-                    " connection to the backend first."
-                )
-            )
+            raise UserError(_(
+                "The backend is not confirmed. Please check the"
+                " connection to the backend first."
+            ))
         # Send the files to backend
         response = backend.send(file_dict)
         # Check the response
@@ -241,9 +298,11 @@ class EtdMixin(models.AbstractModel):
                 time.sleep(i)
                 i += 1
                 status = backend.check_status(response.get("ref"))
-            message = _("%s Status: <b>%s</b>" % (backend.name,
-                                                  status.get('message')))
+            message = _(
+                "%s Status: <b>%s</b>" % (backend.name, status.get('message'))
+            )
             self.message_post(body=message)
+            self.date_sign = now
         else:
             message = _(
                 "ETD has been sent to %s but failed with"

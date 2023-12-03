@@ -23,3 +23,9 @@ class EtdDocument(models.Model):
     )
     file_ids = fields.One2many("etd.document.file", "document_id", string="Files")
     test_document = fields.Reference(_get_model_list)
+    template_text_include = fields.Text(
+        string="Include Template Text",
+        help="Common text template to add "
+        "at the header of file name and file content text templates. "
+        "Use to set common variables reused in the several file templates."
+    )

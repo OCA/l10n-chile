@@ -1,0 +1,15 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_stock_picking_xerox">
+        <field name="name">stock.picking.xerox</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id"
+               ref="l10n_cl_etd_stock.view_stock_picking_sii_class"/>
+        <field name="arch" type="xml">
+            <button name="document_sign" position="attributes">
+                <attribute name="context">{'xerox': 52}</attribute>
+            </button>
+        </field>
+    </record>
+
+</odoo>

@@ -14,7 +14,9 @@ class StockPickingBatch(models.Model):
     def done(self):
         res = super().done()
         for rec in self:
-            if self.class_id:
+            sign = rec._name in [x.model for x in rec.company_id.etd_ids]
+            auto_sign = rec.company_id.backend_acp_id.auto_sign
+            if rec.class_id and sign and auto_sign:
                 rec.with_delay().document_sign()
         return res
 
