@@ -338,7 +338,7 @@
     </field>
 </record>
 
-<record id="etd_xerox_route_01_ref" model="etd.document.file">
+<record id="etd_xerox_route_11_ref" model="etd.document.file">
     <field name="name">REF References</field>
     <field name="document_id" ref="etd_xerox_route_11"/>
     <field name="file_type">txt</field>
