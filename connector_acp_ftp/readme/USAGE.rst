@@ -5,6 +5,6 @@ Suggested setup steps for local tests:
   - Install vsftpd: ``sudo apt install vsftpd``.
     Additional documention available at https://help.ubuntu.com/community/vsftpd
   - Edit ``/etc/vsftpd.conf``, changing the entry ``write_enable=YES``
-  - (Res)start the service: ``sudo service vsftpd stop && sudo service vsftpd stop``
+  - (Res)start the service: ``sudo service vsftpd restart``
   - Test the connection with the ``ftp`` client. User you sysytem user and password.
     The FTP default work directory will be your home directory.
