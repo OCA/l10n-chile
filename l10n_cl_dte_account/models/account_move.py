@@ -1,7 +1,7 @@
 import base64
 import json
 
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import AccessError, UserError
 
 from odoo.addons.l10n_cl_dte_signing.services.signature_service import SignatureService
@@ -15,19 +15,29 @@ class AccountMove(models.Model):
     dte_document_ids = fields.One2many(
         "l10n_cl.electronic.document", "source_move_id", string="Electronic Documents"
     )
+    dte_document_type_code = fields.Char(
+        related="l10n_latam_document_type_id.code",
+        string="DTE Document Type Code",
+    )
 
-    def action_issue_dte_33(self):
-        """Issue a type-33 invoice through the complete local DTE lifecycle."""
+    def issue_dte(self):
+        """Issue the selected Chilean DTE through the complete lifecycle."""
         self.ensure_one()
-        if not self.env.user.has_group("l10n_cl_dte_core.group_dte_manager"):
-            raise AccessError(_("Only a DTE manager can issue electronic documents."))
+        if not self.env.user.has_group("l10n_cl_dte_core.group_dte_user"):
+            raise AccessError(_("Only a DTE user can issue electronic documents."))
         if self.state != "posted" or self.move_type != "out_invoice":
             raise UserError(_("Only posted customer invoices can issue a DTE."))
-        if self.l10n_latam_document_type_id.code != "33":
-            raise UserError(_("This action supports type-33 invoices only."))
+        if not self.l10n_latam_document_type_id:
+            raise UserError(_("Select a Chilean DTE document type before issuing."))
+        document_code = self.l10n_latam_document_type_id.code
+        if document_code not in InvoiceSnapshotService.SUPPORTED_DOCUMENT_CODES:
+            raise UserError(
+                _("DTE document type %(code)s is not supported by this issuance flow.")
+                % {"code": document_code}
+            )
         document_model = self.env["l10n_cl.electronic.document"]
         environment = self.company_id.dte_sii_environment
-        source_key = f"account.move:{self.id}:type-33"
+        source_key = f"account.move:{self.id}:type-{document_code}"
         document = document_model.search(
             [("company_id", "=", self.company_id.id), ("source_key", "=", source_key)],
             limit=1,
@@ -48,19 +58,22 @@ class AccountMove(models.Model):
                 return document
             raise UserError(_("The existing DTE has no submission record."))
 
-        caf = self._select_type_33_caf(environment)
+        InvoiceSnapshotService().validate_invoice_source(self, document_code)
+        caf = self._select_dte_caf(environment, document_code)
         document = document_model.create(
             {
                 "name": self.name or self.display_name,
                 "company_id": self.company_id.id,
-                "document_code": "33",
+                "document_code": document_code,
                 "sii_environment": environment,
                 "source_key": source_key,
                 "source_move_id": self.id,
             }
         )
         folio = caf.action_reserve_folio(document, f"{source_key}:folio")
-        snapshot = InvoiceSnapshotService().capture_invoice_33(self, caf, folio.number)
+        snapshot = InvoiceSnapshotService().capture_invoice(
+            self, caf, folio.number, document_code
+        )
         snapshot_bytes = json.dumps(
             snapshot,
             ensure_ascii=False,
@@ -117,12 +130,27 @@ class AccountMove(models.Model):
         submission.action_enqueue_submission()
         return document
 
-    def _select_type_33_caf(self, environment):
+    @api.onchange("l10n_latam_document_type_id")
+    def _onchange_l10n_latam_document_type_id(self):
+        result = super()._onchange_l10n_latam_document_type_id()
+        for move in self.filtered(
+            lambda item: (
+                item.state == "draft"
+                and item.posted_before
+                and not item.dte_document_ids
+            )
+        ):
+            move.l10n_latam_document_number = False
+            move.name = False
+            move._compute_name()
+        return result
+
+    def _select_dte_caf(self, environment, document_code):
         self.ensure_one()
         selected_id = self.env.context.get("dte_caf_authorization_id")
         domain = [
             ("company_id", "=", self.company_id.id),
-            ("document_code", "=", "33"),
+            ("document_code", "=", document_code),
             ("sii_environment", "=", environment),
             ("state", "=", "validated"),
             "|",
@@ -134,7 +162,11 @@ class AccountMove(models.Model):
         authorizations = self.env["l10n_cl.caf.authorization"].search(domain)
         if len(authorizations) != 1:
             raise UserError(
-                _("Select exactly one current validated type-33 CAF before issuance.")
+                _(
+                    "Select exactly one current validated CAF for DTE type "
+                    "%(code)s before issuance."
+                )
+                % {"code": document_code}
             )
         authorizations._check_caf_integrity()
         return authorizations

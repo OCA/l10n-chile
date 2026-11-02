@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-02 00:43+0000\n"
-"PO-Revision-Date: 2026-11-02 00:43+0000\n"
+"POT-Creation-Date: 2026-11-02 01:39+0000\n"
+"PO-Revision-Date: 2026-11-02 01:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,6 +22,33 @@ msgid "A DTE already exists for this invoice and is not ready to resend."
 msgstr ""
 
 #. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid ""
+"A Demo CAF for type %(code)s already exists and is not a single validated "
+"synthetic CAF. Review it before continuing."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "All selected Demo CAFs and the signing profile already exist."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__allowed_document_type_ids
+msgid "Allowed Document Type"
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid ""
+"An existing Demo signing profile is not synthetic and active. Review it "
+"before creating synthetic material; it was not changed."
+msgstr ""
+
+#. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
 msgid "Cancel"
 msgstr ""
@@ -29,6 +56,12 @@ msgstr ""
 #. module: l10n_cl_dte_account
 #: model:ir.model,name:l10n_cl_dte_account.model_l10n_cl_electronic_document
 msgid "Chilean Electronic Tax Document"
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,help:l10n_cl_dte_account.field_account_bank_statement_line__dte_document_type_code
+#: model:ir.model.fields,help:l10n_cl_dte_account.field_account_move__dte_document_type_code
+msgid "Code used by different localizations"
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -69,6 +102,23 @@ msgid "DTE Demo Configuration"
 msgstr ""
 
 #. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_bank_statement_line__dte_document_type_code
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_move__dte_document_type_code
+msgid "DTE Document Type Code"
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/account_move.py:0
+msgid "DTE document type %(code)s is not supported by this issuance flow."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__document_type_ids
+msgid "DTE types for synthetic CAFs"
+msgstr ""
+
+#. module: l10n_cl_dte_account
 #: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__display_name
 msgid "Display Name"
 msgstr ""
@@ -91,7 +141,7 @@ msgstr ""
 
 #. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
-msgid "Issue DTE 33"
+msgid "Issue DTE"
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -111,12 +161,6 @@ msgstr ""
 
 #. module: l10n_cl_dte_account
 #. odoo-python
-#: code:addons/l10n_cl_dte_account/models/account_move.py:0
-msgid "Only a DTE manager can issue electronic documents."
-msgstr ""
-
-#. module: l10n_cl_dte_account
-#. odoo-python
 #: code:addons/l10n_cl_dte_account/models/res_company.py:0
 #: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
 msgid "Only a DTE manager can prepare Demo configuration."
@@ -125,7 +169,19 @@ msgstr ""
 #. module: l10n_cl_dte_account
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
+msgid "Only a DTE user can issue electronic documents."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/account_move.py:0
 msgid "Only posted customer invoices can issue a DTE."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Only supported Chilean DTE types can receive a synthetic CAF."
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -143,7 +199,7 @@ msgstr ""
 #. module: l10n_cl_dte_account
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
-msgid "SYNTHETIC DEMO CAF type 33 for %s"
+msgid "SYNTHETIC DEMO CAF type %(code)s for %(company)s"
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -166,8 +222,23 @@ msgstr ""
 
 #. module: l10n_cl_dte_account
 #. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Select at least one Chilean DTE type for synthetic CAF creation."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
-msgid "Select exactly one current validated type-33 CAF before issuance."
+msgid ""
+"Select exactly one current validated CAF for DTE type %(code)s before "
+"issuance."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,help:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__document_type_ids
+msgid ""
+"Select the Chilean DTE types for which Demo CAF authorizations are "
+"generated."
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -197,15 +268,9 @@ msgstr ""
 #. module: l10n_cl_dte_account
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
-msgid "Synthetic Demo configuration already exists; nothing changed."
-msgstr ""
-
-#. module: l10n_cl_dte_account
-#. odoo-python
-#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
 msgid ""
-"Synthetic Demo configuration created: trust key %(key)s, validated type-33 "
-"CAF %(caf)s, and signing profile %(profile)s."
+"Synthetic Demo configuration created: trust key %(key)s, validated CAF types"
+" %(codes)s, and signing profile for %(company)s."
 msgstr ""
 
 #. module: l10n_cl_dte_account
@@ -215,24 +280,11 @@ msgid "The existing DTE has no submission record."
 msgstr ""
 
 #. module: l10n_cl_dte_account
-#. odoo-python
-#: code:addons/l10n_cl_dte_account/models/account_move.py:0
-msgid "This action supports type-33 invoices only."
-msgstr ""
-
-#. module: l10n_cl_dte_account
-#. odoo-python
-#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
-msgid ""
-"This company already has Demo CAF or signing configuration. Review it before"
-" creating synthetic material; existing records were not changed."
-msgstr ""
-
-#. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
 msgid ""
-"This creates a synthetic Demo trust key, a signed type-33 CAF,\n"
-"                    and a disposable signing certificate for this company. These\n"
-"                    records are local simulation material and are never valid for\n"
-"                    Certification, Production, or submission to the SII."
+"This creates synthetic Demo CAFs for the selected DTE types,\n"
+"                    a trust key, and a disposable signing certificate for this\n"
+"                    company. The current invoice issuance action supports type 33.\n"
+"                    These records are local simulation material and are never\n"
+"                    valid for Certification, Production, or submission to the SII."
 msgstr ""

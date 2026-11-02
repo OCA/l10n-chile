@@ -1,7 +1,7 @@
 {
     "name": "Chile - DTE Account Integration",
     "summary": "Issue SII type-33 electronic documents from posted invoices",
-    "version": "18.0.1.2.0",
+    "version": "18.0.1.4.0",
     "category": "Accounting/Localizations",
     "author": "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",

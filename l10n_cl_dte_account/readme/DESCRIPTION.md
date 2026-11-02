@@ -1,2 +1,2 @@
-Connects posted Chilean type-33 customer invoices to the DTE issuance
-workflow.
+Issues supported Chilean electronic invoices from posted customer invoices
+through the durable DTE lifecycle.
