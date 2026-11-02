@@ -7,6 +7,7 @@
                 <field name="name" />
                 <field name="key_id" />
                 <field name="scope" />
+                <field name="is_synthetic" />
                 <field name="algorithm" />
                 <field name="fingerprint" />
                 <field name="valid_from" />
@@ -24,6 +25,7 @@
                         <field name="name" />
                         <field name="key_id" />
                         <field name="scope" />
+                        <field name="is_synthetic" readonly="1" />
                         <field name="algorithm" />
                         <field name="public_key_pem" />
                         <field name="fingerprint" readonly="1" />

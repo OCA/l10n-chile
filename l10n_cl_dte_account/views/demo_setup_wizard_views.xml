@@ -1,0 +1,29 @@
+<odoo>
+    <record id="view_dte_demo_setup_wizard_form" model="ir.ui.view">
+        <field name="name">l10n_cl.dte.demo.setup.wizard.form</field>
+        <field name="model">l10n_cl.dte.demo.setup.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Prepare Synthetic DTE Demo Configuration">
+                <div class="alert alert-warning" role="alert">
+                    This creates a synthetic Demo trust key, a signed type-33 CAF,
+                    and a disposable signing certificate for this company. These
+                    records are local simulation material and are never valid for
+                    Certification, Production, or submission to the SII.
+                </div>
+                <group>
+                    <field name="company_id" />
+                    <field name="confirm_synthetic_data" />
+                </group>
+                <footer>
+                    <button
+                        name="action_create_configuration"
+                        type="object"
+                        string="Create Synthetic Demo Configuration"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" special="cancel" class="btn-secondary" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

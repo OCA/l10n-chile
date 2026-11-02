@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:54+0000\n"
+"POT-Creation-Date: 2026-11-02 00:43+0000\n"
 "PO-Revision-Date: 2026-11-01 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -263,6 +263,16 @@ msgid "ID"
 msgstr "ID"
 
 #. module: l10n_cl_dte_caf
+#: model:ir.model.fields,help:l10n_cl_dte_caf.field_l10n_cl_caf_authorization__is_synthetic
+msgid "Identifies a CAF generated locally for the simulated Demo mode."
+msgstr "Identifica un CAF generado localmente para el modo Demo simulado."
+
+#. module: l10n_cl_dte_caf
+#: model:ir.model.fields,help:l10n_cl_dte_caf.field_l10n_cl_caf_trust_key__is_synthetic
+msgid "Identifies a public key generated locally for the simulated Demo mode."
+msgstr "Identifica una clave pública generada localmente para el modo Demo simulado."
+
+#. module: l10n_cl_dte_caf
 #: model:ir.model.fields.selection,name:l10n_cl_dte_caf.selection__l10n_cl_caf_folio__state__issued
 msgid "Issued"
 msgstr "Emitido"
@@ -486,6 +496,24 @@ msgstr "Estado"
 #. module: l10n_cl_dte_caf
 #. odoo-python
 #: code:addons/l10n_cl_dte_caf/models/caf_authorization.py:0
+msgid "Synthetic CAF authorizations can only use Demo environment."
+msgstr "Las autorizaciones CAF sintéticas solo pueden usar el entorno Demo."
+
+#. module: l10n_cl_dte_caf
+#: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_authorization__is_synthetic
+#: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_trust_key__is_synthetic
+msgid "Synthetic Demo Data"
+msgstr "Datos sintéticos de Demo"
+
+#. module: l10n_cl_dte_caf
+#. odoo-python
+#: code:addons/l10n_cl_dte_caf/models/caf_trust_key.py:0
+msgid "Synthetic trust keys can only use the Demo scope."
+msgstr "Las claves de confianza sintéticas solo pueden usar el alcance Demo."
+
+#. module: l10n_cl_dte_caf
+#. odoo-python
+#: code:addons/l10n_cl_dte_caf/models/caf_authorization.py:0
 msgid "The CAF DA cannot be encoded as ISO-8859-1."
 msgstr "El DA del CAF no se puede codificar como ISO-8859-1."
 
@@ -547,7 +575,8 @@ msgstr "El tipo de documento del CAF debe ser un código numérico positivo."
 #. odoo-python
 #: code:addons/l10n_cl_dte_caf/models/caf_folio.py:0
 msgid "The CAF environment must match the DTE before reserving a folio."
-msgstr "El entorno del CAF debe coincidir con el DTE antes de reservar un folio."
+msgstr ""
+"El entorno del CAF debe coincidir con el DTE antes de reservar un folio."
 
 #. module: l10n_cl_dte_caf
 #. odoo-python

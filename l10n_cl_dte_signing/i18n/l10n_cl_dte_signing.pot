@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:54+0000\n"
-"PO-Revision-Date: 2026-11-01 23:54+0000\n"
+"POT-Creation-Date: 2026-11-02 00:43+0000\n"
+"PO-Revision-Date: 2026-11-02 00:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -127,6 +127,12 @@ msgid "ID"
 msgstr ""
 
 #. module: l10n_cl_dte_signing
+#: model:ir.model.fields,help:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__is_synthetic
+msgid ""
+"Identifies a certificate generated locally for the simulated Demo mode."
+msgstr ""
+
+#. module: l10n_cl_dte_signing
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -184,6 +190,17 @@ msgstr ""
 #. module: l10n_cl_dte_signing
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__sii_environment
 msgid "Sii Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__is_synthetic
+msgid "Synthetic Demo Data"
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
+msgid "Synthetic signing profiles can only use Demo environment."
 msgstr ""
 
 #. module: l10n_cl_dte_signing
@@ -364,4 +381,10 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
 msgid "The signing certificate must belong to the selected company."
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
+msgid "The synthetic material marker cannot be changed."
 msgstr ""

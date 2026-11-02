@@ -10,6 +10,7 @@
                 <field name="company_id" groups="base.group_multi_company" />
                 <field name="sii_environment" />
                 <field name="certificate_id" />
+                <field name="is_synthetic" />
                 <field name="active" />
             </list>
         </field>
@@ -25,6 +26,7 @@
                         <field name="company_id" />
                         <field name="sii_environment" readonly="active" />
                         <field name="certificate_id" readonly="active" />
+                        <field name="is_synthetic" readonly="1" />
                         <field name="active" />
                     </group>
                 </sheet>

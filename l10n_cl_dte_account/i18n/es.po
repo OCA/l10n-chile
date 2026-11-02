@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:21+0000\n"
+"POT-Creation-Date: 2026-11-02 00:43+0000\n"
 "PO-Revision-Date: 2026-11-01 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,15 +25,72 @@ msgstr ""
 "Ya existe un DTE para esta factura y aún no está listo para reenviarse."
 
 #. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_cl_dte_account
 #: model:ir.model,name:l10n_cl_dte_account.model_l10n_cl_electronic_document
 msgid "Chilean Electronic Tax Document"
 msgstr "Documento tributario electrónico chileno"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model,name:l10n_cl_dte_account.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Confirm that the generated fiscal materials are synthetic."
+msgstr "Confirme que los materiales fiscales generados son sintéticos."
+
+#. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
+msgid "Create Synthetic Demo Configuration"
+msgstr "Crear configuración sintética de Demo"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "DTE Demo Configuration"
+msgstr "Configuración Demo de DTE"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
 
 #. module: l10n_cl_dte_account
 #: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_bank_statement_line__dte_document_ids
 #: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_move__dte_document_ids
 msgid "Electronic Documents"
 msgstr "Documentos electrónicos"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__confirm_synthetic_data
+msgid "I understand these are synthetic Demo-only fiscal materials"
+msgstr "Entiendo que estos materiales fiscales son sintéticos y exclusivos de Demo"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__id
+msgid "ID"
+msgstr "ID"
 
 #. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
@@ -46,6 +103,16 @@ msgid "Journal Entry"
 msgstr "Asiento contable"
 
 #. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última modificación el"
+
+#. module: l10n_cl_dte_account
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
 msgid "Only a DTE manager can issue electronic documents."
@@ -53,9 +120,52 @@ msgstr "Solo un responsable de DTE puede emitir documentos electrónicos."
 
 #. module: l10n_cl_dte_account
 #. odoo-python
+#: code:addons/l10n_cl_dte_account/models/res_company.py:0
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Only a DTE manager can prepare Demo configuration."
+msgstr "Solo un responsable de DTE puede preparar la configuración Demo."
+
+#. module: l10n_cl_dte_account
+#. odoo-python
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
 msgid "Only posted customer invoices can issue a DTE."
 msgstr "Solo las facturas de cliente contabilizadas pueden emitir un DTE."
+
+#. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_company_form_dte_demo_setup
+msgid "Prepare Demo Configuration"
+msgstr "Preparar configuración Demo"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/res_company.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
+msgid "Prepare Synthetic DTE Demo Configuration"
+msgstr "Preparar configuración Demo sintética de DTE"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "SYNTHETIC DEMO CAF type 33 for %s"
+msgstr "CAF tipo 33 SINTÉTICO DEMO para %s"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "SYNTHETIC DEMO certificate for %s"
+msgstr "Certificado SINTÉTICO DEMO para %s"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "SYNTHETIC DEMO signing profile for %s"
+msgstr "Perfil de firma SINTÉTICO DEMO para %s"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "SYNTHETIC DEMO trust key for %s"
+msgstr "Clave de confianza SINTÉTICA DEMO para %s"
 
 #. module: l10n_cl_dte_account
 #. odoo-python
@@ -65,9 +175,42 @@ msgstr ""
 "Seleccione exactamente un CAF tipo 33 vigente y validado antes de emitir."
 
 #. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid ""
+"Set a valid Chilean company RUT before generating the synthetic Demo CAF."
+msgstr "Configure un RUT chileno válido para la compañía antes de generar el CAF sintético Demo."
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/res_company.py:0
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Set the company's DTE SII environment to Demo first."
+msgstr "Primero configure el entorno DTE SII de la compañía como Demo."
+
+#. module: l10n_cl_dte_account
 #: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_electronic_document__source_move_id
 msgid "Source Move"
 msgstr "Movimiento de origen"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model,name:l10n_cl_dte_account.model_l10n_cl_dte_demo_setup_wizard
+msgid "Synthetic DTE Demo Configuration Wizard"
+msgstr "Asistente de configuración Demo sintética de DTE"
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid "Synthetic Demo configuration already exists; nothing changed."
+msgstr "La configuración Demo sintética ya existe; no se realizaron cambios."
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid ""
+"Synthetic Demo configuration created: trust key %(key)s, validated type-33 "
+"CAF %(caf)s, and signing profile %(profile)s."
+msgstr "Configuración Demo sintética creada: clave de confianza %(key)s, CAF tipo 33 validado %(caf)s y perfil de firma %(profile)s."
 
 #. module: l10n_cl_dte_account
 #. odoo-python
@@ -80,3 +223,22 @@ msgstr "El DTE existente no tiene un registro de envío."
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
 msgid "This action supports type-33 invoices only."
 msgstr "Esta acción solo admite facturas tipo 33."
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
+msgid ""
+"This company already has Demo CAF or signing configuration. Review it before "
+"creating synthetic material; existing records were not changed."
+msgstr "Esta compañía ya tiene un CAF Demo o una configuración de firma. Revísela antes de crear material sintético; no se modificaron los registros existentes."
+
+#. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
+msgid ""
+"This creates a synthetic Demo trust key, a signed type-33 CAF,\n"
+"                    and a disposable signing certificate for this company. "
+"These\n"
+"                    records are local simulation material and are never "
+"valid for\n"
+"                    Certification, Production, or submission to the SII."
+msgstr "Esto crea una clave de confianza Demo sintética, un CAF tipo 33 firmado y un certificado de firma desechable para esta compañía. Estos registros son material de simulación local y nunca son válidos para Certificación, Producción ni para enviar documentos al SII."

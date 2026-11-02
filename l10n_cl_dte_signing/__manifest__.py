@@ -1,7 +1,7 @@
 {
     "name": "Chile - DTE Signing",
     "summary": "Signing service contracts for Chilean TED and DTE XML",
-    "version": "18.0.1.1.0",
+    "version": "18.0.1.2.0",
     "category": "Accounting/Localizations",
     "author": "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",

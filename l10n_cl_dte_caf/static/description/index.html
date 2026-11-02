@@ -386,7 +386,7 @@ reservation ledger used by DTE issuance.</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
-<p>Only a DTE manager may load CAF files and configure the SII public trust
+<p>Only a DTE manager may load CAF files and configure the scoped CAF trust
 keys. Validation checks the CAF structure, issuer and folio metadata,
 the SII signature over DA, and the embedded RSA key pair. It refuses CAF
 files whose saved bytes no longer match their registered SHA-256 digest.</p>
@@ -395,11 +395,16 @@ by company, DTE type, and folio number, records the source CAF as DTE
 evidence, and never recycles a reserved or voided folio. Reservation
 accepts an idempotency key so a repeated request returns the same ledger
 entry.</p>
-<p>The trust-key records must be populated with the appropriate official
-SII public keys and their validity dates before validating production
-CAF files. Local tests use disposable synthetic keys and prove the
-verification contract; they do not certify compatibility with an
-SII-issued CAF or establish SII acceptance.</p>
+<p>Every CAF is assigned to Demo, Certification, or Production. Signature
+verification selects trust keys from the <tt class="docutils literal">demo</tt> scope only for Demo
+CAFs and from the <tt class="docutils literal">official</tt> scope for both SII environments. Folio
+reservation refuses to proceed unless the CAF mode matches the immutable
+DTE mode.</p>
+<p>Populate <tt class="docutils literal">official</tt> keys from the SII trust material before validating
+Certification or Production CAFs. No synthetic trust key is shipped in
+the OCA source; a DTE manager may request runtime generation from the
+company’s Demo configuration. Local verification proves cryptographic
+separation; it does not certify SII acceptance.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h1>

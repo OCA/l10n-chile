@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:54+0000\n"
-"PO-Revision-Date: 2026-11-01 23:54+0000\n"
+"POT-Creation-Date: 2026-11-02 00:43+0000\n"
+"PO-Revision-Date: 2026-11-02 00:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -259,6 +259,16 @@ msgid "ID"
 msgstr ""
 
 #. module: l10n_cl_dte_caf
+#: model:ir.model.fields,help:l10n_cl_dte_caf.field_l10n_cl_caf_authorization__is_synthetic
+msgid "Identifies a CAF generated locally for the simulated Demo mode."
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model:ir.model.fields,help:l10n_cl_dte_caf.field_l10n_cl_caf_trust_key__is_synthetic
+msgid "Identifies a public key generated locally for the simulated Demo mode."
+msgstr ""
+
+#. module: l10n_cl_dte_caf
 #: model:ir.model.fields.selection,name:l10n_cl_dte_caf.selection__l10n_cl_caf_folio__state__issued
 msgid "Issued"
 msgstr ""
@@ -472,6 +482,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_authorization__state
 #: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_folio__state
 msgid "State"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#. odoo-python
+#: code:addons/l10n_cl_dte_caf/models/caf_authorization.py:0
+msgid "Synthetic CAF authorizations can only use Demo environment."
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_authorization__is_synthetic
+#: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_trust_key__is_synthetic
+msgid "Synthetic Demo Data"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#. odoo-python
+#: code:addons/l10n_cl_dte_caf/models/caf_trust_key.py:0
+msgid "Synthetic trust keys can only use the Demo scope."
 msgstr ""
 
 #. module: l10n_cl_dte_caf

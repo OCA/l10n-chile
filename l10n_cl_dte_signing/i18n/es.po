@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:54+0000\n"
+"POT-Creation-Date: 2026-11-02 00:43+0000\n"
 "PO-Revision-Date: 2026-11-01 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -99,7 +99,8 @@ msgstr "Perfiles de firma DTE"
 #. odoo-python
 #: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
 msgid "Deactivate a signing profile before changing its identity or key."
-msgstr "Desactive el perfil de firma antes de cambiar su identidad o certificado."
+msgstr ""
+"Desactive el perfil de firma antes de cambiar su identidad o certificado."
 
 #. module: l10n_cl_dte_signing
 #: model:ir.model.fields.selection,name:l10n_cl_dte_signing.selection__l10n_cl_dte_signing_profile__sii_environment__demo
@@ -127,6 +128,11 @@ msgstr "Documento debe tener un atributo ID único."
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__id
 msgid "ID"
 msgstr "ID"
+
+#. module: l10n_cl_dte_signing
+#: model:ir.model.fields,help:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__is_synthetic
+msgid "Identifies a certificate generated locally for the simulated Demo mode."
+msgstr "Identifica un certificado generado localmente para el modo Demo simulado."
 
 #. module: l10n_cl_dte_signing
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__write_uid
@@ -187,6 +193,17 @@ msgstr "Los perfiles de firma se conservan como evidencia de configuración."
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__sii_environment
 msgid "Sii Environment"
 msgstr "Entorno SII"
+
+#. module: l10n_cl_dte_signing
+#: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__is_synthetic
+msgid "Synthetic Demo Data"
+msgstr "Datos sintéticos de Demo"
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
+msgid "Synthetic signing profiles can only use Demo environment."
+msgstr "Los perfiles de firma sintéticos solo pueden usar el entorno Demo."
 
 #. module: l10n_cl_dte_signing
 #. odoo-python
@@ -367,6 +384,12 @@ msgstr "La firma TED generada no se verificó con el par de claves del CAF."
 #: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
 msgid "The signing certificate must belong to the selected company."
 msgstr "El certificado de firma debe pertenecer a la compañía seleccionada."
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
+msgid "The synthetic material marker cannot be changed."
+msgstr "No se puede cambiar la marca de material sintético."
 
 #~ msgid "Chilean DTE"
 #~ msgstr "DTE chileno"

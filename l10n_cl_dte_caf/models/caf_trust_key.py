@@ -31,6 +31,12 @@ class CafTrustKey(models.Model):
         default="official",
         index=True,
     )
+    is_synthetic = fields.Boolean(
+        string="Synthetic Demo Data",
+        readonly=True,
+        copy=False,
+        help="Identifies a public key generated locally for the simulated Demo mode.",
+    )
     algorithm = fields.Selection(
         [("SHA1withRSA", "SHA1 with RSA")], required=True, default="SHA1withRSA"
     )
@@ -124,6 +130,14 @@ class CafTrustKey(models.Model):
         if not isinstance(public_key, rsa.RSAPublicKey):
             raise ValidationError(_("The CAF trust key must be RSA."))
         return public_key
+
+    @api.constrains("scope", "is_synthetic")
+    def _check_synthetic_scope(self):
+        for trust_key in self:
+            if trust_key.is_synthetic and trust_key.scope != "demo":
+                raise ValidationError(
+                    _("Synthetic trust keys can only use the Demo scope.")
+                )
 
     def _check_manager(self):
         if not self.env.user.has_group("l10n_cl_dte_core.group_dte_manager"):

@@ -46,6 +46,12 @@ class CafAuthorization(models.Model):
         default=lambda self: self.env.company.dte_sii_environment,
         groups="l10n_cl_dte_core.group_dte_manager",
     )
+    is_synthetic = fields.Boolean(
+        string="Synthetic Demo Data",
+        readonly=True,
+        copy=False,
+        help="Identifies a CAF generated locally for the simulated Demo mode.",
+    )
     document_code = fields.Char(required=True, index=True)
     issuer_vat = fields.Char(required=True, index=True)
     folio_start = fields.Integer(required=True)
@@ -96,7 +102,13 @@ class CafAuthorization(models.Model):
 
     def write(self, vals):
         self._check_manager()
-        if {"state", "caf_digest", "validated_at", "validated_by"}.intersection(vals):
+        if {
+            "state",
+            "caf_digest",
+            "validated_at",
+            "validated_by",
+            "is_synthetic",
+        }.intersection(vals):
             raise UserError(
                 _("CAF state and digest can only change through validated actions.")
             )
@@ -282,6 +294,14 @@ class CafAuthorization(models.Model):
             raise ValidationError(
                 _("The CAF authorization date does not match its DA.")
             )
+
+    @api.constrains("sii_environment", "is_synthetic")
+    def _check_synthetic_environment(self):
+        for authorization in self:
+            if authorization.is_synthetic and authorization.sii_environment != "demo":
+                raise ValidationError(
+                    _("Synthetic CAF authorizations can only use Demo environment.")
+                )
 
     def _lock_range(self):
         self.ensure_one()

@@ -43,6 +43,12 @@ class DteSigningProfile(models.Model):
         ondelete="restrict",
     )
     active = fields.Boolean(default=True)
+    is_synthetic = fields.Boolean(
+        string="Synthetic Demo Data",
+        readonly=True,
+        copy=False,
+        help="Identifies a certificate generated locally for the simulated Demo mode.",
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -62,6 +68,8 @@ class DteSigningProfile(models.Model):
 
     def write(self, vals):
         self._check_manager()
+        if "is_synthetic" in vals:
+            raise UserError(_("The synthetic material marker cannot be changed."))
         if any(profile.active for profile in self) and {
             "company_id",
             "sii_environment",
@@ -81,6 +89,14 @@ class DteSigningProfile(models.Model):
             if profile.certificate_id.company_id != profile.company_id:
                 raise ValidationError(
                     _("The signing certificate must belong to the selected company.")
+                )
+
+    @api.constrains("sii_environment", "is_synthetic")
+    def _check_synthetic_environment(self):
+        for profile in self:
+            if profile.is_synthetic and profile.sii_environment != "demo":
+                raise ValidationError(
+                    _("Synthetic signing profiles can only use Demo environment.")
                 )
 
     @api.model

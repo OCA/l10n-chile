@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_company_form_dte_demo_setup" model="ir.ui.view">
+        <field name="name">res.company.form.dte.demo.setup</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="l10n_cl_dte_core.view_company_form_dte_environment" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='dte_sii_environment']" position="after">
+                <button
+                    name="action_open_dte_demo_setup"
+                    type="object"
+                    string="Prepare Demo Configuration"
+                    class="btn-secondary"
+                    groups="l10n_cl_dte_core.group_dte_manager"
+                    invisible="dte_sii_environment != 'demo'"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -14,6 +14,7 @@ from the `official` scope for both SII environments. Folio reservation refuses
 to proceed unless the CAF mode matches the immutable DTE mode.
 
 Populate `official` keys from the SII trust material before validating
-Certification or Production CAFs. Keep synthetic Demo trust anchors outside
-the OCA addon. Local verification proves cryptographic separation; it does not
+Certification or Production CAFs. No synthetic trust key is shipped in the OCA
+source; a DTE manager may request runtime generation from the company's Demo
+configuration. Local verification proves cryptographic separation; it does not
 certify SII acceptance.
