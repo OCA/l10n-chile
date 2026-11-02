@@ -270,7 +270,8 @@ msgstr "Identifica un CAF generado localmente para el modo Demo simulado."
 #. module: l10n_cl_dte_caf
 #: model:ir.model.fields,help:l10n_cl_dte_caf.field_l10n_cl_caf_trust_key__is_synthetic
 msgid "Identifies a public key generated locally for the simulated Demo mode."
-msgstr "Identifica una clave pública generada localmente para el modo Demo simulado."
+msgstr ""
+"Identifica una clave pública generada localmente para el modo Demo simulado."
 
 #. module: l10n_cl_dte_caf
 #: model:ir.model.fields.selection,name:l10n_cl_dte_caf.selection__l10n_cl_caf_folio__state__issued
@@ -317,8 +318,8 @@ msgstr "Nombre"
 #: code:addons/l10n_cl_dte_caf/models/caf_trust_key.py:0
 msgid "No SII trust key for IDK %(key_id)s covers CAF date %(date)s."
 msgstr ""
-"Ninguna clave de confianza del SII para el IDK %(key_id)s cubre la fecha del "
-"CAF %(date)s."
+"Ninguna clave de confianza del SII para el IDK %(key_id)s cubre la fecha del"
+" CAF %(date)s."
 
 #. module: l10n_cl_dte_caf
 #: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_folio__number
@@ -690,13 +691,15 @@ msgstr "La clave de reserva está vinculada a otro DTE o CAF."
 #. odoo-python
 #: code:addons/l10n_cl_dte_caf/models/caf_authorization.py:0
 msgid "The stored CAF content does not match its registered SHA-256."
-msgstr "El contenido del CAF almacenado no coincide con el SHA-256 registrado."
+msgstr ""
+"El contenido del CAF almacenado no coincide con el SHA-256 registrado."
 
 #. module: l10n_cl_dte_caf
 #. odoo-python
 #: code:addons/l10n_cl_dte_caf/models/caf_trust_key.py:0
 msgid "The trust key fingerprint is calculated automatically."
-msgstr "La huella digital de la clave de confianza se calcula automáticamente."
+msgstr ""
+"La huella digital de la clave de confianza se calcula automáticamente."
 
 #. module: l10n_cl_dte_caf
 #: model:ir.model.constraint,message:l10n_cl_dte_caf.constraint_l10n_cl_caf_authorization_caf_company_digest_uniq
@@ -723,7 +726,8 @@ msgstr "Este folio ya está registrado para el CAF."
 #. module: l10n_cl_dte_caf
 #: model:ir.model.constraint,message:l10n_cl_dte_caf.constraint_l10n_cl_caf_folio_folio_company_type_number_uniq
 msgid "This folio is already recorded for the company and document type."
-msgstr "Este folio ya está registrado para la compañía y el tipo de documento."
+msgstr ""
+"Este folio ya está registrado para la compañía y el tipo de documento."
 
 #. module: l10n_cl_dte_caf
 #: model:ir.model.constraint,message:l10n_cl_dte_caf.constraint_l10n_cl_caf_folio_folio_reservation_key_uniq
@@ -735,8 +739,8 @@ msgstr "Esta clave de reserva ya se utilizó."
 #: code:addons/l10n_cl_dte_caf/models/caf_trust_key.py:0
 msgid "Trust key material is immutable; create a new validity record."
 msgstr ""
-"El material de la clave de confianza es inmutable; cree un nuevo registro de "
-"vigencia."
+"El material de la clave de confianza es inmutable; cree un nuevo registro de"
+" vigencia."
 
 #. module: l10n_cl_dte_caf
 #. odoo-python
@@ -788,3 +792,82 @@ msgstr "Anulado"
 #: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_folio__voided_at
 msgid "Voided At"
 msgstr "Anulado el"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "CAF"
+msgstr "CAF"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_form
+msgid "CAF File and Integrity"
+msgstr "Archivo CAF e integridad"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "DTE"
+msgstr "DTE"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Demo Keys"
+msgstr "Claves Demo"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+msgid "Environment"
+msgstr "Ambiente"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_form
+msgid "Folio Identity"
+msgstr "Identificación del folio"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_form
+msgid "Folio Range and Validity"
+msgstr "Rango y vigencia de folios"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Integrity"
+msgstr "Integridad"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Key Identity"
+msgstr "Identificación de la clave"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Public Key Material"
+msgstr "Clave pública"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_form
+msgid "Reservation"
+msgstr "Reserva"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Synthetic Demo"
+msgstr "Demo sintética"

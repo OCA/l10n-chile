@@ -8,11 +8,45 @@
                 <field name="key_id" />
                 <field name="scope" />
                 <field name="is_synthetic" />
-                <field name="algorithm" />
-                <field name="fingerprint" />
-                <field name="valid_from" />
-                <field name="valid_to" />
+                <field name="algorithm" optional="hide" />
+                <field name="fingerprint" optional="hide" />
+                <field name="valid_from" optional="hide" />
+                <field name="valid_to" optional="hide" />
             </list>
+        </field>
+    </record>
+    <record id="view_caf_trust_key_search" model="ir.ui.view">
+        <field name="name">l10n_cl.caf.trust.key.search</field>
+        <field name="model">l10n_cl.caf.trust.key</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="key_id" />
+                <field name="scope" />
+                <field name="fingerprint" />
+                <filter
+                    name="demo"
+                    string="Demo Keys"
+                    domain="[('scope', '=', 'demo')]"
+                />
+                <filter
+                    name="synthetic"
+                    string="Synthetic Demo"
+                    domain="[('is_synthetic', '=', True)]"
+                />
+                <group string="Group By">
+                    <filter
+                        name="group_scope"
+                        string="Scope"
+                        context="{'group_by': 'scope'}"
+                    />
+                    <filter
+                        name="group_algorithm"
+                        string="Algorithm"
+                        context="{'group_by': 'algorithm'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
     <record id="view_caf_trust_key_form" model="ir.ui.view">
@@ -22,17 +56,25 @@
             <form create="1" delete="0">
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="key_id" />
-                        <field name="scope" />
-                        <field name="is_synthetic" readonly="1" />
-                        <field name="algorithm" />
-                        <field name="public_key_pem" />
-                        <field name="fingerprint" readonly="1" />
-                        <field name="valid_from" />
-                        <field name="valid_to" />
-                        <field name="source_url" />
+                        <group string="Key Identity">
+                            <field name="name" />
+                            <field name="key_id" />
+                            <field name="scope" />
+                            <field name="is_synthetic" readonly="1" />
+                            <field name="algorithm" />
+                            <field name="valid_from" />
+                            <field name="valid_to" />
+                            <field name="source_url" />
+                        </group>
+                        <group string="Integrity">
+                            <field name="fingerprint" readonly="1" />
+                        </group>
                     </group>
+                    <notebook>
+                        <page string="Public Key Material">
+                            <field name="public_key_pem" widget="text" />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -41,5 +83,6 @@
         <field name="name">SII CAF Trust Keys</field>
         <field name="res_model">l10n_cl.caf.trust.key</field>
         <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_caf_trust_key_search" />
     </record>
 </odoo>

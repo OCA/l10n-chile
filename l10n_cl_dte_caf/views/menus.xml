@@ -1,5 +1,26 @@
 <odoo>
-    <menuitem id="menu_caf_authorizations" name="CAF Authorizations" parent="l10n_cl_dte_core.menu_dte_root" action="action_caf_authorization" sequence="20" groups="l10n_cl_dte_core.group_dte_manager" />
-    <menuitem id="menu_caf_folios" name="Reserved Folios" parent="l10n_cl_dte_core.menu_dte_root" action="action_caf_folio" sequence="30" groups="l10n_cl_dte_core.group_dte_user" />
-    <menuitem id="menu_caf_trust_keys" name="SII CAF Trust Keys" parent="l10n_cl_dte_core.menu_dte_root" action="action_caf_trust_key" sequence="40" groups="l10n_cl_dte_core.group_dte_manager" />
+    <menuitem
+        id="menu_caf_authorizations"
+        name="CAF Authorizations"
+        parent="l10n_cl_dte_core.menu_dte_configuration"
+        action="action_caf_authorization"
+        sequence="10"
+        groups="l10n_cl_dte_core.group_dte_manager"
+    />
+    <menuitem
+        id="menu_caf_trust_keys"
+        name="SII CAF Trust Keys"
+        parent="l10n_cl_dte_core.menu_dte_configuration"
+        action="action_caf_trust_key"
+        sequence="20"
+        groups="l10n_cl_dte_core.group_dte_manager"
+    />
+    <menuitem
+        id="menu_caf_folios"
+        name="Reserved Folios"
+        parent="l10n_cl_dte_core.menu_dte_operations"
+        action="action_caf_folio"
+        sequence="10"
+        groups="l10n_cl_dte_core.group_dte_user"
+    />
 </odoo>

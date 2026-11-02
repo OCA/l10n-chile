@@ -776,3 +776,82 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_dte_caf.field_l10n_cl_caf_folio__voided_at
 msgid "Voided At"
 msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "CAF"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_form
+msgid "CAF File and Integrity"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "DTE"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Demo Keys"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+msgid "Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_form
+msgid "Folio Identity"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_form
+msgid "Folio Range and Validity"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Integrity"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Key Identity"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_form
+msgid "Public Key Material"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_form
+msgid "Reservation"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_folio_search
+msgid "Status"
+msgstr ""
+
+#. module: l10n_cl_dte_caf
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_authorization_search
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_caf.view_caf_trust_key_search
+msgid "Synthetic Demo"
+msgstr ""

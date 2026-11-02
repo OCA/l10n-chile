@@ -11,10 +11,60 @@
                 <field name="document_code" />
                 <field name="folio_start" />
                 <field name="folio_end" />
-                <field name="date_from" />
-                <field name="date_to" />
+                <field name="date_from" optional="hide" />
+                <field name="date_to" optional="hide" />
                 <field name="state" />
             </list>
+        </field>
+    </record>
+    <record id="view_caf_authorization_search" model="ir.ui.view">
+        <field name="name">l10n_cl.caf.authorization.search</field>
+        <field name="model">l10n_cl.caf.authorization</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="issuer_vat" />
+                <field name="company_id" />
+                <field name="document_code" />
+                <field name="sii_environment" />
+                <filter
+                    name="validated"
+                    string="Validated"
+                    domain="[('state', '=', 'validated')]"
+                />
+                <filter
+                    name="draft"
+                    string="Draft"
+                    domain="[('state', '=', 'draft')]"
+                />
+                <filter
+                    name="synthetic"
+                    string="Synthetic Demo"
+                    domain="[('is_synthetic', '=', True)]"
+                />
+                <group string="Group By">
+                    <filter
+                        name="group_company"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                    <filter
+                        name="group_environment"
+                        string="Environment"
+                        context="{'group_by': 'sii_environment'}"
+                    />
+                    <filter
+                        name="group_document_code"
+                        string="Document Type"
+                        context="{'group_by': 'document_code'}"
+                    />
+                    <filter
+                        name="group_state"
+                        string="Status"
+                        context="{'group_by': 'state'}"
+                    />
+                </group>
+            </search>
         </field>
     </record>
     <record id="view_caf_authorization_form" model="ir.ui.view">
@@ -23,26 +73,61 @@
         <field name="arch" type="xml">
             <form create="0" delete="0">
                 <header>
-                    <button name="action_validate_authorization" type="object" string="Validate CAF" class="btn-primary" groups="l10n_cl_dte_core.group_dte_manager" />
+                    <button
+                        name="action_validate_authorization"
+                        type="object"
+                        string="Validate CAF"
+                        class="btn-primary"
+                        groups="l10n_cl_dte_core.group_dte_manager"
+                    />
                     <field name="state" widget="statusbar" />
                 </header>
                 <sheet>
                     <group>
-                        <field name="name" />
-                        <field name="company_id" />
-                        <field name="sii_environment" readonly="state != 'draft'" />
-                        <field name="is_synthetic" readonly="1" />
-                        <field name="document_code" />
-                        <field name="issuer_vat" />
-                        <field name="folio_start" />
-                        <field name="folio_end" />
-                        <field name="date_from" />
-                        <field name="date_to" />
-                        <field name="caf_file" filename="caf_filename" groups="l10n_cl_dte_core.group_dte_manager" />
-                        <field name="caf_filename" groups="l10n_cl_dte_core.group_dte_manager" />
-                        <field name="caf_digest" groups="l10n_cl_dte_core.group_dte_manager" />
+                        <group string="Authorization">
+                            <field name="name" />
+                            <field name="company_id" />
+                            <field name="sii_environment" readonly="state != 'draft'" />
+                            <field name="is_synthetic" readonly="1" />
+                            <field name="document_code" />
+                            <field name="issuer_vat" />
+                        </group>
+                        <group string="Folio Range and Validity">
+                            <field name="folio_start" />
+                            <field name="folio_end" />
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </group>
                     </group>
-                    <field name="folio_ids" />
+                    <notebook>
+                        <page string="CAF File and Integrity">
+                            <group>
+                                <field
+                                    name="caf_file"
+                                    filename="caf_filename"
+                                    groups="l10n_cl_dte_core.group_dte_manager"
+                                />
+                                <field
+                                    name="caf_filename"
+                                    groups="l10n_cl_dte_core.group_dte_manager"
+                                />
+                                <field
+                                    name="caf_digest"
+                                    groups="l10n_cl_dte_core.group_dte_manager"
+                                />
+                            </group>
+                        </page>
+                        <page string="Reserved Folios">
+                            <field name="folio_ids">
+                                <list create="0" edit="0" delete="0">
+                                    <field name="number" />
+                                    <field name="document_id" />
+                                    <field name="state" />
+                                    <field name="reserved_at" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -51,5 +136,6 @@
         <field name="name">CAF Authorizations</field>
         <field name="res_model">l10n_cl.caf.authorization</field>
         <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_caf_authorization_search" />
     </record>
 </odoo>
