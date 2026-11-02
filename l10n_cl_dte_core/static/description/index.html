@@ -397,6 +397,10 @@ document state. Lifecycle changes pass through the validated transition
 action and create an immutable audit event in the same database
 transaction. Authorization, XML preparation, signing, queuing and fiscal
 responses require evidence with the matching artifact role.</p>
+<p>Configure the company’s single <tt class="docutils literal">DTE SII Environment</tt> selector to Demo,
+Certification, or Production. Each new electronic document captures that
+value in its read-only <tt class="docutils literal">sii_environment</tt>; later company changes do not
+alter existing DTEs, submissions, CAF selection, or signing.</p>
 <p>Record one immutable <tt class="docutils literal">source_snapshot</tt> artifact before preparing XML.
 The core stores its SHA-256 as the document payload digest and will not
 allow the snapshot to be replaced. Evidence hashes and byte counts are

@@ -51,6 +51,11 @@ action and create an immutable audit event in the same database
 transaction. Authorization, XML preparation, signing, queuing and fiscal
 responses require evidence with the matching artifact role.
 
+Configure the company's single ``DTE SII Environment`` selector to Demo,
+Certification, or Production. Each new electronic document captures that
+value in its read-only ``sii_environment``; later company changes do not
+alter existing DTEs, submissions, CAF selection, or signing.
+
 Record one immutable ``source_snapshot`` artifact before preparing XML.
 The core stores its SHA-256 as the document payload digest and will not
 allow the snapshot to be replaced. Evidence hashes and byte counts are
