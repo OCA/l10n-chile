@@ -485,3 +485,44 @@ msgstr ""
 #: model:ir.model.fields.selection,name:l10n_cl_dte_gateway.selection__l10n_cl_electronic_submission__demo_scenario__unknown_then_reconciled
 msgid "Unknown then Reconciled"
 msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Demo"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "In Progress"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Needs Attention"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_list
+msgid "Simulated"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Status"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+msgid "Transport Attempts"
+msgstr ""
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+msgid "Transport Timeline"
+msgstr ""

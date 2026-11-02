@@ -209,7 +209,9 @@ msgstr "Última actualización el"
 msgid ""
 "No SII transport adapter is installed for %(environment)s. The DTE has not "
 "been sent."
-msgstr "No hay un adaptador de transporte SII instalado para %(environment)s. El DTE no se ha enviado."
+msgstr ""
+"No hay un adaptador de transporte SII instalado para %(environment)s. El DTE"
+" no se ha enviado."
 
 #. module: l10n_cl_dte_gateway
 #. odoo-python
@@ -239,7 +241,8 @@ msgstr "Solo se puede consultar un DTE enviado que tenga TrackID."
 #. odoo-python
 #: code:addons/l10n_cl_dte_gateway/services/sii_gateway.py:0
 msgid "Only the unknown-then-reconciled Demo scenario can be reconciled."
-msgstr "Solo se puede conciliar el escenario Demo «desconocido y luego conciliado»."
+msgstr ""
+"Solo se puede conciliar el escenario Demo «desconocido y luego conciliado»."
 
 #. module: l10n_cl_dte_gateway
 #: model:ir.model.fields,field_description:l10n_cl_dte_gateway.field_l10n_cl_submission_attempt__operation
@@ -492,6 +495,47 @@ msgstr "Los intentos de transporte se conservan como evidencia de auditoría."
 #: model:ir.model.fields.selection,name:l10n_cl_dte_gateway.selection__l10n_cl_electronic_submission__demo_scenario__unknown_then_reconciled
 msgid "Unknown then Reconciled"
 msgstr "Desconocido y luego conciliado"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Demo"
+msgstr "Demo"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "In Progress"
+msgstr "En curso"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Needs Attention"
+msgstr "Requiere atención"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_list
+msgid "Simulated"
+msgstr "Simulado"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+msgid "Transport Attempts"
+msgstr "Intentos de transporte"
+
+#. module: l10n_cl_dte_gateway
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_gateway.view_electronic_submission_form
+msgid "Transport Timeline"
+msgstr "Cronología de transporte"
 
 #~ msgid "Companies"
 #~ msgstr "Compañías"

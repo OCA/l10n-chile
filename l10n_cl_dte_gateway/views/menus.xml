@@ -1,3 +1,10 @@
 <odoo>
-    <menuitem id="menu_electronic_submissions" name="SII Submissions" parent="l10n_cl_dte_core.menu_dte_root" action="action_electronic_submission" sequence="40" groups="l10n_cl_dte_core.group_dte_user" />
+    <menuitem
+        id="menu_electronic_submissions"
+        name="SII Submissions"
+        parent="l10n_cl_dte_core.menu_dte_operations"
+        action="action_electronic_submission"
+        sequence="20"
+        groups="l10n_cl_dte_core.group_dte_user"
+    />
 </odoo>
