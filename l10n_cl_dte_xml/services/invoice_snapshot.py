@@ -12,13 +12,24 @@ from odoo.exceptions import ValidationError
 class InvoiceSnapshotService:
     """Build immutable fiscal input from a posted Chilean invoice."""
 
-    def capture_invoice_33(self, move, caf_authorization, folio_number):
-        """Return a serializable type-33 snapshot without recalculating accounting."""
+    # This adapter serializes DTE_v10 invoices. Boletas (39/41) have a separate
+    # SII format and lifecycle and must not enter this pipeline.
+    SUPPORTED_DOCUMENT_CODES = frozenset({"33", "34"})
+
+    def validate_invoice_source(self, move, document_code):
+        """Validate source and fiscal master data before reserving a folio."""
+        move.ensure_one()
+        document_code = str(document_code)
+        self._validate_invoice(move, document_code)
+
+    def capture_invoice(self, move, caf_authorization, folio_number, document_code):
+        """Return a serializable snapshot for the selected document type."""
         move.ensure_one()
         caf_authorization.ensure_one()
-        company, folio_number, activity_code = self._validate_source(
-            move, caf_authorization, folio_number
-        )
+        document_code = str(document_code)
+        company, activity_code = self._validate_invoice(move, document_code)
+        self._validate_caf(caf_authorization, company, folio_number, document_code)
+        folio_number = int(folio_number)
         invoice_lines = move.invoice_line_ids.filtered(
             lambda line: line.display_type == "product"
         )
@@ -30,13 +41,18 @@ class InvoiceSnapshotService:
             raise ValidationError(
                 _("Invoice lines do not reconcile to the posted untaxed amount.")
             )
+        if document_code in {"34", "41"} and taxable_net:
+            raise ValidationError(
+                _("DTE type %(code)s must contain only exempt lines.")
+                % {"code": document_code}
+            )
         if taxable_net and not vat_total:
             raise ValidationError(_("The taxable invoice has no posted VAT amount."))
 
         current_timestamp = self._chile_timestamp()
         return {
             "company_id": company.id,
-            "document_code": "33",
+            "document_code": document_code,
             "folio": folio_number,
             "issue_date": fields.Date.to_date(move.invoice_date).isoformat(),
             "document_timestamp": current_timestamp,
@@ -57,20 +73,50 @@ class InvoiceSnapshotService:
             "lines": line_snapshots,
         }
 
-    def _validate_source(self, move, caf_authorization, folio_number):
+    def _validate_invoice(self, move, document_code):
+        if document_code not in self.SUPPORTED_DOCUMENT_CODES:
+            raise ValidationError(
+                _("DTE type %(code)s is not supported by this issuance flow.")
+                % {"code": document_code}
+            )
         if move.state != "posted" or move.move_type != "out_invoice":
             raise ValidationError(
-                _("A type-33 DTE can only be created from a posted customer invoice.")
+                _("A DTE can only be created from a posted customer invoice.")
             )
-        if move.l10n_latam_document_type_id.code != "33":
-            raise ValidationError(_("The accounting document type must be 33."))
+        if move.l10n_latam_document_type_id.code != document_code:
+            raise ValidationError(
+                _("The selected DTE type does not match the accounting document.")
+            )
         company = move.company_id
         if company.partner_id.country_id.code != "CL":
             raise ValidationError(_("The issuing company must be registered in Chile."))
+        if move.currency_id.name != "CLP":
+            raise ValidationError(_("This issuance flow supports CLP invoices only."))
+        if not move.invoice_date:
+            raise ValidationError(_("The invoice must have an issue date."))
+        errors = self._fiscal_master_data_errors(move, document_code)
+        if errors:
+            raise ValidationError(
+                _("Complete the required fiscal data before issuing the DTE:\n%s")
+                % "\n".join(f"• {error}" for error in errors)
+            )
+        activity_code = company.dte_sii_activity_code.strip()
+        return company, activity_code
+
+    def _validate_caf(self, caf_authorization, company, folio_number, document_code):
         if caf_authorization.company_id != company:
             raise ValidationError(_("The CAF and invoice companies do not match."))
-        if caf_authorization.document_code != "33":
-            raise ValidationError(_("The invoice requires a type-33 CAF."))
+        if caf_authorization.document_code != document_code:
+            raise ValidationError(
+                _("The CAF does not match the selected DTE document type.")
+            )
+        caf_model = company.env["l10n_cl.caf.authorization"]
+        company_vat = caf_model._normalize_vat(company.partner_id.vat)
+        caf_vat = caf_model._normalize_vat(caf_authorization.issuer_vat)
+        if not caf_model._is_valid_vat(company_vat) or company_vat != caf_vat:
+            raise ValidationError(
+                _("The company RUT no longer matches the selected CAF issuer.")
+            )
         folio_number = int(folio_number)
         if (
             not caf_authorization.folio_start
@@ -78,24 +124,55 @@ class InvoiceSnapshotService:
             <= caf_authorization.folio_end
         ):
             raise ValidationError(_("The folio is outside the CAF range."))
-        if move.currency_id.name != "CLP":
-            raise ValidationError(
-                _("This first type-33 flow supports CLP invoices only.")
+
+    def _fiscal_master_data_errors(self, move, document_code):
+        caf_model = move.env["l10n_cl.caf.authorization"]
+        errors = []
+        issuer = move.company_id.partner_id
+        issuer_vat = caf_model._normalize_vat(issuer.vat)
+        if not caf_model._is_valid_vat(issuer_vat):
+            errors.append(_("Company: enter a valid Chilean RUT."))
+        if not (issuer.name or "").strip():
+            errors.append(_("Company: enter the legal name."))
+        if not (issuer.l10n_cl_activity_description or "").strip():
+            errors.append(_("Company: enter the SII economic activity."))
+        activity_code = (move.company_id.dte_sii_activity_code or "").strip()
+        if not activity_code.isdigit() or int(activity_code or "0") <= 0:
+            errors.append(_("Company: enter a valid SII activity code."))
+        if not " ".join(
+            part.strip() for part in (issuer.street, issuer.street2) if part
+        ):
+            errors.append(_("Company: enter the DTE origin address."))
+        if not (issuer.city or "").strip():
+            errors.append(_("Company: enter the DTE origin commune."))
+
+        receiver = move.partner_id.commercial_partner_id
+        receiver_vat = caf_model._normalize_vat(receiver.vat)
+        if not caf_model._is_valid_vat(receiver_vat):
+            errors.append(_("Customer: enter a valid Chilean RUT."))
+        if not (receiver.name or "").strip():
+            errors.append(_("Customer: enter a name for the DTE recipient."))
+        if not " ".join(
+            part.strip() for part in (receiver.street, receiver.street2) if part
+        ):
+            errors.append(_("Customer: enter the DTE delivery/service address."))
+        if not (receiver.city or "").strip():
+            errors.append(_("Customer: enter the DTE recipient commune."))
+        if document_code in {"33", "34"} and receiver_vat == "666666666":
+            errors.append(
+                _(
+                    "DTE types 33 and 34 require an identified recipient; for an "
+                    "anonymous final consumer, select type 39; boleta issuance is "
+                    "not available in this flow yet."
+                )
             )
-        if not move.invoice_date:
-            raise ValidationError(_("The invoice must have an issue date."))
-        activity_code = (company.dte_sii_activity_code or "").strip()
-        if not activity_code:
-            raise ValidationError(
-                _("Configure the SII economic activity code on the company first.")
-            )
-        return company, folio_number, activity_code
+        return errors
 
     def _snapshot_lines(self, invoice_lines):
         if not invoice_lines:
             raise ValidationError(_("The invoice needs at least one product line."))
         if len(invoice_lines) > 60:
-            raise ValidationError(_("A type-33 DTE supports at most 60 detail lines."))
+            raise ValidationError(_("A DTE supports at most 60 detail lines."))
 
         line_snapshots = []
         taxable_net = Decimal("0")
@@ -146,7 +223,7 @@ class InvoiceSnapshotService:
                 continue
             if tax.amount_type != "percent" or abs(tax.amount) != 19:
                 raise ValidationError(
-                    _("This first type-33 flow supports only 19% VAT and exempt lines.")
+                    _("This issuance flow supports only 19% VAT and exempt lines.")
                 )
             percentages.add(abs(tax.amount))
         if len(percentages) > 1:

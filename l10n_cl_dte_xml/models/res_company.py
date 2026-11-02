@@ -20,9 +20,7 @@ class ResCompany(models.Model):
     def _check_dte_sii_activity_code(self):
         for company in self:
             code = (company.dte_sii_activity_code or "").strip()
-            if code and (
-                not re.fullmatch(r"[0-9]{1,6}", code) or int(code) <= 0
-            ):
+            if code and (not re.fullmatch(r"[0-9]{1,6}", code) or int(code) <= 0):
                 raise ValidationError(
                     _(
                         "The SII activity code must be a positive code of at most "

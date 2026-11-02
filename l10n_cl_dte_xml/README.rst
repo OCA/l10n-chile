@@ -28,8 +28,8 @@ Chile - DTE XML
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Captures posted invoice data and defines the type-33 DTE, TED and
-schema-validation composition boundary.
+Captures posted invoice data and composes supported electronic invoice
+and boleta DTE, TED and schema-validation payloads.
 
 **Table of contents**
 

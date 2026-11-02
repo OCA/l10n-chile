@@ -1,2 +1,2 @@
-Captures posted invoice data and defines the type-33 DTE, TED and
-schema-validation composition boundary.
+Captures posted invoice data and composes supported electronic invoice and
+boleta DTE, TED and schema-validation payloads.

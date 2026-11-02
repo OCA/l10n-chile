@@ -21,27 +21,28 @@ SII_NAMESPACE = "http://www.sii.cl/SiiDte"
 
 
 class DteXmlComposer:
-    """Compose and validate one type-33 DTE using the SII v10 schema."""
+    """Compose and validate supported electronic invoices and boletas."""
 
     def compose_unsigned_document(self, snapshot):
-        """Serialize a previously prepared type-33 snapshot.
+        """Serialize a previously prepared DTE snapshot.
 
         `snapshot` is a plain mapping produced by InvoiceSnapshotService. Fiscal
         arithmetic belongs to account.move; this method only serializes values.
         """
-        _require_snapshot_type_33(snapshot)
+        _require_supported_snapshot(snapshot)
         root = etree.Element(
             f"{{{SII_NAMESPACE}}}DTE",
             nsmap={None: SII_NAMESPACE},
             version="1.0",
         )
-        document_id = f"F{int(snapshot['folio']):010d}T33"
+        document_code = str(snapshot["document_code"])
+        document_id = f"F{int(snapshot['folio']):010d}T{document_code}"
         document = etree.SubElement(
             root, f"{{{SII_NAMESPACE}}}Documento", ID=document_id
         )
         header = etree.SubElement(document, f"{{{SII_NAMESPACE}}}Encabezado")
         identification = etree.SubElement(header, f"{{{SII_NAMESPACE}}}IdDoc")
-        _add_text(identification, "TipoDTE", "33")
+        _add_text(identification, "TipoDTE", document_code)
         _add_text(identification, "Folio", snapshot["folio"])
         _add_text(identification, "FchEmis", snapshot["issue_date"])
 
@@ -118,10 +119,11 @@ class DteXmlComposer:
 
     def compose_ted(self, snapshot, caf_authorization, signature_service=None):
         """Build TED from the snapshot and return it with its FRMT signature."""
-        _require_snapshot_type_33(snapshot)
+        _require_supported_snapshot(snapshot)
         caf_authorization.ensure_one()
-        if caf_authorization.document_code != "33":
-            raise ValidationError(_("Only a type-33 CAF can sign a type-33 TED."))
+        document_code = str(snapshot["document_code"])
+        if caf_authorization.document_code != document_code:
+            raise ValidationError(_("The CAF type must match the DTE type."))
         folio = int(snapshot["folio"])
         if not caf_authorization.folio_start <= folio <= caf_authorization.folio_end:
             raise ValidationError(_("The folio is outside the CAF range."))
@@ -138,7 +140,7 @@ class DteXmlComposer:
             (
                 b"<DD>",
                 _tag("RE", issuer["vat"]),
-                _tag("TD", "33"),
+                _tag("TD", document_code),
                 _tag("F", folio),
                 _tag("FE", snapshot["issue_date"]),
                 _tag("RR", receiver["vat"]),
@@ -201,7 +203,7 @@ def _parse_document(xml_bytes):
     try:
         return etree.fromstring(xml_bytes, parser=parser)
     except (etree.XMLSyntaxError, ValueError) as error:
-        raise ValidationError(_("DTE XML is not well-formed.")) from error
+        raise ValidationError(_("DTE XML is not well-formed: %s") % error) from error
 
 
 @lru_cache(maxsize=1)
@@ -224,15 +226,15 @@ def _find_local_text(element, name):
     return child.text if child is not None else None
 
 
-def _require_snapshot_type_33(snapshot):
+def _require_supported_snapshot(snapshot):
     if not isinstance(snapshot, dict):
         raise ValidationError(_("The invoice snapshot must be a mapping."))
-    if snapshot.get("document_code") != "33":
-        raise ValidationError(_("Only a type-33 invoice snapshot is supported."))
+    if snapshot.get("document_code") not in {"33", "34"}:
+        raise ValidationError(_("The selected DTE type is not supported."))
     if not snapshot.get("lines"):
-        raise ValidationError(_("A type-33 invoice needs at least one detail line."))
+        raise ValidationError(_("A DTE needs at least one detail line."))
     if len(snapshot["lines"]) > 60:
-        raise ValidationError(_("A type-33 DTE supports at most 60 detail lines."))
+        raise ValidationError(_("A DTE supports at most 60 detail lines."))
 
 
 def _add_text(parent, name, value):

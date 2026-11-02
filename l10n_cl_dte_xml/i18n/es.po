@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 23:21+0000\n"
+"POT-Creation-Date: 2026-11-02 01:39+0000\n"
 "PO-Revision-Date: 2026-11-01 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,23 +20,25 @@ msgstr ""
 #. module: l10n_cl_dte_xml
 #. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
-msgid "A type-33 DTE can only be created from a posted customer invoice."
+#, fuzzy
+msgid "A DTE can only be created from a posted customer invoice."
 msgstr ""
 "Un DTE tipo 33 solo se puede crear a partir de una factura de cliente "
 "contabilizada."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
-#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 #: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
-msgid "A type-33 DTE supports at most 60 detail lines."
-msgstr "Un DTE tipo 33 admite como máximo 60 líneas de detalle."
+msgid "A DTE needs at least one detail line."
+msgstr "El DTE requiere al menos una línea de detalle."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 #: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
-msgid "A type-33 invoice needs at least one detail line."
-msgstr "Una factura tipo 33 requiere al menos una línea de detalle."
+#, fuzzy
+msgid "A DTE supports at most 60 detail lines."
+msgstr "Un DTE tipo 33 admite como máximo 60 líneas de detalle."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
@@ -83,6 +85,18 @@ msgstr "Los números del DTE deben ser finitos."
 #. module: l10n_cl_dte_xml
 #. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "DTE type %(code)s is not supported by this issuance flow."
+msgstr "El tipo de DTE %(code)s no está admitido en este flujo de emisión."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "DTE type %(code)s must contain only exempt lines."
+msgstr "El DTE tipo %(code)s solo puede contener líneas exentas."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 msgid "Each invoice product name must contain between 1 and 80 characters."
 msgstr ""
 "El nombre de cada producto de la factura debe tener entre 1 y 80 caracteres."
@@ -111,18 +125,6 @@ msgstr "Los importes monetarios de la factura deben ser finitos."
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 msgid "Invoice monetary values must be numeric."
 msgstr "Los importes monetarios de la factura deben ser numéricos."
-
-#. module: l10n_cl_dte_xml
-#. odoo-python
-#: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
-msgid "Only a type-33 CAF can sign a type-33 TED."
-msgstr "Solo un CAF tipo 33 puede firmar un TED tipo 33."
-
-#. module: l10n_cl_dte_xml
-#. odoo-python
-#: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
-msgid "Only a type-33 invoice snapshot is supported."
-msgstr "Solo se admite una instantánea de factura tipo 33."
 
 #. module: l10n_cl_dte_xml
 #: model:ir.model.fields,help:l10n_cl_dte_xml.field_res_company__dte_sii_activity_code
@@ -156,9 +158,21 @@ msgstr "La compañía del CAF no coincide con la de la factura."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "The CAF does not match the selected DTE document type."
+msgstr ""
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
 msgid "The CAF file must contain exactly one CAF section."
 msgstr "El archivo CAF debe contener exactamente una sección CAF."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
+msgid "The CAF type must match the DTE type."
+msgstr "El tipo de CAF debe coincidir con el tipo de DTE."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
@@ -207,12 +221,6 @@ msgstr "El elemento raíz del XML debe ser un DTE del SII."
 #. module: l10n_cl_dte_xml
 #. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
-msgid "The accounting document type must be 33."
-msgstr "El tipo de documento contable debe ser 33."
-
-#. module: l10n_cl_dte_xml
-#. odoo-python
-#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 #: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
 msgid "The folio is outside the CAF range."
 msgstr "El folio está fuera del rango del CAF."
@@ -237,12 +245,6 @@ msgstr "La factura requiere al menos una línea de producto."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
-#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
-msgid "The invoice requires a type-33 CAF."
-msgstr "La factura requiere un CAF tipo 33."
-
-#. module: l10n_cl_dte_xml
-#. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
 msgid "The invoice snapshot must be a mapping."
 msgstr "La instantánea de la factura debe ser un mapa de datos."
@@ -252,6 +254,18 @@ msgstr "La instantánea de la factura debe ser un mapa de datos."
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
 msgid "The issuing company must be registered in Chile."
 msgstr "La compañía emisora debe estar registrada en Chile."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "The selected DTE type does not match the accounting document."
+msgstr "El tipo de DTE seleccionado no coincide con el documento contable."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/xml_composer.py:0
+msgid "The selected DTE type is not supported."
+msgstr "El tipo de DTE seleccionado no está admitido."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
@@ -274,11 +288,94 @@ msgstr "La factura afecta no tiene un importe de IVA contabilizado."
 #. module: l10n_cl_dte_xml
 #. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
-msgid "This first type-33 flow supports CLP invoices only."
-msgstr "Este primer flujo tipo 33 solo admite facturas en CLP."
+msgid "This issuance flow supports CLP invoices only."
+msgstr "Este flujo de emisión solo admite facturas en CLP."
 
 #. module: l10n_cl_dte_xml
 #. odoo-python
 #: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
-msgid "This first type-33 flow supports only 19% VAT and exempt lines."
-msgstr "Este primer flujo tipo 33 solo admite IVA del 19 % y líneas exentas."
+msgid "This issuance flow supports only 19% VAT and exempt lines."
+msgstr "Este flujo de emisión solo admite IVA del 19 % y líneas exentas."
+
+#~ msgid "Only a type-33 CAF can sign a type-33 TED."
+#~ msgstr "Solo un CAF tipo 33 puede firmar un TED tipo 33."
+
+#~ msgid "Only a type-33 invoice snapshot is supported."
+#~ msgstr "Solo se admite una instantánea de factura tipo 33."
+
+#~ msgid "The accounting document type must be 33."
+#~ msgstr "El tipo de documento contable debe ser 33."
+
+#~ msgid "The invoice requires a type-33 CAF."
+#~ msgstr "La factura requiere un CAF tipo 33."
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Complete the required fiscal data before issuing the DTE:\n%s"
+msgstr "Complete los datos fiscales requeridos antes de emitir el DTE:\n%s"
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter a valid Chilean RUT."
+msgstr "Empresa: ingrese un RUT chileno válido."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter the legal name."
+msgstr "Empresa: ingrese la razón social."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter the SII economic activity."
+msgstr "Empresa: ingrese el giro económico registrado en el SII."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter a valid SII activity code."
+msgstr "Empresa: ingrese un código de actividad SII válido."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter the DTE origin address."
+msgstr "Empresa: ingrese la dirección de origen del DTE."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Company: enter the DTE origin commune."
+msgstr "Empresa: ingrese la comuna de origen del DTE."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Customer: enter a valid Chilean RUT."
+msgstr "Cliente: ingrese un RUT chileno válido."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Customer: enter a name for the DTE recipient."
+msgstr "Cliente: ingrese el nombre o razón social del receptor del DTE."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Customer: enter the DTE delivery/service address."
+msgstr "Cliente: ingrese la dirección de entrega o prestación del servicio del DTE."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "Customer: enter the DTE recipient commune."
+msgstr "Cliente: ingrese la comuna del receptor del DTE."
+
+#. module: l10n_cl_dte_xml
+#. odoo-python
+#: code:addons/l10n_cl_dte_xml/services/invoice_snapshot.py:0
+msgid "DTE types 33 and 34 require an identified recipient; for an anonymous final consumer, select type 39; boleta issuance is not available in this flow yet."
+msgstr "Los DTE tipos 33 y 34 requieren un receptor identificado; para un consumidor final anónimo, seleccione el tipo 39. La emisión de boletas aún no está disponible en este flujo."
