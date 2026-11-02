@@ -4,6 +4,18 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form" />
         <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    name="action_view_dte_documents"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-code-o"
+                    groups="l10n_cl_dte_core.group_dte_user"
+                    invisible="dte_document_count == 0"
+                >
+                    <field name="dte_document_count" widget="statinfo" string="DTE" />
+                </button>
+            </xpath>
             <xpath expr="//header/field[@name='state']" position="before">
                 <button
                     name="issue_dte"
@@ -19,6 +31,17 @@
                 <field name="dte_document_type_code" invisible="1" />
                 <field name="dte_document_ids" invisible="1" />
             </xpath>
+            <xpath expr="//field[@name='l10n_latam_document_type_id']" position="after">
+                <div
+                    class="alert alert-info"
+                    role="alert"
+                    colspan="2"
+                    invisible="state != 'posted' or move_type != 'out_invoice' or not dte_document_type_code or dte_document_type_code in ['33', '34'] or dte_document_ids"
+                >
+                    DTE issuance is not available for this document type yet. The current
+                    flow supports electronic invoice types 33 and 34.
+                </div>
+            </xpath>
         </field>
     </record>
 
@@ -28,8 +51,13 @@
         <field name="inherit_id" ref="l10n_latam_invoice_document.view_move_form" />
         <field name="priority">90</field>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='l10n_latam_document_type_id']" position="attributes">
-                <attribute name="readonly">state != 'draft' or dte_document_ids</attribute>
+            <xpath
+                expr="//field[@name='l10n_latam_document_type_id']"
+                position="attributes"
+            >
+                <attribute
+                    name="readonly"
+                >state != 'draft' or dte_document_ids</attribute>
             </xpath>
             <xpath expr="//sheet" position="inside">
                 <field name="posted_before" invisible="1" />

@@ -15,6 +15,9 @@ class AccountMove(models.Model):
     dte_document_ids = fields.One2many(
         "l10n_cl.electronic.document", "source_move_id", string="Electronic Documents"
     )
+    dte_document_count = fields.Integer(
+        string="DTE Documents", compute="_compute_dte_document_count"
+    )
     dte_document_type_code = fields.Char(
         related="l10n_latam_document_type_id.code",
         string="DTE Document Type Code",
@@ -129,6 +132,23 @@ class AccountMove(models.Model):
         folio.action_consume()
         submission.action_enqueue_submission()
         return document
+
+    @api.depends("dte_document_ids")
+    def _compute_dte_document_count(self):
+        for move in self:
+            move.dte_document_count = len(move.dte_document_ids)
+
+    def action_view_dte_documents(self):
+        self.ensure_one()
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "l10n_cl_dte_core.action_electronic_document"
+        )
+        action["domain"] = [("source_move_id", "=", self.id)]
+        documents = self.dte_document_ids
+        if len(documents) == 1:
+            action["views"] = [(False, "form")]
+            action["res_id"] = documents.id
+        return action
 
     @api.onchange("l10n_latam_document_type_id")
     def _onchange_l10n_latam_document_type_id(self):

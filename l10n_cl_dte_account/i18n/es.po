@@ -118,7 +118,8 @@ msgstr "Código de tipo de documento DTE"
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/models/account_move.py:0
 msgid "DTE document type %(code)s is not supported by this issuance flow."
-msgstr "El tipo de documento DTE %(code)s no está admitido en este flujo de emisión."
+msgstr ""
+"El tipo de documento DTE %(code)s no está admitido en este flujo de emisión."
 
 #. module: l10n_cl_dte_account
 #: model:ir.model.fields,field_description:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__document_type_ids
@@ -190,7 +191,8 @@ msgstr "Solo las facturas de cliente contabilizadas pueden emitir un DTE."
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
 msgid "Only supported Chilean DTE types can receive a synthetic CAF."
-msgstr "Solo los tipos DTE chilenos admitidos pueden recibir un CAF sintético."
+msgstr ""
+"Solo los tipos DTE chilenos admitidos pueden recibir un CAF sintético."
 
 #. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_company_form_dte_demo_setup
@@ -240,13 +242,15 @@ msgstr "Seleccione al menos un tipo DTE chileno para crear CAF sintéticos."
 msgid ""
 "Select exactly one current validated CAF for DTE type %(code)s before "
 "issuance."
-msgstr "Seleccione exactamente un CAF vigente y validado para el DTE tipo %(code)s antes de emitir."
-"Seleccione exactamente un CAF tipo 33 vigente y validado antes de emitir."
+msgstr ""
+"Seleccione exactamente un CAF vigente y validado para el DTE tipo %(code)s "
+"antes de emitir."
 
 #. module: l10n_cl_dte_account
 #: model:ir.model.fields,help:l10n_cl_dte_account.field_l10n_cl_dte_demo_setup_wizard__document_type_ids
 msgid ""
-"Select the Chilean DTE types for which Demo CAF authorizations are generated."
+"Select the Chilean DTE types for which Demo CAF authorizations are "
+"generated."
 msgstr ""
 "Seleccione los tipos DTE chilenos para los que se generarán autorizaciones "
 "CAF Demo."
@@ -281,8 +285,8 @@ msgstr "Asistente de configuración Demo sintética de DTE"
 #. odoo-python
 #: code:addons/l10n_cl_dte_account/wizards/demo_setup_wizard.py:0
 msgid ""
-"Synthetic Demo configuration created: trust key %(key)s, validated CAF types "
-"%(codes)s, and signing profile for %(company)s."
+"Synthetic Demo configuration created: trust key %(key)s, validated CAF types"
+" %(codes)s, and signing profile for %(company)s."
 msgstr ""
 "Configuración Demo sintética creada: clave de confianza %(key)s, CAF "
 "validados para los tipos %(codes)s y perfil de firma para %(company)s."
@@ -294,23 +298,50 @@ msgid "The existing DTE has no submission record."
 msgstr "El DTE existente no tiene un registro de envío."
 
 #. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
+msgid "DTE"
+msgstr "DTE"
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_bank_statement_line__dte_document_count
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_move__dte_document_count
+msgid "DTE Documents"
+msgstr "Documentos DTE"
+
+#. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
+msgid ""
+"DTE issuance is not available for this document type yet. The current\n"
+"                    flow supports electronic invoice types 33 and 34."
+msgstr ""
+"La emisión DTE aún no está disponible para este tipo de documento. El flujo "
+"actual admite facturas electrónicas tipos 33 y 34."
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/account_move.py:0
+msgid "Select a Chilean DTE document type before issuing."
+msgstr ""
+
+#. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
 msgid ""
 "This creates synthetic Demo CAFs for the selected DTE types,\n"
-"                    a trust key, and a disposable signing certificate for "
-"this\n"
-"                    company. The current invoice issuance action supports "
-"type 33.\n"
-"                    These records are local simulation material and are "
-"never\n"
-"                    valid for Certification, Production, or submission to "
-"the SII."
+"                    a trust key, and a disposable signing certificate for this\n"
+"                    company. CAF creation does not mean that every selected type\n"
+"                    can be issued from an invoice. The current invoice flow supports\n"
+"                    electronic invoice types 33 and 34; boletas 39 and 41 are not yet\n"
+"                    issuable from invoices. All generated records are local\n"
+"                    simulation material and are never valid for Certification,\n"
+"                    Production, or submission to the SII."
 msgstr ""
-"Esto crea CAF Demo sintéticos para los tipos DTE seleccionados, una clave de "
-"confianza y un certificado de firma desechable para esta compañía. La acción "
-"actual de emisión de facturas admite el tipo 33. Estos registros son "
-"material de simulación local y nunca son válidos para Certificación, "
-"Producción ni para enviar documentos al SII."
+"Esto crea CAF Demo sintéticos para los tipos DTE seleccionados, una clave de"
+" confianza y un certificado de firma desechable para esta compañía. Crear un"
+" CAF no significa que todos los tipos seleccionados se puedan emitir desde "
+"una factura. El flujo actual admite facturas electrónicas tipos 33 y 34; las"
+" boletas 39 y 41 aún no se pueden emitir desde facturas. Todos los registros"
+" generados son material de simulación local y nunca son válidos para "
+"Certificación, Producción ni para enviarlos al SII."
 
 #~ msgid "This action supports type-33 invoices only."
 #~ msgstr "Esta acción solo admite facturas tipo 33."
@@ -322,19 +353,18 @@ msgstr ""
 #~ msgstr "Solo un usuario DTE puede emitir documentos electrónicos."
 
 #~ msgid "Synthetic Demo configuration already exists; nothing changed."
-#~ msgstr ""
-#~ "La configuración Demo sintética ya existe; no se realizaron cambios."
+#~ msgstr "La configuración Demo sintética ya existe; no se realizaron cambios."
 
 #~ msgid ""
-#~ "Synthetic Demo configuration created: trust key %(key)s, validated "
-#~ "type-33 CAF %(caf)s, and signing profile %(profile)s."
+#~ "Synthetic Demo configuration created: trust key %(key)s, validated type-33 "
+#~ "CAF %(caf)s, and signing profile %(profile)s."
 #~ msgstr ""
-#~ "Configuración Demo sintética creada: clave de confianza %(key)s, CAF tipo "
-#~ "33 validado %(caf)s y perfil de firma %(profile)s."
+#~ "Configuración Demo sintética creada: clave de confianza %(key)s, CAF tipo 33"
+#~ " validado %(caf)s y perfil de firma %(profile)s."
 
 #~ msgid ""
-#~ "This company already has Demo CAF or signing configuration. Review it "
-#~ "before creating synthetic material; existing records were not changed."
+#~ "This company already has Demo CAF or signing configuration. Review it before"
+#~ " creating synthetic material; existing records were not changed."
 #~ msgstr ""
 #~ "Esta compañía ya tiene un CAF Demo o una configuración de firma. Revísela "
 #~ "antes de crear material sintético; no se modificaron los registros "
@@ -342,13 +372,11 @@ msgstr ""
 
 #~ msgid ""
 #~ "This creates a synthetic Demo trust key, a signed type-33 CAF,\n"
-#~ "                    and a disposable signing certificate for this "
-#~ "company. These\n"
-#~ "                    records are local simulation material and are never "
-#~ "valid for\n"
+#~ "                    and a disposable signing certificate for this company. These\n"
+#~ "                    records are local simulation material and are never valid for\n"
 #~ "                    Certification, Production, or submission to the SII."
 #~ msgstr ""
-#~ "Esto crea una clave de confianza Demo sintética, un CAF tipo 33 firmado y "
-#~ "un certificado de firma desechable para esta compañía. Estos registros "
-#~ "son material de simulación local y nunca son válidos para Certificación, "
+#~ "Esto crea una clave de confianza Demo sintética, un CAF tipo 33 firmado y un"
+#~ " certificado de firma desechable para esta compañía. Estos registros son "
+#~ "material de simulación local y nunca son válidos para Certificación, "
 #~ "Producción ni para enviar documentos al SII."

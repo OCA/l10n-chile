@@ -280,11 +280,38 @@ msgid "The existing DTE has no submission record."
 msgstr ""
 
 #. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
+msgid "DTE"
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_bank_statement_line__dte_document_count
+#: model:ir.model.fields,field_description:l10n_cl_dte_account.field_account_move__dte_document_count
+msgid "DTE Documents"
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_move_form_dte_issuance
+msgid ""
+"DTE issuance is not available for this document type yet. The current\n"
+"                    flow supports electronic invoice types 33 and 34."
+msgstr ""
+
+#. module: l10n_cl_dte_account
+#. odoo-python
+#: code:addons/l10n_cl_dte_account/models/account_move.py:0
+msgid "Select a Chilean DTE document type before issuing."
+msgstr ""
+
+#. module: l10n_cl_dte_account
 #: model_terms:ir.ui.view,arch_db:l10n_cl_dte_account.view_dte_demo_setup_wizard_form
 msgid ""
 "This creates synthetic Demo CAFs for the selected DTE types,\n"
 "                    a trust key, and a disposable signing certificate for this\n"
-"                    company. The current invoice issuance action supports type 33.\n"
-"                    These records are local simulation material and are never\n"
-"                    valid for Certification, Production, or submission to the SII."
+"                    company. CAF creation does not mean that every selected type\n"
+"                    can be issued from an invoice. The current invoice flow supports\n"
+"                    electronic invoice types 33 and 34; boletas 39 and 41 are not yet\n"
+"                    issuable from invoices. All generated records are local\n"
+"                    simulation material and are never valid for Certification,\n"
+"                    Production, or submission to the SII."
 msgstr ""

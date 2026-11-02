@@ -7,14 +7,21 @@
                 <div class="alert alert-warning" role="alert">
                     This creates synthetic Demo CAFs for the selected DTE types,
                     a trust key, and a disposable signing certificate for this
-                    company. The current invoice issuance action supports type 33.
-                    These records are local simulation material and are never
-                    valid for Certification, Production, or submission to the SII.
+                    company. CAF creation does not mean that every selected type
+                    can be issued from an invoice. The current invoice flow supports
+                    electronic invoice types 33 and 34; boletas 39 and 41 are not yet
+                    issuable from invoices. All generated records are local
+                    simulation material and are never valid for Certification,
+                    Production, or submission to the SII.
                 </div>
                 <group>
                     <field name="company_id" />
                     <field name="allowed_document_type_ids" invisible="1" />
-                    <field name="document_type_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}" />
+                    <field
+                        name="document_type_ids"
+                        widget="many2many_tags"
+                        options="{'no_create': True, 'no_create_edit': True}"
+                    />
                     <field name="confirm_synthetic_data" />
                 </group>
                 <footer>
