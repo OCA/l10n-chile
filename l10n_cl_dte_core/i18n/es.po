@@ -69,7 +69,8 @@ msgstr "Se requiere un número de folio positivo para el estado numerado."
 #: model:ir.model.constraint,message:l10n_cl_dte_core.constraint_l10n_cl_electronic_document_source_key_company_uniq
 msgid "A source invoice can only have one electronic document per company."
 msgstr ""
-"Una factura de origen solo puede tener un documento electrónico por compañía."
+"Una factura de origen solo puede tener un documento electrónico por "
+"compañía."
 
 #. module: l10n_cl_dte_core
 #. odoo-python
@@ -83,7 +84,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_cl_dte_core/models/electronic_document.py:0
 msgid "A source snapshot must be recorded before XML preparation."
-msgstr "Se debe registrar una instantánea del origen antes de preparar el XML."
+msgstr ""
+"Se debe registrar una instantánea del origen antes de preparar el XML."
 
 #. module: l10n_cl_dte_core
 #. odoo-python
@@ -116,7 +118,8 @@ msgstr "Actor"
 #. odoo-python
 #: code:addons/l10n_cl_dte_core/models/electronic_document.py:0
 msgid "An unknown remote outcome must include a correlation key."
-msgstr "Un resultado remoto desconocido debe incluir una clave de correlación."
+msgstr ""
+"Un resultado remoto desconocido debe incluir una clave de correlación."
 
 #. module: l10n_cl_dte_core
 #: model:ir.model.fields,field_description:l10n_cl_dte_core.field_l10n_cl_electronic_event__artifact_id
@@ -158,8 +161,8 @@ msgstr "Certificación"
 
 #. module: l10n_cl_dte_core
 #: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_root
-msgid "Chilean DTE"
-msgstr "DTE chileno"
+msgid "DTE Issuance"
+msgstr "Emisión de DTE"
 
 #. module: l10n_cl_dte_core
 #: model:ir.model,name:l10n_cl_dte_core.model_l10n_cl_electronic_document
@@ -283,6 +286,14 @@ msgstr "Nombre mostrado"
 #: model:ir.model.fields,field_description:l10n_cl_dte_core.field_l10n_cl_electronic_event__document_id
 msgid "Document"
 msgstr "Documento"
+
+#. module: l10n_cl_dte_core
+#: model:ir.actions.act_window,name:l10n_cl_dte_core.action_customer_documents
+#: model:ir.actions.act_window,name:l10n_cl_dte_core.action_vendor_documents
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_customer_documents
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_vendor_documents
+msgid "Documents"
+msgstr "Documentos"
 
 #. module: l10n_cl_dte_core
 #: model:ir.model.fields,field_description:l10n_cl_dte_core.field_l10n_cl_electronic_document__document_code
@@ -446,7 +457,8 @@ msgstr "Solo un responsable de DTE puede cambiar el estado del documento."
 #. odoo-python
 #: code:addons/l10n_cl_dte_core/models/electronic_document.py:0
 msgid "Only a DTE manager can record a source snapshot."
-msgstr "Solo un responsable de DTE puede registrar una instantánea del origen."
+msgstr ""
+"Solo un responsable de DTE puede registrar una instantánea del origen."
 
 #. module: l10n_cl_dte_core
 #. odoo-python
@@ -569,8 +581,8 @@ msgstr "Respuesta de estado"
 #: code:addons/l10n_cl_dte_core/models/electronic_artifact.py:0
 msgid "Stored evidence does not match its recorded digest and size."
 msgstr ""
-"La evidencia almacenada no coincide con el resumen criptográfico y el tamaño "
-"registrados."
+"La evidencia almacenada no coincide con el resumen criptográfico y el tamaño"
+" registrados."
 
 #. module: l10n_cl_dte_core
 #. odoo-python
@@ -663,6 +675,85 @@ msgstr "Estado de DTE no compatible: %s"
 #: model:ir.model.fields.selection,name:l10n_cl_dte_core.selection__l10n_cl_electronic_document__preparation_state__prepared
 msgid "XML Prepared"
 msgstr "XML preparado"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Artifact Details"
+msgstr "Detalles del artefacto"
+
+#. module: l10n_cl_dte_core
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Demo"
+msgstr "Demo"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_company_form_dte_environment
+msgid ""
+"Demo runs a local simulation. Certification and Production\n"
+"                            require their own SII credentials and connection setup."
+msgstr ""
+"Demo ejecuta una simulación local. Certificación y Producción requieren sus "
+"propias credenciales y conexión con el SII."
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Environment"
+msgstr "Ambiente"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Evidence Content"
+msgstr "Contenido de la evidencia"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Integrity and Format"
+msgstr "Integridad y formato"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Needs Attention"
+msgstr "Requiere atención"
+
+#. module: l10n_cl_dte_core
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_operations
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Preparation Pending"
+msgstr "Preparación pendiente"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_company_form_dte_environment
+msgid "SII Configuration"
+msgstr "Configuración del SII"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "SII Status"
+msgstr "Estado en el SII"
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_list
+msgid "Simulated"
+msgstr "Simulado"
 
 #~ msgid "Dte Environment"
 #~ msgstr "Entorno DTE"

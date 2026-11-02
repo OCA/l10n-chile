@@ -8,7 +8,7 @@
             <list create="0" edit="0" delete="0">
                 <field name="document_id" />
                 <field name="role" />
-                <field name="is_simulated" string="DEMO / SIMULADO" />
+                <field name="is_simulated" string="Simulated" />
                 <field name="sha256" />
                 <field name="mimetype" />
                 <field name="byte_count" />
@@ -23,20 +23,27 @@
             <form create="0" edit="0" delete="0">
                 <sheet>
                     <group>
-                        <field name="document_id" readonly="1" />
-                        <field name="role" readonly="1" />
-                        <field name="sha256" readonly="1" />
-                        <field name="mimetype" readonly="1" />
-                        <field name="encoding" readonly="1" />
-                        <field name="byte_count" readonly="1" />
-                        <field name="producer_version" readonly="1" />
-                        <field name="created_at" readonly="1" />
-                        <field
-                            name="content"
-                            readonly="1"
-                            groups="l10n_cl_dte_core.group_dte_manager"
-                        />
+                        <group string="Artifact Details">
+                            <field name="document_id" readonly="1" />
+                            <field name="role" readonly="1" />
+                            <field name="created_at" readonly="1" />
+                            <field name="producer_version" readonly="1" />
+                        </group>
+                        <group string="Integrity and Format">
+                            <field name="sha256" readonly="1" />
+                            <field name="mimetype" readonly="1" />
+                            <field name="encoding" readonly="1" />
+                            <field name="byte_count" readonly="1" />
+                        </group>
                     </group>
+                    <notebook>
+                        <page
+                            string="Evidence Content"
+                            groups="l10n_cl_dte_core.group_dte_manager"
+                        >
+                            <field name="content" readonly="1" />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

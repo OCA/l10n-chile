@@ -3,14 +3,93 @@
 <odoo>
     <menuitem
         id="menu_dte_root"
-        name="Chilean DTE"
-        sequence="80"
+        name="DTE Issuance"
+        parent="account.menu_finance"
+        sequence="3"
         groups="group_dte_user"
+    />
+
+    <record id="action_customer_documents" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">account.move</field>
+        <field name="view_id" ref="l10n_cl.view_complete_invoice_refund_tree" />
+        <field
+            name="domain"
+        >[('move_type', 'in', ['out_invoice', 'out_refund', 'out_receipt'])]</field>
+        <field name="context">{'default_move_type': 'out_invoice'}</field>
+        <field name="target">current</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="action_vendor_documents" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">account.move</field>
+        <field name="view_id" ref="l10n_cl.view_complete_invoice_refund_tree" />
+        <field
+            name="domain"
+        >[('move_type', 'in', ['in_invoice', 'in_refund', 'in_receipt'])]</field>
+        <field name="context">{'default_move_type': 'in_invoice'}</field>
+        <field name="target">current</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Replace duplicated invoice, credit note, and receipt shortcuts with one list per flow. -->
+    <record id="account.menu_action_move_out_invoice_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="account.menu_action_move_out_refund_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="account.menu_action_move_out_receipt_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="account.menu_action_move_in_invoice_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="account.menu_action_move_in_refund_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="account.menu_action_move_in_receipt_type" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="l10n_cl.menu_sale_invoices_credit_notes" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+    <record id="l10n_cl.menu_vendor_bills_and_refunds" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
+
+    <menuitem
+        id="menu_customer_documents"
+        name="Documents"
+        parent="account.menu_finance_receivables"
+        action="action_customer_documents"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_vendor_documents"
+        name="Documents"
+        parent="account.menu_finance_payables"
+        action="action_vendor_documents"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_dte_operations"
+        name="Operations"
+        parent="menu_dte_root"
+        sequence="10"
+        groups="group_dte_user"
+    />
+    <menuitem
+        id="menu_dte_configuration"
+        name="Configuration"
+        parent="menu_dte_root"
+        sequence="20"
+        groups="group_dte_manager"
     />
     <menuitem
         id="menu_electronic_documents"
         name="Electronic Documents"
-        parent="menu_dte_root"
+        parent="menu_dte_operations"
         action="action_electronic_document"
         sequence="10"
         groups="group_dte_user"

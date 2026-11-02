@@ -16,6 +16,61 @@
             </list>
         </field>
     </record>
+    <record id="view_electronic_document_search" model="ir.ui.view">
+        <field name="name">l10n_cl.electronic.document.search</field>
+        <field name="model">l10n_cl.electronic.document</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="source_key" />
+                <field name="document_code" />
+                <field name="sii_environment" />
+                <field name="folio" />
+                <filter
+                    name="pending"
+                    string="Preparation Pending"
+                    domain="[('preparation_state', '!=', 'queued')]"
+                />
+                <filter
+                    name="fiscal_attention"
+                    string="Needs Attention"
+                    domain="[('fiscal_state', 'in', ['rejected', 'outcome_unknown'])]"
+                />
+                <filter
+                    name="demo"
+                    string="Demo"
+                    domain="[('sii_environment', '=', 'demo')]"
+                />
+                <group string="Group By">
+                    <filter
+                        name="group_company"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                    <filter
+                        name="group_environment"
+                        string="Environment"
+                        context="{'group_by': 'sii_environment'}"
+                    />
+                    <filter
+                        name="group_document_code"
+                        string="Document Type"
+                        context="{'group_by': 'document_code'}"
+                    />
+                    <filter
+                        name="group_preparation_state"
+                        string="Preparation"
+                        context="{'group_by': 'preparation_state'}"
+                    />
+                    <filter
+                        name="group_fiscal_state"
+                        string="SII Status"
+                        context="{'group_by': 'fiscal_state'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
     <record id="view_electronic_document_form" model="ir.ui.view">
         <field name="name">l10n_cl.electronic.document.form</field>
         <field name="model">l10n_cl.electronic.document</field>
@@ -49,5 +104,6 @@
         <field name="name">Electronic Documents</field>
         <field name="res_model">l10n_cl.electronic.document</field>
         <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_electronic_document_search" />
     </record>
 </odoo>

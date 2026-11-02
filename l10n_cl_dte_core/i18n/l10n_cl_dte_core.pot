@@ -152,7 +152,7 @@ msgstr ""
 
 #. module: l10n_cl_dte_core
 #: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_root
-msgid "Chilean DTE"
+msgid "DTE Issuance"
 msgstr ""
 
 #. module: l10n_cl_dte_core
@@ -274,6 +274,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_cl_dte_core.field_l10n_cl_electronic_artifact__document_id
 #: model:ir.model.fields,field_description:l10n_cl_dte_core.field_l10n_cl_electronic_event__document_id
 msgid "Document"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model:ir.actions.act_window,name:l10n_cl_dte_core.action_customer_documents
+#: model:ir.actions.act_window,name:l10n_cl_dte_core.action_vendor_documents
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_customer_documents
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_vendor_documents
+msgid "Documents"
 msgstr ""
 
 #. module: l10n_cl_dte_core
@@ -646,4 +654,86 @@ msgstr ""
 #. module: l10n_cl_dte_core
 #: model:ir.model.fields.selection,name:l10n_cl_dte_core.selection__l10n_cl_electronic_document__preparation_state__prepared
 msgid "XML Prepared"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Artifact Details"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Demo"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_company_form_dte_environment
+msgid ""
+"Demo runs a local simulation. Certification and Production\n"
+"                            require their own SII credentials and connection setup."
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Evidence Content"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_form
+msgid "Integrity and Format"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Needs Attention"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model:ir.ui.menu,name:l10n_cl_dte_core.menu_dte_operations
+msgid "Operations"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "Preparation Pending"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_company_form_dte_environment
+msgid "SII Configuration"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_document_search
+msgid "SII Status"
+msgstr ""
+
+#. module: l10n_cl_dte_core
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_core.view_electronic_artifact_list
+msgid "Simulated"
+msgstr ""
+
+#. module: account
+#: model:ir.ui.menu,name:account.menu_finance
+msgid "Invoicing"
 msgstr ""

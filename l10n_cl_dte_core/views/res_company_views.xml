@@ -6,11 +6,19 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='currency_id']" position="after">
-                <field
-                    name="dte_sii_environment"
-                    groups="l10n_cl_dte_core.group_dte_manager"
-                />
+            <xpath expr="//notebook" position="inside">
+                <page string="Chilean DTE" name="dte_sii_settings">
+                    <group string="SII Configuration">
+                        <field
+                            name="dte_sii_environment"
+                            groups="l10n_cl_dte_core.group_dte_manager"
+                        />
+                        <div class="alert alert-info" role="alert" colspan="2">
+                            Demo runs a local simulation. Certification and Production
+                            require their own SII credentials and connection setup.
+                        </div>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
