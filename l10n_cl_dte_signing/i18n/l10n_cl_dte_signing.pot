@@ -388,3 +388,24 @@ msgstr ""
 #: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
 msgid "The synthetic material marker cannot be changed."
 msgstr ""
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Synthetic Demo"
+msgstr ""
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/services/signature_service.py:0
+msgid "The XML input is not well-formed: %s"
+msgstr ""

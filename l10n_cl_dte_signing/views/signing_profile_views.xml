@@ -15,6 +15,39 @@
             </list>
         </field>
     </record>
+    <record id="view_dte_signing_profile_search" model="ir.ui.view">
+        <field name="name">l10n_cl.dte.signing.profile.search</field>
+        <field name="model">l10n_cl.dte.signing.profile</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="company_id" />
+                <field name="sii_environment" />
+                <filter
+                    name="active"
+                    string="Active"
+                    domain="[('active', '=', True)]"
+                />
+                <filter
+                    name="synthetic"
+                    string="Synthetic Demo"
+                    domain="[('is_synthetic', '=', True)]"
+                />
+                <group string="Group By">
+                    <filter
+                        name="group_company"
+                        string="Company"
+                        context="{'group_by': 'company_id'}"
+                    />
+                    <filter
+                        name="group_environment"
+                        string="Environment"
+                        context="{'group_by': 'sii_environment'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
     <record id="view_dte_signing_profile_form" model="ir.ui.view">
         <field name="name">l10n_cl.dte.signing.profile.form</field>
         <field name="model">l10n_cl.dte.signing.profile</field>
@@ -37,5 +70,6 @@
         <field name="name">DTE Signing Profiles</field>
         <field name="res_model">l10n_cl.dte.signing.profile</field>
         <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_dte_signing_profile_search" />
     </record>
 </odoo>

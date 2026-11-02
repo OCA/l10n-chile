@@ -4,9 +4,9 @@
     <menuitem
         id="menu_dte_signing_profiles"
         name="Signing Profiles"
-        parent="l10n_cl_dte_core.menu_dte_root"
+        parent="l10n_cl_dte_core.menu_dte_configuration"
         action="action_dte_signing_profile"
-        sequence="50"
+        sequence="30"
         groups="l10n_cl_dte_core.group_dte_manager"
     />
 </odoo>

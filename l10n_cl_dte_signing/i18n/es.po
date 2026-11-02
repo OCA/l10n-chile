@@ -131,8 +131,10 @@ msgstr "ID"
 
 #. module: l10n_cl_dte_signing
 #: model:ir.model.fields,help:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__is_synthetic
-msgid "Identifies a certificate generated locally for the simulated Demo mode."
-msgstr "Identifica un certificado generado localmente para el modo Demo simulado."
+msgid ""
+"Identifies a certificate generated locally for the simulated Demo mode."
+msgstr ""
+"Identifica un certificado generado localmente para el modo Demo simulado."
 
 #. module: l10n_cl_dte_signing
 #: model:ir.model.fields,field_description:l10n_cl_dte_signing.field_l10n_cl_dte_signing_profile__write_uid
@@ -390,6 +392,27 @@ msgstr "El certificado de firma debe pertenecer a la compañía seleccionada."
 #: code:addons/l10n_cl_dte_signing/models/signing_profile.py:0
 msgid "The synthetic material marker cannot be changed."
 msgstr "No se puede cambiar la marca de material sintético."
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Environment"
+msgstr "Ambiente"
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_cl_dte_signing
+#: model_terms:ir.ui.view,arch_db:l10n_cl_dte_signing.view_dte_signing_profile_search
+msgid "Synthetic Demo"
+msgstr "Demo sintética"
+
+#. module: l10n_cl_dte_signing
+#. odoo-python
+#: code:addons/l10n_cl_dte_signing/services/signature_service.py:0
+msgid "The XML input is not well-formed: %s"
+msgstr ""
 
 #~ msgid "Chilean DTE"
 #~ msgstr "DTE chileno"
