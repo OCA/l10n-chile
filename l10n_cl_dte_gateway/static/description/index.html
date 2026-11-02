@@ -387,8 +387,16 @@ state reconciliation and retained raw evidence.</p>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-1">Usage</a></h1>
 <p>Requires OCA queue_job with the server jobrunner configured. Do not
-automatically resend an attempt with an uncertain remote outcome.
-Gateway methods are not implemented in this scaffold.</p>
+automatically resend an attempt with an uncertain outcome.</p>
+<p>Demo routes to the local <tt class="docutils literal">DemoSiiGateway</tt>, which creates deterministic
+synthetic receipts, <tt class="docutils literal"><span class="pre">DEMO-*</span></tt> TrackIDs, status responses, and
+reconciliation results without an HTTP/SOAP client. All response
+artifacts are hashed and marked <tt class="docutils literal">DEMO / SIMULADO</tt>. A simulated
+acceptance is not an SII receipt.</p>
+<p>Certification and Production currently have no transport adapters. The
+factory rejects those modes before queueing work or creating an attempt;
+it never falls back to Demo. Add and configure the real adapter before
+enabling either mode for outbound SII traffic.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h1>
