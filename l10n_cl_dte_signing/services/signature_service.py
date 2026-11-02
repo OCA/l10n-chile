@@ -298,8 +298,13 @@ class SignatureService:
             raise ValidationError(_("The XML RSA public key is invalid.")) from error
 
 
-def _safe_xml_parser():
-    return etree.XMLParser(resolve_entities=False, no_network=True, load_dtd=False)
+def _safe_xml_parser(encoding=None):
+    return etree.XMLParser(
+        encoding=encoding,
+        resolve_entities=False,
+        no_network=True,
+        load_dtd=False,
+    )
 
 
 def _parse_xml(xml_bytes):
@@ -307,10 +312,14 @@ def _parse_xml(xml_bytes):
         xml_bytes = xml_bytes.encode("ISO-8859-1")
     if not isinstance(xml_bytes, bytes) or b"<!DOCTYPE" in xml_bytes.upper():
         raise ValidationError(_("The XML input must be bytes without a DTD."))
+    has_declaration = xml_bytes.lstrip().startswith(b"<?xml")
+    parser = _safe_xml_parser(encoding=None if has_declaration else "ISO-8859-1")
     try:
-        return etree.fromstring(xml_bytes, parser=_safe_xml_parser())
+        return etree.fromstring(xml_bytes, parser=parser)
     except (etree.XMLSyntaxError, ValueError) as error:
-        raise ValidationError(_("The XML input is not well-formed.")) from error
+        raise ValidationError(
+            _("The XML input is not well-formed: %s") % error
+        ) from error
 
 
 def _canonicalize(element, exclusive=False):

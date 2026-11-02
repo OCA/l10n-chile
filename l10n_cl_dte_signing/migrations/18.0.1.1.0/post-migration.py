@@ -4,8 +4,7 @@
 
 def migrate(cr, version):
     cr.execute(
-        "SELECT to_regclass('l10n_cl_dte_signing_profile'), "
-        "to_regclass('res_company')"
+        "SELECT to_regclass('l10n_cl_dte_signing_profile'), to_regclass('res_company')"
     )
     profile_table, company_table = cr.fetchone()
     if not profile_table or not company_table:
@@ -27,6 +26,6 @@ def migrate(cr, version):
         "WHERE company.dte_certificate_id IS NOT NULL "
         "AND NOT EXISTS (SELECT 1 FROM l10n_cl_dte_signing_profile AS profile "
         "WHERE profile.company_id = company.id "
-        "AND profile.sii_environment = COALESCE(" 
+        "AND profile.sii_environment = COALESCE("
         "company.dte_sii_environment, 'certification'))"
     )
