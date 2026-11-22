@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_electronic_document_user,electronic.document user,model_l10n_cl_electronic_document,l10n_cl_dte_base.group_dte_user,1,0,0,0
+access_electronic_document_manager,electronic.document manager,model_l10n_cl_electronic_document,l10n_cl_dte_base.group_dte_manager,1,1,1,0
+access_electronic_artifact_user,electronic.artifact user,model_l10n_cl_electronic_artifact,l10n_cl_dte_base.group_dte_user,1,0,0,0
+access_electronic_artifact_manager,electronic.artifact manager,model_l10n_cl_electronic_artifact,l10n_cl_dte_base.group_dte_manager,1,0,1,0

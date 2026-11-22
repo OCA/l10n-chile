@@ -1,0 +1,28 @@
+<!-- Copyright 2026 Fernando San Martin Woerner <fsanmartin@iternova.cl> -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="module_category_dte" model="ir.module.category">
+        <field name="name">Chilean Electronic Tax Documents</field>
+    </record>
+    <record id="group_dte_user" model="res.groups">
+        <field name="name">DTE User</field>
+        <field name="category_id" ref="module_category_dte" />
+    </record>
+    <record id="group_dte_manager" model="res.groups">
+        <field name="name">DTE Manager</field>
+        <field name="category_id" ref="module_category_dte" />
+        <field name="implied_ids" eval="[(4, ref('group_dte_user'))]" />
+    </record>
+    <record id="rule_electronic_document_company" model="ir.rule">
+        <field name="name">DTE documents: allowed companies</field>
+        <field name="model_id" ref="model_l10n_cl_electronic_document" />
+        <field name="groups" eval="[(4, ref('group_dte_user'))]" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="rule_electronic_artifact_company" model="ir.rule">
+        <field name="name">DTE evidence: allowed companies</field>
+        <field name="model_id" ref="model_l10n_cl_electronic_artifact" />
+        <field name="groups" eval="[(4, ref('group_dte_user'))]" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
