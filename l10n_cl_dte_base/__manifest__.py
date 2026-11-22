@@ -4,7 +4,7 @@
 {
     "name": "Chile - DTE Base",
     "summary": "Company-scoped records and immutable evidence for Chilean DTEs",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "category": "Accounting/Localizations",
     "author": "FSMW, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-chile",

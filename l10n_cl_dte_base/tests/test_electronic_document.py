@@ -56,3 +56,47 @@ class TestElectronicDocument(DteTestCase):
                 record.with_user(outsider).with_company(other_company).check_access(
                     "read"
                 )
+
+    def test_state_transition_records_event(self):
+        document = self.create_document()
+        caf = self.create_artifact(document, "caf_source")
+
+        document.action_record_transition(
+            "authorized", "test_caf_validated", artifact_id=caf.id
+        )
+
+        self.assertEqual(document.preparation_state, "authorized")
+        event = document.event_ids.filtered(
+            lambda item: item.event_code == "test_caf_validated"
+        )
+        self.assertEqual(len(event), 1)
+        self.assertEqual(event.create_uid, self.dte_manager)
+
+    def test_forbidden_transition_preserves_state(self):
+        document = self.create_document()
+
+        with self.assertRaises(ValidationError):
+            document.action_record_transition("signed", "invalid_transition")
+
+        self.assertEqual(document.preparation_state, "draft")
+        self.assertFalse(document.folio)
+
+    def test_invalid_audit_event_rolls_back_state(self):
+        document = self.create_document()
+        caf = self.create_artifact(document, "caf_source")
+        with self.assertRaises(ValidationError):
+            document.action_record_transition(
+                "authorized", "Invalid Event", artifact_id=caf.id
+            )
+        self.assertEqual(document.preparation_state, "draft")
+        self.assertEqual(document.event_ids.mapped("event_code"), ["document_created"])
+
+    def test_fiscal_transition_requires_queued_document(self):
+        document = self.create_document()
+        receipt = self.create_artifact(document, "sii_response")
+        with self.assertRaisesRegex(ValidationError, "queued"):
+            document.action_record_transition(
+                "submitted", "sii_response_received", artifact_id=receipt.id
+            )
+        self.assertEqual(document.fiscal_state, "unknown")
+        self.assertEqual(document.event_ids.mapped("event_code"), ["document_created"])

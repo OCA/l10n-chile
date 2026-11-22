@@ -25,4 +25,10 @@
         <field name="groups" eval="[(4, ref('group_dte_user'))]" />
         <field name="domain_force">[('company_id', 'in', company_ids)]</field>
     </record>
+    <record id="rule_electronic_event_company" model="ir.rule">
+        <field name="name">DTE events: allowed companies</field>
+        <field name="model_id" ref="model_l10n_cl_electronic_event" />
+        <field name="groups" eval="[(4, ref('group_dte_user'))]" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
 </odoo>
