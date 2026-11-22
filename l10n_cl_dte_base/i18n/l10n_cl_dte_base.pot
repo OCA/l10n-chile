@@ -1,0 +1,315 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_cl_dte_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "A new DTE must capture the company's current SII environment."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.constraint,message:l10n_cl_dte_base.constraint_l10n_cl_electronic_document_source_key_company_uniq
+msgid "A source invoice can only have one electronic document per company."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "A valid company is required for a DTE."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__byte_count
+msgid "Byte Count"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__caf_source
+msgid "CAF Source"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__sii_environment__certification
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__res_company__dte_sii_environment__certification
+msgid "Certification"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model,name:l10n_cl_dte_base.model_l10n_cl_electronic_document
+msgid "Chilean Electronic Tax Document"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.module.category,name:l10n_cl_dte_base.module_category_dte
+msgid "Chilean Electronic Tax Documents"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model,name:l10n_cl_dte_base.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__company_id
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__content
+msgid "Content"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__create_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__create_date
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:res.groups,name:l10n_cl_dte_base.group_dte_manager
+msgid "DTE Manager"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_res_company__dte_sii_environment
+msgid "DTE SII Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:res.groups,name:l10n_cl_dte_base.group_dte_user
+msgid "DTE User"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "DTE evidence cannot be deleted."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "DTE evidence cannot be duplicated."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "DTE evidence is immutable."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "DTE identity fields cannot be changed."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__sii_environment__demo
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__res_company__dte_sii_environment__demo
+msgid "Demo / Simulated"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__display_name
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__document_id
+msgid "Document"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__document_code
+msgid "Document Code"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "Electronic tax documents cannot be deleted."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "Electronic tax documents cannot be duplicated."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__encoding
+msgid "Encoding"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__artifact_ids
+msgid "Evidence"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Evidence content is required."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Evidence must be valid base64 content."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__id
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model,name:l10n_cl_dte_base.model_l10n_cl_electronic_artifact
+msgid "Immutable DTE Evidence Artifact"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__is_simulated
+msgid "Is Simulated"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__write_uid
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__write_date
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__mimetype
+msgid "Mimetype"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Only a DTE manager can add evidence."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Only a DTE manager can verify evidence content."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__producer_version
+msgid "Producer Version"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__sii_environment__production
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__res_company__dte_sii_environment__production
+msgid "Production"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__role
+msgid "Role"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__sii_request
+msgid "SII Request"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__sii_response
+msgid "SII Response"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__sha256
+msgid "Sha256"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__signed_xml
+msgid "Signed XML"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__sii_environment
+msgid "Sii Environment"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__source_key
+msgid "Source Key"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__source_snapshot
+msgid "Source Snapshot"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__status_response
+msgid "Status Response"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Stored evidence does not match its recorded digest and size."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Stored evidence is not valid base64 content."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "The DTE type code must contain digits only."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "The source key cannot be empty."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_artifact__role__unsigned_xml
+msgid "Unsigned XML"
+msgstr ""
