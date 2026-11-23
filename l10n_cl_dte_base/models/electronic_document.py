@@ -235,6 +235,19 @@ class ElectronicDocument(models.Model):
         ):
             raise AccessError(message)
 
+    def _lock_lifecycle(self):
+        """Serialize updates before reading state or binding evidence."""
+        self.ensure_one()
+        self.flush_recordset()
+        self.env.cr.execute(
+            SQL(
+                "SELECT id FROM %s WHERE id = %s FOR UPDATE",
+                SQL.identifier(self._table),
+                self.id,
+            )
+        )
+        self.invalidate_recordset()
+
     def action_record_transition(
         self,
         target_state,
@@ -265,6 +278,7 @@ class ElectronicDocument(models.Model):
             raise ValidationError(
                 self.env._("The audit artifact must belong to the electronic document.")
             )
+        self._lock_lifecycle()
         state_domain, current_state, transitions, field_name = (
             self._get_transition_details(target_state)
         )
@@ -412,6 +426,7 @@ class ElectronicDocument(models.Model):
                     "The source snapshot must be evidence for this electronic document."
                 )
             )
+        self._lock_lifecycle()
         previous_snapshot = self.env["l10n_cl.electronic.event"].search(
             [
                 ("document_id", "=", self.id),
