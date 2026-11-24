@@ -28,6 +28,12 @@ msgstr ""
 #. module: l10n_cl_dte_base
 #. odoo-python
 #: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "A DTE needs exactly one current signed XML."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
 msgid "A folio cannot be assigned before the numbered state."
 msgstr ""
 
@@ -59,6 +65,11 @@ msgstr ""
 #. odoo-python
 #: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
 msgid "A positive folio number is required for the numbered state."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.constraint,message:l10n_cl_dte_base.constraint_l10n_cl_electronic_artifact_signature_successor_uniq
+msgid "A signature can only have one replacement."
 msgstr ""
 
 #. module: l10n_cl_dte_base
@@ -237,6 +248,12 @@ msgid ""
 msgstr ""
 
 #. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "DTE with transmission evidence cannot be regenerated."
+msgstr ""
+
+#. module: l10n_cl_dte_base
 #: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__sii_environment__demo
 #: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__res_company__dte_sii_environment__demo
 msgid "Demo / Simulated"
@@ -400,8 +417,26 @@ msgstr ""
 
 #. module: l10n_cl_dte_base
 #. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "Only a DTE manager can regenerate signatures."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
 #: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
 msgid "Only a DTE manager can verify evidence content."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_document.py:0
+msgid "Only signed DTE that have never been queued can be regenerated."
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Only the current signature can be replaced."
 msgstr ""
 
 #. module: l10n_cl_dte_base
@@ -425,6 +460,11 @@ msgid "Preparation State"
 msgstr ""
 
 #. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__supersedes_id
+msgid "Previous Signature"
+msgstr ""
+
+#. module: l10n_cl_dte_base
 #: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__fiscal_state__processing
 msgid "Processing"
 msgstr ""
@@ -443,6 +483,12 @@ msgstr ""
 #. module: l10n_cl_dte_base
 #: model:ir.model.fields.selection,name:l10n_cl_dte_base.selection__l10n_cl_electronic_document__preparation_state__queued
 msgid "Queued"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#. odoo-python
+#: code:addons/l10n_cl_dte_base/models/electronic_artifact.py:0
+msgid "Regenerate signatures through the document workflow."
 msgstr ""
 
 #. module: l10n_cl_dte_base
@@ -474,6 +520,11 @@ msgstr ""
 #. module: l10n_cl_dte_base
 #: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_artifact__sha256
 msgid "Sha256"
+msgstr ""
+
+#. module: l10n_cl_dte_base
+#: model:ir.model.fields,field_description:l10n_cl_dte_base.field_l10n_cl_electronic_document__signature_revision
+msgid "Signature Revision"
 msgstr ""
 
 #. module: l10n_cl_dte_base
