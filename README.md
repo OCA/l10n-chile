@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[l10n_cl_dte_base](l10n_cl_dte_base/) | 18.0.1.2.0 | <a href='https://github.com/fsmw'><img src='https://github.com/fsmw.png' width='32' height='32' style='border-radius:50%;' alt='fsmw'/></a> | Company-scoped records and immutable evidence for Chilean DTEs
+[l10n_cl_dte_base](l10n_cl_dte_base/) | 18.0.1.3.0 | <a href='https://github.com/fsmw'><img src='https://github.com/fsmw.png' width='32' height='32' style='border-radius:50%;' alt='fsmw'/></a> | Company-scoped records and immutable evidence for Chilean DTEs
 
 [//]: # (end addons)
 
