@@ -101,6 +101,7 @@ class ElectronicDocument(models.Model):
         copy=False,
     )
     source_key = fields.Char(required=True, index=True, copy=False)
+    signature_revision = fields.Integer(default=0, readonly=True, copy=False)
     payload_digest = fields.Char(readonly=True, index=True, copy=False)
     artifact_ids = fields.One2many(
         "l10n_cl.electronic.artifact", "document_id", string="Evidence"
@@ -151,6 +152,7 @@ class ElectronicDocument(models.Model):
             "fiscal_state": "unknown",
             "folio": False,
             "payload_digest": False,
+            "signature_revision": 0,
         }
         normalized_vals_list = []
         for vals in vals_list:
@@ -212,6 +214,7 @@ class ElectronicDocument(models.Model):
             "fiscal_state",
             "source_key",
             "payload_digest",
+            "signature_revision",
         }
         if protected_fields.intersection(vals):
             raise UserError(
@@ -469,3 +472,44 @@ class ElectronicDocument(models.Model):
                     "document_id": document.id,
                 }
             )
+
+    def _get_signed_artifact(self):
+        """Resolve the single current signature, retaining all superseded evidence."""
+        self.ensure_one()
+        signed = self.artifact_ids.filtered(lambda item: item.role == "signed_xml")
+        current = signed - signed.mapped("supersedes_id")
+        if len(current) != 1:
+            raise ValidationError(
+                self.env._("A DTE needs exactly one current signed XML.")
+            )
+        return current
+
+    def _check_signature_revision(self):
+        """Let bounded correction workflows prove a revision is safe."""
+        return self._check_signature_regeneration()
+
+    def _check_signature_regeneration(self):
+        self.ensure_one()
+        self.check_access("write")
+        self._check_dte_manager(
+            self.env._("Only a DTE manager can regenerate signatures.")
+        )
+        if self.preparation_state != "signed" or self.fiscal_state != "unknown":
+            raise UserError(
+                self.env._(
+                    "Only signed DTE that have never been queued can be regenerated."
+                )
+            )
+        if self.artifact_ids.filtered(
+            lambda artifact: artifact.role
+            in {"sii_request", "sii_response", "status_response"}
+        ):
+            raise UserError(
+                self.env._("DTE with transmission evidence cannot be regenerated.")
+            )
+        return True
+
+    def _advance_signature_revision(self):
+        # Updating the locked row forces stale repeatable-read transactions to retry.
+        self.ensure_one()
+        return super().write({"signature_revision": self.signature_revision + 1})

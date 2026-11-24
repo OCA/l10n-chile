@@ -47,6 +47,23 @@ class ElectronicArtifact(models.Model):
     byte_count = fields.Integer(readonly=True, copy=False)
     producer_version = fields.Char()
 
+    supersedes_id = fields.Many2one(
+        "l10n_cl.electronic.artifact",
+        string="Previous Signature",
+        readonly=True,
+        copy=False,
+        ondelete="restrict",
+        check_company=True,
+    )
+
+    _sql_constraints = [
+        (
+            "signature_successor_uniq",
+            "unique(supersedes_id)",
+            "A signature can only have one replacement.",
+        ),
+    ]
+
     @api.depends("document_id.sii_environment")
     def _compute_is_simulated(self):
         for artifact in self:
@@ -55,6 +72,13 @@ class ElectronicArtifact(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         """Calculate evidence metadata from the exact persisted bytes."""
+        if not self.env.su and (
+            self.env.context.get("default_supersedes_id")
+            or any(vals.get("supersedes_id") for vals in vals_list)
+        ):
+            raise AccessError(
+                self.env._("Regenerate signatures through the document workflow.")
+            )
         return super().create(self._prepare_evidence_values(vals_list))
 
     def _prepare_evidence_values(self, vals_list):
@@ -77,6 +101,36 @@ class ElectronicArtifact(models.Model):
             vals["byte_count"] = len(raw_content)
             normalized_vals_list.append(vals)
         return normalized_vals_list
+
+    def _create_signature_revision(self, previous, content, producer_version):
+        """Append a signed XML revision without changing any previous bytes."""
+        previous.ensure_one()
+        document = previous.document_id
+        document.check_access("write")
+        document._lock_lifecycle()
+        document._check_signature_revision()
+        if previous != document._get_signed_artifact():
+            raise ValidationError(
+                self.env._("Only the current signature can be replaced.")
+            )
+        previous.action_verify_integrity()
+        with self.env.cr.savepoint():
+            document._advance_signature_revision()
+            return (
+                self.sudo()
+                .create(
+                    {
+                        "document_id": document.id,
+                        "role": "signed_xml",
+                        "supersedes_id": previous.id,
+                        "content": base64.b64encode(content),
+                        "mimetype": "application/xml",
+                        "encoding": previous.encoding,
+                        "producer_version": producer_version,
+                    }
+                )
+                .with_env(self.env)
+            )
 
     def write(self, vals):  # pylint: disable=method-required-super
         raise AccessError(self.env._("DTE evidence is immutable."))
