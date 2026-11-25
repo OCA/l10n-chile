@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_caf_authorization_user,caf.authorization user,model_l10n_cl_caf_authorization,l10n_cl_dte_base.group_dte_user,1,0,0,0
+access_caf_authorization_manager,caf.authorization manager,model_l10n_cl_caf_authorization,l10n_cl_dte_base.group_dte_manager,1,1,1,0
