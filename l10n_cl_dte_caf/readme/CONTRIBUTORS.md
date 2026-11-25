@@ -1,0 +1,4 @@
+- Odoo Community Association (OCA)
+- Fernando San Martin Woerner <fsanmartin@iternova.cl>
+- Jorge Elena Poblet
+- Edilio Escalona Almira

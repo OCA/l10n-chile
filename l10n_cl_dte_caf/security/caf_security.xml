@@ -1,0 +1,10 @@
+<!-- Copyright 2026 Fernando San Martin Woerner <fsanmartin@iternova.cl> -->
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="rule_caf_authorization_company" model="ir.rule">
+        <field name="name">CAF authorizations: allowed companies</field>
+        <field name="model_id" ref="model_l10n_cl_caf_authorization" />
+        <field name="groups" eval="[(4, ref('l10n_cl_dte_base.group_dte_user'))]" />
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>
